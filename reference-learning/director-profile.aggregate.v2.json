@@ -1,0 +1,376 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "aggregated-reference-director-v1",
+  "version": 1,
+  "generated_at": "2026-07-29T09:45:48.133096+00:00",
+  "source_count": 4,
+  "reference_sources": [
+    {
+      "source_id": "bilibili-BV1oeEv6rEs2",
+      "url": "https://www.bilibili.com/video/BV1oeEv6rEs2/"
+    },
+    {
+      "source_id": "bilibili-BV13EK96HEph",
+      "url": "https://www.bilibili.com/video/BV13EK96HEph/"
+    },
+    {
+      "source_id": "bilibili-BV1xMrpBrExr",
+      "url": "https://www.bilibili.com/video/BV1xMrpBrExr/"
+    },
+    {
+      "source_id": "bilibili-BV1L2ECz1EXC",
+      "url": "https://www.bilibili.com/video/BV1L2ECz1EXC/"
+    }
+  ],
+  "shared_rules": [
+    {
+      "id": "opening-faster-than-body",
+      "source_support": 4,
+      "rule": "开场15秒应明显快于正文，用跨地点和跨体验镜头建立观看承诺。"
+    },
+    {
+      "id": "retain-action",
+      "source_support": 4,
+      "rule": "优先保留承担动作推进功能且质量合格的镜头。"
+    },
+    {
+      "id": "selective-detail",
+      "source_support": 4,
+      "rule": "关键细节镜头只在提供新信息、完成事件结构或承担必要过渡时保留。"
+    },
+    {
+      "id": "retain-dialogue",
+      "source_support": 4,
+      "rule": "优先保留承担有效对白功能且质量合格的镜头。"
+    },
+    {
+      "id": "selective-establishing",
+      "source_support": 4,
+      "rule": "环境建立镜头只在提供新信息、完成事件结构或承担必要过渡时保留。"
+    },
+    {
+      "id": "retain-payoff",
+      "source_support": 3,
+      "rule": "优先保留承担结果或爆点功能且质量合格的镜头。"
+    },
+    {
+      "id": "retain-reaction",
+      "source_support": 4,
+      "rule": "优先保留承担人物反应功能且质量合格的镜头。"
+    },
+    {
+      "id": "selective-transition",
+      "source_support": 4,
+      "rule": "章节过渡镜头只在提供新信息、完成事件结构或承担必要过渡时保留。"
+    },
+    {
+      "id": "preserve-event-chain",
+      "source_support": 4,
+      "rule": "镜头必须放回事件链判断：铺垫、行动、结果和人物反应应成组保留，不能只留下单个漂亮镜头或爆点。"
+    }
+  ],
+  "semantic_principles": [
+    {
+      "id": "authentic-interaction-and-imperfection",
+      "source_support": 4,
+      "average_confidence": 0.885,
+      "rule": "问路、老板推荐、不会吃、找不到店和同行即时反馈，应作为文化体验的一部分保留。",
+      "source_variants": [
+        "优先保留等待、口误、同行评价和即时反应，它们比纯景色更能建立人物关系。",
+        "迷路、危险、擦伤、疲惫和同伴照顾是关系素材，应优先于无人物参与的重复风景。",
+        "老师纠正、同伴玩笑、制作失误和对陌生事物的即时判断是旅行人物感的核心素材。",
+        "问路、老板推荐、不会吃、找不到店和同行即时反馈，应作为文化体验的一部分保留。"
+      ]
+    },
+    {
+      "id": "continuous-audio-bed",
+      "source_support": 4,
+      "average_confidence": 0.8575,
+      "rule": "制作声、环境声、对白和轻配乐共同托底，保留真实操作声音增强临场感。",
+      "source_variants": [
+        "对白、环境声或配乐持续托底，镜头切换不应产生无目的声音空洞。",
+        "对白、环境声和配乐共同维持连续声场，静音只用于明确的情绪停顿。",
+        "制作声、环境声、对白和轻配乐共同托底，保留真实操作声音增强临场感。",
+        "驾车环境声、市场声音、人物对白和配乐连续衔接，保留地方声音质感。"
+      ]
+    },
+    {
+      "id": "ending-emotional-release",
+      "source_support": 4,
+      "average_confidence": 0.8575,
+      "rule": "结尾通过古镇探索、偶遇小动物、咖啡厅和远景逐渐降速，不需要额外制造高潮。",
+      "source_variants": [
+        "结尾从同行互动逐步提升到登高和日落，再用下一段旅程提示轻量退出。",
+        "结尾从活动逐渐降速到海边、自然景色和简短祝福，保留旅行余味。",
+        "结尾用茶园、乡间步行和农家餐从探索逐步回到轻松陪伴。",
+        "结尾通过古镇探索、偶遇小动物、咖啡厅和远景逐渐降速，不需要额外制造高潮。"
+      ]
+    },
+    {
+      "id": "experience-event-units",
+      "source_support": 4,
+      "average_confidence": 0.9025,
+      "rule": "按抵达、地方餐食、环海自驾、市场、白族体验和古镇探索组织事件，而不是按日期报行程。",
+      "source_variants": [
+        "按抵达、入住、建筑、餐食和同行活动组织体验事件，不按景点流水账排列。",
+        "用入住、共同做饭、市集、餐厅、徒步和海边组成体验单元，而不是行程清单。",
+        "按手作体验、地方早餐、换住宿、茶园漫步和农家餐组织故事，每个单元有明确行动。",
+        "按抵达、地方餐食、环海自驾、市场、白族体验和古镇探索组织事件，而不是按日期报行程。"
+      ]
+    },
+    {
+      "id": "food-discovery-action-reaction",
+      "source_support": 4,
+      "average_confidence": 0.9025,
+      "rule": "食物从发现与选择开始，保留制作、入口、评价和同行反馈，删除重复菜品展示。",
+      "source_variants": [
+        "餐食按环境、菜品、取食、入口和评价组织，重复菜品空镜优先删除。",
+        "食物从发现与选择开始，保留制作、入口、评价和同行反馈，删除重复菜品展示。",
+        "地方早餐和农家菜需要保留点单、外观、质地、入口和真实评价，删除重复盘面。",
+        "地方菜从推荐、菜单、制作或取食开始，保留吃法询问、入口和真实评价。"
+      ]
+    },
+    {
+      "id": "opening-sensory-preview",
+      "source_support": 4,
+      "average_confidence": 0.895,
+      "rule": "开场10至15秒用人物、地点、食物和结果镜头建立观看承诺，正文再解释行程。",
+      "source_variants": [
+        "开场10至15秒用人物、地点、食物和结果镜头建立观看承诺，正文再解释行程。",
+        "开场用食物、水体、人物、交通和住宿快速预告，先传达目的地气质。",
+        "开场用工艺动作、地方食物、乡村空间和人物反应快速预告体验价值。",
+        "开场用水体、驾车、地方食物、古镇和人物状态快速建立公路旅行期待。"
+      ]
+    },
+    {
+      "id": "preserve-complete-event-chain",
+      "source_support": 4,
+      "average_confidence": 0.925,
+      "rule": "保留环境建立、人物行动、结果和反应组成的完整链路，不只保留漂亮空镜或单个爆点。",
+      "source_variants": [
+        "保留环境建立、人物行动、结果和反应组成的完整链路，不只保留漂亮空镜或单个爆点。",
+        "事件必须保留出发、困难、行动、结果和关系反应，不能只留下风景高潮。",
+        "手作事件应保留环境、工具、老师指导、本人操作、失败或修正、成品和人物反应。",
+        "地方体验需要保留到达、选择、询问、实际行动、结果和人物反馈，不能只剪地点空镜。"
+      ]
+    },
+    {
+      "id": "rhythm-follows-event-intensity",
+      "source_support": 4,
+      "average_confidence": 0.9075,
+      "rule": "生活交流和环境体验放慢；购买、品尝、危险动作和同伴反应提高切换密度。",
+      "source_variants": [
+        "预告、移动和动作段加快切换；对白、介绍和真实反应允许较长镜头。",
+        "生活交流和环境体验放慢；购买、品尝、危险动作和同伴反应提高切换密度。",
+        "制作步骤和食物动作使用较密切换；乡村行走、观察和对话允许长镜头。",
+        "驾车、市场和取食段提高切换密度；洱海、咖啡厅和古镇观察适当延长镜头。"
+      ]
+    },
+    {
+      "id": "selective-place-detail",
+      "source_support": 4,
+      "average_confidence": 0.87,
+      "rule": "陶瓷、玻璃、装置和乡村细节必须连接观察、选择、制作或人物发现才值得保留。",
+      "source_variants": [
+        "建筑全景和细节只有在建立空间、解释体验或连接人物行动时保留。",
+        "环境与商品细节只有在建立地点、支持选择或解释体验时保留。",
+        "陶瓷、玻璃、装置和乡村细节必须连接观察、选择、制作或人物发现才值得保留。",
+        "洱海、市场、古镇和住宿细节只有在建立路线、文化或人物发现时保留。"
+      ]
+    }
+  ],
+  "shot_selection_model": {
+    "retain_archetypes": [
+      {
+        "role": "action",
+        "source_support": 4,
+        "shot_count": 644,
+        "average_retained_ratio": 0.5935,
+        "average_duration_sec": 2.106,
+        "average_keep_score": 0.7868
+      },
+      {
+        "role": "dialogue",
+        "source_support": 4,
+        "shot_count": 443,
+        "average_retained_ratio": 0.9712,
+        "average_duration_sec": 3.527,
+        "average_keep_score": 0.9238
+      },
+      {
+        "role": "payoff",
+        "source_support": 3,
+        "shot_count": 4,
+        "average_retained_ratio": 1.0,
+        "average_duration_sec": 2.606,
+        "average_keep_score": 0.9209
+      },
+      {
+        "role": "reaction",
+        "source_support": 4,
+        "shot_count": 51,
+        "average_retained_ratio": 0.7337,
+        "average_duration_sec": 2.552,
+        "average_keep_score": 0.8321
+      }
+    ],
+    "selective_archetypes": [
+      {
+        "role": "detail",
+        "source_support": 4,
+        "shot_count": 93,
+        "average_retained_ratio": 0.0822,
+        "average_duration_sec": 2.51,
+        "average_keep_score": 0.7518
+      },
+      {
+        "role": "establishing",
+        "source_support": 4,
+        "shot_count": 67,
+        "average_retained_ratio": 0.1078,
+        "average_duration_sec": 5.751,
+        "average_keep_score": 0.74
+      },
+      {
+        "role": "transition",
+        "source_support": 4,
+        "shot_count": 275,
+        "average_retained_ratio": 0.1592,
+        "average_duration_sec": 1.49,
+        "average_keep_score": 0.77
+      }
+    ],
+    "cut_first_signals": [
+      {
+        "signal": "与前一镜头高度重复",
+        "source_support": 3,
+        "shot_count": 75
+      },
+      {
+        "signal": "画面清晰度较低",
+        "source_support": 4,
+        "shot_count": 24
+      },
+      {
+        "signal": "缺少动作、声音和新增信息",
+        "source_support": 4,
+        "shot_count": 12
+      }
+    ],
+    "sequence_dependencies": [
+      "建立镜头、行动或信息、结果、人物反应应作为镜头组评估。",
+      "存在 payoff 或 reaction 时，不应仅保留爆点而删除铺垫。",
+      "事件完整度优先于单镜头分数，完整事件可提升边缘镜头的保留级别。"
+    ]
+  },
+  "pacing_model": {
+    "median_shot_duration_sec": {
+      "minimum": 2.1,
+      "average": 2.2418,
+      "maximum": 2.4
+    },
+    "opening_average_shot_duration_sec": {
+      "minimum": 0.783,
+      "average": 0.9465,
+      "maximum": 1.074
+    },
+    "silent_ratio": {
+      "minimum": 0.0871,
+      "average": 0.1012,
+      "maximum": 0.1345
+    }
+  },
+  "audio_model": {
+    "kind_ratios": {
+      "ambient_likely": {
+        "minimum": 0.3804,
+        "average": 0.4633,
+        "maximum": 0.5673
+      },
+      "music_likely": {
+        "minimum": 0.0725,
+        "average": 0.127,
+        "maximum": 0.1936
+      },
+      "silence": {
+        "minimum": 0.0754,
+        "average": 0.0927,
+        "maximum": 0.1213
+      },
+      "speech": {
+        "minimum": 0.2081,
+        "average": 0.3172,
+        "maximum": 0.4719
+      }
+    },
+    "music_segment_duration_sec": {
+      "minimum": 2.7708,
+      "average": 3.899,
+      "maximum": 5.4324
+    },
+    "rule": "对白区间优先保留原声；可能配乐用于跨镜头托底；环境声承担地点质感；静音仅用于有意停顿。"
+  },
+  "source_variants": [
+    {
+      "source_id": "bilibili-BV1oeEv6rEs2",
+      "median_shot_duration_sec": 2.2,
+      "top_retained_roles": [
+        "dialogue",
+        "payoff",
+        "action"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "conversation",
+        "observational"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV13EK96HEph",
+      "median_shot_duration_sec": 2.4,
+      "top_retained_roles": [
+        "dialogue",
+        "payoff",
+        "reaction"
+      ],
+      "dominant_event_types": [
+        "conversation",
+        "activity",
+        "observational"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV1xMrpBrExr",
+      "median_shot_duration_sec": 2.267,
+      "top_retained_roles": [
+        "payoff",
+        "dialogue",
+        "action"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "conversation",
+        "observational"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV1L2ECz1EXC",
+      "median_shot_duration_sec": 2.1,
+      "top_retained_roles": [
+        "dialogue",
+        "reaction",
+        "transition"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "observational",
+        "detail_sequence"
+      ]
+    }
+  ],
+  "limitations": [
+    "聚合结果来自已经完成剪辑的参考片，不包含原始废片。",
+    "真正的保留与删除监督学习需要原始素材、最终成片和时间线映射。",
+    "自动镜头角色是启发式判断，低置信度结果必须通过事件联系表人工抽查。"
+  ]
+}

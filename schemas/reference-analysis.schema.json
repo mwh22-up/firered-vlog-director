@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/reference-analysis.schema.json",
+  "title": "Reference Video Analysis",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source",
+    "configuration",
+    "media",
+    "transcription",
+    "audio_segments",
+    "shots",
+    "events",
+    "learning_summary"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "source": {
+      "type": "object",
+      "required": ["source_id", "url"],
+      "properties": {
+        "source_id": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "pattern": "^https://" },
+        "media_path": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "generated_at": { "type": "string" },
+    "configuration": { "type": "object" },
+    "media": {
+      "type": "object",
+      "required": [
+        "duration_sec",
+        "shot_count",
+        "median_shot_duration_sec",
+        "silent_ratio"
+      ]
+    },
+    "transcription": {
+      "type": "object",
+      "required": ["status", "provider", "segments", "words"]
+    },
+    "audio_segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["start_sec", "end_sec", "kind", "average_rms", "peak"]
+      }
+    },
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "shot_id",
+          "start_sec",
+          "end_sec",
+          "role",
+          "keep_score",
+          "recommendation",
+          "reasons"
+        ]
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "start_sec",
+          "end_sec",
+          "event_type",
+          "completeness_score",
+          "priority_score",
+          "sequence_dependency"
+        ]
+      }
+    },
+    "learning_summary": {
+      "type": "object",
+      "required": [
+        "retention_archetypes",
+        "cut_first_signals",
+        "event_patterns",
+        "evidence_limits"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

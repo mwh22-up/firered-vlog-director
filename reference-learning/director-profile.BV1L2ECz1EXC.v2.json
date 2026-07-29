@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "dali-roadtrip-local-culture-v2",
+  "version": 2,
+  "reference_sources": [
+    {
+      "source_id": "bilibili-BV1L2ECz1EXC",
+      "url": "https://www.bilibili.com/video/BV1L2ECz1EXC/",
+      "learn": [
+        "story_structure",
+        "humor",
+        "key_moment_selection",
+        "rhythm",
+        "dialogue_broll",
+        "music",
+        "opening_hook",
+        "ending"
+      ],
+      "favorite_ranges": [
+        {
+          "start_sec": 0,
+          "end_sec": 15,
+          "reason": "用洱海、驾车、食物、古镇和人物片段预告公路旅行体验。"
+        },
+        {
+          "start_sec": 188,
+          "end_sec": 300,
+          "reason": "民宿推荐、点餐、地方火锅、入口和评价形成第一晚的完整体验。"
+        },
+        {
+          "start_sec": 390,
+          "end_sec": 634,
+          "reason": "自驾到市场、买花、地方小吃、洱海和咖啡厅形成连续路线事件。"
+        },
+        {
+          "start_sec": 710,
+          "end_sec": 913,
+          "reason": "白族菜选择、现场取食、吃法询问、入口反应和下一日转场兼具文化与人物价值。"
+        },
+        {
+          "start_sec": 913,
+          "end_sec": 1094,
+          "reason": "换装、古镇探索、咖啡厅发现、猫和环境镜头完成轻松结尾。"
+        }
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "id": "opening-sensory-preview",
+      "rule": "开场用水体、驾车、地方食物、古镇和人物状态快速建立公路旅行期待。",
+      "confidence": 0.89,
+      "supporting_examples": 8
+    },
+    {
+      "id": "experience-event-units",
+      "rule": "按抵达、地方餐食、环海自驾、市场、白族体验和古镇探索组织事件，而不是按日期报行程。",
+      "confidence": 0.92,
+      "supporting_examples": 7
+    },
+    {
+      "id": "rhythm-follows-event-intensity",
+      "rule": "驾车、市场和取食段提高切换密度；洱海、咖啡厅和古镇观察适当延长镜头。",
+      "confidence": 0.9,
+      "supporting_examples": 435
+    },
+    {
+      "id": "preserve-complete-event-chain",
+      "rule": "地方体验需要保留到达、选择、询问、实际行动、结果和人物反馈，不能只剪地点空镜。",
+      "confidence": 0.93,
+      "supporting_examples": 15
+    },
+    {
+      "id": "selective-place-detail",
+      "rule": "洱海、市场、古镇和住宿细节只有在建立路线、文化或人物发现时保留。",
+      "confidence": 0.88,
+      "supporting_examples": 10
+    },
+    {
+      "id": "food-discovery-action-reaction",
+      "rule": "地方菜从推荐、菜单、制作或取食开始，保留吃法询问、入口和真实评价。",
+      "confidence": 0.92,
+      "supporting_examples": 9
+    },
+    {
+      "id": "authentic-interaction-and-imperfection",
+      "rule": "问路、老板推荐、不会吃、找不到店和同行即时反馈，应作为文化体验的一部分保留。",
+      "confidence": 0.9,
+      "supporting_examples": 8
+    },
+    {
+      "id": "continuous-audio-bed",
+      "rule": "驾车环境声、市场声音、人物对白和配乐连续衔接，保留地方声音质感。",
+      "confidence": 0.85,
+      "supporting_examples": 15
+    },
+    {
+      "id": "ending-emotional-release",
+      "rule": "结尾通过古镇探索、偶遇小动物、咖啡厅和远景逐渐降速，不需要额外制造高潮。",
+      "confidence": 0.86,
+      "supporting_examples": 2
+    }
+  ],
+  "selection_policy": {
+    "prefer": [
+      "路线变化和地点抵达的必要建立镜头",
+      "人与当地店家、食物和文化发生互动的镜头",
+      "地方菜的选择、取食、吃法和反应",
+      "找路、询问和意外发现等真实过程",
+      "能够让结尾自然降速的古镇与环境镜头"
+    ],
+    "remove_first": [
+      "没有路线或人物作用的重复洱海空镜",
+      "脱离选择和体验过程的商品或菜品特写",
+      "重复说明同一地点和行程的口播",
+      "模糊、重复或没有新增信息的镜头"
+    ]
+  }
+}

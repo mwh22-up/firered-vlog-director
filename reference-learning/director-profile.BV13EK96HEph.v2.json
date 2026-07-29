@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "south-france-slow-travel-v2",
+  "version": 2,
+  "reference_sources": [
+    {
+      "source_id": "bilibili-BV13EK96HEph",
+      "url": "https://www.bilibili.com/video/BV13EK96HEph/",
+      "learn": [
+        "story_structure",
+        "key_moment_selection",
+        "rhythm",
+        "dialogue_broll",
+        "music",
+        "opening_hook",
+        "ending"
+      ],
+      "favorite_ranges": [
+        {
+          "start_sec": 0,
+          "end_sec": 15,
+          "reason": "食物、海水、驾车、日落和住宿组成感官预告，先建立休闲旅行气质。"
+        },
+        {
+          "start_sec": 173,
+          "end_sec": 298,
+          "reason": "采购、共同做饭、进食和新一天过渡展示生活关系与慢节奏。"
+        },
+        {
+          "start_sec": 440,
+          "end_sec": 640,
+          "reason": "市集发现、选择购买、餐厅体验和评价组成连续消费体验链。"
+        },
+        {
+          "start_sec": 800,
+          "end_sec": 1020,
+          "reason": "徒步出发、危险路线、受伤照顾、坚持和抵达水潭形成强事件弧。"
+        },
+        {
+          "start_sec": 1200,
+          "end_sec": 1366,
+          "reason": "市集、海边、下水、广场互动和日落祝福完成轻柔收尾。"
+        }
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "id": "opening-sensory-preview",
+      "rule": "开场用食物、水体、人物、交通和住宿快速预告，先传达目的地气质。",
+      "confidence": 0.91,
+      "supporting_examples": 9
+    },
+    {
+      "id": "experience-event-units",
+      "rule": "用入住、共同做饭、市集、餐厅、徒步和海边组成体验单元，而不是行程清单。",
+      "confidence": 0.9,
+      "supporting_examples": 7
+    },
+    {
+      "id": "rhythm-follows-event-intensity",
+      "rule": "生活交流和环境体验放慢；购买、品尝、危险动作和同伴反应提高切换密度。",
+      "confidence": 0.92,
+      "supporting_examples": 471
+    },
+    {
+      "id": "preserve-complete-event-chain",
+      "rule": "事件必须保留出发、困难、行动、结果和关系反应，不能只留下风景高潮。",
+      "confidence": 0.93,
+      "supporting_examples": 19
+    },
+    {
+      "id": "selective-place-detail",
+      "rule": "环境与商品细节只有在建立地点、支持选择或解释体验时保留。",
+      "confidence": 0.86,
+      "supporting_examples": 8
+    },
+    {
+      "id": "food-discovery-action-reaction",
+      "rule": "食物从发现与选择开始，保留制作、入口、评价和同行反馈，删除重复菜品展示。",
+      "confidence": 0.91,
+      "supporting_examples": 8
+    },
+    {
+      "id": "authentic-interaction-and-imperfection",
+      "rule": "迷路、危险、擦伤、疲惫和同伴照顾是关系素材，应优先于无人物参与的重复风景。",
+      "confidence": 0.9,
+      "supporting_examples": 7
+    },
+    {
+      "id": "continuous-audio-bed",
+      "rule": "对白、环境声和配乐共同维持连续声场，静音只用于明确的情绪停顿。",
+      "confidence": 0.86,
+      "supporting_examples": 19
+    },
+    {
+      "id": "ending-emotional-release",
+      "rule": "结尾从活动逐渐降速到海边、自然景色和简短祝福，保留旅行余味。",
+      "confidence": 0.88,
+      "supporting_examples": 1
+    }
+  ],
+  "selection_policy": {
+    "prefer": [
+      "人物共同生活和真实关系变化",
+      "包含困难、行动和照顾的完整事件",
+      "市集与餐食的发现到评价链路",
+      "有明确空间或文化信息的细节",
+      "能够自然降速的结尾镜头"
+    ],
+    "remove_first": [
+      "重复且没有人物行动的风景",
+      "脱离购买或体验过程的商品空镜",
+      "脱离入口和评价的菜品空镜",
+      "模糊、重复或没有新增信息的镜头"
+    ]
+  }
+}

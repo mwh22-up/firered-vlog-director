@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "jingdezhen-craft-rural-v2",
+  "version": 2,
+  "reference_sources": [
+    {
+      "source_id": "bilibili-BV1xMrpBrExr",
+      "url": "https://www.bilibili.com/video/BV1xMrpBrExr/",
+      "learn": [
+        "story_structure",
+        "humor",
+        "key_moment_selection",
+        "rhythm",
+        "dialogue_broll",
+        "music",
+        "opening_hook",
+        "ending"
+      ],
+      "favorite_ranges": [
+        {
+          "start_sec": 0,
+          "end_sec": 15,
+          "reason": "用工艺、食物、乡村和人物片段快速预告本次旅行的体验类型。"
+        },
+        {
+          "start_sec": 71,
+          "end_sec": 195,
+          "reason": "进入工作室、观察工具、亲手制作、老师指导和结果展示形成完整工艺体验。"
+        },
+        {
+          "start_sec": 195,
+          "end_sec": 323,
+          "reason": "点单、地方食物细节、入口口感和同行评价构成早餐事件。"
+        },
+        {
+          "start_sec": 751,
+          "end_sec": 925,
+          "reason": "民宿咖啡、茶园漫步、乡间发现和农家餐将慢生活与人物互动连接起来。"
+        }
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "id": "opening-sensory-preview",
+      "rule": "开场用工艺动作、地方食物、乡村空间和人物反应快速预告体验价值。",
+      "confidence": 0.88,
+      "supporting_examples": 8
+    },
+    {
+      "id": "experience-event-units",
+      "rule": "按手作体验、地方早餐、换住宿、茶园漫步和农家餐组织故事，每个单元有明确行动。",
+      "confidence": 0.91,
+      "supporting_examples": 6
+    },
+    {
+      "id": "rhythm-follows-event-intensity",
+      "rule": "制作步骤和食物动作使用较密切换；乡村行走、观察和对话允许长镜头。",
+      "confidence": 0.9,
+      "supporting_examples": 356
+    },
+    {
+      "id": "preserve-complete-event-chain",
+      "rule": "手作事件应保留环境、工具、老师指导、本人操作、失败或修正、成品和人物反应。",
+      "confidence": 0.94,
+      "supporting_examples": 14
+    },
+    {
+      "id": "selective-place-detail",
+      "rule": "陶瓷、玻璃、装置和乡村细节必须连接观察、选择、制作或人物发现才值得保留。",
+      "confidence": 0.9,
+      "supporting_examples": 9
+    },
+    {
+      "id": "food-discovery-action-reaction",
+      "rule": "地方早餐和农家菜需要保留点单、外观、质地、入口和真实评价，删除重复盘面。",
+      "confidence": 0.89,
+      "supporting_examples": 6
+    },
+    {
+      "id": "authentic-interaction-and-imperfection",
+      "rule": "老师纠正、同伴玩笑、制作失误和对陌生事物的即时判断是旅行人物感的核心素材。",
+      "confidence": 0.91,
+      "supporting_examples": 8
+    },
+    {
+      "id": "continuous-audio-bed",
+      "rule": "制作声、环境声、对白和轻配乐共同托底，保留真实操作声音增强临场感。",
+      "confidence": 0.85,
+      "supporting_examples": 14
+    },
+    {
+      "id": "ending-emotional-release",
+      "rule": "结尾用茶园、乡间步行和农家餐从探索逐步回到轻松陪伴。",
+      "confidence": 0.84,
+      "supporting_examples": 2
+    }
+  ],
+  "selection_policy": {
+    "prefer": [
+      "手作过程中的工具、手部动作、指导和结果",
+      "人物遇到困难后的修正与反应",
+      "地方食物的质地、入口和评价",
+      "同行互动和带有发现感的乡村镜头",
+      "真实制作声与环境声"
+    ],
+    "remove_first": [
+      "脱离制作过程的重复物品特写",
+      "没有人物观察或行动的普通街景",
+      "重复盘面和重复口感描述",
+      "模糊、重复或没有新增信息的镜头"
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "slow-travel-vlog-experience-led-v1",
+  "version": 1,
+  "reference_sources": [
+    {
+      "source_id": "bilibili-BV13EK96HEph",
+      "url": "https://www.bilibili.com/video/BV13EK96HEph/",
+      "learn": [
+        "story_structure",
+        "key_moment_selection",
+        "rhythm",
+        "dialogue_broll",
+        "music",
+        "opening_hook",
+        "ending"
+      ],
+      "favorite_ranges": [
+        {
+          "start_sec": 0,
+          "end_sec": 13,
+          "reason": "用约9个短镜头交替展示食物、海水、海滩、驾车、日落和民宿，先建立南法休闲感与内容期待。"
+        },
+        {
+          "start_sec": 440,
+          "end_sec": 640,
+          "reason": "市集发现、物品细节、购买互动、转场到餐厅、菜品展示和品尝评价构成连续体验链。"
+        },
+        {
+          "start_sec": 800,
+          "end_sec": 1020,
+          "reason": "峡谷徒步完整保留出发、路线难度、危险动作、同伴照顾、体力消耗、抵达水潭和告别，形成最强事件弧。"
+        },
+        {
+          "start_sec": 1200,
+          "end_sec": 1366,
+          "reason": "尼斯市集、香料细节、海边休息、下水、广场互动和日落祝福逐步降低叙事强度，完成轻松收尾。"
+        }
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "id": "sensory-preview-opening",
+      "rule": "开场用10至15秒感官预告交替展示食物、水体、人物、交通和住宿，不解释行程，先建立目的地气质。",
+      "confidence": 0.88,
+      "supporting_examples": 9
+    },
+    {
+      "id": "slow-setup-before-activity",
+      "rule": "允许抵达、入住、花园早餐和换装段落放慢节奏，让观众建立人物关系和生活环境，再进入市集、餐厅或徒步高潮。",
+      "confidence": 0.84,
+      "supporting_examples": 5
+    },
+    {
+      "id": "rhythm-follows-experience-intensity",
+      "rule": "日常交流和环境体验使用较长镜头；发现、购买、品尝、危险动作和同伴反应提高切换密度，节奏随事件强度变化。",
+      "confidence": 0.91,
+      "supporting_examples": 471
+    },
+    {
+      "id": "retain-imperfection-and-care",
+      "rule": "优先保留迷路、路线危险、擦伤、体力不足、等待和同伴照顾等不完美片段，它们比纯景色更能建立真实关系。",
+      "confidence": 0.87,
+      "supporting_examples": 6
+    },
+    {
+      "id": "locals-and-companions-drive-scenes",
+      "rule": "让房东、同伴、摊主和服务人员进入镜头，通过问答、帮助、推荐和共同体验推动场景，而不是只保留主角独白。",
+      "confidence": 0.82,
+      "supporting_examples": 7
+    },
+    {
+      "id": "discovery-to-evaluation-chain",
+      "rule": "市集和餐食内容按发现、观察细节、选择或购买、实际体验、人物评价组织，避免把商品与菜品剪成无关联展示。",
+      "confidence": 0.9,
+      "supporting_examples": 8
+    },
+    {
+      "id": "explanatory-captions-add-context",
+      "rule": "字幕除对白外应补充地点、人物关系、历史背景、路线难度和主观感受，让画面承担体验、字幕承担必要信息。",
+      "confidence": 0.85,
+      "supporting_examples": 10
+    },
+    {
+      "id": "continuous-sound-with-soft-ending",
+      "rule": "保持对白、环境声或配乐连续托底；结尾逐步从市集活动降到海边休息、自然景色和简短祝福，不强行制造高潮。",
+      "confidence": 0.86,
+      "supporting_examples": 24
+    }
+  ],
+  "selection_policy": {
+    "prefer": [
+      "能够呈现目的地气味、温度、食物、水体和生活节奏的感官镜头",
+      "包含发现、行动、困难、结果和人物反应的完整体验事件",
+      "同伴、当地人或服务人员真实参与并推动情节的片段",
+      "迷路、等待、擦伤、疲惫和互相照顾等关系素材",
+      "市集商品或菜品细节与购买、品尝、评价组成的镜头组",
+      "可用字幕补充地点、历史、路线和人物背景的画面",
+      "能让结尾自然降速并保留旅行余味的海边、日落和告别素材"
+    ],
+    "remove_first": [
+      "没有人物行动、声音或新空间信息的重复风景",
+      "只展示物品但没有发现、选择或评价过程的市集空镜",
+      "只展示菜品但没有取食、入口或反馈的食物镜头",
+      "重复说明相同信息且缺少新情绪的正面口播",
+      "无法体现路线变化、困难或关系互动的普通步行素材",
+      "破坏真实停顿、同伴反应或照顾过程的过度快切",
+      "与整体休闲气质不一致的高强度转场和无意义音效"
+    ]
+  }
+}

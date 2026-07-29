@@ -9,6 +9,13 @@ description = "Portable director policies and protected-moment validation for a 
 requires-python = ">=3.11,<3.13"
 dependencies = []
 
+[project.optional-dependencies]
+analysis = [
+  "faster-whisper>=1.2,<2",
+  "numpy>=2,<3",
+  "Pillow>=12,<13",
+]
+
 [project.scripts]
 vlog-director = "vlog_director.cli:main"
 

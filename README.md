@@ -9,6 +9,7 @@
 - `setup/payoff/reaction` 成组保护；
 - `edit_plan.json` 覆盖率校验；
 - 参考片学习清单与导演档案契约；
+- ASR、镜头评分、事件分组、声音分段与跨视频聚合；
 - 配乐、防抖与连贯、字幕、插画动效的统一增强计划；
 - 不依赖真实视频的单元测试。
 
@@ -92,3 +93,41 @@ git check-ignore -v .env reference-videos\sample.mp4 projects\demo\raw\private.m
 详细接入步骤见 `docs/home-integration.md`，后续改造顺序见 `docs/roadmap.md`。
 
 成片增强的处理顺序、约束和命令见 `docs/enhancement-pipeline.md`。
+
+## 参考片学习
+
+安装本地分析依赖：
+
+```powershell
+python -m venv .venv-analysis
+.\.venv-analysis\Scripts\python.exe -m pip install -e ".[analysis]"
+```
+
+生成逐镜头、事件、ASR 和声音分析，并输出事件抽查联系表：
+
+```powershell
+.\.venv-analysis\Scripts\vlog-director.exe analyze-reference `
+  --input C:\tmp\bilibili-BV-example\proxy.mp4 `
+  --source-id bilibili-BV-example `
+  --url https://www.bilibili.com/video/BV-example/ `
+  --work-directory C:\tmp\bilibili-BV-example\learning-work `
+  --review-directory C:\tmp\bilibili-BV-example\event-review `
+  --output C:\tmp\bilibili-BV-example\analysis.full.json `
+  --portable-output reference-learning\analysis.BV-example.json `
+  --asr-provider faster-whisper `
+  --asr-model small
+```
+
+聚合多支参考片：
+
+```powershell
+.\.venv-analysis\Scripts\vlog-director.exe aggregate-reference `
+  --analysis reference-learning\analysis.BV-a.json reference-learning\analysis.BV-b.json `
+  --profile reference-learning\director-profile.BV-a.v2.json reference-learning\director-profile.BV-b.v2.json `
+  --output reference-learning\director-profile.aggregate.json
+```
+
+Git 只保存 JSON 分析与规则。代理视频、模型缓存、逐帧图片和完整字幕保留在本地。
+
+家庭电脑从安装、学习新视频到接入现有导演流水线的完整步骤见
+`docs/reference-learning-home-guide.md`。

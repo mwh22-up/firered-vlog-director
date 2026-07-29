@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "travel-vlog-experience-led-v1",
+  "version": 1,
+  "reference_sources": [
+    {
+      "source_id": "bilibili-BV1oeEv6rEs2",
+      "url": "https://www.bilibili.com/video/BV1oeEv6rEs2/",
+      "learn": [
+        "story_structure",
+        "key_moment_selection",
+        "rhythm",
+        "dialogue_broll",
+        "music",
+        "opening_hook",
+        "ending"
+      ],
+      "favorite_ranges": [
+        {
+          "start_sec": 0,
+          "end_sec": 12,
+          "reason": "用约0.8秒一次的快速预告式切换先展示人物、地点和体验反差，建立观看承诺。"
+        },
+        {
+          "start_sec": 300,
+          "end_sec": 380,
+          "reason": "餐厅段落连续使用环境、菜品细节、进食动作和人物反应，形成完整体验闭环。"
+        },
+        {
+          "start_sec": 600,
+          "end_sec": 685,
+          "reason": "用早餐、车窗、途中进食和换装衔接地点变化，交通过程本身承担章节过渡。"
+        },
+        {
+          "start_sec": 900,
+          "end_sec": 1039,
+          "reason": "结尾把城市漫步、意外等待、同行互动、登高和日落串成情绪递进，并留下下一目的地预告。"
+        }
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "id": "hook-preview-before-context",
+      "rule": "开场先用8至12秒高密度高光预览展示人物、地点、食物和情绪反差，再进入时间地点和行程背景。",
+      "confidence": 0.86,
+      "supporting_examples": 1
+    },
+    {
+      "id": "experience-units-over-itinerary",
+      "rule": "不要按流水账罗列景点；把交通、住宿、建筑、餐食、同行互动和意外事件组织成有起止的体验单元。",
+      "confidence": 0.78,
+      "supporting_examples": 6
+    },
+    {
+      "id": "alternate-human-and-place",
+      "rule": "连续景物镜头之间插入人物讲述、动作或反应；连续口播之间插入全景、细节、主观视角和环境动作。",
+      "confidence": 0.82,
+      "supporting_examples": 8
+    },
+    {
+      "id": "dense-default-flexible-holds",
+      "rule": "以约2至3秒为常规镜头节奏，但完整对白、真实反应和信息展示可以保留更长，不为追求快切破坏语义。",
+      "confidence": 0.9,
+      "supporting_examples": 396
+    },
+    {
+      "id": "complete-food-micro-story",
+      "rule": "餐食内容优先保留环境建立、菜品细节、取食动作、入口和人物评价或反应，避免只堆叠菜品空镜。",
+      "confidence": 0.84,
+      "supporting_examples": 4
+    },
+    {
+      "id": "transition-through-life-change",
+      "rule": "优先使用时间地点字幕、交通、换装、早餐或入住等生活变化完成章节过渡，不依赖复杂转场特效。",
+      "confidence": 0.79,
+      "supporting_examples": 5
+    },
+    {
+      "id": "continuous-audio-bed",
+      "rule": "画面切换时保持对白、环境声或配乐连续托底；除非刻意制造停顿，不留下无意义的声音空洞。",
+      "confidence": 0.88,
+      "supporting_examples": 22
+    },
+    {
+      "id": "ending-emotional-rise-and-tease",
+      "rule": "结尾先收束同行关系和当天体验，再用登高、日落或城市全景提升情绪，最后给出下一段旅程的轻量预告。",
+      "confidence": 0.81,
+      "supporting_examples": 1
+    }
+  ],
+  "selection_policy": {
+    "prefer": [
+      "包含铺垫、动作、结果和人物反应的完整事件",
+      "能同时交代地点特征和人物状态的镜头",
+      "真实的口误、等待、惊讶、评价和同行互动",
+      "环境全景、局部细节、人物动作和反应构成的镜头组",
+      "可自然承担时间或地点切换的交通、换装和入住片段",
+      "结尾可形成情绪递进或下一段预告的素材"
+    ],
+    "remove_first": [
+      "没有新增空间信息、动作或情绪的重复景物镜头",
+      "重复表达同一信息的正面口播",
+      "不承担转场或叙事作用的步行与交通等待",
+      "缺少人物动作或反应支撑的重复食物空镜",
+      "为追求节奏而截断完整对白或反应的碎片",
+      "没有叙事功能的重复转场效果"
+    ]
+  }
+}

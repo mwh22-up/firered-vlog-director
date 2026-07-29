@@ -68,6 +68,36 @@ def _build_parser() -> argparse.ArgumentParser:
     render_enhancement.add_argument("--base-video", type=Path, required=True)
     render_enhancement.add_argument("--plan", type=Path, required=True)
     render_enhancement.add_argument("--output", type=Path, required=True)
+
+    analyze_reference = subparsers.add_parser("analyze-reference")
+    analyze_reference.add_argument("--input", type=Path, required=True)
+    analyze_reference.add_argument("--source-id", required=True)
+    analyze_reference.add_argument("--url", required=True)
+    analyze_reference.add_argument("--work-directory", type=Path, required=True)
+    analyze_reference.add_argument("--output", type=Path, required=True)
+    analyze_reference.add_argument("--portable-output", type=Path)
+    analyze_reference.add_argument("--transcript", type=Path)
+    analyze_reference.add_argument(
+        "--asr-provider",
+        choices=["auto", "none", "faster-whisper"],
+        default="auto",
+    )
+    analyze_reference.add_argument("--asr-model", default="base")
+    analyze_reference.add_argument("--language", default="zh")
+    analyze_reference.add_argument("--scene-threshold", type=float, default=0.22)
+    analyze_reference.add_argument("--visual-fps", type=float, default=2.0)
+    analyze_reference.add_argument("--review-directory", type=Path)
+    analyze_reference.add_argument("--review-event-limit", type=int, default=12)
+
+    aggregate_reference = subparsers.add_parser("aggregate-reference")
+    aggregate_reference.add_argument(
+        "--analysis",
+        type=Path,
+        nargs="+",
+        required=True,
+    )
+    aggregate_reference.add_argument("--profile", type=Path, nargs="*")
+    aggregate_reference.add_argument("--output", type=Path, required=True)
     return parser
 
 
@@ -115,6 +145,77 @@ def main() -> int:
             args.output.resolve(),
         )
         _write_result({"status": "ready", "output": str(args.output.resolve())}, None)
+        return 0
+    if args.command == "analyze-reference":
+        from .reference_learning import (
+            analyze_reference,
+            write_analysis,
+            write_portable_analysis,
+        )
+
+        analysis = analyze_reference(
+            args.input.resolve(),
+            source_id=args.source_id,
+            source_url=args.url,
+            work_directory=args.work_directory.resolve(),
+            transcript_path=args.transcript.resolve() if args.transcript else None,
+            asr_provider=args.asr_provider,
+            asr_model=args.asr_model,
+            language=args.language or None,
+            scene_threshold=args.scene_threshold,
+            visual_fps=args.visual_fps,
+        )
+        write_analysis(analysis, args.output.resolve())
+        if args.portable_output:
+            write_portable_analysis(
+                analysis,
+                args.portable_output.resolve(),
+            )
+        review_events = 0
+        if args.review_directory:
+            from .review_pack import build_review_pack
+
+            review = build_review_pack(
+                args.input.resolve(),
+                analysis,
+                args.review_directory.resolve(),
+                event_limit=args.review_event_limit,
+            )
+            review_events = len(review["events"])
+        _write_result(
+            {
+                "status": "ready",
+                "output": str(args.output.resolve()),
+                "shots": len(analysis["shots"]),
+                "events": len(analysis["events"]),
+                "asr_status": analysis["transcription"]["status"],
+                "review_events": review_events,
+            },
+            None,
+        )
+        return 0
+    if args.command == "aggregate-reference":
+        from .profile_aggregation import (
+            aggregate_analyses,
+            load_analysis,
+            load_profile,
+            write_aggregate,
+        )
+
+        profile = aggregate_analyses(
+            [load_analysis(path) for path in args.analysis],
+            [load_profile(path) for path in args.profile or []],
+        )
+        write_aggregate(profile, args.output.resolve())
+        _write_result(
+            {
+                "status": "ready",
+                "output": str(args.output.resolve()),
+                "source_count": profile["source_count"],
+                "shared_rules": len(profile["shared_rules"]),
+            },
+            None,
+        )
         return 0
     return 1
 

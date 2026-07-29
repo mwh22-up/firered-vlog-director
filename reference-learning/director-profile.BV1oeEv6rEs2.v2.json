@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "spain-city-travel-v2",
+  "version": 2,
+  "reference_sources": [
+    {
+      "source_id": "bilibili-BV1oeEv6rEs2",
+      "url": "https://www.bilibili.com/video/BV1oeEv6rEs2/",
+      "learn": [
+        "story_structure",
+        "key_moment_selection",
+        "rhythm",
+        "dialogue_broll",
+        "music",
+        "opening_hook",
+        "ending"
+      ],
+      "favorite_ranges": [
+        {
+          "start_sec": 0,
+          "end_sec": 15,
+          "reason": "快速交替人物、地点、食物和情绪结果，开场明显快于正文。"
+        },
+        {
+          "start_sec": 64,
+          "end_sec": 165,
+          "reason": "抵达、等待房东、入住和房间介绍组成完整的住宿体验事件。"
+        },
+        {
+          "start_sec": 309,
+          "end_sec": 383,
+          "reason": "菜品细节、取食动作、入口评价和同行反馈形成餐食闭环。"
+        },
+        {
+          "start_sec": 949,
+          "end_sec": 1039,
+          "reason": "同行互动、登高、日落和下一目的地提示完成情绪收束。"
+        }
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "id": "opening-sensory-preview",
+      "rule": "开场10至15秒用人物、地点、食物和结果镜头建立观看承诺，正文再解释行程。",
+      "confidence": 0.9,
+      "supporting_examples": 9
+    },
+    {
+      "id": "experience-event-units",
+      "rule": "按抵达、入住、建筑、餐食和同行活动组织体验事件，不按景点流水账排列。",
+      "confidence": 0.88,
+      "supporting_examples": 6
+    },
+    {
+      "id": "rhythm-follows-event-intensity",
+      "rule": "预告、移动和动作段加快切换；对白、介绍和真实反应允许较长镜头。",
+      "confidence": 0.91,
+      "supporting_examples": 396
+    },
+    {
+      "id": "preserve-complete-event-chain",
+      "rule": "保留环境建立、人物行动、结果和反应组成的完整链路，不只保留漂亮空镜或单个爆点。",
+      "confidence": 0.9,
+      "supporting_examples": 16
+    },
+    {
+      "id": "selective-place-detail",
+      "rule": "建筑全景和细节只有在建立空间、解释体验或连接人物行动时保留。",
+      "confidence": 0.84,
+      "supporting_examples": 7
+    },
+    {
+      "id": "food-discovery-action-reaction",
+      "rule": "餐食按环境、菜品、取食、入口和评价组织，重复菜品空镜优先删除。",
+      "confidence": 0.89,
+      "supporting_examples": 4
+    },
+    {
+      "id": "authentic-interaction-and-imperfection",
+      "rule": "优先保留等待、口误、同行评价和即时反应，它们比纯景色更能建立人物关系。",
+      "confidence": 0.83,
+      "supporting_examples": 6
+    },
+    {
+      "id": "continuous-audio-bed",
+      "rule": "对白、环境声或配乐持续托底，镜头切换不应产生无目的声音空洞。",
+      "confidence": 0.87,
+      "supporting_examples": 16
+    },
+    {
+      "id": "ending-emotional-release",
+      "rule": "结尾从同行互动逐步提升到登高和日落，再用下一段旅程提示轻量退出。",
+      "confidence": 0.85,
+      "supporting_examples": 1
+    }
+  ],
+  "selection_policy": {
+    "prefer": [
+      "有效对白、动作推进、结果和人物反应",
+      "能够完成体验事件的镜头组",
+      "人物与地点互相解释的镜头",
+      "餐食动作和真实评价",
+      "具有情绪收束作用的结尾素材"
+    ],
+    "remove_first": [
+      "高度重复的景物或菜品",
+      "模糊且没有语义贡献的镜头",
+      "没有动作、声音或新信息的停留",
+      "重复说明同一内容的口播"
+    ]
+  }
+}
