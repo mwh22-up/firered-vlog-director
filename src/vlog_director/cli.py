@@ -6,7 +6,12 @@ from pathlib import Path
 from typing import Any
 
 from .protection import validate_protection
-from .project import guard_project_render, init_project
+from .project import (
+    guard_project_enhancement,
+    guard_project_render,
+    init_project,
+    init_project_enhancement,
+)
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -41,6 +46,14 @@ def _build_parser() -> argparse.ArgumentParser:
     guard.add_argument("--project", type=Path, required=True)
     guard.add_argument("--version", type=int, required=True)
     guard.add_argument("--policy", type=Path)
+
+    init_enhancement = subparsers.add_parser("init-enhancement")
+    init_enhancement.add_argument("--project", type=Path, required=True)
+    init_enhancement.add_argument("--version", type=int, required=True)
+
+    guard_enhancement = subparsers.add_parser("guard-enhancement")
+    guard_enhancement.add_argument("--project", type=Path, required=True)
+    guard_enhancement.add_argument("--version", type=int, required=True)
     return parser
 
 
@@ -61,6 +74,13 @@ def main() -> int:
     if args.command == "guard-render":
         policy = _read_json(args.policy) if args.policy else None
         result = guard_project_render(args.project, args.version, policy=policy)
+        _write_result(result, None)
+        return 0 if result["status"] == "passed" else 2
+    if args.command == "init-enhancement":
+        _write_result(init_project_enhancement(args.project, args.version), None)
+        return 0
+    if args.command == "guard-enhancement":
+        result = guard_project_enhancement(args.project, args.version)
         _write_result(result, None)
         return 0 if result["status"] == "passed" else 2
     return 1

@@ -5,16 +5,23 @@ import re
 from pathlib import Path
 from typing import Any
 
+from .enhancement import build_enhancement_plan, validate_enhancement_plan
 from .protection import validate_protection
 
 PROJECT_ID_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
 PROJECT_DIRECTORIES = (
     "raw",
+    "assets/music",
+    "assets/illustrations",
+    "assets/fonts",
     "work/proxy",
     "work/thumbnails",
     "work/transcripts",
     "work/analysis",
     "work/plans",
+    "work/enhancement",
+    "work/stabilized",
+    "work/subtitles",
     "work/qa",
     "output/chapters",
 )
@@ -114,6 +121,51 @@ def guard_project_render(
     result["project_path"] = str(project)
     result["moments_path"] = str(moments_path)
     result["plan_path"] = str(plan_path)
+    result["report_path"] = str(output_path)
+    _write_json(output_path, result)
+    return result
+
+
+def init_project_enhancement(project: Path, edit_version: int) -> dict[str, Any]:
+    project = project.expanduser().resolve()
+    plan_path = project / "work" / "plans" / f"edit_plan.v{edit_version}.json"
+    output_path = (
+        project / "work" / "enhancement" / f"enhancement_plan.v{edit_version}.json"
+    )
+    if not plan_path.is_file():
+        raise FileNotFoundError(f"edit plan is missing: {plan_path}")
+    if output_path.exists():
+        raise FileExistsError(f"enhancement plan already exists: {output_path}")
+
+    result = build_enhancement_plan(_read_json(plan_path))
+    _write_json(output_path, result)
+    return {
+        "status": "ready",
+        "project_path": str(project),
+        "edit_plan_path": str(plan_path),
+        "enhancement_plan_path": str(output_path),
+    }
+
+
+def guard_project_enhancement(project: Path, version: int) -> dict[str, Any]:
+    project = project.expanduser().resolve()
+    edit_path = project / "work" / "plans" / f"edit_plan.v{version}.json"
+    enhancement_path = (
+        project / "work" / "enhancement" / f"enhancement_plan.v{version}.json"
+    )
+    output_path = project / "work" / "qa" / f"enhancement.v{version}.json"
+
+    missing = [str(path) for path in (edit_path, enhancement_path) if not path.is_file()]
+    if missing:
+        raise FileNotFoundError("required enhancement files are missing: " + ", ".join(missing))
+
+    result = validate_enhancement_plan(
+        _read_json(edit_path),
+        _read_json(enhancement_path),
+    )
+    result["project_path"] = str(project)
+    result["edit_plan_path"] = str(edit_path)
+    result["enhancement_plan_path"] = str(enhancement_path)
     result["report_path"] = str(output_path)
     _write_json(output_path, result)
     return result

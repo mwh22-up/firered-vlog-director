@@ -9,6 +9,7 @@
 - `setup/payoff/reaction` 成组保护；
 - `edit_plan.json` 覆盖率校验；
 - 参考片学习清单与导演档案契约；
+- 配乐、防抖与连贯、字幕、插画动效的统一增强计划；
 - 不依赖真实视频的单元测试。
 
 ## 推荐目录
@@ -89,3 +90,5 @@ git check-ignore -v .env reference-videos\sample.mp4 projects\demo\raw\private.m
 家里电脑通过 `git clone` 获取代码，真实视频和模型继续保存在仓库外。
 
 详细接入步骤见 `docs/home-integration.md`，后续改造顺序见 `docs/roadmap.md`。
+
+成片增强的处理顺序、约束和命令见 `docs/enhancement-pipeline.md`。

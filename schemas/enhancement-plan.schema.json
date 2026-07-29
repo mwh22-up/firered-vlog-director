@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/enhancement-plan.schema.json",
+  "title": "Vlog Enhancement Plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_id",
+    "version",
+    "edit_plan_version",
+    "timeline_duration_sec",
+    "render_stages",
+    "video_treatments",
+    "music",
+    "subtitles",
+    "illustration_motion"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "version": { "type": "integer", "minimum": 1 },
+    "edit_plan_version": { "type": "integer", "minimum": 1 },
+    "timeline_duration_sec": { "type": "number", "minimum": 0 },
+    "render_stages": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "video_treatments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["segment_id", "stabilization", "continuity", "audio"],
+        "properties": {
+          "segment_id": { "type": "string", "minLength": 1 },
+          "stabilization": {
+            "type": "object",
+            "required": ["mode", "strength", "max_crop_percent"],
+            "properties": {
+              "mode": { "enum": ["off", "auto", "force"] },
+              "strength": { "type": "number", "minimum": 0, "maximum": 1 },
+              "max_crop_percent": { "type": "number", "minimum": 0, "maximum": 15 }
+            },
+            "additionalProperties": false
+          },
+          "continuity": {
+            "type": "object",
+            "required": ["transition", "duration_sec", "match_action"],
+            "properties": {
+              "transition": { "enum": ["hard_cut", "crossfade", "dip_to_black"] },
+              "duration_sec": { "type": "number", "minimum": 0, "maximum": 1.5 },
+              "match_action": { "type": "boolean" }
+            },
+            "additionalProperties": false
+          },
+          "audio": {
+            "type": "object",
+            "required": ["preserve_original", "normalize_dialogue"],
+            "properties": {
+              "preserve_original": { "type": "boolean" },
+              "normalize_dialogue": { "type": "boolean" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "music": {
+      "type": "object",
+      "required": ["status", "tracks", "ducking"],
+      "properties": {
+        "status": { "enum": ["planned", "ready", "disabled"] },
+        "tracks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "source", "start_sec", "end_sec", "gain_db"],
+            "properties": {
+              "id": { "type": "string" },
+              "source": { "type": "string" },
+              "start_sec": { "type": "number", "minimum": 0 },
+              "end_sec": { "type": "number", "exclusiveMinimum": 0 },
+              "gain_db": { "type": "number", "minimum": -60, "maximum": 0 }
+            },
+            "additionalProperties": false
+          }
+        },
+        "ducking": {
+          "type": "object",
+          "required": ["enabled", "dialogue_gain_db", "attack_ms", "release_ms"],
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "dialogue_gain_db": { "type": "number", "minimum": -60, "maximum": 0 },
+            "attack_ms": { "type": "integer", "minimum": 0 },
+            "release_ms": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "subtitles": {
+      "type": "object",
+      "required": ["status", "language", "source", "cues", "style"],
+      "properties": {
+        "status": { "enum": ["planned", "ready", "disabled"] },
+        "language": { "type": "string" },
+        "source": { "type": "string" },
+        "cues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["start_sec", "end_sec", "text"],
+            "properties": {
+              "start_sec": { "type": "number", "minimum": 0 },
+              "end_sec": { "type": "number", "exclusiveMinimum": 0 },
+              "text": { "type": "string", "minLength": 1 }
+            },
+            "additionalProperties": false
+          }
+        },
+        "style": {
+          "type": "object",
+          "required": ["max_lines", "safe_margin_percent", "position"],
+          "properties": {
+            "max_lines": { "type": "integer", "minimum": 1, "maximum": 2 },
+            "safe_margin_percent": { "type": "number", "minimum": 0, "maximum": 20 },
+            "position": { "enum": ["bottom_center", "top_center"] }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "illustration_motion": {
+      "type": "object",
+      "required": ["status", "items", "subtitle_safe_zone"],
+      "properties": {
+        "status": { "enum": ["planned", "ready", "disabled"] },
+        "subtitle_safe_zone": { "type": "boolean" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "type", "source", "start_sec", "end_sec", "anchor", "animation"],
+            "properties": {
+              "id": { "type": "string" },
+              "type": { "enum": ["illustration", "sticker", "callout", "map", "title_card"] },
+              "source": { "type": "string" },
+              "start_sec": { "type": "number", "minimum": 0 },
+              "end_sec": { "type": "number", "exclusiveMinimum": 0 },
+              "anchor": { "enum": ["top_left", "top_right", "center", "bottom_left", "bottom_right", "bottom_center"] },
+              "animation": { "enum": ["none", "fade", "pop", "slide", "draw_on"] }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
