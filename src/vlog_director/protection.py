@@ -10,6 +10,13 @@ PROTECTED_MIN_COVERAGE = 0.80
 PROTECTED_WARNING_COVERAGE = 0.95
 GROUP_MEMBER_MIN_COVERAGE = 0.80
 
+DEFAULT_POLICY = {
+    "locked_min_coverage": LOCKED_MIN_COVERAGE,
+    "protected_min_coverage": PROTECTED_MIN_COVERAGE,
+    "protected_warning_coverage": PROTECTED_WARNING_COVERAGE,
+    "group_member_min_coverage": GROUP_MEMBER_MIN_COVERAGE,
+}
+
 
 def _selected_ranges_by_source(edit_plan: dict[str, Any]) -> dict[str, list[tuple[float, float]]]:
     selected: dict[str, list[tuple[float, float]]] = defaultdict(list)
@@ -40,7 +47,9 @@ def _issue(
 def validate_protection(
     moments_document: dict[str, Any],
     edit_plan: dict[str, Any],
+    policy: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    thresholds = DEFAULT_POLICY | (policy or {})
     selected = _selected_ranges_by_source(edit_plan)
     issues: list[dict[str, Any]] = []
     coverage_by_moment: dict[str, float] = {}
@@ -54,7 +63,7 @@ def validate_protection(
         coverage_by_moment[moment["id"]] = round(coverage, 4)
         keep_level = moment["keep_level"]
 
-        if keep_level == "locked" and coverage < LOCKED_MIN_COVERAGE:
+        if keep_level == "locked" and coverage < thresholds["locked_min_coverage"]:
             issues.append(
                 _issue(
                     "error",
@@ -64,7 +73,7 @@ def validate_protection(
                     "Locked moment must be covered by at least 95%.",
                 )
             )
-        elif keep_level == "protected" and coverage < PROTECTED_MIN_COVERAGE:
+        elif keep_level == "protected" and coverage < thresholds["protected_min_coverage"]:
             issues.append(
                 _issue(
                     "error",
@@ -74,7 +83,7 @@ def validate_protection(
                     "Protected moment needs manual approval when coverage is below 80%.",
                 )
             )
-        elif keep_level == "protected" and coverage < PROTECTED_WARNING_COVERAGE:
+        elif keep_level == "protected" and coverage < thresholds["protected_warning_coverage"]:
             issues.append(
                 _issue(
                     "warning",
@@ -95,7 +104,10 @@ def validate_protection(
                 selected.get(member["source"], []),
             )
             member_coverage[member["role"]] = round(coverage, 4)
-            if group.get("must_keep_together") and coverage < GROUP_MEMBER_MIN_COVERAGE:
+            if (
+                group.get("must_keep_together")
+                and coverage < thresholds["group_member_min_coverage"]
+            ):
                 issues.append(
                     _issue(
                         "error",
@@ -114,6 +126,7 @@ def validate_protection(
         "status": "blocked" if blocking_count else "passed",
         "blocking_count": blocking_count,
         "warning_count": sum(issue["severity"] == "warning" for issue in issues),
+        "policy": thresholds,
         "coverage_by_moment": coverage_by_moment,
         "coverage_by_group": group_coverage,
         "issues": issues,

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/protection-policy.schema.json",
+  "title": "Moment Protection Policy",
+  "type": "object",
+  "required": [
+    "locked_min_coverage",
+    "protected_min_coverage",
+    "protected_warning_coverage",
+    "group_member_min_coverage"
+  ],
+  "properties": {
+    "locked_min_coverage": { "type": "number", "minimum": 0, "maximum": 1 },
+    "protected_min_coverage": { "type": "number", "minimum": 0, "maximum": 1 },
+    "protected_warning_coverage": { "type": "number", "minimum": 0, "maximum": 1 },
+    "group_member_min_coverage": { "type": "number", "minimum": 0, "maximum": 1 }
+  },
+  "additionalProperties": false
+}

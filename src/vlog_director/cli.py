@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from .protection import validate_protection
+from .project import guard_project_render, init_project
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -29,15 +30,38 @@ def _build_parser() -> argparse.ArgumentParser:
     validate = subparsers.add_parser("validate-protection")
     validate.add_argument("--moments", type=Path, required=True)
     validate.add_argument("--plan", type=Path, required=True)
+    validate.add_argument("--policy", type=Path)
     validate.add_argument("--output", type=Path)
+
+    init = subparsers.add_parser("init-project")
+    init.add_argument("--root", type=Path, required=True)
+    init.add_argument("--project-id", required=True)
+
+    guard = subparsers.add_parser("guard-render")
+    guard.add_argument("--project", type=Path, required=True)
+    guard.add_argument("--version", type=int, required=True)
+    guard.add_argument("--policy", type=Path)
     return parser
 
 
 def main() -> int:
     args = _build_parser().parse_args()
     if args.command == "validate-protection":
-        result = validate_protection(_read_json(args.moments), _read_json(args.plan))
+        policy = _read_json(args.policy) if args.policy else None
+        result = validate_protection(
+            _read_json(args.moments),
+            _read_json(args.plan),
+            policy=policy,
+        )
         _write_result(result, args.output)
+        return 0 if result["status"] == "passed" else 2
+    if args.command == "init-project":
+        _write_result(init_project(args.root, args.project_id), None)
+        return 0
+    if args.command == "guard-render":
+        policy = _read_json(args.policy) if args.policy else None
+        result = guard_project_render(args.project, args.version, policy=policy)
+        _write_result(result, None)
         return 0 if result["status"] == "passed" else 2
     return 1
 

@@ -12,9 +12,8 @@ build/
 *.egg-info/
 
 # Private media and local runtime data
-projects/**/raw/
-projects/**/work/
-projects/**/output/
+projects/
+workspace/
 reference-videos/
 models/
 secrets/

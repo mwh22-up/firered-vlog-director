@@ -1,0 +1,6 @@
+{
+  "locked_min_coverage": 0.95,
+  "protected_min_coverage": 0.8,
+  "protected_warning_coverage": 0.95,
+  "group_member_min_coverage": 0.8
+}

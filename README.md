@@ -11,6 +11,22 @@
 - 参考片学习清单与导演档案契约；
 - 不依赖真实视频的单元测试。
 
+## 推荐目录
+
+代码仓库和真实视频项目分开保存：
+
+```text
+D:\vlog-studio\firered-vlog-director\   # GitHub 代码仓库
+D:\vlog-projects\                       # 不进入 GitHub
+  family-trip\
+    raw\
+    brief.yaml
+    work\analysis\moments.json
+    work\plans\edit_plan.v1.json
+    work\qa\protection.v1.json
+    output\
+```
+
 ## 本地运行
 
 ```powershell
@@ -31,17 +47,35 @@ vlog-director validate-protection `
 
 退出码为 `0` 表示通过，`2` 表示存在阻止渲染的问题。
 
+初始化一个仓库外的真实视频项目：
+
+```powershell
+.\scripts\init-project.ps1 `
+  -ProjectsRoot D:\vlog-projects `
+  -ProjectId family-trip
+```
+
+在 FFmpeg 渲染前执行保护检查：
+
+```powershell
+.\scripts\guard-render.ps1 `
+  -ProjectPath D:\vlog-projects\family-trip `
+  -Version 1
+```
+
+检查报告写入 `work\qa\protection.v1.json`。命令失败时必须停止渲染。
+
 ## 接入现有流水线
 
 在生成 `edit_plan.json` 后、FFmpeg 渲染前调用校验器。真实视频、模型、缓存、Cookie、Token 和输出文件不得提交到 GitHub。
 
 ## GitHub 同步
 
-推荐使用 GitHub CLI 的浏览器授权，不要把 Personal Access Token 写入文件或发送给 Agent：
+当前电脑直接使用 Git 自带的 Credential Manager，不需要安装 GitHub CLI，也不要把 Personal Access Token 写入文件或发送给 Agent：
 
 ```powershell
-gh auth login --web --git-protocol https
-gh repo create firered-vlog-director --private --source . --remote origin
+git pull
+git push
 ```
 
 创建仓库、首次提交和推送前，先执行：
@@ -53,3 +87,5 @@ git check-ignore -v .env reference-videos\sample.mp4 projects\demo\raw\private.m
 ```
 
 家里电脑通过 `git clone` 获取代码，真实视频和模型继续保存在仓库外。
+
+详细接入步骤见 `docs/home-integration.md`，后续改造顺序见 `docs/roadmap.md`。

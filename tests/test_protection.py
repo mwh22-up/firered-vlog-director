@@ -33,6 +33,19 @@ class ProtectionTests(unittest.TestCase):
         self.assertIn("protected_moment_missing", issue_codes)
         self.assertIn("moment_group_incomplete", issue_codes)
 
+    def test_policy_thresholds_can_be_overridden(self) -> None:
+        result = validate_protection(
+            load_fixture("moments.json"),
+            load_fixture("edit_plan.invalid.json"),
+            policy={
+                "locked_min_coverage": 0.5,
+                "protected_min_coverage": 0.2,
+                "group_member_min_coverage": 0.0,
+            },
+        )
+
+        self.assertEqual(result["status"], "passed")
+
 
 if __name__ == "__main__":
     unittest.main()
