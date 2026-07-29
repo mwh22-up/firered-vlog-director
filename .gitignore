@@ -1,0 +1,30 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+*.egg-info/
+
+# Private media and local runtime data
+projects/**/raw/
+projects/**/work/
+projects/**/output/
+reference-videos/
+models/
+secrets/
+cookies.txt
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.wav
+*.mp3
+
+# Keep only sanitized fixtures in Git
+!tests/fixtures/**

@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "project_id": "fixture-vlog",
+  "version": 1,
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "测试章节",
+      "segments": [
+        {
+          "source": "raw/clip-01.mp4",
+          "in_sec": 10.0,
+          "out_sec": 20.0
+        },
+        {
+          "source": "raw/clip-02.mp4",
+          "in_sec": 30.0,
+          "out_sec": 42.0
+        }
+      ]
+    }
+  ]
+}

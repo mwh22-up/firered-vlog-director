@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "project_id": "fixture-vlog",
+  "moments": [
+    {
+      "id": "moment_locked_01",
+      "source": "raw/clip-01.mp4",
+      "start_sec": 10.0,
+      "end_sec": 20.0,
+      "types": ["key_event"],
+      "importance_score": 1.0,
+      "fun_score": 0.2,
+      "quality_score": 0.7,
+      "confidence": 1.0,
+      "keep_level": "locked",
+      "reason": "用户指定必须保留",
+      "evidence": [{ "type": "user", "value": "must_keep" }]
+    },
+    {
+      "id": "moment_humor_01",
+      "source": "raw/clip-02.mp4",
+      "start_sec": 30.0,
+      "end_sec": 42.0,
+      "types": ["humor", "reaction"],
+      "importance_score": 0.5,
+      "fun_score": 0.92,
+      "quality_score": 0.75,
+      "confidence": 0.9,
+      "keep_level": "protected",
+      "reason": "口误后出现多人笑声和可见反应",
+      "evidence": [
+        { "type": "transcript", "value": "口误后立即纠正" },
+        { "type": "audio", "value": "多人笑声" },
+        { "type": "visual", "value": "同行人明显大笑" }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "group_humor_01",
+      "type": "setup_payoff_reaction",
+      "must_keep_together": true,
+      "members": [
+        {
+          "role": "setup",
+          "source": "raw/clip-02.mp4",
+          "start_sec": 30.0,
+          "end_sec": 34.0
+        },
+        {
+          "role": "payoff",
+          "source": "raw/clip-02.mp4",
+          "start_sec": 34.0,
+          "end_sec": 37.0
+        },
+        {
+          "role": "reaction",
+          "source": "raw/clip-02.mp4",
+          "start_sec": 37.0,
+          "end_sec": 42.0
+        }
+      ]
+    }
+  ]
+}

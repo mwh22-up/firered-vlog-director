@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "project_id": "fixture-vlog",
+  "version": 2,
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "错误示例",
+      "segments": [
+        {
+          "source": "raw/clip-01.mp4",
+          "in_sec": 12.0,
+          "out_sec": 18.0
+        },
+        {
+          "source": "raw/clip-02.mp4",
+          "in_sec": 34.0,
+          "out_sec": 37.0
+        }
+      ]
+    }
+  ]
+}

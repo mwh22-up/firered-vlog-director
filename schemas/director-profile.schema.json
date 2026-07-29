@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/director-profile.schema.json",
+  "title": "Learned Director Profile",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "profile_id",
+    "version",
+    "reference_sources",
+    "principles",
+    "selection_policy"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "profile_id": { "type": "string", "minLength": 1 },
+    "version": { "type": "integer", "minimum": 1 },
+    "reference_sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_id", "url", "learn"],
+        "properties": {
+          "source_id": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "pattern": "^https://" },
+          "learn": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "enum": [
+                "story_structure",
+                "humor",
+                "key_moment_selection",
+                "rhythm",
+                "dialogue_broll",
+                "music",
+                "opening_hook",
+                "ending"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "favorite_ranges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["start_sec", "end_sec", "reason"],
+              "properties": {
+                "start_sec": { "type": "number", "minimum": 0 },
+                "end_sec": { "type": "number", "exclusiveMinimum": 0 },
+                "reason": { "type": "string", "minLength": 1 }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "principles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "rule", "confidence", "supporting_examples"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "rule": { "type": "string", "minLength": 1 },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "supporting_examples": { "type": "integer", "minimum": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "selection_policy": {
+      "type": "object",
+      "required": ["prefer", "remove_first"],
+      "properties": {
+        "prefer": { "type": "array", "items": { "type": "string" } },
+        "remove_first": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

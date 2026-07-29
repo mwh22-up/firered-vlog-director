@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "travel-humor-v1",
+  "sources": [
+    {
+      "source_id": "bilibili-BV-example",
+      "url": "https://www.bilibili.com/video/BV-example",
+      "learn": ["humor", "story_structure", "rhythm"],
+      "do_not_learn": ["subtitle_style", "transition_effects"],
+      "favorite_ranges": [
+        {
+          "start_sec": 12.4,
+          "end_sec": 23.6,
+          "reason": "完整保留了铺垫、笑点和人物反应"
+        }
+      ]
+    }
+  ]
+}

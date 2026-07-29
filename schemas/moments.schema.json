@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/moments.schema.json",
+  "title": "Protected Vlog Moments",
+  "type": "object",
+  "required": ["schema_version", "project_id", "moments", "groups"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "moments": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/moment" }
+    },
+    "groups": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/group" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "interval": {
+      "type": "object",
+      "required": ["source", "start_sec", "end_sec"],
+      "properties": {
+        "source": { "type": "string", "minLength": 1 },
+        "start_sec": { "type": "number", "minimum": 0 },
+        "end_sec": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["type", "value"],
+      "properties": {
+        "type": {
+          "enum": ["user", "transcript", "audio", "visual", "story"]
+        },
+        "value": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "moment": {
+      "allOf": [
+        { "$ref": "#/$defs/interval" },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "types",
+            "importance_score",
+            "fun_score",
+            "confidence",
+            "keep_level",
+            "reason",
+            "evidence"
+          ],
+          "properties": {
+            "id": { "type": "string", "pattern": "^moment_[A-Za-z0-9_-]+$" },
+            "types": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "minLength": 1 },
+              "uniqueItems": true
+            },
+            "importance_score": { "type": "number", "minimum": 0, "maximum": 1 },
+            "fun_score": { "type": "number", "minimum": 0, "maximum": 1 },
+            "quality_score": { "type": "number", "minimum": 0, "maximum": 1 },
+            "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+            "keep_level": { "enum": ["locked", "protected", "optional"] },
+            "reason": { "type": "string", "minLength": 1 },
+            "evidence": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/evidence" }
+            }
+          }
+        }
+      ]
+    },
+    "groupMember": {
+      "allOf": [
+        { "$ref": "#/$defs/interval" },
+        {
+          "type": "object",
+          "required": ["role"],
+          "properties": {
+            "role": { "enum": ["setup", "payoff", "reaction"] }
+          }
+        }
+      ]
+    },
+    "group": {
+      "type": "object",
+      "required": ["id", "type", "must_keep_together", "members"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^group_[A-Za-z0-9_-]+$" },
+        "type": { "enum": ["setup_payoff_reaction"] },
+        "must_keep_together": { "type": "boolean" },
+        "members": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/groupMember" }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
