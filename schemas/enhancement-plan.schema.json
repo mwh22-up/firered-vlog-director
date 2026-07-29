@@ -153,6 +153,8 @@
               "end_sec": { "type": "number", "exclusiveMinimum": 0 },
               "anchor": { "enum": ["top_left", "top_right", "center", "bottom_left", "bottom_right", "bottom_center"] },
               "animation": { "enum": ["none", "fade", "pop", "slide", "draw_on"] }
+              ,
+              "scale_percent": { "type": "number", "minimum": 5, "maximum": 100 }
             },
             "additionalProperties": false
           }

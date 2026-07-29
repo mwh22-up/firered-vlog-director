@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from .protection import validate_protection
+from .renderers import load_json, render_enhanced_video, stabilize_video
 from .project import (
     guard_project_enhancement,
     guard_project_render,
@@ -15,7 +16,7 @@ from .project import (
 
 
 def _read_json(path: Path) -> dict[str, Any]:
-    with path.open("r", encoding="utf-8") as file:
+    with path.open("r", encoding="utf-8-sig") as file:
         return json.load(file)
 
 
@@ -54,6 +55,19 @@ def _build_parser() -> argparse.ArgumentParser:
     guard_enhancement = subparsers.add_parser("guard-enhancement")
     guard_enhancement.add_argument("--project", type=Path, required=True)
     guard_enhancement.add_argument("--version", type=int, required=True)
+
+    stabilize = subparsers.add_parser("stabilize")
+    stabilize.add_argument("--input", type=Path, required=True)
+    stabilize.add_argument("--output", type=Path, required=True)
+    stabilize.add_argument("--work-directory", type=Path, required=True)
+    stabilize.add_argument("--strength", type=float, default=0.35)
+    stabilize.add_argument("--max-crop-percent", type=float, default=8.0)
+
+    render_enhancement = subparsers.add_parser("render-enhancement")
+    render_enhancement.add_argument("--project", type=Path, required=True)
+    render_enhancement.add_argument("--base-video", type=Path, required=True)
+    render_enhancement.add_argument("--plan", type=Path, required=True)
+    render_enhancement.add_argument("--output", type=Path, required=True)
     return parser
 
 
@@ -83,6 +97,25 @@ def main() -> int:
         result = guard_project_enhancement(args.project, args.version)
         _write_result(result, None)
         return 0 if result["status"] == "passed" else 2
+    if args.command == "stabilize":
+        stabilize_video(
+            args.input,
+            args.output,
+            args.work_directory,
+            strength=args.strength,
+            max_crop_percent=args.max_crop_percent,
+        )
+        _write_result({"status": "ready", "output": str(args.output.resolve())}, None)
+        return 0
+    if args.command == "render-enhancement":
+        render_enhanced_video(
+            args.project.resolve(),
+            args.base_video.resolve(),
+            load_json(args.plan),
+            args.output.resolve(),
+        )
+        _write_result({"status": "ready", "output": str(args.output.resolve())}, None)
+        return 0
     return 1
 
 

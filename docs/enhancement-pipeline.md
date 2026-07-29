@@ -62,4 +62,16 @@
   -Version 1
 ```
 
-下一阶段需要分别实现 FFmpeg 防抖/拼接渲染器、配乐 ducking、ASS 字幕渲染和 overlay 合成器，但四者都必须读取同一份增强计划。
+## 已实现的本地执行器
+
+- `scripts/stabilize.ps1`：通过 `vidstabdetect` + `vidstabtransform` 两遍防抖；
+- `scripts/render-enhancement.ps1`：对白 `loudnorm`、配乐侧链 ducking、静态插画 overlay、ASS 字幕和最终编码；
+- 最终渲染前自动执行高光保护门禁和增强计划门禁。
+
+```powershell
+.\scripts\render-enhancement.ps1 `
+  -ProjectPath D:\vlog-projects\family-trip `
+  -Version 1
+```
+
+当前 `render-enhancement` 以已完成基础剪辑的 `output/preview.mp4` 为输入。逐片段防抖完成后，应由家里的现有粗剪流水线重新生成该预览，再执行最终增强。
