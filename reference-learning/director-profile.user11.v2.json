@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "yatui-lifestyle-travel-user11-v2",
+  "version": 2,
+  "reference_sources": [
+    {"source_id": "bilibili-BV1XD42157YT", "url": "https://www.bilibili.com/video/BV1XD42157YT/", "learn": ["story_structure", "key_moment_selection", "rhythm", "dialogue_broll", "music", "opening_hook", "ending"]},
+    {"source_id": "bilibili-BV14g4y1R7G5", "url": "https://www.bilibili.com/video/BV14g4y1R7G5/", "learn": ["story_structure", "key_moment_selection", "rhythm", "dialogue_broll", "opening_hook", "ending"]},
+    {"source_id": "bilibili-BV1fM4m1Q7JC", "url": "https://www.bilibili.com/video/BV1fM4m1Q7JC/", "learn": ["story_structure", "key_moment_selection", "rhythm", "dialogue_broll", "music", "opening_hook", "ending"]},
+    {"source_id": "bilibili-BV1nC4y1E71D", "url": "https://www.bilibili.com/video/BV1nC4y1E71D/", "learn": ["story_structure", "key_moment_selection", "rhythm", "dialogue_broll", "opening_hook", "ending"]},
+    {"source_id": "bilibili-BV14RfNYmEZV", "url": "https://www.bilibili.com/video/BV14RfNYmEZV/", "learn": ["story_structure", "humor", "key_moment_selection", "rhythm", "dialogue_broll", "opening_hook", "ending"]},
+    {"source_id": "bilibili-BV1fQ4y1E7VN", "url": "https://www.bilibili.com/video/BV1fQ4y1E7VN/", "learn": ["story_structure", "humor", "key_moment_selection", "rhythm", "dialogue_broll", "music", "opening_hook", "ending"]},
+    {"source_id": "bilibili-BV1SN411D7gU", "url": "https://www.bilibili.com/video/BV1SN411D7gU/", "learn": ["story_structure", "key_moment_selection", "rhythm", "dialogue_broll", "opening_hook", "ending"]},
+    {"source_id": "bilibili-BV1mv421k7Pb", "url": "https://www.bilibili.com/video/BV1mv421k7Pb/", "learn": ["story_structure", "humor", "key_moment_selection", "rhythm", "dialogue_broll", "opening_hook", "ending"]},
+    {"source_id": "bilibili-BV1Cs4y1W7QW", "url": "https://www.bilibili.com/video/BV1Cs4y1W7QW/", "learn": ["story_structure", "key_moment_selection", "rhythm", "dialogue_broll", "opening_hook", "ending"]},
+    {"source_id": "bilibili-BV1rt9DByEhQ", "url": "https://www.bilibili.com/video/BV1rt9DByEhQ/", "learn": ["story_structure", "humor", "key_moment_selection", "rhythm", "dialogue_broll", "music", "opening_hook", "ending"]},
+    {"source_id": "bilibili-BV1WK9MBfE43", "url": "https://www.bilibili.com/video/BV1WK9MBfE43/", "learn": ["story_structure", "key_moment_selection", "rhythm", "dialogue_broll", "music", "opening_hook", "ending"]}
+  ],
+  "principles": [
+    {
+      "id": "opening-sensory-preview",
+      "rule": "开场前10至15秒用约1秒一镜的地点、人物动作、季节质感和结果镜头建立观看承诺，正文再回到完整事件。",
+      "confidence": 0.96,
+      "supporting_examples": 11
+    },
+    {
+      "id": "contrast-pacing-by-function",
+      "rule": "移动、购买、制作和快速发现段用2秒左右镜头；风景建立镜头、完整对白和真实反应允许3至6秒或更长，节奏服从内容功能。",
+      "confidence": 0.96,
+      "supporting_examples": 3110
+    },
+    {
+      "id": "dialogue-is-story-structure",
+      "rule": "有效对白不是背景声，而是人物关系和体验信息的主结构；应保留完整句、回答和反应，并用相关环境或动作画面承接。",
+      "confidence": 0.98,
+      "supporting_examples": 734
+    },
+    {
+      "id": "preserve-complete-event-chain",
+      "rule": "每个体验单元至少包含环境建立、人物行动或选择、结果以及人物反应，不能只留下漂亮空镜或单一爆点。",
+      "confidence": 0.95,
+      "supporting_examples": 132
+    },
+    {
+      "id": "action-and-reaction-over-decoration",
+      "rule": "动作推进和人物反应优先于装饰性空镜；细节、转场和纯环境镜头只有带来新信息或完成事件结构时才保留。",
+      "confidence": 0.96,
+      "supporting_examples": 2031
+    },
+    {
+      "id": "seasonal-place-texture",
+      "rule": "天气、地方食物、建筑、交通和环境声音共同建立目的地质感，但同类景物只保留最有差异和空间关系的镜头。",
+      "confidence": 0.91,
+      "supporting_examples": 11
+    },
+    {
+      "id": "continuous-natural-audio-bed",
+      "rule": "对白优先保留原声，动作声和环境声维持临场感；配乐只承担跨镜头托底，静音只用于明确的情绪停顿。",
+      "confidence": 0.92,
+      "supporting_examples": 11
+    },
+    {
+      "id": "restrained-information-graphics",
+      "rule": "字幕、地点标签和插画贴图只解释地点、路线、天气、陌生词或笑点，画面已有信息时不重复说明，并始终避开脸部和字幕安全区。",
+      "confidence": 0.82,
+      "supporting_examples": 11
+    },
+    {
+      "id": "ending-emotional-release",
+      "rule": "结尾从行动和对白逐步降速到街景、自然或生活余韵，不额外制造高潮，用一个清晰但克制的结束提示退出。",
+      "confidence": 0.9,
+      "supporting_examples": 11
+    }
+  ],
+  "selection_policy": {
+    "prefer": [
+      "完整且可理解的现场对白、回答与人物反应",
+      "推动抵达、选择、行动、结果的镜头",
+      "能建立季节和地方质感的声音与画面",
+      "组成完整体验事件的镜头组",
+      "承担情绪收束作用的结尾镜头"
+    ],
+    "remove_first": [
+      "与相邻镜头高度重复的景物和商品展示",
+      "模糊、旋转、遮挡且没有独立叙事价值的画面",
+      "没有动作、声音或新增信息的停留",
+      "割裂完整句子或只留下反应而缺少铺垫的切法",
+      "与画面信息重复或遮挡主体的字幕和贴图"
+    ]
+  }
+}

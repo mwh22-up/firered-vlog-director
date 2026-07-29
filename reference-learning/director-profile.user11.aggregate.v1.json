@@ -1,0 +1,378 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "aggregated-reference-director-v1",
+  "version": 1,
+  "generated_at": "2026-07-29T11:23:30.806155+00:00",
+  "source_count": 11,
+  "reference_sources": [
+    {
+      "source_id": "bilibili-BV1XD42157YT",
+      "url": "https://www.bilibili.com/video/BV1XD42157YT/"
+    },
+    {
+      "source_id": "bilibili-BV14g4y1R7G5",
+      "url": "https://www.bilibili.com/video/BV14g4y1R7G5/"
+    },
+    {
+      "source_id": "bilibili-BV1fM4m1Q7JC",
+      "url": "https://www.bilibili.com/video/BV1fM4m1Q7JC/"
+    },
+    {
+      "source_id": "bilibili-BV1nC4y1E71D",
+      "url": "https://www.bilibili.com/video/BV1nC4y1E71D/"
+    },
+    {
+      "source_id": "bilibili-BV14RfNYmEZV",
+      "url": "https://www.bilibili.com/video/BV14RfNYmEZV/"
+    },
+    {
+      "source_id": "bilibili-BV1fQ4y1E7VN",
+      "url": "https://www.bilibili.com/video/BV1fQ4y1E7VN/"
+    },
+    {
+      "source_id": "bilibili-BV1SN411D7gU",
+      "url": "https://www.bilibili.com/video/BV1SN411D7gU/"
+    },
+    {
+      "source_id": "bilibili-BV1mv421k7Pb",
+      "url": "https://www.bilibili.com/video/BV1mv421k7Pb/"
+    },
+    {
+      "source_id": "bilibili-BV1Cs4y1W7QW",
+      "url": "https://www.bilibili.com/video/BV1Cs4y1W7QW/"
+    },
+    {
+      "source_id": "bilibili-BV1rt9DByEhQ",
+      "url": "https://www.bilibili.com/video/BV1rt9DByEhQ/"
+    },
+    {
+      "source_id": "bilibili-BV1WK9MBfE43",
+      "url": "https://www.bilibili.com/video/BV1WK9MBfE43/"
+    }
+  ],
+  "shared_rules": [
+    {
+      "id": "opening-faster-than-body",
+      "source_support": 11,
+      "rule": "开场15秒应明显快于正文，用跨地点和跨体验镜头建立观看承诺。"
+    },
+    {
+      "id": "retain-action",
+      "source_support": 11,
+      "rule": "优先保留承担动作推进功能且质量合格的镜头。"
+    },
+    {
+      "id": "selective-detail",
+      "source_support": 11,
+      "rule": "关键细节镜头只在提供新信息、完成事件结构或承担必要过渡时保留。"
+    },
+    {
+      "id": "retain-dialogue",
+      "source_support": 11,
+      "rule": "优先保留承担有效对白功能且质量合格的镜头。"
+    },
+    {
+      "id": "selective-establishing",
+      "source_support": 11,
+      "rule": "环境建立镜头只在提供新信息、完成事件结构或承担必要过渡时保留。"
+    },
+    {
+      "id": "retain-reaction",
+      "source_support": 10,
+      "rule": "优先保留承担人物反应功能且质量合格的镜头。"
+    },
+    {
+      "id": "selective-transition",
+      "source_support": 11,
+      "rule": "章节过渡镜头只在提供新信息、完成事件结构或承担必要过渡时保留。"
+    },
+    {
+      "id": "preserve-event-chain",
+      "source_support": 11,
+      "rule": "镜头必须放回事件链判断：铺垫、行动、结果和人物反应应成组保留，不能只留下单个漂亮镜头或爆点。"
+    }
+  ],
+  "semantic_principles": [],
+  "shot_selection_model": {
+    "retain_archetypes": [
+      {
+        "role": "action",
+        "source_support": 11,
+        "shot_count": 1247,
+        "average_retained_ratio": 0.6747,
+        "average_duration_sec": 2.315,
+        "average_keep_score": 0.7935
+      },
+      {
+        "role": "dialogue",
+        "source_support": 11,
+        "shot_count": 734,
+        "average_retained_ratio": 0.988,
+        "average_duration_sec": 3.542,
+        "average_keep_score": 0.916
+      },
+      {
+        "role": "reaction",
+        "source_support": 10,
+        "shot_count": 54,
+        "average_retained_ratio": 0.8571,
+        "average_duration_sec": 2.52,
+        "average_keep_score": 0.8255
+      }
+    ],
+    "selective_archetypes": [
+      {
+        "role": "detail",
+        "source_support": 11,
+        "shot_count": 238,
+        "average_retained_ratio": 0.0798,
+        "average_duration_sec": 2.523,
+        "average_keep_score": 0.7254
+      },
+      {
+        "role": "establishing",
+        "source_support": 11,
+        "shot_count": 154,
+        "average_retained_ratio": 0.2241,
+        "average_duration_sec": 5.331,
+        "average_keep_score": 0.7615
+      },
+      {
+        "role": "transition",
+        "source_support": 11,
+        "shot_count": 574,
+        "average_retained_ratio": 0.1771,
+        "average_duration_sec": 1.426,
+        "average_keep_score": 0.7641
+      }
+    ],
+    "cut_first_signals": [
+      {
+        "signal": "与前一镜头高度重复",
+        "source_support": 11,
+        "shot_count": 118
+      },
+      {
+        "signal": "画面清晰度较低",
+        "source_support": 7,
+        "shot_count": 39
+      },
+      {
+        "signal": "缺少动作、声音和新增信息",
+        "source_support": 8,
+        "shot_count": 40
+      }
+    ],
+    "sequence_dependencies": [
+      "建立镜头、行动或信息、结果、人物反应应作为镜头组评估。",
+      "存在 payoff 或 reaction 时，不应仅保留爆点而删除铺垫。",
+      "事件完整度优先于单镜头分数，完整事件可提升边缘镜头的保留级别。"
+    ]
+  },
+  "pacing_model": {
+    "median_shot_duration_sec": {
+      "minimum": 1.8,
+      "average": 2.2634,
+      "maximum": 3.183
+    },
+    "opening_average_shot_duration_sec": {
+      "minimum": 0.716,
+      "average": 0.9832,
+      "maximum": 1.225
+    },
+    "silent_ratio": {
+      "minimum": 0.0133,
+      "average": 0.1153,
+      "maximum": 0.3132
+    }
+  },
+  "audio_model": {
+    "kind_ratios": {
+      "ambient_likely": {
+        "minimum": 0.3856,
+        "average": 0.4994,
+        "maximum": 0.6197
+      },
+      "music_likely": {
+        "minimum": 0.0065,
+        "average": 0.1046,
+        "maximum": 0.1958
+      },
+      "silence": {
+        "minimum": 0.0133,
+        "average": 0.1087,
+        "maximum": 0.3048
+      },
+      "speech": {
+        "minimum": 0.1712,
+        "average": 0.2877,
+        "maximum": 0.4167
+      }
+    },
+    "music_segment_duration_sec": {
+      "minimum": 0.8125,
+      "average": 4.0489,
+      "maximum": 7.5882
+    },
+    "rule": "对白区间优先保留原声；可能配乐用于跨镜头托底；环境声承担地点质感；静音仅用于有意停顿。"
+  },
+  "source_variants": [
+    {
+      "source_id": "bilibili-BV1XD42157YT",
+      "median_shot_duration_sec": 3.183,
+      "top_retained_roles": [
+        "dialogue",
+        "reaction",
+        "action"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "detail_sequence",
+        "conversation"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV14g4y1R7G5",
+      "median_shot_duration_sec": 2.266,
+      "top_retained_roles": [
+        "dialogue",
+        "action",
+        "establishing"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "conversation",
+        "detail_sequence"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV1fM4m1Q7JC",
+      "median_shot_duration_sec": 2.3,
+      "top_retained_roles": [
+        "dialogue",
+        "reaction",
+        "action"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "observational",
+        "conversation"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV1nC4y1E71D",
+      "median_shot_duration_sec": 2.35,
+      "top_retained_roles": [
+        "dialogue",
+        "action",
+        "transition"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "observational",
+        "conversation"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV14RfNYmEZV",
+      "median_shot_duration_sec": 2.25,
+      "top_retained_roles": [
+        "payoff",
+        "dialogue",
+        "reaction"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "conversation",
+        "observational"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV1fQ4y1E7VN",
+      "median_shot_duration_sec": 2.133,
+      "top_retained_roles": [
+        "dialogue",
+        "payoff",
+        "reaction"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "conversation",
+        "observational"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV1SN411D7gU",
+      "median_shot_duration_sec": 1.8,
+      "top_retained_roles": [
+        "dialogue",
+        "reaction",
+        "payoff"
+      ],
+      "dominant_event_types": [
+        "activity"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV1mv421k7Pb",
+      "median_shot_duration_sec": 2.033,
+      "top_retained_roles": [
+        "dialogue",
+        "reaction",
+        "action"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "conversation",
+        "observational"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV1Cs4y1W7QW",
+      "median_shot_duration_sec": 1.866,
+      "top_retained_roles": [
+        "dialogue",
+        "payoff",
+        "reaction"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "conversation",
+        "observational"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV1rt9DByEhQ",
+      "median_shot_duration_sec": 2.516,
+      "top_retained_roles": [
+        "dialogue",
+        "reaction",
+        "action"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "conversation",
+        "observational"
+      ]
+    },
+    {
+      "source_id": "bilibili-BV1WK9MBfE43",
+      "median_shot_duration_sec": 2.2,
+      "top_retained_roles": [
+        "dialogue",
+        "reaction",
+        "establishing"
+      ],
+      "dominant_event_types": [
+        "activity",
+        "observational",
+        "conversation"
+      ]
+    }
+  ],
+  "limitations": [
+    "聚合结果来自已经完成剪辑的参考片，不包含原始废片。",
+    "真正的保留与删除监督学习需要原始素材、最终成片和时间线映射。",
+    "自动镜头角色是启发式判断，低置信度结果必须通过事件联系表人工抽查。"
+  ]
+}

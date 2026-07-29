@@ -165,7 +165,9 @@ def render_enhanced_video(
         video_label = next_video
 
     audio_label = "audio_final"
-    filters.append("[0:a]loudnorm=I=-16:LRA=11:TP=-1.5[dialogue_normalized]")
+    filters.append(
+        "[0:a]loudnorm=I=-16:LRA=11:TP=-1.5,aresample=48000[dialogue_normalized]"
+    )
     if music_inputs:
         filters.append("[dialogue_normalized]asplit=2[dialogue_sc][dialogue_mix]")
         music_labels = []
