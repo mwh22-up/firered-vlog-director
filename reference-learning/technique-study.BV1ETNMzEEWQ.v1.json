@@ -1,0 +1,592 @@
+{
+  "schema_version": "1.0",
+  "study_id": "shao-france-mont-saint-michel-critical-viewing-v1",
+  "generated_at": "2026-07-30T15:02:20.2339655+00:00",
+  "source": {
+    "source_id": "bilibili-BV1ETNMzEEWQ",
+    "url": "https://www.bilibili.com/video/BV1ETNMzEEWQ/",
+    "title": "《最伟大的作品》封面取景地 法国一个人旅行VLOG 圣米歇尔山",
+    "duration_sec": 3038.453
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 1650653,
+    "shot_count": 720,
+    "event_count": 43,
+    "audio_segment_count": 722,
+    "transcript_segment_count": 526,
+    "transcript_word_count": 2841,
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_reported_duration_sec": 3038.447,
+    "transcript_end_sec": 3035.42,
+    "transcript_tail_gap_sec": 3.033,
+    "asr_time_coverage_ratio": 0.999002,
+    "transcript_tail_gap_manual_result": "最后对白后是旅行结束语的收束画面与黑底‘谢谢观看’结束卡，未见转写截断。",
+    "danmaku_count": 3581,
+    "danmaku_end_sec": 3039.0,
+    "audio_class_ratios": {
+      "ambient_likely": 0.5399,
+      "music_likely": 0.1596,
+      "silence": 0.0224,
+      "speech": 0.2781
+    },
+    "shot_duration_median_sec": 2.76,
+    "shot_duration_p75_sec": 4.44,
+    "event_review_contact_sheet_count": 12,
+    "manual_contact_sheet_count": 17,
+    "manual_keyframe_count": 106,
+    "manual_review_ranges": [
+      [0, 120],
+      [375.5, 435.24],
+      [550.24, 720.64],
+      [720.64, 883.68],
+      [883.68, 1041.5],
+      [1023.5, 1085],
+      [1169.96, 1398.4],
+      [1398.4, 1494.44],
+      [1494.44, 1800],
+      [1864.68, 2005],
+      [1999.32, 2147.16],
+      [2300, 2452.72],
+      [2494.72, 2570],
+      [2690, 2782.72],
+      [2770, 2860],
+      [2920, 3038.453]
+    ]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 120,
+    "phases": [
+      {
+        "start_sec": 0,
+        "end_sec": 11.52,
+        "function": "先给人物进入草地、圣米歇尔山、日落和地点大标题，直接兑现本集地标与时间段承诺。"
+      },
+      {
+        "start_sec": 11.52,
+        "end_sec": 54.36,
+        "function": "保留完整人物口播和吃面动作，交代欧洲旅行最后一站、周杰伦取景地联想、疲惫状态及改乘中午车的决定。"
+      },
+      {
+        "start_sec": 54.36,
+        "end_sec": 67.96,
+        "function": "从晚安硬切次日收拾和离开酒店，以现实时间重启把目的地愿望转成出发动作。"
+      },
+      {
+        "start_sec": 67.96,
+        "end_sec": 120,
+        "function": "用走廊、地铁、街道、车站和简短现场反应压缩巴黎离开过程，并在交通问题出现前保持空间可读。"
+      }
+    ],
+    "metrics": {
+      "seconds_0_to_11_52_shots": 4,
+      "seconds_0_to_11_52_median_shot_sec": 3.68,
+      "seconds_11_52_to_54_36_shots": 11,
+      "seconds_11_52_to_54_36_median_shot_sec": 2.72,
+      "seconds_54_36_to_67_96_shots": 3,
+      "seconds_54_36_to_67_96_median_shot_sec": 6.04,
+      "seconds_67_96_to_120_shots": 18,
+      "seconds_67_96_to_120_median_shot_sec": 2.72
+    },
+    "rule": "目的地钩子只占最前面的短段；随后让完整人物设定、疲惫限制和计划成立，再把较密剪辑集中到次日出发与交通推进，避免把长篇开场误做成全程快切。"
+  },
+  "narrative_model": {
+    "premise": "欧洲旅行最后一站要亲眼看到圣米歇尔山；换乘焦虑、天气、错误地址、夜间觅食失败、错过接驳车和误下车不断提高代价，最后由日落、清晨重访、白天校正与真实返家完成多层回报。",
+    "beats": [
+      "用地标预告、旅行终章和疲惫状态建立目标与限制，因起不来而选择中午班次",
+      "离开巴黎后保留寄存、站台确认和换乘不确定性，再用太阳雨、彩虹和顺利上车短暂释放焦虑",
+      "从巴士远望转入徒步、涉水和泥地，把人物抵达代价接到日落与圣山高位地理揭示",
+      "下雨后调整吃饭与入住顺序，经历围栏、错误酒店、外语沟通和软件地址纠正才完成入住",
+      "以‘来都来了’启动夜游，却连续遭遇餐厅停止点餐、黑暗巷道和主观恐惧",
+      "急着赶末班车时又停下拍照，车辆离开后反而继续拍星空；饥饿和疲惫最终促使他取消夜拍并提前休息",
+      "清晨重新出门，用霞光、干潮滩、鸟群、羊群、人物尺度和早餐兑现前一晚失败的替代回报",
+      "白天重访同一地点，以游客、建筑和明亮环境校正昨夜的恐怖感，并保留收费窗口误解的完整过程",
+      "离场时因听见疑似站名而误下车，再通过观察、自我复盘和向路人问路恢复行程",
+      "跨境回法国后在偏僻夜路找到机场附近酒店，价格解释和次日早起把旅程推入返家阶段",
+      "机场、机上座位小摩擦、长途飞行和撕纸式回忆窗口组成返程尾声，最后用明确结束语与‘下个旅程再见’闭合"
+    ],
+    "rule": "景点回报必须连接真实目标、错误、疲惫、调整和再次行动；同一地点可借昼夜与人物状态重访，但每次都要增加新的叙事信息。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "交通、天气或远望先建立地标方向",
+      "人物步行、泥地、涉水或行李动作证明抵达代价",
+      "人物与地标同框确认尺度",
+      "地面宽景、高位或航拍式视角补全地理关系",
+      "霞光、潮滩、鸟群、羊群和游客加入时间与当地生命",
+      "回到人物反应、下一步行动或现实障碍"
+    ],
+    "observed_ranges": [
+      [0, 11.52],
+      [375.5, 435.24],
+      [446.12, 518],
+      [550.24, 720.64],
+      [1023.5, 1085],
+      [1454, 1494.44],
+      [1631.12, 1800],
+      [1999.32, 2099.12],
+      [2147.16, 2249.84],
+      [2930.44, 2985.96]
+    ],
+    "rule": "地标镜头不是孤立壁纸；优先交替人物尺度、抵达障碍、天气与当地生命，并用新光线或新行动证明重复访问的必要性。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.1596,
+    "uses": [
+      "换乘不确定之后让音乐变化与太阳雨、彩虹共同形成幸运感转折，再回到交通主线。",
+      "550 至 682 秒以多个 music_likely 区间连接步行、涉水、日落和圣山揭示，在人物说明与动作处保留可懂度。",
+      "夜间空巷使用间歇性低照度类型化音乐与少量标点放大人物主观恐惧，遇到人声和旅行团后解除。",
+      "清晨重访用较长音乐块连接霞光、潮滩、鸟群、羊群和人物同框，现场反应出现时不牺牲语义。",
+      "返程蒙太奇让机舱、窗外地理和回家进度保持连续，但结束语和最后致谢优先于音乐存在感。"
+    ],
+    "rule": "音乐负责连接天气、地理与时间段变化，也可暂时改写夜路类型；对白、脚步、问路和风险现场声优先，声学启发式与弹幕都不能用于曲名、BPM 或版权判断。"
+  },
+  "subtitle_model": {
+    "base_style": "底部居中白色无衬线字、黑色描边，一至两行；现场外语按需要保留原语短句或中文解释，地点和章节另用居中大标题。",
+    "emphasis_patterns": [
+      "开场用地点大字、英文小标题和日出/日落副题一次性建立章节承诺",
+      "‘LATER...’和‘TOMORROW’等独立卡片明确跳过休息、等待或跨日时间",
+      "‘车走了...’、‘好黑...’等较大反应字幕只在认知落点出现一次",
+      "问路和窗口交流保留原语及必要解释，不让笑点遮掉解决问题所需信息",
+      "BGM credit 位于边角，最后用黑底白字‘谢谢观看’完成结束卡"
+    ],
+    "rule": "基础字幕先保证语义；地点标题、时间卡、反应大字、双语说明和结束卡各承担单一功能，避免同一落点堆叠多种图形。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "先建立赶车、找饭、买票或找站等明确目标",
+      "保留人物自己的误读、犹豫、拍照冲动或语言困难",
+      "让错误被画面、工作人员、车辆离开或地点线索自然证实",
+      "只加一处反应大字、短彩条、标点或类型化音乐",
+      "继续保留问路、改计划、拍星或恢复行程的解决过程"
+    ],
+    "audience_peaks_sec": [
+      1325,
+      1425,
+      1445,
+      1450,
+      2120,
+      2315,
+      2385,
+      2390,
+      2540
+    ],
+    "rule": "笑点来自可验证的真实目标冲突和自我纠正；编辑标点只放大落点，不把工作人员、路人、口音或国籍变成攻击对象。",
+    "playback_rate_note": "1411.52 至 1442.8 秒夜间赶车画面出现强烈抖动、残影和弹幕‘加速/倍速’信号，但真实奔跑、低照度快门和相机晃动同样能解释；只列低置信视觉加速候选，不提供倍率。2722.36 至 2747.2 秒偏僻夜路的运动模糊也不足以证明变速，因此不生成第二条 observation。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-opening-landmark-promise-to-departure",
+      "technique_key": "opening-phased-hook-not-uniform-fast-cut",
+      "start_sec": 0,
+      "end_sec": 120,
+      "category": "opening_montage",
+      "trigger": "长篇旅行终章需要同时兑现地标承诺、交代人物疲惫限制并启动真实行动。",
+      "treatment": "先用 11.52 秒地标、日落和标题预览，再保留完整口播说明最后一站与班次选择；次日重启后才把较密镜头集中到离店和交通推进。",
+      "confidence": 0.96,
+      "parameters": {
+        "phase_count": 4,
+        "reviewed_shot_count": 36,
+        "destination_preview_sec": 11.52,
+        "fastest_cut_block": "departure_and_transit"
+      },
+      "evidence": {
+        "manual_keyframes_sec": [0, 2, 4, 6, 8, 10, 12, 20, 30, 54, 60, 64, 70],
+        "opening_shot_boundaries_verified": true,
+        "premise_transcript_range_sec": [11.23, 60.22]
+      },
+      "guardrails": [
+        "不要把人物设定切成口号碎片。",
+        "快速镜头必须推进真实离店、交通或地点变化。"
+      ]
+    },
+    {
+      "observation_id": "obs-rainbow-music-reveal",
+      "technique_key": "music-transition-reveal-synchronization",
+      "start_sec": 375.5,
+      "end_sec": 435.24,
+      "category": "music_rhythm",
+      "trigger": "站台和换乘信息不明后出现太阳雨与彩虹，需要把交通焦虑转成短暂情绪释放。",
+      "treatment": "保留列车窗外天气变化和人物发现彩虹的过程，让音乐进入与彩虹揭示共同形成落点，再恢复后续交通问题。",
+      "confidence": 0.84,
+      "parameters": {
+        "music_likely_intervals_sec": [[375.5, 388], [407.5, 410]],
+        "transition": "transport_uncertainty_to_weather_reveal"
+      },
+      "evidence": {
+        "manual_contact_sheet_fps": 1,
+        "rainbow_visible": true,
+        "danmaku_range_count": 745,
+        "peak_bucket": {"start_sec": 395, "count": 195},
+        "audience_signal": "彩虹、幸运与 BGM 同时集中，但仅作定位线索"
+      },
+      "guardrails": [
+        "弹幕不能证明音乐单独造成观众反应。",
+        "不得据此识别精确曲名、BPM 或版权。"
+      ]
+    },
+    {
+      "observation_id": "obs-landmark-ground-to-aerial",
+      "technique_key": "scenic-human-scale-to-aerial-geography",
+      "start_sec": 550.24,
+      "end_sec": 682.04,
+      "category": "scenic",
+      "trigger": "初次接近巨大地标时，需要同时说明抵达代价、人物尺度和潮滩地理。",
+      "treatment": "从人物远望、步行、草地、泥地和涉水进入，随后展开圣山、潮滩、日落、高位地理和人物同框，最后回到继续赶路的现实时间。",
+      "confidence": 0.95,
+      "parameters": {
+        "sequence": ["human_approach", "mud_and_water_obstacle", "wide_landmark", "aerial_style_geography", "human_scale_return"],
+        "capture_device": null
+      },
+      "evidence": {
+        "manual_keyframes_sec": [560, 585, 600, 615, 625, 635, 650, 675],
+        "high_angle_geography_visible": true,
+        "transcript_obstacle_range_sec": [595.61, 615.04],
+        "danmaku_range_count": 311,
+        "scenic_peak_buckets": [{"start_sec": 620, "count": 37}, {"start_sec": 625, "count": 39}]
+      },
+      "guardrails": [
+        "只描述成片可见的高位或航拍式视角，不推断具体设备。",
+        "不能只留地标空镜而删除人物抵达代价和尺度。"
+      ]
+    },
+    {
+      "observation_id": "obs-landmark-music-dialogue-protection",
+      "technique_key": "music-scenic-block-dialogue-protection",
+      "start_sec": 550.24,
+      "end_sec": 682.04,
+      "category": "music_rhythm",
+      "trigger": "长段地标接近与日落揭示需要持续情绪，同时包含人物感叹、涉水和赶光线说明。",
+      "treatment": "用多个音乐候选块连接步行和风景，在人物说明、涉水动作与现场反应出现时保持可懂度，再进入更长的纯景色区间。",
+      "confidence": 0.89,
+      "parameters": {
+        "principal_music_likely_intervals_sec": [[554, 559.5], [585, 595.5], [616, 681.5]],
+        "dialogue_priority_ranges_sec": [[566.28, 579.24], [595.61, 615.04]]
+      },
+      "evidence": {
+        "audio_classification": "music_likely",
+        "manual_scenic_frame_review": true,
+        "audience_music_signals_sec": [555, 620]
+      },
+      "guardrails": [
+        "声学分类不等于歌曲识别。",
+        "涉水、方向和时间压力等现场信息优先于音乐响度。"
+      ]
+    },
+    {
+      "observation_id": "obs-haunted-hotel-color-bars-reset",
+      "technique_key": "humor-single-accent-then-hard-reset",
+      "start_sec": 778.68,
+      "end_sec": 781.56,
+      "category": "graphic",
+      "trigger": "人物把昏暗住宿建筑描述成‘像会发生一些故事’，需要一次短促自嘲后回到入住行动。",
+      "treatment": "在建筑判断后插入约 0.32 秒 SMPTE 彩条，再硬切前台办理；同片其他笑点也复用同一短彩条，但每次立即返回现实过程。",
+      "confidence": 0.99,
+      "parameters": {
+        "primary_color_bar_interval_sec": [778.68, 779],
+        "repeated_intervals_sec": [[1169.96, 1170.44], [1193.6, 1194.6], [1976.56, 1977.04], [3004.96, 3005.6]],
+        "transition": "hard_cut",
+        "overlay_stack": false
+      },
+      "evidence": {
+        "manual_subsecond_frames_sec": [778.75, 778.85, 1976.65, 1976.8, 3005.1, 3005.3],
+        "color_bars_visible": true,
+        "event_contact_sheet_confirmation": true
+      },
+      "guardrails": [
+        "彩条只承担一次重置，不与多种贴图连续追打。",
+        "硬切之后必须恢复真实行动和空间。"
+      ]
+    },
+    {
+      "observation_id": "obs-night-failure-dawn-payoff",
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "start_sec": 997.6,
+      "end_sec": 1950.24,
+      "category": "narrative",
+      "trigger": "夜游、找晚餐、赶接驳和再拍星星连续失败，人物同时承受饥饿、疲惫和主观恐惧。",
+      "treatment": "完整保留寻找餐厅、停止点餐、黑暗夜路、错过车辆、饿着回房和取消夜拍；随后明确展示提前睡觉、日出前重启、清晨地标与早餐回报。",
+      "confidence": 0.95,
+      "parameters": {
+        "failure_chain": ["dinner_closed", "subjective_night_fear", "shuttle_missed", "night_shoot_cancelled"],
+        "adaptation": "rest_and_pre_dawn_restart",
+        "payoff": ["dawn_landmark", "local_life", "breakfast"]
+      },
+      "evidence": {
+        "analysis_event_range": [14, 28],
+        "manual_review_ranges_sec": [[1023.5, 1398.4], [1398.4, 1603.48], [1631.12, 1950.24]],
+        "causal_transcript_verified": true
+      },
+      "guardrails": [
+        "失败、调整和结果必须成组保留。",
+        "不能把主观夜间恐惧改写为已经发生的治安事件。"
+      ]
+    },
+    {
+      "observation_id": "obs-night-horror-genre-switch",
+      "technique_key": "music-genre-switch-for-night-horror-counterpoint",
+      "start_sec": 1208.64,
+      "end_sec": 1398.4,
+      "category": "music_rhythm",
+      "trigger": "空巷、石阶、低照度和不确定的同行者使人物开始自己吓自己。",
+      "treatment": "保留黑暗长路、脚步、狭窄构图和人物反应，以间歇性悬疑音乐与少量标点暂时改写成恐怖游戏类型；出现人声和旅行团后解除。",
+      "confidence": 0.84,
+      "parameters": {
+        "visual_mode": "dark_narrow_stone_lanes",
+        "music_likely_intervals_sec": [[1325.5, 1326.5], [1335, 1338.5], [1352, 1354.5], [1382.5, 1386.5]],
+        "danger_status": "subjective_only"
+      },
+      "evidence": {
+        "manual_keyframes_sec": [1209, 1220, 1240, 1260, 1280, 1305, 1335, 1360, 1390],
+        "danmaku_range_count": 244,
+        "night_genre_peak_bucket": {"start_sec": 1325, "count": 18}
+      },
+      "guardrails": [
+        "只描述人物主观紧张，不虚构犯罪或真实危险。",
+        "本 observation 不声称已人工确认任何单独惊吓音效。"
+      ]
+    },
+    {
+      "observation_id": "obs-last-shuttle-self-sabotage",
+      "technique_key": "humor-goal-conflict-self-sabotage-reversal",
+      "start_sec": 1398.4,
+      "end_sec": 1471.28,
+      "category": "humor",
+      "trigger": "饥饿且需要赶末班接驳，但人物又不愿放弃拍夜景。",
+      "treatment": "先展示急跑和时间压力，再保留途中突然停下拍照、车辆离开、人物认知落点及‘既然错过就继续拍’的反向松弛。",
+      "confidence": 0.96,
+      "parameters": {
+        "goal": "catch_last_shuttle",
+        "self_interruption": "stop_for_night_photo",
+        "reversal": "continue_photographing_after_missing_vehicle"
+      },
+      "evidence": {
+        "manual_keyframes_sec": [1412, 1418, 1436, 1442, 1448, 1454],
+        "vehicle_departure_visible": true,
+        "danmaku_range_count": 171,
+        "peak_buckets": [{"start_sec": 1445, "count": 27}, {"start_sec": 1450, "count": 27}]
+      },
+      "guardrails": [
+        "笑点只落在主角自己的目标冲突。",
+        "不得怪罪司机或虚构车辆提前离开。"
+      ]
+    },
+    {
+      "observation_id": "obs-last-shuttle-speed-candidate",
+      "technique_key": "playback-rate-fast-forward-travel-compression-visual-estimate",
+      "start_sec": 1411.52,
+      "end_sec": 1442.8,
+      "category": "playback_rate",
+      "trigger": "夜间赶车奔跑包含重复路程，需要压缩位移并放大慌乱感。",
+      "treatment": "画面表现为连续黑暗路程、强烈抖动和灯光残影，再接停下拍照；仅记录为视觉加速候选，不提供倍率。",
+      "confidence": 0.43,
+      "parameters": {
+        "playback_rate": null,
+        "rate_source": "visual_candidate_only",
+        "alternative_explanations": ["real_running_speed", "camera_shake", "low_light_shutter_blur"],
+        "scene_detector_under_segmented": true
+      },
+      "evidence": {
+        "manual_dense_frame_review_fps": 2,
+        "manual_keyframes_sec": [1412, 1418, 1424, 1430, 1436, 1442],
+        "danmaku_signals_sec": [1419.003, 1426.527, 1438.678],
+        "single_detected_shot_range_sec": [1411.52, 1469.08]
+      },
+      "guardrails": [
+        "不得写成已确认 1.5x、2x 或其他精确倍率。",
+        "目标素材只能生成候选预览并人工确认，不能自动应用。"
+      ]
+    },
+    {
+      "observation_id": "obs-later-rest-time-card",
+      "technique_key": "subtitle-time-card-compresses-waiting",
+      "start_sec": 1527.32,
+      "end_sec": 1528.24,
+      "category": "subtitle",
+      "trigger": "人物在出门拍星与休息之间犹豫，实际躺下等待不需要按现实时间完整展示。",
+      "treatment": "在人物说‘怎么办’后插入独立的紫色‘LATER...’卡片，再回到床上说明最终取消夜拍。",
+      "confidence": 0.99,
+      "parameters": {
+        "caption": "LATER...",
+        "card_duration_sec": 0.92,
+        "transition": "hard_cut",
+        "playback_rate": null
+      },
+      "evidence": {
+        "manual_frame_sec": 1527.7,
+        "caption_visible": true,
+        "shot_boundary_sec": [1527.32, 1528.24]
+      },
+      "guardrails": [
+        "时间卡必须明确说明省略，不能伪装成连续实时过程。",
+        "不要把独立卡片误报为画面变速。"
+      ]
+    },
+    {
+      "observation_id": "obs-dawn-return-local-life",
+      "technique_key": "scenic-return-at-new-light-with-local-life",
+      "start_sec": 1631.12,
+      "end_sec": 1800,
+      "category": "scenic",
+      "trigger": "同一地点在夜间受阻后，需要用新时间条件兑现清晨重访价值。",
+      "treatment": "从清晨人物状态和霞光进入，交替干潮滩、鸟群、羊群、人物与圣山同框及地标宽景，使重复地点获得新的光线、动作和生命尺度。",
+      "confidence": 0.96,
+      "parameters": {
+        "new_information": ["dawn_light", "dry_tidal_flat", "birds", "sheep", "human_scale"],
+        "return_time_of_day": "pre_dawn_to_morning"
+      },
+      "evidence": {
+        "manual_keyframes_sec": [1620, 1665, 1680, 1700, 1720, 1760, 1780, 1800],
+        "danmaku_range_count": 224,
+        "scenic_peak_buckets": [{"start_sec": 1680, "count": 20}, {"start_sec": 1780, "count": 21}],
+        "music_likely_blocks_sec": [[1631.5, 1650], [1714, 1730.5], [1737, 1743.5], [1794.5, 1801]]
+      },
+      "guardrails": [
+        "重复地点必须增加新光线、行动或当地生活信息。",
+        "不要用不同时间段镜头伪装同一连续时刻。"
+      ]
+    },
+    {
+      "observation_id": "obs-daylight-revisit-reframes-night",
+      "technique_key": "narrative-location-revisit-reframes-risk",
+      "start_sec": 1999.32,
+      "end_sec": 2099.12,
+      "category": "narrative",
+      "trigger": "夜游把同一地点暂时框定为恐怖空间，需要次日校正观众认知。",
+      "treatment": "白天重返同一路线，以游客、狗、开放建筑和明亮细节重新建立地点，并用‘昨晚在这里被挡住’的字幕主动连接昼夜。",
+      "confidence": 0.92,
+      "parameters": {
+        "comparison": "same_location_night_to_day",
+        "reframe": "subjective_fear_to_public_daytime_space"
+      },
+      "evidence": {
+        "manual_keyframes_sec": [2000, 2020, 2040, 2060, 2080, 2095],
+        "explicit_callback_frame_sec": 2060,
+        "danmaku_range_count": 43,
+        "audience_signal": "还是得白天来、跟昨晚画风不一样"
+      },
+      "guardrails": [
+        "不得暗示昨夜发生了真实犯罪或已证实危险。",
+        "昼夜对照必须来自可核对的同一地点。"
+      ]
+    },
+    {
+      "observation_id": "obs-information-desk-awkward-process",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 2105.04,
+      "end_sec": 2144.72,
+      "category": "humor",
+      "trigger": "人物到收费窗口后误解功能和工作人员指向，需要在陌生语言环境中找到正确位置。",
+      "treatment": "保留走到窗口、提出买票、看不懂回应、发现正确位置在后面、再次办理及继续上楼的完整过程，而不是只截取一句口音笑点。",
+      "confidence": 0.91,
+      "parameters": {
+        "process_steps": ["approach_wrong_counter", "ask", "misunderstand", "locate_correct_counter", "complete_action"]
+      },
+      "evidence": {
+        "manual_keyframes_sec": [2105, 2115, 2125, 2135, 2144],
+        "visible_caption_progression": ["到了一个要收费的地方", "在说啥", "原来在后面......", "上楼"],
+        "asr_foreign_exchange_range_sec": [2108.5, 2141.37],
+        "danmaku_range_count": 25
+      },
+      "guardrails": [
+        "笑点落在主角误读，不嘲弄工作人员、口音或国籍。",
+        "外语字幕应由人工核对，不能直接采用 ASR 的不确定词。"
+      ]
+    },
+    {
+      "observation_id": "obs-wrong-stop-correction-chain",
+      "technique_key": "narrative-error-discovery-and-explicit-correction",
+      "start_sec": 2372.76,
+      "end_sec": 2452.72,
+      "category": "narrative",
+      "trigger": "人物听到疑似火车站站名后紧张下车，马上发现地点错误。",
+      "treatment": "保留误判前因、下车动作、车辆离开、错误地点线索、自我复盘、向路人展示地图问路及‘仍有时间’的缓解。",
+      "confidence": 0.96,
+      "parameters": {
+        "error": "premature_bus_exit",
+        "correction_steps": ["vehicle_departure", "location_mismatch", "self_explanation", "ask_local_with_map", "time_buffer_relief"]
+      },
+      "evidence": {
+        "manual_keyframes_sec": [2388, 2391, 2394, 2397, 2401, 2406, 2410, 2414, 2418],
+        "large_caption": "车走了...",
+        "danmaku_range_count": 91,
+        "analysis_events": ["event-034", "event-035"],
+        "causal_transcript_range_sec": [2390.03, 2451.08]
+      },
+      "guardrails": [
+        "不从个案推导通用交通攻略。",
+        "路线、站名和外语回答必须以画面或人工字幕为准。"
+      ]
+    },
+    {
+      "observation_id": "obs-homecoming-montage-closure",
+      "technique_key": "narrative-end-of-journey-montage-verbal-closure",
+      "start_sec": 2854.2,
+      "end_sec": 3038.453,
+      "category": "narrative",
+      "trigger": "多国旅行结尾既要完成真实返程，也要明确告诉观众这一系列已经结束。",
+      "treatment": "保留清晨出发、机场、机上座位小摩擦、窗外地理、睡不着和回家进度，最后用一句旅行结束、感谢、‘下个旅程再见’和黑底结束卡闭合。",
+      "confidence": 0.94,
+      "parameters": {
+        "closure_steps": ["airport_departure", "flight_process", "homecoming_progress", "verbal_series_end", "thank_you_card"],
+        "final_card": "谢谢观看"
+      },
+      "evidence": {
+        "manual_keyframes_sec": [2920, 2940, 2960, 2980, 2990, 3000, 3010, 3020, 3030, 3035, 3037.5],
+        "final_asr_range_sec": [3029.14, 3035.42],
+        "final_danmaku_range_count": 23,
+        "final_shot_range_sec": [3036.56, 3038.453]
+      },
+      "guardrails": [
+        "该段是实际返程闭合，不夸大为深度反思。",
+        "系列结束语必须与真实完成状态一致。"
+      ]
+    },
+    {
+      "observation_id": "obs-torn-paper-memory-window",
+      "technique_key": "graphic-torn-paper-memory-window",
+      "start_sec": 2983.16,
+      "end_sec": 2985.96,
+      "category": "graphic",
+      "trigger": "返程飞行需要短暂回望旅程，而不打断当前飞机空间太久。",
+      "treatment": "在飞机窗外地理背景上打开撕纸式不规则窗口，窗口内闪回人物站在欧洲草地的画面，约 2.8 秒后硬切回机舱睡眠。",
+      "confidence": 0.98,
+      "parameters": {
+        "effect": "torn_paper_memory_window",
+        "duration_sec": 2.8,
+        "background": "airplane_aerial_view",
+        "inset": "earlier_trip_scenic_memory"
+      },
+      "evidence": {
+        "manual_frame_sec": 2985,
+        "effect_visible": true,
+        "shot_boundary_sec": [2983.16, 2985.96],
+        "following_frame_sec": 2987
+      },
+      "guardrails": [
+        "回忆窗口应短于当前返程主线，不制造新的事实时间线。",
+        "只能复用有授权的目标素材，并保持当前与回忆画面可区分。"
+      ]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 98192,
+    "maximum_characters": 180000,
+    "hard_limit_characters": 200000,
+    "model_request_serialized_characters": 69704,
+    "comparison": "strictly_less_than"
+  },
+  "limitations": [
+    "参考片是最终成片，只能学习被保留内容、节奏和效果的正向模式；没有原始素材与成片映射，不能推断作者真实删片偏好。",
+    "分析代理仅为 640×360；17 张联系表和 106 个精确关键帧仍可能漏掉更短的转场、贴图或微小字幕，画面来源和捕获设备也不能仅凭成片确定。",
+    "ASR 时间覆盖完整，但 349–441、491–567、614–686、1215–1499、1713–1802、2144–2246、2720–2784 与 2925–3029 秒等长段明显把音乐或环境声误转成文字；外语、地点和票务内容必须人工校对。",
+    "最后对白到 3035.42 秒，尾差 3.033 秒经人工确认是收束画面与黑底‘谢谢观看’结束卡，不是 ASR 截断。",
+    "music_likely 是声学启发式，弹幕只是观众反应和复核定位线索；两者都不能证明具体曲目、BPM、版权、音效来源或单一效果的因果。",
+    "1208.64 至 1398.4 秒低照度夜游被场景检测严重欠分割；正式结论只描述可见黑暗巷道与主观类型化处理，不声称发生了真实治安事件。",
+    "1411.52 至 1442.8 秒只列低置信视觉加速候选；真实奔跑、相机抖动和低照度快门均可解释残影，未确认任何精确倍率。",
+    "2722.36 至 2747.2 秒夜路关键帧只能确认运动模糊与沉重行李字幕，不能确认后期加速，因此没有生成第二条 playback-rate observation。",
+    "弹幕在 1306 和 1336 秒提到惊吓音效，但静帧不能证明声音卡点；本 study 不生成正式 sound-effect observation。",
+    "2983.16 至 2985.96 秒可确认撕纸式回忆窗口，但不能从成片确定模板、素材来源或实现软件。"
+  ]
+}
