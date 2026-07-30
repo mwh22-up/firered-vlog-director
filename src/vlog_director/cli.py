@@ -68,6 +68,12 @@ def _build_parser() -> argparse.ArgumentParser:
     render_enhancement.add_argument("--base-video", type=Path, required=True)
     render_enhancement.add_argument("--plan", type=Path, required=True)
     render_enhancement.add_argument("--output", type=Path, required=True)
+    render_enhancement.add_argument("--qa-output", type=Path)
+
+    qa_music = subparsers.add_parser("qa-music")
+    qa_music.add_argument("--media", type=Path, required=True)
+    qa_music.add_argument("--plan", type=Path, required=True)
+    qa_music.add_argument("--output", type=Path, required=True)
 
     analyze_reference = subparsers.add_parser("analyze-reference")
     analyze_reference.add_argument("--input", type=Path, required=True)
@@ -98,6 +104,84 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     aggregate_reference.add_argument("--profile", type=Path, nargs="*")
     aggregate_reference.add_argument("--output", type=Path, required=True)
+
+    compare_revision = subparsers.add_parser("compare-revision")
+    compare_revision.add_argument("--parent", type=Path, required=True)
+    compare_revision.add_argument("--candidate", type=Path, required=True)
+    compare_revision.add_argument("--minimum-change-ratio", type=float, default=0.08)
+    compare_revision.add_argument("--output", type=Path)
+
+    compile_revision_parser = subparsers.add_parser("compile-revision")
+    compile_revision_parser.add_argument("--parent", type=Path, required=True)
+    compile_revision_parser.add_argument("--profile", type=Path, required=True)
+    compile_revision_parser.add_argument("--directives", type=Path, required=True)
+    compile_revision_parser.add_argument("--output", type=Path, required=True)
+    compile_revision_parser.add_argument("--report", type=Path)
+
+    analyze_target = subparsers.add_parser("analyze-target")
+    analyze_target.add_argument("--input", type=Path, required=True)
+    analyze_target.add_argument("--source", required=True)
+    analyze_target.add_argument("--work-directory", type=Path, required=True)
+    analyze_target.add_argument("--output", type=Path, required=True)
+    analyze_target.add_argument("--transcript", type=Path)
+    analyze_target.add_argument(
+        "--asr-provider",
+        choices=["auto", "none", "faster-whisper"],
+        default="auto",
+    )
+    analyze_target.add_argument("--asr-model", default="small")
+    analyze_target.add_argument("--language", default="zh")
+    analyze_target.add_argument("--scene-threshold", type=float, default=0.22)
+    analyze_target.add_argument("--visual-fps", type=float, default=2.0)
+
+    analyze_project = subparsers.add_parser("analyze-project")
+    analyze_project.add_argument("--project", type=Path, required=True)
+    analyze_project.add_argument("--output-directory", type=Path, required=True)
+    analyze_project.add_argument(
+        "--asr-provider",
+        choices=["auto", "none", "faster-whisper"],
+        default="auto",
+    )
+    analyze_project.add_argument("--asr-model", default="small")
+    analyze_project.add_argument("--language", default="zh")
+    analyze_project.add_argument("--scene-threshold", type=float, default=0.22)
+    analyze_project.add_argument("--visual-fps", type=float, default=2.0)
+
+    direct_timeline_parser = subparsers.add_parser("direct-timeline")
+    direct_timeline_parser.add_argument("--parent", type=Path, required=True)
+    direct_timeline_parser.add_argument("--analysis", type=Path, nargs="*", default=[])
+    direct_timeline_parser.add_argument("--analysis-directory", type=Path)
+    direct_timeline_parser.add_argument("--profile", type=Path, required=True)
+    direct_timeline_parser.add_argument("--moments", type=Path, required=True)
+    direct_timeline_parser.add_argument(
+        "--feedback",
+        type=Path,
+        help="Optional explicit user shot decisions; these override reference priors.",
+    )
+    direct_timeline_parser.add_argument("--version", type=int, required=True)
+    direct_timeline_parser.add_argument("--output-directory", type=Path, required=True)
+    direct_timeline_parser.add_argument("--target-duration-sec", type=float)
+    direct_timeline_parser.add_argument("--minimum-change-ratio", type=float, default=0.08)
+    direct_timeline_parser.add_argument(
+        "--variants",
+        nargs="+",
+        choices=["concise", "balanced", "immersive"],
+        default=["concise", "balanced", "immersive"],
+    )
+
+    approve_timeline_parser = subparsers.add_parser("approve-timeline")
+    approve_timeline_parser.add_argument("--candidate", type=Path, required=True)
+    approve_timeline_parser.add_argument("--output", type=Path, required=True)
+    approve_timeline_parser.add_argument("--receipt", type=Path, required=True)
+    approve_timeline_parser.add_argument("--approved-by", required=True)
+
+    plan_music = subparsers.add_parser("plan-music")
+    plan_music.add_argument("--plan", type=Path, required=True)
+    plan_music.add_argument("--profile", type=Path, required=True)
+    plan_music.add_argument("--subtitles", type=Path)
+    plan_music.add_argument("--dialogue-padding-sec", type=float, default=0.35)
+    plan_music.add_argument("--output", type=Path, required=True)
+
     return parser
 
 
@@ -138,14 +222,44 @@ def main() -> int:
         _write_result({"status": "ready", "output": str(args.output.resolve())}, None)
         return 0
     if args.command == "render-enhancement":
+        from .enhancement import validate_enhancement_plan
+
+        project = args.project.resolve()
+        enhancement_plan = load_json(args.plan)
+        edit_version = enhancement_plan.get("edit_plan_version")
+        edit_plan_path = project / "work" / "plans" / f"edit_plan.v{edit_version}.json"
+        if not edit_plan_path.is_file():
+            raise FileNotFoundError(f"edit plan is missing: {edit_plan_path}")
+        validation = validate_enhancement_plan(load_json(edit_plan_path), enhancement_plan)
+        if validation["status"] != "passed":
+            _write_result(validation, None)
+            return 2
         render_enhanced_video(
-            args.project.resolve(),
+            project,
             args.base_video.resolve(),
-            load_json(args.plan),
+            enhancement_plan,
             args.output.resolve(),
         )
-        _write_result({"status": "ready", "output": str(args.output.resolve())}, None)
-        return 0
+        from .audio_qa import analyze_music_mix, write_music_mix_qa
+
+        qa_report = analyze_music_mix(args.output.resolve(), enhancement_plan)
+        qa_output = args.qa_output or args.output.with_suffix(".music-mix-qa.json")
+        write_music_mix_qa(qa_report, qa_output.resolve())
+        result = {
+            "status": "ready" if qa_report["status"] == "passed" else "blocked",
+            "output": str(args.output.resolve()),
+            "music_mix_qa": str(qa_output.resolve()),
+            "qa_status": qa_report["status"],
+        }
+        _write_result(result, None)
+        return 0 if qa_report["status"] == "passed" else 2
+    if args.command == "qa-music":
+        from .audio_qa import analyze_music_mix, write_music_mix_qa
+
+        report = analyze_music_mix(args.media.resolve(), _read_json(args.plan))
+        write_music_mix_qa(report, args.output.resolve())
+        _write_result(report, None)
+        return 0 if report["status"] == "passed" else 2
     if args.command == "analyze-reference":
         from .reference_learning import (
             analyze_reference,
@@ -194,6 +308,126 @@ def main() -> int:
             None,
         )
         return 0
+    if args.command == "analyze-target":
+        from .reference_learning import analyze_reference, write_analysis
+
+        analysis = analyze_reference(
+            args.input.resolve(),
+            source_id=Path(args.source).stem,
+            source_url="local-target://" + args.source,
+            work_directory=args.work_directory.resolve(),
+            transcript_path=args.transcript.resolve() if args.transcript else None,
+            asr_provider=args.asr_provider,
+            asr_model=args.asr_model,
+            language=args.language or None,
+            scene_threshold=args.scene_threshold,
+            visual_fps=args.visual_fps,
+        )
+        analysis["source"]["target_source"] = args.source
+        analysis["source"]["aliases"] = [args.source, Path(args.source).name]
+        write_analysis(analysis, args.output.resolve())
+        _write_result(
+            {
+                "status": "ready",
+                "output": str(args.output.resolve()),
+                "source": args.source,
+                "shots": len(analysis["shots"]),
+                "events": len(analysis["events"]),
+                "transcript_status": analysis["transcription"].get("status"),
+            },
+            None,
+        )
+        return 0
+    if args.command == "analyze-project":
+        from .target_project import analyze_target_project
+
+        result = analyze_target_project(
+            args.project,
+            args.output_directory.resolve(),
+            asr_provider=args.asr_provider,
+            asr_model=args.asr_model,
+            language=args.language or None,
+            scene_threshold=args.scene_threshold,
+            visual_fps=args.visual_fps,
+        )
+        _write_result(result, None)
+        return 0 if result["status"] == "ready" else 2
+    if args.command == "direct-timeline":
+        from datetime import datetime, timezone
+
+        from .director_engine import direct_timeline, write_director_result
+
+        analysis_paths = list(args.analysis)
+        if args.analysis_directory:
+            analysis_paths.extend(
+                sorted(args.analysis_directory.glob("target-analysis.*.json"))
+            )
+        result = direct_timeline(
+            _read_json(args.parent),
+            [_read_json(path) for path in analysis_paths],
+            _read_json(args.profile),
+            _read_json(args.moments),
+            version=args.version,
+            created_at=datetime.now(timezone.utc).isoformat(),
+            target_duration_sec=args.target_duration_sec,
+            minimum_change_ratio=args.minimum_change_ratio,
+            variants=args.variants,
+            feedback_document=_read_json(args.feedback) if args.feedback else None,
+        )
+        write_director_result(result, args.output_directory.resolve())
+        _write_result(
+            {
+                "status": result["status"],
+                "recommended_variant": result.get("recommended_variant"),
+                "output_directory": str(args.output_directory.resolve()),
+                "missing_sources": result.get("missing_sources", []),
+            },
+            None,
+        )
+        return 0 if result["status"] in {"ready", "review_required"} else 2
+    if args.command == "approve-timeline":
+        from .approval import approve_timeline
+
+        result = approve_timeline(
+            args.candidate.resolve(),
+            args.output.resolve(),
+            args.receipt.resolve(),
+            approved_by=args.approved_by,
+        )
+        _write_result(result, None)
+        return 0
+    if args.command == "compare-revision":
+        from .revision import compare_revisions
+
+        result = compare_revisions(
+            _read_json(args.parent),
+            _read_json(args.candidate),
+            minimum_change_ratio=args.minimum_change_ratio,
+        )
+        _write_result(result, args.output)
+        return 0 if result["status"] == "passed" else 2
+    if args.command == "compile-revision":
+        from .revision import compile_revision
+
+        candidate, report = compile_revision(
+            _read_json(args.parent),
+            _read_json(args.profile),
+            _read_json(args.directives),
+        )
+        _write_result(candidate, args.output)
+        _write_result(report, args.report)
+        return 0
+    if args.command == "plan-music":
+        from .music_direction import build_music_reference
+
+        result = build_music_reference(
+            _read_json(args.plan),
+            _read_json(args.profile),
+            _read_json(args.subtitles) if args.subtitles else None,
+            dialogue_padding_sec=args.dialogue_padding_sec,
+        )
+        _write_result(result, args.output)
+        return 0 if result["status"] in {"reference_ready", "no_music_suggestion"} else 2
     if args.command == "aggregate-reference":
         from .profile_aggregation import (
             aggregate_analyses,

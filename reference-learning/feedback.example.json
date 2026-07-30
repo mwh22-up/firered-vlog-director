@@ -1,0 +1,25 @@
+﻿{
+  "schema_version": "1.0",
+  "profile_id": "my-project-feedback-v1",
+  "parent_plan_version": 2,
+  "shot_feedback": [
+    {
+      "id": "keep-scenic-reveal",
+      "source": "raw/example.mp4",
+      "start_sec": 12.4,
+      "end_sec": 18.8,
+      "decision": "lock",
+      "confidence": 1.0,
+      "reason": "这是本片核心景色揭晓，需要完整保留"
+    },
+    {
+      "id": "remove-repeated-view",
+      "source": "raw/example.mp4",
+      "start_sec": 31.0,
+      "end_sec": 34.5,
+      "decision": "remove",
+      "confidence": 1.0,
+      "reason": "与上一段景色重复，没有新增信息"
+    }
+  ]
+}

@@ -14,6 +14,23 @@ def _gain_to_linear(gain_db: float) -> float:
     return math.pow(10.0, gain_db / 20.0)
 
 
+def _music_filter_chain(index: int, track: dict[str, Any], label: str) -> str:
+    start = float(track["start_sec"])
+    end = float(track["end_sec"])
+    duration = end - start
+    fade_in = float(track["fade_in_sec"])
+    fade_out = float(track["fade_out_sec"])
+    fade_out_start = max(fade_in, duration - fade_out)
+    delay_ms = round(start * 1000)
+    gain = _gain_to_linear(float(track["gain_db"]))
+    return (
+        f"[{index}:a]atrim=0:{duration:.3f},asetpts=PTS-STARTPTS,"
+        f"volume={gain:.8f},afade=t=in:st=0:d={fade_in:.3f},"
+        f"afade=t=out:st={fade_out_start:.3f}:d={fade_out:.3f},"
+        f"adelay={delay_ms}|{delay_ms}[{label}]"
+    )
+
+
 def _anchor_expression(anchor: str) -> tuple[str, str]:
     anchors = {
         "top_left": ("40", "40"),
@@ -155,7 +172,17 @@ def render_enhanced_video(
     subtitle_file: Path | None = None
     if subtitle_cues:
         subtitle_file = output_path.with_suffix(".ass")
-        write_ass_subtitles(subtitle_cues, subtitle_file)
+        subtitle_style = enhancement_plan.get("subtitles", {}).get("style", {})
+        write_ass_subtitles(
+            subtitle_cues,
+            subtitle_file,
+            font_name=str(subtitle_style.get("font_name", "Microsoft YaHei")),
+            font_size=int(subtitle_style.get("font_size", 64)),
+            margin_v=int(subtitle_style.get("margin_v", 72)),
+            outline=int(subtitle_style.get("outline", 4)),
+            shadow=int(subtitle_style.get("shadow", 1)),
+            bold=bool(subtitle_style.get("bold", True)),
+        )
         next_video = "video_subtitled"
         fonts_directory = project / "assets" / "fonts"
         subtitle_filter = f"subtitles=filename='{filter_path(subtitle_file)}'"
@@ -173,15 +200,7 @@ def render_enhanced_video(
         music_labels = []
         for sequence, (index, track) in enumerate(music_inputs, start=1):
             label = f"music_{sequence}"
-            start = float(track["start_sec"])
-            end = float(track["end_sec"])
-            duration = end - start
-            delay_ms = round(start * 1000)
-            gain = _gain_to_linear(float(track["gain_db"]))
-            filters.append(
-                f"[{index}:a]atrim=0:{duration},asetpts=PTS-STARTPTS,"
-                f"volume={gain},adelay={delay_ms}|{delay_ms}[{label}]"
-            )
+            filters.append(_music_filter_chain(index, track, label))
             music_labels.append(f"[{label}]")
         filters.append(
             "".join(music_labels)
@@ -190,8 +209,9 @@ def render_enhanced_video(
         ducking = enhancement_plan["music"]["ducking"]
         filters.append(
             "[music_bed][dialogue_sc]sidechaincompress="
-            f"threshold=0.04:ratio=8:attack={int(ducking['attack_ms'])}:"
-            f"release={int(ducking['release_ms'])}[ducked_music]"
+            f"threshold={float(ducking['threshold'])}:ratio={float(ducking['ratio'])}:"
+            f"attack={int(ducking['attack_ms'])}:release={int(ducking['release_ms'])}"
+            "[ducked_music]"
         )
         filters.append("[dialogue_mix][ducked_music]amix=inputs=2:normalize=0:duration=first[audio_final]")
     else:

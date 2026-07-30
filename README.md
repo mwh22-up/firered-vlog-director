@@ -1,9 +1,15 @@
 # FireRed Vlog Director Core
 
-可移植的“导演大脑”基础模块，用于在现有本地剪辑流水线中保护重要节点、笑点及其上下文。
+可移植的“导演大脑”，用于分析目标原片、应用参考片经验、生成并评分多套候选 EDL、保护重要事件链，并在人工批准后驱动原片重剪。
 
 当前包含：
 
+- 目标原片的镜头、事件、对白和声音分析；
+- `concise`（趣味优先）、`balanced`（美景与趣味平衡）、`immersive`（美景优先）三套会改变选片的候选时间线；
+- 参考片档案对镜头角色、节奏和事件链的可追踪评分影响；
+- 新旧时间线差异门禁，禁止换版本号后原样复制旧 EDL；
+- 候选推荐与人工批准分离，批准后使用 SHA-256 防止 EDL 被静默修改；
+- 渲染后逐切点黑帧、静音、音频爆点和前后帧审查清单；
 - `moments.json`、`director_profile.json` 数据契约；
 - `locked`、`protected`、`optional` 保护策略；
 - `setup/payoff/reaction` 成组保护；
@@ -131,3 +137,81 @@ Git 只保存 JSON 分析与规则。代理视频、模型缓存、逐帧图片�
 
 家庭电脑从安装、学习新视频到接入现有导演流水线的完整步骤见
 `docs/reference-learning-home-guide.md`。
+
+## 可执行导演流程
+
+导演系统不会直接把推荐方案当成最终剪辑，也不会在缺少目标原片分析时复制旧时间线。
+
+### 1. 分析目标原片并生成候选
+
+先在视频管线项目中完成素材入库和逐字稿，再运行：
+
+```powershell
+.\scripts\direct-project.ps1 `
+  -ProjectPath ..\firered-vlog-pipeline\projects\nordic-arrival `
+  -ParentPlan ..\firered-vlog-pipeline\projects\nordic-arrival\work\plans\edit_plan.v1.json `
+  -Profile .\reference-learning\director-profile.aggregate.v5.json `
+  -Moments ..\firered-vlog-pipeline\projects\nordic-arrival\work\analysis\moments.json `
+  -Version 2 `
+  -TargetDurationSec 600
+```
+
+输出目录 `work/director/v2-proposal/` 包含三套候选 EDL、推荐方案、评分报告、目标语义视图与切点清单。状态是 `review_required`，不是完成。
+
+### 2. 人工批准候选
+
+```powershell
+.\scripts\approve-timeline.ps1 `
+  -ProjectPath ..\firered-vlog-pipeline\projects\nordic-arrival `
+  -Version 2 `
+  -Candidate ..\firered-vlog-pipeline\projects\nordic-arrival\work\director\v2-proposal\candidate.balanced.json `
+  -ApprovedBy "reviewer-name"
+```
+
+批准后会生成 `edit_plan.v2.json` 和绑定内容哈希的凭证。EDL 再被修改时，渲染门禁会要求重新批准。
+
+### 3. 从原片重剪并审查切点
+
+在 `firered-vlog-pipeline` 运行 `scripts/render-directed.ps1`。不要把旧基础 MP4 传给增强器冒充新剪辑。
+
+## 设计边界
+
+- Video Use 仅借鉴“紧凑语义视图 → EDL → 渲染后逐切点自检”，不作为架构依赖。
+- 参考片是评分先验，不是目标素材；缺少目标原片分析或完整对白转录时直接阻断。
+- 自动评分只能推荐，不能代替人工确认故事语义、对白完整性和视觉连续性。
+- HyperFrames 属于效果层，不参与镜头选择或时间线审批。
+## 配乐参考单
+
+导演系统在画面时间线完成后，只输出非阻断的配乐参考：建议时间段、情绪与节奏、剪映搜索关键词、音量参考和淡入淡出方式。它不自动选歌、不自动混音、不影响画面版本发布；用户在剪映中自行搜索和试听。
+
+```powershell
+vlog-director plan-music --plan edit_plan.v2.json --profile director-profile.aggregate.v5.json --subtitles subtitles.review.v2.json --dialogue-padding-sec 0.35 --output music_reference.v2.json
+```
+
+参考单会避开已知字幕对白区间，但实际添加时仍需试听，优先保留现场对白和环境声。HyperFrames 仍只属于视觉效果层，不参与配乐点位决策。
+
+## 导演学习闭环
+
+导演学习不再把所有参考视频平均成一条万能规则，而是分为四层：
+
+1. **内容记忆**：美景和趣味分别评分；趣味按 `setup → trigger → payoff → reaction` 事件链判断。
+2. **剪辑记忆**：三套候选分别偏向趣味、平衡和美景，必须真实改变目标原片 EDL。
+3. **效果记忆**：贴图和动效只能在高置信趣味事件之后建议，默认非阻断；具体风格等待用户参考视频，不提前写死。
+4. **反馈记忆**：人工的保留、删除、恢复、延长、缩短和锁定决定优先于参考片先验。
+
+固定优先级为：**显式用户反馈 > 目标原片证据 > 多参考片共同模式 > 单一参考片模式**。参考成片只能提供正向保留模式；没有原片、成片与 EDL 映射时，不推断真实删片偏好。
+
+当前聚合档案为 `reference-learning/director-profile.aggregate.v5.json`。它修正了“11 支视频的人工总结只算 1 份证据”的问题，按独立参考视频 ID 去重统计支持度。
+
+如需让下一版吸收人工修改，复制 `reference-learning/feedback.example.json`，填写镜头决定后运行：
+
+```powershell
+.\scripts\direct-project.ps1 `
+  -ProjectPath ..\firered-vlog-pipeline\projects\nordic-arrival `
+  -ParentPlan ..\firered-vlog-pipeline\projects\nordic-arrival\work\plans\edit_plan.v1.json `
+  -Profile .\reference-learning\director-profile.aggregate.v5.json `
+  -Moments ..\firered-vlog-pipeline\projects\nordic-arrival\work\analysis\moments.json `
+  -Feedback .\reference-learning\feedback.my-project.v1.json `
+  -Version 2 `
+  -TargetDurationSec 600
+```

@@ -37,6 +37,11 @@ def aggregate_analyses(
             profiles or [],
             support_threshold,
         ),
+        "learning_memory": build_learning_memory(
+            analyses,
+            profiles or [],
+            support_threshold,
+        ),
         "shot_selection_model": {
             "retain_archetypes": [
                 row
@@ -73,6 +78,7 @@ def aggregate_analyses(
         "audio_model": {
             "kind_ratios": aggregate_audio_ratios(analyses),
             "music_segment_duration_sec": music_segment_range(analyses),
+            "music_context_model": music_context_model(analyses),
             "rule": "对白区间优先保留原声；可能配乐用于跨镜头托底；环境声承担地点质感；静音仅用于有意停顿。"
         },
         "source_variants": [
@@ -327,6 +333,72 @@ def music_segment_range(
     }
 
 
+def music_context_model(analyses: list[dict[str, Any]]) -> dict[str, Any]:
+    phase_duration = Counter()
+    role_duration = Counter()
+    total_music = 0.0
+    speech_overlap = 0.0
+    segment_count = 0
+    for analysis in analyses:
+        duration = float(analysis.get("media", {}).get("duration_sec", 0.0))
+        if duration <= 0:
+            duration = max(
+                (float(shot["end_sec"]) for shot in analysis.get("shots", [])),
+                default=0.0,
+            )
+        shots = analysis.get("shots", [])
+        for segment in analysis.get("audio_segments", []):
+            if segment.get("kind") != "music_likely":
+                continue
+            start = float(segment["start_sec"])
+            end = float(segment["end_sec"])
+            segment_duration = max(0.0, end - start)
+            if segment_duration <= 0:
+                continue
+            segment_count += 1
+            total_music += segment_duration
+            midpoint = (start + end) / 2
+            phase = (
+                "opening"
+                if midpoint <= min(15.0, duration * 0.15)
+                else "closing"
+                if duration and midpoint >= duration * 0.85
+                else "body"
+            )
+            phase_duration[phase] += segment_duration
+            for shot in shots:
+                overlap = max(
+                    0.0,
+                    min(end, float(shot["end_sec"]))
+                    - max(start, float(shot["start_sec"])),
+                )
+                if overlap <= 0:
+                    continue
+                role_duration[str(shot.get("role", "ambient"))] += overlap
+                if (
+                    str(shot.get("role")) == "dialogue"
+                    or float(shot.get("speech_ratio", 0.0)) >= 0.3
+                ):
+                    speech_overlap += overlap
+    denominator = max(total_music, 0.001)
+    return {
+        "segment_count": segment_count,
+        "phase_ratios": {
+            phase: round(phase_duration.get(phase, 0.0) / denominator, 4)
+            for phase in ("opening", "body", "closing")
+        },
+        "role_overlap_ratios": {
+            role: round(value / denominator, 4)
+            for role, value in role_duration.most_common()
+        },
+        "speech_overlap_ratio": round(min(1.0, speech_overlap / denominator), 4),
+        "evidence_note": (
+            "music_likely is an acoustic estimate; context ratios guide placement "
+            "and sparsity but do not identify songs or prove editorial intent."
+        ),
+    }
+
+
 def load_analysis(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8-sig") as file:
         return json.load(file)
@@ -337,28 +409,131 @@ def load_profile(path: Path) -> dict[str, Any]:
         return json.load(file)
 
 
+def _profile_source_ids(profile: dict[str, Any]) -> set[str]:
+    sources = profile.get("reference_sources") or profile.get("sources") or []
+    return {
+        str(source.get("source_id") or source.get("url"))
+        for source in sources
+        if source.get("source_id") or source.get("url")
+    }
+
+
 def aggregate_semantic_principles(
     profiles: list[dict[str, Any]],
     support_threshold: int,
 ) -> list[dict[str, Any]]:
     grouped: dict[str, list[dict[str, Any]]] = {}
-    for profile in profiles:
+    for profile_index, profile in enumerate(profiles, start=1):
+        profile_id = str(profile.get("profile_id") or f"profile-{profile_index}")
+        profile_sources = _profile_source_ids(profile) or {profile_id}
         for principle in profile.get("principles", []):
-            grouped.setdefault(principle["id"], []).append(principle)
-    return [
-        {
-            "id": principle_id,
-            "source_support": len(rows),
-            "average_confidence": round(
-                mean(float(row["confidence"]) for row in rows),
-                4,
+            explicit_sources = {
+                str(value) for value in principle.get("source_ids", []) if value
+            }
+            grouped.setdefault(str(principle["id"]), []).append(
+                {
+                    "principle": principle,
+                    "source_ids": explicit_sources or profile_sources,
+                    "profile_id": profile_id,
+                }
+            )
+
+    aggregated = []
+    for principle_id, entries in sorted(grouped.items()):
+        source_ids = set().union(*(entry["source_ids"] for entry in entries))
+        if len(source_ids) < support_threshold:
+            continue
+        principles = [entry["principle"] for entry in entries]
+        aggregated.append(
+            {
+                "id": principle_id,
+                "source_support": len(source_ids),
+                "source_ids": sorted(source_ids),
+                "profile_support": len({entry["profile_id"] for entry in entries}),
+                "average_confidence": round(
+                    mean(float(row.get("confidence", 0.5)) for row in principles),
+                    4,
+                ),
+                "rule": max(principles, key=lambda row: len(str(row["rule"])))['rule'],
+                "source_variants": list(
+                    dict.fromkeys(str(row["rule"]) for row in principles)
+                ),
+            }
+        )
+    return aggregated
+
+
+def build_learning_memory(
+    analyses: list[dict[str, Any]],
+    profiles: list[dict[str, Any]],
+    support_threshold: int,
+) -> dict[str, Any]:
+    principles = aggregate_semantic_principles(profiles, support_threshold)
+    principle_ids = {str(item["id"]) for item in principles}
+    reference_ids = {
+        str(analysis.get("source", {}).get("source_id", ""))
+        for analysis in analyses
+        if analysis.get("source", {}).get("source_id")
+    }
+    return {
+        "precedence": [
+            "explicit_user_feedback",
+            "target_footage_evidence",
+            "cross_reference_patterns",
+            "source_specific_patterns",
+        ],
+        "content_model": {
+            "separate_scores": ["scenic_score", "fun_score"],
+            "preference_weights": {"scenic": 1.0, "fun": 1.0},
+            "event_chain": ["setup", "trigger", "payoff", "reaction", "callback"],
+            "evidence_rules": sorted(
+                principle_ids
+                & {
+                    "seasonal-place-texture",
+                    "preserve-complete-event-chain",
+                    "dialogue-is-story-structure",
+                }
             ),
-            "rule": max(rows, key=lambda row: len(row["rule"]))["rule"],
-            "source_variants": [row["rule"] for row in rows],
-        }
-        for principle_id, rows in sorted(grouped.items())
-        if len(rows) >= support_threshold
-    ]
+        },
+        "editing_model": {
+            "candidate_directions": {
+                "concise": "fun_forward",
+                "balanced": "scenic_fun_balanced",
+                "immersive": "scenic_forward",
+            },
+            "uses_target_analysis": True,
+            "requires_timeline_change": True,
+            "reference_source_count": len(reference_ids),
+        },
+        "effect_model": {
+            "non_blocking": True,
+            "eligible_only_after_fun_event": True,
+            "default_max_primary_effects_per_event": 1,
+            "safe_zones": ["faces", "main_subject", "subtitles"],
+            "style_status": "awaiting_user_reference_videos",
+            "evidence_rules": sorted(
+                principle_ids & {"restrained-information-graphics"}
+            ),
+        },
+        "feedback_model": {
+            "accepted_decisions": [
+                "prefer",
+                "restore",
+                "extend",
+                "avoid",
+                "remove",
+                "shorten",
+                "lock",
+            ],
+            "feedback_overrides_reference_priors": True,
+            "versioned": True,
+        },
+        "limitations": [
+            "Final reference videos provide positive retained-pattern evidence only.",
+            "Learning true deletion preference requires raw footage, final edit, and EDL mapping.",
+            "Scenic and fun scores require target evidence or explicit human annotation.",
+        ],
+    }
 
 
 def write_aggregate(profile: dict[str, Any], output_path: Path) -> None:

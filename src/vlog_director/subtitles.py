@@ -27,8 +27,11 @@ def write_ass_subtitles(
     output: Path,
     title: str = "Vlog subtitles",
     font_name: str = "Microsoft YaHei",
-    font_size: int = 48,
-    margin_v: int = 80,
+    font_size: int = 64,
+    margin_v: int = 72,
+    outline: int = 4,
+    shadow: int = 1,
+    bold: bool = True,
 ) -> Path:
     output.parent.mkdir(parents=True, exist_ok=True)
     header = f"""[Script Info]
@@ -41,7 +44,7 @@ PlayResY: 1080
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,{font_name},{font_size},&H00FFFFFF,&H000000FF,&H00101010,&H80000000,0,0,0,0,100,100,0,0,1,3,1,2,80,80,{margin_v},1
+Style: Default,{font_name},{font_size},&H00FFFFFF,&H000000FF,&H00101010,&H80000000,{-1 if bold else 0},0,0,0,100,100,0,0,1,{outline},{shadow},2,80,80,{margin_v},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text

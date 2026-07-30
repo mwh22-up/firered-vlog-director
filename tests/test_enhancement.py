@@ -24,6 +24,26 @@ class EnhancementTests(unittest.TestCase):
         self.assertEqual(plan["render_stages"], RENDER_STAGES)
         self.assertEqual(plan["timeline_duration_sec"], 22.0)
         self.assertEqual(len(plan["video_treatments"]), 2)
+        validation = validate_enhancement_plan(edit_plan, plan)
+        self.assertEqual(validation["status"], "passed")
+
+    def test_music_reference_is_optional_and_non_blocking(self) -> None:
+        edit_plan = load_edit_plan()
+        plan = build_enhancement_plan(edit_plan)
+        plan["music"] = {
+            "status": "reference_ready",
+            "mode": "manual_capcut_reference",
+            "non_blocking": True,
+            "recommendations": [
+                {
+                    "recommendation_id": "music-01",
+                    "start_sec": 2.0,
+                    "end_sec": 8.0,
+                    "capcut_search_keywords": ["??", "??"],
+                }
+            ],
+            "tracks": [],
+        }
         self.assertEqual(validate_enhancement_plan(edit_plan, plan)["status"], "passed")
 
     def test_audio_removal_and_excessive_crop_block(self) -> None:
@@ -63,6 +83,20 @@ class EnhancementTests(unittest.TestCase):
         self.assertEqual(result["status"], "blocked")
         self.assertIn("subtitle_out_of_timeline", codes)
         self.assertIn("overlay_subtitle_conflict", codes)
+
+    def test_review_required_subtitles_block_render(self) -> None:
+        edit_plan = load_edit_plan()
+        plan = build_enhancement_plan(edit_plan)
+        plan["subtitles"]["status"] = "review_required"
+
+        result = validate_enhancement_plan(edit_plan, plan)
+
+        self.assertEqual(result["status"], "blocked")
+        self.assertIn(
+            "subtitles_not_release_ready",
+            {issue["code"] for issue in result["issues"]},
+        )
+
 
     def test_render_stage_order_cannot_change(self) -> None:
         edit_plan = load_edit_plan()

@@ -48,14 +48,11 @@ def build_enhancement_plan(edit_plan: dict[str, Any]) -> dict[str, Any]:
         "render_stages": RENDER_STAGES,
         "video_treatments": treatments,
         "music": {
-            "status": "planned",
+            "status": "reference_pending",
+            "mode": "manual_capcut_reference",
+            "non_blocking": True,
+            "recommendations": [],
             "tracks": [],
-            "ducking": {
-                "enabled": True,
-                "dialogue_gain_db": -22.0,
-                "attack_ms": 120,
-                "release_ms": 450,
-            },
         },
         "subtitles": {
             "status": "planned",
@@ -66,6 +63,12 @@ def build_enhancement_plan(edit_plan: dict[str, Any]) -> dict[str, Any]:
                 "max_lines": 2,
                 "safe_margin_percent": 8.0,
                 "position": "bottom_center",
+                "font_name": "Microsoft YaHei",
+                "font_size": 64,
+                "margin_v": 72,
+                "outline": 4,
+                "shadow": 1,
+                "bold": True,
             },
         },
         "illustration_motion": {
@@ -179,22 +182,71 @@ def validate_enhancement_plan(
         )
 
     music = enhancement_plan.get("music", {})
-    if music.get("status") == "ready":
-        if not music.get("tracks"):
-            issues.append(
-                _issue("error", "music_track_missing", "music", "Ready music needs a track.")
-            )
-        if not music.get("ducking", {}).get("enabled", False):
+    for reference_index, reference in enumerate(music.get("recommendations", []), start=1):
+        start_sec = float(reference.get("start_sec", -1.0))
+        end_sec = float(reference.get("end_sec", -1.0))
+        if not _range_is_valid(start_sec, end_sec, duration):
             issues.append(
                 _issue(
-                    "error",
-                    "music_ducking_disabled",
-                    "music",
-                    "Dialogue-aware music ducking is required.",
+                    "warning",
+                    "music_reference_out_of_timeline",
+                    str(reference.get("recommendation_id") or f"music-{reference_index}"),
+                    "Music reference should stay inside the output timeline.",
                 )
             )
 
-    for cue_index, cue in enumerate(enhancement_plan.get("subtitles", {}).get("cues", [])):
+    subtitle_section = enhancement_plan.get("subtitles", {})
+    if subtitle_section.get("status") in {"blocked", "review_required"}:
+        issues.append(
+            _issue(
+                "error",
+                "subtitles_not_release_ready",
+                "subtitles",
+                "Subtitles must pass semantic review and source-coverage verification before render.",
+            )
+        )
+
+    if subtitle_section.get("status") == "ready":
+        style = subtitle_section.get("style", {})
+        if int(style.get("font_size", 0)) < 60:
+            issues.append(
+                _issue(
+                    "error",
+                    "subtitle_font_too_small",
+                    "subtitles",
+                    "1080p subtitles require font_size >= 60.",
+                )
+            )
+        if int(style.get("outline", 0)) < 3:
+            issues.append(
+                _issue(
+                    "error",
+                    "subtitle_outline_too_thin",
+                    "subtitles",
+                    "Readable subtitles require outline >= 3.",
+                )
+            )
+        if subtitle_section.get("coverage", {}).get("status") != "verified":
+            issues.append(
+                _issue(
+                    "error",
+                    "subtitle_coverage_unverified",
+                    "subtitles",
+                    "Dialogue coverage must be verified before release.",
+                )
+            )
+        for cue_index, cue in enumerate(subtitle_section.get("cues", []), start=1):
+            if cue.get("review_status") != "verified":
+                issues.append(
+                    _issue(
+                        "error",
+                        "subtitle_cue_unverified",
+                        f"subtitle-{cue_index}",
+                        "Every subtitle cue must be checked against source audio.",
+                    )
+                )
+
+    for cue_index, cue in enumerate(subtitle_section.get("cues", [])):
         if not _range_is_valid(
             float(cue["start_sec"]), float(cue["end_sec"]), duration
         ):

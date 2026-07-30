@@ -131,6 +131,39 @@ class AggregationTests(unittest.TestCase):
             "dialogue",
         )
 
+    def test_one_summary_counts_its_independent_reference_sources(self) -> None:
+        analyses = [
+            sample_analysis("source-a", 2.0, 1.0),
+            sample_analysis("source-b", 2.5, 1.2),
+            sample_analysis("source-c", 2.2, 1.1),
+        ]
+        summary = {
+            "profile_id": "summary-two-sources",
+            "reference_sources": [
+                {"source_id": "source-a"},
+                {"source_id": "source-b"},
+            ],
+            "principles": [
+                {
+                    "id": "restrained-information-graphics",
+                    "rule": "Only add overlays when they clarify information or a joke.",
+                    "confidence": 0.9,
+                }
+            ],
+        }
+        profile = aggregate_analyses(analyses, [summary])
+        principle = next(
+            item
+            for item in profile["semantic_principles"]
+            if item["id"] == "restrained-information-graphics"
+        )
+        self.assertEqual(principle["source_support"], 2)
+        self.assertEqual(principle["profile_support"], 1)
+        self.assertEqual(
+            profile["learning_memory"]["effect_model"]["style_status"],
+            "awaiting_user_reference_videos",
+        )
+
     def test_asr_can_be_explicitly_disabled(self) -> None:
         result = transcribe_media(
             None,
