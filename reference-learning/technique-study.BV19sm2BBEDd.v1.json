@@ -1,0 +1,701 @@
+{
+  "schema_version": "1.0",
+  "study_id": "shao-switzerland-europe-adventure-full-v1",
+  "generated_at": "2026-07-30T13:58:58Z",
+  "source": {
+    "source_id": "bilibili-BV19sm2BBEDd",
+    "url": "https://www.bilibili.com/video/BV19sm2BBEDd/",
+    "title": "《一个人的欧洲探险记》瑞士篇完整版",
+    "duration_sec": 13397.336
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 7575283,
+    "shot_count": 3608,
+    "event_count": 187,
+    "transcript_segment_count": 2905,
+    "transcript_word_count": 12934,
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_reported_duration_sec": 13397.31,
+    "transcript_end_sec": 13338.1,
+    "transcript_tail_gap_sec": 59.236,
+    "asr_time_coverage_ratio": 0.995579,
+    "transcript_tail_gap_manual_result": "片尾字幕、制作 credits 与风景 inset，无持续对白，未见 ASR 截断。",
+    "danmaku_count": 4208,
+    "danmaku_end_sec": 13396.877,
+    "audio_class_ratios": {
+      "ambient_likely": 0.4908,
+      "speech": 0.2782,
+      "music_likely": 0.1983,
+      "silence": 0.0327
+    },
+    "shot_duration_median_sec": 2.6,
+    "shot_duration_p75_sec": 4.2,
+    "manual_review_ranges": [
+      [0, 180],
+      [2248, 2256],
+      [2969, 3058],
+      [3690, 3706],
+      [4088, 4320],
+      [4392, 4686],
+      [4745, 4760],
+      [4925, 4935],
+      [5400, 6207],
+      [6970, 7210],
+      [7535, 7610],
+      [8000, 8245],
+      [8953, 9045],
+      [11035, 11145],
+      [11413, 11845],
+      [12194, 12420],
+      [12698, 12827],
+      [13050, 13397.336]
+    ],
+    "content_overlap_review": {
+      "overlapping_source_id": "bilibili-BV1CrHwzUEJa",
+      "observed_overlap_range_sec": [0, 2159.44],
+      "finding": "开场和第一天的事件顺序、关键时间点与既有瑞士单集存在实质内容重叠；该区间仍用于本片开场与完整叙事描述，但不作为新的跨来源 technique observation。",
+      "aggregation_policy": "本 study 的 technique_observations 全部取自 2159.44 秒之后，避免把同源重叠镜头误算成第三份独立编辑证据。"
+    }
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 180,
+    "phases": [
+      {
+        "start_sec": 0,
+        "end_sec": 20.68,
+        "function": "以湖山、草地、人物和双层标题组成目的地预告，先兑现瑞士的视觉承诺。"
+      },
+      {
+        "start_sec": 20.68,
+        "end_sec": 86.32,
+        "function": "保留完整正面口播，交代人生清单、欧洲失窃焦虑和独行设定，并穿插护身符、宠物毛、截图和行李细节。"
+      },
+      {
+        "start_sec": 86.32,
+        "end_sec": 118.56,
+        "function": "用凌晨收拾、泡面、宠物告别和离家动作把人物设定转成实际出发。"
+      },
+      {
+        "start_sec": 118.56,
+        "end_sec": 151,
+        "function": "上海中转继续推进地理位置，并以饮料动作、火花画面和 SMPTE 彩条完成一次短视觉标点。"
+      },
+      {
+        "start_sec": 151,
+        "end_sec": 180,
+        "function": "回到食物、高铁、机场和长途飞行准备，结束笑点后立即恢复交通主线。"
+      }
+    ],
+    "metrics": {
+      "seconds_0_to_20_68_shots": 13,
+      "seconds_0_to_20_68_median_shot_sec": 1.08,
+      "seconds_20_68_to_86_32_shots": 22,
+      "seconds_20_68_to_86_32_median_shot_sec": 1.44,
+      "seconds_86_32_to_118_56_shots": 17,
+      "seconds_86_32_to_118_56_median_shot_sec": 1.4,
+      "seconds_118_56_to_180_shots": 36,
+      "seconds_118_56_to_180_median_shot_sec": 1.22
+    },
+    "rule": "长篇开场先给目的地感官承诺，再用完整口播和具体道具建立人物风险；真正的动作压缩放在告别与交通段，并只用一次强视觉笑点。"
+  },
+  "narrative_model": {
+    "premise": "第一次独自完成六天瑞士旅行：风景不断兑现人生清单，交通误判、语言障碍、装备负担和最后一天的错误徒步路线则让理想旅行付出真实代价。",
+    "beats": [
+      "用瑞士人生清单、独行欧洲和失窃焦虑建立目标与风险，再通过离家和跨洲移动启动旅程",
+      "落地后连续处理换乘、验票和语言困难，并让陌生人帮助与同行夫妻改变后续路线",
+      "以湖城、城堡、酒店价格、湖边生活和点餐社交完成第一天回报，再因天气调整第二天计划",
+      "在雪山、Wengen 和 Lauterbrunnen 的随性探索中保留找人拍照、设施关闭和雷雨撤退",
+      "雨中换酒店时经历夫妻重逢、差点丢箱和票据打不开，再以列车出隧道和高价湖景房完成回报",
+      "湖景酒店、湖畔小镇和蓝调时刻形成舒缓段，同时保留电梯、洗洁精和煮面等独行生活琐事",
+      "FIRST 山徒步、滑板车和滑翔伞把时间压力升级为动作段；错过卡丁车但赶上飞行，形成替代性 payoff",
+      "转往最后住宿地后用山地闲游、独自拍摄困难、日落和看到他人幸福的感受沉淀人物状态",
+      "最后一天从坐错车、选错路线和缺水逐步升级到暴露山脊、跌倒与下雨，迟来的湖景与山谷回报此前代价",
+      "回酒店反思发现错误要及时回头，并用剪辑把数小时痛苦压缩成几分钟的自觉说明收束主题",
+      "早餐后再次遇到早期同行夫妻完成 callback，再以德国旅程预告和一人团队 credits 结束"
+    ],
+    "rule": "把风景附着在目标、误判、绕路、身体代价、陌生人帮助和结果回报上；错误过程是最终景色与反思成立的因果前提，不能只保留结果。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "交通、道路或地点标题建立抵达过程",
+      "人物进入前景确认空间尺度和体力状态",
+      "湖、雪山、山谷、村落或日落大全景",
+      "当地生活、动物、标识和基础设施细节",
+      "人物真实反应、拍摄困难或行动障碍",
+      "更高位或更开阔的视角完成地理 payoff",
+      "回到人物、现场声或下一步行动"
+    ],
+    "observed_ranges": [
+      [0, 20],
+      [650, 680],
+      [2560, 3212],
+      [3380, 3900],
+      [4745, 4760],
+      [5653, 6450],
+      [6853, 7350],
+      [7571.56, 8410],
+      [9900, 10800],
+      [11350, 11650],
+      [12285, 12850],
+      [13339.08, 13397.336]
+    ],
+    "rule": "风景不是孤立壁纸；优先交替宽景、人物尺度、抵达代价、当地细节和回到行动的出口，避免连续堆叠同构空镜。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.1983,
+    "uses": [
+      "开场风景预告用明亮音乐兑现地点，进入完整人物设定时让位于人声。",
+      "约 4750 秒列车从封闭空间进入湖山宽景时，音乐与视觉揭示共同形成段落落点。",
+      "5653 至 5676.5 秒的连续 music_likely 区间托住房间拉帘、湖景揭示和人物停留。",
+      "山地、飞行和长徒步 payoff 使用较长连续音乐块，真实指令、呼吸与风险现场声出现时保留可懂度。",
+      "坐错车、语言尴尬和动作狼狈可用语义反差型短配乐标点，但不连续追打。",
+      "12706 秒雨中下山明确出现 BGM credit；画面由湿滑林路、人物反应和溪流细节递进，音乐只承担氛围连接。"
+    ],
+    "rule": "音乐既连接大段地理空间，也给现实失败做单点反差；对白、指令、呼吸和现场风险声优先，弹幕曲名不能当作版权级识别。"
+  },
+  "subtitle_model": {
+    "base_style": "底部居中白色无衬线字、黑色描边，一至两行；现场外语交流按需要上下叠放原话与中文解释。",
+    "emphasis_patterns": [
+      "日序和章节使用黑底白字独立卡片，帮助超长成片重置时间与地点",
+      "等待、答非所问和动作遗漏使用省略号、括号或单个大字延长停顿",
+      "安全指令与双语沟通保持完整，不让效果字幕遮挡动作",
+      "竖向图文卡、手机截图和 BGM credit 只承担一次事实说明",
+      "片尾用黑底、风景 inset、器材与职务列表完成可读署名"
+    ],
+    "rule": "基础字幕保证语义；日序卡、标点字幕、双语指令、信息卡和片尾排版各承担单一功能，避免与多种音画效果同时堆叠。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "明确目标、时间压力或社交期待",
+      "真实误判、语言障碍、装备负担或路人打断",
+      "保留足够长的尝试和身体反应",
+      "只加一个 BGM、字幕标点、短图形或硬重置",
+      "让人物自行承认失败或恢复行动",
+      "在酒店价格、泡面、坐错车、丢装备或同行夫妻上形成 callback"
+    ],
+    "audience_peaks_sec": [
+      3691,
+      4750,
+      4925,
+      5589,
+      5660,
+      6978,
+      7582,
+      8205,
+      8230,
+      8235,
+      11035,
+      11595,
+      11605,
+      12290,
+      12335,
+      12555,
+      12705,
+      13175,
+      13310,
+      13345,
+      13355,
+      13390
+    ],
+    "rule": "先让真实过程成立，再由一个编辑标点放大；错误被解决、美景出现或人物自嘲后立即重置，不连续堆效果。",
+    "playback_rate_note": "7571.56 至 7625.44 秒是 53.88 秒连续下坡 POV，画面高速且弹幕提到倍速/快进，但真实骑行速度同样能解释；只记低置信视觉加速候选，不给精确倍率。11124 至 11136 秒是硬切加时间卡，13226 至 13238 秒是正常早餐动作后硬切，均未确认画面变速。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-multiday-chapter-carryover",
+      "technique_key": "narrative-multiday-reset-with-carryover",
+      "start_sec": 2159.44,
+      "end_sec": 9045.28,
+      "category": "narrative",
+      "trigger": "六天合集需要在超长时长中反复重置日期，又不能让每天像互不相关的短片。",
+      "treatment": "每晚用总结和次日计划保留未完成目标，次日再以日序卡、起床状态和交通行动快速重启，让天气、同行夫妻与住宿选择跨日延续。",
+      "confidence": 0.93,
+      "parameters": {
+        "uses_day_cards": true,
+        "uses_previous_day_plan": true,
+        "manual_day_card_example_sec": 8953.76
+      },
+      "evidence": {
+        "full_transcript_coverage": true,
+        "manual_frame_review": true,
+        "event_range_review": true
+      },
+      "guardrails": [
+        "日序卡后必须立即给出当天目标或限制条件。",
+        "跨日 callback 只保留真正影响后续选择的事件。"
+      ]
+    },
+    {
+      "observation_id": "obs-labeled-ai-dragon-escalation",
+      "technique_key": "graphic-labeled-ai-fantasy-escalation",
+      "start_sec": 3690,
+      "end_sec": 3703,
+      "category": "graphic",
+      "trigger": "普通山景与‘来都来了’式疲惫需要一次明确脱离现实的视觉想象。",
+      "treatment": "在山景上让飞龙数量逐步增加，并持续显示‘（AI生成）’标签；幻想段结束后硬切回真实观景台和动物。",
+      "confidence": 0.98,
+      "parameters": {
+        "visible_disclosure_label": "（AI生成）",
+        "escalation": "increasing_creature_count",
+        "reset": "hard_cut_to_reality"
+      },
+      "evidence": {
+        "manual_dense_frame_review_fps": 2,
+        "visible_ai_label": true,
+        "danmaku_repeated_signal": "五毛钱特效、飞龙"
+      },
+      "guardrails": [
+        "生成或合成画面必须显式标注，不能冒充现场事实。",
+        "成片只能确认视觉插入，不能反推具体生成工具或流程。"
+      ]
+    },
+    {
+      "observation_id": "obs-animal-reference-card",
+      "technique_key": "graphic-inline-reference-card-over-live-scene",
+      "start_sec": 3703,
+      "end_sec": 3706,
+      "category": "graphic",
+      "trigger": "远处动物难以仅凭现场低清画面辨认，需要短暂提供语义背景。",
+      "treatment": "在仍可看见底层草地的情况下叠加竖向白底图文卡，读完即撤，再回到动物近景。",
+      "confidence": 0.95,
+      "parameters": {
+        "overlay_type": "vertical_reference_card",
+        "background_remains_visible": true
+      },
+      "evidence": {
+        "manual_dense_frame_review_fps": 2,
+        "manual_overlay_boundary_review": true
+      },
+      "guardrails": [
+        "信息卡只解释当前对象，不扩展成未经核验的旅行建议。",
+        "卡片读完即撤，不长期遮挡现场画面和基础字幕。"
+      ]
+    },
+    {
+      "observation_id": "obs-train-tunnel-scenic-reveal",
+      "technique_key": "music-transition-reveal-synchronization",
+      "start_sec": 4745,
+      "end_sec": 4760,
+      "category": "music_rhythm",
+      "trigger": "列车从封闭、昏暗空间进入开阔湖山，需要把地理变化变成明确情绪落点。",
+      "treatment": "保留车厢窗框作为前景，在出隧道后连续展开湖泊、云雾和山谷；音乐变化与视觉露出共同完成揭示。",
+      "confidence": 0.84,
+      "parameters": {
+        "transition": "enclosed_transport_to_scenic_reveal",
+        "audience_sync_signal_sec": 4753
+      },
+      "evidence": {
+        "manual_frame_review_fps": 1,
+        "danmaku_bucket_start_sec": 4750,
+        "danmaku_bucket_count": 11,
+        "danmaku_repeated_signal": "BGM 与出隧道时机吻合"
+      },
+      "guardrails": [
+        "音乐识别和因果不能只依赖弹幕。",
+        "揭示前后的窗框与移动方向要保持空间连续。"
+      ]
+    },
+    {
+      "observation_id": "obs-hotel-price-delayed-lake-payoff",
+      "technique_key": "narrative-price-callback-delayed-scenic-payoff",
+      "start_sec": 5400,
+      "end_sec": 5690,
+      "category": "narrative",
+      "trigger": "全程最贵酒店再次激活高物价预期，需要证明价格在这次叙事中的具体回报。",
+      "treatment": "先完成房间与价格铺垫，把窗帘和阳台留到 room tour 末尾，再以人物走向窗边、拉帘、开门和坐下的连续动作揭示湖景。",
+      "confidence": 0.97,
+      "parameters": {
+        "payoff": "lake_view",
+        "reveal_order": ["price", "room", "curtain", "balcony", "human_pause"],
+        "music_likely_sec": [5653, 5676.5]
+      },
+      "evidence": {
+        "manual_frame_review_fps": 1,
+        "danmaku_bucket_start_sec": 5660,
+        "danmaku_bucket_count": 12,
+        "danmaku_shift": "价格调侃转为值了、好美"
+      },
+      "guardrails": [
+        "金额必须来自视频已陈述事实。",
+        "景色 payoff 不提前泄露，且保留人物尺度而非只留空镜。"
+      ]
+    },
+    {
+      "observation_id": "obs-manual-elevator-punctuation",
+      "technique_key": "humor-fluster-preserve-duration-with-one-punctuation",
+      "start_sec": 5584,
+      "end_sec": 5596,
+      "category": "humor",
+      "trigger": "第一次坐手动电梯，到达后忘记需要自己推门。",
+      "treatment": "保留连续手持 POV 和真实停顿，依次用‘到了 / third floor’、一长排省略号和‘忘了要自己推。’延迟揭示错误，不叠加贴图或 VFX。",
+      "confidence": 0.98,
+      "parameters": {
+        "continuous_pov": true,
+        "primary_editorial_effect": "ellipsis_caption",
+        "visual_overlay_required": false
+      },
+      "evidence": {
+        "manual_dense_frame_review_fps": 2,
+        "caption_sequence_verified": true,
+        "danmaku_repeated_signal": "音效、忘了自己推门"
+      },
+      "guardrails": [
+        "先保留足够长的真实等待，字幕才有停顿价值。",
+        "一个省略号标点足够，不再叠加遮挡动作的贴图。"
+      ]
+    },
+    {
+      "observation_id": "obs-scenic-pose-interrupted",
+      "technique_key": "humor-interruption-held-wide-with-punctuation",
+      "start_sec": 6970,
+      "end_sec": 6985,
+      "category": "humor",
+      "trigger": "阿尔卑斯宽景中人物刚摆好姿势，路人从前景经过并遮挡自拍。",
+      "treatment": "保持固定宽景让打断真实发生，用大号‘收’、‘有人经过...’和省略号完成反应，再切回道路继续行程。",
+      "confidence": 0.97,
+      "parameters": {
+        "camera_position": "held_wide",
+        "interruption": "passerby_occlusion",
+        "caption_punctuation": true
+      },
+      "evidence": {
+        "manual_dense_frame_review_fps": 2,
+        "manual_caption_review": true,
+        "danmaku_reaction_sec": 6978
+      },
+      "guardrails": [
+        "笑点落在主角拍摄受阻，不嘲弄路人。",
+        "路人经过后立即恢复行动，不重复播放遮挡。"
+      ]
+    },
+    {
+      "observation_id": "obs-downhill-speed-candidate",
+      "technique_key": "playback-rate-fast-forward-travel-compression-visual-estimate",
+      "start_sec": 7571.56,
+      "end_sec": 7625.44,
+      "category": "playback_rate",
+      "trigger": "连续下坡 POV 路程长、位移快，并包含一次路线犹豫。",
+      "treatment": "保留 53.88 秒连续广角镜头，在‘不知道往哪边走’时短暂叠加 loading spinner，再恢复平滑空间移动；画面仅列为视觉加速候选。",
+      "confidence": 0.45,
+      "parameters": {
+        "continuous_shot_sec": 53.88,
+        "playback_rate": null,
+        "rate_source": "visual_estimate_only",
+        "alternative_explanation": "real_downhill_vehicle_speed",
+        "route_spinner_visible": true
+      },
+      "evidence": {
+        "manual_dense_frame_review_fps": 2,
+        "spatial_continuity_verified": true,
+        "danmaku_signals_sec": [7582, 7602],
+        "danmaku_repeated_signal": "倍速、快进"
+      },
+      "guardrails": [
+        "不得写成已确认 1.5x、2x 或其他精确倍率。",
+        "目标素材中只能生成候选预览，不能自动应用。"
+      ]
+    },
+    {
+      "observation_id": "obs-paragliding-imperfect-camera",
+      "technique_key": "humor-preserve-imperfect-camera-for-authenticity",
+      "start_sec": 8000.76,
+      "end_sec": 8072.96,
+      "category": "humor",
+      "trigger": "滑翔伞准备需要同时处理安全装备、外语指令和运动相机，构图不可避免地被手和身体遮挡。",
+      "treatment": "保留教练调整相机、手指遮镜、低机位身体动作和主角真实回应，用短‘《ASMR》’元标签标记现场听感，不用重拍伪装顺利。",
+      "confidence": 0.96,
+      "parameters": {
+        "action_camera": true,
+        "occlusion_retained": true,
+        "playback_rate": null
+      },
+      "evidence": {
+        "manual_event_frame_review": true,
+        "event_id": "event-115",
+        "bilingual_caption_visible": true
+      },
+      "guardrails": [
+        "安全指令和真实动作优先于构图完美。",
+        "不把教练或语言差异剪成嘲讽对象。"
+      ]
+    },
+    {
+      "observation_id": "obs-paragliding-360-reframe",
+      "technique_key": "graphic-360-tiny-planet-to-pov-reframing",
+      "start_sec": 8170,
+      "end_sec": 8240,
+      "category": "graphic",
+      "trigger": "空中活动需要同时展示人物、教练、飞行姿态和大范围地理环境。",
+      "treatment": "以 360 tiny-planet 视角把人物和山谷压进同一画面，并在动作或交流节点切到水平 POV，使奇观视角与方向可读性互补。",
+      "confidence": 0.98,
+      "parameters": {
+        "projection": "tiny_planet",
+        "secondary_view": "forward_pov",
+        "music_likely_long_segment_sec": [8172.5, 8217.5]
+      },
+      "evidence": {
+        "manual_frame_review_fps": 1,
+        "projection_change_verified": true,
+        "danmaku_peak_buckets": {
+          "8205": 9,
+          "8230": 10,
+          "8235": 13
+        }
+      },
+      "guardrails": [
+        "tiny-planet 画面过久会损害方向感，需与正常地平线视角交替。",
+        "不能让重投影遮蔽安全动作或重要指令。"
+      ]
+    },
+    {
+      "observation_id": "obs-paragliding-bilingual-instruction",
+      "technique_key": "subtitle-bilingual-action-instruction",
+      "start_sec": 8000.76,
+      "end_sec": 8072.96,
+      "category": "subtitle",
+      "trigger": "滑翔伞准备包含外语安全指令，且理解内容与同步动作同样重要。",
+      "treatment": "按指令与回应成对排布双语字幕，短括号元标签只标现场听感，不遮挡扣具、手势和起飞动作。",
+      "confidence": 0.94,
+      "parameters": {
+        "languages": ["source_language", "Chinese"],
+        "meta_caption": "《ASMR》"
+      },
+      "evidence": {
+        "manual_event_frame_review": true,
+        "event_id": "event-115",
+        "transcript_cross_check": true
+      },
+      "guardrails": [
+        "安全指令优先完整准确，ASR 不确定词必须人工降置信。",
+        "双语字幕不遮挡动作关键区域。"
+      ]
+    },
+    {
+      "observation_id": "obs-final-hike-failure-adaptation",
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "start_sec": 10990,
+      "end_sec": 12920,
+      "category": "narrative",
+      "trigger": "最后一天坐错车、买错票并选择没有明确路标的路线，原定轻松徒步失去确定性。",
+      "treatment": "保留求助、地图、继续上山、缺水、语言尴尬、暴露山脊、摔倒、下雨和返程，把错误逐级升级，再以湖景、下山和晚间反思完成结果。",
+      "confidence": 0.98,
+      "parameters": {
+        "obstacles": ["wrong_train", "wrong_ticket", "wrong_route", "dehydration", "exposed_path", "fall", "rain"],
+        "has_external_help": true,
+        "has_reflection": true
+      },
+      "evidence": {
+        "full_transcript_coverage": true,
+        "manual_multi_event_review": true,
+        "event_ids": ["event-162", "event-172", "event-179", "event-180"],
+        "danmaku_payoff_sec": [12290, 12645, 12880]
+      },
+      "guardrails": [
+        "不要只留美景而删掉代价和求助过程。",
+        "成片经历不能被泛化成安全路线建议，也不得夸大未发生的危险。"
+      ]
+    },
+    {
+      "observation_id": "obs-train-one-hour-time-card",
+      "technique_key": "subtitle-time-card-compresses-waiting",
+      "start_sec": 11124,
+      "end_sec": 11136,
+      "category": "subtitle",
+      "trigger": "列车换乘等待包含睡觉和醒来，但不需要按现实时间完整展示。",
+      "treatment": "从睡姿硬切到大哈欠，并用‘《一个小时后》’时间卡标明省略，再切窗外、自拍和车内设备恢复行动。",
+      "confidence": 0.97,
+      "parameters": {
+        "caption": "《一个小时后》",
+        "transition": "hard_cut",
+        "playback_rate": null
+      },
+      "evidence": {
+        "manual_dense_frame_review_fps": 2,
+        "caption_visible": true
+      },
+      "guardrails": [
+        "时间卡必须明确说明时间跳跃，不能伪装成连续实时过程。",
+        "不要把硬切误报为画面变速或视觉变形。"
+      ]
+    },
+    {
+      "observation_id": "obs-straw-language-awkward-process",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 11570,
+      "end_sec": 11625,
+      "category": "humor",
+      "trigger": "山上点饮料时突然想不起‘吸管’的英文，只能通过反复描述和等待解决。",
+      "treatment": "保留提出需求、卡词、店员理解、继续等待、拿到饮料和人物事后偷笑的完整过程，以字幕和短配乐帮助观众跟上，不提前跳到结果。",
+      "confidence": 0.95,
+      "parameters": {
+        "language_barrier": true,
+        "resolution_retained": true,
+        "playback_rate": null
+      },
+      "evidence": {
+        "manual_frame_review_fps": 1,
+        "full_transcript_coverage": true,
+        "danmaku_bucket_counts": {
+          "11590": 9,
+          "11595": 13,
+          "11605": 11,
+          "11615": 9
+        },
+        "danmaku_repeated_signal": "吸管 straw、尴尬等待"
+      },
+      "guardrails": [
+        "笑点落在主角卡词与自我反应，不嘲弄店员或口音。",
+        "保留解决过程，避免只剪失败制造误解。"
+      ]
+    },
+    {
+      "observation_id": "obs-earned-lake-ridge-payoff",
+      "technique_key": "scenic-hardship-earned-lake-payoff",
+      "start_sec": 12285,
+      "end_sec": 12420,
+      "category": "scenic",
+      "trigger": "长时间错误路线、陡坡和体力负担需要一个可信的风景回报。",
+      "treatment": "从抓绳、脚下和陡坡 POV 转向湖谷宽景，短插一张带黑色侧栏的竖版风景照片，再回到继续下降与人物状态。",
+      "confidence": 0.97,
+      "parameters": {
+        "includes_first_person_struggle": true,
+        "vertical_still_insert_sec": 12289,
+        "still_insert_duration_estimate_sec": 0.5
+      },
+      "evidence": {
+        "manual_dense_frame_review_fps": 2,
+        "event_id": "event-172",
+        "danmaku_bucket_start_sec": 12290,
+        "danmaku_bucket_count": 13,
+        "danmaku_repeated_signal": "值得、好美、太不容易"
+      },
+      "guardrails": [
+        "竖图插入要明确是视觉奖励，不能冒充连续运动镜头。",
+        "不把危险路段美化为通用徒步建议。"
+      ]
+    },
+    {
+      "observation_id": "obs-hike-music-dialogue-protection",
+      "technique_key": "music-scenic-block-dialogue-protection",
+      "start_sec": 12095,
+      "end_sec": 12720,
+      "category": "music_rhythm",
+      "trigger": "长段山脊、湖景和雨中下降需要持续情绪，同时包含问路、呼吸、跌倒和风险说明。",
+      "treatment": "用多个连续 music_likely 块连接无对白的移动和风景，在问路、人物状态与湿滑路面说明处保留现场声；12706 秒以可见 BGM credit 标明雨中段音乐。",
+      "confidence": 0.86,
+      "parameters": {
+        "music_likely_segments_sec": [[12095, 12130], [12133, 12173], [12377, 12399]],
+        "visible_bgm_credit_sec": 12706,
+        "track_identity_verified": false,
+        "dialogue_priority": true
+      },
+      "evidence": {
+        "audio_heuristic": true,
+        "manual_dense_frame_review": true,
+        "transcript_coverage": true,
+        "danmaku_music_peaks_sec": [12290, 12705, 12710]
+      },
+      "guardrails": [
+        "music_likely 是声学启发式，不用于曲名、BPM 或版权识别。",
+        "雨中风险说明、问路和呼吸声不能为维持配乐连续性而被静音。"
+      ]
+    },
+    {
+      "observation_id": "obs-final-reflection-editing-metaphor",
+      "technique_key": "narrative-reflection-summary-forward-hook",
+      "start_sec": 13050,
+      "end_sec": 13198,
+      "category": "narrative",
+      "trigger": "六天旅行和最后四小时徒步需要在离开前沉淀成可复用的人物认知。",
+      "treatment": "在酒店保留完整口播，总结已完成与遗憾、错误路线和‘及时回头’，再用剪辑把数小时痛苦压缩成几分钟的自觉比喻连接观众与下一段旅程。",
+      "confidence": 0.96,
+      "parameters": {
+        "reflection_topics": ["completed_goals", "regret", "wrong_route", "timely_return", "editing_compression"],
+        "has_forward_hook": true
+      },
+      "evidence": {
+        "full_transcript_coverage": true,
+        "danmaku_bucket_start_sec": 13175,
+        "danmaku_bucket_count": 10
+      },
+      "guardrails": [
+        "反思必须解释经历如何改变判断，不重复流水账。",
+        "观众互动提示放在主题完成后，不打断风险复盘。"
+      ]
+    },
+    {
+      "observation_id": "obs-couple-return-callback",
+      "technique_key": "narrative-encounter-callback-closes-journey",
+      "start_sec": 13295,
+      "end_sec": 13325,
+      "category": "narrative",
+      "trigger": "旅程结束前再次遇到第一天帮助并同行的夫妻，形成真实的偶遇回环。",
+      "treatment": "保留认出、惊讶、寒暄和告别，让早期陌生人帮助回扣为贯穿旅行的偶遇主题，再接瑞士总结。",
+      "confidence": 0.96,
+      "parameters": {
+        "callback_to_early_encounter": true,
+        "staged_reunion_claimed": false
+      },
+      "evidence": {
+        "manual_tail_frame_review": true,
+        "event_id": "event-187",
+        "full_transcript_coverage": true,
+        "danmaku_bucket_start_sec": 13310,
+        "danmaku_bucket_count": 13
+      },
+      "guardrails": [
+        "callback 必须由真实再遇见触发，不用旁白虚构关系深度。",
+        "不把偶遇包装成可证明的命运或预先设计。"
+      ]
+    },
+    {
+      "observation_id": "obs-one-person-team-credits",
+      "technique_key": "graphic-credits-self-deprecating-one-person-team",
+      "start_sec": 13339.08,
+      "end_sec": 13397.336,
+      "category": "graphic",
+      "trigger": "超长独行片需要完成制作署名，同时保持创作者一贯的自嘲语气。",
+      "treatment": "用黑底、风景 inset、器材与制作职务列表把‘一人团队’做成克制笑点，并以人物回收相机的长镜头留出片尾余韵。",
+      "confidence": 0.98,
+      "parameters": {
+        "background": "black",
+        "uses_scenic_inset": true,
+        "credit_theme": "one_person_team",
+        "final_shot_sec": 58.256
+      },
+      "evidence": {
+        "manual_tail_frame_review": true,
+        "event_id": "event-187",
+        "danmaku_end_coverage_sec": 13396.877,
+        "danmaku_bucket_counts": {
+          "13345": 24,
+          "13355": 21,
+          "13390": 18
+        }
+      },
+      "guardrails": [
+        "credits 信息必须真实且可读。",
+        "笑点不应缩短观众读取职务、器材和致谢的时间。"
+      ]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 168801,
+    "maximum_characters": 180000,
+    "hard_limit_characters": 200000,
+    "model_request_serialized_characters": 121655,
+    "comparison": "strictly_less_than"
+  },
+  "limitations": [
+    "参考片是最终成片，只能学习被保留内容、节奏和效果的正向模式；没有原始素材与成片映射，不能推断作者真实删片偏好。",
+    "0 至 2159.44 秒与既有 BV1CrHwzUEJa 瑞士单集存在实质内容重叠；该区间不生成新的 technique observation，聚合时不得把重叠镜头当作第三份独立支持。",
+    "分析代理仅为 640×360，0.5 秒密集采样仍可能漏掉更短效果；小字号、细微转场和复杂 VFX 来源判断受限。",
+    "143 至 149 秒可确认饮料动作、喷射火花画面和彩条硬切，但不能仅凭成片确认火花是实拍烟花还是后期合成。",
+    "ASR 对地点专名及英语、法语交流有明显误识别；最后 59.236 秒无持续对白并经人工尾帧确认，不是转写截断。",
+    "弹幕密度和措辞只是观众反应与复核定位线索，不能证明某个 BGM、字幕、图形或音效单独造成反应。",
+    "music_likely 是声学启发式而非曲目识别，不能提供 BPM、精确曲名或版权判断。",
+    "7571.56 至 7625.44 秒的高速下坡可能来自真实骑行，也可能包含后期加速；未确认任何精确倍率，11124 秒时间卡和 13233.5 秒早餐硬切也不得写成视频变速。"
+  ]
+}
