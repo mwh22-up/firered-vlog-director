@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/reference-technique-aggregate.schema.json",
+  "title": "Aggregated Reference Techniques",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "profile_id",
+    "source_count",
+    "source_ids",
+    "minimum_source_support",
+    "stable_patterns",
+    "source_specific_patterns",
+    "model_context_policy",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "profile_id": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string" },
+    "source_count": { "type": "integer", "minimum": 1 },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "minimum_source_support": { "type": "integer", "minimum": 1 },
+    "stable_patterns": { "type": "array" },
+    "source_specific_patterns": { "type": "array" },
+    "opening_recipes": { "type": "array" },
+    "model_context_policy": {
+      "type": "object",
+      "required": [
+        "default_maximum_characters",
+        "hard_limit_characters",
+        "comparison"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

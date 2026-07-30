@@ -105,6 +105,21 @@ def _build_parser() -> argparse.ArgumentParser:
     aggregate_reference.add_argument("--profile", type=Path, nargs="*")
     aggregate_reference.add_argument("--output", type=Path, required=True)
 
+    pack_reference = subparsers.add_parser("pack-reference-context")
+    pack_reference.add_argument("--analysis", type=Path, required=True)
+    pack_reference.add_argument("--output", type=Path, required=True)
+    pack_reference.add_argument("--max-characters", type=int, default=180_000)
+
+    aggregate_techniques = subparsers.add_parser("aggregate-techniques")
+    aggregate_techniques.add_argument(
+        "--study",
+        type=Path,
+        nargs="+",
+        required=True,
+    )
+    aggregate_techniques.add_argument("--output", type=Path, required=True)
+    aggregate_techniques.add_argument("--minimum-source-support", type=int)
+
     compare_revision = subparsers.add_parser("compare-revision")
     compare_revision.add_argument("--parent", type=Path, required=True)
     compare_revision.add_argument("--candidate", type=Path, required=True)
@@ -447,6 +462,52 @@ def main() -> int:
                 "output": str(args.output.resolve()),
                 "source_count": profile["source_count"],
                 "shared_rules": len(profile["shared_rules"]),
+            },
+            None,
+        )
+        return 0
+    if args.command == "pack-reference-context":
+        from .model_context import (
+            build_reference_context_packet,
+            write_reference_context_packet,
+        )
+
+        packet = build_reference_context_packet(
+            _read_json(args.analysis),
+            max_characters=args.max_characters,
+        )
+        characters = write_reference_context_packet(
+            packet,
+            args.output.resolve(),
+        )
+        _write_result(
+            {
+                "status": "ready",
+                "output": str(args.output.resolve()),
+                "serialized_characters": characters,
+                "maximum_characters": args.max_characters,
+            },
+            None,
+        )
+        return 0
+    if args.command == "aggregate-techniques":
+        from .technique_learning import (
+            aggregate_technique_studies,
+            load_technique_study,
+            write_technique_aggregate,
+        )
+
+        aggregate = aggregate_technique_studies(
+            [load_technique_study(path) for path in args.study],
+            minimum_source_support=args.minimum_source_support,
+        )
+        write_technique_aggregate(aggregate, args.output.resolve())
+        _write_result(
+            {
+                "status": "ready",
+                "output": str(args.output.resolve()),
+                "source_count": aggregate["source_count"],
+                "stable_patterns": len(aggregate["stable_patterns"]),
             },
             None,
         )

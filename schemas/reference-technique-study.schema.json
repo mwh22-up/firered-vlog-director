@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/reference-technique-study.schema.json",
+  "title": "Reference Video Technique Study",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "study_id",
+    "source",
+    "opening_recipe",
+    "technique_observations",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "study_id": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string" },
+    "source": {
+      "type": "object",
+      "required": ["source_id", "url", "title", "duration_sec"],
+      "properties": {
+        "source_id": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "pattern": "^https://" },
+        "title": { "type": "string", "minLength": 1 },
+        "duration_sec": { "type": "number", "exclusiveMinimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "analysis_evidence": { "type": "object" },
+    "opening_recipe": { "type": "object" },
+    "narrative_model": { "type": "object" },
+    "scenic_model": { "type": "object" },
+    "music_model": { "type": "object" },
+    "subtitle_model": { "type": "object" },
+    "humor_model": { "type": "object" },
+    "technique_observations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "observation_id",
+          "technique_key",
+          "start_sec",
+          "end_sec",
+          "category",
+          "trigger",
+          "treatment",
+          "confidence",
+          "evidence"
+        ],
+        "properties": {
+          "observation_id": { "type": "string", "minLength": 1 },
+          "technique_key": { "type": "string", "minLength": 1 },
+          "start_sec": { "type": "number", "minimum": 0 },
+          "end_sec": { "type": "number", "exclusiveMinimum": 0 },
+          "category": {
+            "enum": [
+              "opening_montage",
+              "music_rhythm",
+              "scenic",
+              "narrative",
+              "subtitle",
+              "graphic",
+              "humor",
+              "playback_rate",
+              "sound_effect"
+            ]
+          },
+          "trigger": { "type": "string", "minLength": 1 },
+          "treatment": { "type": "string", "minLength": 1 },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "parameters": { "type": "object" },
+          "evidence": { "type": "object" },
+          "guardrails": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "context_packet": { "type": "object" },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,599 @@
+{
+  "schema_version": "1.0",
+  "study_id": "shao-switzerland-ideal-life-critical-viewing-v1",
+  "generated_at": "2026-07-30T09:40:00+00:00",
+  "source": {
+    "source_id": "bilibili-BV1CrHwzUEJa",
+    "url": "https://www.bilibili.com/video/BV1CrHwzUEJa/",
+    "title": "每一幕都是我的理想人生...瑞士一个人旅行VLOG",
+    "duration_sec": 2159.44
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 1563205,
+    "shot_count": 627,
+    "event_count": 31,
+    "transcript_segment_count": 632,
+    "transcript_end_sec": 2149.98,
+    "danmaku_count": 3600,
+    "manual_review_ranges": [
+      [0, 302],
+      [270, 845],
+      [930, 1030],
+      [1020, 1512],
+      [1512, 1830],
+      [1920, 2159.44]
+    ]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 120,
+    "phases": [
+      {
+        "start_sec": 0,
+        "end_sec": 10,
+        "function": "用湖泊、山地和岸边生活组成六镜风景标题预告，先兑现瑞士的视觉承诺。"
+      },
+      {
+        "start_sec": 10,
+        "end_sec": 47.5,
+        "function": "以完整正面口播交代人生清单、欧洲焦虑和护身准备，穿插评论截图、护身符和行李细节，但不把完整句子剪碎。"
+      },
+      {
+        "start_sec": 47.5,
+        "end_sec": 73.2,
+        "function": "用凌晨两点仍未收拾完、展示泡面和准备躺一会的时间压力，把设定转成行动。"
+      },
+      {
+        "start_sec": 73.2,
+        "end_sec": 97.7,
+        "function": "用告别宠物、关门和离家动作组成真正的高密度快剪，镜头中位数约0.76秒。"
+      },
+      {
+        "start_sec": 97.7,
+        "end_sec": 120,
+        "function": "用高铁、交通工具和抵达上海继续推进地理位置，镜头中位数约1.28秒。"
+      }
+    ],
+    "metrics": {
+      "seconds_0_to_10_shots": 6,
+      "seconds_0_to_10_median_shot_sec": 1.48,
+      "seconds_10_to_47_5_shots": 12,
+      "seconds_10_to_47_5_median_shot_sec": 1.08,
+      "seconds_47_5_to_73_2_shots": 9,
+      "seconds_47_5_to_73_2_median_shot_sec": 1.68,
+      "seconds_73_2_to_97_7_shots": 13,
+      "seconds_73_2_to_97_7_median_shot_sec": 0.76,
+      "seconds_97_7_to_120_shots": 14,
+      "seconds_97_7_to_120_median_shot_sec": 1.28
+    },
+    "rule": "开场按风景承诺、人物设定、时间压力、行动快剪和交通推进逐级提速；真正的快剪放在告别与移动段，不覆盖完整口播。"
+  },
+  "narrative_model": {
+    "premise": "第一次独自去欧洲完成瑞士人生清单，在交通、语言和临时社交的连续失误中，被陌生人的帮助和真实风景不断改写预期。",
+    "beats": [
+      "先用瑞士风景兑现标题，再回到凌晨出发前的焦虑和准备",
+      "用告别、上海中转、长途飞行和日出完成跨洲推进",
+      "到达后把找车、Swiss Travel Pass和列车沟通问题保留成连续障碍",
+      "让香港旅客和后来遇到的中国夫妻成为解决问题并改变行程的真实人物",
+      "用酒店价格、城堡景观和时差笑点完成第一轮落地回报",
+      "城堡刚到就锁门后不滞留抱怨，立即把后花园、湖泊和草地转成新的视觉回报",
+      "用买冰淇淋的手忙脚乱、渡船风景和老城漫游交替推进人物与地点",
+      "晚餐偶遇、食物评价和夜路害怕把理想生活重新拉回个人反应",
+      "回酒店用完整口播反思当地人的松弛感、偶遇关系和第二天计划，再接下集预告"
+    ],
+    "rule": "旅行障碍要落到目标、误解、求助、解决和后续影响；偶遇人物既解决眼前问题，也应改变当天路线或主角认知。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "地点标题或交通窗景建立地理位置",
+      "地面步行和人物入镜给出空间尺度",
+      "湖泊、山地、村庄、建筑和当地生活细节交替",
+      "用动物、路人、游船和真实停留避免连续空镜",
+      "在情绪回报处保留较长全景、航拍或平移镜头",
+      "回到人物感受、下一步行动或意外事件"
+    ],
+    "observed_ranges": [
+      [0, 10],
+      [181.5, 280],
+      [620, 680],
+      [1020, 1305],
+      [1367, 1512],
+      [1512, 1760]
+    ],
+    "rule": "美景既承担到达回报，也承担失败后的情绪转向；优先用人物尺度、当地活动和移动地理串联，不连续堆叠同类空镜。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.1208,
+    "uses": [
+      "开头十秒以明亮音乐托住风景与标题，进入完整口播后主动让位于人声。",
+      "181.5至220秒的长段音乐把机上吃饭、睡眠、航线和舷窗日出连成跨洲时间压缩。",
+      "列车和湖泊风景使用连续低干扰音乐建立舒展感，遇到真实对话与求助时保留现场声。",
+      "锁门、酸味反应和社交失言优先使用短音效或彩条，不为一个笑点再铺完整歌曲。",
+      "2040秒后的夜路改用悬疑配乐，把白天的理想景色转成自我惊吓的类型反差。"
+    ],
+    "rule": "配乐负责定义段落类型：跨洲移动与白天风景追求连续，真实沟通让位人声，夜路可通过类型切换制造反差笑点。"
+  },
+  "subtitle_model": {
+    "base_style": "底部居中白字、黑色描边，一到两行；外语沟通保留原话并补充小号中文或英文解释。",
+    "emphasis_patterns": [
+      "地点与章节使用独立标题，金额回扣使用大号黄色数字",
+      "等待、答非所问和跟着点头等内心旁白使用短括号字幕",
+      "真实动作音使用括号拟声，如锁门声，不重复解释整个事件",
+      "强烈味觉或惊吓反应使用短促大字，不覆盖后续真实表情",
+      "复杂背景只插入一次聊天截图或票务画面作为证据"
+    ],
+    "rule": "基础字幕保证跨语言可读性；强调字幕只标记事实、内心反应、动作声或跨段回扣，并与一个主效果配套。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "setup",
+      "expectation_or_inner_monologue",
+      "real_mistake_or_timing_contrast",
+      "single_editorial_punctuation",
+      "reaction",
+      "callback_or_reflection"
+    ],
+    "audience_peaks_sec": [
+      135,
+      500,
+      565,
+      570,
+      600,
+      700,
+      975,
+      985,
+      1225,
+      1280,
+      1325,
+      1350,
+      1365,
+      1370,
+      1455,
+      1465,
+      1810,
+      1815,
+      1965,
+      2050,
+      2060,
+      2075,
+      2085
+    ],
+    "rule": "先让等待、误解、忘带卡、自动附和和害怕等真实过程成立，再使用括号字幕、大字、短音效、彩条或类型配乐中的一个主效果。",
+    "playback_rate_note": "1313至1364秒的买冰淇淋段包含23.76秒连续镜头、正常语速对话和自然动作，未确认2x；2065至2091秒夜路有明显加快的主观运动感，但成片无法证明精确倍速，只能记为视觉加速候选。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-opening-five-phase-hook",
+      "technique_key": "opening-phased-hook-not-uniform-fast-cut",
+      "start_sec": 0,
+      "end_sec": 120,
+      "category": "opening_montage",
+      "trigger": "长途独行VLOG需要同时兑现目的地视觉、交代人物动机并快速进入移动。",
+      "treatment": "先用十秒六镜风景标题预告，再保留完整口播设定和凌晨准备，最后把0.76至1.28秒中位镜长的快剪集中在告别与交通推进。",
+      "confidence": 0.97,
+      "parameters": {
+        "phase_count": 5,
+        "scenic_teaser_median_shot_sec": 1.48,
+        "departure_montage_median_shot_sec": 0.76,
+        "travel_montage_median_shot_sec": 1.28
+      },
+      "evidence": {
+        "opening_shot_metrics": true,
+        "manual_frame_review": true
+      },
+      "guardrails": [
+        "完整口播承担人物设定时不要按快剪密度强行切碎。",
+        "快剪镜头必须继续推进离家、告别或地理移动。"
+      ]
+    },
+    {
+      "observation_id": "obs-shanghai-ai-vfx-escalation",
+      "technique_key": "humor-mundane-action-impossible-vfx-escalation",
+      "start_sec": 131,
+      "end_sec": 140,
+      "category": "graphic",
+      "trigger": "上海中转时的普通饮料动作需要形成短促、夸张的离场笑点。",
+      "treatment": "从正常饮用动作突然升级到激光眼和烟火画面，再以极短彩条结束并切回赶机场的现实行动。",
+      "confidence": 0.96,
+      "parameters": {
+        "escalation_steps": 3,
+        "reset_card": "color_bars"
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "danmaku_bucket_start_sec": 135,
+        "danmaku_bucket_count": 22,
+        "danmaku_repeated_signal": "AI、特效、激光眼"
+      },
+      "guardrails": [
+        "高成本特效只用于极短动作，不扩散到信息段。",
+        "特效结束后立即回到真实行动，避免破坏旅行地理。"
+      ]
+    },
+    {
+      "observation_id": "obs-train-ticket-real-process",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 489,
+      "end_sec": 600,
+      "category": "humor",
+      "trigger": "列车员检查时票务页面打不开，主角无法独立解释，必须向同车旅客求助。",
+      "treatment": "保留查票、网络失败、双语沟通、旅客代为解释、分别问名字和事后复盘的完整过程，只用翻译字幕和轻量强调帮助观众跟上。",
+      "confidence": 0.95,
+      "parameters": {
+        "playback_rate": null,
+        "rate_source": "not_verified",
+        "bilingual_subtitles": true
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "transcript_coverage": true,
+        "danmaku_peaks_sec": [530, 565, 570, 600]
+      },
+      "guardrails": [
+        "不得把帮助者的正常行为剪成嘲讽对象。",
+        "先交代危机与解决关系，再保留问名等自然余韵。"
+      ]
+    },
+    {
+      "observation_id": "obs-itinerary-adaptation-through-strangers",
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "start_sec": 300,
+      "end_sec": 845,
+      "category": "narrative",
+      "trigger": "找车、通票、黄金列车和一分钟换乘连续出错，原定独行路线失去确定性。",
+      "treatment": "让每次误解引出一次求助，再让香港旅客和中国夫妻分别解决票务与换乘问题，最后把偶遇转化为同行和次日行程调整。",
+      "confidence": 0.94,
+      "parameters": {
+        "obstacle_count": 4,
+        "helper_roles": 2,
+        "changes_itinerary": true
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "transcript_coverage": true,
+        "danmaku_peak_sec": 700,
+        "danmaku_bucket_count": 44
+      },
+      "guardrails": [
+        "偶遇人物必须真实影响后续行动，不能只作为情绪素材。",
+        "交通信息以当时事实为准，不从成片推导通用攻略。"
+      ]
+    },
+    {
+      "observation_id": "obs-hotel-price-large-number-callback",
+      "technique_key": "subtitle-large-number-running-callback",
+      "start_sec": 964,
+      "end_sec": 986,
+      "category": "subtitle",
+      "trigger": "酒店价格是观众等待的答案，也回扣前文反复出现的高物价预期。",
+      "treatment": "先口播铺垫一晚不到1400元，再用大号黄色1350元短暂停留，让数字本身成为包袱。",
+      "confidence": 0.98,
+      "parameters": {
+        "caption_color": "yellow",
+        "caption_scale": "large",
+        "value_cny": 1350
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "danmaku_bucket_counts": {
+          "970": 49,
+          "980": 52
+        },
+        "danmaku_repeated_signal": "1400价格梗"
+      },
+      "guardrails": [
+        "金额必须来自视频已陈述事实。",
+        "大字只保留足够读完的时间，不覆盖后续解释。"
+      ]
+    },
+    {
+      "observation_id": "obs-scenic-ground-aerial-local-life",
+      "technique_key": "scenic-human-scale-to-aerial-geography",
+      "start_sec": 1020,
+      "end_sec": 1512,
+      "category": "scenic",
+      "trigger": "到达瑞士小镇后需要兑现理想生活标题，同时维持人物和地理连续性。",
+      "treatment": "以步行自拍进入村庄和湖岸，交替建筑、动物、草地、当地人和游船，再用高位湖景与渡船全景补全空间。",
+      "confidence": 0.96,
+      "parameters": {
+        "includes_people": true,
+        "includes_local_activity": true,
+        "includes_high_viewpoint": true
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "contact_sheet_interval_sec": 6,
+        "danmaku_scenic_peaks_sec": [1240, 1400, 1410, 1440]
+      },
+      "guardrails": [
+        "相同湖景和草地必须用景别、人物或行动变化区分。",
+        "美景段仍要保留真实生活者，避免变成无人物宣传片。"
+      ]
+    },
+    {
+      "observation_id": "obs-scenic-music-dialogue-protection",
+      "technique_key": "music-scenic-block-dialogue-protection",
+      "start_sec": 1020,
+      "end_sec": 1512,
+      "category": "music_rhythm",
+      "trigger": "长段湖泊、草地和渡船画面需要连续情绪，同时夹有现场感叹和临时交流。",
+      "treatment": "用低干扰音乐连接无对白风景块，在人物说话、买东西和真实交流时降低存在感或让位现场声。",
+      "confidence": 0.87,
+      "parameters": {
+        "music_likely_long_segments_sec": [
+          [1025, 1030],
+          [1033.5, 1045],
+          [1062.5, 1077.5],
+          [1090.5, 1110.5]
+        ],
+        "dialogue_priority": true
+      },
+      "evidence": {
+        "audio_heuristic": true,
+        "manual_frame_review": true,
+        "transcript_silence_blocks": true
+      },
+      "guardrails": [
+        "声学分类只证明可能有音乐，不用于识别曲名或版权。",
+        "真实交流不得为维持配乐连续性而被静音。"
+      ]
+    },
+    {
+      "observation_id": "obs-castle-lock-sfx-garden-release",
+      "technique_key": "humor-reality-triggered-familiar-sfx",
+      "start_sec": 1218,
+      "end_sec": 1234,
+      "category": "sound_effect",
+      "trigger": "主角刚猜测城堡仍可进入，真实门锁声立刻否定期待。",
+      "treatment": "先保留尝试开门和省略号停顿，再用括号大字标出锁门声；包袱落下后立即切到后花园舒缓风景。",
+      "confidence": 0.97,
+      "parameters": {
+        "sound_effect_role": "punchline",
+        "caption": "锁门声",
+        "scenic_release_after_punchline": true
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "danmaku_bucket_start_sec": 1225,
+        "danmaku_bucket_count": 17,
+        "danmaku_repeated_signal": "刚到就锁门、闭门羹"
+      },
+      "guardrails": [
+        "音效必须卡在真实锁门动作上。",
+        "不要重复播放或再叠贴图稀释简短反差。"
+      ]
+    },
+    {
+      "observation_id": "obs-chat-screenshot-action-context",
+      "technique_key": "graphic-context-proof-before-action",
+      "start_sec": 1286,
+      "end_sec": 1291,
+      "category": "graphic",
+      "trigger": "临时遇到旅伴并决定赶去买冰淇淋，需要快速解释信息来源。",
+      "treatment": "在真实会面画面上短暂叠加聊天截图和一句解释，读完即撤掉，随后直接进入购买行动。",
+      "confidence": 0.9,
+      "parameters": {
+        "overlay_type": "chat_screenshot",
+        "estimated_duration_sec": 3.0
+      },
+      "evidence": {
+        "manual_frame_review": true
+      },
+      "guardrails": [
+        "截图必须裁掉无关个人信息。",
+        "截图不遮挡人物脸部和基础字幕。"
+      ]
+    },
+    {
+      "observation_id": "obs-ice-cream-fluster-punctuation",
+      "technique_key": "humor-fluster-preserve-duration-with-one-punctuation",
+      "start_sec": 1313,
+      "end_sec": 1364,
+      "category": "humor",
+      "trigger": "赶船前买冰淇淋，店员动作缓慢，主角答非所问、忘带卡并临时请旅伴垫钱。",
+      "treatment": "保留等待和连续沟通，让慢动作与着急自然形成反差；只用答非所问括号字幕、纸币金额大字和短反应字幕标点，不提前跳到买成结果。",
+      "confidence": 0.98,
+      "parameters": {
+        "longest_continuous_shot_sec": 23.76,
+        "primary_effects": 1,
+        "playback_rate": null,
+        "rate_source": "not_verified"
+      },
+      "evidence": {
+        "manual_dense_frame_review": true,
+        "shot_timing_review": true,
+        "normal_speech_present": true,
+        "danmaku_peaks_sec": [1325, 1350, 1365, 1370]
+      },
+      "guardrails": [
+        "不得把店员正常工作速度直接标记为搞笑倍速。",
+        "真实人物不应被侮辱性贴图或重复音效攻击。"
+      ]
+    },
+    {
+      "observation_id": "obs-ice-cream-no-confirmed-speedup",
+      "technique_key": "playback-rate-no-confirmed-speedup-on-dialogue-fluster",
+      "start_sec": 1313,
+      "end_sec": 1364,
+      "category": "playback_rate",
+      "trigger": "手忙脚乱场面容易被误判为使用2x快进。",
+      "treatment": "把该段记录为正常语速长对话和连续动作证据，不下发精确倍速；如需在目标素材复用，只能生成可预览的变速建议。",
+      "confidence": 0.96,
+      "parameters": {
+        "playback_rate": null,
+        "rate_source": "not_verified",
+        "two_x_confirmed": false
+      },
+      "evidence": {
+        "longest_continuous_shot_sec": 23.76,
+        "manual_review_fps": 1,
+        "normal_pitch_dialogue_observed": true
+      },
+      "guardrails": [
+        "没有可编辑时间线或可靠音画基准时，不得输出1.5x、2x等精确值。",
+        "有信息量的双语对话优先保持可听清。"
+      ]
+    },
+    {
+      "observation_id": "obs-mute-blogger-color-bars",
+      "technique_key": "humor-single-accent-then-hard-reset",
+      "start_sec": 1449,
+      "end_sec": 1457,
+      "category": "graphic",
+      "trigger": "主角面对绝美湖景却说自己是哑巴博主，主动暴露不会表达的尴尬。",
+      "treatment": "完整保留自嘲和笑声，随后插入约一秒彩条作为硬停顿，再切回湖面、鸭子和岸边人物。",
+      "confidence": 0.98,
+      "parameters": {
+        "reset_card": "color_bars",
+        "reset_card_estimated_sec": 1.0
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "danmaku_bucket_counts": {
+          "1455": 20,
+          "1460": 19,
+          "1465": 18
+        },
+        "danmaku_repeated_signal": "哑巴博主、淡淡的幽默"
+      },
+      "guardrails": [
+        "彩条只作一次极短标点。",
+        "彩条后必须切到新的视觉信息，不原地重复自嘲。"
+      ]
+    },
+    {
+      "observation_id": "obs-acid-reaction-caption-sfx",
+      "technique_key": "humor-reaction-caption-sfx-no-overlay-stack",
+      "start_sec": 1808,
+      "end_sec": 1823,
+      "category": "humor",
+      "trigger": "再次买草莓冰淇淋却尝到强烈酸味，真实面部反应已经足够明确。",
+      "treatment": "保留吞咽、皱脸和把冰淇淋靠近镜头的自然动作，只叠加好酸大字和短促音效，不再添加遮脸贴图。",
+      "confidence": 0.9,
+      "parameters": {
+        "caption_scale": "large",
+        "visual_overlay_required": false,
+        "sound_effect_present": true
+      },
+      "evidence": {
+        "manual_frame_review_fps": 4,
+        "danmaku_bucket_counts": {
+          "1810": 14,
+          "1815": 15,
+          "1820": 4
+        },
+        "danmaku_repeated_signal": "特效、音效、好酸"
+      },
+      "guardrails": [
+        "表情已形成包袱时不遮脸。",
+        "音效与大字只出现一次，不重复追打。"
+      ]
+    },
+    {
+      "observation_id": "obs-dinner-auto-agree-afterthought",
+      "technique_key": "humor-social-auto-response-afterthought-reset",
+      "start_sec": 1950,
+      "end_sec": 1976,
+      "category": "humor",
+      "trigger": "主角刚私下评价披萨偏腻，服务员询问味道时却条件反射点头说好。",
+      "treatment": "保留前后矛盾、自动附和和服务员离开后的迟来理解，用短括号旁白揭示反应，最后以彩条结束社交尴尬。",
+      "confidence": 0.94,
+      "parameters": {
+        "uses_contradiction": true,
+        "reset_card": "color_bars"
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "danmaku_peak_sec": 1965,
+        "danmaku_bucket_count": 16
+      },
+      "guardrails": [
+        "笑点落在主角自己的自动反应，不嘲讽服务员口音。",
+        "先保留矛盾两端，再用旁白解释。"
+      ]
+    },
+    {
+      "observation_id": "obs-night-walk-horror-music-reframe",
+      "technique_key": "music-genre-switch-for-night-horror-counterpoint",
+      "start_sec": 2040,
+      "end_sec": 2091,
+      "category": "music_rhythm",
+      "trigger": "白天被描述为理想生活的小镇在夜里空无一人，主角开始自己吓自己。",
+      "treatment": "保留黑暗长路、脚步和惊吓反应，并切入悬疑型配乐，使安全街道暂时呈现恐怖片类型，最后以看见酒店解除。",
+      "confidence": 0.95,
+      "parameters": {
+        "genre": "suspense_horror",
+        "resolution": "hotel_reveal"
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "danmaku_peaks_sec": [2050, 2060, 2075, 2085],
+        "danmaku_repeated_signal": "不妙小曲、配乐别搞、脚步快了"
+      },
+      "guardrails": [
+        "不能用音效虚构真实危险或治安事件。",
+        "悬疑类型必须由主角主观害怕和最终安全解除框定。"
+      ]
+    },
+    {
+      "observation_id": "obs-night-walk-acceleration-candidate",
+      "technique_key": "playback-rate-fast-forward-travel-compression-visual-estimate",
+      "start_sec": 2065,
+      "end_sec": 2091,
+      "category": "playback_rate",
+      "trigger": "夜路步行重复且恐惧感逐步增加，需要压缩路程并放大越走越快的主观体验。",
+      "treatment": "画面呈现持续前冲和逐渐加快的步行感，可作为快进或提速候选；成片没有时间线证据，不能宣称精确2x。",
+      "confidence": 0.58,
+      "parameters": {
+        "playback_rate": null,
+        "rate_source": "visual_estimate_only",
+        "perceived_motion": "accelerating"
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "continuous_shots_sec": [14.68, 12.96],
+        "danmaku_bucket_start_sec": 2065,
+        "danmaku_repeated_signal": "脚步都快了、走快点"
+      },
+      "guardrails": [
+        "在目标素材中先输出候选和试听预览，不自动写入精确倍速。",
+        "含关键对白时不得用快进破坏可懂度。"
+      ]
+    },
+    {
+      "observation_id": "obs-day-reflection-next-episode-hook",
+      "technique_key": "narrative-reflection-summary-forward-hook",
+      "start_sec": 2091,
+      "end_sec": 2159.44,
+      "category": "narrative",
+      "trigger": "第一天经历包含大量偶遇和情绪反差，需要在结束前把事件沉淀为人物认知。",
+      "treatment": "回酒店保留完整正面口播，依次总结瑞士风景、当地人的松弛、偶遇旅伴和披萨体验，再用明日计划、致谢黑卡和下集风景预告收尾。",
+      "confidence": 0.95,
+      "parameters": {
+        "reflection_topics": 4,
+        "has_next_episode_preview": true
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "transcript_coverage": true
+      },
+      "guardrails": [
+        "总结要解释当天经历如何改变认知，不重复流水账。",
+        "下集预告只展示新地点，不提前消耗核心结果。"
+      ]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 95102,
+    "maximum_characters": 180000,
+    "hard_limit_characters": 200000,
+    "comparison": "strictly_less_than"
+  },
+  "limitations": [
+    "参考片是最终成片，只能学习被保留内容和效果的正向模式，不能推断真实删片偏好。",
+    "弹幕密度只用于发现观众反应峰值，不能证明某一效果单独造成笑点。",
+    "配乐分类来自声学启发式，不识别曲名、BPM或版权信息，且可能低估实际配乐覆盖。",
+    "成片没有可编辑时间线，买冰淇淋段未确认变速，夜路只能记为视觉加速候选，不得写成精确2x。",
+    "自动转写在外语交流和音乐段存在误识别，关键结论以画面、时序和重复观众信号交叉核验。"
+  ]
+}

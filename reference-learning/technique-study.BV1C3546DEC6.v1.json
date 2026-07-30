@@ -1,0 +1,415 @@
+{
+  "schema_version": "1.0",
+  "study_id": "shao-sakura-critical-viewing-v1",
+  "generated_at": "2026-07-30T08:08:00+00:00",
+  "source": {
+    "source_id": "bilibili-BV1C3546DEC6",
+    "url": "https://www.bilibili.com/video/BV1C3546DEC6/",
+    "title": "去邻国打探一下樱花开的如何....一个人旅行VLOG樱花季",
+    "duration_sec": 2951.721
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 1815632,
+    "shot_count": 797,
+    "event_count": 41,
+    "transcript_segment_count": 655,
+    "transcript_end_sec": 2946.75,
+    "danmaku_count": 3170,
+    "manual_review_ranges": [
+      [0, 120],
+      [305, 500],
+      [858, 903],
+      [1518, 1581],
+      [1680, 2440],
+      [2568, 2613]
+    ]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 120,
+    "phases": [
+      {
+        "start_sec": 0,
+        "end_sec": 12,
+        "function": "用樱花景色、人物背影、标题和带反差感的配乐先给主题与喜剧语气。"
+      },
+      {
+        "start_sec": 12,
+        "end_sec": 48,
+        "function": "正面口播交代赏樱动机、争议语境和自嘲式观看框架，跳切只压停顿，不打断完整句。"
+      },
+      {
+        "start_sec": 48,
+        "end_sec": 61,
+        "function": "从凌晨两点半准备睡觉直接跳到早上六点半出发，用时间反差启动行动。"
+      },
+      {
+        "start_sec": 61,
+        "end_sec": 120,
+        "function": "用机场、排队、廊桥、机舱和抵达组成约两秒一镜的旅行推进蒙太奇。"
+      }
+    ],
+    "metrics": {
+      "first_15_sec_shots": 7,
+      "first_15_sec_median_shot_sec": 1.96,
+      "first_30_sec_shots": 11,
+      "seconds_30_to_60_shots": 7,
+      "seconds_60_to_120_shots": 28,
+      "seconds_60_to_120_median_shot_sec": 2.1
+    },
+    "rule": "开场不是从头到尾统一快剪，而是按感官预告、完整设定、时间反差、行动蒙太奇四段提速。"
+  },
+  "narrative_model": {
+    "premise": "临时出发去邻国追樱花，并用自嘲口吻处理行程风险与预期落差。",
+    "beats": [
+      "提出赏樱目标并主动叠加自嘲式限制条件",
+      "跨机场和铁路完成远距离移动",
+      "夜间抵达后发现花期将尽且返程漫长",
+      "通过抱怨、黑夜独行和现场小意外释放挫败感",
+      "重新调整第二天路线，把失败转成继续观看的悬念",
+      "白天抵达盛花地点，以风景与偶遇观众形成回报",
+      "入住下一站酒店并用明日行程结束本章"
+    ],
+    "rule": "旅行信息必须附着在目标、阻碍、应对、结果和反应上；临时改计划本身就是叙事推进。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "街区或道路建立地点",
+      "人物进入画面确认尺度",
+      "樱花、河流、建筑和当地生活细节",
+      "人物停留或真实互动",
+      "高位或无人机镜头补全空间关系",
+      "回到人物反应或下一步行动"
+    ],
+    "observed_ranges": [
+      [1680, 2000],
+      [2120, 2440]
+    ],
+    "rule": "风景段同时保留当地人、游客、骑行者和劳动者，让美景承担地点生活感，而不是连续堆空镜。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.1858,
+    "uses": [
+      "开场用语义反差很强的配乐制造第一层笑点，口播开始时让位于人声。",
+      "吃东西等小动作使用仪式感过强的音乐形成反差。",
+      "完整风景段使用连续低干扰音乐托底，遇到对白和现场互动时优先保留原声。",
+      "现实事件本身已形成包袱时，用短音效而不是再叠一首歌。"
+    ],
+    "rule": "配乐既可承担风景连续性，也可通过与小事不成比例的庄重感制造反差；两种用途不能混成持续满铺。"
+  },
+  "subtitle_model": {
+    "base_style": "底部居中白字、黑色描边，单次一到两行；外语交流补充小号双语解释。",
+    "emphasis_patterns": [
+      "章节标题和立场词使用大字号或红色强调",
+      "危机结果使用大号短句并重复停留",
+      "解决结果可切全黑画面只留短句形成停顿",
+      "尴尬动作可用括号旁白或单个问号，不重复解释对白"
+    ],
+    "rule": "基础字幕负责可读性，强调字幕只负责转折、危机、结果或人物潜台词。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "setup",
+      "trigger",
+      "awkward_or_failed_action",
+      "editorial_punctuation",
+      "reaction",
+      "callback"
+    ],
+    "audience_peaks_sec": [
+      5,
+      370,
+      450,
+      475,
+      875,
+      1565,
+      1920,
+      1965,
+      2030,
+      2085,
+      2090,
+      2100,
+      2585
+    ],
+    "rule": "先保留真实失败、尴尬和反应，再选择一个主效果点题；贴图、音效、黑场和快进不能同时抢包袱。",
+    "playback_rate_note": "2027-2041 的手忙脚乱段经高密度抽帧未能确认 2x；本片不沉淀精确倍速参数。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-opening-four-phase-hook",
+      "technique_key": "opening-phased-hook-not-uniform-fast-cut",
+      "start_sec": 0,
+      "end_sec": 120,
+      "category": "opening_montage",
+      "trigger": "长篇旅行需要同时交代目的地承诺、人物动机和行动起点。",
+      "treatment": "先用12秒景色标题预告，再以完整口播设定目标，随后用时间跳切和约2秒一镜的交通蒙太奇提速。",
+      "confidence": 0.96,
+      "parameters": {
+        "phase_count": 4,
+        "travel_montage_median_shot_sec": 2.1
+      },
+      "evidence": {
+        "opening_metrics": true,
+        "manual_frame_review": true
+      },
+      "guardrails": [
+        "不要把完整口播切成无法理解的碎句。",
+        "快剪必须放在行动推进段，不覆盖整段开场。"
+      ]
+    },
+    {
+      "observation_id": "obs-opening-bgm-counterpoint",
+      "technique_key": "humor-semantic-counterpoint-bgm",
+      "start_sec": 0,
+      "end_sec": 12,
+      "category": "music_rhythm",
+      "trigger": "画面浪漫但主题语境需要先释放紧张和自嘲。",
+      "treatment": "使用与浪漫樱花画面形成语义反差的配乐，让观众在标题出现前先理解喜剧立场。",
+      "confidence": 0.94,
+      "parameters": {
+        "music_end_at_dialogue": true
+      },
+      "evidence": {
+        "danmaku_bucket_start_sec": 0,
+        "danmaku_repeated_signal": "BGM反差与求生欲"
+      },
+      "guardrails": [
+        "语义反差必须服务人物立场，不可随意挪用敏感音乐。"
+      ]
+    },
+    {
+      "observation_id": "obs-convenience-store-awkwardness",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 328,
+      "end_sec": 377,
+      "category": "humor",
+      "trigger": "支付和加热沟通连续失败，人物只能重复尝试。",
+      "treatment": "保留足够长的真实失败过程和停顿，用少量双语字幕、失败短句与反差配乐放大尴尬，不提前跳到结果。",
+      "confidence": 0.93,
+      "parameters": {
+        "primary_effects": 1,
+        "playback_rate": null,
+        "rate_source": "not_verified"
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "danmaku_bucket_start_sec": 370
+      },
+      "guardrails": [
+        "不能把对方正常服务行为剪成恶意嘲讽。"
+      ]
+    },
+    {
+      "observation_id": "obs-food-sparkle-color-bars",
+      "technique_key": "humor-single-accent-then-hard-reset",
+      "start_sec": 445,
+      "end_sec": 490,
+      "category": "graphic",
+      "trigger": "普通进食动作被人物表情和过度仪式感配乐抬高。",
+      "treatment": "用轻量闪光贴纸和局部近景强化享受表情，包袱结束后插入极短彩条作为硬重置，再切回旅途。",
+      "confidence": 0.9,
+      "parameters": {
+        "overlay_type": "sparkle",
+        "reset_card": "color_bars",
+        "reset_card_estimated_sec": 1.0
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "danmaku_peak_sec": 475
+      },
+      "guardrails": [
+        "闪光贴纸不遮脸和基础字幕。",
+        "彩条只作极短标点，不可打断关键信息。"
+      ]
+    },
+    {
+      "observation_id": "obs-light-off-dating-sfx",
+      "technique_key": "humor-reality-triggered-familiar-sfx",
+      "start_sec": 867,
+      "end_sec": 884,
+      "category": "sound_effect",
+      "trigger": "夜樱照明在人物面前逐盏关闭。",
+      "treatment": "保留真实关灯过程并配相亲节目式灭灯音效，让现实动作自己完成包袱。",
+      "confidence": 0.92,
+      "parameters": {
+        "sound_effect_role": "punchline",
+        "visual_overlay_required": false
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "danmaku_peak_sec": 875,
+        "danmaku_repeated_signal": "灭灯音效"
+      },
+      "guardrails": [
+        "音效应卡在真实灯光变化上。"
+      ]
+    },
+    {
+      "observation_id": "obs-ticket-crisis-relief-card",
+      "technique_key": "narrative-crisis-caption-black-card-relief",
+      "start_sec": 1518,
+      "end_sec": 1581,
+      "category": "subtitle",
+      "trigger": "售票机显示没票，随后工作人员确认仍可乘车。",
+      "treatment": "危机时用大号“没票了！！”停留，解决后切全黑画面只留“安心了”，再用车窗风景释放情绪。",
+      "confidence": 0.97,
+      "parameters": {
+        "crisis_caption_scale": "large",
+        "relief_card_background": "black"
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "danmaku_peak_sec": 1565
+      },
+      "guardrails": [
+        "大字只标记已发生的结果，不制造虚假危机。"
+      ]
+    },
+    {
+      "observation_id": "obs-scenic-ground-to-aerial",
+      "technique_key": "scenic-human-scale-to-aerial-geography",
+      "start_sec": 1680,
+      "end_sec": 1952,
+      "category": "scenic",
+      "trigger": "到达盛花地点，需要兑现前半段追花失败后的视觉回报。",
+      "treatment": "从街道和人物尺度进入，交替樱花、河流、当地生活和自拍停留，最后用高位或无人机镜头补全空间关系。",
+      "confidence": 0.94,
+      "parameters": {
+        "includes_people": true,
+        "ends_with_geographic_context": true
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "contact_sheet_interval_sec": 8
+      },
+      "guardrails": [
+        "同类花景必须有景别、人物或空间信息变化。"
+      ]
+    },
+    {
+      "observation_id": "obs-imperfect-camera-social-setup",
+      "technique_key": "humor-preserve-imperfect-camera-for-authenticity",
+      "start_sec": 1952,
+      "end_sec": 1990,
+      "category": "humor",
+      "trigger": "陌生人主动帮拍，镜头被手和设备遮挡，交流磕绊。",
+      "treatment": "保留遮挡、低机位和不完美构图，通过小号双语字幕保证可理解，让真实互动而非画面精致度承担笑点。",
+      "confidence": 0.95,
+      "parameters": {
+        "preserve_occlusion": true,
+        "subtitle_mode": "small_bilingual"
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "danmaku_peak_sec": 1965
+      },
+      "guardrails": [
+        "遮挡镜头只在承载关键互动时保留。"
+      ]
+    },
+    {
+      "observation_id": "obs-fluster-long-take-question-mark",
+      "technique_key": "humor-fluster-preserve-duration-with-one-punctuation",
+      "start_sec": 2020,
+      "end_sec": 2115,
+      "category": "humor",
+      "trigger": "偶遇观众后双方尬聊、整理设备、互相拍照并不知道如何收尾。",
+      "treatment": "保留较长的手忙脚乱和重复确认，在关键误解处只加一个问号或短音效，并在交流结束后保留人物自我反应。",
+      "confidence": 0.96,
+      "parameters": {
+        "primary_graphic": "question_mark",
+        "playback_rate": null,
+        "rate_source": "not_verified"
+      },
+      "evidence": {
+        "manual_frame_review_fps": 4,
+        "danmaku_peak_sec": 2090,
+        "danmaku_humor_count_in_5_sec": 26
+      },
+      "guardrails": [
+        "不得仅凭动作密度声称使用2x。",
+        "保留对方完整语境，避免把普通观众恶搞成笑柄。"
+      ]
+    },
+    {
+      "observation_id": "obs-visual-callback-snack",
+      "technique_key": "humor-visual-callback-to-earlier-prop",
+      "start_sec": 2568,
+      "end_sec": 2613,
+      "category": "graphic",
+      "trigger": "人物再次购买与前文相似的冰淇淋或零食。",
+      "treatment": "在画面中短暂插入前一次零食图片，让观众自行完成“又来了”的回扣。",
+      "confidence": 0.91,
+      "parameters": {
+        "overlay_source": "earlier_story_prop",
+        "callback_required": true
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "danmaku_peak_sec": 2585
+      },
+      "guardrails": [
+        "没有前文记忆点时不要硬做回扣。"
+      ]
+    },
+    {
+      "observation_id": "obs-itinerary-adaptation-arc",
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "start_sec": 630,
+      "end_sec": 1895,
+      "category": "narrative",
+      "trigger": "夜间目的地花期已过，原计划的视觉目标失败。",
+      "treatment": "保留夜路、失望、自嘲和重新查花期的过程，明确修改第二天路线，最终用盛花地点兑现回报。",
+      "confidence": 0.95,
+      "parameters": {
+        "event_chain": [
+          "goal",
+          "failure",
+          "reaction",
+          "replan",
+          "payoff"
+        ]
+      },
+      "evidence": {
+        "transcript_timeline": true,
+        "manual_frame_review": true
+      },
+      "guardrails": [
+        "失败段不能只留抱怨，必须保留应对和后续回报。"
+      ]
+    },
+    {
+      "observation_id": "obs-scenic-music-dialogue-protection",
+      "technique_key": "music-scenic-block-dialogue-protection",
+      "start_sec": 2173.5,
+      "end_sec": 2385,
+      "category": "music_rhythm",
+      "trigger": "连续樱花、河流、当地人活动和无人机镜头需要形成一段完整沉浸体验。",
+      "treatment": "使用连续低干扰音乐把不同景别连成一段，现场对白或人物交流出现时优先让位于原声。",
+      "confidence": 0.88,
+      "parameters": {
+        "longest_music_likely_segment_sec": 28.5,
+        "speech_priority": true
+      },
+      "evidence": {
+        "automatic_audio_segments": true,
+        "manual_frame_review": true
+      },
+      "guardrails": [
+        "music_likely 是声学估计，不代表识别出具体歌曲。"
+      ]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 97623,
+    "maximum_characters": 180000,
+    "hard_limit_characters": 200000,
+    "comparison": "strictly_less_than"
+  },
+  "limitations": [
+    "参考片是最终成片，只能学习被保留内容和效果的正向模式，不能推断真实删片偏好。",
+    "弹幕密度只用于发现观众反应峰值，不能证明某一效果单独造成笑点。",
+    "配乐分类来自声学启发式，不识别曲名、BPM或版权信息。",
+    "成片没有可编辑时间线，未确认的变速不得写成精确2x参数。"
+  ]
+}
