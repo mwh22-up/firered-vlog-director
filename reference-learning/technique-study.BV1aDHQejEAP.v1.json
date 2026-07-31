@@ -1,0 +1,671 @@
+{
+  "schema_version": "1.0",
+  "study_id": "shao-tokyo-solo-adventure-full-v1",
+  "generated_at": "2026-07-31T03:24:43.5407800Z",
+  "source": {
+    "source_id": "bilibili-BV1aDHQejEAP",
+    "url": "https://www.bilibili.com/video/BV1aDHQejEAP/",
+    "title": "《一个人的东京探险记》完整版",
+    "duration_sec": 8909.885
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 5790042,
+    "shot_count": 4627,
+    "event_count": 130,
+    "audio_segment_count": 1746,
+    "transcript_segment_count": 1298,
+    "transcript_word_count": 5173,
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_reported_duration_sec": 8909.868,
+    "asr_processing_coverage_ratio": 0.999998,
+    "transcript_end_sec": 8832.81,
+    "trusted_dialogue_end_ratio": 0.991349,
+    "transcript_tail_gap_sec": 77.075,
+    "transcript_tail_repair_segment_count": 5,
+    "transcript_tail_repair_range_sec": [8822.13, 8832.81],
+    "transcript_tail_gap_manual_result": "对 8672.93 至 8909.885 秒执行无 VAD、低门限转写、字幕画面和声学复核后，仅合并 8822.13 至 8832.81 秒内五段有声画支持的对白；其余重复英文、孤立短词及无声画对应候选被排除，最后 77.075 秒无可信对白。",
+    "danmaku_count": 5607,
+    "danmaku_end_sec": 8909.104,
+    "danmaku_usage": "仅用于复核定位和描述观众信号，不作为剪辑、配乐、字幕、VFX、音效或叙事因果证据。",
+    "audio_class_ratios": {
+      "ambient_likely": 0.6699,
+      "music_likely": 0.0874,
+      "silence": 0.0438,
+      "speech": 0.199
+    },
+    "shot_duration_median_sec": 0.6,
+    "shot_duration_p75_sec": 2.566,
+    "event_review_contact_sheet_count": 24,
+    "event_review_keyframe_count": 95,
+    "manual_overview_contact_sheet_count": 24,
+    "manual_dense_contact_sheet_count": 13,
+    "manual_short_audio_acoustic_review_count": 10,
+    "manual_review_ranges": [
+      [0, 120.133],
+      [420, 465],
+      [987.367, 1060],
+      [1352, 1475],
+      [1735, 1795],
+      [2455, 2530],
+      [2560, 2665],
+      [2905, 2945],
+      [3175, 3245],
+      [3480, 3555],
+      [3543.467, 3934.2],
+      [3938, 4255],
+      [4500, 4565],
+      [4660, 5045],
+      [5290, 5430],
+      [6338, 6365],
+      [6760, 7145],
+      [7140, 7920],
+      [8030, 8400],
+      [8673, 8909.885]
+    ]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 120.133,
+    "phases": [
+      {
+        "start_sec": 0,
+        "end_sec": 16.433,
+        "function": "用东京地点、人物和标题镜头先兑现独行探险的目的地承诺。"
+      },
+      {
+        "start_sec": 16.433,
+        "end_sec": 42,
+        "function": "把超密短切集中在机场物流、行李和移动动作，迅速启动旅程。"
+      },
+      {
+        "start_sec": 42,
+        "end_sec": 74,
+        "function": "在安检、进食和人物真实反应处明显减速，让过程与性格可读。"
+      },
+      {
+        "start_sec": 74,
+        "end_sec": 106,
+        "function": "以登机、机舱和飞行镜头继续压缩地理移动，同时保留方向信息。"
+      },
+      {
+        "start_sec": 106,
+        "end_sec": 120.133,
+        "function": "用抵达与东京现场行动重新提速，把开场承诺接回正片。"
+      }
+    ],
+    "metrics": {
+      "seconds_0_to_16_433_shots": 9,
+      "seconds_0_to_16_433_median_shot_sec": 1.633,
+      "seconds_16_433_to_42_shots": 28,
+      "seconds_16_433_to_42_median_shot_sec": 0.25,
+      "seconds_42_to_74_shots": 9,
+      "seconds_42_to_74_median_shot_sec": 3.667,
+      "seconds_74_to_106_shots": 18,
+      "seconds_74_to_106_median_shot_sec": 1.517,
+      "seconds_106_to_120_133_shots": 8,
+      "seconds_106_to_120_133_median_shot_sec": 1.417
+    },
+    "rule": "长篇开场按地点承诺、物流提速、真实反应减速、交通推进和抵达重启分相位；最高密度只服务明确移动，不把整段误做成统一快剪。"
+  },
+  "narrative_model": {
+    "premise": "独自探索东京的连续旅程由抵达、天气、住宿成本、语言误会、交通错误和兴趣地点串联；真实受阻与自我反应不断抬高代价，再由城市高位景观、动画记忆地点、陌生人帮助和返程总结完成回报。",
+    "beats": [
+      "以东京地点预告和机场移动建立独行目标，抵达后立即进入真实城市行动",
+      "用等待压缩和日夜变化把晴空塔从到达信息升级为首个城市视觉回报",
+      "雨天状态、住宿现实和浅草抽签事件共同建立旅程的不确定性，但不把抽签解释为后续事件的事实因果",
+      "保留陌生语言环境中的相遇、误读和解决过程，让城市关系来自具体行动",
+      "通过雨中搬运行李、临时住宿、次日标题和人物状态完成跨日重置",
+      "先展示价格证据和住宿期待，再延迟到房间与阳台揭晓，使 1400 成为长线成本记忆",
+      "音像店、点餐误会、取回酒店用品和阳台表演形成连续的兴趣与生活喜剧段",
+      "鞋、交通方向和路线判断再次出错，人物必须通过观察、问路和显式纠正恢复行程",
+      "先展示动画参照，再进入现实地点，使流行文化记忆成为城市探索动机",
+      "完整保留问路受阻、学生折返帮助和随后新的路线错误，让温暖反转不抹掉真实尴尬",
+      "以台场、水岸和城市夜景兑现后段景观，再用换乘、餐食、口头结束、价格回扣与一人团队 credits 闭合"
+    ],
+    "rule": "保留目标、受阻、自我反应、外部帮助、纠正和回报的完整关系；跨日与跨地点变化必须继续携带真正影响后续行动的成本、错误或未完成目标。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "先用步行、交通或街道建立人物所在位置",
+      "用入口、建筑结构或城市设施说明接近路径",
+      "以人物尺度和现场反应确认空间大小",
+      "再展开高位城市地理、天色变化或水岸宽景",
+      "必要时加入来源边界清楚的动画参照",
+      "最后回到人物下一步行动、路线问题或旅程总结"
+    ],
+    "observed_ranges": [
+      [989, 1060],
+      [3543.467, 3934.2],
+      [3938, 4015],
+      [6338, 6365],
+      [6760, 7145],
+      [8030, 8400],
+      [8673, 8832.81]
+    ],
+    "rule": "东京景观不作为孤立壁纸；让人物尺度、抵达过程、现实地理和时间变化共同证明风景回报，动画参照与实景必须保持来源边界。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.0874,
+    "uses": [
+      "开场为目的地预告和机场移动提供阶段连接，但人物反应与现场信息出现时保留可懂度。",
+      "城市高位景观使用较长声床连接天色和地理变化，并在场景切换处降低能量让位环境声。",
+      "台场水岸段在约 8328.4 秒启动谐波音乐，并跨越实景和短动画参照保持连续。",
+      "片尾声床贯穿最后总结对白并继续承接 credits，不在句末突然终止。"
+    ],
+    "rule": "音乐承担章节连接和情绪方向；声学分类、波形、频谱与弹幕都不能用于推断精确曲名、BPM、版权或单独因果，未能区分音乐与环境声的区间不生成正式结论。"
+  },
+  "subtitle_model": {
+    "base_style": "常规对白以画面底部可读中文字幕为主；时间跳跃、价格和章节信息使用独立层级，不与基础对白竞争。",
+    "emphasis_patterns": [
+      "以独立的 LATER... 时间卡明确压缩等待并进入新的天色状态",
+      "价格首次出现时提供可读凭据，房间揭晓和片尾再用大号黄色 -1400 回扣",
+      "动画参照采用全屏来源画面后再切现实地点，不伪装成实时画面",
+      "片尾用制作职务与一人团队 credits 完成署名和自嘲"
+    ],
+    "rule": "基础字幕先保证语义；时间卡、金额大字、参照画面和 credits 各承担单一功能，金额和外语信息必须有画面或人工核验支持。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "先建立住宿、点餐、问路或恢复路线等明确目标",
+      "保留人物自己的误读、犹豫、语言困难和延长反应",
+      "让价格、店员回应、学生行动或地点线索自然证明结果",
+      "仅在落点加入一次大字、短彩条、视听故障或表演段",
+      "随后回到解决行动、路线恢复或下一章"
+    ],
+    "audience_peaks_sec": [
+      435,
+      1760,
+      3210,
+      3500,
+      4200,
+      4690,
+      4800,
+      5000,
+      7330,
+      7520,
+      7595,
+      7680,
+      8825
+    ],
+    "rule": "笑点主要落在主角的成本、误读和自我反应，不把店员、学生、路人、口音或国籍当作攻击对象；弹幕峰值只用于定位观众信号。",
+    "playback_rate_note": "开场机场段的高密度可由大量短切直接解释；未取得足以区分真实运动、相机快门、剪辑跳切和画面变速的连续证据，因此不生成 playback_rate observation，也不提供倍率。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-opening-five-phase-tokyo-hook",
+      "technique_key": "opening-phased-hook-not-uniform-fast-cut",
+      "start_sec": 0,
+      "end_sec": 120.133,
+      "category": "opening_montage",
+      "trigger": "超长东京独行片需要同时兑现地点、快速启动跨境移动并保留人物真实反应。",
+      "treatment": "先用 16.433 秒地点与标题建立承诺，再把 0.25 秒中位镜长的超密短切集中在机场物流；安检和进食处减速，随后以登机、飞行和抵达重新推进。",
+      "confidence": 0.98,
+      "parameters": {
+        "phase_count": 5,
+        "reviewed_shot_count": 72,
+        "fastest_phase_median_shot_sec": 0.25,
+        "reaction_phase_median_shot_sec": 3.667
+      },
+      "evidence": {
+        "opening_shot_boundaries_verified": true,
+        "manual_frame_review": true,
+        "phase_ranges_sec": [[0, 16.433], [16.433, 42], [42, 74], [74, 106], [106, 120.133]]
+      },
+      "guardrails": [
+        "超密短切只用于明确物流与地理推进。",
+        "人物反应、安检和进食过程需要保持可读。"
+      ]
+    },
+    {
+      "observation_id": "obs-later-city-time-card",
+      "technique_key": "subtitle-time-card-compresses-waiting",
+      "start_sec": 987.367,
+      "end_sec": 991.067,
+      "category": "subtitle",
+      "trigger": "等待过程本身没有新的叙事信息，但之后的城市天色变化需要明确时间跳跃。",
+      "treatment": "插入独立 LATER... 时间卡说明省略，再进入晴空塔与城市由日到夜的连续视觉回报。",
+      "confidence": 0.96,
+      "parameters": {
+        "caption": "LATER...",
+        "transition": "hard_cut",
+        "playback_rate": null
+      },
+      "evidence": {
+        "manual_dense_frame_review": true,
+        "caption_visible": true,
+        "following_day_to_night_progression_verified": true
+      },
+      "guardrails": [
+        "时间卡必须明确说明省略。",
+        "不要把硬切或天色变化误报为画面变速。"
+      ]
+    },
+    {
+      "observation_id": "obs-elevated-city-day-to-night",
+      "technique_key": "scenic-elevated-city-day-to-night-reveal",
+      "start_sec": 989,
+      "end_sec": 1060,
+      "category": "scenic",
+      "trigger": "高位城市景观需要通过时间变化提供超过单张夜景的空间和情绪回报。",
+      "treatment": "从白天可读的建筑与城市关系进入，保留天色、灯光和远景逐步变化，再回到人物现场反应。",
+      "confidence": 0.93,
+      "parameters": {
+        "sequence": ["daylight_geography", "blue_hour_transition", "night_lights", "human_reaction"],
+        "capture_device": null
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "day_to_night_progression_visible": true,
+        "danmaku_range_sec": [1015, 1060],
+        "danmaku_range_count": 65,
+        "audience_signal": "蓝调时刻、音乐和城市夜景集中出现，仅作定位线索"
+      },
+      "guardrails": [
+        "不得根据高位视角推断无人机或具体设备。",
+        "弹幕不能证明音乐单独造成景观反应。"
+      ]
+    },
+    {
+      "observation_id": "obs-rainy-days-carryover",
+      "technique_key": "narrative-multiday-reset-with-carryover",
+      "start_sec": 1352,
+      "end_sec": 3300,
+      "category": "narrative",
+      "trigger": "东京多日行程需要重置天气、起床状态和住宿地点，同时保留前一日未解决的问题。",
+      "treatment": "用雨天状态和当天目标启动新章，让行李、住宿选择、身体状态和次日计划跨事件延续；每次重置后迅速回到具体行动。",
+      "confidence": 0.9,
+      "parameters": {
+        "uses_day_reset": true,
+        "carryover_topics": ["weather", "luggage", "lodging", "physical_state", "next_day_goal"]
+      },
+      "evidence": {
+        "full_transcript_coverage": true,
+        "manual_multi_event_review": true,
+        "review_ranges_sec": [[1352, 1475], [2560, 2665], [2905, 2945], [3175, 3245]]
+      },
+      "guardrails": [
+        "跨日信息必须真实影响后续行动。",
+        "不能把天气或抽签改写为后续事件的事实因果。"
+      ]
+    },
+    {
+      "observation_id": "obs-net-cafe-third-person-day-reset",
+      "technique_key": "humor-self-narrated-melodrama-day-reset",
+      "start_sec": 3207,
+      "end_sec": 3229,
+      "category": "humor",
+      "trigger": "网吧过夜后的新一天需要重启，但人物疲惫和临时住宿状态本身仍有喜剧信息。",
+      "treatment": "先长留雨夜网吧外的固定人物镜头和稀疏声床，再切黑底标题，以第三人称旁白宣布人物从网吧醒来，随后硬切回正常口播。",
+      "confidence": 0.94,
+      "parameters": {
+        "held_exterior_sec": 17.5,
+        "black_title_card": true,
+        "third_person_narration_start_sec": 3224.45,
+        "reset_to_talking_head": true
+      },
+      "evidence": {
+        "manual_dense_frame_review_fps": 3,
+        "short_audio_acoustic_review": true,
+        "narration_transcript_range_sec": [3224.45, 3227.87]
+      },
+      "guardrails": [
+        "先让真实过夜状态成立，再使用类型化旁白。",
+        "不把稀疏声床命名为未经确认的具体曲风或音效。"
+      ]
+    },
+    {
+      "observation_id": "obs-hotel-1400-running-callback",
+      "technique_key": "subtitle-large-number-running-callback",
+      "start_sec": 3482.8,
+      "end_sec": 8832.81,
+      "category": "subtitle",
+      "trigger": "约 1400 元住宿价格是观众等待的答案，并持续改变人物对房间和阳台价值的判断。",
+      "treatment": "先展示币种换算和价格依据，再延迟到房间揭晓与人物反应；片尾用大号黄色 -1400 作最后一次回扣，让数字承担跨章节记忆点。",
+      "confidence": 0.98,
+      "parameters": {
+        "value_cny_approx": 1400,
+        "ending_caption": "-1400",
+        "caption_color": "yellow",
+        "caption_scale": "large",
+        "callback_stages": ["price_evidence", "room_reveal", "self_reaction", "ending_callback"]
+      },
+      "evidence": {
+        "manual_price_frame_review": true,
+        "visible_conversion_value_cny": 1410.8883,
+        "manual_room_reveal_review": true,
+        "manual_tail_frame_review": true,
+        "danmaku_ranges_sec": [[3480, 3555], [4140, 4255], [8815, 8832.81]],
+        "audience_signal": "价格冲击、阳台价值与片尾 1400 回扣集中出现，仅作定位"
+      },
+      "guardrails": [
+        "金额必须来自成片可见或明确口播事实。",
+        "大字不能遮挡价格解释或片尾结束语。"
+      ]
+    },
+    {
+      "observation_id": "obs-human-scale-elevated-city-geography",
+      "technique_key": "scenic-human-scale-to-elevated-city-geography",
+      "start_sec": 3543.467,
+      "end_sec": 3934.2,
+      "category": "scenic",
+      "trigger": "城市观景段需要同时说明人物抵达过程、建筑尺度和高位东京地理。",
+      "treatment": "从人物移动、入口和建筑内部进入，再展开高位城市宽景与人物反应，避免把观景段做成脱离行动的连续壁纸。",
+      "confidence": 0.9,
+      "parameters": {
+        "sequence": ["human_approach", "interior_vertical_move", "elevated_geography", "human_reaction"],
+        "aerial_capture_claimed": false
+      },
+      "evidence": {
+        "manual_continuous_frame_review": true,
+        "event_contact_sheet_confirmation": true,
+        "review_range_sec": [3543.467, 3934.2]
+      },
+      "guardrails": [
+        "只描述可见高位视角，不推断航拍设备。",
+        "保留人物进入与反应，不能只截取城市空镜。"
+      ]
+    },
+    {
+      "observation_id": "obs-elevator-ultraman-vfx-reset",
+      "technique_key": "humor-mundane-action-impossible-vfx-escalation",
+      "start_sec": 3839.2,
+      "end_sec": 3841.9,
+      "category": "graphic",
+      "trigger": "人物在电梯里仰看顶部灯光的普通动作需要一个极短、明显脱离现实的笑点。",
+      "treatment": "从正常仰拍升级为闪光和奥特曼脸合成，再立即切 SMPTE 彩条与窄带测试音，随后回到同一电梯现实画面。",
+      "confidence": 0.99,
+      "parameters": {
+        "escalation_steps": ["ceiling_glow", "face_composite", "smpte_bars"],
+        "reset": "hard_cut_to_same_real_scene",
+        "exact_sound_identity": null
+      },
+      "evidence": {
+        "manual_dense_frame_review_fps": 4,
+        "composite_boundary_verified": true,
+        "smpte_bars_visible": true,
+        "short_audio_spectral_review": true,
+        "narrow_band_test_tone_aligned": true
+      },
+      "guardrails": [
+        "幻想效果必须极短，并在落点后立即恢复现实空间。",
+        "不把宽频冲击命名为未经确认的爆炸、变身或版权音效。"
+      ]
+    },
+    {
+      "observation_id": "obs-balcony-performance-color-bars-reset",
+      "technique_key": "humor-single-accent-then-hard-reset",
+      "start_sec": 4998,
+      "end_sec": 5014,
+      "category": "graphic",
+      "trigger": "阳台多机位、换装式自演需要清楚结束包袱并返回正常旅行叙事。",
+      "treatment": "保留多个角度和服装变化的短表演，在落点插入一次 SMPTE 彩条并同步真静音，再硬切回人物口播。",
+      "confidence": 0.98,
+      "parameters": {
+        "reset_card": "smpte_bars",
+        "reset_visual_range_sec": [5010.533, 5012.1],
+        "verified_silence_range_sec": [5010.734, 5012.305],
+        "verified_silence_duration_sec": 1.571,
+        "transition": "hard_cut",
+        "overlay_stack": false
+      },
+      "evidence": {
+        "manual_dense_frame_review_fps": 4,
+        "color_bars_visible": true,
+        "silence_detect_threshold_db": -40,
+        "post_reset_speech_visible": true
+      },
+      "guardrails": [
+        "彩条与静音只作一次短标点，不连续堆叠其他效果。",
+        "硬切后必须恢复新的现实动作或口播。"
+      ]
+    },
+    {
+      "observation_id": "obs-train-motion-ambient-bridge",
+      "technique_key": "graphic-transport-motion-and-ambient-sound-bridge",
+      "start_sec": 5408,
+      "end_sec": 5423,
+      "category": "graphic",
+      "trigger": "从站外列车移动进入车内再到城市出口，需要压缩空间变化而保持交通方向连续。",
+      "treatment": "依次硬切侧面列车、暗部移动纹理和车内门窗，让连续列车环境声跨越约 5415 秒的外景到内景切点，再以开门后的城市画面结束桥接。",
+      "confidence": 0.94,
+      "parameters": {
+        "visual_bridge": ["exterior_train_motion", "dark_motion_texture", "carriage_door_frame", "city_exit"],
+        "ambient_sound_continuous": true,
+        "music_claimed": false
+      },
+      "evidence": {
+        "manual_dense_frame_review_fps": 4,
+        "short_audio_spectral_review": true,
+        "no_silence_at_cut": true,
+        "primary_cut_sec": 5415.0
+      },
+      "guardrails": [
+        "声音桥必须来自连续环境声，不把机械谐波误认成配乐。",
+        "硬切仍需保持移动方向和门框空间可读。"
+      ]
+    },
+    {
+      "observation_id": "obs-animation-reference-to-live-location",
+      "technique_key": "graphic-reference-frame-to-live-location-match",
+      "start_sec": 6868,
+      "end_sec": 6905,
+      "category": "graphic",
+      "trigger": "动画记忆是前往现实地点的动机，观众需要先知道参照对象，再理解现场对应关系。",
+      "treatment": "先以全屏动画参照建立车站和楼梯记忆，再切入人物到达的现实楼梯、出口和周边环境；不把参照画面伪装成实时镜头。",
+      "confidence": 0.97,
+      "parameters": {
+        "reference_presentation": "full_frame",
+        "reference_range_sec": [6868, 6892],
+        "live_location_follows": true,
+        "inline_overlay": false
+      },
+      "evidence": {
+        "manual_reference_frame_review_fps": 1,
+        "manual_live_location_review": true,
+        "sequence_order_verified": true
+      },
+      "guardrails": [
+        "参照画面和实景必须保持清晰来源边界，目标素材只使用有权使用的参照。",
+        "不能从构图相似推断官方关系、授权状态或创作因果。"
+      ]
+    },
+    {
+      "observation_id": "obs-schoolboy-directions-awkward-process",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 7140,
+      "end_sec": 7583.633,
+      "category": "humor",
+      "trigger": "长时间问路同时存在语言障碍、地图理解和追加问题，快速跳到答案会失去真实关系变化。",
+      "treatment": "保留首次开口、双方理解失败、展示地图、尝试回答、追加问题、等待和暂时分开的全过程，让尴尬由真实停顿累积。",
+      "confidence": 0.96,
+      "parameters": {
+        "language_barrier": true,
+        "multiple_questions": true,
+        "resolution_deferred": true,
+        "playback_rate": null
+      },
+      "evidence": {
+        "manual_continuous_frame_review": true,
+        "transcript_cross_check": true,
+        "danmaku_ranges_sec": [[7315, 7395], [7490, 7565]],
+        "audience_signal": "语言障碍、第二个问题和持续尴尬集中出现，仅作定位"
+      },
+      "guardrails": [
+        "笑点落在主角的沟通困难，不嘲弄学生、口音或能力。",
+        "外语内容必须人工核对，不能直接采用不确定 ASR。"
+      ]
+    },
+    {
+      "observation_id": "obs-helper-return-reframes-encounter",
+      "technique_key": "narrative-helper-return-reframes-awkward-encounter",
+      "start_sec": 7585,
+      "end_sec": 7620,
+      "category": "narrative",
+      "trigger": "问路似乎无果并暂时结束后，学生主动折返提供新信息。",
+      "treatment": "先保留人物准备离开的状态，再展示学生跑回、补充帮助和人物重新理解，让前段尴尬被具体行动改写为温暖反转。",
+      "confidence": 0.95,
+      "parameters": {
+        "earlier_encounter_retained": true,
+        "helper_returns": true,
+        "motive_inferred": false
+      },
+      "evidence": {
+        "manual_continuous_frame_review_fps": 2,
+        "return_action_visible": true,
+        "map_comparison_visible": true,
+        "danmaku_peak_range_sec": [7590, 7605],
+        "danmaku_peak_count": 61
+      },
+      "guardrails": [
+        "只描述可见折返和帮助，不推断学生内心动机。",
+        "弹幕价值判断不能代替行为证据。"
+      ]
+    },
+    {
+      "observation_id": "obs-route-error-explicit-correction",
+      "technique_key": "narrative-error-discovery-and-explicit-correction",
+      "start_sec": 7760,
+      "end_sec": 7920,
+      "category": "narrative",
+      "trigger": "得到帮助后仍出现方向或交通判断错误，需要让观众理解错误如何被发现和修正。",
+      "treatment": "保留原判断、移动结果、地点不匹配、自我复盘和重新确认路线的过程，再恢复前往目标的行动。",
+      "confidence": 0.91,
+      "parameters": {
+        "correction_steps": ["initial_decision", "mismatch_discovery", "self_explanation", "route_recheck", "action_resume"]
+      },
+      "evidence": {
+        "manual_multi_event_review": true,
+        "causal_transcript_verified": true,
+        "review_range_sec": [7760, 7920],
+        "audience_signal": "折返帮助后又出现方向错误的反差，仅作定位"
+      },
+      "guardrails": [
+        "不得从个案推导通用交通攻略。",
+        "路线与地点判断以画面、地图和人工核验字幕为准。"
+      ]
+    },
+    {
+      "observation_id": "obs-pop-culture-memory-to-current-city",
+      "technique_key": "scenic-pop-culture-memory-to-current-city",
+      "start_sec": 8030,
+      "end_sec": 8400,
+      "category": "scenic",
+      "trigger": "台场现实景观承载动画与童年记忆，需要同时保留当前城市地理和人物当下体验。",
+      "treatment": "从现实步行与地标进入，穿插来源边界清楚的动画参照，再展开水岸、城市宽景和人物反应，使怀旧记忆落回可读的现实空间。",
+      "confidence": 0.9,
+      "parameters": {
+        "sequence": ["live_approach", "reference_memory", "waterfront_geography", "human_reaction"],
+        "track_identity_verified": false
+      },
+      "evidence": {
+        "manual_continuous_frame_review": true,
+        "reference_and_live_frames_distinguished": true,
+        "danmaku_range_sec": [8325, 8375],
+        "danmaku_range_count": 16,
+        "audience_signal": "动画记忆、音乐联想和水岸美景集中出现，仅作定位"
+      },
+      "guardrails": [
+        "不得根据弹幕识曲或判断版权。",
+        "参照画面不能替代现实地点的空间建立。"
+      ]
+    },
+    {
+      "observation_id": "obs-odaiba-music-scenic-entry",
+      "technique_key": "music-transition-reveal-synchronization",
+      "start_sec": 8325,
+      "end_sec": 8375,
+      "category": "music_rhythm",
+      "trigger": "台场后段需要把实景水岸、城市宽景和短动画参照组织成同一段怀旧回报。",
+      "treatment": "在约 8328.4 秒让谐波音乐硬入，随后跨越多个实景景别和 8351.9 至 8361.2 秒的短动画保持同一声床，不在参照画面处重启。",
+      "confidence": 0.86,
+      "parameters": {
+        "music_onset_sec": 8328.4,
+        "reference_insert_range_sec": [8351.9, 8361.2],
+        "music_restart_at_reference": false,
+        "track_identity_verified": false
+      },
+      "evidence": {
+        "manual_visual_sequence_review": true,
+        "short_audio_spectral_review": true,
+        "harmonic_onset_verified": true,
+        "continuous_bed_across_reference": true
+      },
+      "guardrails": [
+        "声谱边界不能用于识别曲名、BPM、版权或具体曲风。",
+        "人物短反应和现实空间信息仍需保持可懂。"
+      ]
+    },
+    {
+      "observation_id": "obs-tokyo-journey-verbal-closure",
+      "technique_key": "narrative-end-of-journey-montage-verbal-closure",
+      "start_sec": 8673,
+      "end_sec": 8832.81,
+      "category": "narrative",
+      "trigger": "两小时以上东京合集需要完成实际返程，并用可信对白明确旅程结束。",
+      "treatment": "用地铁换乘、餐食、步行和回顾镜头完成返程过程，再保留人工核验的最后五段对白，使结束、体验总结、下一篇章和价格回扣依次成立。",
+      "confidence": 0.98,
+      "parameters": {
+        "closure_steps": ["transit", "meal", "walking", "verbal_closure", "price_callback", "credits"],
+        "tail_dialogue_repair_range_sec": [8822.13, 8832.81]
+      },
+      "evidence": {
+        "manual_tail_frame_review": true,
+        "tail_audio_acoustic_review": true,
+        "no_vad_low_threshold_review": true,
+        "accepted_tail_dialogue_segment_count": 5,
+        "hallucinated_candidates_excluded": true
+      },
+      "guardrails": [
+        "只使用有声画对应的尾段对白。",
+        "不得把被排除的重复英文或孤立短词写入正式证据。"
+      ]
+    },
+    {
+      "observation_id": "obs-tokyo-one-person-team-credits",
+      "technique_key": "graphic-credits-self-deprecating-one-person-team",
+      "start_sec": 8843,
+      "end_sec": 8909.885,
+      "category": "graphic",
+      "trigger": "超长独行片需要完整署名，同时保持创作者的一人制作自嘲。",
+      "treatment": "在步行和收机余韵上连续列出出品、制片、监制、策划、编剧、导演、执行导演、主演、摄影和剪辑等职务，并以同一创作者重复署名和‘特别鸣谢我的电脑’完成克制自嘲。",
+      "confidence": 0.97,
+      "parameters": {
+        "credit_theme": "one_person_team",
+        "self_deprecating_computer_thanks": true,
+        "final_dialogue_present": false,
+        "audience_reading_time_retained": true
+      },
+      "evidence": {
+        "manual_tail_frame_review": true,
+        "credits_visible": true,
+        "danmaku_range_sec": [8815, 8895],
+        "danmaku_range_count": 85,
+        "danmaku_end_coverage_sec": 8909.104
+      },
+      "guardrails": [
+        "credits 信息必须真实、可读。",
+        "弹幕中的完播反应不能证明 credits 单独造成效果。"
+      ]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 149474,
+    "maximum_characters": 180000,
+    "hard_limit_characters": 200000,
+    "model_request_serialized_characters": 112991,
+    "request_contains_schema_and_manual_evidence": true,
+    "comparison": "strictly_less_than"
+  },
+  "limitations": [
+    "参考片是最终成片，只能学习被正向保留的内容、节奏和效果；没有原始素材与成片映射，不能推断作者真实删片偏好。",
+    "分析代理为 640×360，人工抽帧仍可能漏掉极短转场、小字号、细微贴图与复杂 VFX。",
+    "原检查点转写在当前执行环境不可用，因此串行恢复一次 small/zh 全片 ASR；正式尾段只合并 8822.13 至 8832.81 秒内五段有声画证据，其他低门限候选已排除。",
+    "弹幕仅用于定位和描述观众信号，不能证明某个剪辑、BGM、字幕、图形、转场、VFX 或音效造成对应反应。",
+    "ambient_likely 与 music_likely 是声学启发式；短音频通过连续画面、波形、频谱和静音检测保守复核，当前运行时不支持直接音频输入，因此不提供精确曲名、BPM、版权或独立音效来源判断。",
+    "开场机场段的高密度可由短切直接解释；未确认任何 playback-rate observation 或精确倍率。",
+    "542 至 555 秒是进食、LATER... 时间卡与地点硬切；1838 至 1851 秒只确认短眼部贴图；2053 至 2066 秒和 7318 至 7338 秒无法分离独立插入音效；2649 至 2663 秒是章节卡后直接进入口播；6378 至 6392 秒更符合真实运动模糊。这些区间均未生成过度结论。",
+    "3839.2 至 3841.9 秒的脸部合成、SMPTE 彩条和测试音、4998 至 5014 秒的彩条静音重置，以及 5408 至 5423 秒的列车环境声桥均有连续画面或声学边界支持；结论仅限成片可见、可测结构，不推断具体制作工具。",
+    "全屏动画参照与现实地点匹配只描述成片可见顺序，不推断授权状态、官方关系或创作因果；目标素材只能使用有权使用的参照。"
+  ]
+}
