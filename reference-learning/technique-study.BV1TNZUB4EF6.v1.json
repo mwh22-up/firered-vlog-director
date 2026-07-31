@@ -1,0 +1,687 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV1TNZUB4EF6-v1",
+  "generated_at": "2026-07-31T05:44:40.7666125+00:00",
+  "source": {
+    "source_id": "bilibili-BV1TNZUB4EF6",
+    "url": "https://www.bilibili.com/video/BV1TNZUB4EF6/",
+    "title": "非常紧绷的旅行..法国一个人旅行Vlog巴黎",
+    "duration_sec": 2986.32
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 1434823,
+    "proxy_full_decode_exit_code": 0,
+    "video_duration_sec": 2986.32,
+    "audio_duration_sec": 2986.300726,
+    "shot_count": 748,
+    "event_count": 40,
+    "audio_segment_count": 512,
+    "transcript_segment_count": 522,
+    "transcript_word_count": 2361,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_reported_duration_sec": 2986.295,
+    "asr_processing_coverage_ratio": 0.999992,
+    "transcript_end_sec": 2976.77,
+    "trusted_dialogue_end_ratio": 0.996802,
+    "transcript_tail_gap_sec": 9.55,
+    "transcript_tail_repair_segment_count": 0,
+    "transcript_tail_gap_manual_result": "对 2958 至 2986.32 秒执行无 VAD 与低门限转写核验，两次结果均稳定识别到 2976.78 秒‘拜拜’，之后约 9.54 秒没有新增对白证据，无需修复正式 transcript。",
+    "danmaku_count": 3247,
+    "danmaku_end_sec": 2986.301,
+    "danmaku_usage": "仅用于复核定位和描述观众信号，不作为剪辑、配乐、字幕、VFX、音效或叙事因果证据。",
+    "audio_class_ratios": {
+      "ambient_likely": 0.6319,
+      "music_likely": 0.1249,
+      "silence": 0.0102,
+      "speech": 0.2331
+    },
+    "shot_duration_median_sec": 2.96,
+    "shot_duration_p75_sec": 4.68,
+    "event_review_contact_sheet_count": 24,
+    "event_review_keyframe_count": 96,
+    "manual_overview_contact_sheet_count": 31,
+    "manual_detail_contact_sheet_count": 7,
+    "manual_short_audio_acoustic_review_count": 14,
+    "manual_review_ranges": [
+      [0, 120],
+      [455, 495],
+      [540, 585],
+      [600, 705],
+      [750, 850],
+      [1015, 1090],
+      [1120, 1175],
+      [1200, 1325],
+      [1435, 1475],
+      [1600, 1735],
+      [1795, 1845],
+      [1885, 2030],
+      [2135, 2175],
+      [2382, 2410],
+      [2455, 2570],
+      [2570, 2690],
+      [2690, 2755],
+      [2875, 2986.32]
+    ]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 120,
+    "phases": [
+      {
+        "start_sec": 0,
+        "end_sec": 8.88,
+        "function": "用法国、巴黎与 travel vlog 图形标题覆盖夜景和地标，先兑现目的地与独行主题。"
+      },
+      {
+        "start_sec": 8.66,
+        "end_sec": 18.2,
+        "function": "以早餐动作承载旁白，快速回顾瑞士、德国、奥地利并宣布法国是欧洲行最后目的地。"
+      },
+      {
+        "start_sec": 18.2,
+        "end_sec": 60.47,
+        "function": "减速为酒店正面口播，建立巴黎停留一天、担心设备与素材安全的限制，再用换手机把风险转成可见道具。"
+      },
+      {
+        "start_sec": 60.47,
+        "end_sec": 120,
+        "function": "从收拾、离店进入列车、晚点和换乘，以移动镜头恢复推进，并保留人物对突发问题的实时反应。"
+      }
+    ],
+    "metrics": {
+      "seconds_0_to_8_66_shots": 6,
+      "seconds_0_to_8_66_median_shot_sec": 1.2,
+      "seconds_8_66_to_18_shots": 6,
+      "seconds_8_66_to_18_median_shot_sec": 0.96,
+      "seconds_18_to_60_shots": 12,
+      "seconds_18_to_60_median_shot_sec": 2.82,
+      "seconds_60_to_120_shots": 24,
+      "seconds_60_to_120_median_shot_sec": 2.22
+    },
+    "rule": "先用短标题和旅程回顾完成承诺，再让风险口播、道具设定和真实反应成立；快切集中在移动与物流，不把整段开场做成均匀高速 montage。"
+  },
+  "narrative_model": {
+    "premise": "欧洲旅行最后一站只在巴黎停留一天；对设备安全的担心、换乘与路线错误、景点与人群压力、语言尴尬和镜头损坏不断抬高紧绷感，最后由卢浮宫、雨后城市、塞纳河游船、埃菲尔铁塔与酒店反思完成回报，并前钩下一站圣米歇尔山。",
+    "beats": [
+      "以欧洲行最后目的地、巴黎一日计划和设备安全焦虑建立目标与限制",
+      "用换手机、保存内存卡等具体道具把抽象风险转成可回扣动作",
+      "从列车晚点、找站台、检票和 25kg 行李冲刺开始累积旅行阻碍",
+      "抵达后经历机场巴士问路、同名地点误选和路线修正，最终进入酒店",
+      "保留前台 local taxes 误会、房间 tour 和回房做饭，以现实疲惫收束第一天",
+      "第二天用换内存卡重启风险线；游行导致车辆跳站后，人物改为步行前往卢浮宫",
+      "卢浮宫从外景、安检和票名紧张进入展品、蒙娜丽莎、皇冠与雕塑中庭，逐层兑现文化目标",
+      "离馆后的用餐沟通、安检与购物袋事件把安全焦虑变成连续现实选择，而不是抽象旁白",
+      "奥运火炬、彩虹和凯旋门把街头紧绷暂时转成城市发现",
+      "请路人拍照时保留手机和袋子交接的误会，再顺势进入塞纳河游船",
+      "游船以人物反应、埃菲尔铁塔与夜色完成巴黎视觉回报；裂镜头又把设备风险带回现实",
+      "回酒店完整总结紧张、消费、气味、三万步和疲惫，随后口播下一站并用 CRT 圣米歇尔山画面收尾"
+    ],
+    "rule": "紧绷感必须来自可见目标、错误、道具、环境和修正过程；美景回报之后仍保留人物的现实代价与反思，但不把个体感受推广为对城市或人群的事实判断。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "标题与少量地标先给目的地承诺",
+      "交通、天气、街道和人物步行建立抵达条件",
+      "先以人物或城市入口提供尺度",
+      "从建筑外观进入展品、天花板、雕塑等细节",
+      "用人群、人物反应和移动方向维持空间可读",
+      "以彩虹、黄昏、蓝调时刻和夜景增加时间变化",
+      "回到人物口播、设备状态或下一步行动"
+    ],
+    "observed_ranges": [
+      [0, 8.88],
+      [470, 480],
+      [540, 585],
+      [1015, 1085],
+      [1142.6, 1497.92],
+      [2381.4, 2410],
+      [2511.5, 2690],
+      [2690, 2755]
+    ],
+    "rule": "巴黎地标不是孤立壁纸；让交通与人物尺度先成立，再以建筑外观、文化细节、天气和不同光线扩展地理，最后回到人物状态。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.1249,
+    "visible_bgm_credit_sec": [66, 458, 1141, 1436, 2511, 2709],
+    "uses": [
+      "约 66 秒从酒店口播进入离店和交通移动，画面可见 BGM credit。",
+      "约 458 秒在终于坐对巴士后连接彩虹、雨后阳光与抵达推进。",
+      "约 1141 秒后以较连续音乐块承接卢浮宫展品 montage；人物说明出现时语义仍可辨。",
+      "约 1436 秒后让较舒缓音乐配合雕塑中庭更长镜头，降低纯观光段的切换压力。",
+      "2511 至 2690 秒连接游船、人物反应、埃菲尔铁塔和夜景；现场口播与环境信息没有被完全覆盖。"
+    ],
+    "rule": "音乐用于标记移动、情绪释放、文化观察和地标揭示；对白、问路、误会和人物反应优先。music_likely 与可见 credit 不用于断言曲名、BPM、版权或逐拍因果。"
+  },
+  "subtitle_model": {
+    "base_style": "底部居中白色无衬线字、黑色描边，一至两行；现场英语用较小原话与中文解释补足，地点标题、心理活动和节拍型大字另成层级。",
+    "emphasis_patterns": [
+      "开场用法国、巴黎、一个人旅行和 travel vlog 图形标题一次性建立目的地",
+      "括号和书名号承载‘求小偷还内存卡’、老人机与破碎感等自我吐槽",
+      "前台沟通保留英语关键词和中文解释，确保误会与解决过程都可读",
+      "‘没拦我！’、问号、‘烫！’只在认知落点出现一次，随后恢复基础字幕",
+      "BGM credit 位于顶部边角，不与主对白字幕争抢层级",
+      "事实说明覆盖奥运火炬实景；尾部以 CRT 圣米歇尔山画面承担下一站前钩"
+    ],
+    "rule": "基础字幕先保证语义；地点标题、双语解释、括号心理活动、单次大字、事实说明与章节前钩各承担单一功能，不在同一落点堆叠多种效果。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "先建立检票、前台沟通、点餐、保护购物袋或请人拍照等现实目标",
+      "保留人物误读、卡词、犹豫、交错递物和自我保护动作",
+      "让工作人员、路人、票机或画面结果自然确认误会",
+      "只加一次粗体字、问号、彩条或短色彩模式作为标点",
+      "立即回到人物反应和解决动作，不剪掉善后过程"
+    ],
+    "audience_signal_peaks_sec": [630, 830, 1135, 1305, 1705, 1800, 1830, 2390, 2480],
+    "rule": "笑点落在人物自己的紧张、语言困难和道具误会；保留解决与自我反应，不嘲弄工作人员、路人、口音、国籍或人群。弹幕峰值只用于定位，不能证明效果造成反应。",
+    "playback_rate_note": "0 至 18 秒、83 至 117 秒和街头移动段出现较密短切或明显运动，但连续画面均可由正常速度拍摄、真实步行和镜头切换解释；未确认 speed ramp、素材加速或具体倍率。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-paris-opening-four-phase-hook",
+      "technique_key": "opening-phased-hook-not-uniform-fast-cut",
+      "start_sec": 0,
+      "end_sec": 120,
+      "category": "opening_montage",
+      "trigger": "巴黎一日独行片需要迅速交代欧洲行最后一站，同时让设备安全焦虑和出发动作成立。",
+      "treatment": "先用 8.88 秒地标标题兑现地点，再以早餐旁白回顾前序旅程；酒店口播阶段明显减速建立风险和手机道具，最后把较密剪辑集中到收拾、列车与换乘。",
+      "confidence": 0.98,
+      "parameters": {
+        "phase_count": 4,
+        "reviewed_shot_count": 48,
+        "fastest_phase_median_shot_sec": 0.96,
+        "slowest_phase_median_shot_sec": 2.82
+      },
+      "evidence": {
+        "opening_shot_boundaries_verified": true,
+        "manual_frame_review": true,
+        "phase_ranges_sec": [[0, 8.88], [8.66, 18.2], [18.2, 60.47], [60.47, 120]]
+      },
+      "guardrails": [
+        "快切只用于标题、回顾和明确移动。",
+        "人物风险设定和真实反应必须保持可读。"
+      ]
+    },
+    {
+      "observation_id": "obs-paris-title-landmark-promise",
+      "technique_key": "subtitle-location-title-delivers-promise",
+      "start_sec": 0,
+      "end_sec": 8.88,
+      "category": "subtitle",
+      "trigger": "开场需要在人物解释前确认国家、城市、独行主题和视觉期待。",
+      "treatment": "在人物与巴黎夜景、教堂和落日地标上依次放置法国、巴黎、一个人旅行与 travel vlog 标题，随后干净切回早餐叙事。",
+      "confidence": 0.99,
+      "parameters": {
+        "shot_count": 6,
+        "title_roles": ["country", "city", "solo_travel", "vlog_format"],
+        "transition_out": "hard_cut"
+      },
+      "evidence": {
+        "manual_contact_sheet_interval_sec": 3,
+        "title_and_landmark_visible": true
+      },
+      "guardrails": [
+        "标题只放开场一次，不反复遮挡后续地标。",
+        "文字必须与实际地点和成片内容一致。"
+      ]
+    },
+    {
+      "observation_id": "obs-security-prop-callback-chain",
+      "technique_key": "narrative-risk-prop-callback-chain",
+      "start_sec": 46.2,
+      "end_sec": 60.47,
+      "category": "narrative",
+      "trigger": "设备和素材安全焦虑如果只停留在口播会显得抽象，需要在全片获得可见回扣。",
+      "treatment": "开场先展示换手机；第二天换内存卡，街头用普通袋子遮住品牌购物袋，夜间再展示裂镜头造成的自拍光痕，让同一风险线随道具和结果推进。",
+      "confidence": 0.95,
+      "parameters": {
+        "callback_ranges_sec": [[46.2, 60.47], [868.12, 919.39], [1717.6, 1845], [2696.85, 2705.4]],
+        "prop_types": ["phone", "memory_card", "shopping_bag", "camera_lens"]
+      },
+      "evidence": {
+        "opening_prop_visible": true,
+        "manual_multi_range_review": true,
+        "causal_transcript_verified": true
+      },
+      "guardrails": [
+        "只描述人物自己的防护选择，不把城市或人群标签化。",
+        "道具回扣必须由画面或对白验证。"
+      ]
+    },
+    {
+      "observation_id": "obs-arrival-failure-adaptation-chain",
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "start_sec": 71.12,
+      "end_sec": 541.72,
+      "category": "narrative",
+      "trigger": "从德国到巴黎的移动连续出现晚点、站台不明、行李负担、巴士问路和同名地点误选。",
+      "treatment": "保留问题被发现、向人求助、重新确认、赶路、坐对巴士以及地图错误被纠正的过程，再以巴黎街景和继续前往酒店作为阶段回报。",
+      "confidence": 0.93,
+      "parameters": {
+        "obstacles": ["delay", "platform_search", "heavy_luggage", "bus_route", "same_name_location"],
+        "has_external_help": true,
+        "has_explicit_correction": true
+      },
+      "evidence": {
+        "event_ids": ["event-002", "event-003", "event-004", "event-006", "event-007", "event-008"],
+        "full_transcript_coverage": true,
+        "manual_review_ranges_sec": [[455, 495], [540, 585]]
+      },
+      "guardrails": [
+        "不要只留抵达结果而删掉判断和修正。",
+        "交通个案不能被泛化成路线或安全建议。"
+      ]
+    },
+    {
+      "observation_id": "obs-day-two-risk-carryover-reset",
+      "technique_key": "narrative-multiday-reset-with-carryover",
+      "start_sec": 868.12,
+      "end_sec": 919.39,
+      "category": "narrative",
+      "trigger": "跨日重启既要让观众明确新一天，也要延续开场已经建立的设备安全限制。",
+      "treatment": "从起晚和赶预约开始第二天，人物在出门前把原内存卡收好并换新卡，再进入巴黎市区行动，让风险线随新日程继续。",
+      "confidence": 0.96,
+      "parameters": {
+        "day_reset": true,
+        "carryover_prop": "memory_card",
+        "new_goal": "Louvre appointment"
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "transcript_range_verified": true
+      },
+      "guardrails": [
+        "跨日提示要服务新目标，不重复前一天流水账。",
+        "风险道具只保留必要解释。"
+      ]
+    },
+    {
+      "observation_id": "obs-skipped-stop-route-correction",
+      "technique_key": "narrative-error-discovery-and-explicit-correction",
+      "start_sec": 946.88,
+      "end_sec": 1048.99,
+      "category": "narrative",
+      "trigger": "游行导致车辆跳站，人物听不懂广播并一度不知道当前位置。",
+      "treatment": "保留前一站乘客下车、车辆跳站、人物发现不匹配、自我解释和改为步行的完整链条，随后以卢浮宫外景确认恢复行动。",
+      "confidence": 0.92,
+      "parameters": {
+        "correction_steps": ["missed_signal", "mismatch_discovery", "self_explanation", "walk_decision", "landmark_confirmation"]
+      },
+      "evidence": {
+        "event_id": "event-014",
+        "causal_transcript_verified": true,
+        "manual_landmark_payoff_review": true
+      },
+      "guardrails": [
+        "不从个案推导固定交通规则。",
+        "地点判断以画面、路线与人工核验为准。"
+      ]
+    },
+    {
+      "observation_id": "obs-louvre-exterior-to-cultural-detail",
+      "technique_key": "scenic-landmark-exterior-to-interior-detail",
+      "start_sec": 1015,
+      "end_sec": 1497.92,
+      "category": "scenic",
+      "trigger": "卢浮宫段需要同时交代抵达空间、代表展品、文化密度和人物在场感。",
+      "treatment": "先用街景、庭院、拱廊和金字塔建立外部地理，再进入油画、天花板、蒙娜丽莎、皇冠与雕塑中庭；人群和人物反应穿插其间，避免连续壁纸化展品。",
+      "confidence": 0.97,
+      "parameters": {
+        "sequence": ["street", "courtyard", "pyramid", "galleries", "Mona_Lisa", "jewels", "sculpture_court"],
+        "includes_people": true,
+        "changes_scale": true
+      },
+      "evidence": {
+        "manual_review_ranges_sec": [[1015, 1090], [1120, 1175], [1200, 1325], [1435, 1475]],
+        "sculpture_court_mean_shot_sec": 3.64
+      },
+      "guardrails": [
+        "展品连续出现时必须加入空间、人物或信息变化。",
+        "文化事实不得由画面外观臆测。"
+      ]
+    },
+    {
+      "observation_id": "obs-louvre-news-reference-insert",
+      "technique_key": "graphic-inline-reference-card-over-live-scene",
+      "start_sec": 1299.36,
+      "end_sec": 1305.72,
+      "category": "graphic",
+      "trigger": "皇冠展品需要一条可见背景信息连接人物观察与现实事件。",
+      "treatment": "在皇冠近景之间插入带来源标识的竖屏新闻素材，短暂解释卢浮宫失窃事件，随后直接回到展品和现场游览。",
+      "confidence": 0.98,
+      "parameters": {
+        "insert_format": "vertical_news_clip",
+        "returns_to_live_scene": true,
+        "transition": "hard_cut"
+      },
+      "evidence": {
+        "manual_continuous_frame_review": true,
+        "insert_range_verified": true,
+        "source_mark_visible": true
+      },
+      "guardrails": [
+        "引用素材必须具备使用权并保留必要来源。",
+        "插入只补足当前观察，不脱离主线扩展成长解释。"
+      ]
+    },
+    {
+      "observation_id": "obs-museum-question-mark-sticker",
+      "technique_key": "graphic-single-symbol-curiosity-punctuation",
+      "start_sec": 1319.04,
+      "end_sec": 1321.5,
+      "category": "graphic",
+      "trigger": "人物遇到难以立即理解的展品，需要低成本标记主观疑问。",
+      "treatment": "让单个问号贴图在展品上方持续约 1.25 秒，随后以普通硬切进入走廊，不再叠加音效或第二种贴图结论。",
+      "confidence": 0.99,
+      "parameters": {
+        "overlay": "question_mark",
+        "verified_continuous_frames": 6,
+        "transition_out": "hard_cut"
+      },
+      "evidence": {
+        "dense_review_interval_sec": 0.25,
+        "overlay_visible_range_sec": [1320, 1321.25],
+        "hard_cut_verified_sec": [1321.25, 1321.5]
+      },
+      "guardrails": [
+        "一次认知落点只用一个符号。",
+        "贴图不能遮挡展品主体或事实说明。"
+      ]
+    },
+    {
+      "observation_id": "obs-hot-food-color-bars-reset",
+      "technique_key": "humor-single-accent-then-hard-reset",
+      "start_sec": 1652.5,
+      "end_sec": 1657.68,
+      "category": "graphic",
+      "trigger": "人物试吃时被烫到，需要快速结束反应包袱并返回餐厅现场。",
+      "treatment": "在真实试吃反应上放一次粗体‘烫！’，随后插入约半秒彩条并硬切回餐桌动作，避免继续堆叠效果。",
+      "confidence": 0.97,
+      "parameters": {
+        "accent_caption": "烫！",
+        "reset_card": "color_bars",
+        "reset_shot_range_sec": [1657.12, 1657.68],
+        "transition": "hard_cut"
+      },
+      "evidence": {
+        "manual_contact_sheet_review": true,
+        "analysis_short_shot_duration_sec": 0.56,
+        "sound_effect_confirmed": false
+      },
+      "guardrails": [
+        "彩条只作一次短标点。",
+        "没有试听证据时不得声明同步音效。"
+      ]
+    },
+    {
+      "observation_id": "obs-security-alert-color-mode-reset",
+      "technique_key": "graphic-risk-mode-color-wash-reset",
+      "start_sec": 1795.5,
+      "end_sec": 1805,
+      "category": "graphic",
+      "trigger": "人物提着显眼购物袋进入拥挤街区，主观警戒需要被快速可视化。",
+      "treatment": "短暂使用粉色警戒色覆盖街景，并放置‘小偷可能会伪装成任何人’说明；数秒后恢复正常色彩，再进入用普通袋遮住品牌袋的现实动作。",
+      "confidence": 0.96,
+      "parameters": {
+        "color_mode": "pink_warning_wash",
+        "resets_to_live_color": true,
+        "followed_by_action": "cover_branded_bag"
+      },
+      "evidence": {
+        "manual_continuous_frame_review": true,
+        "danmaku_localization_bucket_counts": {"1800": 29, "1805": 30},
+        "danmaku_usage": "localization_only"
+      },
+      "guardrails": [
+        "警戒效果表达人物主观状态，不把具体路人或群体标记为威胁。",
+        "色彩模式之后必须回到可验证的现实行动。"
+      ]
+    },
+    {
+      "observation_id": "obs-olympic-balloon-fact-caption",
+      "technique_key": "graphic-inline-fact-caption-over-live-scene",
+      "start_sec": 2381.4,
+      "end_sec": 2389,
+      "category": "graphic",
+      "trigger": "街头远景出现奥运热气球火炬，需要让不熟悉背景的观众理解画面对象。",
+      "treatment": "在实景上放置单条白底事实说明，保持热气球火炬和街道仍可见；说明结束后切入彩虹与凯旋门方向，不展开独立百科段落。",
+      "confidence": 0.94,
+      "parameters": {
+        "caption_type": "single_fact_strip",
+        "live_scene_remains_visible": true,
+        "followup": "rainbow_city_reveal"
+      },
+      "evidence": {
+        "manual_full_frame_review": true,
+        "caption_and_subject_visible": true
+      },
+      "guardrails": [
+        "事实说明必须核实来源。",
+        "文字不遮挡核心地标。"
+      ]
+    },
+    {
+      "observation_id": "obs-rainbow-arc-city-release",
+      "technique_key": "scenic-weather-reveal-to-city-geography",
+      "start_sec": 2385,
+      "end_sec": 2410,
+      "category": "scenic",
+      "trigger": "长时间紧绷街头行动后，需要用真实天气和城市轴线提供短暂情绪释放。",
+      "treatment": "从火炬远景切到建筑上方双彩虹，再转向凯旋门轴线、街道和车辆，最后回到人物继续赶游船。",
+      "confidence": 0.96,
+      "parameters": {
+        "weather_feature": "rainbow",
+        "geographic_anchor": "Arc_de_Triomphe_axis",
+        "returns_to_action": true
+      },
+      "evidence": {
+        "manual_contact_sheet_review": true,
+        "danmaku_high_density_window_sec": [2385, 2405],
+        "danmaku_signal_is_heterogeneous": true
+      },
+      "guardrails": [
+        "弹幕高密度不能证明彩虹镜头造成反应。",
+        "天气揭示后及时恢复人物目标。"
+      ]
+    },
+    {
+      "observation_id": "obs-stranger-photo-bag-mixup",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 2478,
+      "end_sec": 2502,
+      "category": "humor",
+      "trigger": "独自旅行请路人拍照时同时要交接手机和保管购物袋，产生真实递物误会。",
+      "treatment": "保留提出拍照请求、示范构图、交接手机、误把包递给另一人、人物意识到错误和致谢的完整过程，再进入游船集合。",
+      "confidence": 0.98,
+      "parameters": {
+        "resolution_retained": true,
+        "playback_rate": null,
+        "overlay_stack": false
+      },
+      "evidence": {
+        "manual_continuous_frame_review": true,
+        "full_transcript_coverage": true,
+        "danmaku_bucket_start_sec": 2480,
+        "danmaku_bucket_count": 14,
+        "danmaku_usage": "localization_only"
+      },
+      "guardrails": [
+        "笑点落在人物自己的递物错误，不嘲弄帮助者。",
+        "保留致谢和问题解决。"
+      ]
+    },
+    {
+      "observation_id": "obs-cruise-human-to-landmark-geography",
+      "technique_key": "scenic-human-reaction-to-landmark-geography",
+      "start_sec": 2511.5,
+      "end_sec": 2690,
+      "category": "scenic",
+      "trigger": "塞纳河游船是巴黎一日行的主要视觉回报，需要兼顾地标、城市尺度和人物在场感。",
+      "treatment": "从登船和人物仰望进入埃菲尔铁塔，交替人物反应、河面宽景、桥梁、两岸建筑、蓝调天空与夜间亮灯，再回到岸上人物。",
+      "confidence": 0.98,
+      "parameters": {
+        "viewpoint": "moving_boat",
+        "includes_people": true,
+        "light_progression": ["dusk", "blue_hour", "night"],
+        "geographic_anchors": ["Eiffel_Tower", "Seine", "bridges", "riverbanks"]
+      },
+      "evidence": {
+        "manual_review_ranges_sec": [[2511.5, 2570], [2570, 2690]],
+        "person_landmark_alternation_visible": true
+      },
+      "guardrails": [
+        "连续地标镜头必须改变人物、方向、光线或地理信息。",
+        "移动视点要维持河流方向可读。"
+      ]
+    },
+    {
+      "observation_id": "obs-cruise-music-dialogue-protection",
+      "technique_key": "music-scenic-block-dialogue-protection",
+      "start_sec": 2511.5,
+      "end_sec": 2690,
+      "category": "music_rhythm",
+      "trigger": "游船长段需要把黄昏、铁塔、河岸和夜色连成整体，同时保留人物即时观察与城市说明。",
+      "treatment": "用持续音乐床连接无对白地标与移动镜头，在人物口播、历史说明和环境变化处保持语义可懂；画面可见 BGM credit，但不据此推断版权或逐拍关系。",
+      "confidence": 0.87,
+      "parameters": {
+        "visible_bgm_credit_sec": 2511,
+        "short_audio_review_ranges_sec": [[2505, 2525], [2545, 2565]],
+        "track_identity_verified": false,
+        "dialogue_priority": true
+      },
+      "evidence": {
+        "audio_heuristic": true,
+        "short_audio_acoustic_review": true,
+        "manual_continuous_frame_review": true,
+        "transcript_coverage": true
+      },
+      "guardrails": [
+        "music_likely 与可见 credit 不用于曲名、BPM 或版权判断。",
+        "人物口播和现场环境信息优先于音乐连续性。"
+      ]
+    },
+    {
+      "observation_id": "obs-cruise-eiffel-music-reveal",
+      "technique_key": "music-transition-reveal-synchronization",
+      "start_sec": 2505,
+      "end_sec": 2525,
+      "category": "music_rhythm",
+      "trigger": "从赶集合与登船切换到埃菲尔铁塔，需要形成清楚的情绪和地点揭示。",
+      "treatment": "保留集合、安检和落座后再露出铁塔；音乐床、可见 BGM credit、人物仰望与地标宽景共同完成转折，不用复杂视觉转场。",
+      "confidence": 0.85,
+      "parameters": {
+        "transition": "boarding_to_landmark_reveal",
+        "visible_bgm_credit_sec": 2511,
+        "complex_transition": false
+      },
+      "evidence": {
+        "manual_frame_review": true,
+        "short_audio_acoustic_review": true,
+        "landmark_reveal_visible": true,
+        "exact_beat_sync_verified": false
+      },
+      "guardrails": [
+        "只描述段落同步，不声明逐拍因果。",
+        "揭示前保留登船空间连续性。"
+      ]
+    },
+    {
+      "observation_id": "obs-cracked-lens-explicit-correction",
+      "technique_key": "narrative-error-discovery-and-explicit-correction",
+      "start_sec": 2696.85,
+      "end_sec": 2705.4,
+      "category": "narrative",
+      "trigger": "人物为防盗换用旧手机后发现镜头裂纹使自拍产生明显光痕。",
+      "treatment": "先展示异常自拍画面，再口头确认镜头问题，并通过改变持机与遮挡位置继续拍摄，让风险道具获得真实后果和临时修正。",
+      "confidence": 0.97,
+      "parameters": {
+        "error": "cracked_camera_lens",
+        "visible_artifact": "light_streak",
+        "correction": "change_hand_and_phone_position"
+      },
+      "evidence": {
+        "dense_review_interval_sec": 0.45,
+        "before_after_comparison_visible": true,
+        "transcript_range_verified": true
+      },
+      "guardrails": [
+        "不能把真实裂纹误写成后期 VFX。",
+        "修正只描述成片可见动作，不推断设备维修结果。"
+      ]
+    },
+    {
+      "observation_id": "obs-hotel-reflection-next-stop-hook",
+      "technique_key": "narrative-reflection-summary-forward-hook",
+      "start_sec": 2839.92,
+      "end_sec": 2976.78,
+      "category": "narrative",
+      "trigger": "巴黎仅有一天的行程需要把紧绷、消费、三万步、设备和环境感受沉淀成明确结论。",
+      "treatment": "回酒店保留较长正面口播，总结未遇失窃、全程警惕、交通与气味感受、餐费和疲惫；进食后补充三万步、鞋损与房间气味，最后明确下一站圣米歇尔山并道别。",
+      "confidence": 0.97,
+      "parameters": {
+        "reflection_topics": ["risk", "transport", "cost", "walking", "equipment", "fatigue"],
+        "has_forward_hook": true,
+        "last_dialogue_sec": 2976.78
+      },
+      "evidence": {
+        "full_transcript_coverage": true,
+        "manual_tail_frame_review": true,
+        "tail_asr_dual_mode_match": true
+      },
+      "guardrails": [
+        "反思保留人物主观视角，不推广为城市事实。",
+        "下一站提示放在主题总结完成后。"
+      ]
+    },
+    {
+      "observation_id": "obs-next-episode-crt-teaser",
+      "technique_key": "graphic-next-episode-crt-teaser",
+      "start_sec": 2976.78,
+      "end_sec": 2986.32,
+      "category": "graphic",
+      "trigger": "道别后仍需把下一站从口头信息转成视觉前钩。",
+      "treatment": "在最后对白结束后切入带 CRT 边框、扫描线和轻微画面漂移的圣米歇尔山影像，持续到媒体结束，不再加入新对白。",
+      "confidence": 0.98,
+      "parameters": {
+        "visual_style": "CRT_scanline_teaser",
+        "next_destination": "Mont_Saint_Michel",
+        "dialogue_present": false,
+        "duration_sec": 9.54
+      },
+      "evidence": {
+        "manual_tail_dense_review": true,
+        "media_end_sec": 2986.32,
+        "dual_mode_tail_asr_end_sec": 2976.78
+      },
+      "guardrails": [
+        "前钩只预告下一站，不伪造当前集已经发生的内容。",
+        "不得从视觉风格推断具体制作工具。"
+      ]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 96358,
+    "maximum_characters": 180000,
+    "hard_limit_characters": 200000,
+    "model_request_serialized_characters": 73177,
+    "model_request_utf8_bytes": 80731,
+    "request_contains_schema_and_manual_evidence": true,
+    "comparison": "strictly_less_than"
+  },
+  "limitations": [
+    "参考片是最终成片，只能学习被正向保留的内容、节奏和效果；没有原始素材与成片映射，不能推断作者真实删片偏好。",
+    "分析代理为 640×360，人工抽帧仍可能漏掉极短转场、小字号、细微贴图与复杂 VFX。",
+    "权威 transcription 与独立 transcript 均为 faster-whisper small/zh；analysis.configuration 中仍残留 auto/base 元数据，正式证据以 transcription 节点和独立 transcript 为准。",
+    "部分 ASR 段过长且专名、外语和同音词存在误识别；关键区间优先采用烧录字幕、连续画面和人工核验，不把未经验证的逐字文本当作事实。",
+    "无 VAD 与低门限尾检均到 2976.78 秒‘拜拜’，最后约 9.54 秒是无新增对白的 CRT 圣米歇尔山前钩；没有向正式 transcript 合并任何低证据候选。",
+    "弹幕仅用于定位和描述观众信号，不能证明某个剪辑、BGM、字幕、图形、转场、VFX 或音效造成对应反应。",
+    "ambient_likely 与 music_likely 是声学启发式；短音频、频谱和可见 BGM credit 只支持段落功能，不提供精确曲名、BPM、版权或逐拍因果判断。",
+    "快速段可由短镜头密度、真实步行和相机运动解释；未确认任何 playback-rate observation、speed ramp 或具体倍率。",
+    "连续帧只确认普通硬切、标题包装、问号贴图、新闻与彩条插入、粉色警戒色、事实说明和尾部 CRT 效果；未确认溶解、遮罩、推拉转场或其他复杂合成 VFX。",
+    "彩条、‘烫！’、警戒色和裂镜头段没有足够试听证据分离独立音效，因此不生成 sound_effect observation；裂镜头光痕被视为真实设备结果而非后期 VFX。",
+    "新闻插入、奥运火炬说明与下一站画面只描述成片可见顺序；目标素材必须使用有权使用且事实可核验的参照。",
+    "片中关于城市、安全、人群、交通和气味的评价是人物当时的主观旅行体验，本 study 只学习叙事结构，不把这些表达当作客观事实或群体判断。"
+  ]
+}
