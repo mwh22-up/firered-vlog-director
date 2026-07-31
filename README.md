@@ -42,9 +42,11 @@ D:\vlog-projects\                       # 不进入 GitHub
 cd firered-vlog-director
 py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install -e .
+python -m pip install -e ".[test]"
 .\scripts\test.ps1
 ```
+
+`test` extra 会安装单元测试、参考分析和 JSON Schema 门禁所需的最小依赖；测试会校验全部 8 个 Schema 以及仓库中的正式 JSON 产物。
 
 校验剪辑计划：
 

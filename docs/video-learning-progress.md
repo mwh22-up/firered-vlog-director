@@ -95,6 +95,7 @@
 2. 六来源聚合已复核独立来源支持数；后续新增参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
 3. 六来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
 4. Aggregate 接入门禁：34 项针对性 unittest、75 项全量 unittest、六 Study 与 Aggregate Schema/运行时校验、CLI 聚合与导演 smoke、UTF-8 无 BOM、敏感信息/媒体扫描及 `git diff --check` 均通过。
+5. CI 已在干净 Python 环境显式安装 `test` extra，并以 3 项自动化 Schema 测试覆盖 8 个 Schema、34 个正式 reference JSON、moments fixture 与 protection policy；当前全量为 78 项 unittest。
 
 ## Git 与媒体边界
 

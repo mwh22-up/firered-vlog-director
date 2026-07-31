@@ -5,6 +5,9 @@
 ```powershell
 git clone https://github.com/mwh22-up/firered-vlog-director.git D:\vlog-studio\firered-vlog-director
 cd D:\vlog-studio\firered-vlog-director
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -e ".[test]"
 .\scripts\check-environment.ps1
 .\scripts\test.ps1
 ```

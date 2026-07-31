@@ -15,6 +15,11 @@ analysis = [
   "numpy>=2,<3",
   "Pillow>=12,<13",
 ]
+test = [
+  "jsonschema>=4.23,<5",
+  "numpy>=2,<3",
+  "Pillow>=12,<13",
+]
 
 [project.scripts]
 vlog-director = "vlog_director.cli:main"

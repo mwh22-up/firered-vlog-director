@@ -40,6 +40,140 @@
     },
     "pacing_model": { "type": "object" },
     "audio_model": { "type": "object" },
+    "learning_memory": {
+      "type": "object",
+      "required": [
+        "precedence",
+        "content_model",
+        "editing_model",
+        "effect_model",
+        "feedback_model",
+        "limitations"
+      ],
+      "properties": {
+        "precedence": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "content_model": {
+          "type": "object",
+          "required": [
+            "separate_scores",
+            "preference_weights",
+            "event_chain",
+            "evidence_rules"
+          ],
+          "properties": {
+            "separate_scores": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "preference_weights": {
+              "type": "object",
+              "required": ["scenic", "fun"],
+              "properties": {
+                "scenic": { "type": "number", "minimum": 0 },
+                "fun": { "type": "number", "minimum": 0 }
+              },
+              "additionalProperties": false
+            },
+            "event_chain": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "evidence_rules": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "type": "string", "minLength": 1 }
+            }
+          },
+          "additionalProperties": false
+        },
+        "editing_model": {
+          "type": "object",
+          "required": [
+            "candidate_directions",
+            "uses_target_analysis",
+            "requires_timeline_change",
+            "reference_source_count"
+          ],
+          "properties": {
+            "candidate_directions": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": { "type": "string", "minLength": 1 }
+            },
+            "uses_target_analysis": { "type": "boolean" },
+            "requires_timeline_change": { "type": "boolean" },
+            "reference_source_count": { "type": "integer", "minimum": 1 }
+          },
+          "additionalProperties": false
+        },
+        "effect_model": {
+          "type": "object",
+          "required": [
+            "non_blocking",
+            "eligible_only_after_fun_event",
+            "default_max_primary_effects_per_event",
+            "safe_zones",
+            "style_status",
+            "evidence_rules"
+          ],
+          "properties": {
+            "non_blocking": { "type": "boolean" },
+            "eligible_only_after_fun_event": { "type": "boolean" },
+            "default_max_primary_effects_per_event": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "safe_zones": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "style_status": { "type": "string", "minLength": 1 },
+            "evidence_rules": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": { "type": "string", "minLength": 1 }
+            }
+          },
+          "additionalProperties": false
+        },
+        "feedback_model": {
+          "type": "object",
+          "required": [
+            "accepted_decisions",
+            "feedback_overrides_reference_priors",
+            "versioned"
+          ],
+          "properties": {
+            "accepted_decisions": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "feedback_overrides_reference_priors": { "type": "boolean" },
+            "versioned": { "type": "boolean" }
+          },
+          "additionalProperties": false
+        },
+        "limitations": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      },
+      "additionalProperties": false
+    },
     "source_variants": { "type": "array" },
     "limitations": { "type": "array", "minItems": 1 }
   },
