@@ -6,7 +6,8 @@ param(
     [Parameter(Mandatory = $true)] [int]$Version,
     [Parameter(Mandatory = $true)] [double]$TargetDurationSec,
     [string]$Feedback,
-    [string]$AsrModel = 'small'
+    [string]$AsrModel = 'small',
+    [string]$TechniqueProfile
 )
 
 $ErrorActionPreference = 'Stop'
@@ -15,6 +16,10 @@ $project = (Resolve-Path -LiteralPath $ProjectPath).Path
 $parent = (Resolve-Path -LiteralPath $ParentPlan).Path
 $profilePath = (Resolve-Path -LiteralPath $Profile).Path
 $momentsPath = (Resolve-Path -LiteralPath $Moments).Path
+if (-not $TechniqueProfile) {
+    $TechniqueProfile = Join-Path $root 'reference-learning\reference-techniques.aggregate.v1.json'
+}
+$techniqueProfilePath = (Resolve-Path -LiteralPath $TechniqueProfile).Path
 $analysisDirectory = Join-Path $project "work\director\target-analysis"
 $proposalDirectory = Join-Path $project "work\director\v$Version-proposal"
 $previousPythonPath = $env:PYTHONPATH
@@ -34,6 +39,7 @@ try {
         '--parent', $parent,
         '--analysis-directory', $analysisDirectory,
         '--profile', $profilePath,
+        '--technique-profile', $techniqueProfilePath,
         '--moments', $momentsPath,
         '--version', $Version,
         '--target-duration-sec', $TargetDurationSec,

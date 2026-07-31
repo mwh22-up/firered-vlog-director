@@ -1,0 +1,3869 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "aggregated-reference-techniques-v1-30e44cc37595",
+  "generated_at": "2026-07-31T09:15:57.643552+00:00",
+  "source_count": 6,
+  "source_ids": [
+    "bilibili-BV19sm2BBEDd",
+    "bilibili-BV1C3546DEC6",
+    "bilibili-BV1CrHwzUEJa",
+    "bilibili-BV1ETNMzEEWQ",
+    "bilibili-BV1TNZUB4EF6",
+    "bilibili-BV1aDHQejEAP"
+  ],
+  "minimum_source_support": 2,
+  "stable_patterns": [
+    {
+      "technique_key": "graphic-credits-self-deprecating-one-person-team",
+      "category": "graphic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.975,
+      "trigger_examples": [
+        "超长独行片需要完成制作署名，同时保持创作者一贯的自嘲语气。",
+        "超长独行片需要完整署名，同时保持创作者的一人制作自嘲。"
+      ],
+      "treatment_examples": [
+        "用黑底、风景 inset、器材与制作职务列表把‘一人团队’做成克制笑点，并以人物回收相机的长镜头留出片尾余韵。",
+        "在步行和收机余韵上连续列出出品、制片、监制、策划、编剧、导演、执行导演、主演、摄影和剪辑等职务，并以同一创作者重复署名和‘特别鸣谢我的电脑’完成克制自嘲。"
+      ],
+      "parameter_variants": [
+        {
+          "background": "black",
+          "uses_scenic_inset": true,
+          "credit_theme": "one_person_team",
+          "final_shot_sec": 58.256,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "credit_theme": "one_person_team",
+          "self_deprecating_computer_thanks": true,
+          "final_dialogue_present": false,
+          "audience_reading_time_retained": true,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-one-person-team-credits",
+          "guardrails": [
+            "credits 信息必须真实且可读。",
+            "笑点不应缩短观众读取职务、器材和致谢的时间。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-tokyo-one-person-team-credits",
+          "guardrails": [
+            "credits 信息必须真实、可读。",
+            "弹幕中的完播反应不能证明 credits 单独造成效果。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 13339.08,
+          "end_sec": 13397.336,
+          "observation_id": "obs-one-person-team-credits"
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 8843,
+          "end_sec": 8909.885,
+          "observation_id": "obs-tokyo-one-person-team-credits"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-inline-reference-card-over-live-scene",
+      "category": "graphic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.965,
+      "trigger_examples": [
+        "远处动物难以仅凭现场低清画面辨认，需要短暂提供语义背景。",
+        "皇冠展品需要一条可见背景信息连接人物观察与现实事件。"
+      ],
+      "treatment_examples": [
+        "在仍可看见底层草地的情况下叠加竖向白底图文卡，读完即撤，再回到动物近景。",
+        "在皇冠近景之间插入带来源标识的竖屏新闻素材，短暂解释卢浮宫失窃事件，随后直接回到展品和现场游览。"
+      ],
+      "parameter_variants": [
+        {
+          "overlay_type": "vertical_reference_card",
+          "background_remains_visible": true,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "insert_format": "vertical_news_clip",
+          "returns_to_live_scene": true,
+          "transition": "hard_cut",
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-animal-reference-card",
+          "guardrails": [
+            "信息卡只解释当前对象，不扩展成未经核验的旅行建议。",
+            "卡片读完即撤，不长期遮挡现场画面和基础字幕。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-louvre-news-reference-insert",
+          "guardrails": [
+            "引用素材必须具备使用权并保留必要来源。",
+            "插入只补足当前观察，不脱离主线扩展成长解释。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 3703,
+          "end_sec": 3706,
+          "observation_id": "obs-animal-reference-card"
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 1299.36,
+          "end_sec": 1305.72,
+          "observation_id": "obs-louvre-news-reference-insert"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-fluster-preserve-duration-with-one-punctuation",
+      "category": "humor",
+      "source_support": 3,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1C3546DEC6",
+        "bilibili-BV1CrHwzUEJa"
+      ],
+      "average_confidence": 0.9733,
+      "trigger_examples": [
+        "第一次坐手动电梯，到达后忘记需要自己推门。",
+        "偶遇观众后双方尬聊、整理设备、互相拍照并不知道如何收尾。",
+        "赶船前买冰淇淋，店员动作缓慢，主角答非所问、忘带卡并临时请旅伴垫钱。"
+      ],
+      "treatment_examples": [
+        "保留连续手持 POV 和真实停顿，依次用‘到了 / third floor’、一长排省略号和‘忘了要自己推。’延迟揭示错误，不叠加贴图或 VFX。",
+        "保留较长的手忙脚乱和重复确认，在关键误解处只加一个问号或短音效，并在交流结束后保留人物自我反应。",
+        "保留等待和连续沟通，让慢动作与着急自然形成反差；只用答非所问括号字幕、纸币金额大字和短反应字幕标点，不提前跳到买成结果。"
+      ],
+      "parameter_variants": [
+        {
+          "continuous_pov": true,
+          "primary_editorial_effect": "ellipsis_caption",
+          "visual_overlay_required": false,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "primary_graphic": "question_mark",
+          "playback_rate": null,
+          "rate_source": "not_verified",
+          "source_id": "bilibili-BV1C3546DEC6"
+        },
+        {
+          "longest_continuous_shot_sec": 23.76,
+          "primary_effects": 1,
+          "playback_rate": null,
+          "rate_source": "not_verified",
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-manual-elevator-punctuation",
+          "guardrails": [
+            "先保留足够长的真实等待，字幕才有停顿价值。",
+            "一个省略号标点足够，不再叠加遮挡动作的贴图。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "observation_id": "obs-fluster-long-take-question-mark",
+          "guardrails": [
+            "不得仅凭动作密度声称使用2x。",
+            "保留对方完整语境，避免把普通观众恶搞成笑柄。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-ice-cream-fluster-punctuation",
+          "guardrails": [
+            "不得把店员正常工作速度直接标记为搞笑倍速。",
+            "真实人物不应被侮辱性贴图或重复音效攻击。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 5584,
+          "end_sec": 5596,
+          "observation_id": "obs-manual-elevator-punctuation"
+        },
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "start_sec": 2020,
+          "end_sec": 2115,
+          "observation_id": "obs-fluster-long-take-question-mark"
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 1313,
+          "end_sec": 1364,
+          "observation_id": "obs-ice-cream-fluster-punctuation"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-mundane-action-impossible-vfx-escalation",
+      "category": "graphic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.975,
+      "trigger_examples": [
+        "上海中转时的普通饮料动作需要形成短促、夸张的离场笑点。",
+        "人物在电梯里仰看顶部灯光的普通动作需要一个极短、明显脱离现实的笑点。"
+      ],
+      "treatment_examples": [
+        "从正常饮用动作突然升级到激光眼和烟火画面，再以极短彩条结束并切回赶机场的现实行动。",
+        "从正常仰拍升级为闪光和奥特曼脸合成，再立即切 SMPTE 彩条与窄带测试音，随后回到同一电梯现实画面。"
+      ],
+      "parameter_variants": [
+        {
+          "escalation_steps": 3,
+          "reset_card": "color_bars",
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "escalation_steps": [
+            "ceiling_glow",
+            "face_composite",
+            "smpte_bars"
+          ],
+          "reset": "hard_cut_to_same_real_scene",
+          "exact_sound_identity": null,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-shanghai-ai-vfx-escalation",
+          "guardrails": [
+            "高成本特效只用于极短动作，不扩散到信息段。",
+            "特效结束后立即回到真实行动，避免破坏旅行地理。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-elevator-ultraman-vfx-reset",
+          "guardrails": [
+            "幻想效果必须极短，并在落点后立即恢复现实空间。",
+            "不把宽频冲击命名为未经确认的爆炸、变身或版权音效。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 131,
+          "end_sec": 140,
+          "observation_id": "obs-shanghai-ai-vfx-escalation"
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 3839.2,
+          "end_sec": 3841.9,
+          "observation_id": "obs-elevator-ultraman-vfx-reset"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-preserve-imperfect-camera-for-authenticity",
+      "category": "humor",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1C3546DEC6"
+      ],
+      "average_confidence": 0.955,
+      "trigger_examples": [
+        "滑翔伞准备需要同时处理安全装备、外语指令和运动相机，构图不可避免地被手和身体遮挡。",
+        "陌生人主动帮拍，镜头被手和设备遮挡，交流磕绊。"
+      ],
+      "treatment_examples": [
+        "保留教练调整相机、手指遮镜、低机位身体动作和主角真实回应，用短‘《ASMR》’元标签标记现场听感，不用重拍伪装顺利。",
+        "保留遮挡、低机位和不完美构图，通过小号双语字幕保证可理解，让真实互动而非画面精致度承担笑点。"
+      ],
+      "parameter_variants": [
+        {
+          "action_camera": true,
+          "occlusion_retained": true,
+          "playback_rate": null,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "preserve_occlusion": true,
+          "subtitle_mode": "small_bilingual",
+          "source_id": "bilibili-BV1C3546DEC6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-paragliding-imperfect-camera",
+          "guardrails": [
+            "安全指令和真实动作优先于构图完美。",
+            "不把教练或语言差异剪成嘲讽对象。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "observation_id": "obs-imperfect-camera-social-setup",
+          "guardrails": [
+            "遮挡镜头只在承载关键互动时保留。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 8000.76,
+          "end_sec": 8072.96,
+          "observation_id": "obs-paragliding-imperfect-camera"
+        },
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "start_sec": 1952,
+          "end_sec": 1990,
+          "observation_id": "obs-imperfect-camera-social-setup"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-preserve-real-awkward-process",
+      "category": "humor",
+      "source_support": 6,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1C3546DEC6",
+        "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.9467,
+      "trigger_examples": [
+        "山上点饮料时突然想不起‘吸管’的英文，只能通过反复描述和等待解决。",
+        "支付和加热沟通连续失败，人物只能重复尝试。",
+        "列车员检查时票务页面打不开，主角无法独立解释，必须向同车旅客求助。",
+        "人物到收费窗口后误解功能和工作人员指向，需要在陌生语言环境中找到正确位置。",
+        "独自旅行请路人拍照时同时要交接手机和保管购物袋，产生真实递物误会。",
+        "长时间问路同时存在语言障碍、地图理解和追加问题，快速跳到答案会失去真实关系变化。"
+      ],
+      "treatment_examples": [
+        "保留提出需求、卡词、店员理解、继续等待、拿到饮料和人物事后偷笑的完整过程，以字幕和短配乐帮助观众跟上，不提前跳到结果。",
+        "保留足够长的真实失败过程和停顿，用少量双语字幕、失败短句与反差配乐放大尴尬，不提前跳到结果。",
+        "保留查票、网络失败、双语沟通、旅客代为解释、分别问名字和事后复盘的完整过程，只用翻译字幕和轻量强调帮助观众跟上。",
+        "保留走到窗口、提出买票、看不懂回应、发现正确位置在后面、再次办理及继续上楼的完整过程，而不是只截取一句口音笑点。",
+        "保留提出拍照请求、示范构图、交接手机、误把包递给另一人、人物意识到错误和致谢的完整过程，再进入游船集合。",
+        "保留首次开口、双方理解失败、展示地图、尝试回答、追加问题、等待和暂时分开的全过程，让尴尬由真实停顿累积。"
+      ],
+      "parameter_variants": [
+        {
+          "language_barrier": true,
+          "resolution_retained": true,
+          "playback_rate": null,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "primary_effects": 1,
+          "playback_rate": null,
+          "rate_source": "not_verified",
+          "source_id": "bilibili-BV1C3546DEC6"
+        },
+        {
+          "playback_rate": null,
+          "rate_source": "not_verified",
+          "bilingual_subtitles": true,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "process_steps": [
+            "approach_wrong_counter",
+            "ask",
+            "misunderstand",
+            "locate_correct_counter",
+            "complete_action"
+          ],
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "resolution_retained": true,
+          "playback_rate": null,
+          "overlay_stack": false,
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "language_barrier": true,
+          "multiple_questions": true,
+          "resolution_deferred": true,
+          "playback_rate": null,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-straw-language-awkward-process",
+          "guardrails": [
+            "笑点落在主角卡词与自我反应，不嘲弄店员或口音。",
+            "保留解决过程，避免只剪失败制造误解。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "observation_id": "obs-convenience-store-awkwardness",
+          "guardrails": [
+            "不能把对方正常服务行为剪成恶意嘲讽。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-train-ticket-real-process",
+          "guardrails": [
+            "不得把帮助者的正常行为剪成嘲讽对象。",
+            "先交代危机与解决关系，再保留问名等自然余韵。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-information-desk-awkward-process",
+          "guardrails": [
+            "笑点落在主角误读，不嘲弄工作人员、口音或国籍。",
+            "外语字幕应由人工核对，不能直接采用 ASR 的不确定词。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-stranger-photo-bag-mixup",
+          "guardrails": [
+            "笑点落在人物自己的递物错误，不嘲弄帮助者。",
+            "保留致谢和问题解决。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-schoolboy-directions-awkward-process",
+          "guardrails": [
+            "笑点落在主角的沟通困难，不嘲弄学生、口音或能力。",
+            "外语内容必须人工核对，不能直接采用不确定 ASR。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 11570,
+          "end_sec": 11625,
+          "observation_id": "obs-straw-language-awkward-process"
+        },
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "start_sec": 328,
+          "end_sec": 377,
+          "observation_id": "obs-convenience-store-awkwardness"
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 489,
+          "end_sec": 600,
+          "observation_id": "obs-train-ticket-real-process"
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 2105.04,
+          "end_sec": 2144.72,
+          "observation_id": "obs-information-desk-awkward-process"
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 2478,
+          "end_sec": 2502,
+          "observation_id": "obs-stranger-photo-bag-mixup"
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 7140,
+          "end_sec": 7583.633,
+          "observation_id": "obs-schoolboy-directions-awkward-process"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-reality-triggered-familiar-sfx",
+      "category": "sound_effect",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1C3546DEC6",
+        "bilibili-BV1CrHwzUEJa"
+      ],
+      "average_confidence": 0.945,
+      "trigger_examples": [
+        "夜樱照明在人物面前逐盏关闭。",
+        "主角刚猜测城堡仍可进入，真实门锁声立刻否定期待。"
+      ],
+      "treatment_examples": [
+        "保留真实关灯过程并配相亲节目式灭灯音效，让现实动作自己完成包袱。",
+        "先保留尝试开门和省略号停顿，再用括号大字标出锁门声；包袱落下后立即切到后花园舒缓风景。"
+      ],
+      "parameter_variants": [
+        {
+          "sound_effect_role": "punchline",
+          "visual_overlay_required": false,
+          "source_id": "bilibili-BV1C3546DEC6"
+        },
+        {
+          "sound_effect_role": "punchline",
+          "caption": "锁门声",
+          "scenic_release_after_punchline": true,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "observation_id": "obs-light-off-dating-sfx",
+          "guardrails": [
+            "音效应卡在真实灯光变化上。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-castle-lock-sfx-garden-release",
+          "guardrails": [
+            "音效必须卡在真实锁门动作上。",
+            "不要重复播放或再叠贴图稀释简短反差。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "start_sec": 867,
+          "end_sec": 884,
+          "observation_id": "obs-light-off-dating-sfx"
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 1218,
+          "end_sec": 1234,
+          "observation_id": "obs-castle-lock-sfx-garden-release"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-single-accent-then-hard-reset",
+      "category": "graphic",
+      "source_support": 5,
+      "source_ids": [
+        "bilibili-BV1C3546DEC6",
+        "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.964,
+      "trigger_examples": [
+        "普通进食动作被人物表情和过度仪式感配乐抬高。",
+        "主角面对绝美湖景却说自己是哑巴博主，主动暴露不会表达的尴尬。",
+        "人物把昏暗住宿建筑描述成‘像会发生一些故事’，需要一次短促自嘲后回到入住行动。",
+        "人物试吃时被烫到，需要快速结束反应包袱并返回餐厅现场。",
+        "阳台多机位、换装式自演需要清楚结束包袱并返回正常旅行叙事。"
+      ],
+      "treatment_examples": [
+        "用轻量闪光贴纸和局部近景强化享受表情，包袱结束后插入极短彩条作为硬重置，再切回旅途。",
+        "完整保留自嘲和笑声，随后插入约一秒彩条作为硬停顿，再切回湖面、鸭子和岸边人物。",
+        "在建筑判断后插入约 0.32 秒 SMPTE 彩条，再硬切前台办理；同片其他笑点也复用同一短彩条，但每次立即返回现实过程。",
+        "在真实试吃反应上放一次粗体‘烫！’，随后插入约半秒彩条并硬切回餐桌动作，避免继续堆叠效果。",
+        "保留多个角度和服装变化的短表演，在落点插入一次 SMPTE 彩条并同步真静音，再硬切回人物口播。"
+      ],
+      "parameter_variants": [
+        {
+          "overlay_type": "sparkle",
+          "reset_card": "color_bars",
+          "reset_card_estimated_sec": 1.0,
+          "source_id": "bilibili-BV1C3546DEC6"
+        },
+        {
+          "reset_card": "color_bars",
+          "reset_card_estimated_sec": 1.0,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "primary_color_bar_interval_sec": [
+            778.68,
+            779
+          ],
+          "repeated_intervals_sec": [
+            [
+              1169.96,
+              1170.44
+            ],
+            [
+              1193.6,
+              1194.6
+            ],
+            [
+              1976.56,
+              1977.04
+            ],
+            [
+              3004.96,
+              3005.6
+            ]
+          ],
+          "transition": "hard_cut",
+          "overlay_stack": false,
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "accent_caption": "烫！",
+          "reset_card": "color_bars",
+          "reset_shot_range_sec": [
+            1657.12,
+            1657.68
+          ],
+          "transition": "hard_cut",
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "reset_card": "smpte_bars",
+          "reset_visual_range_sec": [
+            5010.533,
+            5012.1
+          ],
+          "verified_silence_range_sec": [
+            5010.734,
+            5012.305
+          ],
+          "verified_silence_duration_sec": 1.571,
+          "transition": "hard_cut",
+          "overlay_stack": false,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "observation_id": "obs-food-sparkle-color-bars",
+          "guardrails": [
+            "闪光贴纸不遮脸和基础字幕。",
+            "彩条只作极短标点，不可打断关键信息。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-mute-blogger-color-bars",
+          "guardrails": [
+            "彩条只作一次极短标点。",
+            "彩条后必须切到新的视觉信息，不原地重复自嘲。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-haunted-hotel-color-bars-reset",
+          "guardrails": [
+            "彩条只承担一次重置，不与多种贴图连续追打。",
+            "硬切之后必须恢复真实行动和空间。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-hot-food-color-bars-reset",
+          "guardrails": [
+            "彩条只作一次短标点。",
+            "没有试听证据时不得声明同步音效。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-balcony-performance-color-bars-reset",
+          "guardrails": [
+            "彩条与静音只作一次短标点，不连续堆叠其他效果。",
+            "硬切后必须恢复新的现实动作或口播。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "start_sec": 445,
+          "end_sec": 490,
+          "observation_id": "obs-food-sparkle-color-bars"
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 1449,
+          "end_sec": 1457,
+          "observation_id": "obs-mute-blogger-color-bars"
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 778.68,
+          "end_sec": 781.56,
+          "observation_id": "obs-haunted-hotel-color-bars-reset"
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 1652.5,
+          "end_sec": 1657.68,
+          "observation_id": "obs-hot-food-color-bars-reset"
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 4998,
+          "end_sec": 5014,
+          "observation_id": "obs-balcony-performance-color-bars-reset"
+        }
+      ]
+    },
+    {
+      "technique_key": "music-genre-switch-for-night-horror-counterpoint",
+      "category": "music_rhythm",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1ETNMzEEWQ"
+      ],
+      "average_confidence": 0.895,
+      "trigger_examples": [
+        "白天被描述为理想生活的小镇在夜里空无一人，主角开始自己吓自己。",
+        "空巷、石阶、低照度和不确定的同行者使人物开始自己吓自己。"
+      ],
+      "treatment_examples": [
+        "保留黑暗长路、脚步和惊吓反应，并切入悬疑型配乐，使安全街道暂时呈现恐怖片类型，最后以看见酒店解除。",
+        "保留黑暗长路、脚步、狭窄构图和人物反应，以间歇性悬疑音乐与少量标点暂时改写成恐怖游戏类型；出现人声和旅行团后解除。"
+      ],
+      "parameter_variants": [
+        {
+          "genre": "suspense_horror",
+          "resolution": "hotel_reveal",
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "visual_mode": "dark_narrow_stone_lanes",
+          "music_likely_intervals_sec": [
+            [
+              1325.5,
+              1326.5
+            ],
+            [
+              1335,
+              1338.5
+            ],
+            [
+              1352,
+              1354.5
+            ],
+            [
+              1382.5,
+              1386.5
+            ]
+          ],
+          "danger_status": "subjective_only",
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-night-walk-horror-music-reframe",
+          "guardrails": [
+            "不能用音效虚构真实危险或治安事件。",
+            "悬疑类型必须由主角主观害怕和最终安全解除框定。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-night-horror-genre-switch",
+          "guardrails": [
+            "只描述人物主观紧张，不虚构犯罪或真实危险。",
+            "本 observation 不声称已人工确认任何单独惊吓音效。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 2040,
+          "end_sec": 2091,
+          "observation_id": "obs-night-walk-horror-music-reframe"
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 1208.64,
+          "end_sec": 1398.4,
+          "observation_id": "obs-night-horror-genre-switch"
+        }
+      ]
+    },
+    {
+      "technique_key": "music-scenic-block-dialogue-protection",
+      "category": "music_rhythm",
+      "source_support": 5,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1C3546DEC6",
+        "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.874,
+      "trigger_examples": [
+        "长段山脊、湖景和雨中下降需要持续情绪，同时包含问路、呼吸、跌倒和风险说明。",
+        "连续樱花、河流、当地人活动和无人机镜头需要形成一段完整沉浸体验。",
+        "长段湖泊、草地和渡船画面需要连续情绪，同时夹有现场感叹和临时交流。",
+        "长段地标接近与日落揭示需要持续情绪，同时包含人物感叹、涉水和赶光线说明。",
+        "游船长段需要把黄昏、铁塔、河岸和夜色连成整体，同时保留人物即时观察与城市说明。"
+      ],
+      "treatment_examples": [
+        "用多个连续 music_likely 块连接无对白的移动和风景，在问路、人物状态与湿滑路面说明处保留现场声；12706 秒以可见 BGM credit 标明雨中段音乐。",
+        "使用连续低干扰音乐把不同景别连成一段，现场对白或人物交流出现时优先让位于原声。",
+        "用低干扰音乐连接无对白风景块，在人物说话、买东西和真实交流时降低存在感或让位现场声。",
+        "用多个音乐候选块连接步行和风景，在人物说明、涉水动作与现场反应出现时保持可懂度，再进入更长的纯景色区间。",
+        "用持续音乐床连接无对白地标与移动镜头，在人物口播、历史说明和环境变化处保持语义可懂；画面可见 BGM credit，但不据此推断版权或逐拍关系。"
+      ],
+      "parameter_variants": [
+        {
+          "music_likely_segments_sec": [
+            [
+              12095,
+              12130
+            ],
+            [
+              12133,
+              12173
+            ],
+            [
+              12377,
+              12399
+            ]
+          ],
+          "visible_bgm_credit_sec": 12706,
+          "track_identity_verified": false,
+          "dialogue_priority": true,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "longest_music_likely_segment_sec": 28.5,
+          "speech_priority": true,
+          "source_id": "bilibili-BV1C3546DEC6"
+        },
+        {
+          "music_likely_long_segments_sec": [
+            [
+              1025,
+              1030
+            ],
+            [
+              1033.5,
+              1045
+            ],
+            [
+              1062.5,
+              1077.5
+            ],
+            [
+              1090.5,
+              1110.5
+            ]
+          ],
+          "dialogue_priority": true,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "principal_music_likely_intervals_sec": [
+            [
+              554,
+              559.5
+            ],
+            [
+              585,
+              595.5
+            ],
+            [
+              616,
+              681.5
+            ]
+          ],
+          "dialogue_priority_ranges_sec": [
+            [
+              566.28,
+              579.24
+            ],
+            [
+              595.61,
+              615.04
+            ]
+          ],
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "visible_bgm_credit_sec": 2511,
+          "short_audio_review_ranges_sec": [
+            [
+              2505,
+              2525
+            ],
+            [
+              2545,
+              2565
+            ]
+          ],
+          "track_identity_verified": false,
+          "dialogue_priority": true,
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-hike-music-dialogue-protection",
+          "guardrails": [
+            "music_likely 是声学启发式，不用于曲名、BPM 或版权识别。",
+            "雨中风险说明、问路和呼吸声不能为维持配乐连续性而被静音。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "observation_id": "obs-scenic-music-dialogue-protection",
+          "guardrails": [
+            "music_likely 是声学估计，不代表识别出具体歌曲。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-scenic-music-dialogue-protection",
+          "guardrails": [
+            "声学分类只证明可能有音乐，不用于识别曲名或版权。",
+            "真实交流不得为维持配乐连续性而被静音。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-landmark-music-dialogue-protection",
+          "guardrails": [
+            "声学分类不等于歌曲识别。",
+            "涉水、方向和时间压力等现场信息优先于音乐响度。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-cruise-music-dialogue-protection",
+          "guardrails": [
+            "music_likely 与可见 credit 不用于曲名、BPM 或版权判断。",
+            "人物口播和现场环境信息优先于音乐连续性。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 12095,
+          "end_sec": 12720,
+          "observation_id": "obs-hike-music-dialogue-protection"
+        },
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "start_sec": 2173.5,
+          "end_sec": 2385,
+          "observation_id": "obs-scenic-music-dialogue-protection"
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 1020,
+          "end_sec": 1512,
+          "observation_id": "obs-scenic-music-dialogue-protection"
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 550.24,
+          "end_sec": 682.04,
+          "observation_id": "obs-landmark-music-dialogue-protection"
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 2511.5,
+          "end_sec": 2690,
+          "observation_id": "obs-cruise-music-dialogue-protection"
+        }
+      ]
+    },
+    {
+      "technique_key": "music-transition-reveal-synchronization",
+      "category": "music_rhythm",
+      "source_support": 4,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.8475,
+      "trigger_examples": [
+        "列车从封闭、昏暗空间进入开阔湖山，需要把地理变化变成明确情绪落点。",
+        "站台和换乘信息不明后出现太阳雨与彩虹，需要把交通焦虑转成短暂情绪释放。",
+        "从赶集合与登船切换到埃菲尔铁塔，需要形成清楚的情绪和地点揭示。",
+        "台场后段需要把实景水岸、城市宽景和短动画参照组织成同一段怀旧回报。"
+      ],
+      "treatment_examples": [
+        "保留车厢窗框作为前景，在出隧道后连续展开湖泊、云雾和山谷；音乐变化与视觉露出共同完成揭示。",
+        "保留列车窗外天气变化和人物发现彩虹的过程，让音乐进入与彩虹揭示共同形成落点，再恢复后续交通问题。",
+        "保留集合、安检和落座后再露出铁塔；音乐床、可见 BGM credit、人物仰望与地标宽景共同完成转折，不用复杂视觉转场。",
+        "在约 8328.4 秒让谐波音乐硬入，随后跨越多个实景景别和 8351.9 至 8361.2 秒的短动画保持同一声床，不在参照画面处重启。"
+      ],
+      "parameter_variants": [
+        {
+          "transition": "enclosed_transport_to_scenic_reveal",
+          "audience_sync_signal_sec": 4753,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "music_likely_intervals_sec": [
+            [
+              375.5,
+              388
+            ],
+            [
+              407.5,
+              410
+            ]
+          ],
+          "transition": "transport_uncertainty_to_weather_reveal",
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "transition": "boarding_to_landmark_reveal",
+          "visible_bgm_credit_sec": 2511,
+          "complex_transition": false,
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "music_onset_sec": 8328.4,
+          "reference_insert_range_sec": [
+            8351.9,
+            8361.2
+          ],
+          "music_restart_at_reference": false,
+          "track_identity_verified": false,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-train-tunnel-scenic-reveal",
+          "guardrails": [
+            "音乐识别和因果不能只依赖弹幕。",
+            "揭示前后的窗框与移动方向要保持空间连续。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-rainbow-music-reveal",
+          "guardrails": [
+            "弹幕不能证明音乐单独造成观众反应。",
+            "不得据此识别精确曲名、BPM 或版权。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-cruise-eiffel-music-reveal",
+          "guardrails": [
+            "只描述段落同步，不声明逐拍因果。",
+            "揭示前保留登船空间连续性。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-odaiba-music-scenic-entry",
+          "guardrails": [
+            "声谱边界不能用于识别曲名、BPM、版权或具体曲风。",
+            "人物短反应和现实空间信息仍需保持可懂。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 4745,
+          "end_sec": 4760,
+          "observation_id": "obs-train-tunnel-scenic-reveal"
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 375.5,
+          "end_sec": 435.24,
+          "observation_id": "obs-rainbow-music-reveal"
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 2505,
+          "end_sec": 2525,
+          "observation_id": "obs-cruise-eiffel-music-reveal"
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 8325,
+          "end_sec": 8375,
+          "observation_id": "obs-odaiba-music-scenic-entry"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-end-of-journey-montage-verbal-closure",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "多国旅行结尾既要完成真实返程，也要明确告诉观众这一系列已经结束。",
+        "两小时以上东京合集需要完成实际返程，并用可信对白明确旅程结束。"
+      ],
+      "treatment_examples": [
+        "保留清晨出发、机场、机上座位小摩擦、窗外地理、睡不着和回家进度，最后用一句旅行结束、感谢、‘下个旅程再见’和黑底结束卡闭合。",
+        "用地铁换乘、餐食、步行和回顾镜头完成返程过程，再保留人工核验的最后五段对白，使结束、体验总结、下一篇章和价格回扣依次成立。"
+      ],
+      "parameter_variants": [
+        {
+          "closure_steps": [
+            "airport_departure",
+            "flight_process",
+            "homecoming_progress",
+            "verbal_series_end",
+            "thank_you_card"
+          ],
+          "final_card": "谢谢观看",
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "closure_steps": [
+            "transit",
+            "meal",
+            "walking",
+            "verbal_closure",
+            "price_callback",
+            "credits"
+          ],
+          "tail_dialogue_repair_range_sec": [
+            8822.13,
+            8832.81
+          ],
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-homecoming-montage-closure",
+          "guardrails": [
+            "该段是实际返程闭合，不夸大为深度反思。",
+            "系列结束语必须与真实完成状态一致。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-tokyo-journey-verbal-closure",
+          "guardrails": [
+            "只使用有声画对应的尾段对白。",
+            "不得把被排除的重复英文或孤立短词写入正式证据。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 2854.2,
+          "end_sec": 3038.453,
+          "observation_id": "obs-homecoming-montage-closure"
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 8673,
+          "end_sec": 8832.81,
+          "observation_id": "obs-tokyo-journey-verbal-closure"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-error-discovery-and-explicit-correction",
+      "category": "narrative",
+      "source_support": 3,
+      "source_ids": [
+        "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.9467,
+      "trigger_examples": [
+        "人物听到疑似火车站站名后紧张下车，马上发现地点错误。",
+        "人物为防盗换用旧手机后发现镜头裂纹使自拍产生明显光痕。",
+        "得到帮助后仍出现方向或交通判断错误，需要让观众理解错误如何被发现和修正。"
+      ],
+      "treatment_examples": [
+        "保留误判前因、下车动作、车辆离开、错误地点线索、自我复盘、向路人展示地图问路及‘仍有时间’的缓解。",
+        "先展示异常自拍画面，再口头确认镜头问题，并通过改变持机与遮挡位置继续拍摄，让风险道具获得真实后果和临时修正。",
+        "保留原判断、移动结果、地点不匹配、自我复盘和重新确认路线的过程，再恢复前往目标的行动。"
+      ],
+      "parameter_variants": [
+        {
+          "error": "premature_bus_exit",
+          "correction_steps": [
+            "vehicle_departure",
+            "location_mismatch",
+            "self_explanation",
+            "ask_local_with_map",
+            "time_buffer_relief"
+          ],
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "error": "cracked_camera_lens",
+          "visible_artifact": "light_streak",
+          "correction": "change_hand_and_phone_position",
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "correction_steps": [
+            "initial_decision",
+            "mismatch_discovery",
+            "self_explanation",
+            "route_recheck",
+            "action_resume"
+          ],
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-wrong-stop-correction-chain",
+          "guardrails": [
+            "不从个案推导通用交通攻略。",
+            "路线、站名和外语回答必须以画面或人工字幕为准。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-cracked-lens-explicit-correction",
+          "guardrails": [
+            "不能把真实裂纹误写成后期 VFX。",
+            "修正只描述成片可见动作，不推断设备维修结果。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-route-error-explicit-correction",
+          "guardrails": [
+            "不得从个案推导通用交通攻略。",
+            "路线与地点判断以画面、地图和人工核验字幕为准。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 2372.76,
+          "end_sec": 2452.72,
+          "observation_id": "obs-wrong-stop-correction-chain"
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 2696.85,
+          "end_sec": 2705.4,
+          "observation_id": "obs-cracked-lens-explicit-correction"
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 7760,
+          "end_sec": 7920,
+          "observation_id": "obs-route-error-explicit-correction"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "category": "narrative",
+      "source_support": 5,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1C3546DEC6",
+        "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "最后一天坐错车、买错票并选择没有明确路标的路线，原定轻松徒步失去确定性。",
+        "夜间目的地花期已过，原计划的视觉目标失败。",
+        "找车、通票、黄金列车和一分钟换乘连续出错，原定独行路线失去确定性。",
+        "夜游、找晚餐、赶接驳和再拍星星连续失败，人物同时承受饥饿、疲惫和主观恐惧。",
+        "从德国到巴黎的移动连续出现晚点、站台不明、行李负担、巴士问路和同名地点误选。"
+      ],
+      "treatment_examples": [
+        "保留求助、地图、继续上山、缺水、语言尴尬、暴露山脊、摔倒、下雨和返程，把错误逐级升级，再以湖景、下山和晚间反思完成结果。",
+        "保留夜路、失望、自嘲和重新查花期的过程，明确修改第二天路线，最终用盛花地点兑现回报。",
+        "让每次误解引出一次求助，再让香港旅客和中国夫妻分别解决票务与换乘问题，最后把偶遇转化为同行和次日行程调整。",
+        "完整保留寻找餐厅、停止点餐、黑暗夜路、错过车辆、饿着回房和取消夜拍；随后明确展示提前睡觉、日出前重启、清晨地标与早餐回报。",
+        "保留问题被发现、向人求助、重新确认、赶路、坐对巴士以及地图错误被纠正的过程，再以巴黎街景和继续前往酒店作为阶段回报。"
+      ],
+      "parameter_variants": [
+        {
+          "obstacles": [
+            "wrong_train",
+            "wrong_ticket",
+            "wrong_route",
+            "dehydration",
+            "exposed_path",
+            "fall",
+            "rain"
+          ],
+          "has_external_help": true,
+          "has_reflection": true,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "event_chain": [
+            "goal",
+            "failure",
+            "reaction",
+            "replan",
+            "payoff"
+          ],
+          "source_id": "bilibili-BV1C3546DEC6"
+        },
+        {
+          "obstacle_count": 4,
+          "helper_roles": 2,
+          "changes_itinerary": true,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "failure_chain": [
+            "dinner_closed",
+            "subjective_night_fear",
+            "shuttle_missed",
+            "night_shoot_cancelled"
+          ],
+          "adaptation": "rest_and_pre_dawn_restart",
+          "payoff": [
+            "dawn_landmark",
+            "local_life",
+            "breakfast"
+          ],
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "obstacles": [
+            "delay",
+            "platform_search",
+            "heavy_luggage",
+            "bus_route",
+            "same_name_location"
+          ],
+          "has_external_help": true,
+          "has_explicit_correction": true,
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-final-hike-failure-adaptation",
+          "guardrails": [
+            "不要只留美景而删掉代价和求助过程。",
+            "成片经历不能被泛化成安全路线建议，也不得夸大未发生的危险。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "observation_id": "obs-itinerary-adaptation-arc",
+          "guardrails": [
+            "失败段不能只留抱怨，必须保留应对和后续回报。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-itinerary-adaptation-through-strangers",
+          "guardrails": [
+            "偶遇人物必须真实影响后续行动，不能只作为情绪素材。",
+            "交通信息以当时事实为准，不从成片推导通用攻略。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-night-failure-dawn-payoff",
+          "guardrails": [
+            "失败、调整和结果必须成组保留。",
+            "不能把主观夜间恐惧改写为已经发生的治安事件。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-arrival-failure-adaptation-chain",
+          "guardrails": [
+            "不要只留抵达结果而删掉判断和修正。",
+            "交通个案不能被泛化成路线或安全建议。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 10990,
+          "end_sec": 12920,
+          "observation_id": "obs-final-hike-failure-adaptation"
+        },
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "start_sec": 630,
+          "end_sec": 1895,
+          "observation_id": "obs-itinerary-adaptation-arc"
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 300,
+          "end_sec": 845,
+          "observation_id": "obs-itinerary-adaptation-through-strangers"
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 997.6,
+          "end_sec": 1950.24,
+          "observation_id": "obs-night-failure-dawn-payoff"
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 71.12,
+          "end_sec": 541.72,
+          "observation_id": "obs-arrival-failure-adaptation-chain"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-multiday-reset-with-carryover",
+      "category": "narrative",
+      "source_support": 3,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.93,
+      "trigger_examples": [
+        "六天合集需要在超长时长中反复重置日期，又不能让每天像互不相关的短片。",
+        "跨日重启既要让观众明确新一天，也要延续开场已经建立的设备安全限制。",
+        "东京多日行程需要重置天气、起床状态和住宿地点，同时保留前一日未解决的问题。"
+      ],
+      "treatment_examples": [
+        "每晚用总结和次日计划保留未完成目标，次日再以日序卡、起床状态和交通行动快速重启，让天气、同行夫妻与住宿选择跨日延续。",
+        "从起晚和赶预约开始第二天，人物在出门前把原内存卡收好并换新卡，再进入巴黎市区行动，让风险线随新日程继续。",
+        "用雨天状态和当天目标启动新章，让行李、住宿选择、身体状态和次日计划跨事件延续；每次重置后迅速回到具体行动。"
+      ],
+      "parameter_variants": [
+        {
+          "uses_day_cards": true,
+          "uses_previous_day_plan": true,
+          "manual_day_card_example_sec": 8953.76,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "day_reset": true,
+          "carryover_prop": "memory_card",
+          "new_goal": "Louvre appointment",
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "uses_day_reset": true,
+          "carryover_topics": [
+            "weather",
+            "luggage",
+            "lodging",
+            "physical_state",
+            "next_day_goal"
+          ],
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-multiday-chapter-carryover",
+          "guardrails": [
+            "日序卡后必须立即给出当天目标或限制条件。",
+            "跨日 callback 只保留真正影响后续选择的事件。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-day-two-risk-carryover-reset",
+          "guardrails": [
+            "跨日提示要服务新目标，不重复前一天流水账。",
+            "风险道具只保留必要解释。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-rainy-days-carryover",
+          "guardrails": [
+            "跨日信息必须真实影响后续行动。",
+            "不能把天气或抽签改写为后续事件的事实因果。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 2159.44,
+          "end_sec": 9045.28,
+          "observation_id": "obs-multiday-chapter-carryover"
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 868.12,
+          "end_sec": 919.39,
+          "observation_id": "obs-day-two-risk-carryover-reset"
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 1352,
+          "end_sec": 3300,
+          "observation_id": "obs-rainy-days-carryover"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-reflection-summary-forward-hook",
+      "category": "narrative",
+      "source_support": 3,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "六天旅行和最后四小时徒步需要在离开前沉淀成可复用的人物认知。",
+        "第一天经历包含大量偶遇和情绪反差，需要在结束前把事件沉淀为人物认知。",
+        "巴黎仅有一天的行程需要把紧绷、消费、三万步、设备和环境感受沉淀成明确结论。"
+      ],
+      "treatment_examples": [
+        "在酒店保留完整口播，总结已完成与遗憾、错误路线和‘及时回头’，再用剪辑把数小时痛苦压缩成几分钟的自觉比喻连接观众与下一段旅程。",
+        "回酒店保留完整正面口播，依次总结瑞士风景、当地人的松弛、偶遇旅伴和披萨体验，再用明日计划、致谢黑卡和下集风景预告收尾。",
+        "回酒店保留较长正面口播，总结未遇失窃、全程警惕、交通与气味感受、餐费和疲惫；进食后补充三万步、鞋损与房间气味，最后明确下一站圣米歇尔山并道别。"
+      ],
+      "parameter_variants": [
+        {
+          "reflection_topics": [
+            "completed_goals",
+            "regret",
+            "wrong_route",
+            "timely_return",
+            "editing_compression"
+          ],
+          "has_forward_hook": true,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "reflection_topics": 4,
+          "has_next_episode_preview": true,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "reflection_topics": [
+            "risk",
+            "transport",
+            "cost",
+            "walking",
+            "equipment",
+            "fatigue"
+          ],
+          "has_forward_hook": true,
+          "last_dialogue_sec": 2976.78,
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-final-reflection-editing-metaphor",
+          "guardrails": [
+            "反思必须解释经历如何改变判断，不重复流水账。",
+            "观众互动提示放在主题完成后，不打断风险复盘。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-day-reflection-next-episode-hook",
+          "guardrails": [
+            "总结要解释当天经历如何改变认知，不重复流水账。",
+            "下集预告只展示新地点，不提前消耗核心结果。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-hotel-reflection-next-stop-hook",
+          "guardrails": [
+            "反思保留人物主观视角，不推广为城市事实。",
+            "下一站提示放在主题总结完成后。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 13050,
+          "end_sec": 13198,
+          "observation_id": "obs-final-reflection-editing-metaphor"
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 2091,
+          "end_sec": 2159.44,
+          "observation_id": "obs-day-reflection-next-episode-hook"
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 2839.92,
+          "end_sec": 2976.78,
+          "observation_id": "obs-hotel-reflection-next-stop-hook"
+        }
+      ]
+    },
+    {
+      "technique_key": "opening-phased-hook-not-uniform-fast-cut",
+      "category": "opening_montage",
+      "source_support": 5,
+      "source_ids": [
+        "bilibili-BV1C3546DEC6",
+        "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "长篇旅行需要同时交代目的地承诺、人物动机和行动起点。",
+        "长途独行VLOG需要同时兑现目的地视觉、交代人物动机并快速进入移动。",
+        "长篇旅行终章需要同时兑现地标承诺、交代人物疲惫限制并启动真实行动。",
+        "巴黎一日独行片需要迅速交代欧洲行最后一站，同时让设备安全焦虑和出发动作成立。",
+        "超长东京独行片需要同时兑现地点、快速启动跨境移动并保留人物真实反应。"
+      ],
+      "treatment_examples": [
+        "先用12秒景色标题预告，再以完整口播设定目标，随后用时间跳切和约2秒一镜的交通蒙太奇提速。",
+        "先用十秒六镜风景标题预告，再保留完整口播设定和凌晨准备，最后把0.76至1.28秒中位镜长的快剪集中在告别与交通推进。",
+        "先用 11.52 秒地标、日落和标题预览，再保留完整口播说明最后一站与班次选择；次日重启后才把较密镜头集中到离店和交通推进。",
+        "先用 8.88 秒地标标题兑现地点，再以早餐旁白回顾前序旅程；酒店口播阶段明显减速建立风险和手机道具，最后把较密剪辑集中到收拾、列车与换乘。",
+        "先用 16.433 秒地点与标题建立承诺，再把 0.25 秒中位镜长的超密短切集中在机场物流；安检和进食处减速，随后以登机、飞行和抵达重新推进。"
+      ],
+      "parameter_variants": [
+        {
+          "phase_count": 4,
+          "travel_montage_median_shot_sec": 2.1,
+          "source_id": "bilibili-BV1C3546DEC6"
+        },
+        {
+          "phase_count": 5,
+          "scenic_teaser_median_shot_sec": 1.48,
+          "departure_montage_median_shot_sec": 0.76,
+          "travel_montage_median_shot_sec": 1.28,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "phase_count": 4,
+          "reviewed_shot_count": 36,
+          "destination_preview_sec": 11.52,
+          "fastest_cut_block": "departure_and_transit",
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "phase_count": 4,
+          "reviewed_shot_count": 48,
+          "fastest_phase_median_shot_sec": 0.96,
+          "slowest_phase_median_shot_sec": 2.82,
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "phase_count": 5,
+          "reviewed_shot_count": 72,
+          "fastest_phase_median_shot_sec": 0.25,
+          "reaction_phase_median_shot_sec": 3.667,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "observation_id": "obs-opening-four-phase-hook",
+          "guardrails": [
+            "不要把完整口播切成无法理解的碎句。",
+            "快剪必须放在行动推进段，不覆盖整段开场。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-opening-five-phase-hook",
+          "guardrails": [
+            "完整口播承担人物设定时不要按快剪密度强行切碎。",
+            "快剪镜头必须继续推进离家、告别或地理移动。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-opening-landmark-promise-to-departure",
+          "guardrails": [
+            "不要把人物设定切成口号碎片。",
+            "快速镜头必须推进真实离店、交通或地点变化。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-paris-opening-four-phase-hook",
+          "guardrails": [
+            "快切只用于标题、回顾和明确移动。",
+            "人物风险设定和真实反应必须保持可读。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-opening-five-phase-tokyo-hook",
+          "guardrails": [
+            "超密短切只用于明确物流与地理推进。",
+            "人物反应、安检和进食过程需要保持可读。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "start_sec": 0,
+          "end_sec": 120,
+          "observation_id": "obs-opening-four-phase-hook"
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 0,
+          "end_sec": 120,
+          "observation_id": "obs-opening-five-phase-hook"
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 0,
+          "end_sec": 120,
+          "observation_id": "obs-opening-landmark-promise-to-departure"
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 0,
+          "end_sec": 120,
+          "observation_id": "obs-paris-opening-four-phase-hook"
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 0,
+          "end_sec": 120.133,
+          "observation_id": "obs-opening-five-phase-tokyo-hook"
+        }
+      ]
+    },
+    {
+      "technique_key": "playback-rate-fast-forward-travel-compression-visual-estimate",
+      "category": "playback_rate",
+      "source_support": 3,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1ETNMzEEWQ"
+      ],
+      "average_confidence": 0.4867,
+      "trigger_examples": [
+        "连续下坡 POV 路程长、位移快，并包含一次路线犹豫。",
+        "夜路步行重复且恐惧感逐步增加，需要压缩路程并放大越走越快的主观体验。",
+        "夜间赶车奔跑包含重复路程，需要压缩位移并放大慌乱感。"
+      ],
+      "treatment_examples": [
+        "保留 53.88 秒连续广角镜头，在‘不知道往哪边走’时短暂叠加 loading spinner，再恢复平滑空间移动；画面仅列为视觉加速候选。",
+        "画面呈现持续前冲和逐渐加快的步行感，可作为快进或提速候选；成片没有时间线证据，不能宣称精确2x。",
+        "画面表现为连续黑暗路程、强烈抖动和灯光残影，再接停下拍照；仅记录为视觉加速候选，不提供倍率。"
+      ],
+      "parameter_variants": [
+        {
+          "continuous_shot_sec": 53.88,
+          "playback_rate": null,
+          "rate_source": "visual_estimate_only",
+          "alternative_explanation": "real_downhill_vehicle_speed",
+          "route_spinner_visible": true,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "playback_rate": null,
+          "rate_source": "visual_estimate_only",
+          "perceived_motion": "accelerating",
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "playback_rate": null,
+          "rate_source": "visual_candidate_only",
+          "alternative_explanations": [
+            "real_running_speed",
+            "camera_shake",
+            "low_light_shutter_blur"
+          ],
+          "scene_detector_under_segmented": true,
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-downhill-speed-candidate",
+          "guardrails": [
+            "不得写成已确认 1.5x、2x 或其他精确倍率。",
+            "目标素材中只能生成候选预览，不能自动应用。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-night-walk-acceleration-candidate",
+          "guardrails": [
+            "在目标素材中先输出候选和试听预览，不自动写入精确倍速。",
+            "含关键对白时不得用快进破坏可懂度。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-last-shuttle-speed-candidate",
+          "guardrails": [
+            "不得写成已确认 1.5x、2x 或其他精确倍率。",
+            "目标素材只能生成候选预览并人工确认，不能自动应用。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 7571.56,
+          "end_sec": 7625.44,
+          "observation_id": "obs-downhill-speed-candidate"
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 2065,
+          "end_sec": 2091,
+          "observation_id": "obs-night-walk-acceleration-candidate"
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 1411.52,
+          "end_sec": 1442.8,
+          "observation_id": "obs-last-shuttle-speed-candidate"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-human-scale-to-aerial-geography",
+      "category": "scenic",
+      "source_support": 3,
+      "source_ids": [
+        "bilibili-BV1C3546DEC6",
+        "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1ETNMzEEWQ"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "到达盛花地点，需要兑现前半段追花失败后的视觉回报。",
+        "到达瑞士小镇后需要兑现理想生活标题，同时维持人物和地理连续性。",
+        "初次接近巨大地标时，需要同时说明抵达代价、人物尺度和潮滩地理。"
+      ],
+      "treatment_examples": [
+        "从街道和人物尺度进入，交替樱花、河流、当地生活和自拍停留，最后用高位或无人机镜头补全空间关系。",
+        "以步行自拍进入村庄和湖岸，交替建筑、动物、草地、当地人和游船，再用高位湖景与渡船全景补全空间。",
+        "从人物远望、步行、草地、泥地和涉水进入，随后展开圣山、潮滩、日落、高位地理和人物同框，最后回到继续赶路的现实时间。"
+      ],
+      "parameter_variants": [
+        {
+          "includes_people": true,
+          "ends_with_geographic_context": true,
+          "source_id": "bilibili-BV1C3546DEC6"
+        },
+        {
+          "includes_people": true,
+          "includes_local_activity": true,
+          "includes_high_viewpoint": true,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "sequence": [
+            "human_approach",
+            "mud_and_water_obstacle",
+            "wide_landmark",
+            "aerial_style_geography",
+            "human_scale_return"
+          ],
+          "capture_device": null,
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "observation_id": "obs-scenic-ground-to-aerial",
+          "guardrails": [
+            "同类花景必须有景别、人物或空间信息变化。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-scenic-ground-aerial-local-life",
+          "guardrails": [
+            "相同湖景和草地必须用景别、人物或行动变化区分。",
+            "美景段仍要保留真实生活者，避免变成无人物宣传片。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-landmark-ground-to-aerial",
+          "guardrails": [
+            "只描述成片可见的高位或航拍式视角，不推断具体设备。",
+            "不能只留地标空镜而删除人物抵达代价和尺度。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "start_sec": 1680,
+          "end_sec": 1952,
+          "observation_id": "obs-scenic-ground-to-aerial"
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 1020,
+          "end_sec": 1512,
+          "observation_id": "obs-scenic-ground-aerial-local-life"
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 550.24,
+          "end_sec": 682.04,
+          "observation_id": "obs-landmark-ground-to-aerial"
+        }
+      ]
+    },
+    {
+      "technique_key": "subtitle-large-number-running-callback",
+      "category": "subtitle",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "酒店价格是观众等待的答案，也回扣前文反复出现的高物价预期。",
+        "约 1400 元住宿价格是观众等待的答案，并持续改变人物对房间和阳台价值的判断。"
+      ],
+      "treatment_examples": [
+        "先口播铺垫一晚不到1400元，再用大号黄色1350元短暂停留，让数字本身成为包袱。",
+        "先展示币种换算和价格依据，再延迟到房间揭晓与人物反应；片尾用大号黄色 -1400 作最后一次回扣，让数字承担跨章节记忆点。"
+      ],
+      "parameter_variants": [
+        {
+          "caption_color": "yellow",
+          "caption_scale": "large",
+          "value_cny": 1350,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "value_cny_approx": 1400,
+          "ending_caption": "-1400",
+          "caption_color": "yellow",
+          "caption_scale": "large",
+          "callback_stages": [
+            "price_evidence",
+            "room_reveal",
+            "self_reaction",
+            "ending_callback"
+          ],
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-hotel-price-large-number-callback",
+          "guardrails": [
+            "金额必须来自视频已陈述事实。",
+            "大字只保留足够读完的时间，不覆盖后续解释。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-hotel-1400-running-callback",
+          "guardrails": [
+            "金额必须来自成片可见或明确口播事实。",
+            "大字不能遮挡价格解释或片尾结束语。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 964,
+          "end_sec": 986,
+          "observation_id": "obs-hotel-price-large-number-callback"
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 3482.8,
+          "end_sec": 8832.81,
+          "observation_id": "obs-hotel-1400-running-callback"
+        }
+      ]
+    },
+    {
+      "technique_key": "subtitle-time-card-compresses-waiting",
+      "category": "subtitle",
+      "source_support": 3,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.9733,
+      "trigger_examples": [
+        "列车换乘等待包含睡觉和醒来，但不需要按现实时间完整展示。",
+        "人物在出门拍星与休息之间犹豫，实际躺下等待不需要按现实时间完整展示。",
+        "等待过程本身没有新的叙事信息，但之后的城市天色变化需要明确时间跳跃。"
+      ],
+      "treatment_examples": [
+        "从睡姿硬切到大哈欠，并用‘《一个小时后》’时间卡标明省略，再切窗外、自拍和车内设备恢复行动。",
+        "在人物说‘怎么办’后插入独立的紫色‘LATER...’卡片，再回到床上说明最终取消夜拍。",
+        "插入独立 LATER... 时间卡说明省略，再进入晴空塔与城市由日到夜的连续视觉回报。"
+      ],
+      "parameter_variants": [
+        {
+          "caption": "《一个小时后》",
+          "transition": "hard_cut",
+          "playback_rate": null,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "caption": "LATER...",
+          "card_duration_sec": 0.92,
+          "transition": "hard_cut",
+          "playback_rate": null,
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "caption": "LATER...",
+          "transition": "hard_cut",
+          "playback_rate": null,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-train-one-hour-time-card",
+          "guardrails": [
+            "时间卡必须明确说明时间跳跃，不能伪装成连续实时过程。",
+            "不要把硬切误报为画面变速或视觉变形。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-later-rest-time-card",
+          "guardrails": [
+            "时间卡必须明确说明省略，不能伪装成连续实时过程。",
+            "不要把独立卡片误报为画面变速。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-later-city-time-card",
+          "guardrails": [
+            "时间卡必须明确说明省略。",
+            "不要把硬切或天色变化误报为画面变速。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 11124,
+          "end_sec": 11136,
+          "observation_id": "obs-train-one-hour-time-card"
+        },
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 1527.32,
+          "end_sec": 1528.24,
+          "observation_id": "obs-later-rest-time-card"
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 987.367,
+          "end_sec": 991.067,
+          "observation_id": "obs-later-city-time-card"
+        }
+      ]
+    }
+  ],
+  "source_specific_patterns": [
+    {
+      "technique_key": "graphic-360-tiny-planet-to-pov-reframing",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "空中活动需要同时展示人物、教练、飞行姿态和大范围地理环境。"
+      ],
+      "treatment_examples": [
+        "以 360 tiny-planet 视角把人物和山谷压进同一画面，并在动作或交流节点切到水平 POV，使奇观视角与方向可读性互补。"
+      ],
+      "parameter_variants": [
+        {
+          "projection": "tiny_planet",
+          "secondary_view": "forward_pov",
+          "music_likely_long_segment_sec": [
+            8172.5,
+            8217.5
+          ],
+          "source_id": "bilibili-BV19sm2BBEDd"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-paragliding-360-reframe",
+          "guardrails": [
+            "tiny-planet 画面过久会损害方向感，需与正常地平线视角交替。",
+            "不能让重投影遮蔽安全动作或重要指令。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 8170,
+          "end_sec": 8240,
+          "observation_id": "obs-paragliding-360-reframe"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-context-proof-before-action",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1CrHwzUEJa"
+      ],
+      "average_confidence": 0.9,
+      "trigger_examples": [
+        "临时遇到旅伴并决定赶去买冰淇淋，需要快速解释信息来源。"
+      ],
+      "treatment_examples": [
+        "在真实会面画面上短暂叠加聊天截图和一句解释，读完即撤掉，随后直接进入购买行动。"
+      ],
+      "parameter_variants": [
+        {
+          "overlay_type": "chat_screenshot",
+          "estimated_duration_sec": 3.0,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-chat-screenshot-action-context",
+          "guardrails": [
+            "截图必须裁掉无关个人信息。",
+            "截图不遮挡人物脸部和基础字幕。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 1286,
+          "end_sec": 1291,
+          "observation_id": "obs-chat-screenshot-action-context"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-inline-fact-caption-over-live-scene",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "街头远景出现奥运热气球火炬，需要让不熟悉背景的观众理解画面对象。"
+      ],
+      "treatment_examples": [
+        "在实景上放置单条白底事实说明，保持热气球火炬和街道仍可见；说明结束后切入彩虹与凯旋门方向，不展开独立百科段落。"
+      ],
+      "parameter_variants": [
+        {
+          "caption_type": "single_fact_strip",
+          "live_scene_remains_visible": true,
+          "followup": "rainbow_city_reveal",
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-olympic-balloon-fact-caption",
+          "guardrails": [
+            "事实说明必须核实来源。",
+            "文字不遮挡核心地标。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 2381.4,
+          "end_sec": 2389,
+          "observation_id": "obs-olympic-balloon-fact-caption"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-labeled-ai-fantasy-escalation",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "普通山景与‘来都来了’式疲惫需要一次明确脱离现实的视觉想象。"
+      ],
+      "treatment_examples": [
+        "在山景上让飞龙数量逐步增加，并持续显示‘（AI生成）’标签；幻想段结束后硬切回真实观景台和动物。"
+      ],
+      "parameter_variants": [
+        {
+          "visible_disclosure_label": "（AI生成）",
+          "escalation": "increasing_creature_count",
+          "reset": "hard_cut_to_reality",
+          "source_id": "bilibili-BV19sm2BBEDd"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-labeled-ai-dragon-escalation",
+          "guardrails": [
+            "生成或合成画面必须显式标注，不能冒充现场事实。",
+            "成片只能确认视觉插入，不能反推具体生成工具或流程。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 3690,
+          "end_sec": 3703,
+          "observation_id": "obs-labeled-ai-dragon-escalation"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-next-episode-crt-teaser",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "道别后仍需把下一站从口头信息转成视觉前钩。"
+      ],
+      "treatment_examples": [
+        "在最后对白结束后切入带 CRT 边框、扫描线和轻微画面漂移的圣米歇尔山影像，持续到媒体结束，不再加入新对白。"
+      ],
+      "parameter_variants": [
+        {
+          "visual_style": "CRT_scanline_teaser",
+          "next_destination": "Mont_Saint_Michel",
+          "dialogue_present": false,
+          "duration_sec": 9.54,
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-next-episode-crt-teaser",
+          "guardrails": [
+            "前钩只预告下一站，不伪造当前集已经发生的内容。",
+            "不得从视觉风格推断具体制作工具。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 2976.78,
+          "end_sec": 2986.32,
+          "observation_id": "obs-next-episode-crt-teaser"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-reference-frame-to-live-location-match",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "动画记忆是前往现实地点的动机，观众需要先知道参照对象，再理解现场对应关系。"
+      ],
+      "treatment_examples": [
+        "先以全屏动画参照建立车站和楼梯记忆，再切入人物到达的现实楼梯、出口和周边环境；不把参照画面伪装成实时镜头。"
+      ],
+      "parameter_variants": [
+        {
+          "reference_presentation": "full_frame",
+          "reference_range_sec": [
+            6868,
+            6892
+          ],
+          "live_location_follows": true,
+          "inline_overlay": false,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-animation-reference-to-live-location",
+          "guardrails": [
+            "参照画面和实景必须保持清晰来源边界，目标素材只使用有权使用的参照。",
+            "不能从构图相似推断官方关系、授权状态或创作因果。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 6868,
+          "end_sec": 6905,
+          "observation_id": "obs-animation-reference-to-live-location"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-risk-mode-color-wash-reset",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "人物提着显眼购物袋进入拥挤街区，主观警戒需要被快速可视化。"
+      ],
+      "treatment_examples": [
+        "短暂使用粉色警戒色覆盖街景，并放置‘小偷可能会伪装成任何人’说明；数秒后恢复正常色彩，再进入用普通袋遮住品牌袋的现实动作。"
+      ],
+      "parameter_variants": [
+        {
+          "color_mode": "pink_warning_wash",
+          "resets_to_live_color": true,
+          "followed_by_action": "cover_branded_bag",
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-security-alert-color-mode-reset",
+          "guardrails": [
+            "警戒效果表达人物主观状态，不把具体路人或群体标记为威胁。",
+            "色彩模式之后必须回到可验证的现实行动。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 1795.5,
+          "end_sec": 1805,
+          "observation_id": "obs-security-alert-color-mode-reset"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-single-symbol-curiosity-punctuation",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "人物遇到难以立即理解的展品，需要低成本标记主观疑问。"
+      ],
+      "treatment_examples": [
+        "让单个问号贴图在展品上方持续约 1.25 秒，随后以普通硬切进入走廊，不再叠加音效或第二种贴图结论。"
+      ],
+      "parameter_variants": [
+        {
+          "overlay": "question_mark",
+          "verified_continuous_frames": 6,
+          "transition_out": "hard_cut",
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-museum-question-mark-sticker",
+          "guardrails": [
+            "一次认知落点只用一个符号。",
+            "贴图不能遮挡展品主体或事实说明。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 1319.04,
+          "end_sec": 1321.5,
+          "observation_id": "obs-museum-question-mark-sticker"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-torn-paper-memory-window",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1ETNMzEEWQ"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "返程飞行需要短暂回望旅程，而不打断当前飞机空间太久。"
+      ],
+      "treatment_examples": [
+        "在飞机窗外地理背景上打开撕纸式不规则窗口，窗口内闪回人物站在欧洲草地的画面，约 2.8 秒后硬切回机舱睡眠。"
+      ],
+      "parameter_variants": [
+        {
+          "effect": "torn_paper_memory_window",
+          "duration_sec": 2.8,
+          "background": "airplane_aerial_view",
+          "inset": "earlier_trip_scenic_memory",
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-torn-paper-memory-window",
+          "guardrails": [
+            "回忆窗口应短于当前返程主线，不制造新的事实时间线。",
+            "只能复用有授权的目标素材，并保持当前与回忆画面可区分。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 2983.16,
+          "end_sec": 2985.96,
+          "observation_id": "obs-torn-paper-memory-window"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-transport-motion-and-ambient-sound-bridge",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "从站外列车移动进入车内再到城市出口，需要压缩空间变化而保持交通方向连续。"
+      ],
+      "treatment_examples": [
+        "依次硬切侧面列车、暗部移动纹理和车内门窗，让连续列车环境声跨越约 5415 秒的外景到内景切点，再以开门后的城市画面结束桥接。"
+      ],
+      "parameter_variants": [
+        {
+          "visual_bridge": [
+            "exterior_train_motion",
+            "dark_motion_texture",
+            "carriage_door_frame",
+            "city_exit"
+          ],
+          "ambient_sound_continuous": true,
+          "music_claimed": false,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-train-motion-ambient-bridge",
+          "guardrails": [
+            "声音桥必须来自连续环境声，不把机械谐波误认成配乐。",
+            "硬切仍需保持移动方向和门框空间可读。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 5408,
+          "end_sec": 5423,
+          "observation_id": "obs-train-motion-ambient-bridge"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-goal-conflict-self-sabotage-reversal",
+      "category": "humor",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1ETNMzEEWQ"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "饥饿且需要赶末班接驳，但人物又不愿放弃拍夜景。"
+      ],
+      "treatment_examples": [
+        "先展示急跑和时间压力，再保留途中突然停下拍照、车辆离开、人物认知落点及‘既然错过就继续拍’的反向松弛。"
+      ],
+      "parameter_variants": [
+        {
+          "goal": "catch_last_shuttle",
+          "self_interruption": "stop_for_night_photo",
+          "reversal": "continue_photographing_after_missing_vehicle",
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-last-shuttle-self-sabotage",
+          "guardrails": [
+            "笑点只落在主角自己的目标冲突。",
+            "不得怪罪司机或虚构车辆提前离开。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 1398.4,
+          "end_sec": 1471.28,
+          "observation_id": "obs-last-shuttle-self-sabotage"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-interruption-held-wide-with-punctuation",
+      "category": "humor",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "阿尔卑斯宽景中人物刚摆好姿势，路人从前景经过并遮挡自拍。"
+      ],
+      "treatment_examples": [
+        "保持固定宽景让打断真实发生，用大号‘收’、‘有人经过...’和省略号完成反应，再切回道路继续行程。"
+      ],
+      "parameter_variants": [
+        {
+          "camera_position": "held_wide",
+          "interruption": "passerby_occlusion",
+          "caption_punctuation": true,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-scenic-pose-interrupted",
+          "guardrails": [
+            "笑点落在主角拍摄受阻，不嘲弄路人。",
+            "路人经过后立即恢复行动，不重复播放遮挡。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 6970,
+          "end_sec": 6985,
+          "observation_id": "obs-scenic-pose-interrupted"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-reaction-caption-sfx-no-overlay-stack",
+      "category": "humor",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1CrHwzUEJa"
+      ],
+      "average_confidence": 0.9,
+      "trigger_examples": [
+        "再次买草莓冰淇淋却尝到强烈酸味，真实面部反应已经足够明确。"
+      ],
+      "treatment_examples": [
+        "保留吞咽、皱脸和把冰淇淋靠近镜头的自然动作，只叠加好酸大字和短促音效，不再添加遮脸贴图。"
+      ],
+      "parameter_variants": [
+        {
+          "caption_scale": "large",
+          "visual_overlay_required": false,
+          "sound_effect_present": true,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-acid-reaction-caption-sfx",
+          "guardrails": [
+            "表情已形成包袱时不遮脸。",
+            "音效与大字只出现一次，不重复追打。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 1808,
+          "end_sec": 1823,
+          "observation_id": "obs-acid-reaction-caption-sfx"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-self-narrated-melodrama-day-reset",
+      "category": "humor",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "网吧过夜后的新一天需要重启，但人物疲惫和临时住宿状态本身仍有喜剧信息。"
+      ],
+      "treatment_examples": [
+        "先长留雨夜网吧外的固定人物镜头和稀疏声床，再切黑底标题，以第三人称旁白宣布人物从网吧醒来，随后硬切回正常口播。"
+      ],
+      "parameter_variants": [
+        {
+          "held_exterior_sec": 17.5,
+          "black_title_card": true,
+          "third_person_narration_start_sec": 3224.45,
+          "reset_to_talking_head": true,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-net-cafe-third-person-day-reset",
+          "guardrails": [
+            "先让真实过夜状态成立，再使用类型化旁白。",
+            "不把稀疏声床命名为未经确认的具体曲风或音效。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 3207,
+          "end_sec": 3229,
+          "observation_id": "obs-net-cafe-third-person-day-reset"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-semantic-counterpoint-bgm",
+      "category": "music_rhythm",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1C3546DEC6"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "画面浪漫但主题语境需要先释放紧张和自嘲。"
+      ],
+      "treatment_examples": [
+        "使用与浪漫樱花画面形成语义反差的配乐，让观众在标题出现前先理解喜剧立场。"
+      ],
+      "parameter_variants": [
+        {
+          "music_end_at_dialogue": true,
+          "source_id": "bilibili-BV1C3546DEC6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "observation_id": "obs-opening-bgm-counterpoint",
+          "guardrails": [
+            "语义反差必须服务人物立场，不可随意挪用敏感音乐。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "start_sec": 0,
+          "end_sec": 12,
+          "observation_id": "obs-opening-bgm-counterpoint"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-social-auto-response-afterthought-reset",
+      "category": "humor",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1CrHwzUEJa"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "主角刚私下评价披萨偏腻，服务员询问味道时却条件反射点头说好。"
+      ],
+      "treatment_examples": [
+        "保留前后矛盾、自动附和和服务员离开后的迟来理解，用短括号旁白揭示反应，最后以彩条结束社交尴尬。"
+      ],
+      "parameter_variants": [
+        {
+          "uses_contradiction": true,
+          "reset_card": "color_bars",
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-dinner-auto-agree-afterthought",
+          "guardrails": [
+            "笑点落在主角自己的自动反应，不嘲讽服务员口音。",
+            "先保留矛盾两端，再用旁白解释。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 1950,
+          "end_sec": 1976,
+          "observation_id": "obs-dinner-auto-agree-afterthought"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-visual-callback-to-earlier-prop",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1C3546DEC6"
+      ],
+      "average_confidence": 0.91,
+      "trigger_examples": [
+        "人物再次购买与前文相似的冰淇淋或零食。"
+      ],
+      "treatment_examples": [
+        "在画面中短暂插入前一次零食图片，让观众自行完成“又来了”的回扣。"
+      ],
+      "parameter_variants": [
+        {
+          "overlay_source": "earlier_story_prop",
+          "callback_required": true,
+          "source_id": "bilibili-BV1C3546DEC6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "observation_id": "obs-visual-callback-snack",
+          "guardrails": [
+            "没有前文记忆点时不要硬做回扣。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "start_sec": 2568,
+          "end_sec": 2613,
+          "observation_id": "obs-visual-callback-snack"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-crisis-caption-black-card-relief",
+      "category": "subtitle",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1C3546DEC6"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "售票机显示没票，随后工作人员确认仍可乘车。"
+      ],
+      "treatment_examples": [
+        "危机时用大号“没票了！！”停留，解决后切全黑画面只留“安心了”，再用车窗风景释放情绪。"
+      ],
+      "parameter_variants": [
+        {
+          "crisis_caption_scale": "large",
+          "relief_card_background": "black",
+          "source_id": "bilibili-BV1C3546DEC6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "observation_id": "obs-ticket-crisis-relief-card",
+          "guardrails": [
+            "大字只标记已发生的结果，不制造虚假危机。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1C3546DEC6",
+          "start_sec": 1518,
+          "end_sec": 1581,
+          "observation_id": "obs-ticket-crisis-relief-card"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-encounter-callback-closes-journey",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "旅程结束前再次遇到第一天帮助并同行的夫妻，形成真实的偶遇回环。"
+      ],
+      "treatment_examples": [
+        "保留认出、惊讶、寒暄和告别，让早期陌生人帮助回扣为贯穿旅行的偶遇主题，再接瑞士总结。"
+      ],
+      "parameter_variants": [
+        {
+          "callback_to_early_encounter": true,
+          "staged_reunion_claimed": false,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-couple-return-callback",
+          "guardrails": [
+            "callback 必须由真实再遇见触发，不用旁白虚构关系深度。",
+            "不把偶遇包装成可证明的命运或预先设计。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 13295,
+          "end_sec": 13325,
+          "observation_id": "obs-couple-return-callback"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-helper-return-reframes-awkward-encounter",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "问路似乎无果并暂时结束后，学生主动折返提供新信息。"
+      ],
+      "treatment_examples": [
+        "先保留人物准备离开的状态，再展示学生跑回、补充帮助和人物重新理解，让前段尴尬被具体行动改写为温暖反转。"
+      ],
+      "parameter_variants": [
+        {
+          "earlier_encounter_retained": true,
+          "helper_returns": true,
+          "motive_inferred": false,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-helper-return-reframes-encounter",
+          "guardrails": [
+            "只描述可见折返和帮助，不推断学生内心动机。",
+            "弹幕价值判断不能代替行为证据。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 7585,
+          "end_sec": 7620,
+          "observation_id": "obs-helper-return-reframes-encounter"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-location-revisit-reframes-risk",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1ETNMzEEWQ"
+      ],
+      "average_confidence": 0.92,
+      "trigger_examples": [
+        "夜游把同一地点暂时框定为恐怖空间，需要次日校正观众认知。"
+      ],
+      "treatment_examples": [
+        "白天重返同一路线，以游客、狗、开放建筑和明亮细节重新建立地点，并用‘昨晚在这里被挡住’的字幕主动连接昼夜。"
+      ],
+      "parameter_variants": [
+        {
+          "comparison": "same_location_night_to_day",
+          "reframe": "subjective_fear_to_public_daytime_space",
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-daylight-revisit-reframes-night",
+          "guardrails": [
+            "不得暗示昨夜发生了真实犯罪或已证实危险。",
+            "昼夜对照必须来自可核对的同一地点。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 1999.32,
+          "end_sec": 2099.12,
+          "observation_id": "obs-daylight-revisit-reframes-night"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-price-callback-delayed-scenic-payoff",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "全程最贵酒店再次激活高物价预期，需要证明价格在这次叙事中的具体回报。"
+      ],
+      "treatment_examples": [
+        "先完成房间与价格铺垫，把窗帘和阳台留到 room tour 末尾，再以人物走向窗边、拉帘、开门和坐下的连续动作揭示湖景。"
+      ],
+      "parameter_variants": [
+        {
+          "payoff": "lake_view",
+          "reveal_order": [
+            "price",
+            "room",
+            "curtain",
+            "balcony",
+            "human_pause"
+          ],
+          "music_likely_sec": [
+            5653,
+            5676.5
+          ],
+          "source_id": "bilibili-BV19sm2BBEDd"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-hotel-price-delayed-lake-payoff",
+          "guardrails": [
+            "金额必须来自视频已陈述事实。",
+            "景色 payoff 不提前泄露，且保留人物尺度而非只留空镜。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 5400,
+          "end_sec": 5690,
+          "observation_id": "obs-hotel-price-delayed-lake-payoff"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-risk-prop-callback-chain",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "设备和素材安全焦虑如果只停留在口播会显得抽象，需要在全片获得可见回扣。"
+      ],
+      "treatment_examples": [
+        "开场先展示换手机；第二天换内存卡，街头用普通袋子遮住品牌购物袋，夜间再展示裂镜头造成的自拍光痕，让同一风险线随道具和结果推进。"
+      ],
+      "parameter_variants": [
+        {
+          "callback_ranges_sec": [
+            [
+              46.2,
+              60.47
+            ],
+            [
+              868.12,
+              919.39
+            ],
+            [
+              1717.6,
+              1845
+            ],
+            [
+              2696.85,
+              2705.4
+            ]
+          ],
+          "prop_types": [
+            "phone",
+            "memory_card",
+            "shopping_bag",
+            "camera_lens"
+          ],
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-security-prop-callback-chain",
+          "guardrails": [
+            "只描述人物自己的防护选择，不把城市或人群标签化。",
+            "道具回扣必须由画面或对白验证。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 46.2,
+          "end_sec": 60.47,
+          "observation_id": "obs-security-prop-callback-chain"
+        }
+      ]
+    },
+    {
+      "technique_key": "playback-rate-no-confirmed-speedup-on-dialogue-fluster",
+      "category": "playback_rate",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1CrHwzUEJa"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "手忙脚乱场面容易被误判为使用2x快进。"
+      ],
+      "treatment_examples": [
+        "把该段记录为正常语速长对话和连续动作证据，不下发精确倍速；如需在目标素材复用，只能生成可预览的变速建议。"
+      ],
+      "parameter_variants": [
+        {
+          "playback_rate": null,
+          "rate_source": "not_verified",
+          "two_x_confirmed": false,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-ice-cream-no-confirmed-speedup",
+          "guardrails": [
+            "没有可编辑时间线或可靠音画基准时，不得输出1.5x、2x等精确值。",
+            "有信息量的双语对话优先保持可听清。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 1313,
+          "end_sec": 1364,
+          "observation_id": "obs-ice-cream-no-confirmed-speedup"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-elevated-city-day-to-night-reveal",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.93,
+      "trigger_examples": [
+        "高位城市景观需要通过时间变化提供超过单张夜景的空间和情绪回报。"
+      ],
+      "treatment_examples": [
+        "从白天可读的建筑与城市关系进入，保留天色、灯光和远景逐步变化，再回到人物现场反应。"
+      ],
+      "parameter_variants": [
+        {
+          "sequence": [
+            "daylight_geography",
+            "blue_hour_transition",
+            "night_lights",
+            "human_reaction"
+          ],
+          "capture_device": null,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-elevated-city-day-to-night",
+          "guardrails": [
+            "不得根据高位视角推断无人机或具体设备。",
+            "弹幕不能证明音乐单独造成景观反应。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 989,
+          "end_sec": 1060,
+          "observation_id": "obs-elevated-city-day-to-night"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-hardship-earned-lake-payoff",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "长时间错误路线、陡坡和体力负担需要一个可信的风景回报。"
+      ],
+      "treatment_examples": [
+        "从抓绳、脚下和陡坡 POV 转向湖谷宽景，短插一张带黑色侧栏的竖版风景照片，再回到继续下降与人物状态。"
+      ],
+      "parameter_variants": [
+        {
+          "includes_first_person_struggle": true,
+          "vertical_still_insert_sec": 12289,
+          "still_insert_duration_estimate_sec": 0.5,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-earned-lake-ridge-payoff",
+          "guardrails": [
+            "竖图插入要明确是视觉奖励，不能冒充连续运动镜头。",
+            "不把危险路段美化为通用徒步建议。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 12285,
+          "end_sec": 12420,
+          "observation_id": "obs-earned-lake-ridge-payoff"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-human-reaction-to-landmark-geography",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "塞纳河游船是巴黎一日行的主要视觉回报，需要兼顾地标、城市尺度和人物在场感。"
+      ],
+      "treatment_examples": [
+        "从登船和人物仰望进入埃菲尔铁塔，交替人物反应、河面宽景、桥梁、两岸建筑、蓝调天空与夜间亮灯，再回到岸上人物。"
+      ],
+      "parameter_variants": [
+        {
+          "viewpoint": "moving_boat",
+          "includes_people": true,
+          "light_progression": [
+            "dusk",
+            "blue_hour",
+            "night"
+          ],
+          "geographic_anchors": [
+            "Eiffel_Tower",
+            "Seine",
+            "bridges",
+            "riverbanks"
+          ],
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-cruise-human-to-landmark-geography",
+          "guardrails": [
+            "连续地标镜头必须改变人物、方向、光线或地理信息。",
+            "移动视点要维持河流方向可读。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 2511.5,
+          "end_sec": 2690,
+          "observation_id": "obs-cruise-human-to-landmark-geography"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-human-scale-to-elevated-city-geography",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.9,
+      "trigger_examples": [
+        "城市观景段需要同时说明人物抵达过程、建筑尺度和高位东京地理。"
+      ],
+      "treatment_examples": [
+        "从人物移动、入口和建筑内部进入，再展开高位城市宽景与人物反应，避免把观景段做成脱离行动的连续壁纸。"
+      ],
+      "parameter_variants": [
+        {
+          "sequence": [
+            "human_approach",
+            "interior_vertical_move",
+            "elevated_geography",
+            "human_reaction"
+          ],
+          "aerial_capture_claimed": false,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-human-scale-elevated-city-geography",
+          "guardrails": [
+            "只描述可见高位视角，不推断航拍设备。",
+            "保留人物进入与反应，不能只截取城市空镜。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 3543.467,
+          "end_sec": 3934.2,
+          "observation_id": "obs-human-scale-elevated-city-geography"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-landmark-exterior-to-interior-detail",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "卢浮宫段需要同时交代抵达空间、代表展品、文化密度和人物在场感。"
+      ],
+      "treatment_examples": [
+        "先用街景、庭院、拱廊和金字塔建立外部地理，再进入油画、天花板、蒙娜丽莎、皇冠与雕塑中庭；人群和人物反应穿插其间，避免连续壁纸化展品。"
+      ],
+      "parameter_variants": [
+        {
+          "sequence": [
+            "street",
+            "courtyard",
+            "pyramid",
+            "galleries",
+            "Mona_Lisa",
+            "jewels",
+            "sculpture_court"
+          ],
+          "includes_people": true,
+          "changes_scale": true,
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-louvre-exterior-to-cultural-detail",
+          "guardrails": [
+            "展品连续出现时必须加入空间、人物或信息变化。",
+            "文化事实不得由画面外观臆测。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 1015,
+          "end_sec": 1497.92,
+          "observation_id": "obs-louvre-exterior-to-cultural-detail"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-pop-culture-memory-to-current-city",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.9,
+      "trigger_examples": [
+        "台场现实景观承载动画与童年记忆，需要同时保留当前城市地理和人物当下体验。"
+      ],
+      "treatment_examples": [
+        "从现实步行与地标进入，穿插来源边界清楚的动画参照，再展开水岸、城市宽景和人物反应，使怀旧记忆落回可读的现实空间。"
+      ],
+      "parameter_variants": [
+        {
+          "sequence": [
+            "live_approach",
+            "reference_memory",
+            "waterfront_geography",
+            "human_reaction"
+          ],
+          "track_identity_verified": false,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-pop-culture-memory-to-current-city",
+          "guardrails": [
+            "不得根据弹幕识曲或判断版权。",
+            "参照画面不能替代现实地点的空间建立。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 8030,
+          "end_sec": 8400,
+          "observation_id": "obs-pop-culture-memory-to-current-city"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-return-at-new-light-with-local-life",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1ETNMzEEWQ"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "同一地点在夜间受阻后，需要用新时间条件兑现清晨重访价值。"
+      ],
+      "treatment_examples": [
+        "从清晨人物状态和霞光进入，交替干潮滩、鸟群、羊群、人物与圣山同框及地标宽景，使重复地点获得新的光线、动作和生命尺度。"
+      ],
+      "parameter_variants": [
+        {
+          "new_information": [
+            "dawn_light",
+            "dry_tidal_flat",
+            "birds",
+            "sheep",
+            "human_scale"
+          ],
+          "return_time_of_day": "pre_dawn_to_morning",
+          "source_id": "bilibili-BV1ETNMzEEWQ"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "observation_id": "obs-dawn-return-local-life",
+          "guardrails": [
+            "重复地点必须增加新光线、行动或当地生活信息。",
+            "不要用不同时间段镜头伪装同一连续时刻。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1ETNMzEEWQ",
+          "start_sec": 1631.12,
+          "end_sec": 1800,
+          "observation_id": "obs-dawn-return-local-life"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-weather-reveal-to-city-geography",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "长时间紧绷街头行动后，需要用真实天气和城市轴线提供短暂情绪释放。"
+      ],
+      "treatment_examples": [
+        "从火炬远景切到建筑上方双彩虹，再转向凯旋门轴线、街道和车辆，最后回到人物继续赶游船。"
+      ],
+      "parameter_variants": [
+        {
+          "weather_feature": "rainbow",
+          "geographic_anchor": "Arc_de_Triomphe_axis",
+          "returns_to_action": true,
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-rainbow-arc-city-release",
+          "guardrails": [
+            "弹幕高密度不能证明彩虹镜头造成反应。",
+            "天气揭示后及时恢复人物目标。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 2385,
+          "end_sec": 2410,
+          "observation_id": "obs-rainbow-arc-city-release"
+        }
+      ]
+    },
+    {
+      "technique_key": "subtitle-bilingual-action-instruction",
+      "category": "subtitle",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "滑翔伞准备包含外语安全指令，且理解内容与同步动作同样重要。"
+      ],
+      "treatment_examples": [
+        "按指令与回应成对排布双语字幕，短括号元标签只标现场听感，不遮挡扣具、手势和起飞动作。"
+      ],
+      "parameter_variants": [
+        {
+          "languages": [
+            "source_language",
+            "Chinese"
+          ],
+          "meta_caption": "《ASMR》",
+          "source_id": "bilibili-BV19sm2BBEDd"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-paragliding-bilingual-instruction",
+          "guardrails": [
+            "安全指令优先完整准确，ASR 不确定词必须人工降置信。",
+            "双语字幕不遮挡动作关键区域。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 8000.76,
+          "end_sec": 8072.96,
+          "observation_id": "obs-paragliding-bilingual-instruction"
+        }
+      ]
+    },
+    {
+      "technique_key": "subtitle-location-title-delivers-promise",
+      "category": "subtitle",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "开场需要在人物解释前确认国家、城市、独行主题和视觉期待。"
+      ],
+      "treatment_examples": [
+        "在人物与巴黎夜景、教堂和落日地标上依次放置法国、巴黎、一个人旅行与 travel vlog 标题，随后干净切回早餐叙事。"
+      ],
+      "parameter_variants": [
+        {
+          "shot_count": 6,
+          "title_roles": [
+            "country",
+            "city",
+            "solo_travel",
+            "vlog_format"
+          ],
+          "transition_out": "hard_cut",
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-paris-title-landmark-promise",
+          "guardrails": [
+            "标题只放开场一次，不反复遮挡后续地标。",
+            "文字必须与实际地点和成片内容一致。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 0,
+          "end_sec": 8.88,
+          "observation_id": "obs-paris-title-landmark-promise"
+        }
+      ]
+    }
+  ],
+  "opening_recipes": [
+    {
+      "total_reviewed_sec": 180,
+      "phases": [
+        {
+          "start_sec": 0,
+          "end_sec": 20.68,
+          "function": "以湖山、草地、人物和双层标题组成目的地预告，先兑现瑞士的视觉承诺。"
+        },
+        {
+          "start_sec": 20.68,
+          "end_sec": 86.32,
+          "function": "保留完整正面口播，交代人生清单、欧洲失窃焦虑和独行设定，并穿插护身符、宠物毛、截图和行李细节。"
+        },
+        {
+          "start_sec": 86.32,
+          "end_sec": 118.56,
+          "function": "用凌晨收拾、泡面、宠物告别和离家动作把人物设定转成实际出发。"
+        },
+        {
+          "start_sec": 118.56,
+          "end_sec": 151,
+          "function": "上海中转继续推进地理位置，并以饮料动作、火花画面和 SMPTE 彩条完成一次短视觉标点。"
+        },
+        {
+          "start_sec": 151,
+          "end_sec": 180,
+          "function": "回到食物、高铁、机场和长途飞行准备，结束笑点后立即恢复交通主线。"
+        }
+      ],
+      "metrics": {
+        "seconds_0_to_20_68_shots": 13,
+        "seconds_0_to_20_68_median_shot_sec": 1.08,
+        "seconds_20_68_to_86_32_shots": 22,
+        "seconds_20_68_to_86_32_median_shot_sec": 1.44,
+        "seconds_86_32_to_118_56_shots": 17,
+        "seconds_86_32_to_118_56_median_shot_sec": 1.4,
+        "seconds_118_56_to_180_shots": 36,
+        "seconds_118_56_to_180_median_shot_sec": 1.22
+      },
+      "rule": "长篇开场先给目的地感官承诺，再用完整口播和具体道具建立人物风险；真正的动作压缩放在告别与交通段，并只用一次强视觉笑点。",
+      "source_id": "bilibili-BV19sm2BBEDd"
+    },
+    {
+      "total_reviewed_sec": 120,
+      "phases": [
+        {
+          "start_sec": 0,
+          "end_sec": 12,
+          "function": "用樱花景色、人物背影、标题和带反差感的配乐先给主题与喜剧语气。"
+        },
+        {
+          "start_sec": 12,
+          "end_sec": 48,
+          "function": "正面口播交代赏樱动机、争议语境和自嘲式观看框架，跳切只压停顿，不打断完整句。"
+        },
+        {
+          "start_sec": 48,
+          "end_sec": 61,
+          "function": "从凌晨两点半准备睡觉直接跳到早上六点半出发，用时间反差启动行动。"
+        },
+        {
+          "start_sec": 61,
+          "end_sec": 120,
+          "function": "用机场、排队、廊桥、机舱和抵达组成约两秒一镜的旅行推进蒙太奇。"
+        }
+      ],
+      "metrics": {
+        "first_15_sec_shots": 7,
+        "first_15_sec_median_shot_sec": 1.96,
+        "first_30_sec_shots": 11,
+        "seconds_30_to_60_shots": 7,
+        "seconds_60_to_120_shots": 28,
+        "seconds_60_to_120_median_shot_sec": 2.1
+      },
+      "rule": "开场不是从头到尾统一快剪，而是按感官预告、完整设定、时间反差、行动蒙太奇四段提速。",
+      "source_id": "bilibili-BV1C3546DEC6"
+    },
+    {
+      "total_reviewed_sec": 120,
+      "phases": [
+        {
+          "start_sec": 0,
+          "end_sec": 10,
+          "function": "用湖泊、山地和岸边生活组成六镜风景标题预告，先兑现瑞士的视觉承诺。"
+        },
+        {
+          "start_sec": 10,
+          "end_sec": 47.5,
+          "function": "以完整正面口播交代人生清单、欧洲焦虑和护身准备，穿插评论截图、护身符和行李细节，但不把完整句子剪碎。"
+        },
+        {
+          "start_sec": 47.5,
+          "end_sec": 73.2,
+          "function": "用凌晨两点仍未收拾完、展示泡面和准备躺一会的时间压力，把设定转成行动。"
+        },
+        {
+          "start_sec": 73.2,
+          "end_sec": 97.7,
+          "function": "用告别宠物、关门和离家动作组成真正的高密度快剪，镜头中位数约0.76秒。"
+        },
+        {
+          "start_sec": 97.7,
+          "end_sec": 120,
+          "function": "用高铁、交通工具和抵达上海继续推进地理位置，镜头中位数约1.28秒。"
+        }
+      ],
+      "metrics": {
+        "seconds_0_to_10_shots": 6,
+        "seconds_0_to_10_median_shot_sec": 1.48,
+        "seconds_10_to_47_5_shots": 12,
+        "seconds_10_to_47_5_median_shot_sec": 1.08,
+        "seconds_47_5_to_73_2_shots": 9,
+        "seconds_47_5_to_73_2_median_shot_sec": 1.68,
+        "seconds_73_2_to_97_7_shots": 13,
+        "seconds_73_2_to_97_7_median_shot_sec": 0.76,
+        "seconds_97_7_to_120_shots": 14,
+        "seconds_97_7_to_120_median_shot_sec": 1.28
+      },
+      "rule": "开场按风景承诺、人物设定、时间压力、行动快剪和交通推进逐级提速；真正的快剪放在告别与移动段，不覆盖完整口播。",
+      "source_id": "bilibili-BV1CrHwzUEJa"
+    },
+    {
+      "total_reviewed_sec": 120,
+      "phases": [
+        {
+          "start_sec": 0,
+          "end_sec": 11.52,
+          "function": "先给人物进入草地、圣米歇尔山、日落和地点大标题，直接兑现本集地标与时间段承诺。"
+        },
+        {
+          "start_sec": 11.52,
+          "end_sec": 54.36,
+          "function": "保留完整人物口播和吃面动作，交代欧洲旅行最后一站、周杰伦取景地联想、疲惫状态及改乘中午车的决定。"
+        },
+        {
+          "start_sec": 54.36,
+          "end_sec": 67.96,
+          "function": "从晚安硬切次日收拾和离开酒店，以现实时间重启把目的地愿望转成出发动作。"
+        },
+        {
+          "start_sec": 67.96,
+          "end_sec": 120,
+          "function": "用走廊、地铁、街道、车站和简短现场反应压缩巴黎离开过程，并在交通问题出现前保持空间可读。"
+        }
+      ],
+      "metrics": {
+        "seconds_0_to_11_52_shots": 4,
+        "seconds_0_to_11_52_median_shot_sec": 3.68,
+        "seconds_11_52_to_54_36_shots": 11,
+        "seconds_11_52_to_54_36_median_shot_sec": 2.72,
+        "seconds_54_36_to_67_96_shots": 3,
+        "seconds_54_36_to_67_96_median_shot_sec": 6.04,
+        "seconds_67_96_to_120_shots": 18,
+        "seconds_67_96_to_120_median_shot_sec": 2.72
+      },
+      "rule": "目的地钩子只占最前面的短段；随后让完整人物设定、疲惫限制和计划成立，再把较密剪辑集中到次日出发与交通推进，避免把长篇开场误做成全程快切。",
+      "source_id": "bilibili-BV1ETNMzEEWQ"
+    },
+    {
+      "total_reviewed_sec": 120,
+      "phases": [
+        {
+          "start_sec": 0,
+          "end_sec": 8.88,
+          "function": "用法国、巴黎与 travel vlog 图形标题覆盖夜景和地标，先兑现目的地与独行主题。"
+        },
+        {
+          "start_sec": 8.66,
+          "end_sec": 18.2,
+          "function": "以早餐动作承载旁白，快速回顾瑞士、德国、奥地利并宣布法国是欧洲行最后目的地。"
+        },
+        {
+          "start_sec": 18.2,
+          "end_sec": 60.47,
+          "function": "减速为酒店正面口播，建立巴黎停留一天、担心设备与素材安全的限制，再用换手机把风险转成可见道具。"
+        },
+        {
+          "start_sec": 60.47,
+          "end_sec": 120,
+          "function": "从收拾、离店进入列车、晚点和换乘，以移动镜头恢复推进，并保留人物对突发问题的实时反应。"
+        }
+      ],
+      "metrics": {
+        "seconds_0_to_8_66_shots": 6,
+        "seconds_0_to_8_66_median_shot_sec": 1.2,
+        "seconds_8_66_to_18_shots": 6,
+        "seconds_8_66_to_18_median_shot_sec": 0.96,
+        "seconds_18_to_60_shots": 12,
+        "seconds_18_to_60_median_shot_sec": 2.82,
+        "seconds_60_to_120_shots": 24,
+        "seconds_60_to_120_median_shot_sec": 2.22
+      },
+      "rule": "先用短标题和旅程回顾完成承诺，再让风险口播、道具设定和真实反应成立；快切集中在移动与物流，不把整段开场做成均匀高速 montage。",
+      "source_id": "bilibili-BV1TNZUB4EF6"
+    },
+    {
+      "total_reviewed_sec": 120.133,
+      "phases": [
+        {
+          "start_sec": 0,
+          "end_sec": 16.433,
+          "function": "用东京地点、人物和标题镜头先兑现独行探险的目的地承诺。"
+        },
+        {
+          "start_sec": 16.433,
+          "end_sec": 42,
+          "function": "把超密短切集中在机场物流、行李和移动动作，迅速启动旅程。"
+        },
+        {
+          "start_sec": 42,
+          "end_sec": 74,
+          "function": "在安检、进食和人物真实反应处明显减速，让过程与性格可读。"
+        },
+        {
+          "start_sec": 74,
+          "end_sec": 106,
+          "function": "以登机、机舱和飞行镜头继续压缩地理移动，同时保留方向信息。"
+        },
+        {
+          "start_sec": 106,
+          "end_sec": 120.133,
+          "function": "用抵达与东京现场行动重新提速，把开场承诺接回正片。"
+        }
+      ],
+      "metrics": {
+        "seconds_0_to_16_433_shots": 9,
+        "seconds_0_to_16_433_median_shot_sec": 1.633,
+        "seconds_16_433_to_42_shots": 28,
+        "seconds_16_433_to_42_median_shot_sec": 0.25,
+        "seconds_42_to_74_shots": 9,
+        "seconds_42_to_74_median_shot_sec": 3.667,
+        "seconds_74_to_106_shots": 18,
+        "seconds_74_to_106_median_shot_sec": 1.517,
+        "seconds_106_to_120_133_shots": 8,
+        "seconds_106_to_120_133_median_shot_sec": 1.417
+      },
+      "rule": "长篇开场按地点承诺、物流提速、真实反应减速、交通推进和抵达重启分相位；最高密度只服务明确移动，不把整段误做成统一快剪。",
+      "source_id": "bilibili-BV1aDHQejEAP"
+    }
+  ],
+  "model_context_policy": {
+    "default_maximum_characters": 180000,
+    "hard_limit_characters": 200000,
+    "comparison": "strictly_less_than"
+  },
+  "limitations": [
+    "Playback rate is exact only when verified from an editable timeline; visual estimates remain estimates.",
+    "Danmaku density is an audience-response clue, not proof that an editing treatment caused the response.",
+    "Final reference videos provide positive retained-pattern evidence, not supervised deletion labels."
+  ]
+}

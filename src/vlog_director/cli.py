@@ -167,6 +167,7 @@ def _build_parser() -> argparse.ArgumentParser:
     direct_timeline_parser.add_argument("--analysis", type=Path, nargs="*", default=[])
     direct_timeline_parser.add_argument("--analysis-directory", type=Path)
     direct_timeline_parser.add_argument("--profile", type=Path, required=True)
+    direct_timeline_parser.add_argument("--technique-profile", type=Path)
     direct_timeline_parser.add_argument("--moments", type=Path, required=True)
     direct_timeline_parser.add_argument(
         "--feedback",
@@ -371,6 +372,7 @@ def main() -> int:
         from datetime import datetime, timezone
 
         from .director_engine import direct_timeline, write_director_result
+        from .technique_learning import load_technique_aggregate
 
         analysis_paths = list(args.analysis)
         if args.analysis_directory:
@@ -387,6 +389,11 @@ def main() -> int:
             target_duration_sec=args.target_duration_sec,
             minimum_change_ratio=args.minimum_change_ratio,
             variants=args.variants,
+            technique_profile=(
+                load_technique_aggregate(args.technique_profile)
+                if args.technique_profile
+                else None
+            ),
             feedback_document=_read_json(args.feedback) if args.feedback else None,
         )
         write_director_result(result, args.output_directory.resolve())
@@ -394,6 +401,7 @@ def main() -> int:
             {
                 "status": result["status"],
                 "recommended_variant": result.get("recommended_variant"),
+                "technique_profile_id": result.get("technique_profile_id"),
                 "output_directory": str(args.output_directory.resolve()),
                 "missing_sources": result.get("missing_sources", []),
             },

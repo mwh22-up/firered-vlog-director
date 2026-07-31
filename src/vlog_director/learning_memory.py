@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
@@ -101,15 +101,36 @@ def content_signals(
     """Return evidence-backed scenic and fun signals for one target shot."""
     scenic = _numeric_score(shot, "scenic_score")
     fun = _numeric_score(shot, "fun_score")
+    explicit_fun = 0.0
+    explicit_fun_evidence: list[str] = []
+
+    def record_explicit_fun(score: float, evidence_value: str) -> None:
+        nonlocal explicit_fun, explicit_fun_evidence
+        if score > explicit_fun:
+            explicit_fun = score
+            explicit_fun_evidence = [evidence_value]
+        elif score > 0 and score == explicit_fun:
+            explicit_fun_evidence.append(evidence_value)
+
     evidence: list[str] = []
     if scenic:
         evidence.append("target_shot:scenic_score")
     if fun:
         evidence.append("target_shot:fun_score")
+    if "fun_score" in shot and shot.get("fun_score") is not None:
+        record_explicit_fun(
+            fun,
+            f"shot:{shot.get('shot_id', 'unknown')}:fun_score={fun:.4f}",
+        )
 
     if event:
         event_scenic = _numeric_score(event, "scenic_score")
         event_fun = _numeric_score(event, "fun_score")
+        if "fun_score" in event and event.get("fun_score") is not None:
+            record_explicit_fun(
+                event_fun,
+                f"event:{event.get('event_id', 'unknown')}:fun_score={event_fun:.4f}",
+            )
         if event_scenic > scenic:
             scenic = event_scenic
             evidence.append(f"target_event:{event.get('event_id', 'unknown')}:scenic")
@@ -133,8 +154,19 @@ def content_signals(
         tags = {str(value).casefold() for value in moment.get("types", [])}
         moment_scenic, moment_fun = _moment_content_score(moment, tags)
         overlap_ratio = overlap / max(0.001, end_sec - start_sec)
-        moment_scenic *= min(1.0, overlap_ratio * 1.5)
-        moment_fun *= min(1.0, overlap_ratio * 1.5)
+        overlap_weight = min(1.0, overlap_ratio * 1.5)
+        moment_scenic *= overlap_weight
+        moment_fun *= overlap_weight
+        if (
+            moment.get("keep_level") == "optional"
+            and "fun_score" in moment
+            and moment.get("fun_score") is not None
+        ):
+            explicit_moment_fun = _numeric_score(moment, "fun_score") * overlap_weight
+            record_explicit_fun(
+                explicit_moment_fun,
+                f"moment:{moment.get('id', 'unknown')}:fun_score={explicit_moment_fun:.4f}",
+            )
         if moment_scenic > scenic:
             scenic = moment_scenic
             evidence.append(f"moment:{moment.get('id', 'unknown')}:scenic")
@@ -145,6 +177,8 @@ def content_signals(
     return {
         "scenic_score": round(_clamp(scenic), 4),
         "fun_score": round(_clamp(fun), 4),
+        "explicit_fun_score": round(_clamp(explicit_fun), 4),
+        "explicit_fun_evidence": list(dict.fromkeys(explicit_fun_evidence)),
         "evidence": list(dict.fromkeys(evidence)),
     }
 
@@ -158,10 +192,16 @@ def feedback_adjustment(
 ) -> dict[str, Any]:
     """Apply explicit user decisions after reference-video priors."""
     if not feedback_document:
-        return {"score_adjustment": 0.0, "mandatory": False, "evidence": []}
+        return {
+            "score_adjustment": 0.0,
+            "mandatory": False,
+            "excluded": False,
+            "evidence": [],
+        }
     source_tokens = _source_tokens(source)
     adjustment = 0.0
     mandatory = False
+    excluded = False
     evidence: list[str] = []
     for item in feedback_document.get("shot_feedback", []):
         if not source_tokens & _source_tokens(str(item.get("source", ""))):
@@ -180,6 +220,8 @@ def feedback_adjustment(
             adjustment += 0.28 * confidence
         elif decision in {"avoid", "remove", "shorten"}:
             adjustment -= 0.45 * confidence
+            if decision in {"avoid", "remove"}:
+                excluded = True
         elif decision == "lock":
             adjustment += 0.35 * confidence
             mandatory = True
@@ -189,11 +231,15 @@ def feedback_adjustment(
     return {
         "score_adjustment": round(max(-0.75, min(0.75, adjustment)), 4),
         "mandatory": mandatory,
+        "excluded": excluded,
         "evidence": evidence,
     }
 
 
-def direction_policy(variant: str, profile: dict[str, Any]) -> dict[str, Any]:
+def direction_policy(
+    variant: str,
+    profile: dict[str, Any],
+) -> dict[str, Any]:
     policy = dict(CONTENT_DIRECTIONS[variant])
     weights = (
         profile.get("learning_memory", {})

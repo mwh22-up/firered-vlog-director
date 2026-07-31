@@ -83,13 +83,18 @@
 - 完整来源数：6
 - 稳定模式：21 条（显式 `minimum_source_support=2`）
 - 单来源模式：34 条
+- 正式聚合产物：`reference-learning/reference-techniques.aggregate.v1.json`
 - 聚合命令：`vlog-director aggregate-techniques`
 - 当前限制：`BV19sm2BBEDd` 的重叠首日不生成新增 observation。单来源模式不能计为稳定跨来源模式，开场预分析或未完成视频也不得进入正式聚合；参考成片只能提供正向保留模式，不能推断作者真实删片偏好。
+
+正式聚合已经接入 `direct-timeline --technique-profile`。当前只有 `humor-preserve-real-awkward-process` 具备白名单执行器：它需要目标镜头、事件或 optional moment 的显式 `fun_score >= 0.55`，并且只有当该证据让边缘镜头跨过选片阈值且最终通过预算拟合时才写入 `applied_patterns`。它不能重排本来已入选的镜头，用户反馈优先级为 `remove/avoid > lock > protect/dependency > cut_first/score`。`narrative-failure-adaptation-payoff` 在真实目标语义标注入口完成前降级为 guidance；正式档案共 1 条 executable pattern、54 条 guidance patterns，其中 34 条为单来源 guidance。没有目标证据时不得改变 EDL。
 
 ## 完成状态
 
 1. 六支参考视频均已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、字符门禁和提交前验证。
 2. 六来源聚合已复核独立来源支持数；后续新增参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
+3. 六来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
+4. Aggregate 接入门禁：34 项针对性 unittest、75 项全量 unittest、六 Study 与 Aggregate Schema/运行时校验、CLI 聚合与导演 smoke、UTF-8 无 BOM、敏感信息/媒体扫描及 `git diff --check` 均通过。
 
 ## Git 与媒体边界
 

@@ -10,6 +10,7 @@ from typing import Any, Iterable
 from .learning_memory import content_signals, direction_policy, feedback_adjustment
 from .protection import validate_protection
 from .revision import compare_revisions
+from .technique_policy import build_technique_policy
 
 
 VARIANTS: dict[str, dict[str, float]] = {
@@ -102,6 +103,7 @@ def _moment_ranges(
     source: str,
     segment_start: float,
     segment_end: float,
+    feedback_document: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     tokens = _source_tokens(source)
     ranges: list[dict[str, Any]] = []
@@ -110,6 +112,14 @@ def _moment_ranges(
             continue
         start = max(segment_start, float(moment["start_sec"]))
         end = min(segment_end, float(moment["end_sec"]))
+        feedback = feedback_adjustment(
+            feedback_document,
+            source=source,
+            start_sec=start,
+            end_sec=end,
+        )
+        if feedback["excluded"]:
+            continue
         if start < end and moment.get("keep_level") in {"locked", "protected"}:
             ranges.append(
                 {
@@ -127,6 +137,14 @@ def _moment_ranges(
                 continue
             start = max(segment_start, float(member["start_sec"]))
             end = min(segment_end, float(member["end_sec"]))
+            feedback = feedback_adjustment(
+                feedback_document,
+                source=source,
+                start_sec=start,
+                end_sec=end,
+            )
+            if feedback["excluded"]:
+                continue
             if start < end:
                 ranges.append(
                     {
@@ -145,6 +163,8 @@ def _shot_score(
     content_policy: dict[str, Any],
     signals: dict[str, Any],
     feedback: dict[str, Any],
+    *,
+    fun_weight_multiplier: float = 1.0,
 ) -> float:
     role = str(shot.get("role", "ambient"))
     keep_score = float(shot.get("keep_score", 0.5))
@@ -158,6 +178,9 @@ def _shot_score(
     content_bonus = (
         scenic_score * float(content_policy["scenic_weight"])
         + fun_score * float(content_policy["fun_weight"])
+        + float(signals.get("explicit_fun_score", 0.0))
+        * float(content_policy["fun_weight"])
+        * max(0.0, fun_weight_multiplier - 1.0)
     )
     contrast_penalty = 0.0
     if content_policy["content_direction"] == "scenic_forward":
@@ -182,7 +205,9 @@ def _shot_score(
     return round(max(0.0, min(1.0, score)), 4)
 
 
-def _event_lookup(analysis: dict[str, Any]) -> tuple[dict[str, dict[str, Any]], set[str]]:
+def _event_lookup(
+    analysis: dict[str, Any],
+) -> tuple[dict[str, dict[str, Any]], set[str]]:
     lookup: dict[str, dict[str, Any]] = {}
     dependencies: set[str] = set()
     for event in analysis.get("events", []):
@@ -226,6 +251,82 @@ def _align_dialogue_range(
     )
 
 
+def _should_keep_shot(
+    *,
+    score: float,
+    recommendation: str,
+    shot_id: str,
+    dependency_ids: set[str],
+    dialogue: bool,
+    feedback: dict[str, Any],
+    policy: dict[str, float],
+) -> bool:
+    if feedback.get("excluded"):
+        return False
+    if feedback.get("mandatory"):
+        return True
+    if recommendation == "protect" or shot_id in dependency_ids:
+        return True
+    if recommendation == "cut_first" and not dialogue:
+        return False
+    threshold = (
+        policy["optional_threshold"]
+        if recommendation == "optional"
+        else policy["threshold"]
+    )
+    keep = (
+        score >= threshold
+        or dialogue and score >= policy["threshold"] - 0.12
+    )
+    return keep
+
+
+def _technique_impact(
+    rule: dict[str, Any],
+    *,
+    source: str,
+    start_sec: float,
+    end_sec: float,
+    target_evidence: list[str],
+    effect: str,
+) -> dict[str, Any]:
+    return {
+        "technique_key": str(rule["technique_key"]),
+        "category": str(rule["category"]),
+        "executor": str(rule["executor"]),
+        "source_support": int(rule["source_support"]),
+        "average_confidence": float(rule["average_confidence"]),
+        "target_evidence": list(target_evidence),
+        "affected_ranges": [
+            {
+                "source": source,
+                "start_sec": round(start_sec, 3),
+                "end_sec": round(end_sec, 3),
+                "effect": effect,
+            }
+        ],
+    }
+
+
+def _interval_is_covered(
+    start_sec: float,
+    end_sec: float,
+    ranges: list[dict[str, Any]],
+) -> bool:
+    cursor = start_sec
+    for item in sorted(ranges, key=lambda row: float(row["start_sec"])):
+        item_start = float(item["start_sec"])
+        item_end = float(item["end_sec"])
+        if item_end <= cursor:
+            continue
+        if item_start > cursor + 1e-6:
+            return False
+        cursor = max(cursor, item_end)
+        if cursor >= end_sec - 1e-6:
+            return True
+    return False
+
+
 def _candidate_ranges(
     source: str,
     parent_segment: dict[str, Any],
@@ -233,6 +334,7 @@ def _candidate_ranges(
     profile: dict[str, Any],
     moments_document: dict[str, Any],
     variant: str,
+    technique_policy: dict[str, Any] | None = None,
     feedback_document: dict[str, Any] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     start = float(parent_segment["in_sec"])
@@ -241,8 +343,17 @@ def _candidate_ranges(
     policy = VARIANTS[variant]
     content_policy = direction_policy(variant, profile)
     event_lookup, dependency_ids = _event_lookup(analysis)
+    rules = (technique_policy or {}).get("rules", {})
+    humor_rule = rules.get("humor_awkward_process", {})
     transcript = _transcript_segments(analysis)
-    ranges: list[dict[str, Any]] = _moment_ranges(moments_document, source, start, end)
+    ranges: list[dict[str, Any]] = _moment_ranges(
+        moments_document,
+        source,
+        start,
+        end,
+        feedback_document,
+    )
+    preselected_ranges = list(ranges)
     considered = 0
     selected = 0
     dialogue_considered = 0
@@ -275,29 +386,71 @@ def _candidate_ranges(
             start_sec=shot_start,
             end_sec=shot_end,
         )
-        score = _shot_score(enriched, priors, content_policy, signals, feedback)
+        baseline_score = _shot_score(
+            enriched,
+            priors,
+            content_policy,
+            signals,
+            feedback,
+        )
+        fun_score = float(signals["explicit_fun_score"])
+        humor_evidence_matched = (
+            humor_rule.get("active")
+            and fun_score >= float(humor_rule.get("minimum_fun_score", 1.0))
+        )
+        technique_score = _shot_score(
+            enriched,
+            priors,
+            content_policy,
+            signals,
+            feedback,
+            fun_weight_multiplier=(
+                float(humor_rule.get("weight_multiplier", 1.0))
+                if humor_evidence_matched
+                else 1.0
+            ),
+        )
         role = str(shot.get("role", "ambient"))
         recommendation = str(shot.get("recommendation", "optional"))
         dialogue = role == "dialogue" or float(shot.get("speech_ratio", 0.0)) >= 0.3
         if dialogue:
             dialogue_considered += 1
-        threshold = policy["optional_threshold"] if recommendation == "optional" else policy["threshold"]
-        keep = (
-            score >= threshold
-            or recommendation == "protect"
-            or shot_id in dependency_ids
-            or bool(feedback["mandatory"])
-            or dialogue and score >= policy["threshold"] - 0.12
+        baseline_keep = _should_keep_shot(
+            score=baseline_score,
+            recommendation=recommendation,
+            shot_id=shot_id,
+            dependency_ids=dependency_ids,
+            dialogue=dialogue,
+            feedback=feedback,
+            policy=policy,
         )
-        if recommendation == "cut_first" and shot_id not in dependency_ids and not dialogue:
-            keep = False
+        technique_keep = _should_keep_shot(
+            score=technique_score,
+            recommendation=recommendation,
+            shot_id=shot_id,
+            dependency_ids=dependency_ids,
+            dialogue=dialogue,
+            feedback=feedback,
+            policy=policy,
+        )
+        technique_selected = bool(
+            humor_evidence_matched
+            and not baseline_keep
+            and technique_keep
+            and not _interval_is_covered(
+                shot_start,
+                shot_end,
+                preselected_ranges,
+            )
+        )
+        # Executable reference techniques may admit an evidence-backed
+        # borderline shot, but they must not reorder shots that the target
+        # policy already selected. This keeps applied traces aligned with an
+        # observable threshold crossing in the final, budget-fitted EDL.
+        keep = baseline_keep or technique_selected
+        score = technique_score if technique_selected else baseline_score
         if not keep:
             continue
-        selected += 1
-        if float(signals["scenic_score"]) >= 0.55:
-            scenic_selected += 1
-        if float(signals["fun_score"]) >= 0.55:
-            fun_selected += 1
         if dialogue:
             dialogue_selected += 1
             shot_start, shot_end = _align_dialogue_range(
@@ -307,6 +460,27 @@ def _candidate_ranges(
                 end,
                 transcript,
             )
+        shot_technique_applications: list[dict[str, Any]] = []
+        technique_reasons: list[str] = []
+        if technique_selected:
+            shot_technique_applications.append(
+                _technique_impact(
+                    humor_rule,
+                    source=source,
+                    start_sec=shot_start,
+                    end_sec=shot_end,
+                    target_evidence=list(signals["explicit_fun_evidence"]),
+                    effect="selected_by_fun_weight",
+                )
+            )
+            technique_reasons.append(
+                f"technique:{humor_rule['technique_key']}:target_shot:{shot_id}"
+            )
+        selected += 1
+        if float(signals["scenic_score"]) >= 0.55:
+            scenic_selected += 1
+        if float(signals["fun_score"]) >= 0.55:
+            fun_selected += 1
         ranges.append(
             {
                 "start_sec": shot_start,
@@ -325,10 +499,12 @@ def _candidate_ranges(
                     [
                         f"learned:{shot_id}:{role}:{score:.3f}",
                         str(content_policy["content_direction"]),
+                        *technique_reasons,
                         *signals["evidence"],
                         *feedback["evidence"],
                     ]
                 ),
+                "technique_applications": shot_technique_applications,
             }
         )
 
@@ -364,6 +540,9 @@ def _merge_ranges(ranges: list[dict[str, Any]], maximum_gap_sec: float = 0.12) -
             if role not in prior["roles"]:
                 prior["roles"].append(role)
             prior["reasons"].append(str(item.get("reason", "selected")))
+            prior["technique_applications"].extend(
+                deepcopy(item.get("technique_applications", []))
+            )
             continue
         merged.append(
             {
@@ -374,6 +553,9 @@ def _merge_ranges(ranges: list[dict[str, Any]], maximum_gap_sec: float = 0.12) -
                 "speech_ratio": float(item.get("speech_ratio", 0.0)),
                 "roles": [str(item.get("role", "protected"))],
                 "reasons": [str(item.get("reason", "selected"))],
+                "technique_applications": deepcopy(
+                    item.get("technique_applications", [])
+                ),
             }
         )
     for item in merged:
@@ -435,6 +617,48 @@ def _applied_rule_trace(profile: dict[str, Any]) -> list[dict[str, str]]:
     ]
 
 
+def _merge_technique_applications(
+    applications: Iterable[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    grouped: dict[str, dict[str, Any]] = {}
+    range_keys: dict[str, set[tuple[str, float, float, str]]] = {}
+    for application in applications:
+        key = str(application["technique_key"])
+        if key not in grouped:
+            grouped[key] = {
+                "technique_key": key,
+                "category": str(application["category"]),
+                "executor": str(application["executor"]),
+                "source_support": int(application["source_support"]),
+                "average_confidence": float(application["average_confidence"]),
+                "target_evidence": [],
+                "affected_ranges": [],
+            }
+            range_keys[key] = set()
+        target = grouped[key]
+        for evidence in application.get("target_evidence", []):
+            evidence_text = str(evidence)
+            if evidence_text not in target["target_evidence"]:
+                target["target_evidence"].append(evidence_text)
+        for affected in application.get("affected_ranges", []):
+            range_key = (
+                str(affected["source"]),
+                float(affected["start_sec"]),
+                float(affected["end_sec"]),
+                str(affected["effect"]),
+            )
+            if range_key in range_keys[key]:
+                continue
+            range_keys[key].add(range_key)
+            target["affected_ranges"].append(deepcopy(affected))
+    result = []
+    for key in sorted(grouped):
+        row = grouped[key]
+        row["affected_target_count"] = len(row["affected_ranges"])
+        result.append(row)
+    return result
+
+
 def _range_duration(item: dict[str, Any]) -> float:
     return float(item["end_sec"]) - float(item["start_sec"])
 
@@ -467,6 +691,7 @@ def _build_opening_hook(
     analyses_by_source: dict[str, dict[str, Any]],
     *,
     target_sec: float = 10.0,
+    feedback_document: dict[str, Any] | None = None,
 ) -> dict[str, Any] | None:
     choices: list[tuple[int, float, str, dict[str, Any]]] = []
     for chapter_index, chapter in enumerate(chapters):
@@ -477,6 +702,14 @@ def _build_opening_hook(
                 if duration < 0.8 or role not in {"action", "reaction", "payoff", "establishing"}:
                     continue
                 if float(shot.get("speech_ratio", 0.0)) > 0.2:
+                    continue
+                feedback = feedback_adjustment(
+                    feedback_document,
+                    source=source,
+                    start_sec=float(shot["start_sec"]),
+                    end_sec=float(shot["end_sec"]),
+                )
+                if feedback["excluded"]:
                     continue
                 score = (
                     float(shot.get("keep_score", 0.5)) * 0.5
@@ -493,7 +726,11 @@ def _build_opening_hook(
         if chapter_index in used_chapters or source in used_sources:
             continue
         start = float(shot["start_sec"])
-        duration = min(1.4, float(shot["end_sec"]) - start, target_sec - elapsed)
+        duration = min(
+            1.4,
+            float(shot["end_sec"]) - start,
+            target_sec - elapsed,
+        )
         if duration < 0.75:
             continue
         selected.append(
@@ -517,7 +754,7 @@ def _build_opening_hook(
         return None
     return {
         "id": "ch00",
-        "title": "????",
+        "title": "开场预告",
         "target_duration_sec": round(elapsed, 3),
         "segments": selected,
     }
@@ -533,12 +770,14 @@ def build_candidate(
     variant: str,
     created_at: str,
     target_duration_sec: float | None = None,
+    technique_policy: dict[str, Any] | None = None,
     feedback_document: dict[str, Any] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     if variant not in VARIANTS:
         raise ValueError(f"unknown director variant: {variant}")
     chapters: list[dict[str, Any]] = []
     source_reports: dict[str, dict[str, int]] = {}
+    candidate_technique_applications: list[dict[str, Any]] = []
     assigned_sources: set[str] = set()
     parent_target = float(parent_plan.get("brief", {}).get("target_duration_sec", 0.0))
     requested_target = float(target_duration_sec or parent_target or 1.0)
@@ -564,6 +803,7 @@ def build_candidate(
                 profile,
                 moments_document,
                 variant,
+                technique_policy,
                 feedback_document,
             )
             aggregate = source_reports.setdefault(
@@ -583,6 +823,11 @@ def build_candidate(
         chapter_budget = float(chapter.get("target_duration_sec", 0.0)) * budget_scale
         flattened_ranges = [item for _, item in chapter_ranges]
         fitted = _fit_ranges_to_budget(flattened_ranges, chapter_budget)
+        candidate_technique_applications.extend(
+            application
+            for item in fitted
+            for application in item.get("technique_applications", [])
+        )
         fitted_ids = {id(item) for item in fitted}
         output_segments.extend(
             _segment_from_range(template, item)
@@ -598,7 +843,11 @@ def build_candidate(
                 "segments": output_segments,
             }
         )
-    hook = _build_opening_hook(parent_plan.get("chapters", []), analyses_by_source)
+    hook = _build_opening_hook(
+        parent_plan.get("chapters", []),
+        analyses_by_source,
+        feedback_document=feedback_document,
+    )
     if hook:
         chapters.insert(0, hook)
     total_duration = sum(float(chapter["target_duration_sec"]) for chapter in chapters)
@@ -620,6 +869,20 @@ def build_candidate(
         "selection_scope": "full_target_sources",
         "sources": source_reports,
         "applied_rules": _applied_rule_trace(profile),
+        "technique_application": {
+            "profile_id": (technique_policy or {}).get("profile_id"),
+            "eligible_pattern_keys": [
+                row["technique_key"]
+                for row in (technique_policy or {}).get("eligible_patterns", [])
+            ],
+            "applied_patterns": _merge_technique_applications(
+                candidate_technique_applications
+            ),
+            "guidance_pattern_keys": [
+                row["technique_key"]
+                for row in (technique_policy or {}).get("guidance_patterns", [])
+            ],
+        },
     }
 
 
@@ -720,6 +983,9 @@ def evaluate_candidate(
         "protection": protection,
         "revision": revision,
         "source_selection": generation_report["sources"],
+        "technique_application": deepcopy(
+            generation_report.get("technique_application", {})
+        ),
     }
 
 
@@ -775,8 +1041,10 @@ def direct_timeline(
     target_duration_sec: float | None = None,
     minimum_change_ratio: float = 0.08,
     variants: Iterable[str] = ("concise", "balanced", "immersive"),
+    technique_profile: dict[str, Any] | None = None,
     feedback_document: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    technique_policy = build_technique_policy(technique_profile)
     analyses_by_source, missing = bind_analyses(parent_plan, target_analyses)
     if missing:
         return {
@@ -785,6 +1053,7 @@ def direct_timeline(
             "reason": "target_analysis_missing",
             "missing_sources": missing,
             "message": "Reference-video learning cannot replace analysis of the target raw footage.",
+            "technique_profile_id": technique_policy.get("profile_id"),
             "candidates": [],
         }
     transcript_missing = [
@@ -803,6 +1072,7 @@ def direct_timeline(
             "reason": "target_transcript_missing",
             "missing_sources": transcript_missing,
             "message": "Dialogue-preserving direction requires full target transcripts.",
+            "technique_profile_id": technique_policy.get("profile_id"),
             "candidates": [],
         }
 
@@ -817,6 +1087,7 @@ def direct_timeline(
             variant=variant,
             created_at=created_at,
             target_duration_sec=target_duration_sec,
+            technique_policy=technique_policy,
             feedback_document=feedback_document,
         )
         evaluation = evaluate_candidate(
@@ -831,10 +1102,36 @@ def direct_timeline(
 
     passed = [candidate for candidate in candidates if candidate["evaluation"]["status"] == "passed"]
     winner = max(passed, key=lambda candidate: candidate["evaluation"]["score"]) if passed else None
+    winner_application = (
+        winner["evaluation"].get("technique_application", {})
+        if winner
+        else {}
+    )
     return {
         "schema_version": "1.0",
         "status": "review_required" if winner else "blocked",
         "profile_id": profile.get("profile_id"),
+        "technique_profile_id": technique_policy.get("profile_id"),
+        "technique_application": {
+            "profile_id": technique_policy.get("profile_id"),
+            "source_count": technique_policy.get("source_count", 0),
+            "minimum_source_support": technique_policy.get("minimum_source_support"),
+            "eligible_patterns": deepcopy(
+                technique_policy.get("eligible_patterns", [])
+            ),
+            "applied_patterns": deepcopy(
+                winner_application.get("applied_patterns", [])
+            ),
+            "guidance_patterns": deepcopy(
+                technique_policy.get("guidance_patterns", [])
+            ),
+            "candidate_applications": {
+                candidate["variant"]: deepcopy(
+                    candidate["evaluation"].get("technique_application", {})
+                )
+                for candidate in candidates
+            },
+        },
         "target_analysis_count": len(analyses_by_source),
         "minimum_change_ratio": minimum_change_ratio,
         "learning_precedence": [
