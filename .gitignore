@@ -26,5 +26,4 @@ cookies.txt
 *.wav
 *.mp3
 
-# Keep only sanitized fixtures in Git
-!tests/fixtures/**
+# Test media must be synthesized at runtime; fixtures stay text-only.
