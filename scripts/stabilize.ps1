@@ -6,7 +6,8 @@ param(
     [string]$OutputVideo,
 
     [double]$Strength = 0.35,
-    [double]$MaxCropPercent = 8.0
+    [double]$MaxCropPercent = 8.0,
+    [string]$FFmpegExecutable = "ffmpeg"
 )
 
 $ErrorActionPreference = 'Stop'
@@ -22,7 +23,8 @@ try {
         --output $OutputVideo `
         --work-directory $workDirectory `
         --strength $Strength `
-        --max-crop-percent $MaxCropPercent
+        --max-crop-percent $MaxCropPercent `
+        --ffmpeg-executable $FFmpegExecutable
 }
 finally {
     Pop-Location

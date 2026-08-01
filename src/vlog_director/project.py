@@ -137,7 +137,14 @@ def init_project_enhancement(project: Path, edit_version: int) -> dict[str, Any]
     if output_path.exists():
         raise FileExistsError(f"enhancement plan already exists: {output_path}")
 
-    result = build_enhancement_plan(_read_json(plan_path))
+    edit_plan = _read_json(plan_path)
+    result = build_enhancement_plan(edit_plan)
+    validation = validate_enhancement_plan(edit_plan, result)
+    if validation["status"] != "passed":
+        raise RuntimeError(
+            "generated enhancement plan failed its release contract: "
+            + json.dumps(validation["issues"], ensure_ascii=False)
+        )
     _write_json(output_path, result)
     return {
         "status": "ready",

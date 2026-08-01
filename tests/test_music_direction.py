@@ -51,9 +51,9 @@ class MusicDirectionTests(unittest.TestCase):
             self.assertTrue(item["optional"])
             self.assertFalse(20 <= item["start_sec"] < 35)
         enhancement = to_enhancement_music(reference)
-        self.assertTrue(enhancement["non_blocking"])
-        self.assertEqual(enhancement["mode"], "manual_capcut_reference")
+        self.assertEqual(enhancement["status"], "planned")
         self.assertEqual(enhancement["tracks"], [])
+        self.assertTrue(enhancement["ducking"]["enabled"])
 
     def test_subtitle_dialogue_is_removed_from_non_dialogue_window(self) -> None:
         plan = {
@@ -110,7 +110,7 @@ class MusicDirectionTests(unittest.TestCase):
         )
         self.assertEqual(reference["status"], "no_music_suggestion")
         self.assertEqual(reference["recommendations"], [])
-        self.assertTrue(to_enhancement_music(reference)["non_blocking"])
+        self.assertEqual(to_enhancement_music(reference)["status"], "disabled")
 
 
 if __name__ == "__main__":

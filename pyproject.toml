@@ -7,7 +7,9 @@ name = "firered-vlog-director"
 version = "0.1.0"
 description = "Portable director policies and protected-moment validation for a local vlog pipeline"
 requires-python = ">=3.11,<3.13"
-dependencies = []
+dependencies = [
+  "jsonschema>=4.23,<5",
+]
 
 [project.optional-dependencies]
 analysis = [
@@ -17,7 +19,6 @@ analysis = [
 ]
 test = [
   "imageio-ffmpeg==0.6.0",
-  "jsonschema>=4.23,<5",
   "numpy>=2,<3",
   "Pillow>=12,<13",
 ]
@@ -27,6 +28,9 @@ vlog-director = "vlog_director.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/vlog_director"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/vlog_director/schemas" = "vlog_director/schemas"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

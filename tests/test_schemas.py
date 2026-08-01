@@ -9,6 +9,7 @@ from jsonschema import Draft202012Validator
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_DIRECTORY = REPOSITORY_ROOT / "schemas"
+PACKAGED_SCHEMA_DIRECTORY = REPOSITORY_ROOT / "src" / "vlog_director" / "schemas"
 REFERENCE_DIRECTORY = REPOSITORY_ROOT / "reference-learning"
 
 
@@ -42,6 +43,12 @@ class SchemaValidationTests(unittest.TestCase):
         for name, schema in self.schemas.items():
             with self.subTest(schema=name):
                 Draft202012Validator.check_schema(schema)
+
+    def test_runtime_enhancement_schema_matches_formal_schema(self) -> None:
+        packaged = load_json(
+            PACKAGED_SCHEMA_DIRECTORY / "enhancement-plan.schema.json"
+        )
+        self.assertEqual(packaged, self.schemas["enhancement-plan.schema.json"])
 
     def test_every_formal_json_artifact_matches_its_schema(self) -> None:
         director_profiles = sorted(

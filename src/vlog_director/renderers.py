@@ -6,6 +6,7 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
+from .enhancement import DEFAULT_MUSIC_DUCKING
 from .ffmpeg import filter_path, find_ffmpeg, require_filters, run_command
 from .subtitles import write_ass_subtitles
 
@@ -18,17 +19,28 @@ def _music_filter_chain(index: int, track: dict[str, Any], label: str) -> str:
     start = float(track["start_sec"])
     end = float(track["end_sec"])
     duration = end - start
-    fade_in = float(track["fade_in_sec"])
-    fade_out = float(track["fade_out_sec"])
-    fade_out_start = max(fade_in, duration - fade_out)
+    if duration <= 0:
+        raise ValueError("music track end_sec must be greater than start_sec")
+    fade_in = min(duration, max(0.0, float(track.get("fade_in_sec", 0.0))))
+    fade_out = min(
+        max(0.0, duration - fade_in),
+        max(0.0, float(track.get("fade_out_sec", 0.0))),
+    )
     delay_ms = round(start * 1000)
     gain = _gain_to_linear(float(track["gain_db"]))
-    return (
-        f"[{index}:a]atrim=0:{duration:.3f},asetpts=PTS-STARTPTS,"
-        f"volume={gain:.8f},afade=t=in:st=0:d={fade_in:.3f},"
-        f"afade=t=out:st={fade_out_start:.3f}:d={fade_out:.3f},"
-        f"adelay={delay_ms}|{delay_ms}[{label}]"
-    )
+    filters = [
+        f"[{index}:a]atrim=0:{duration:.3f}",
+        "asetpts=PTS-STARTPTS",
+        f"volume={gain:.8f}",
+    ]
+    if fade_in > 0:
+        filters.append(f"afade=t=in:st=0:d={fade_in:.3f}")
+    if fade_out > 0:
+        filters.append(
+            f"afade=t=out:st={duration - fade_out:.3f}:d={fade_out:.3f}"
+        )
+    filters.append(f"adelay={delay_ms}|{delay_ms}[{label}]")
+    return ",".join(filters)
 
 
 def _anchor_expression(anchor: str) -> tuple[str, str]:
@@ -122,10 +134,13 @@ def render_enhanced_video(
         raise FileNotFoundError(base_video)
     ffmpeg = find_ffmpeg(executable)
     required_filters = {"loudnorm"}
-    music_tracks = enhancement_plan.get("music", {}).get("tracks", [])
+    music = enhancement_plan.get("music", {})
+    music_tracks = music.get("tracks", [])
+    ducking = music.get("ducking", {})
+    ducking_enabled = bool(ducking.get("enabled", True))
     overlay_items = enhancement_plan.get("illustration_motion", {}).get("items", [])
     subtitle_cues = enhancement_plan.get("subtitles", {}).get("cues", [])
-    if music_tracks:
+    if music_tracks and ducking_enabled:
         required_filters.add("sidechaincompress")
     if overlay_items:
         required_filters.add("overlay")
@@ -196,7 +211,8 @@ def render_enhanced_video(
         "[0:a]loudnorm=I=-16:LRA=11:TP=-1.5,aresample=48000[dialogue_normalized]"
     )
     if music_inputs:
-        filters.append("[dialogue_normalized]asplit=2[dialogue_sc][dialogue_mix]")
+        if ducking_enabled:
+            filters.append("[dialogue_normalized]asplit=2[dialogue_sc][dialogue_mix]")
         music_labels = []
         for sequence, (index, track) in enumerate(music_inputs, start=1):
             label = f"music_{sequence}"
@@ -206,14 +222,24 @@ def render_enhanced_video(
             "".join(music_labels)
             + f"amix=inputs={len(music_labels)}:normalize=0:duration=longest[music_bed]"
         )
-        ducking = enhancement_plan["music"]["ducking"]
-        filters.append(
-            "[music_bed][dialogue_sc]sidechaincompress="
-            f"threshold={float(ducking['threshold'])}:ratio={float(ducking['ratio'])}:"
-            f"attack={int(ducking['attack_ms'])}:release={int(ducking['release_ms'])}"
-            "[ducked_music]"
-        )
-        filters.append("[dialogue_mix][ducked_music]amix=inputs=2:normalize=0:duration=first[audio_final]")
+        if ducking_enabled:
+            filters.append(
+                "[music_bed][dialogue_sc]sidechaincompress="
+                f"threshold={float(ducking.get('threshold', DEFAULT_MUSIC_DUCKING['threshold']))}:"
+                f"ratio={float(ducking.get('ratio', DEFAULT_MUSIC_DUCKING['ratio']))}:"
+                f"attack={int(ducking.get('attack_ms', DEFAULT_MUSIC_DUCKING['attack_ms']))}:"
+                f"release={int(ducking.get('release_ms', DEFAULT_MUSIC_DUCKING['release_ms']))}"
+                "[ducked_music]"
+            )
+            filters.append(
+                "[dialogue_mix][ducked_music]"
+                "amix=inputs=2:normalize=0:duration=first[audio_final]"
+            )
+        else:
+            filters.append(
+                "[dialogue_normalized][music_bed]"
+                "amix=inputs=2:normalize=0:duration=first[audio_final]"
+            )
     else:
         filters.append("[dialogue_normalized]anull[audio_final]")
 

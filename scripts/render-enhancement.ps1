@@ -6,7 +6,8 @@ param(
     [int]$Version,
 
     [string]$BaseVideo = "output\preview.mp4",
-    [string]$OutputVideo = "output\final.mp4"
+    [string]$OutputVideo = "output\final.mp4",
+    [string]$FFmpegExecutable = "ffmpeg"
 )
 
 $ErrorActionPreference = 'Stop'
@@ -26,7 +27,8 @@ try {
         --project $resolvedProject `
         --base-video $basePath `
         --plan $planPath `
-        --output $outputPath
+        --output $outputPath `
+        --ffmpeg-executable $FFmpegExecutable
 }
 finally {
     Pop-Location

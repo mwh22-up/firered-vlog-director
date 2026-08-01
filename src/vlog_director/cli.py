@@ -62,6 +62,7 @@ def _build_parser() -> argparse.ArgumentParser:
     stabilize.add_argument("--work-directory", type=Path, required=True)
     stabilize.add_argument("--strength", type=float, default=0.35)
     stabilize.add_argument("--max-crop-percent", type=float, default=8.0)
+    stabilize.add_argument("--ffmpeg-executable", default="ffmpeg")
 
     render_enhancement = subparsers.add_parser("render-enhancement")
     render_enhancement.add_argument("--project", type=Path, required=True)
@@ -69,11 +70,13 @@ def _build_parser() -> argparse.ArgumentParser:
     render_enhancement.add_argument("--plan", type=Path, required=True)
     render_enhancement.add_argument("--output", type=Path, required=True)
     render_enhancement.add_argument("--qa-output", type=Path)
+    render_enhancement.add_argument("--ffmpeg-executable", default="ffmpeg")
 
     qa_music = subparsers.add_parser("qa-music")
     qa_music.add_argument("--media", type=Path, required=True)
     qa_music.add_argument("--plan", type=Path, required=True)
     qa_music.add_argument("--output", type=Path, required=True)
+    qa_music.add_argument("--ffmpeg-executable", default="ffmpeg")
 
     analyze_reference = subparsers.add_parser("analyze-reference")
     analyze_reference.add_argument("--input", type=Path, required=True)
@@ -238,14 +241,18 @@ def main() -> int:
             args.work_directory,
             strength=args.strength,
             max_crop_percent=args.max_crop_percent,
+            executable=args.ffmpeg_executable,
         )
         _write_result({"status": "ready", "output": str(args.output.resolve())}, None)
         return 0
     if args.command == "render-enhancement":
-        from .enhancement import validate_enhancement_plan
+        from .enhancement import (
+            normalize_enhancement_plan,
+            validate_enhancement_plan,
+        )
 
         project = args.project.resolve()
-        enhancement_plan = load_json(args.plan)
+        enhancement_plan, migrations = normalize_enhancement_plan(load_json(args.plan))
         edit_version = enhancement_plan.get("edit_plan_version")
         edit_plan_path = project / "work" / "plans" / f"edit_plan.v{edit_version}.json"
         if not edit_plan_path.is_file():
@@ -259,10 +266,15 @@ def main() -> int:
             args.base_video.resolve(),
             enhancement_plan,
             args.output.resolve(),
+            executable=args.ffmpeg_executable,
         )
         from .audio_qa import analyze_music_mix, write_music_mix_qa
 
-        qa_report = analyze_music_mix(args.output.resolve(), enhancement_plan)
+        qa_report = analyze_music_mix(
+            args.output.resolve(),
+            enhancement_plan,
+            executable=args.ffmpeg_executable,
+        )
         qa_output = args.qa_output or args.output.with_suffix(".music-mix-qa.json")
         write_music_mix_qa(qa_report, qa_output.resolve())
         result = {
@@ -271,12 +283,18 @@ def main() -> int:
             "music_mix_qa": str(qa_output.resolve()),
             "qa_status": qa_report["status"],
         }
+        if migrations:
+            result["migrations"] = migrations
         _write_result(result, None)
         return 0 if qa_report["status"] == "passed" else 2
     if args.command == "qa-music":
         from .audio_qa import analyze_music_mix, write_music_mix_qa
 
-        report = analyze_music_mix(args.media.resolve(), _read_json(args.plan))
+        report = analyze_music_mix(
+            args.media.resolve(),
+            _read_json(args.plan),
+            executable=args.ffmpeg_executable,
+        )
         write_music_mix_qa(report, args.output.resolve())
         _write_result(report, None)
         return 0 if report["status"] == "passed" else 2

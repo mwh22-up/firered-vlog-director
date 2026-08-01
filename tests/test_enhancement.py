@@ -3,6 +3,8 @@ import json
 import unittest
 from pathlib import Path
 
+from jsonschema import Draft202012Validator
+
 from vlog_director.enhancement import (
     RENDER_STAGES,
     build_enhancement_plan,
@@ -10,6 +12,7 @@ from vlog_director.enhancement import (
 )
 
 FIXTURES = Path(__file__).parent / "fixtures"
+SCHEMA = Path(__file__).parents[1] / "schemas" / "enhancement-plan.schema.json"
 
 
 def load_edit_plan() -> dict:
@@ -27,24 +30,98 @@ class EnhancementTests(unittest.TestCase):
         validation = validate_enhancement_plan(edit_plan, plan)
         self.assertEqual(validation["status"], "passed")
 
-    def test_music_reference_is_optional_and_non_blocking(self) -> None:
+    def test_build_plan_matches_formal_schema(self) -> None:
+        edit_plan = load_edit_plan()
+        plan = build_enhancement_plan(edit_plan)
+
+        schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
+        errors = list(Draft202012Validator(schema).iter_errors(plan))
+
+        self.assertEqual(errors, [])
+
+    def test_ready_music_track_is_validated_as_executable(self) -> None:
+        edit_plan = load_edit_plan()
+        plan = build_enhancement_plan(edit_plan)
+        plan["music"]["status"] = "ready"
+        plan["music"]["tracks"] = [
+            {
+                "id": "music-01",
+                "source": "assets/music/bed.wav",
+                "start_sec": 2.0,
+                "end_sec": 8.0,
+                "gain_db": -22.0,
+                "fade_in_sec": 1.0,
+                "fade_out_sec": 1.0,
+            }
+        ]
+        self.assertEqual(validate_enhancement_plan(edit_plan, plan)["status"], "passed")
+
+        plan["music"]["tracks"][0]["fade_out_sec"] = 8.0
+        result = validate_enhancement_plan(edit_plan, plan)
+        self.assertEqual(result["status"], "blocked")
+        self.assertIn("invalid_music_fades", {issue["code"] for issue in result["issues"]})
+
+    def test_formal_schema_is_a_runtime_gate(self) -> None:
+        edit_plan = load_edit_plan()
+        plan = build_enhancement_plan(edit_plan)
+        del plan["schema_version"]
+
+        result = validate_enhancement_plan(edit_plan, plan)
+
+        self.assertEqual(result["status"], "blocked")
+        self.assertIn(
+            "enhancement_schema_invalid",
+            {issue["code"] for issue in result["issues"]},
+        )
+
+        plan = build_enhancement_plan(edit_plan)
+        plan["music"]["status"] = "ready"
+        plan["music"]["tracks"] = [
+            {
+                "id": "missing-gain",
+                "source": "assets/music/bed.wav",
+                "start_sec": 1.0,
+                "end_sec": 2.0,
+            }
+        ]
+        result = validate_enhancement_plan(edit_plan, plan)
+        self.assertEqual(result["status"], "blocked")
+        self.assertIn(
+            "enhancement_schema_invalid",
+            {issue["code"] for issue in result["issues"]},
+        )
+
+    def test_ffmpeg_ducking_ranges_are_enforced_by_schema(self) -> None:
+        edit_plan = load_edit_plan()
+        plan = build_enhancement_plan(edit_plan)
+        plan["music"]["ducking"]["attack_ms"] = 0
+
+        result = validate_enhancement_plan(edit_plan, plan)
+
+        self.assertEqual(result["status"], "blocked")
+        self.assertIn(
+            "enhancement_schema_invalid",
+            {issue["code"] for issue in result["issues"]},
+        )
+
+    def test_legacy_advisory_music_plan_is_migrated(self) -> None:
         edit_plan = load_edit_plan()
         plan = build_enhancement_plan(edit_plan)
         plan["music"] = {
-            "status": "reference_ready",
+            "status": "reference_pending",
             "mode": "manual_capcut_reference",
             "non_blocking": True,
-            "recommendations": [
-                {
-                    "recommendation_id": "music-01",
-                    "start_sec": 2.0,
-                    "end_sec": 8.0,
-                    "capcut_search_keywords": ["??", "??"],
-                }
-            ],
+            "recommendations": [],
             "tracks": [],
         }
-        self.assertEqual(validate_enhancement_plan(edit_plan, plan)["status"], "passed")
+
+        result = validate_enhancement_plan(edit_plan, plan)
+
+        self.assertEqual(result["status"], "passed")
+        self.assertIn(
+            "legacy_enhancement_plan_migrated",
+            {issue["code"] for issue in result["issues"]},
+        )
 
     def test_audio_removal_and_excessive_crop_block(self) -> None:
         edit_plan = load_edit_plan()
@@ -93,9 +170,30 @@ class EnhancementTests(unittest.TestCase):
 
         self.assertEqual(result["status"], "blocked")
         self.assertIn(
-            "subtitles_not_release_ready",
+            "invalid_subtitle_status",
             {issue["code"] for issue in result["issues"]},
         )
+
+    def test_ready_subtitles_require_verified_coverage_and_cues(self) -> None:
+        edit_plan = load_edit_plan()
+        plan = build_enhancement_plan(edit_plan)
+        plan["subtitles"]["status"] = "ready"
+        plan["subtitles"]["coverage"] = {"status": "verified"}
+        plan["subtitles"]["cues"] = [
+            {
+                "start_sec": 1.0,
+                "end_sec": 2.0,
+                "text": "verified subtitle",
+                "review_status": "verified",
+            }
+        ]
+
+        self.assertEqual(validate_enhancement_plan(edit_plan, plan)["status"], "passed")
+
+        plan["subtitles"]["cues"][0]["review_status"] = "pending"
+        result = validate_enhancement_plan(edit_plan, plan)
+        self.assertEqual(result["status"], "blocked")
+        self.assertIn("subtitle_cue_unverified", {issue["code"] for issue in result["issues"]})
 
 
     def test_render_stage_order_cannot_change(self) -> None:

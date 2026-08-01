@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from copy import deepcopy
 from typing import Any
+
+from .enhancement import DEFAULT_MUSIC_DUCKING
 
 
 DIALOGUE_ROLES = {"dialogue", "scenery_dialogue", "local_dialogue", "conversation"}
@@ -331,16 +332,14 @@ def build_music_intent(
 
 
 def to_enhancement_music(reference: dict[str, Any]) -> dict[str, Any]:
+    """Create a schema-compatible executable music stub.
+
+    Advisory search guidance stays in the separate reference document. A user
+    must select local audio and add executable tracks before marking this block
+    ready.
+    """
     return {
-        "status": reference.get("status", "no_music_suggestion"),
-        "mode": "manual_capcut_reference",
-        "non_blocking": True,
-        "usage": reference.get("usage"),
-        "reference_evidence": deepcopy(reference.get("reference_evidence", {})),
-        "timeline_duration_sec": reference.get("timeline_duration_sec"),
-        "suggested_coverage_ratio": reference.get("suggested_coverage_ratio", 0.0),
-        "dialogue_evidence": deepcopy(reference.get("dialogue_evidence", {})),
-        "dialogue_intervals": deepcopy(reference.get("dialogue_intervals", [])),
-        "recommendations": deepcopy(reference.get("recommendations", [])),
+        "status": "planned" if reference.get("recommendations") else "disabled",
         "tracks": [],
+        "ducking": dict(DEFAULT_MUSIC_DUCKING),
     }
