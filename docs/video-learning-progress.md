@@ -11,7 +11,7 @@
 - 未开始正式学习：0 支
 - 完成率：6/6（100%）
 
-“已完成”要求同时具备：完整视频分析、可用 ASR/语义证据、人工重点区间复核、严格 `<200,000` 字符的模型输入门禁，以及已提交的正式 `technique-study.<BV>.v1.json`。仅下载代理视频、提取开场或生成预分析素材不算完成。
+六支 Study 的完成状态按各条目完成时的证据与门禁成立。2026-08-01 以前的条目只保留了“实际请求字符数”，不能追溯声明已经验证 UTF-8 body 字节数；自完整请求字节门禁落地后，任何新增或重新生成的 Study 必须同时具备完整视频分析、可用 ASR/语义证据、人工重点区间复核、context packet 严格 `<180,000` 字符、包含实际 instructions/input/tools 等字段的最终请求 body 严格 `<200,000` UTF-8 字节及 body SHA-256，以及已提交的正式 `technique-study.<BV>.v1.json`。等于任一上限也必须阻断；仅下载代理视频、提取开场或生成预分析素材不算完成。
 
 ## 明细
 
@@ -95,7 +95,8 @@
 2. 六来源聚合已复核独立来源支持数；后续新增参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
 3. 六来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
 4. Aggregate 接入门禁：34 项针对性 unittest、75 项全量 unittest、六 Study 与 Aggregate Schema/运行时校验、CLI 聚合与导演 smoke、UTF-8 无 BOM、敏感信息/媒体扫描及 `git diff --check` 均通过。
-5. CI 已在干净 Python 环境显式安装 `test` extra，并以 3 项自动化 Schema 测试覆盖 8 个 Schema、34 个正式 reference JSON、moments fixture 与 protection policy；当前全量为 78 项 unittest。
+5. CI 已在干净 Python 环境显式安装 `test` extra，并以 3 项自动化 Schema 测试覆盖 8 个 Schema、34 个正式 reference JSON、moments fixture 与 protection policy；当前全量为 85 项 unittest。
+6. 模型请求门禁已改为校验完整 Responses JSON body 的 UTF-8 字节数：程序内 transport 只消费已经校验的紧凑 body bytes，CLI 则校验待发送文件的原始字节并返回 SHA-256；中文多字节边界、完整 envelope、Responses 最小结构、重复字段与递归凭据字段拒绝、transport 零调用、不可压缩 packet、UTF-8 BOM 和本地 HTTP 413 网关均有回归覆盖。该门禁不替代不同 tool type 的上游 API Schema 校验；仅检查 context 字符数也不能作为已通过外层请求门禁的依据，历史字符记录不追溯标记为字节验证。
 
 ## Git 与媒体边界
 

@@ -249,7 +249,7 @@ def sample_analysis(
         "source": {
             "source_id": source_id,
             "url": f"https://example.com/{source_id}",
-            "media_path": f"C:/{source_id}.mp4",
+            "media_path": f"private-media/{source_id}.mp4",
         },
         "media": {
             "median_shot_duration_sec": median_duration,

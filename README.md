@@ -116,7 +116,7 @@ python -m venv .venv-analysis
 
 ```powershell
 .\.venv-analysis\Scripts\vlog-director.exe analyze-reference `
-  --input C:\tmp\bilibili-BV-example\proxy.mp4 `
+  --input workspace\proxy.mp4 `
   --source-id bilibili-BV-example `
   --url https://www.bilibili.com/video/BV-example/ `
   --work-directory C:\tmp\bilibili-BV-example\learning-work `
@@ -126,6 +126,21 @@ python -m venv .venv-analysis
   --asr-provider faster-whisper `
   --asr-model small
 ```
+
+生成受限 context packet，并在调用 `/responses` 前校验完整 JSON body：
+
+```powershell
+.\.venv-analysis\Scripts\vlog-director.exe pack-reference-context `
+  --analysis workspace\analysis.full.json `
+  --output workspace\reference-context.json `
+  --max-characters 180000
+
+.\.venv-analysis\Scripts\vlog-director.exe preflight-model-request `
+  --request workspace\responses-request.json `
+  --max-bytes 200000
+```
+
+Context packet 必须严格小于 180,000 字符。`--request` 文件必须已经是包含 `model`、`input` 以及实际使用的 `instructions`、`tools` 和其他协议字段的最终 Responses body；`preflight-model-request` 按文件的原始 UTF-8 字节（包括空白和换行）执行严格 `<200,000` 门禁，等于上限也会阻断，并输出绑定该 body 的 SHA-256。发送端必须逐字节发送与该摘要一致的文件，不能再由 SDK 包装或重新序列化。程序内调用应使用 `dispatch_responses_request`，让 transport 直接消费已经校验的紧凑 body bytes。中文等多字节文本不能只按 Python 字符数判断；UTF-8 BOM、缺少 Responses 基础结构、重复 JSON 字段、任意层级凭据字段和非有限 JSON 数值均会被拒绝。请求 JSON 只能放在 Git 忽略目录，不能写入 Cookie、Token 或 Authorization；若供应商限制更低，则通过 `--max-bytes` 使用更小门槛。命令返回 `ready` 只表示精确 body 字节门禁和最小 Responses 结构通过，不替代 OpenAI SDK 或上游 API 对不同 tool type 的完整 Schema 校验。
 
 聚合多支参考片：
 

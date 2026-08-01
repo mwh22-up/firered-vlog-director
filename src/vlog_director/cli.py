@@ -110,6 +110,10 @@ def _build_parser() -> argparse.ArgumentParser:
     pack_reference.add_argument("--output", type=Path, required=True)
     pack_reference.add_argument("--max-characters", type=int, default=180_000)
 
+    preflight_model_request = subparsers.add_parser("preflight-model-request")
+    preflight_model_request.add_argument("--request", type=Path, required=True)
+    preflight_model_request.add_argument("--max-bytes", type=int, default=200_000)
+
     aggregate_techniques = subparsers.add_parser("aggregate-techniques")
     aggregate_techniques.add_argument(
         "--study",
@@ -477,6 +481,7 @@ def main() -> int:
     if args.command == "pack-reference-context":
         from .model_context import (
             build_reference_context_packet,
+            serialized_model_request_size,
             write_reference_context_packet,
         )
 
@@ -488,12 +493,52 @@ def main() -> int:
             packet,
             args.output.resolve(),
         )
+        size = serialized_model_request_size(
+            json.dumps(packet, ensure_ascii=False, indent=2)
+        )
         _write_result(
             {
                 "status": "ready",
                 "output": str(args.output.resolve()),
                 "serialized_characters": characters,
+                "serialized_utf8_bytes": size["serialized_utf8_bytes"],
                 "maximum_characters": args.max_characters,
+                "hard_request_limit_utf8_bytes": 200_000,
+            },
+            None,
+        )
+        return 0
+    if args.command == "preflight-model-request":
+        from .model_context import (
+            ModelContextLimitError,
+            preflight_serialized_responses_request,
+        )
+
+        if args.max_bytes < 1:
+            raise ValueError("max-bytes must be a positive integer")
+        on_disk_bytes = args.request.stat().st_size
+        if on_disk_bytes >= args.max_bytes:
+            raise ModelContextLimitError(
+                "model request file must be smaller than "
+                f"{args.max_bytes:,} UTF-8 bytes; got {on_disk_bytes:,} bytes"
+            )
+        encoded_body = args.request.read_bytes()
+        try:
+            serialized = encoded_body.decode("utf-8")
+        except UnicodeDecodeError as error:
+            raise ValueError("model request must be valid UTF-8") from error
+        size = preflight_serialized_responses_request(
+            serialized,
+            max_bytes=args.max_bytes,
+        )
+        _write_result(
+            {
+                "status": "ready",
+                **size,
+                "maximum_utf8_bytes": args.max_bytes,
+                "comparison": "strictly_less_than",
+                "body_binding": "exact_file_utf8_bytes",
+                "validation_scope": "byte_limit_and_minimum_responses_structure",
             },
             None,
         )
