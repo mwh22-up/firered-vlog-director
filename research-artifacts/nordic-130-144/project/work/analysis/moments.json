@@ -1,0 +1,1129 @@
+{
+  "schema_version": "1.0",
+  "project_id": "nordic-130-144",
+  "moments": [
+    {
+      "id": "moment_crab_population_joke",
+      "source": "raw/GX010130.MP4",
+      "start_sec": 26.29,
+      "end_sec": 47.33,
+      "types": [
+        "travel_context",
+        "humor",
+        "dialogue"
+      ],
+      "importance_score": 0.78,
+      "fun_score": 0.72,
+      "quality_score": 0.66,
+      "confidence": 0.88,
+      "keep_level": "protected",
+      "reason": "用帝王蟹数量与人口作对比，并以“帮助消灭它”形成信息型笑点。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "帝王蟹海捕、数量约为人口十倍，所以要“帮助消灭它”，结尾补上价格仍不便宜。"
+        },
+        {
+          "type": "visual",
+          "value": "雨中港口与沿途城市画面可作为旅程信息背景。"
+        }
+      ]
+    },
+    {
+      "id": "moment_salmon_fjord_context",
+      "source": "raw/GX010130.MP4",
+      "start_sec": 86.99,
+      "end_sec": 125.47,
+      "types": [
+        "travel_context",
+        "meaningful_dialogue"
+      ],
+      "importance_score": 0.76,
+      "fun_score": 0.18,
+      "quality_score": 0.63,
+      "confidence": 0.84,
+      "keep_level": "protected",
+      "reason": "说明峡湾三文鱼养殖、沿途鱼场形态与生长周期，提供目的地背景。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "养殖地点在峡湾，沿途可见网圈鱼场，三文鱼需养三到四年。"
+        },
+        {
+          "type": "story",
+          "value": "在纯人物事件前提供简短而与路线相关的信息。"
+        }
+      ]
+    },
+    {
+      "id": "moment_bus_captive_joke",
+      "source": "raw/GX010130.MP4",
+      "start_sec": 215.94,
+      "end_sec": 225.36,
+      "types": [
+        "humor",
+        "dialogue"
+      ],
+      "importance_score": 0.7,
+      "fun_score": 0.82,
+      "quality_score": 0.58,
+      "confidence": 0.9,
+      "keep_level": "protected",
+      "reason": "导游解释车上多讲，因为大家坐着舒服且“都跑不了”，是简短自然笑点。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "车上多介绍，因为大家坐得舒服，关键是都跑不了，只能听他叨叨。"
+        }
+      ]
+    },
+    {
+      "id": "moment_nordic_winter_context",
+      "source": "raw/GX010132.MP4",
+      "start_sec": 0,
+      "end_sec": 28.2,
+      "types": [
+        "travel_context",
+        "meaningful_dialogue"
+      ],
+      "importance_score": 0.7,
+      "fun_score": 0.12,
+      "quality_score": 0.6,
+      "confidence": 0.82,
+      "keep_level": "protected",
+      "reason": "解释冬季日照短与坚硬花岗岩地貌，和沿途灰暗山景直接对应。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "冬季天黑得早，春节前后日照很短；地貌多坚硬花岗岩。"
+        },
+        {
+          "type": "visual",
+          "value": "沿途乡村与岩石地貌能承接这段说明。"
+        }
+      ]
+    },
+    {
+      "id": "moment_fjord_formation",
+      "source": "raw/GX010134.MP4",
+      "start_sec": 198.3,
+      "end_sec": 213.4,
+      "types": [
+        "travel_context",
+        "scenic",
+        "meaningful_dialogue"
+      ],
+      "importance_score": 0.82,
+      "fun_score": 0.1,
+      "quality_score": 0.75,
+      "confidence": 0.86,
+      "keep_level": "protected",
+      "reason": "保留冰原融化并切割成峡湾、连接外海的完整讲解，边界避开随后暗场。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "峡湾原为冰原，融化后切割成谷地，水体连接外海。"
+        },
+        {
+          "type": "visual",
+          "value": "本条是本批较清楚的峡湾山水窗景。"
+        }
+      ]
+    },
+    {
+      "id": "moment_snow_promise",
+      "source": "raw/GX010135.MP4",
+      "start_sec": 17.28,
+      "end_sec": 26.9,
+      "types": [
+        "setup",
+        "travel_progress",
+        "dialogue"
+      ],
+      "importance_score": 0.92,
+      "fun_score": 0.28,
+      "quality_score": 0.72,
+      "confidence": 0.94,
+      "keep_level": "locked",
+      "reason": "“前面有雪山了”并承诺下午会上雪山拍照，直接建立下一条事件。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "前面有雪山，下午会开上雪山并留时间站在雪山上拍照。"
+        },
+        {
+          "type": "story",
+          "value": "必须和 GX010136 的实际雪地拍照形成 setup/payoff。"
+        }
+      ]
+    },
+    {
+      "id": "moment_slippery_arrival",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 0.27,
+      "end_sec": 15.51,
+      "types": [
+        "payoff",
+        "action",
+        "humor"
+      ],
+      "importance_score": 0.88,
+      "fun_score": 0.78,
+      "quality_score": 0.64,
+      "confidence": 0.9,
+      "keep_level": "protected",
+      "reason": "下车第一反应就是雪地很滑，兑现上一条雪山承诺并启动真实事件。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "有点滑、好滑、慢点。"
+        },
+        {
+          "type": "visual",
+          "value": "人物从大巴下车，镜头贴近车门与雪地。"
+        }
+      ]
+    },
+    {
+      "id": "moment_snow_arrival_reaction",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 39.85,
+      "end_sec": 50,
+      "types": [
+        "reaction",
+        "scenic"
+      ],
+      "importance_score": 0.62,
+      "fun_score": 0.2,
+      "quality_score": 0.76,
+      "confidence": 0.82,
+      "keep_level": "optional",
+      "reason": "用短暂雪地全景确认抵达，不延长成纯窗景。",
+      "evidence": [
+        {
+          "type": "visual",
+          "value": "停车场、游客、雪坡与远山的短建立镜头。"
+        }
+      ]
+    },
+    {
+      "id": "moment_first_photo_setup",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 78.44,
+      "end_sec": 113.83,
+      "types": [
+        "setup",
+        "interaction",
+        "dialogue"
+      ],
+      "importance_score": 0.84,
+      "fun_score": 0.52,
+      "quality_score": 0.62,
+      "confidence": 0.86,
+      "keep_level": "protected",
+      "reason": "寻找可站位置并交换相机，建立第一次互拍。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "慢点、这里可以站、我给你拍两张、把相机给我。"
+        },
+        {
+          "type": "visual",
+          "value": "人物与相机同时入画，虽有设备近景但事件清楚。"
+        }
+      ]
+    },
+    {
+      "id": "moment_first_pose",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 129.53,
+      "end_sec": 142.63,
+      "types": [
+        "interaction",
+        "photo_session"
+      ],
+      "importance_score": 0.76,
+      "fun_score": 0.55,
+      "quality_score": 0.7,
+      "confidence": 0.84,
+      "keep_level": "protected",
+      "reason": "指导侧身与摆姿，形成拍照动作主体。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "侧面对着我、来、拍点景。"
+        },
+        {
+          "type": "visual",
+          "value": "人物在雪山和栏杆前摆姿。"
+        }
+      ]
+    },
+    {
+      "id": "moment_first_focus_failure",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 163.79,
+      "end_sec": 188.32,
+      "types": [
+        "payoff",
+        "humor",
+        "technical_problem"
+      ],
+      "importance_score": 0.9,
+      "fun_score": 0.78,
+      "quality_score": 0.56,
+      "confidence": 0.9,
+      "keep_level": "protected",
+      "reason": "眼睛别挤后相机连续对不上焦，第一次拍摄出现明确阻力。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "眼睛别挤；对不上焦，等一下，还是对不上。"
+        },
+        {
+          "type": "story",
+          "value": "是后面低温导致相机持续失焦的早期伏笔。"
+        }
+      ]
+    },
+    {
+      "id": "moment_first_photo_reaction",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 205.9,
+      "end_sec": 218.94,
+      "types": [
+        "reaction",
+        "interaction"
+      ],
+      "importance_score": 0.72,
+      "fun_score": 0.46,
+      "quality_score": 0.68,
+      "confidence": 0.84,
+      "keep_level": "protected",
+      "reason": "终于重新摆好并得到“好美啊、再来两个”的正向反应。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "对，就这样；好美啊；再来两个。"
+        }
+      ]
+    },
+    {
+      "id": "moment_big_eyes_joke",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 230.19,
+      "end_sec": 234.31,
+      "types": [
+        "humor",
+        "reaction"
+      ],
+      "importance_score": 0.52,
+      "fun_score": 0.7,
+      "quality_score": 0.7,
+      "confidence": 0.8,
+      "keep_level": "optional",
+      "reason": "“是不是眼太大了”带来很短的人物反应。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "这是不是眼太大了？这有什么大的？"
+        }
+      ]
+    },
+    {
+      "id": "moment_directing_pose",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 270.2,
+      "end_sec": 301.81,
+      "types": [
+        "setup",
+        "interaction",
+        "humor"
+      ],
+      "importance_score": 0.84,
+      "fun_score": 0.7,
+      "quality_score": 0.78,
+      "confidence": 0.9,
+      "keep_level": "protected",
+      "reason": "催促别耽误时间、调整侧身并吐槽包露出来太丑，构成第二轮拍摄 setup。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "别耽误时间，侧面站，背包不能露出来，太丑了，不要这样。"
+        },
+        {
+          "type": "visual",
+          "value": "人物与开阔雪山同框，画面质量比前一轮更好。"
+        }
+      ]
+    },
+    {
+      "id": "moment_one_good_photo",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 332.01,
+      "end_sec": 360,
+      "types": [
+        "payoff",
+        "meaningful_dialogue",
+        "humor"
+      ],
+      "importance_score": 0.9,
+      "fun_score": 0.78,
+      "quality_score": 0.64,
+      "confidence": 0.91,
+      "keep_level": "protected",
+      "reason": "边走边拍后复盘拍摄方法，核心是拍很多没用、哪怕一张出片。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "一边走一边拍；拍的是什么角度；拍那么多没有用，一张不出，哪怕这一张出片。"
+        },
+        {
+          "type": "story",
+          "value": "把反复拍照提升为有意义的经验总结。"
+        }
+      ]
+    },
+    {
+      "id": "moment_photo_ugly_reaction",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 361.5,
+      "end_sec": 389.15,
+      "types": [
+        "reaction",
+        "humor",
+        "photo_session"
+      ],
+      "importance_score": 0.82,
+      "fun_score": 0.82,
+      "quality_score": 0.62,
+      "confidence": 0.88,
+      "keep_level": "protected",
+      "reason": "继续倒数指导，最后以“拍得好丑”形成反应。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "三二一、头往那边仰、再仰一点，最后评价拍得好丑。"
+        }
+      ]
+    },
+    {
+      "id": "moment_find_warmer_angle",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 393.35,
+      "end_sec": 416.76,
+      "types": [
+        "interaction",
+        "humor",
+        "cold_weather"
+      ],
+      "importance_score": 0.68,
+      "fun_score": 0.58,
+      "quality_score": 0.7,
+      "confidence": 0.82,
+      "keep_level": "protected",
+      "reason": "讨论哪边好看又哪边太冷，体现拍摄和体感的冲突。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "这边拍过去好看，但那边太冷；这边也太冷。"
+        }
+      ]
+    },
+    {
+      "id": "moment_pair_photo_setup",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 449.63,
+      "end_sec": 479.22,
+      "types": [
+        "setup",
+        "interaction",
+        "humor"
+      ],
+      "importance_score": 0.78,
+      "fun_score": 0.7,
+      "quality_score": 0.6,
+      "confidence": 0.84,
+      "keep_level": "protected",
+      "reason": "太冷不想拍又转为给两人合拍，伴随笑声和姿势指导。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "不搞了、太冷了；又说要帮两人拍，一边走一边拍；哈哈。"
+        }
+      ]
+    },
+    {
+      "id": "moment_walking_photo_payoff",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 482.76,
+      "end_sec": 511.45,
+      "types": [
+        "payoff",
+        "photo_session"
+      ],
+      "importance_score": 0.72,
+      "fun_score": 0.48,
+      "quality_score": 0.6,
+      "confidence": 0.84,
+      "keep_level": "protected",
+      "reason": "倒数、换姿势并让人物走向镜头，完成合拍动作。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "三二一、再两张、换个姿势、向我走来。"
+        },
+        {
+          "type": "visual",
+          "value": "相机屏幕展示正在记录的雪地行走照片。"
+        }
+      ]
+    },
+    {
+      "id": "moment_slippery_not_listening",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 523.81,
+      "end_sec": 542.5,
+      "types": [
+        "setup",
+        "humor",
+        "conflict"
+      ],
+      "importance_score": 0.8,
+      "fun_score": 0.82,
+      "quality_score": 0.66,
+      "confidence": 0.9,
+      "keep_level": "protected",
+      "reason": "从哪边好看转为雪地太滑，并以“你根本不听我／我就不听你”制造人物冲突笑点。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "这边太滑，别在这拍；那边更好看；你根本不听我的，我就不听你。"
+        }
+      ]
+    },
+    {
+      "id": "moment_camera_cold_failure",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 545.58,
+      "end_sec": 587.7,
+      "types": [
+        "payoff",
+        "technical_problem",
+        "humor",
+        "action"
+      ],
+      "importance_score": 0.95,
+      "fun_score": 0.82,
+      "quality_score": 0.58,
+      "confidence": 0.92,
+      "keep_level": "locked",
+      "reason": "边提醒很滑边发现相机完全对不上焦，担心相机坏掉，形成主事件峰值。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "很滑；相机对不上焦；我来弄；完了，不会相机彻底坏掉了吧。"
+        },
+        {
+          "type": "story",
+          "value": "拍照线与寒冷雪地线在这里汇合成最大阻力。"
+        }
+      ]
+    },
+    {
+      "id": "moment_focus_still_broken",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 606.88,
+      "end_sec": 620.6,
+      "types": [
+        "technical_problem",
+        "travel_progress"
+      ],
+      "importance_score": 0.62,
+      "fun_score": 0.48,
+      "quality_score": 0.52,
+      "confidence": 0.8,
+      "keep_level": "protected",
+      "reason": "走上步道后相机仍完全对不上焦，确认问题没有立即解决。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "完全对不上了；往上走；这边怎么会对不上。"
+        }
+      ]
+    },
+    {
+      "id": "moment_climb_indecision",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 624.22,
+      "end_sec": 660.02,
+      "types": [
+        "interaction",
+        "humor",
+        "decision"
+      ],
+      "importance_score": 0.84,
+      "fun_score": 0.8,
+      "quality_score": 0.66,
+      "confidence": 0.9,
+      "keep_level": "protected",
+      "reason": "同伴围绕好不好看、怕不怕滑、去不去反复改变主意。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "那边好不好看、就那样；不想去又有点想去；你去我等你，最后又说我上去。"
+        },
+        {
+          "type": "visual",
+          "value": "雪林步道上人物边走边回头交流。"
+        }
+      ]
+    },
+    {
+      "id": "moment_cold_camera_explanation",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 661.94,
+      "end_sec": 680.36,
+      "types": [
+        "reaction",
+        "technical_problem",
+        "cold_weather"
+      ],
+      "importance_score": 0.68,
+      "fun_score": 0.62,
+      "quality_score": 0.54,
+      "confidence": 0.82,
+      "keep_level": "protected",
+      "reason": "提醒别摔倒，同时推测相机因天冷而失焦。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "别摔倒；相机怎么对不了焦；它天冷就这样。"
+        }
+      ]
+    },
+    {
+      "id": "moment_slippery_finale",
+      "source": "raw/GX010136.MP4",
+      "start_sec": 682.34,
+      "end_sec": 710.69,
+      "types": [
+        "reaction",
+        "humor",
+        "ending"
+      ],
+      "importance_score": 0.94,
+      "fun_score": 0.9,
+      "quality_score": 0.58,
+      "confidence": 0.92,
+      "keep_level": "locked",
+      "reason": "互相搀扶并总结太滑，最后“建议不要来了”收束整个雪地事件。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "扶着我走；只要踩湿雪就不会滑；太滑了，建议不要来了。"
+        },
+        {
+          "type": "story",
+          "value": "必须保留为雪地拍照事件的反高潮式结尾。"
+        }
+      ]
+    },
+    {
+      "id": "moment_snow_ridge_breath",
+      "source": "raw/GX010138.MP4",
+      "start_sec": 382,
+      "end_sec": 386,
+      "types": [
+        "scenic",
+        "breathing"
+      ],
+      "importance_score": 0.35,
+      "fun_score": 0.02,
+      "quality_score": 0.72,
+      "confidence": 0.8,
+      "keep_level": "optional",
+      "reason": "雪脊、房屋与田野的极短窗景呼吸镜头，避开暗车厢入点。",
+      "evidence": [
+        {
+          "type": "visual",
+          "value": "382–386 秒雪脊和房屋最清楚，仍有轻微车窗反光。"
+        }
+      ]
+    },
+    {
+      "id": "moment_snow_valley_breath",
+      "source": "raw/GX010139.MP4",
+      "start_sec": 165,
+      "end_sec": 170,
+      "types": [
+        "scenic",
+        "breathing"
+      ],
+      "importance_score": 0.42,
+      "fun_score": 0.02,
+      "quality_score": 0.78,
+      "confidence": 0.84,
+      "keep_level": "optional",
+      "reason": "山谷与雪山层次较好的短窗景。",
+      "evidence": [
+        {
+          "type": "visual",
+          "value": "2:45 左右雪山层次清楚，控制在五秒。"
+        }
+      ]
+    },
+    {
+      "id": "moment_clean_snow_breath",
+      "source": "raw/GX010141.MP4",
+      "start_sec": 5,
+      "end_sec": 10,
+      "types": [
+        "scenic",
+        "breathing"
+      ],
+      "importance_score": 0.4,
+      "fun_score": 0.02,
+      "quality_score": 0.8,
+      "confidence": 0.86,
+      "keep_level": "optional",
+      "reason": "开阔雪地、红色小屋与树林的短过渡。",
+      "evidence": [
+        {
+          "type": "visual",
+          "value": "本批较干净的雪地窗景之一。"
+        }
+      ]
+    },
+    {
+      "id": "moment_framed_snow_breath",
+      "source": "raw/GX010143.MP4",
+      "start_sec": 0,
+      "end_sec": 3,
+      "types": [
+        "scenic",
+        "breathing"
+      ],
+      "importance_score": 0.32,
+      "fun_score": 0.02,
+      "quality_score": 0.68,
+      "confidence": 0.78,
+      "keep_level": "optional",
+      "reason": "车窗框住的雪山道路，作为抵达瀑布前的极短转场。",
+      "evidence": [
+        {
+          "type": "visual",
+          "value": "窗框遮挡明显，因此只取三秒。"
+        }
+      ]
+    },
+    {
+      "id": "moment_waterfall_arrival",
+      "source": "raw/GX010144.MP4",
+      "start_sec": 0,
+      "end_sec": 39.58,
+      "types": [
+        "scenic",
+        "travel_progress",
+        "setup"
+      ],
+      "importance_score": 0.68,
+      "fun_score": 0.12,
+      "quality_score": 0.82,
+      "confidence": 0.86,
+      "keep_level": "optional",
+      "reason": "雪瀑布与游客到达建立目的地，避免完整保留长纯景。",
+      "evidence": [
+        {
+          "type": "visual",
+          "value": "雪覆岩壁和瀑布是本批最明确的美景。"
+        },
+        {
+          "type": "transcript",
+          "value": "提议在标记处拍照并询问是否好看。"
+        }
+      ]
+    },
+    {
+      "id": "moment_waterfall_photo_setup",
+      "source": "raw/GX010144.MP4",
+      "start_sec": 60.05,
+      "end_sec": 87.26,
+      "types": [
+        "setup",
+        "interaction",
+        "photo_session"
+      ],
+      "importance_score": 0.78,
+      "fun_score": 0.48,
+      "quality_score": 0.7,
+      "confidence": 0.85,
+      "keep_level": "protected",
+      "reason": "在瀑布前互相安排站位、穿衣并准备拍照。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "来这边、我帮你拍、站着、近一点、谢谢。"
+        },
+        {
+          "type": "visual",
+          "value": "人物、相机与雪瀑布同框。"
+        }
+      ]
+    },
+    {
+      "id": "moment_waterfall_photo_countdown",
+      "source": "raw/GX010144.MP4",
+      "start_sec": 95.82,
+      "end_sec": 117.56,
+      "types": [
+        "interaction",
+        "photo_session",
+        "humor"
+      ],
+      "importance_score": 0.76,
+      "fun_score": 0.58,
+      "quality_score": 0.52,
+      "confidence": 0.84,
+      "keep_level": "protected",
+      "reason": "人物重新入画后继续调整站位、倒数拍摄，并吐槽自己一点都不冷。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "往这边来、再远一点、三二一；我这边一点都不冷。"
+        }
+      ]
+    },
+    {
+      "id": "moment_train_pose_laugh",
+      "source": "raw/GX010144.MP4",
+      "start_sec": 119.94,
+      "end_sec": 146.68,
+      "types": [
+        "payoff",
+        "interaction",
+        "humor"
+      ],
+      "importance_score": 0.86,
+      "fun_score": 0.75,
+      "quality_score": 0.74,
+      "confidence": 0.9,
+      "keep_level": "protected",
+      "reason": "在 Flåmsbana 列车旁继续指导姿势并以笑声作为拍摄回报。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "看我、低一点、往一二三看；随后笑起来。"
+        },
+        {
+          "type": "visual",
+          "value": "绿色列车、雪地与人物构成明确地点画面。"
+        }
+      ]
+    },
+    {
+      "id": "moment_photo_result_before_boarding",
+      "source": "raw/GX010144.MP4",
+      "start_sec": 148.68,
+      "end_sec": 167.66,
+      "types": [
+        "reaction",
+        "travel_progress"
+      ],
+      "importance_score": 0.68,
+      "fun_score": 0.5,
+      "quality_score": 0.64,
+      "confidence": 0.82,
+      "keep_level": "protected",
+      "reason": "确认拍到了、评价照片并催促准备上车。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "拍是拍到了、很好拍、真好；快快。"
+        }
+      ]
+    },
+    {
+      "id": "moment_board_train",
+      "source": "raw/GX010144.MP4",
+      "start_sec": 177.08,
+      "end_sec": 182.54,
+      "types": [
+        "travel_progress",
+        "action"
+      ],
+      "importance_score": 0.7,
+      "fun_score": 0.28,
+      "quality_score": 0.78,
+      "confidence": 0.88,
+      "keep_level": "protected",
+      "reason": "连续喊上车并进入复古列车，完成场景转折。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "上车、上车了、快。"
+        },
+        {
+          "type": "visual",
+          "value": "Flåmsbana 车身和车门清楚可见。"
+        }
+      ]
+    },
+    {
+      "id": "moment_jump_photo_praise",
+      "source": "raw/GX010144.MP4",
+      "start_sec": 192.87,
+      "end_sec": 215.45,
+      "types": [
+        "setup",
+        "photo_review",
+        "interaction"
+      ],
+      "importance_score": 0.82,
+      "fun_score": 0.66,
+      "quality_score": 0.72,
+      "confidence": 0.88,
+      "keep_level": "protected",
+      "reason": "避开衣物遮挡后进入照片回看，夸跳起来的抓拍非常好看。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "你有几张拍得好好看；跳起来让我抓拍绝了。"
+        },
+        {
+          "type": "visual",
+          "value": "列车内同伴围坐查看手机与相机。"
+        }
+      ]
+    },
+    {
+      "id": "moment_bad_crop_joke",
+      "source": "raw/GX010144.MP4",
+      "start_sec": 220.66,
+      "end_sec": 249.78,
+      "types": [
+        "payoff",
+        "humor",
+        "photo_review"
+      ],
+      "importance_score": 0.95,
+      "fun_score": 0.94,
+      "quality_score": 0.7,
+      "confidence": 0.93,
+      "keep_level": "locked",
+      "reason": "拿出反例：照片要么没身体要么没头，并反问“你在开玩笑”，是本条最完整笑点。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "你看他给我拍的，要么没身体要么没头；一个只有身体，一个只有头；你在开玩笑。"
+        },
+        {
+          "type": "story",
+          "value": "必须与前面的抓拍称赞一起保留，形成好照片与坏照片的对照。"
+        }
+      ]
+    },
+    {
+      "id": "moment_train_photo_review",
+      "source": "raw/GX010144.MP4",
+      "start_sec": 271.02,
+      "end_sec": 289.98,
+      "types": [
+        "reaction",
+        "photo_review",
+        "interaction"
+      ],
+      "importance_score": 0.7,
+      "fun_score": 0.48,
+      "quality_score": 0.66,
+      "confidence": 0.82,
+      "keep_level": "protected",
+      "reason": "继续比较照片、询问有没有自己的照片并互相评价，在衣物遮挡前结束。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "这张好看、我还拍了三张、你们有我吗、这张还行。"
+        }
+      ]
+    },
+    {
+      "id": "moment_movie_face_banter",
+      "source": "raw/GX010144.MP4",
+      "start_sec": 302.13,
+      "end_sec": 342.09,
+      "types": [
+        "ending",
+        "interaction",
+        "humor"
+      ],
+      "importance_score": 0.78,
+      "fun_score": 0.72,
+      "quality_score": 0.68,
+      "confidence": 0.8,
+      "keep_level": "protected",
+      "reason": "列车内最后一轮互评照片，并以“很上相、电影脸”作为轻松收束。",
+      "evidence": [
+        {
+          "type": "transcript",
+          "value": "这张其实好看；他随便拍的；他很上相；电影脸。"
+        },
+        {
+          "type": "visual",
+          "value": "同伴在复古橙色座椅间持续交谈和看照片。"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "group_route_to_snow",
+      "type": "setup_payoff_reaction",
+      "must_keep_together": true,
+      "members": [
+        {
+          "role": "setup",
+          "source": "raw/GX010135.MP4",
+          "start_sec": 17.28,
+          "end_sec": 26.9
+        },
+        {
+          "role": "payoff",
+          "source": "raw/GX010136.MP4",
+          "start_sec": 0.27,
+          "end_sec": 15.51
+        },
+        {
+          "role": "reaction",
+          "source": "raw/GX010136.MP4",
+          "start_sec": 39.85,
+          "end_sec": 50
+        }
+      ]
+    },
+    {
+      "id": "group_first_photo_focus",
+      "type": "setup_payoff_reaction",
+      "must_keep_together": true,
+      "members": [
+        {
+          "role": "setup",
+          "source": "raw/GX010136.MP4",
+          "start_sec": 78.44,
+          "end_sec": 113.83
+        },
+        {
+          "role": "payoff",
+          "source": "raw/GX010136.MP4",
+          "start_sec": 163.79,
+          "end_sec": 188.32
+        },
+        {
+          "role": "reaction",
+          "source": "raw/GX010136.MP4",
+          "start_sec": 205.9,
+          "end_sec": 218.94
+        }
+      ]
+    },
+    {
+      "id": "group_photo_coaching",
+      "type": "setup_payoff_reaction",
+      "must_keep_together": true,
+      "members": [
+        {
+          "role": "setup",
+          "source": "raw/GX010136.MP4",
+          "start_sec": 270.2,
+          "end_sec": 301.81
+        },
+        {
+          "role": "payoff",
+          "source": "raw/GX010136.MP4",
+          "start_sec": 332.01,
+          "end_sec": 360
+        },
+        {
+          "role": "reaction",
+          "source": "raw/GX010136.MP4",
+          "start_sec": 361.5,
+          "end_sec": 389.15
+        }
+      ]
+    },
+    {
+      "id": "group_cold_camera_failure",
+      "type": "setup_payoff_reaction",
+      "must_keep_together": true,
+      "members": [
+        {
+          "role": "setup",
+          "source": "raw/GX010136.MP4",
+          "start_sec": 523.81,
+          "end_sec": 542.5
+        },
+        {
+          "role": "payoff",
+          "source": "raw/GX010136.MP4",
+          "start_sec": 545.58,
+          "end_sec": 587.7
+        },
+        {
+          "role": "reaction",
+          "source": "raw/GX010136.MP4",
+          "start_sec": 682.34,
+          "end_sec": 710.69
+        }
+      ]
+    },
+    {
+      "id": "group_waterfall_to_train",
+      "type": "setup_payoff_reaction",
+      "must_keep_together": true,
+      "members": [
+        {
+          "role": "setup",
+          "source": "raw/GX010144.MP4",
+          "start_sec": 60.05,
+          "end_sec": 87.26
+        },
+        {
+          "role": "payoff",
+          "source": "raw/GX010144.MP4",
+          "start_sec": 119.94,
+          "end_sec": 146.68
+        },
+        {
+          "role": "reaction",
+          "source": "raw/GX010144.MP4",
+          "start_sec": 148.68,
+          "end_sec": 167.66
+        }
+      ]
+    },
+    {
+      "id": "group_good_bad_photo_review",
+      "type": "setup_payoff_reaction",
+      "must_keep_together": true,
+      "members": [
+        {
+          "role": "setup",
+          "source": "raw/GX010144.MP4",
+          "start_sec": 192.87,
+          "end_sec": 215.45
+        },
+        {
+          "role": "payoff",
+          "source": "raw/GX010144.MP4",
+          "start_sec": 220.66,
+          "end_sec": 249.78
+        },
+        {
+          "role": "reaction",
+          "source": "raw/GX010144.MP4",
+          "start_sec": 271.02,
+          "end_sec": 289.98
+        }
+      ]
+    }
+  ]
+}

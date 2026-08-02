@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "status": "passed",
+  "media": "${PROJECT_ROOT}\\output\\final.v3.mp4",
+  "levels": {
+    "integrated_lufs": -16.7,
+    "true_peak_dbfs": -1.2
+  },
+  "target": {
+    "integrated_lufs": -16.0,
+    "true_peak_max_dbfs": -1.0
+  },
+  "silence_intervals": [],
+  "music_boundary_checks": [],
+  "blocking_count": 0,
+  "warning_count": 0,
+  "issues": [],
+  "created_at": "2026-08-02T10:50:26.658927+00:00"
+}

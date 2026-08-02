@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "project_id": "nordic-130-144",
+  "version": 2,
+  "parent_version": 1,
+  "brief": {
+    "target_duration_sec": 3101.11,
+    "aspect_ratio": "16:9",
+    "mode": "timeline",
+    "keep_dialogue": true
+  },
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "从港口到雪山",
+      "target_duration_sec": 1275.407,
+      "segments": [
+        {
+          "source": "raw/GX010130.MP4",
+          "in_sec": 0.0,
+          "out_sec": 588.188,
+          "story_role": "dialogue",
+          "reason": "learned:shot-0001:dialogue:0.954:scenic_fun_balanced:moment:moment_crab_population_joke:fun; protected:moment_crab_population_joke; protected:moment_salmon_fjord_context; protected:moment_bus_captive_joke",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.954
+        },
+        {
+          "source": "raw/GX010132.MP4",
+          "in_sec": 0.0,
+          "out_sec": 420.186,
+          "story_role": "dialogue",
+          "reason": "protected:moment_nordic_winter_context; learned:shot-0001:dialogue:0.957:scenic_fun_balanced:moment:moment_nordic_winter_context:fun; learned:shot-0003:dialogue:0.864:scenic_fun_balanced; learned:shot-0004:dialogue:0.839:scenic_fun_balanced",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 1.0
+        },
+        {
+          "source": "raw/GX010134.MP4",
+          "in_sec": 0.0,
+          "out_sec": 233.9,
+          "story_role": "dialogue",
+          "reason": "learned:shot-0001:dialogue:0.847:scenic_fun_balanced; learned:shot-0002:dialogue:0.814:scenic_fun_balanced:moment:moment_fjord_formation:scenic:moment:moment_fjord_formation:fun; protected:moment_fjord_formation",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.847
+        },
+        {
+          "source": "raw/GX010135.MP4",
+          "in_sec": 0.0,
+          "out_sec": 33.133,
+          "story_role": "dialogue",
+          "reason": "learned:shot-0001:dialogue:0.837:scenic_fun_balanced:moment:moment_snow_promise:fun; protected:moment_snow_promise; group:group_route_to_snow:setup",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.837
+        }
+      ]
+    },
+    {
+      "id": "ch02",
+      "title": "雪地拍照越拍越紧张",
+      "target_duration_sec": 704.417,
+      "segments": [
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 0.0,
+          "out_sec": 263.897,
+          "story_role": "action",
+          "reason": "learned:shot-0001:action:0.791:scenic_fun_balanced:moment:moment_slippery_arrival:fun:moment:moment_snow_arrival_reaction:scenic:moment:moment_first_photo_setup:fun; protected:moment_slippery_arrival; group:group_route_to_snow:payoff; group:group_route_to_snow:reaction; protected:moment_first_photo_setup; group:group_first_photo_focus:setup; protected:moment_first_pose; learned:shot-0004:action:0.771:scenic_fun_balanced:moment:moment_first_focus_failure:fun; protected:moment_first_focus_failure;",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.791
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 270.2,
+          "out_sec": 710.72,
+          "story_role": "dialogue",
+          "reason": "protected:moment_directing_pose; group:group_photo_coaching:setup; learned:shot-0012:dialogue:0.845:scenic_fun_balanced:moment:moment_directing_pose:fun; learned:shot-0013:dialogue:1.000:scenic_fun_balanced:moment:moment_directing_pose:fun; learned:shot-0014:dialogue:0.878:scenic_fun_balanced:moment:moment_directing_pose:fun:moment:moment_one_good_photo:fun:moment:moment_photo_ugly_reaction:fun; protected:moment_one_good_photo; group:group_photo_coaching:payoff; protected:moment_photo_ugly_react",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "id": "ch03",
+      "title": "雪山列车的短暂呼吸",
+      "target_duration_sec": 763.796,
+      "segments": [
+        {
+          "source": "raw/GX010138.MP4",
+          "in_sec": 0.0,
+          "out_sec": 397.33,
+          "story_role": "establishing",
+          "reason": "learned:shot-0001:establishing:0.482:scenic_fun_balanced:moment:moment_snow_ridge_breath:scenic:moment:moment_snow_ridge_breath:fun",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.5
+        },
+        {
+          "source": "raw/GX010139.MP4",
+          "in_sec": 0.0,
+          "out_sec": 324.691,
+          "story_role": "ambient",
+          "reason": "learned:shot-0001:ambient:0.430:scenic_fun_balanced:moment:moment_snow_valley_breath:scenic:moment:moment_snow_valley_breath:fun",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.5
+        },
+        {
+          "source": "raw/GX010141.MP4",
+          "in_sec": 0.0,
+          "out_sec": 28.662,
+          "story_role": "ambient",
+          "reason": "learned:shot-0001:ambient:0.571:scenic_fun_balanced:moment:moment_clean_snow_breath:scenic:moment:moment_clean_snow_breath:fun",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.571
+        },
+        {
+          "source": "raw/GX010143.MP4",
+          "in_sec": 0.033,
+          "out_sec": 13.146,
+          "story_role": "dialogue",
+          "reason": "learned:shot-0002:dialogue:0.897:scenic_fun_balanced:moment:moment_framed_snow_breath:scenic:moment:moment_framed_snow_breath:fun",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.897
+        }
+      ]
+    },
+    {
+      "id": "ch04",
+      "title": "瀑布、车站与照片审判",
+      "target_duration_sec": 357.49,
+      "segments": [
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 0.0,
+          "out_sec": 357.49,
+          "story_role": "dialogue",
+          "reason": "learned:shot-0001:dialogue:1.000:scenic_fun_balanced:moment:moment_waterfall_arrival:scenic:moment:moment_waterfall_arrival:fun:moment:moment_waterfall_photo_setup:fun:moment:moment_waterfall_photo_countdown:fun:moment:moment_train_pose_laugh:fun; protected:moment_waterfall_photo_setup; group:group_waterfall_to_train:setup; protected:moment_waterfall_photo_countdown; protected:moment_train_pose_laugh; group:group_waterfall_to_train:payoff; learned:shot-0002:dialogue:0.911:scenic_fun_balanced:mom",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 1.0
+        }
+      ]
+    }
+  ],
+  "music": [],
+  "qa": [],
+  "created_at": "2026-08-02T09:58:53.481544+00:00"
+}

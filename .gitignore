@@ -26,4 +26,7 @@ cookies.txt
 *.wav
 *.mp3
 
+# Curated, portable research handoffs may include finished videos through Git LFS.
+!research-artifacts/nordic-130-144/media/*.mp4
+
 # Test media must be synthesized at runtime; fixtures stay text-only.

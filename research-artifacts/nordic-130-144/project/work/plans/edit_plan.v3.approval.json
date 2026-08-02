@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "status": "approved",
+  "project_id": "nordic-130-144",
+  "plan_version": 3,
+  "parent_version": 2,
+  "plan_sha256": "1d60d70d02e2fd36a4e4a49c2f0bd07733c74d011f0599c74420273b83e7276d",
+  "approved_by": "mwh22-up",
+  "approved_at": "2026-08-02T10:23:08.460175+00:00",
+  "source_candidate": "${PROJECT_ROOT}\\work\\director\\v3-proposal\\candidate.human-reviewed.json"
+}

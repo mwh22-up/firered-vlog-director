@@ -1,0 +1,2359 @@
+{
+  "schema_version": "1.0",
+  "status": "review_required",
+  "profile_id": "aggregated-reference-director-v5",
+  "technique_profile_id": "aggregated-reference-techniques-v1-30e44cc37595",
+  "technique_application": {
+    "profile_id": "aggregated-reference-techniques-v1-30e44cc37595",
+    "source_count": 6,
+    "minimum_source_support": 2,
+    "eligible_patterns": [
+      {
+        "technique_key": "humor-preserve-real-awkward-process",
+        "category": "humor",
+        "source_support": 6,
+        "average_confidence": 0.9467,
+        "pattern_scope": "stable",
+        "executor": "retain_evidence_backed_fun_process",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-straw-language-awkward-process",
+            "guardrails": [
+              "笑点落在主角卡词与自我反应，不嘲弄店员或口音。",
+              "保留解决过程，避免只剪失败制造误解。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1C3546DEC6",
+            "observation_id": "obs-convenience-store-awkwardness",
+            "guardrails": [
+              "不能把对方正常服务行为剪成恶意嘲讽。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-train-ticket-real-process",
+            "guardrails": [
+              "不得把帮助者的正常行为剪成嘲讽对象。",
+              "先交代危机与解决关系，再保留问名等自然余韵。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-information-desk-awkward-process",
+            "guardrails": [
+              "笑点落在主角误读，不嘲弄工作人员、口音或国籍。",
+              "外语字幕应由人工核对，不能直接采用 ASR 的不确定词。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-stranger-photo-bag-mixup",
+            "guardrails": [
+              "笑点落在人物自己的递物错误，不嘲弄帮助者。",
+              "保留致谢和问题解决。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-schoolboy-directions-awkward-process",
+            "guardrails": [
+              "笑点落在主角的沟通困难，不嘲弄学生、口音或能力。",
+              "外语内容必须人工核对，不能直接采用不确定 ASR。"
+            ]
+          }
+        ],
+        "required_target_evidence": "explicit_fun_score>=0.55"
+      }
+    ],
+    "applied_patterns": [],
+    "guidance_patterns": [
+      {
+        "technique_key": "graphic-360-tiny-planet-to-pov-reframing",
+        "category": "graphic",
+        "source_support": 1,
+        "average_confidence": 0.98,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-paragliding-360-reframe",
+            "guardrails": [
+              "tiny-planet 画面过久会损害方向感，需与正常地平线视角交替。",
+              "不能让重投影遮蔽安全动作或重要指令。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "graphic-context-proof-before-action",
+        "category": "graphic",
+        "source_support": 1,
+        "average_confidence": 0.9,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-chat-screenshot-action-context",
+            "guardrails": [
+              "截图必须裁掉无关个人信息。",
+              "截图不遮挡人物脸部和基础字幕。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "graphic-inline-fact-caption-over-live-scene",
+        "category": "graphic",
+        "source_support": 1,
+        "average_confidence": 0.94,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-olympic-balloon-fact-caption",
+            "guardrails": [
+              "事实说明必须核实来源。",
+              "文字不遮挡核心地标。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "graphic-labeled-ai-fantasy-escalation",
+        "category": "graphic",
+        "source_support": 1,
+        "average_confidence": 0.98,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-labeled-ai-dragon-escalation",
+            "guardrails": [
+              "生成或合成画面必须显式标注，不能冒充现场事实。",
+              "成片只能确认视觉插入，不能反推具体生成工具或流程。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "graphic-next-episode-crt-teaser",
+        "category": "graphic",
+        "source_support": 1,
+        "average_confidence": 0.98,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-next-episode-crt-teaser",
+            "guardrails": [
+              "前钩只预告下一站，不伪造当前集已经发生的内容。",
+              "不得从视觉风格推断具体制作工具。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "graphic-reference-frame-to-live-location-match",
+        "category": "graphic",
+        "source_support": 1,
+        "average_confidence": 0.97,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-animation-reference-to-live-location",
+            "guardrails": [
+              "参照画面和实景必须保持清晰来源边界，目标素材只使用有权使用的参照。",
+              "不能从构图相似推断官方关系、授权状态或创作因果。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "graphic-risk-mode-color-wash-reset",
+        "category": "graphic",
+        "source_support": 1,
+        "average_confidence": 0.96,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-security-alert-color-mode-reset",
+            "guardrails": [
+              "警戒效果表达人物主观状态，不把具体路人或群体标记为威胁。",
+              "色彩模式之后必须回到可验证的现实行动。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "graphic-single-symbol-curiosity-punctuation",
+        "category": "graphic",
+        "source_support": 1,
+        "average_confidence": 0.99,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-museum-question-mark-sticker",
+            "guardrails": [
+              "一次认知落点只用一个符号。",
+              "贴图不能遮挡展品主体或事实说明。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "graphic-torn-paper-memory-window",
+        "category": "graphic",
+        "source_support": 1,
+        "average_confidence": 0.98,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-torn-paper-memory-window",
+            "guardrails": [
+              "回忆窗口应短于当前返程主线，不制造新的事实时间线。",
+              "只能复用有授权的目标素材，并保持当前与回忆画面可区分。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "graphic-transport-motion-and-ambient-sound-bridge",
+        "category": "graphic",
+        "source_support": 1,
+        "average_confidence": 0.94,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-train-motion-ambient-bridge",
+            "guardrails": [
+              "声音桥必须来自连续环境声，不把机械谐波误认成配乐。",
+              "硬切仍需保持移动方向和门框空间可读。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "humor-goal-conflict-self-sabotage-reversal",
+        "category": "humor",
+        "source_support": 1,
+        "average_confidence": 0.96,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-last-shuttle-self-sabotage",
+            "guardrails": [
+              "笑点只落在主角自己的目标冲突。",
+              "不得怪罪司机或虚构车辆提前离开。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "humor-interruption-held-wide-with-punctuation",
+        "category": "humor",
+        "source_support": 1,
+        "average_confidence": 0.97,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-scenic-pose-interrupted",
+            "guardrails": [
+              "笑点落在主角拍摄受阻，不嘲弄路人。",
+              "路人经过后立即恢复行动，不重复播放遮挡。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "humor-reaction-caption-sfx-no-overlay-stack",
+        "category": "humor",
+        "source_support": 1,
+        "average_confidence": 0.9,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-acid-reaction-caption-sfx",
+            "guardrails": [
+              "表情已形成包袱时不遮脸。",
+              "音效与大字只出现一次，不重复追打。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "humor-self-narrated-melodrama-day-reset",
+        "category": "humor",
+        "source_support": 1,
+        "average_confidence": 0.94,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-net-cafe-third-person-day-reset",
+            "guardrails": [
+              "先让真实过夜状态成立，再使用类型化旁白。",
+              "不把稀疏声床命名为未经确认的具体曲风或音效。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "humor-semantic-counterpoint-bgm",
+        "category": "music_rhythm",
+        "source_support": 1,
+        "average_confidence": 0.94,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1C3546DEC6",
+            "observation_id": "obs-opening-bgm-counterpoint",
+            "guardrails": [
+              "语义反差必须服务人物立场，不可随意挪用敏感音乐。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "humor-social-auto-response-afterthought-reset",
+        "category": "humor",
+        "source_support": 1,
+        "average_confidence": 0.94,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-dinner-auto-agree-afterthought",
+            "guardrails": [
+              "笑点落在主角自己的自动反应，不嘲讽服务员口音。",
+              "先保留矛盾两端，再用旁白解释。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "humor-visual-callback-to-earlier-prop",
+        "category": "graphic",
+        "source_support": 1,
+        "average_confidence": 0.91,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1C3546DEC6",
+            "observation_id": "obs-visual-callback-snack",
+            "guardrails": [
+              "没有前文记忆点时不要硬做回扣。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "narrative-crisis-caption-black-card-relief",
+        "category": "subtitle",
+        "source_support": 1,
+        "average_confidence": 0.97,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1C3546DEC6",
+            "observation_id": "obs-ticket-crisis-relief-card",
+            "guardrails": [
+              "大字只标记已发生的结果，不制造虚假危机。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "narrative-encounter-callback-closes-journey",
+        "category": "narrative",
+        "source_support": 1,
+        "average_confidence": 0.96,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-couple-return-callback",
+            "guardrails": [
+              "callback 必须由真实再遇见触发，不用旁白虚构关系深度。",
+              "不把偶遇包装成可证明的命运或预先设计。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "narrative-helper-return-reframes-awkward-encounter",
+        "category": "narrative",
+        "source_support": 1,
+        "average_confidence": 0.95,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-helper-return-reframes-encounter",
+            "guardrails": [
+              "只描述可见折返和帮助，不推断学生内心动机。",
+              "弹幕价值判断不能代替行为证据。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "narrative-location-revisit-reframes-risk",
+        "category": "narrative",
+        "source_support": 1,
+        "average_confidence": 0.92,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-daylight-revisit-reframes-night",
+            "guardrails": [
+              "不得暗示昨夜发生了真实犯罪或已证实危险。",
+              "昼夜对照必须来自可核对的同一地点。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "narrative-price-callback-delayed-scenic-payoff",
+        "category": "narrative",
+        "source_support": 1,
+        "average_confidence": 0.97,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-hotel-price-delayed-lake-payoff",
+            "guardrails": [
+              "金额必须来自视频已陈述事实。",
+              "景色 payoff 不提前泄露，且保留人物尺度而非只留空镜。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "narrative-risk-prop-callback-chain",
+        "category": "narrative",
+        "source_support": 1,
+        "average_confidence": 0.95,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-security-prop-callback-chain",
+            "guardrails": [
+              "只描述人物自己的防护选择，不把城市或人群标签化。",
+              "道具回扣必须由画面或对白验证。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "playback-rate-no-confirmed-speedup-on-dialogue-fluster",
+        "category": "playback_rate",
+        "source_support": 1,
+        "average_confidence": 0.96,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-ice-cream-no-confirmed-speedup",
+            "guardrails": [
+              "没有可编辑时间线或可靠音画基准时，不得输出1.5x、2x等精确值。",
+              "有信息量的双语对话优先保持可听清。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "scenic-elevated-city-day-to-night-reveal",
+        "category": "scenic",
+        "source_support": 1,
+        "average_confidence": 0.93,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-elevated-city-day-to-night",
+            "guardrails": [
+              "不得根据高位视角推断无人机或具体设备。",
+              "弹幕不能证明音乐单独造成景观反应。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "scenic-hardship-earned-lake-payoff",
+        "category": "scenic",
+        "source_support": 1,
+        "average_confidence": 0.97,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-earned-lake-ridge-payoff",
+            "guardrails": [
+              "竖图插入要明确是视觉奖励，不能冒充连续运动镜头。",
+              "不把危险路段美化为通用徒步建议。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "scenic-human-reaction-to-landmark-geography",
+        "category": "scenic",
+        "source_support": 1,
+        "average_confidence": 0.98,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-cruise-human-to-landmark-geography",
+            "guardrails": [
+              "连续地标镜头必须改变人物、方向、光线或地理信息。",
+              "移动视点要维持河流方向可读。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "scenic-human-scale-to-elevated-city-geography",
+        "category": "scenic",
+        "source_support": 1,
+        "average_confidence": 0.9,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-human-scale-elevated-city-geography",
+            "guardrails": [
+              "只描述可见高位视角，不推断航拍设备。",
+              "保留人物进入与反应，不能只截取城市空镜。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "scenic-landmark-exterior-to-interior-detail",
+        "category": "scenic",
+        "source_support": 1,
+        "average_confidence": 0.97,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-louvre-exterior-to-cultural-detail",
+            "guardrails": [
+              "展品连续出现时必须加入空间、人物或信息变化。",
+              "文化事实不得由画面外观臆测。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "scenic-pop-culture-memory-to-current-city",
+        "category": "scenic",
+        "source_support": 1,
+        "average_confidence": 0.9,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-pop-culture-memory-to-current-city",
+            "guardrails": [
+              "不得根据弹幕识曲或判断版权。",
+              "参照画面不能替代现实地点的空间建立。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "scenic-return-at-new-light-with-local-life",
+        "category": "scenic",
+        "source_support": 1,
+        "average_confidence": 0.96,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-dawn-return-local-life",
+            "guardrails": [
+              "重复地点必须增加新光线、行动或当地生活信息。",
+              "不要用不同时间段镜头伪装同一连续时刻。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "scenic-weather-reveal-to-city-geography",
+        "category": "scenic",
+        "source_support": 1,
+        "average_confidence": 0.96,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-rainbow-arc-city-release",
+            "guardrails": [
+              "弹幕高密度不能证明彩虹镜头造成反应。",
+              "天气揭示后及时恢复人物目标。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "subtitle-bilingual-action-instruction",
+        "category": "subtitle",
+        "source_support": 1,
+        "average_confidence": 0.94,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-paragliding-bilingual-instruction",
+            "guardrails": [
+              "安全指令优先完整准确，ASR 不确定词必须人工降置信。",
+              "双语字幕不遮挡动作关键区域。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "subtitle-location-title-delivers-promise",
+        "category": "subtitle",
+        "source_support": 1,
+        "average_confidence": 0.99,
+        "pattern_scope": "source_specific",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-paris-title-landmark-promise",
+            "guardrails": [
+              "标题只放开场一次，不反复遮挡后续地标。",
+              "文字必须与实际地点和成片内容一致。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "graphic-credits-self-deprecating-one-person-team",
+        "category": "graphic",
+        "source_support": 2,
+        "average_confidence": 0.975,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-one-person-team-credits",
+            "guardrails": [
+              "credits 信息必须真实且可读。",
+              "笑点不应缩短观众读取职务、器材和致谢的时间。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-tokyo-one-person-team-credits",
+            "guardrails": [
+              "credits 信息必须真实、可读。",
+              "弹幕中的完播反应不能证明 credits 单独造成效果。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "graphic-inline-reference-card-over-live-scene",
+        "category": "graphic",
+        "source_support": 2,
+        "average_confidence": 0.965,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-animal-reference-card",
+            "guardrails": [
+              "信息卡只解释当前对象，不扩展成未经核验的旅行建议。",
+              "卡片读完即撤，不长期遮挡现场画面和基础字幕。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-louvre-news-reference-insert",
+            "guardrails": [
+              "引用素材必须具备使用权并保留必要来源。",
+              "插入只补足当前观察，不脱离主线扩展成长解释。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "humor-fluster-preserve-duration-with-one-punctuation",
+        "category": "humor",
+        "source_support": 3,
+        "average_confidence": 0.9733,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-manual-elevator-punctuation",
+            "guardrails": [
+              "先保留足够长的真实等待，字幕才有停顿价值。",
+              "一个省略号标点足够，不再叠加遮挡动作的贴图。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1C3546DEC6",
+            "observation_id": "obs-fluster-long-take-question-mark",
+            "guardrails": [
+              "不得仅凭动作密度声称使用2x。",
+              "保留对方完整语境，避免把普通观众恶搞成笑柄。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-ice-cream-fluster-punctuation",
+            "guardrails": [
+              "不得把店员正常工作速度直接标记为搞笑倍速。",
+              "真实人物不应被侮辱性贴图或重复音效攻击。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "humor-mundane-action-impossible-vfx-escalation",
+        "category": "graphic",
+        "source_support": 2,
+        "average_confidence": 0.975,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-shanghai-ai-vfx-escalation",
+            "guardrails": [
+              "高成本特效只用于极短动作，不扩散到信息段。",
+              "特效结束后立即回到真实行动，避免破坏旅行地理。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-elevator-ultraman-vfx-reset",
+            "guardrails": [
+              "幻想效果必须极短，并在落点后立即恢复现实空间。",
+              "不把宽频冲击命名为未经确认的爆炸、变身或版权音效。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "humor-preserve-imperfect-camera-for-authenticity",
+        "category": "humor",
+        "source_support": 2,
+        "average_confidence": 0.955,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-paragliding-imperfect-camera",
+            "guardrails": [
+              "安全指令和真实动作优先于构图完美。",
+              "不把教练或语言差异剪成嘲讽对象。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1C3546DEC6",
+            "observation_id": "obs-imperfect-camera-social-setup",
+            "guardrails": [
+              "遮挡镜头只在承载关键互动时保留。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "humor-reality-triggered-familiar-sfx",
+        "category": "sound_effect",
+        "source_support": 2,
+        "average_confidence": 0.945,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1C3546DEC6",
+            "observation_id": "obs-light-off-dating-sfx",
+            "guardrails": [
+              "音效应卡在真实灯光变化上。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-castle-lock-sfx-garden-release",
+            "guardrails": [
+              "音效必须卡在真实锁门动作上。",
+              "不要重复播放或再叠贴图稀释简短反差。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "humor-single-accent-then-hard-reset",
+        "category": "graphic",
+        "source_support": 5,
+        "average_confidence": 0.964,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1C3546DEC6",
+            "observation_id": "obs-food-sparkle-color-bars",
+            "guardrails": [
+              "闪光贴纸不遮脸和基础字幕。",
+              "彩条只作极短标点，不可打断关键信息。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-mute-blogger-color-bars",
+            "guardrails": [
+              "彩条只作一次极短标点。",
+              "彩条后必须切到新的视觉信息，不原地重复自嘲。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-haunted-hotel-color-bars-reset",
+            "guardrails": [
+              "彩条只承担一次重置，不与多种贴图连续追打。",
+              "硬切之后必须恢复真实行动和空间。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-hot-food-color-bars-reset",
+            "guardrails": [
+              "彩条只作一次短标点。",
+              "没有试听证据时不得声明同步音效。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-balcony-performance-color-bars-reset",
+            "guardrails": [
+              "彩条与静音只作一次短标点，不连续堆叠其他效果。",
+              "硬切后必须恢复新的现实动作或口播。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "music-genre-switch-for-night-horror-counterpoint",
+        "category": "music_rhythm",
+        "source_support": 2,
+        "average_confidence": 0.895,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-night-walk-horror-music-reframe",
+            "guardrails": [
+              "不能用音效虚构真实危险或治安事件。",
+              "悬疑类型必须由主角主观害怕和最终安全解除框定。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-night-horror-genre-switch",
+            "guardrails": [
+              "只描述人物主观紧张，不虚构犯罪或真实危险。",
+              "本 observation 不声称已人工确认任何单独惊吓音效。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "music-scenic-block-dialogue-protection",
+        "category": "music_rhythm",
+        "source_support": 5,
+        "average_confidence": 0.874,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-hike-music-dialogue-protection",
+            "guardrails": [
+              "music_likely 是声学启发式，不用于曲名、BPM 或版权识别。",
+              "雨中风险说明、问路和呼吸声不能为维持配乐连续性而被静音。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1C3546DEC6",
+            "observation_id": "obs-scenic-music-dialogue-protection",
+            "guardrails": [
+              "music_likely 是声学估计，不代表识别出具体歌曲。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-scenic-music-dialogue-protection",
+            "guardrails": [
+              "声学分类只证明可能有音乐，不用于识别曲名或版权。",
+              "真实交流不得为维持配乐连续性而被静音。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-landmark-music-dialogue-protection",
+            "guardrails": [
+              "声学分类不等于歌曲识别。",
+              "涉水、方向和时间压力等现场信息优先于音乐响度。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-cruise-music-dialogue-protection",
+            "guardrails": [
+              "music_likely 与可见 credit 不用于曲名、BPM 或版权判断。",
+              "人物口播和现场环境信息优先于音乐连续性。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "music-transition-reveal-synchronization",
+        "category": "music_rhythm",
+        "source_support": 4,
+        "average_confidence": 0.8475,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-train-tunnel-scenic-reveal",
+            "guardrails": [
+              "音乐识别和因果不能只依赖弹幕。",
+              "揭示前后的窗框与移动方向要保持空间连续。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-rainbow-music-reveal",
+            "guardrails": [
+              "弹幕不能证明音乐单独造成观众反应。",
+              "不得据此识别精确曲名、BPM 或版权。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-cruise-eiffel-music-reveal",
+            "guardrails": [
+              "只描述段落同步，不声明逐拍因果。",
+              "揭示前保留登船空间连续性。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-odaiba-music-scenic-entry",
+            "guardrails": [
+              "声谱边界不能用于识别曲名、BPM、版权或具体曲风。",
+              "人物短反应和现实空间信息仍需保持可懂。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "narrative-end-of-journey-montage-verbal-closure",
+        "category": "narrative",
+        "source_support": 2,
+        "average_confidence": 0.96,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-homecoming-montage-closure",
+            "guardrails": [
+              "该段是实际返程闭合，不夸大为深度反思。",
+              "系列结束语必须与真实完成状态一致。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-tokyo-journey-verbal-closure",
+            "guardrails": [
+              "只使用有声画对应的尾段对白。",
+              "不得把被排除的重复英文或孤立短词写入正式证据。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "narrative-error-discovery-and-explicit-correction",
+        "category": "narrative",
+        "source_support": 3,
+        "average_confidence": 0.9467,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-wrong-stop-correction-chain",
+            "guardrails": [
+              "不从个案推导通用交通攻略。",
+              "路线、站名和外语回答必须以画面或人工字幕为准。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-cracked-lens-explicit-correction",
+            "guardrails": [
+              "不能把真实裂纹误写成后期 VFX。",
+              "修正只描述成片可见动作，不推断设备维修结果。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-route-error-explicit-correction",
+            "guardrails": [
+              "不得从个案推导通用交通攻略。",
+              "路线与地点判断以画面、地图和人工核验字幕为准。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "narrative-failure-adaptation-payoff",
+        "category": "narrative",
+        "source_support": 5,
+        "average_confidence": 0.95,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-final-hike-failure-adaptation",
+            "guardrails": [
+              "不要只留美景而删掉代价和求助过程。",
+              "成片经历不能被泛化成安全路线建议，也不得夸大未发生的危险。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1C3546DEC6",
+            "observation_id": "obs-itinerary-adaptation-arc",
+            "guardrails": [
+              "失败段不能只留抱怨，必须保留应对和后续回报。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-itinerary-adaptation-through-strangers",
+            "guardrails": [
+              "偶遇人物必须真实影响后续行动，不能只作为情绪素材。",
+              "交通信息以当时事实为准，不从成片推导通用攻略。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-night-failure-dawn-payoff",
+            "guardrails": [
+              "失败、调整和结果必须成组保留。",
+              "不能把主观夜间恐惧改写为已经发生的治安事件。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-arrival-failure-adaptation-chain",
+            "guardrails": [
+              "不要只留抵达结果而删掉判断和修正。",
+              "交通个案不能被泛化成路线或安全建议。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "narrative-multiday-reset-with-carryover",
+        "category": "narrative",
+        "source_support": 3,
+        "average_confidence": 0.93,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-multiday-chapter-carryover",
+            "guardrails": [
+              "日序卡后必须立即给出当天目标或限制条件。",
+              "跨日 callback 只保留真正影响后续选择的事件。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-day-two-risk-carryover-reset",
+            "guardrails": [
+              "跨日提示要服务新目标，不重复前一天流水账。",
+              "风险道具只保留必要解释。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-rainy-days-carryover",
+            "guardrails": [
+              "跨日信息必须真实影响后续行动。",
+              "不能把天气或抽签改写为后续事件的事实因果。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "narrative-reflection-summary-forward-hook",
+        "category": "narrative",
+        "source_support": 3,
+        "average_confidence": 0.96,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-final-reflection-editing-metaphor",
+            "guardrails": [
+              "反思必须解释经历如何改变判断，不重复流水账。",
+              "观众互动提示放在主题完成后，不打断风险复盘。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-day-reflection-next-episode-hook",
+            "guardrails": [
+              "总结要解释当天经历如何改变认知，不重复流水账。",
+              "下集预告只展示新地点，不提前消耗核心结果。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-hotel-reflection-next-stop-hook",
+            "guardrails": [
+              "反思保留人物主观视角，不推广为城市事实。",
+              "下一站提示放在主题总结完成后。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "opening-phased-hook-not-uniform-fast-cut",
+        "category": "opening_montage",
+        "source_support": 5,
+        "average_confidence": 0.97,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1C3546DEC6",
+            "observation_id": "obs-opening-four-phase-hook",
+            "guardrails": [
+              "不要把完整口播切成无法理解的碎句。",
+              "快剪必须放在行动推进段，不覆盖整段开场。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-opening-five-phase-hook",
+            "guardrails": [
+              "完整口播承担人物设定时不要按快剪密度强行切碎。",
+              "快剪镜头必须继续推进离家、告别或地理移动。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-opening-landmark-promise-to-departure",
+            "guardrails": [
+              "不要把人物设定切成口号碎片。",
+              "快速镜头必须推进真实离店、交通或地点变化。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1TNZUB4EF6",
+            "observation_id": "obs-paris-opening-four-phase-hook",
+            "guardrails": [
+              "快切只用于标题、回顾和明确移动。",
+              "人物风险设定和真实反应必须保持可读。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-opening-five-phase-tokyo-hook",
+            "guardrails": [
+              "超密短切只用于明确物流与地理推进。",
+              "人物反应、安检和进食过程需要保持可读。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "playback-rate-fast-forward-travel-compression-visual-estimate",
+        "category": "playback_rate",
+        "source_support": 3,
+        "average_confidence": 0.4867,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-downhill-speed-candidate",
+            "guardrails": [
+              "不得写成已确认 1.5x、2x 或其他精确倍率。",
+              "目标素材中只能生成候选预览，不能自动应用。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-night-walk-acceleration-candidate",
+            "guardrails": [
+              "在目标素材中先输出候选和试听预览，不自动写入精确倍速。",
+              "含关键对白时不得用快进破坏可懂度。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-last-shuttle-speed-candidate",
+            "guardrails": [
+              "不得写成已确认 1.5x、2x 或其他精确倍率。",
+              "目标素材只能生成候选预览并人工确认，不能自动应用。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "scenic-human-scale-to-aerial-geography",
+        "category": "scenic",
+        "source_support": 3,
+        "average_confidence": 0.95,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1C3546DEC6",
+            "observation_id": "obs-scenic-ground-to-aerial",
+            "guardrails": [
+              "同类花景必须有景别、人物或空间信息变化。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-scenic-ground-aerial-local-life",
+            "guardrails": [
+              "相同湖景和草地必须用景别、人物或行动变化区分。",
+              "美景段仍要保留真实生活者，避免变成无人物宣传片。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-landmark-ground-to-aerial",
+            "guardrails": [
+              "只描述成片可见的高位或航拍式视角，不推断具体设备。",
+              "不能只留地标空镜而删除人物抵达代价和尺度。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "subtitle-large-number-running-callback",
+        "category": "subtitle",
+        "source_support": 2,
+        "average_confidence": 0.98,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV1CrHwzUEJa",
+            "observation_id": "obs-hotel-price-large-number-callback",
+            "guardrails": [
+              "金额必须来自视频已陈述事实。",
+              "大字只保留足够读完的时间，不覆盖后续解释。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-hotel-1400-running-callback",
+            "guardrails": [
+              "金额必须来自成片可见或明确口播事实。",
+              "大字不能遮挡价格解释或片尾结束语。"
+            ]
+          }
+        ]
+      },
+      {
+        "technique_key": "subtitle-time-card-compresses-waiting",
+        "category": "subtitle",
+        "source_support": 3,
+        "average_confidence": 0.9733,
+        "pattern_scope": "stable",
+        "executor": "downstream_guidance",
+        "guardrail_variants": [
+          {
+            "source_id": "bilibili-BV19sm2BBEDd",
+            "observation_id": "obs-train-one-hour-time-card",
+            "guardrails": [
+              "时间卡必须明确说明时间跳跃，不能伪装成连续实时过程。",
+              "不要把硬切误报为画面变速或视觉变形。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1ETNMzEEWQ",
+            "observation_id": "obs-later-rest-time-card",
+            "guardrails": [
+              "时间卡必须明确说明省略，不能伪装成连续实时过程。",
+              "不要把独立卡片误报为画面变速。"
+            ]
+          },
+          {
+            "source_id": "bilibili-BV1aDHQejEAP",
+            "observation_id": "obs-later-city-time-card",
+            "guardrails": [
+              "时间卡必须明确说明省略。",
+              "不要把硬切或天色变化误报为画面变速。"
+            ]
+          }
+        ]
+      }
+    ],
+    "candidate_applications": {
+      "concise": {
+        "profile_id": "aggregated-reference-techniques-v1-30e44cc37595",
+        "eligible_pattern_keys": [
+          "humor-preserve-real-awkward-process"
+        ],
+        "applied_patterns": [],
+        "guidance_pattern_keys": [
+          "graphic-360-tiny-planet-to-pov-reframing",
+          "graphic-context-proof-before-action",
+          "graphic-inline-fact-caption-over-live-scene",
+          "graphic-labeled-ai-fantasy-escalation",
+          "graphic-next-episode-crt-teaser",
+          "graphic-reference-frame-to-live-location-match",
+          "graphic-risk-mode-color-wash-reset",
+          "graphic-single-symbol-curiosity-punctuation",
+          "graphic-torn-paper-memory-window",
+          "graphic-transport-motion-and-ambient-sound-bridge",
+          "humor-goal-conflict-self-sabotage-reversal",
+          "humor-interruption-held-wide-with-punctuation",
+          "humor-reaction-caption-sfx-no-overlay-stack",
+          "humor-self-narrated-melodrama-day-reset",
+          "humor-semantic-counterpoint-bgm",
+          "humor-social-auto-response-afterthought-reset",
+          "humor-visual-callback-to-earlier-prop",
+          "narrative-crisis-caption-black-card-relief",
+          "narrative-encounter-callback-closes-journey",
+          "narrative-helper-return-reframes-awkward-encounter",
+          "narrative-location-revisit-reframes-risk",
+          "narrative-price-callback-delayed-scenic-payoff",
+          "narrative-risk-prop-callback-chain",
+          "playback-rate-no-confirmed-speedup-on-dialogue-fluster",
+          "scenic-elevated-city-day-to-night-reveal",
+          "scenic-hardship-earned-lake-payoff",
+          "scenic-human-reaction-to-landmark-geography",
+          "scenic-human-scale-to-elevated-city-geography",
+          "scenic-landmark-exterior-to-interior-detail",
+          "scenic-pop-culture-memory-to-current-city",
+          "scenic-return-at-new-light-with-local-life",
+          "scenic-weather-reveal-to-city-geography",
+          "subtitle-bilingual-action-instruction",
+          "subtitle-location-title-delivers-promise",
+          "graphic-credits-self-deprecating-one-person-team",
+          "graphic-inline-reference-card-over-live-scene",
+          "humor-fluster-preserve-duration-with-one-punctuation",
+          "humor-mundane-action-impossible-vfx-escalation",
+          "humor-preserve-imperfect-camera-for-authenticity",
+          "humor-reality-triggered-familiar-sfx",
+          "humor-single-accent-then-hard-reset",
+          "music-genre-switch-for-night-horror-counterpoint",
+          "music-scenic-block-dialogue-protection",
+          "music-transition-reveal-synchronization",
+          "narrative-end-of-journey-montage-verbal-closure",
+          "narrative-error-discovery-and-explicit-correction",
+          "narrative-failure-adaptation-payoff",
+          "narrative-multiday-reset-with-carryover",
+          "narrative-reflection-summary-forward-hook",
+          "opening-phased-hook-not-uniform-fast-cut",
+          "playback-rate-fast-forward-travel-compression-visual-estimate",
+          "scenic-human-scale-to-aerial-geography",
+          "subtitle-large-number-running-callback",
+          "subtitle-time-card-compresses-waiting"
+        ]
+      },
+      "balanced": {
+        "profile_id": "aggregated-reference-techniques-v1-30e44cc37595",
+        "eligible_pattern_keys": [
+          "humor-preserve-real-awkward-process"
+        ],
+        "applied_patterns": [],
+        "guidance_pattern_keys": [
+          "graphic-360-tiny-planet-to-pov-reframing",
+          "graphic-context-proof-before-action",
+          "graphic-inline-fact-caption-over-live-scene",
+          "graphic-labeled-ai-fantasy-escalation",
+          "graphic-next-episode-crt-teaser",
+          "graphic-reference-frame-to-live-location-match",
+          "graphic-risk-mode-color-wash-reset",
+          "graphic-single-symbol-curiosity-punctuation",
+          "graphic-torn-paper-memory-window",
+          "graphic-transport-motion-and-ambient-sound-bridge",
+          "humor-goal-conflict-self-sabotage-reversal",
+          "humor-interruption-held-wide-with-punctuation",
+          "humor-reaction-caption-sfx-no-overlay-stack",
+          "humor-self-narrated-melodrama-day-reset",
+          "humor-semantic-counterpoint-bgm",
+          "humor-social-auto-response-afterthought-reset",
+          "humor-visual-callback-to-earlier-prop",
+          "narrative-crisis-caption-black-card-relief",
+          "narrative-encounter-callback-closes-journey",
+          "narrative-helper-return-reframes-awkward-encounter",
+          "narrative-location-revisit-reframes-risk",
+          "narrative-price-callback-delayed-scenic-payoff",
+          "narrative-risk-prop-callback-chain",
+          "playback-rate-no-confirmed-speedup-on-dialogue-fluster",
+          "scenic-elevated-city-day-to-night-reveal",
+          "scenic-hardship-earned-lake-payoff",
+          "scenic-human-reaction-to-landmark-geography",
+          "scenic-human-scale-to-elevated-city-geography",
+          "scenic-landmark-exterior-to-interior-detail",
+          "scenic-pop-culture-memory-to-current-city",
+          "scenic-return-at-new-light-with-local-life",
+          "scenic-weather-reveal-to-city-geography",
+          "subtitle-bilingual-action-instruction",
+          "subtitle-location-title-delivers-promise",
+          "graphic-credits-self-deprecating-one-person-team",
+          "graphic-inline-reference-card-over-live-scene",
+          "humor-fluster-preserve-duration-with-one-punctuation",
+          "humor-mundane-action-impossible-vfx-escalation",
+          "humor-preserve-imperfect-camera-for-authenticity",
+          "humor-reality-triggered-familiar-sfx",
+          "humor-single-accent-then-hard-reset",
+          "music-genre-switch-for-night-horror-counterpoint",
+          "music-scenic-block-dialogue-protection",
+          "music-transition-reveal-synchronization",
+          "narrative-end-of-journey-montage-verbal-closure",
+          "narrative-error-discovery-and-explicit-correction",
+          "narrative-failure-adaptation-payoff",
+          "narrative-multiday-reset-with-carryover",
+          "narrative-reflection-summary-forward-hook",
+          "opening-phased-hook-not-uniform-fast-cut",
+          "playback-rate-fast-forward-travel-compression-visual-estimate",
+          "scenic-human-scale-to-aerial-geography",
+          "subtitle-large-number-running-callback",
+          "subtitle-time-card-compresses-waiting"
+        ]
+      },
+      "immersive": {
+        "profile_id": "aggregated-reference-techniques-v1-30e44cc37595",
+        "eligible_pattern_keys": [
+          "humor-preserve-real-awkward-process"
+        ],
+        "applied_patterns": [],
+        "guidance_pattern_keys": [
+          "graphic-360-tiny-planet-to-pov-reframing",
+          "graphic-context-proof-before-action",
+          "graphic-inline-fact-caption-over-live-scene",
+          "graphic-labeled-ai-fantasy-escalation",
+          "graphic-next-episode-crt-teaser",
+          "graphic-reference-frame-to-live-location-match",
+          "graphic-risk-mode-color-wash-reset",
+          "graphic-single-symbol-curiosity-punctuation",
+          "graphic-torn-paper-memory-window",
+          "graphic-transport-motion-and-ambient-sound-bridge",
+          "humor-goal-conflict-self-sabotage-reversal",
+          "humor-interruption-held-wide-with-punctuation",
+          "humor-reaction-caption-sfx-no-overlay-stack",
+          "humor-self-narrated-melodrama-day-reset",
+          "humor-semantic-counterpoint-bgm",
+          "humor-social-auto-response-afterthought-reset",
+          "humor-visual-callback-to-earlier-prop",
+          "narrative-crisis-caption-black-card-relief",
+          "narrative-encounter-callback-closes-journey",
+          "narrative-helper-return-reframes-awkward-encounter",
+          "narrative-location-revisit-reframes-risk",
+          "narrative-price-callback-delayed-scenic-payoff",
+          "narrative-risk-prop-callback-chain",
+          "playback-rate-no-confirmed-speedup-on-dialogue-fluster",
+          "scenic-elevated-city-day-to-night-reveal",
+          "scenic-hardship-earned-lake-payoff",
+          "scenic-human-reaction-to-landmark-geography",
+          "scenic-human-scale-to-elevated-city-geography",
+          "scenic-landmark-exterior-to-interior-detail",
+          "scenic-pop-culture-memory-to-current-city",
+          "scenic-return-at-new-light-with-local-life",
+          "scenic-weather-reveal-to-city-geography",
+          "subtitle-bilingual-action-instruction",
+          "subtitle-location-title-delivers-promise",
+          "graphic-credits-self-deprecating-one-person-team",
+          "graphic-inline-reference-card-over-live-scene",
+          "humor-fluster-preserve-duration-with-one-punctuation",
+          "humor-mundane-action-impossible-vfx-escalation",
+          "humor-preserve-imperfect-camera-for-authenticity",
+          "humor-reality-triggered-familiar-sfx",
+          "humor-single-accent-then-hard-reset",
+          "music-genre-switch-for-night-horror-counterpoint",
+          "music-scenic-block-dialogue-protection",
+          "music-transition-reveal-synchronization",
+          "narrative-end-of-journey-montage-verbal-closure",
+          "narrative-error-discovery-and-explicit-correction",
+          "narrative-failure-adaptation-payoff",
+          "narrative-multiday-reset-with-carryover",
+          "narrative-reflection-summary-forward-hook",
+          "opening-phased-hook-not-uniform-fast-cut",
+          "playback-rate-fast-forward-travel-compression-visual-estimate",
+          "scenic-human-scale-to-aerial-geography",
+          "subtitle-large-number-running-callback",
+          "subtitle-time-card-compresses-waiting"
+        ]
+      }
+    }
+  },
+  "target_analysis_count": 10,
+  "minimum_change_ratio": 0.08,
+  "learning_precedence": [
+    "explicit_user_feedback",
+    "target_footage_evidence",
+    "cross_reference_patterns",
+    "source_specific_patterns"
+  ],
+  "candidate_directions": {
+    "concise": "fun_forward",
+    "balanced": "scenic_fun_balanced",
+    "immersive": "scenic_forward"
+  },
+  "recommended_variant": "concise",
+  "recommended_plan": "edit_plan.recommended.json",
+  "cut_review_manifest": "cut_review_manifest.json",
+  "approval_required": true,
+  "candidates": [
+    {
+      "variant": "concise",
+      "plan": "candidate.concise.json",
+      "evaluation": {
+        "variant": "concise",
+        "status": "passed",
+        "score": 0.7382,
+        "duration_sec": 3101.11,
+        "duration_fit": 0.0,
+        "dialogue_retention": 1.0,
+        "content_direction": "fun_forward",
+        "content_alignment": 0.1818,
+        "protection": {
+          "schema_version": "1.0",
+          "plan_version": 2,
+          "status": "passed",
+          "blocking_count": 0,
+          "warning_count": 0,
+          "policy": {
+            "locked_min_coverage": 0.95,
+            "protected_min_coverage": 0.8,
+            "protected_warning_coverage": 0.95,
+            "group_member_min_coverage": 0.8
+          },
+          "coverage_by_moment": {
+            "moment_crab_population_joke": 1.0,
+            "moment_salmon_fjord_context": 1.0,
+            "moment_bus_captive_joke": 1.0,
+            "moment_nordic_winter_context": 1.0,
+            "moment_fjord_formation": 1.0,
+            "moment_snow_promise": 1.0,
+            "moment_slippery_arrival": 1.0,
+            "moment_snow_arrival_reaction": 1.0,
+            "moment_first_photo_setup": 1.0,
+            "moment_first_pose": 1.0,
+            "moment_first_focus_failure": 1.0,
+            "moment_first_photo_reaction": 1.0,
+            "moment_big_eyes_joke": 1.0,
+            "moment_directing_pose": 1.0,
+            "moment_one_good_photo": 1.0,
+            "moment_photo_ugly_reaction": 1.0,
+            "moment_find_warmer_angle": 1.0,
+            "moment_pair_photo_setup": 1.0,
+            "moment_walking_photo_payoff": 1.0,
+            "moment_slippery_not_listening": 1.0,
+            "moment_camera_cold_failure": 1.0,
+            "moment_focus_still_broken": 1.0,
+            "moment_climb_indecision": 1.0,
+            "moment_cold_camera_explanation": 1.0,
+            "moment_slippery_finale": 1.0,
+            "moment_snow_ridge_breath": 1.0,
+            "moment_snow_valley_breath": 1.0,
+            "moment_clean_snow_breath": 1.0,
+            "moment_framed_snow_breath": 0.989,
+            "moment_waterfall_arrival": 1.0,
+            "moment_waterfall_photo_setup": 1.0,
+            "moment_waterfall_photo_countdown": 1.0,
+            "moment_train_pose_laugh": 1.0,
+            "moment_photo_result_before_boarding": 1.0,
+            "moment_board_train": 1.0,
+            "moment_jump_photo_praise": 1.0,
+            "moment_bad_crop_joke": 1.0,
+            "moment_train_photo_review": 1.0,
+            "moment_movie_face_banter": 1.0
+          },
+          "coverage_by_group": {
+            "group_route_to_snow": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_first_photo_focus": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_photo_coaching": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_cold_camera_failure": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_waterfall_to_train": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_good_bad_photo_review": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            }
+          },
+          "issues": []
+        },
+        "revision": {
+          "schema_version": "1.0",
+          "status": "passed",
+          "blocking_count": 0,
+          "minimum_change_ratio": 0.08,
+          "change_ratio": 1.0,
+          "parent_version": 1,
+          "candidate_version": 2,
+          "parent_segment_count": 44,
+          "candidate_segment_count": 11,
+          "parent_duration_sec": 885.0,
+          "candidate_duration_sec": 3101.11,
+          "duration_delta_sec": 2216.11,
+          "issues": []
+        },
+        "source_selection": {
+          "raw/GX010130.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 1,
+            "dialogue_selected": 1,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010132.MP4": {
+            "considered_shots": 3,
+            "selected_shots": 3,
+            "dialogue_considered": 3,
+            "dialogue_selected": 3,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010134.MP4": {
+            "considered_shots": 2,
+            "selected_shots": 2,
+            "dialogue_considered": 2,
+            "dialogue_selected": 2,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010135.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 1,
+            "dialogue_selected": 1,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010136.MP4": {
+            "considered_shots": 10,
+            "selected_shots": 7,
+            "dialogue_considered": 5,
+            "dialogue_selected": 5,
+            "scenic_selected": 0,
+            "fun_selected": 2
+          },
+          "raw/GX010138.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 0,
+            "dialogue_selected": 0,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010139.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 0,
+            "dialogue_selected": 0,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010141.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 0,
+            "dialogue_selected": 0,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010143.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 1,
+            "dialogue_selected": 1,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010144.MP4": {
+            "considered_shots": 4,
+            "selected_shots": 4,
+            "dialogue_considered": 4,
+            "dialogue_selected": 4,
+            "scenic_selected": 0,
+            "fun_selected": 2
+          }
+        },
+        "technique_application": {
+          "profile_id": "aggregated-reference-techniques-v1-30e44cc37595",
+          "eligible_pattern_keys": [
+            "humor-preserve-real-awkward-process"
+          ],
+          "applied_patterns": [],
+          "guidance_pattern_keys": [
+            "graphic-360-tiny-planet-to-pov-reframing",
+            "graphic-context-proof-before-action",
+            "graphic-inline-fact-caption-over-live-scene",
+            "graphic-labeled-ai-fantasy-escalation",
+            "graphic-next-episode-crt-teaser",
+            "graphic-reference-frame-to-live-location-match",
+            "graphic-risk-mode-color-wash-reset",
+            "graphic-single-symbol-curiosity-punctuation",
+            "graphic-torn-paper-memory-window",
+            "graphic-transport-motion-and-ambient-sound-bridge",
+            "humor-goal-conflict-self-sabotage-reversal",
+            "humor-interruption-held-wide-with-punctuation",
+            "humor-reaction-caption-sfx-no-overlay-stack",
+            "humor-self-narrated-melodrama-day-reset",
+            "humor-semantic-counterpoint-bgm",
+            "humor-social-auto-response-afterthought-reset",
+            "humor-visual-callback-to-earlier-prop",
+            "narrative-crisis-caption-black-card-relief",
+            "narrative-encounter-callback-closes-journey",
+            "narrative-helper-return-reframes-awkward-encounter",
+            "narrative-location-revisit-reframes-risk",
+            "narrative-price-callback-delayed-scenic-payoff",
+            "narrative-risk-prop-callback-chain",
+            "playback-rate-no-confirmed-speedup-on-dialogue-fluster",
+            "scenic-elevated-city-day-to-night-reveal",
+            "scenic-hardship-earned-lake-payoff",
+            "scenic-human-reaction-to-landmark-geography",
+            "scenic-human-scale-to-elevated-city-geography",
+            "scenic-landmark-exterior-to-interior-detail",
+            "scenic-pop-culture-memory-to-current-city",
+            "scenic-return-at-new-light-with-local-life",
+            "scenic-weather-reveal-to-city-geography",
+            "subtitle-bilingual-action-instruction",
+            "subtitle-location-title-delivers-promise",
+            "graphic-credits-self-deprecating-one-person-team",
+            "graphic-inline-reference-card-over-live-scene",
+            "humor-fluster-preserve-duration-with-one-punctuation",
+            "humor-mundane-action-impossible-vfx-escalation",
+            "humor-preserve-imperfect-camera-for-authenticity",
+            "humor-reality-triggered-familiar-sfx",
+            "humor-single-accent-then-hard-reset",
+            "music-genre-switch-for-night-horror-counterpoint",
+            "music-scenic-block-dialogue-protection",
+            "music-transition-reveal-synchronization",
+            "narrative-end-of-journey-montage-verbal-closure",
+            "narrative-error-discovery-and-explicit-correction",
+            "narrative-failure-adaptation-payoff",
+            "narrative-multiday-reset-with-carryover",
+            "narrative-reflection-summary-forward-hook",
+            "opening-phased-hook-not-uniform-fast-cut",
+            "playback-rate-fast-forward-travel-compression-visual-estimate",
+            "scenic-human-scale-to-aerial-geography",
+            "subtitle-large-number-running-callback",
+            "subtitle-time-card-compresses-waiting"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "balanced",
+      "plan": "candidate.balanced.json",
+      "evaluation": {
+        "variant": "balanced",
+        "status": "passed",
+        "score": 0.7291,
+        "duration_sec": 3101.11,
+        "duration_fit": 0.0,
+        "dialogue_retention": 1.0,
+        "content_direction": "scenic_fun_balanced",
+        "content_alignment": 0.0909,
+        "protection": {
+          "schema_version": "1.0",
+          "plan_version": 2,
+          "status": "passed",
+          "blocking_count": 0,
+          "warning_count": 0,
+          "policy": {
+            "locked_min_coverage": 0.95,
+            "protected_min_coverage": 0.8,
+            "protected_warning_coverage": 0.95,
+            "group_member_min_coverage": 0.8
+          },
+          "coverage_by_moment": {
+            "moment_crab_population_joke": 1.0,
+            "moment_salmon_fjord_context": 1.0,
+            "moment_bus_captive_joke": 1.0,
+            "moment_nordic_winter_context": 1.0,
+            "moment_fjord_formation": 1.0,
+            "moment_snow_promise": 1.0,
+            "moment_slippery_arrival": 1.0,
+            "moment_snow_arrival_reaction": 1.0,
+            "moment_first_photo_setup": 1.0,
+            "moment_first_pose": 1.0,
+            "moment_first_focus_failure": 1.0,
+            "moment_first_photo_reaction": 1.0,
+            "moment_big_eyes_joke": 1.0,
+            "moment_directing_pose": 1.0,
+            "moment_one_good_photo": 1.0,
+            "moment_photo_ugly_reaction": 1.0,
+            "moment_find_warmer_angle": 1.0,
+            "moment_pair_photo_setup": 1.0,
+            "moment_walking_photo_payoff": 1.0,
+            "moment_slippery_not_listening": 1.0,
+            "moment_camera_cold_failure": 1.0,
+            "moment_focus_still_broken": 1.0,
+            "moment_climb_indecision": 1.0,
+            "moment_cold_camera_explanation": 1.0,
+            "moment_slippery_finale": 1.0,
+            "moment_snow_ridge_breath": 1.0,
+            "moment_snow_valley_breath": 1.0,
+            "moment_clean_snow_breath": 1.0,
+            "moment_framed_snow_breath": 0.989,
+            "moment_waterfall_arrival": 1.0,
+            "moment_waterfall_photo_setup": 1.0,
+            "moment_waterfall_photo_countdown": 1.0,
+            "moment_train_pose_laugh": 1.0,
+            "moment_photo_result_before_boarding": 1.0,
+            "moment_board_train": 1.0,
+            "moment_jump_photo_praise": 1.0,
+            "moment_bad_crop_joke": 1.0,
+            "moment_train_photo_review": 1.0,
+            "moment_movie_face_banter": 1.0
+          },
+          "coverage_by_group": {
+            "group_route_to_snow": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_first_photo_focus": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_photo_coaching": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_cold_camera_failure": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_waterfall_to_train": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_good_bad_photo_review": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            }
+          },
+          "issues": []
+        },
+        "revision": {
+          "schema_version": "1.0",
+          "status": "passed",
+          "blocking_count": 0,
+          "minimum_change_ratio": 0.08,
+          "change_ratio": 1.0,
+          "parent_version": 1,
+          "candidate_version": 2,
+          "parent_segment_count": 44,
+          "candidate_segment_count": 11,
+          "parent_duration_sec": 885.0,
+          "candidate_duration_sec": 3101.11,
+          "duration_delta_sec": 2216.11,
+          "issues": []
+        },
+        "source_selection": {
+          "raw/GX010130.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 1,
+            "dialogue_selected": 1,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010132.MP4": {
+            "considered_shots": 3,
+            "selected_shots": 3,
+            "dialogue_considered": 3,
+            "dialogue_selected": 3,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010134.MP4": {
+            "considered_shots": 2,
+            "selected_shots": 2,
+            "dialogue_considered": 2,
+            "dialogue_selected": 2,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010135.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 1,
+            "dialogue_selected": 1,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010136.MP4": {
+            "considered_shots": 10,
+            "selected_shots": 7,
+            "dialogue_considered": 5,
+            "dialogue_selected": 5,
+            "scenic_selected": 0,
+            "fun_selected": 2
+          },
+          "raw/GX010138.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 0,
+            "dialogue_selected": 0,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010139.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 0,
+            "dialogue_selected": 0,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010141.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 0,
+            "dialogue_selected": 0,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010143.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 1,
+            "dialogue_selected": 1,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010144.MP4": {
+            "considered_shots": 4,
+            "selected_shots": 4,
+            "dialogue_considered": 4,
+            "dialogue_selected": 4,
+            "scenic_selected": 0,
+            "fun_selected": 2
+          }
+        },
+        "technique_application": {
+          "profile_id": "aggregated-reference-techniques-v1-30e44cc37595",
+          "eligible_pattern_keys": [
+            "humor-preserve-real-awkward-process"
+          ],
+          "applied_patterns": [],
+          "guidance_pattern_keys": [
+            "graphic-360-tiny-planet-to-pov-reframing",
+            "graphic-context-proof-before-action",
+            "graphic-inline-fact-caption-over-live-scene",
+            "graphic-labeled-ai-fantasy-escalation",
+            "graphic-next-episode-crt-teaser",
+            "graphic-reference-frame-to-live-location-match",
+            "graphic-risk-mode-color-wash-reset",
+            "graphic-single-symbol-curiosity-punctuation",
+            "graphic-torn-paper-memory-window",
+            "graphic-transport-motion-and-ambient-sound-bridge",
+            "humor-goal-conflict-self-sabotage-reversal",
+            "humor-interruption-held-wide-with-punctuation",
+            "humor-reaction-caption-sfx-no-overlay-stack",
+            "humor-self-narrated-melodrama-day-reset",
+            "humor-semantic-counterpoint-bgm",
+            "humor-social-auto-response-afterthought-reset",
+            "humor-visual-callback-to-earlier-prop",
+            "narrative-crisis-caption-black-card-relief",
+            "narrative-encounter-callback-closes-journey",
+            "narrative-helper-return-reframes-awkward-encounter",
+            "narrative-location-revisit-reframes-risk",
+            "narrative-price-callback-delayed-scenic-payoff",
+            "narrative-risk-prop-callback-chain",
+            "playback-rate-no-confirmed-speedup-on-dialogue-fluster",
+            "scenic-elevated-city-day-to-night-reveal",
+            "scenic-hardship-earned-lake-payoff",
+            "scenic-human-reaction-to-landmark-geography",
+            "scenic-human-scale-to-elevated-city-geography",
+            "scenic-landmark-exterior-to-interior-detail",
+            "scenic-pop-culture-memory-to-current-city",
+            "scenic-return-at-new-light-with-local-life",
+            "scenic-weather-reveal-to-city-geography",
+            "subtitle-bilingual-action-instruction",
+            "subtitle-location-title-delivers-promise",
+            "graphic-credits-self-deprecating-one-person-team",
+            "graphic-inline-reference-card-over-live-scene",
+            "humor-fluster-preserve-duration-with-one-punctuation",
+            "humor-mundane-action-impossible-vfx-escalation",
+            "humor-preserve-imperfect-camera-for-authenticity",
+            "humor-reality-triggered-familiar-sfx",
+            "humor-single-accent-then-hard-reset",
+            "music-genre-switch-for-night-horror-counterpoint",
+            "music-scenic-block-dialogue-protection",
+            "music-transition-reveal-synchronization",
+            "narrative-end-of-journey-montage-verbal-closure",
+            "narrative-error-discovery-and-explicit-correction",
+            "narrative-failure-adaptation-payoff",
+            "narrative-multiday-reset-with-carryover",
+            "narrative-reflection-summary-forward-hook",
+            "opening-phased-hook-not-uniform-fast-cut",
+            "playback-rate-fast-forward-travel-compression-visual-estimate",
+            "scenic-human-scale-to-aerial-geography",
+            "subtitle-large-number-running-callback",
+            "subtitle-time-card-compresses-waiting"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "immersive",
+      "plan": "candidate.immersive.json",
+      "evaluation": {
+        "variant": "immersive",
+        "status": "passed",
+        "score": 0.72,
+        "duration_sec": 3101.11,
+        "duration_fit": 0.0,
+        "dialogue_retention": 1.0,
+        "content_direction": "scenic_forward",
+        "content_alignment": 0.0,
+        "protection": {
+          "schema_version": "1.0",
+          "plan_version": 2,
+          "status": "passed",
+          "blocking_count": 0,
+          "warning_count": 0,
+          "policy": {
+            "locked_min_coverage": 0.95,
+            "protected_min_coverage": 0.8,
+            "protected_warning_coverage": 0.95,
+            "group_member_min_coverage": 0.8
+          },
+          "coverage_by_moment": {
+            "moment_crab_population_joke": 1.0,
+            "moment_salmon_fjord_context": 1.0,
+            "moment_bus_captive_joke": 1.0,
+            "moment_nordic_winter_context": 1.0,
+            "moment_fjord_formation": 1.0,
+            "moment_snow_promise": 1.0,
+            "moment_slippery_arrival": 1.0,
+            "moment_snow_arrival_reaction": 1.0,
+            "moment_first_photo_setup": 1.0,
+            "moment_first_pose": 1.0,
+            "moment_first_focus_failure": 1.0,
+            "moment_first_photo_reaction": 1.0,
+            "moment_big_eyes_joke": 1.0,
+            "moment_directing_pose": 1.0,
+            "moment_one_good_photo": 1.0,
+            "moment_photo_ugly_reaction": 1.0,
+            "moment_find_warmer_angle": 1.0,
+            "moment_pair_photo_setup": 1.0,
+            "moment_walking_photo_payoff": 1.0,
+            "moment_slippery_not_listening": 1.0,
+            "moment_camera_cold_failure": 1.0,
+            "moment_focus_still_broken": 1.0,
+            "moment_climb_indecision": 1.0,
+            "moment_cold_camera_explanation": 1.0,
+            "moment_slippery_finale": 1.0,
+            "moment_snow_ridge_breath": 1.0,
+            "moment_snow_valley_breath": 1.0,
+            "moment_clean_snow_breath": 1.0,
+            "moment_framed_snow_breath": 0.989,
+            "moment_waterfall_arrival": 1.0,
+            "moment_waterfall_photo_setup": 1.0,
+            "moment_waterfall_photo_countdown": 1.0,
+            "moment_train_pose_laugh": 1.0,
+            "moment_photo_result_before_boarding": 1.0,
+            "moment_board_train": 1.0,
+            "moment_jump_photo_praise": 1.0,
+            "moment_bad_crop_joke": 1.0,
+            "moment_train_photo_review": 1.0,
+            "moment_movie_face_banter": 1.0
+          },
+          "coverage_by_group": {
+            "group_route_to_snow": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_first_photo_focus": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_photo_coaching": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_cold_camera_failure": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_waterfall_to_train": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            },
+            "group_good_bad_photo_review": {
+              "setup": 1.0,
+              "payoff": 1.0,
+              "reaction": 1.0
+            }
+          },
+          "issues": []
+        },
+        "revision": {
+          "schema_version": "1.0",
+          "status": "passed",
+          "blocking_count": 0,
+          "minimum_change_ratio": 0.08,
+          "change_ratio": 1.0,
+          "parent_version": 1,
+          "candidate_version": 2,
+          "parent_segment_count": 44,
+          "candidate_segment_count": 11,
+          "parent_duration_sec": 885.0,
+          "candidate_duration_sec": 3101.11,
+          "duration_delta_sec": 2216.11,
+          "issues": []
+        },
+        "source_selection": {
+          "raw/GX010130.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 1,
+            "dialogue_selected": 1,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010132.MP4": {
+            "considered_shots": 3,
+            "selected_shots": 3,
+            "dialogue_considered": 3,
+            "dialogue_selected": 3,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010134.MP4": {
+            "considered_shots": 2,
+            "selected_shots": 2,
+            "dialogue_considered": 2,
+            "dialogue_selected": 2,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010135.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 1,
+            "dialogue_selected": 1,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010136.MP4": {
+            "considered_shots": 10,
+            "selected_shots": 7,
+            "dialogue_considered": 5,
+            "dialogue_selected": 5,
+            "scenic_selected": 0,
+            "fun_selected": 2
+          },
+          "raw/GX010138.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 0,
+            "dialogue_selected": 0,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010139.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 0,
+            "dialogue_selected": 0,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010141.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 0,
+            "dialogue_selected": 0,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010143.MP4": {
+            "considered_shots": 1,
+            "selected_shots": 1,
+            "dialogue_considered": 1,
+            "dialogue_selected": 1,
+            "scenic_selected": 0,
+            "fun_selected": 0
+          },
+          "raw/GX010144.MP4": {
+            "considered_shots": 4,
+            "selected_shots": 4,
+            "dialogue_considered": 4,
+            "dialogue_selected": 4,
+            "scenic_selected": 0,
+            "fun_selected": 2
+          }
+        },
+        "technique_application": {
+          "profile_id": "aggregated-reference-techniques-v1-30e44cc37595",
+          "eligible_pattern_keys": [
+            "humor-preserve-real-awkward-process"
+          ],
+          "applied_patterns": [],
+          "guidance_pattern_keys": [
+            "graphic-360-tiny-planet-to-pov-reframing",
+            "graphic-context-proof-before-action",
+            "graphic-inline-fact-caption-over-live-scene",
+            "graphic-labeled-ai-fantasy-escalation",
+            "graphic-next-episode-crt-teaser",
+            "graphic-reference-frame-to-live-location-match",
+            "graphic-risk-mode-color-wash-reset",
+            "graphic-single-symbol-curiosity-punctuation",
+            "graphic-torn-paper-memory-window",
+            "graphic-transport-motion-and-ambient-sound-bridge",
+            "humor-goal-conflict-self-sabotage-reversal",
+            "humor-interruption-held-wide-with-punctuation",
+            "humor-reaction-caption-sfx-no-overlay-stack",
+            "humor-self-narrated-melodrama-day-reset",
+            "humor-semantic-counterpoint-bgm",
+            "humor-social-auto-response-afterthought-reset",
+            "humor-visual-callback-to-earlier-prop",
+            "narrative-crisis-caption-black-card-relief",
+            "narrative-encounter-callback-closes-journey",
+            "narrative-helper-return-reframes-awkward-encounter",
+            "narrative-location-revisit-reframes-risk",
+            "narrative-price-callback-delayed-scenic-payoff",
+            "narrative-risk-prop-callback-chain",
+            "playback-rate-no-confirmed-speedup-on-dialogue-fluster",
+            "scenic-elevated-city-day-to-night-reveal",
+            "scenic-hardship-earned-lake-payoff",
+            "scenic-human-reaction-to-landmark-geography",
+            "scenic-human-scale-to-elevated-city-geography",
+            "scenic-landmark-exterior-to-interior-detail",
+            "scenic-pop-culture-memory-to-current-city",
+            "scenic-return-at-new-light-with-local-life",
+            "scenic-weather-reveal-to-city-geography",
+            "subtitle-bilingual-action-instruction",
+            "subtitle-location-title-delivers-promise",
+            "graphic-credits-self-deprecating-one-person-team",
+            "graphic-inline-reference-card-over-live-scene",
+            "humor-fluster-preserve-duration-with-one-punctuation",
+            "humor-mundane-action-impossible-vfx-escalation",
+            "humor-preserve-imperfect-camera-for-authenticity",
+            "humor-reality-triggered-familiar-sfx",
+            "humor-single-accent-then-hard-reset",
+            "music-genre-switch-for-night-horror-counterpoint",
+            "music-scenic-block-dialogue-protection",
+            "music-transition-reveal-synchronization",
+            "narrative-end-of-journey-montage-verbal-closure",
+            "narrative-error-discovery-and-explicit-correction",
+            "narrative-failure-adaptation-payoff",
+            "narrative-multiday-reset-with-carryover",
+            "narrative-reflection-summary-forward-hook",
+            "opening-phased-hook-not-uniform-fast-cut",
+            "playback-rate-fast-forward-travel-compression-visual-estimate",
+            "scenic-human-scale-to-aerial-geography",
+            "subtitle-large-number-running-callback",
+            "subtitle-time-card-compresses-waiting"
+          ]
+        }
+      }
+    }
+  ]
+}

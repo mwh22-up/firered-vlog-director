@@ -1,0 +1,506 @@
+{
+  "schema_version": "1.0",
+  "project_id": "nordic-130-144",
+  "version": 1,
+  "parent_version": null,
+  "brief": {
+    "target_duration_sec": 900,
+    "aspect_ratio": "16:9",
+    "mode": "timeline",
+    "keep_dialogue": true
+  },
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "从港口到雪山",
+      "target_duration_sec": 132.5,
+      "segments": [
+        {
+          "source": "raw/GX010130.MP4",
+          "in_sec": 26.29,
+          "out_sec": 47.33,
+          "story_role": "humor",
+          "reason": "帝王蟹数量约为人口十倍，以“帮助消灭它”快速建立地点信息和轻笑点。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.9
+        },
+        {
+          "source": "raw/GX010130.MP4",
+          "in_sec": 86.99,
+          "out_sec": 125.47,
+          "story_role": "meaningful_dialogue",
+          "reason": "用峡湾养殖和沿途鱼场说明补足旅行背景，保留完整生长周期句链。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.86
+        },
+        {
+          "source": "raw/GX010130.MP4",
+          "in_sec": 215.94,
+          "out_sec": 225.36,
+          "story_role": "humor",
+          "reason": "车上讲解因为大家都跑不了，短促自然地换气。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.92
+        },
+        {
+          "source": "raw/GX010132.MP4",
+          "in_sec": 0,
+          "out_sec": 28.2,
+          "story_role": "culture_observation",
+          "reason": "冬季日照短与花岗岩地貌和沿途画面匹配，控制在半分钟内。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.84
+        },
+        {
+          "source": "raw/GX010134.MP4",
+          "in_sec": 198.3,
+          "out_sec": 224.04,
+          "story_role": "scenic_reveal",
+          "reason": "峡湾由冰原切割并接受外海与雨雪融水，内容和山水窗景一致。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.88
+        },
+        {
+          "source": "raw/GX010135.MP4",
+          "in_sec": 17.28,
+          "out_sec": 26.9,
+          "story_role": "setup",
+          "reason": "“前面有雪山”并承诺下午会上雪山拍照，直接引出下一章。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "ch02",
+      "title": "雪地拍照越拍越紧张",
+      "target_duration_sec": 482.49,
+      "segments": [
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 0.27,
+          "out_sec": 15.51,
+          "story_role": "payoff",
+          "reason": "从大巴下车立即发现雪地很滑，兑现上一章的雪山承诺。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.92
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 39.85,
+          "out_sec": 50,
+          "story_role": "establishing",
+          "reason": "十秒确认停车场、人物和雪坡，不把雪景拖成长空镜。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.82
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 78.44,
+          "out_sec": 113.83,
+          "story_role": "setup",
+          "reason": "寻找可站位置、互相提醒慢点并交换相机，建立第一次互拍。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.88
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 129.53,
+          "out_sec": 142.63,
+          "story_role": "playful_interaction",
+          "reason": "指导侧面对镜，人物与雪山同框。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.86
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 148.04,
+          "out_sec": 153.68,
+          "story_role": "playful_interaction",
+          "reason": "用短指令承接摆姿，删去中间长静默。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.8
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 163.79,
+          "out_sec": 188.32,
+          "story_role": "complication",
+          "reason": "眼睛别挤后相机连续对不上焦，第一次出现明确阻力。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.92
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 190.34,
+          "out_sec": 218.94,
+          "story_role": "reaction",
+          "reason": "重新拿相机、摆好并得到“好美啊、再来两个”的正向反馈。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.86
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 230.19,
+          "out_sec": 234.31,
+          "story_role": "humor",
+          "reason": "“是不是眼太大了”构成很短的表情笑点。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.8
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 270.2,
+          "out_sec": 301.81,
+          "story_role": "setup",
+          "reason": "催促别耽误时间、调整侧身并吐槽背包露出来太丑。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.91
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 309.73,
+          "out_sec": 329.41,
+          "story_role": "playful_interaction",
+          "reason": "继续仰头、低脸、侧身等具体指导，保留互动节奏。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.88
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 332.01,
+          "out_sec": 360,
+          "story_role": "meaningful_dialogue",
+          "reason": "边走边拍后总结拍很多没用，关键是一张出片。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.93
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 361.5,
+          "out_sec": 389.15,
+          "story_role": "reaction",
+          "reason": "继续倒数和调整姿势，最后以“拍得好丑”回收笑点。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.9
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 393.35,
+          "out_sec": 416.76,
+          "story_role": "playful_interaction",
+          "reason": "寻找更好角度又嫌两边都冷，展示拍摄与体感冲突。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.84
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 449.63,
+          "out_sec": 479.22,
+          "story_role": "setup",
+          "reason": "太冷不想拍又转为给两人合拍，保留笑声和姿势指导。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.86
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 482.76,
+          "out_sec": 511.45,
+          "story_role": "payoff",
+          "reason": "倒数、换姿势并让人物向镜头走，完成合拍动作。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.84
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 523.81,
+          "out_sec": 542.5,
+          "story_role": "humor",
+          "reason": "从哪边好看转为太滑，并出现“你不听我／我就不听你”。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.92
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 545.58,
+          "out_sec": 587.7,
+          "story_role": "complication",
+          "reason": "雪地很滑与相机对不上焦同时升级，担心相机彻底坏掉。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.94
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 606.88,
+          "out_sec": 620.6,
+          "story_role": "complication",
+          "reason": "走上步道后相机仍完全对不上焦，确认问题持续。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.82
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 624.22,
+          "out_sec": 660.02,
+          "story_role": "playful_interaction",
+          "reason": "围绕好不好看、怕不怕滑、到底去不去反复改变主意。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.91
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 661.94,
+          "out_sec": 680.36,
+          "story_role": "reaction",
+          "reason": "提醒别摔倒，并推测相机因为天冷而失焦。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.84
+        },
+        {
+          "source": "raw/GX010136.MP4",
+          "in_sec": 682.34,
+          "out_sec": 710.69,
+          "story_role": "closing_humor",
+          "reason": "互相搀扶走雪路，最后以“太滑了，建议不要来了”反高潮收束。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.94
+        }
+      ]
+    },
+    {
+      "id": "ch03",
+      "title": "雪山列车的短暂呼吸",
+      "target_duration_sec": 17,
+      "segments": [
+        {
+          "source": "raw/GX010138.MP4",
+          "in_sec": 378,
+          "out_sec": 382,
+          "story_role": "transition",
+          "reason": "雪脊、房屋和田野的四秒窗景，只作地点过渡。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.8
+        },
+        {
+          "source": "raw/GX010139.MP4",
+          "in_sec": 165,
+          "out_sec": 170,
+          "story_role": "panorama",
+          "reason": "选择层次最好的五秒山谷雪山，避开红灯反射。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.84
+        },
+        {
+          "source": "raw/GX010141.MP4",
+          "in_sec": 5,
+          "out_sec": 10,
+          "story_role": "weather_reveal",
+          "reason": "开阔雪地、红色小屋与树林，五秒即止。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.87
+        },
+        {
+          "source": "raw/GX010143.MP4",
+          "in_sec": 0,
+          "out_sec": 3,
+          "story_role": "transition",
+          "reason": "车窗框住雪山道路，用三秒带入瀑布停靠点。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.78
+        }
+      ]
+    },
+    {
+      "id": "ch04",
+      "title": "瀑布、车站与照片审判",
+      "target_duration_sec": 253.01,
+      "segments": [
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 0,
+          "out_sec": 12.98,
+          "story_role": "establishing",
+          "reason": "游客抵达雪瀑布并提议在标记处拍照。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.88
+        },
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 15,
+          "out_sec": 30,
+          "story_role": "scenic_reveal",
+          "reason": "十五秒展示雪覆岩壁和瀑布，不连续堆纯景。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.9
+        },
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 37,
+          "out_sec": 39.58,
+          "story_role": "reaction",
+          "reason": "以“好看吗”结束瀑布建立段。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.82
+        },
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 60.05,
+          "out_sec": 87.26,
+          "story_role": "setup",
+          "reason": "安排站位、穿衣并准备互拍，保留人物动作和地点。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.87
+        },
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 91.22,
+          "out_sec": 117.56,
+          "story_role": "playful_interaction",
+          "reason": "反复调整头和站位、倒数拍摄，并吐槽一点都不冷。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.86
+        },
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 119.94,
+          "out_sec": 146.68,
+          "story_role": "payoff",
+          "reason": "在绿色 Flåmsbana 列车旁继续指导姿势，以笑声作为拍摄回报。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.92
+        },
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 148.68,
+          "out_sec": 167.66,
+          "story_role": "reaction",
+          "reason": "确认照片拍到了、评价效果并催促准备上车。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.84
+        },
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 177.08,
+          "out_sec": 182.54,
+          "story_role": "travel_transition",
+          "reason": "连续喊上车并进入复古列车，完成场景转折。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.91
+        },
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 190.05,
+          "out_sec": 215.45,
+          "story_role": "setup",
+          "reason": "列车内回看照片，先夸跳起来的抓拍非常好看。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.9
+        },
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 220.66,
+          "out_sec": 249.78,
+          "story_role": "payoff",
+          "reason": "拿出反例：要么没身体要么没头，并反问是不是在开玩笑。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.95
+        },
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 271.02,
+          "out_sec": 291.34,
+          "story_role": "reaction",
+          "reason": "继续比较照片、询问有没有自己的照片并互相评价。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.84
+        },
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 295.76,
+          "out_sec": 298.68,
+          "story_role": "dialogue",
+          "reason": "一句补充照片评价，跨过无意义静默。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.76
+        },
+        {
+          "source": "raw/GX010144.MP4",
+          "in_sec": 302.13,
+          "out_sec": 342.09,
+          "story_role": "closing_humor",
+          "reason": "最后一轮互评，以“很上相、电影脸”轻松结束。",
+          "keep_original_audio": true,
+          "beat_snap": false,
+          "confidence": 0.82
+        }
+      ]
+    }
+  ],
+  "music": [],
+  "qa": [
+    {
+      "check": "source_scope",
+      "status": "passed",
+      "note": "仅使用 GX010130 至 GX010144，本计划未引用旧项目时间线或旧成片。"
+    },
+    {
+      "check": "dialogue_boundaries",
+      "status": "human_reviewed",
+      "note": "入选对白依据完整 ASR 句界，后续代理成片还需逐切点听审。"
+    },
+    {
+      "check": "scenic_limit",
+      "status": "passed",
+      "note": "专门窗景章节仅 17 秒；其他景色均服务于讲解或人物事件。"
+    },
+    {
+      "check": "subtitle_policy",
+      "status": "planned",
+      "note": "ASR 未完成逐字听校，因此正式片不烧入字幕，避免乱码和错字。"
+    }
+  ],
+  "created_at": "2026-08-02T09:49:49Z"
+}

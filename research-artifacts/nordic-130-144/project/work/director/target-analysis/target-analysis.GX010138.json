@@ -1,0 +1,299 @@
+{
+  "schema_version": "1.0",
+  "source": {
+    "source_id": "GX010138",
+    "url": "local-target://GX010138.MP4",
+    "media_path": "${PROJECT_ROOT}\\work\\proxy\\78cb94b1bc65334e.mp4",
+    "target_source": "raw/GX010138.MP4",
+    "aliases": [
+      "GX010138.MP4",
+      "raw/GX010138.MP4"
+    ]
+  },
+  "generated_at": "2026-08-02T09:39:12.134768+00:00",
+  "configuration": {
+    "scene_threshold": 0.22,
+    "visual_fps": 2.0,
+    "audio_window_sec": 0.5,
+    "asr_provider": "faster-whisper",
+    "asr_model": "large-v3-turbo",
+    "language": "zh"
+  },
+  "media": {
+    "duration_sec": 397.33,
+    "size_bytes": 60620247,
+    "streams": [
+      {
+        "index": 0,
+        "codec_type": "video",
+        "width": 960,
+        "height": 540,
+        "r_frame_rate": "30000/1001"
+      },
+      {
+        "index": 1,
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "index": 2,
+        "codec_type": "data",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "shot_count": 1,
+    "median_shot_duration_sec": 397.33,
+    "p75_shot_duration_sec": 397.33,
+    "shots_under_1_sec": 0,
+    "shots_over_5_sec": 1,
+    "silent_ratio": 0.0,
+    "audio_kind_ratios": {
+      "ambient_likely": 0.0818,
+      "music_likely": 0.9186
+    },
+    "opening_15_sec": {
+      "shot_count": 1,
+      "average_shot_duration_sec": 397.33
+    }
+  },
+  "transcription": {
+    "status": "ready",
+    "provider": "faster-whisper",
+    "model": "large-v3-turbo",
+    "language": "zh",
+    "language_probability": 1.0,
+    "duration_sec": 397.312,
+    "segments": [],
+    "words": []
+  },
+  "audio_segments": [
+    {
+      "start_sec": 0.0,
+      "end_sec": 9.0,
+      "kind": "music_likely",
+      "average_rms": 0.070873,
+      "peak": 0.257172
+    },
+    {
+      "start_sec": 9.0,
+      "end_sec": 11.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.082827,
+      "peak": 0.312134
+    },
+    {
+      "start_sec": 11.5,
+      "end_sec": 102.0,
+      "kind": "music_likely",
+      "average_rms": 0.081134,
+      "peak": 0.354828
+    },
+    {
+      "start_sec": 102.0,
+      "end_sec": 104.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.062374,
+      "peak": 0.227966
+    },
+    {
+      "start_sec": 104.5,
+      "end_sec": 146.0,
+      "kind": "music_likely",
+      "average_rms": 0.081159,
+      "peak": 0.34549
+    },
+    {
+      "start_sec": 146.0,
+      "end_sec": 154.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.08188,
+      "peak": 0.34903
+    },
+    {
+      "start_sec": 154.5,
+      "end_sec": 209.5,
+      "kind": "music_likely",
+      "average_rms": 0.084191,
+      "peak": 0.376892
+    },
+    {
+      "start_sec": 209.5,
+      "end_sec": 214.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.095376,
+      "peak": 0.422058
+    },
+    {
+      "start_sec": 214.0,
+      "end_sec": 217.5,
+      "kind": "music_likely",
+      "average_rms": 0.094079,
+      "peak": 0.320648
+    },
+    {
+      "start_sec": 217.5,
+      "end_sec": 218.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.093348,
+      "peak": 0.340698
+    },
+    {
+      "start_sec": 218.5,
+      "end_sec": 219.5,
+      "kind": "music_likely",
+      "average_rms": 0.098368,
+      "peak": 0.468842
+    },
+    {
+      "start_sec": 219.5,
+      "end_sec": 225.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.093627,
+      "peak": 0.406555
+    },
+    {
+      "start_sec": 225.5,
+      "end_sec": 237.0,
+      "kind": "music_likely",
+      "average_rms": 0.077849,
+      "peak": 0.306122
+    },
+    {
+      "start_sec": 237.0,
+      "end_sec": 239.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.07468,
+      "peak": 0.354065
+    },
+    {
+      "start_sec": 239.0,
+      "end_sec": 261.0,
+      "kind": "music_likely",
+      "average_rms": 0.088553,
+      "peak": 0.37854
+    },
+    {
+      "start_sec": 261.0,
+      "end_sec": 265.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.098525,
+      "peak": 0.405487
+    },
+    {
+      "start_sec": 265.0,
+      "end_sec": 302.5,
+      "kind": "music_likely",
+      "average_rms": 0.091793,
+      "peak": 0.428986
+    },
+    {
+      "start_sec": 302.5,
+      "end_sec": 303.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.08572,
+      "peak": 0.28244
+    },
+    {
+      "start_sec": 303.5,
+      "end_sec": 329.5,
+      "kind": "music_likely",
+      "average_rms": 0.084019,
+      "peak": 0.358917
+    },
+    {
+      "start_sec": 329.5,
+      "end_sec": 330.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.080885,
+      "peak": 0.227722
+    },
+    {
+      "start_sec": 330.0,
+      "end_sec": 397.5,
+      "kind": "music_likely",
+      "average_rms": 0.093101,
+      "peak": 0.464539
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "shot-0001",
+      "start_sec": 0.0,
+      "end_sec": 397.33,
+      "duration_sec": 397.33,
+      "role": "establishing",
+      "speech_ratio": 0.0,
+      "visual": {
+        "brightness": 0.25251,
+        "contrast": 0.21643,
+        "sharpness": 0.0378,
+        "motion": 0.04573,
+        "visual_hash": "ffffffff7c03f8027e007ff006ff00000001"
+      },
+      "audio": {
+        "rms": 0.085469,
+        "peak": 0.468842,
+        "spectral_centroid_hz": 672.72,
+        "spectral_flatness": 0.145715,
+        "kind": "music_likely"
+      },
+      "novelty_score": 1.0,
+      "quality_score": 0.534,
+      "keep_score": 0.5272,
+      "recommendation": "protect",
+      "reasons": [
+        "建立地点或场景关系",
+        "提供新的视觉信息",
+        "画面清晰度较低"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event_id": "event-001",
+      "start_sec": 0.0,
+      "end_sec": 397.33,
+      "duration_sec": 397.33,
+      "event_type": "observational",
+      "shot_count": 1,
+      "role_counts": {
+        "establishing": 1
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.5177,
+      "recommendation": "optional",
+      "key_shot_ids": [
+        "shot-0001"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0001",
+        "payoff_shot_id": null,
+        "reaction_shot_id": null
+      }
+    }
+  ],
+  "learning_summary": {
+    "retention_archetypes": [
+      {
+        "role": "establishing",
+        "shot_count": 1,
+        "retained_count": 1,
+        "retained_ratio": 1.0,
+        "average_duration_sec": 397.33,
+        "average_keep_score": 0.5272
+      }
+    ],
+    "cut_first_signals": [],
+    "event_patterns": [
+      {
+        "event_type": "observational",
+        "event_count": 1
+      }
+    ],
+    "evidence_limits": [
+      "参考片是已经剪完的成片，只能直接学习被保留镜头的正向模式。",
+      "cut_first 来自重复、模糊、曝光、无动作和无语义等弱信号，不代表原作者真实删除记录。",
+      "要监督学习真正的保留与删除偏好，需要同时提供原始素材和最终成片。"
+    ]
+  }
+}

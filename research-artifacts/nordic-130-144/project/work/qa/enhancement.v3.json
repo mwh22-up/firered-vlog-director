@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "status": "passed",
+  "blocking_count": 0,
+  "warning_count": 0,
+  "timeline_duration_sec": 865.58,
+  "issues": [],
+  "project_path": "${PROJECT_ROOT}",
+  "edit_plan_path": "${PROJECT_ROOT}\\work\\plans\\edit_plan.v3.json",
+  "enhancement_plan_path": "${PROJECT_ROOT}\\work\\enhancement\\enhancement_plan.v3.json",
+  "report_path": "${PROJECT_ROOT}\\work\\qa\\enhancement.v3.json"
+}

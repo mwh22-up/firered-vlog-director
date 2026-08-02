@@ -1,0 +1,802 @@
+{
+  "schema_version": "1.0",
+  "project_id": "nordic-130-144",
+  "version": 1,
+  "edit_plan_version": 3,
+  "timeline_duration_sec": 865.58,
+  "render_stages": [
+    "stabilize_and_reframe",
+    "assemble_continuity",
+    "normalize_dialogue",
+    "mix_music_with_ducking",
+    "compose_illustration_motion",
+    "burn_subtitles",
+    "final_encode"
+  ],
+  "video_treatments": [
+    {
+      "segment_id": "ch01-s001",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch01-s002",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch01-s003",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch01-s004",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch01-s005",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch01-s006",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s001",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s002",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s003",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s004",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s005",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s006",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s007",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s008",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s009",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s010",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s011",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s012",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s013",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s014",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s015",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s016",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s017",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s018",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s019",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s020",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch02-s021",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch03-s001",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch03-s002",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch03-s003",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch03-s004",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s001",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s002",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s003",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s004",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s005",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s006",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s007",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s008",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s009",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s010",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s011",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s012",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    },
+    {
+      "segment_id": "ch04-s013",
+      "stabilization": {
+        "mode": "auto",
+        "strength": 0.35,
+        "max_crop_percent": 8.0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true
+      }
+    }
+  ],
+  "music": {
+    "status": "planned",
+    "tracks": [],
+    "ducking": {
+      "enabled": true,
+      "threshold": 0.125,
+      "ratio": 8.0,
+      "attack_ms": 20,
+      "release_ms": 250
+    }
+  },
+  "subtitles": {
+    "status": "planned",
+    "language": "zh-CN",
+    "source": "work/transcripts/subtitles.json",
+    "cues": [],
+    "coverage": {
+      "status": "pending"
+    },
+    "style": {
+      "max_lines": 2,
+      "safe_margin_percent": 8.0,
+      "position": "bottom_center",
+      "font_name": "Microsoft YaHei",
+      "font_size": 64,
+      "margin_v": 72,
+      "outline": 4,
+      "shadow": 1,
+      "bold": true
+    }
+  },
+  "illustration_motion": {
+    "status": "planned",
+    "items": [],
+    "subtitle_safe_zone": true
+  }
+}

@@ -1,0 +1,538 @@
+{
+  "schema_version": "1.0",
+  "source": {
+    "source_id": "GX010143",
+    "url": "local-target://GX010143.MP4",
+    "media_path": "${PROJECT_ROOT}\\work\\proxy\\6ed97c3bf2b6a8c9.mp4",
+    "target_source": "raw/GX010143.MP4",
+    "aliases": [
+      "GX010143.MP4",
+      "raw/GX010143.MP4"
+    ]
+  },
+  "generated_at": "2026-08-02T09:41:03.126905+00:00",
+  "configuration": {
+    "scene_threshold": 0.22,
+    "visual_fps": 2.0,
+    "audio_window_sec": 0.5,
+    "asr_provider": "faster-whisper",
+    "asr_model": "large-v3-turbo",
+    "language": "zh"
+  },
+  "media": {
+    "duration_sec": 13.146,
+    "size_bytes": 3915135,
+    "streams": [
+      {
+        "index": 0,
+        "codec_type": "video",
+        "width": 960,
+        "height": 540,
+        "r_frame_rate": "30000/1001"
+      },
+      {
+        "index": 1,
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "index": 2,
+        "codec_type": "data",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "shot_count": 2,
+    "median_shot_duration_sec": 6.573,
+    "p75_shot_duration_sec": 13.113,
+    "shots_under_1_sec": 1,
+    "shots_over_5_sec": 1,
+    "silent_ratio": 0.0,
+    "audio_kind_ratios": {
+      "ambient_likely": 0.5705,
+      "speech": 0.4564
+    },
+    "opening_15_sec": {
+      "shot_count": 2,
+      "average_shot_duration_sec": 6.573
+    }
+  },
+  "transcription": {
+    "status": "ready",
+    "provider": "faster-whisper",
+    "model": "large-v3-turbo",
+    "language": "zh",
+    "language_probability": 1.0,
+    "duration_sec": 13.12,
+    "segments": [
+      {
+        "id": "asr-0001",
+        "start_sec": 0.27,
+        "end_sec": 1.65,
+        "text": "可以在桌上拉到地上",
+        "avg_logprob": -1.2066,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 0.27,
+            "end_sec": 0.43,
+            "text": "可以",
+            "probability": 0.1938
+          },
+          {
+            "start_sec": 0.43,
+            "end_sec": 0.65,
+            "text": "在",
+            "probability": 0.7278
+          },
+          {
+            "start_sec": 0.65,
+            "end_sec": 0.87,
+            "text": "桌",
+            "probability": 0.4036
+          },
+          {
+            "start_sec": 0.87,
+            "end_sec": 1.07,
+            "text": "上",
+            "probability": 0.8353
+          },
+          {
+            "start_sec": 1.07,
+            "end_sec": 1.23,
+            "text": "拉",
+            "probability": 0.9264
+          },
+          {
+            "start_sec": 1.23,
+            "end_sec": 1.39,
+            "text": "到",
+            "probability": 0.9605
+          },
+          {
+            "start_sec": 1.39,
+            "end_sec": 1.53,
+            "text": "地",
+            "probability": 0.2609
+          },
+          {
+            "start_sec": 1.53,
+            "end_sec": 1.65,
+            "text": "上",
+            "probability": 0.7135
+          }
+        ]
+      },
+      {
+        "id": "asr-0002",
+        "start_sec": 1.65,
+        "end_sec": 2.55,
+        "text": "不用管了",
+        "avg_logprob": -1.2066,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 1.65,
+            "end_sec": 2.01,
+            "text": "不用",
+            "probability": 0.1442
+          },
+          {
+            "start_sec": 2.01,
+            "end_sec": 2.23,
+            "text": "管",
+            "probability": 0.0141
+          },
+          {
+            "start_sec": 2.23,
+            "end_sec": 2.55,
+            "text": "了",
+            "probability": 0.0034
+          }
+        ]
+      },
+      {
+        "id": "asr-0003",
+        "start_sec": 2.55,
+        "end_sec": 6.59,
+        "text": "可以在桌上拉到地上",
+        "avg_logprob": -1.2066,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 2.55,
+            "end_sec": 2.63,
+            "text": "可以",
+            "probability": 0.0054
+          },
+          {
+            "start_sec": 2.63,
+            "end_sec": 4.05,
+            "text": "在",
+            "probability": 0.0732
+          },
+          {
+            "start_sec": 5.81,
+            "end_sec": 6.01,
+            "text": "桌",
+            "probability": 0.9577
+          },
+          {
+            "start_sec": 6.01,
+            "end_sec": 6.21,
+            "text": "上",
+            "probability": 0.9872
+          },
+          {
+            "start_sec": 6.21,
+            "end_sec": 6.53,
+            "text": "拉",
+            "probability": 0.9831
+          },
+          {
+            "start_sec": 6.53,
+            "end_sec": 6.55,
+            "text": "到",
+            "probability": 0.9665
+          },
+          {
+            "start_sec": 6.55,
+            "end_sec": 6.57,
+            "text": "地",
+            "probability": 0.9219
+          },
+          {
+            "start_sec": 6.57,
+            "end_sec": 6.59,
+            "text": "上",
+            "probability": 0.9808
+          }
+        ]
+      },
+      {
+        "id": "asr-0004",
+        "start_sec": 12.35,
+        "end_sec": 12.95,
+        "text": "不用管了",
+        "avg_logprob": -1.2066,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 12.35,
+            "end_sec": 12.71,
+            "text": "不用",
+            "probability": 0.239
+          },
+          {
+            "start_sec": 12.71,
+            "end_sec": 12.89,
+            "text": "管",
+            "probability": 0.8867
+          },
+          {
+            "start_sec": 12.89,
+            "end_sec": 12.95,
+            "text": "了",
+            "probability": 0.1722
+          }
+        ]
+      }
+    ],
+    "words": [
+      {
+        "start_sec": 0.27,
+        "end_sec": 0.43,
+        "text": "可以",
+        "probability": 0.1938
+      },
+      {
+        "start_sec": 0.43,
+        "end_sec": 0.65,
+        "text": "在",
+        "probability": 0.7278
+      },
+      {
+        "start_sec": 0.65,
+        "end_sec": 0.87,
+        "text": "桌",
+        "probability": 0.4036
+      },
+      {
+        "start_sec": 0.87,
+        "end_sec": 1.07,
+        "text": "上",
+        "probability": 0.8353
+      },
+      {
+        "start_sec": 1.07,
+        "end_sec": 1.23,
+        "text": "拉",
+        "probability": 0.9264
+      },
+      {
+        "start_sec": 1.23,
+        "end_sec": 1.39,
+        "text": "到",
+        "probability": 0.9605
+      },
+      {
+        "start_sec": 1.39,
+        "end_sec": 1.53,
+        "text": "地",
+        "probability": 0.2609
+      },
+      {
+        "start_sec": 1.53,
+        "end_sec": 1.65,
+        "text": "上",
+        "probability": 0.7135
+      },
+      {
+        "start_sec": 1.65,
+        "end_sec": 2.01,
+        "text": "不用",
+        "probability": 0.1442
+      },
+      {
+        "start_sec": 2.01,
+        "end_sec": 2.23,
+        "text": "管",
+        "probability": 0.0141
+      },
+      {
+        "start_sec": 2.23,
+        "end_sec": 2.55,
+        "text": "了",
+        "probability": 0.0034
+      },
+      {
+        "start_sec": 2.55,
+        "end_sec": 2.63,
+        "text": "可以",
+        "probability": 0.0054
+      },
+      {
+        "start_sec": 2.63,
+        "end_sec": 4.05,
+        "text": "在",
+        "probability": 0.0732
+      },
+      {
+        "start_sec": 5.81,
+        "end_sec": 6.01,
+        "text": "桌",
+        "probability": 0.9577
+      },
+      {
+        "start_sec": 6.01,
+        "end_sec": 6.21,
+        "text": "上",
+        "probability": 0.9872
+      },
+      {
+        "start_sec": 6.21,
+        "end_sec": 6.53,
+        "text": "拉",
+        "probability": 0.9831
+      },
+      {
+        "start_sec": 6.53,
+        "end_sec": 6.55,
+        "text": "到",
+        "probability": 0.9665
+      },
+      {
+        "start_sec": 6.55,
+        "end_sec": 6.57,
+        "text": "地",
+        "probability": 0.9219
+      },
+      {
+        "start_sec": 6.57,
+        "end_sec": 6.59,
+        "text": "上",
+        "probability": 0.9808
+      },
+      {
+        "start_sec": 12.35,
+        "end_sec": 12.71,
+        "text": "不用",
+        "probability": 0.239
+      },
+      {
+        "start_sec": 12.71,
+        "end_sec": 12.89,
+        "text": "管",
+        "probability": 0.8867
+      },
+      {
+        "start_sec": 12.89,
+        "end_sec": 12.95,
+        "text": "了",
+        "probability": 0.1722
+      }
+    ]
+  },
+  "audio_segments": [
+    {
+      "start_sec": 0.0,
+      "end_sec": 4.0,
+      "kind": "speech",
+      "average_rms": 0.098423,
+      "peak": 0.454315
+    },
+    {
+      "start_sec": 4.0,
+      "end_sec": 5.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.074958,
+      "peak": 0.300354
+    },
+    {
+      "start_sec": 5.5,
+      "end_sec": 6.5,
+      "kind": "speech",
+      "average_rms": 0.085455,
+      "peak": 0.324585
+    },
+    {
+      "start_sec": 6.5,
+      "end_sec": 12.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.098941,
+      "peak": 0.447571
+    },
+    {
+      "start_sec": 12.0,
+      "end_sec": 13.0,
+      "kind": "speech",
+      "average_rms": 0.096068,
+      "peak": 0.377838
+    },
+    {
+      "start_sec": 13.0,
+      "end_sec": 13.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.050168,
+      "peak": 0.306335
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "shot-0001",
+      "start_sec": 0.0,
+      "end_sec": 0.033,
+      "duration_sec": 0.033,
+      "role": "transition",
+      "speech_ratio": 0.0,
+      "visual": {
+        "brightness": 0.39795,
+        "contrast": 0.24586,
+        "sharpness": 0.11441,
+        "motion": 0.0,
+        "visual_hash": "f9fcf9fcf9f8f010e1e4c8e0f8e038c058c0"
+      },
+      "audio": {
+        "rms": 0.125862,
+        "peak": 0.408417,
+        "spectral_centroid_hz": 1643.47,
+        "spectral_flatness": 0.346193,
+        "kind": "ambient_likely"
+      },
+      "novelty_score": 1.0,
+      "quality_score": 0.7126,
+      "keep_score": 0.6785,
+      "recommendation": "retain",
+      "reasons": [
+        "提供新的视觉信息"
+      ]
+    },
+    {
+      "shot_id": "shot-0002",
+      "start_sec": 0.033,
+      "end_sec": 13.146,
+      "duration_sec": 13.113,
+      "role": "dialogue",
+      "speech_ratio": 0.3935,
+      "visual": {
+        "brightness": 0.28876,
+        "contrast": 0.21519,
+        "sharpness": 0.08576,
+        "motion": 0.16915,
+        "visual_hash": "000003c007c038000ffcfff8fff8fff0ffe1"
+      },
+      "audio": {
+        "rms": 0.091845,
+        "peak": 0.454315,
+        "spectral_centroid_hz": 2304.26,
+        "spectral_flatness": 0.450472,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4861,
+      "quality_score": 0.7659,
+      "keep_score": 0.8757,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event_id": "event-001",
+      "start_sec": 0.0,
+      "end_sec": 13.146,
+      "duration_sec": 13.146,
+      "event_type": "conversation",
+      "shot_count": 2,
+      "role_counts": {
+        "dialogue": 1,
+        "transition": 1
+      },
+      "completeness_score": 0.25,
+      "priority_score": 0.6567,
+      "recommendation": "retain",
+      "key_shot_ids": [
+        "shot-0002",
+        "shot-0001"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0002",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0002"
+      }
+    }
+  ],
+  "learning_summary": {
+    "retention_archetypes": [
+      {
+        "role": "dialogue",
+        "shot_count": 1,
+        "retained_count": 1,
+        "retained_ratio": 1.0,
+        "average_duration_sec": 13.113,
+        "average_keep_score": 0.8757
+      },
+      {
+        "role": "transition",
+        "shot_count": 1,
+        "retained_count": 1,
+        "retained_ratio": 1.0,
+        "average_duration_sec": 0.033,
+        "average_keep_score": 0.6785
+      }
+    ],
+    "cut_first_signals": [],
+    "event_patterns": [
+      {
+        "event_type": "conversation",
+        "event_count": 1
+      }
+    ],
+    "evidence_limits": [
+      "参考片是已经剪完的成片，只能直接学习被保留镜头的正向模式。",
+      "cut_first 来自重复、模糊、曝光、无动作和无语义等弱信号，不代表原作者真实删除记录。",
+      "要监督学习真正的保留与删除偏好，需要同时提供原始素材和最终成片。"
+    ]
+  }
+}

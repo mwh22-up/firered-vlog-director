@@ -1,0 +1,590 @@
+{
+  "schema_version": "1.0",
+  "source": {
+    "source_id": "GX010133",
+    "url": "local-target://GX010133.MP4",
+    "media_path": "${PROJECT_ROOT}\\work\\proxy\\262a5c6737650110.mp4",
+    "target_source": "raw/GX010133.MP4",
+    "aliases": [
+      "GX010133.MP4",
+      "raw/GX010133.MP4"
+    ]
+  },
+  "generated_at": "2026-08-02T09:28:28.300516+00:00",
+  "configuration": {
+    "scene_threshold": 0.22,
+    "visual_fps": 2.0,
+    "audio_window_sec": 0.5,
+    "asr_provider": "faster-whisper",
+    "asr_model": "large-v3-turbo",
+    "language": "zh"
+  },
+  "media": {
+    "duration_sec": 7.14,
+    "size_bytes": 1474074,
+    "streams": [
+      {
+        "index": 0,
+        "codec_type": "video",
+        "width": 960,
+        "height": 540,
+        "r_frame_rate": "30000/1001"
+      },
+      {
+        "index": 1,
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "index": 2,
+        "codec_type": "data",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "shot_count": 1,
+    "median_shot_duration_sec": 7.14,
+    "p75_shot_duration_sec": 7.14,
+    "shots_under_1_sec": 0,
+    "shots_over_5_sec": 1,
+    "silent_ratio": 0.0,
+    "audio_kind_ratios": {
+      "music_likely": 0.07,
+      "speech": 0.9804
+    },
+    "opening_15_sec": {
+      "shot_count": 1,
+      "average_shot_duration_sec": 7.14
+    }
+  },
+  "transcription": {
+    "status": "ready",
+    "provider": "faster-whisper",
+    "model": "large-v3-turbo",
+    "language": "zh",
+    "language_probability": 1.0,
+    "duration_sec": 7.125,
+    "segments": [
+      {
+        "id": "asr-0001",
+        "start_sec": 0.34,
+        "end_sec": 1.0,
+        "text": "吞并了",
+        "avg_logprob": -0.3848,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 0.34,
+            "end_sec": 0.66,
+            "text": "吞",
+            "probability": 0.5463
+          },
+          {
+            "start_sec": 0.66,
+            "end_sec": 0.86,
+            "text": "并",
+            "probability": 0.8993
+          },
+          {
+            "start_sec": 0.86,
+            "end_sec": 1.0,
+            "text": "了",
+            "probability": 0.9761
+          }
+        ]
+      },
+      {
+        "id": "asr-0002",
+        "start_sec": 1.0,
+        "end_sec": 1.46,
+        "text": "对吧",
+        "avg_logprob": -0.3848,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 1.0,
+            "end_sec": 1.34,
+            "text": "对",
+            "probability": 0.4393
+          },
+          {
+            "start_sec": 1.34,
+            "end_sec": 1.46,
+            "text": "吧",
+            "probability": 0.9953
+          }
+        ]
+      },
+      {
+        "id": "asr-0003",
+        "start_sec": 1.46,
+        "end_sec": 3.56,
+        "text": "当时他们联合起来就是这个目的",
+        "avg_logprob": -0.3848,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 1.46,
+            "end_sec": 1.88,
+            "text": "当",
+            "probability": 0.7879
+          },
+          {
+            "start_sec": 1.88,
+            "end_sec": 2.08,
+            "text": "时",
+            "probability": 0.9984
+          },
+          {
+            "start_sec": 2.08,
+            "end_sec": 2.28,
+            "text": "他们",
+            "probability": 0.801
+          },
+          {
+            "start_sec": 2.28,
+            "end_sec": 2.46,
+            "text": "联",
+            "probability": 0.9987
+          },
+          {
+            "start_sec": 2.46,
+            "end_sec": 2.58,
+            "text": "合",
+            "probability": 0.9773
+          },
+          {
+            "start_sec": 2.58,
+            "end_sec": 2.7,
+            "text": "起",
+            "probability": 0.5351
+          },
+          {
+            "start_sec": 2.7,
+            "end_sec": 2.82,
+            "text": "来",
+            "probability": 0.9988
+          },
+          {
+            "start_sec": 2.82,
+            "end_sec": 3.06,
+            "text": "就是",
+            "probability": 0.9847
+          },
+          {
+            "start_sec": 3.06,
+            "end_sec": 3.28,
+            "text": "这个",
+            "probability": 0.9937
+          },
+          {
+            "start_sec": 3.28,
+            "end_sec": 3.42,
+            "text": "目",
+            "probability": 0.9341
+          },
+          {
+            "start_sec": 3.42,
+            "end_sec": 3.56,
+            "text": "的",
+            "probability": 0.9802
+          }
+        ]
+      },
+      {
+        "id": "asr-0004",
+        "start_sec": 3.56,
+        "end_sec": 5.52,
+        "text": "要把拿破仑给干啪着了",
+        "avg_logprob": -0.3848,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 3.56,
+            "end_sec": 3.98,
+            "text": "要",
+            "probability": 0.9821
+          },
+          {
+            "start_sec": 3.98,
+            "end_sec": 4.12,
+            "text": "把",
+            "probability": 0.9922
+          },
+          {
+            "start_sec": 4.12,
+            "end_sec": 4.3,
+            "text": "拿",
+            "probability": 0.9027
+          },
+          {
+            "start_sec": 4.3,
+            "end_sec": 4.46,
+            "text": "破",
+            "probability": 0.718
+          },
+          {
+            "start_sec": 4.46,
+            "end_sec": 4.58,
+            "text": "仑",
+            "probability": 0.7514
+          },
+          {
+            "start_sec": 4.58,
+            "end_sec": 4.76,
+            "text": "给",
+            "probability": 0.9826
+          },
+          {
+            "start_sec": 4.76,
+            "end_sec": 4.94,
+            "text": "干",
+            "probability": 0.7012
+          },
+          {
+            "start_sec": 4.94,
+            "end_sec": 5.2,
+            "text": "啪",
+            "probability": 0.5713
+          },
+          {
+            "start_sec": 5.2,
+            "end_sec": 5.32,
+            "text": "着",
+            "probability": 0.3114
+          },
+          {
+            "start_sec": 5.32,
+            "end_sec": 5.52,
+            "text": "了",
+            "probability": 0.9292
+          }
+        ]
+      },
+      {
+        "id": "asr-0005",
+        "start_sec": 5.52,
+        "end_sec": 7.1,
+        "text": "那是另外一样",
+        "avg_logprob": -0.3848,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 5.52,
+            "end_sec": 6.04,
+            "text": "那",
+            "probability": 0.3062
+          },
+          {
+            "start_sec": 6.04,
+            "end_sec": 6.32,
+            "text": "是",
+            "probability": 0.9618
+          },
+          {
+            "start_sec": 6.32,
+            "end_sec": 6.64,
+            "text": "另外",
+            "probability": 0.8917
+          },
+          {
+            "start_sec": 6.64,
+            "end_sec": 6.64,
+            "text": "一",
+            "probability": 0.8354
+          },
+          {
+            "start_sec": 6.64,
+            "end_sec": 7.1,
+            "text": "样",
+            "probability": 0.3885
+          }
+        ]
+      }
+    ],
+    "words": [
+      {
+        "start_sec": 0.34,
+        "end_sec": 0.66,
+        "text": "吞",
+        "probability": 0.5463
+      },
+      {
+        "start_sec": 0.66,
+        "end_sec": 0.86,
+        "text": "并",
+        "probability": 0.8993
+      },
+      {
+        "start_sec": 0.86,
+        "end_sec": 1.0,
+        "text": "了",
+        "probability": 0.9761
+      },
+      {
+        "start_sec": 1.0,
+        "end_sec": 1.34,
+        "text": "对",
+        "probability": 0.4393
+      },
+      {
+        "start_sec": 1.34,
+        "end_sec": 1.46,
+        "text": "吧",
+        "probability": 0.9953
+      },
+      {
+        "start_sec": 1.46,
+        "end_sec": 1.88,
+        "text": "当",
+        "probability": 0.7879
+      },
+      {
+        "start_sec": 1.88,
+        "end_sec": 2.08,
+        "text": "时",
+        "probability": 0.9984
+      },
+      {
+        "start_sec": 2.08,
+        "end_sec": 2.28,
+        "text": "他们",
+        "probability": 0.801
+      },
+      {
+        "start_sec": 2.28,
+        "end_sec": 2.46,
+        "text": "联",
+        "probability": 0.9987
+      },
+      {
+        "start_sec": 2.46,
+        "end_sec": 2.58,
+        "text": "合",
+        "probability": 0.9773
+      },
+      {
+        "start_sec": 2.58,
+        "end_sec": 2.7,
+        "text": "起",
+        "probability": 0.5351
+      },
+      {
+        "start_sec": 2.7,
+        "end_sec": 2.82,
+        "text": "来",
+        "probability": 0.9988
+      },
+      {
+        "start_sec": 2.82,
+        "end_sec": 3.06,
+        "text": "就是",
+        "probability": 0.9847
+      },
+      {
+        "start_sec": 3.06,
+        "end_sec": 3.28,
+        "text": "这个",
+        "probability": 0.9937
+      },
+      {
+        "start_sec": 3.28,
+        "end_sec": 3.42,
+        "text": "目",
+        "probability": 0.9341
+      },
+      {
+        "start_sec": 3.42,
+        "end_sec": 3.56,
+        "text": "的",
+        "probability": 0.9802
+      },
+      {
+        "start_sec": 3.56,
+        "end_sec": 3.98,
+        "text": "要",
+        "probability": 0.9821
+      },
+      {
+        "start_sec": 3.98,
+        "end_sec": 4.12,
+        "text": "把",
+        "probability": 0.9922
+      },
+      {
+        "start_sec": 4.12,
+        "end_sec": 4.3,
+        "text": "拿",
+        "probability": 0.9027
+      },
+      {
+        "start_sec": 4.3,
+        "end_sec": 4.46,
+        "text": "破",
+        "probability": 0.718
+      },
+      {
+        "start_sec": 4.46,
+        "end_sec": 4.58,
+        "text": "仑",
+        "probability": 0.7514
+      },
+      {
+        "start_sec": 4.58,
+        "end_sec": 4.76,
+        "text": "给",
+        "probability": 0.9826
+      },
+      {
+        "start_sec": 4.76,
+        "end_sec": 4.94,
+        "text": "干",
+        "probability": 0.7012
+      },
+      {
+        "start_sec": 4.94,
+        "end_sec": 5.2,
+        "text": "啪",
+        "probability": 0.5713
+      },
+      {
+        "start_sec": 5.2,
+        "end_sec": 5.32,
+        "text": "着",
+        "probability": 0.3114
+      },
+      {
+        "start_sec": 5.32,
+        "end_sec": 5.52,
+        "text": "了",
+        "probability": 0.9292
+      },
+      {
+        "start_sec": 5.52,
+        "end_sec": 6.04,
+        "text": "那",
+        "probability": 0.3062
+      },
+      {
+        "start_sec": 6.04,
+        "end_sec": 6.32,
+        "text": "是",
+        "probability": 0.9618
+      },
+      {
+        "start_sec": 6.32,
+        "end_sec": 6.64,
+        "text": "另外",
+        "probability": 0.8917
+      },
+      {
+        "start_sec": 6.64,
+        "end_sec": 6.64,
+        "text": "一",
+        "probability": 0.8354
+      },
+      {
+        "start_sec": 6.64,
+        "end_sec": 7.1,
+        "text": "样",
+        "probability": 0.3885
+      }
+    ]
+  },
+  "audio_segments": [
+    {
+      "start_sec": 0.0,
+      "end_sec": 7.0,
+      "kind": "speech",
+      "average_rms": 0.145546,
+      "peak": 0.593658
+    },
+    {
+      "start_sec": 7.0,
+      "end_sec": 7.5,
+      "kind": "music_likely",
+      "average_rms": 0.072732,
+      "peak": 0.366272
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "shot-0001",
+      "start_sec": 0.0,
+      "end_sec": 7.14,
+      "duration_sec": 7.14,
+      "role": "dialogue",
+      "speech_ratio": 0.9468,
+      "visual": {
+        "brightness": 0.28639,
+        "contrast": 0.16578,
+        "sharpness": 0.02784,
+        "motion": 0.05975,
+        "visual_hash": "ffffffff3fff07ff03ff003e000000000000"
+      },
+      "audio": {
+        "rms": 0.140691,
+        "peak": 0.593658,
+        "spectral_centroid_hz": 531.39,
+        "spectral_flatness": 0.080803,
+        "kind": "speech"
+      },
+      "novelty_score": 1.0,
+      "quality_score": 0.6103,
+      "keep_score": 0.6849,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "画面清晰度较低"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event_id": "event-001",
+      "start_sec": 0.0,
+      "end_sec": 7.14,
+      "duration_sec": 7.14,
+      "event_type": "conversation",
+      "shot_count": 1,
+      "role_counts": {
+        "dialogue": 1
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.6202,
+      "recommendation": "retain",
+      "key_shot_ids": [
+        "shot-0001"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0001",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0001"
+      }
+    }
+  ],
+  "learning_summary": {
+    "retention_archetypes": [
+      {
+        "role": "dialogue",
+        "shot_count": 1,
+        "retained_count": 1,
+        "retained_ratio": 1.0,
+        "average_duration_sec": 7.14,
+        "average_keep_score": 0.6849
+      }
+    ],
+    "cut_first_signals": [],
+    "event_patterns": [
+      {
+        "event_type": "conversation",
+        "event_count": 1
+      }
+    ],
+    "evidence_limits": [
+      "参考片是已经剪完的成片，只能直接学习被保留镜头的正向模式。",
+      "cut_first 来自重复、模糊、曝光、无动作和无语义等弱信号，不代表原作者真实删除记录。",
+      "要监督学习真正的保留与删除偏好，需要同时提供原始素材和最终成片。"
+    ]
+  }
+}

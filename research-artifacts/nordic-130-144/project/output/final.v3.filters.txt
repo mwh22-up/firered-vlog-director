@@ -1,0 +1,2 @@
+[0:a]loudnorm=I=-16:LRA=11:TP=-1.5,aresample=48000[dialogue_normalized];
+[dialogue_normalized]anull[audio_final]

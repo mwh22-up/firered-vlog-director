@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "status": "ready",
+  "project": "${PROJECT_ROOT}",
+  "asset_count": 15,
+  "analysis_count": 15,
+  "failure_count": 0,
+  "analyses": [
+    {
+      "source": "GX010130.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010130.json",
+      "status": "ready",
+      "shots": 1,
+      "events": 1,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010131.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010131.json",
+      "status": "ready",
+      "shots": 1,
+      "events": 1,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010132.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010132.json",
+      "status": "ready",
+      "shots": 4,
+      "events": 2,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010133.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010133.json",
+      "status": "ready",
+      "shots": 1,
+      "events": 1,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010134.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010134.json",
+      "status": "ready",
+      "shots": 2,
+      "events": 2,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010135.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010135.json",
+      "status": "ready",
+      "shots": 1,
+      "events": 1,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010136.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010136.json",
+      "status": "ready",
+      "shots": 16,
+      "events": 4,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010137.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010137.json",
+      "status": "ready",
+      "shots": 1,
+      "events": 1,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010138.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010138.json",
+      "status": "ready",
+      "shots": 1,
+      "events": 1,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010139.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010139.json",
+      "status": "ready",
+      "shots": 1,
+      "events": 1,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010140.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010140.json",
+      "status": "ready",
+      "shots": 1,
+      "events": 1,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010141.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010141.json",
+      "status": "ready",
+      "shots": 1,
+      "events": 1,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010142.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010142.json",
+      "status": "ready",
+      "shots": 1,
+      "events": 1,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010143.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010143.json",
+      "status": "ready",
+      "shots": 2,
+      "events": 1,
+      "transcript_status": "ready"
+    },
+    {
+      "source": "GX010144.MP4",
+      "output": "${PROJECT_ROOT}\\work\\director\\target-analysis\\target-analysis.GX010144.json",
+      "status": "ready",
+      "shots": 6,
+      "events": 2,
+      "transcript_status": "ready"
+    }
+  ],
+  "failures": []
+}

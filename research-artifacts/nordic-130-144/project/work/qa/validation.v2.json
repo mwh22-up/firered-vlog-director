@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "project_id": "nordic-130-144",
+  "plan": "${PROJECT_ROOT}\\work\\plans\\edit_plan.v2.json",
+  "valid": true,
+  "segment_count": 44,
+  "total_duration_sec": 885.0,
+  "chapter_durations_sec": {
+    "ch01": 132.5,
+    "ch02": 482.49,
+    "ch03": 17.0,
+    "ch04": 253.01
+  },
+  "errors": [],
+  "warnings": [],
+  "created_at": "2026-08-02T10:02:10.271931+00:00"
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0",
+  "source": {
+    "source_id": "GX010137",
+    "url": "local-target://GX010137.MP4",
+    "media_path": "${PROJECT_ROOT}\\work\\proxy\\1cc31b1ec213bdb3.mp4",
+    "target_source": "raw/GX010137.MP4",
+    "aliases": [
+      "GX010137.MP4",
+      "raw/GX010137.MP4"
+    ]
+  },
+  "generated_at": "2026-08-02T09:38:57.084188+00:00",
+  "configuration": {
+    "scene_threshold": 0.22,
+    "visual_fps": 2.0,
+    "audio_window_sec": 0.5,
+    "asr_provider": "faster-whisper",
+    "asr_model": "large-v3-turbo",
+    "language": "zh"
+  },
+  "media": {
+    "duration_sec": 8.642,
+    "size_bytes": 1423478,
+    "streams": [
+      {
+        "index": 0,
+        "codec_type": "video",
+        "width": 960,
+        "height": 540,
+        "r_frame_rate": "30000/1001"
+      },
+      {
+        "index": 1,
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "index": 2,
+        "codec_type": "data",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "shot_count": 1,
+    "median_shot_duration_sec": 8.642,
+    "p75_shot_duration_sec": 8.642,
+    "shots_under_1_sec": 0,
+    "shots_over_5_sec": 1,
+    "silent_ratio": 0.0,
+    "audio_kind_ratios": {
+      "music_likely": 1.0414
+    },
+    "opening_15_sec": {
+      "shot_count": 1,
+      "average_shot_duration_sec": 8.642
+    }
+  },
+  "transcription": {
+    "status": "ready",
+    "provider": "faster-whisper",
+    "model": "large-v3-turbo",
+    "language": "zh",
+    "language_probability": 1.0,
+    "duration_sec": 8.619,
+    "segments": [],
+    "words": []
+  },
+  "audio_segments": [
+    {
+      "start_sec": 0.0,
+      "end_sec": 9.0,
+      "kind": "music_likely",
+      "average_rms": 0.080926,
+      "peak": 0.409241
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "shot-0001",
+      "start_sec": 0.0,
+      "end_sec": 8.642,
+      "duration_sec": 8.642,
+      "role": "establishing",
+      "speech_ratio": 0.0,
+      "visual": {
+        "brightness": 0.20489,
+        "contrast": 0.14705,
+        "sharpness": 0.02792,
+        "motion": 0.04482,
+        "visual_hash": "fffffffffffcffc4fc00000038004000f800"
+      },
+      "audio": {
+        "rms": 0.080926,
+        "peak": 0.409241,
+        "spectral_centroid_hz": 675.34,
+        "spectral_flatness": 0.134808,
+        "kind": "music_likely"
+      },
+      "novelty_score": 1.0,
+      "quality_score": 0.5556,
+      "keep_score": 0.5307,
+      "recommendation": "protect",
+      "reasons": [
+        "建立地点或场景关系",
+        "提供新的视觉信息",
+        "画面清晰度较低"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event_id": "event-001",
+      "start_sec": 0.0,
+      "end_sec": 8.642,
+      "duration_sec": 8.642,
+      "event_type": "observational",
+      "shot_count": 1,
+      "role_counts": {
+        "establishing": 1
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.52,
+      "recommendation": "optional",
+      "key_shot_ids": [
+        "shot-0001"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0001",
+        "payoff_shot_id": null,
+        "reaction_shot_id": null
+      }
+    }
+  ],
+  "learning_summary": {
+    "retention_archetypes": [
+      {
+        "role": "establishing",
+        "shot_count": 1,
+        "retained_count": 1,
+        "retained_ratio": 1.0,
+        "average_duration_sec": 8.642,
+        "average_keep_score": 0.5307
+      }
+    ],
+    "cut_first_signals": [],
+    "event_patterns": [
+      {
+        "event_type": "observational",
+        "event_count": 1
+      }
+    ],
+    "evidence_limits": [
+      "参考片是已经剪完的成片，只能直接学习被保留镜头的正向模式。",
+      "cut_first 来自重复、模糊、曝光、无动作和无语义等弱信号，不代表原作者真实删除记录。",
+      "要监督学习真正的保留与删除偏好，需要同时提供原始素材和最终成片。"
+    ]
+  }
+}

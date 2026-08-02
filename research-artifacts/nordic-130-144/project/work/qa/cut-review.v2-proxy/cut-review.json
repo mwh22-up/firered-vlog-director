@@ -1,0 +1,1175 @@
+{
+  "schema_version": "1.0",
+  "status": "review_required",
+  "video": "${PROJECT_ROOT}\\output\\preview.v2.mp4",
+  "plan_version": 2,
+  "timing_source": "render_report_actual",
+  "render_report": "${PROJECT_ROOT}\\work\\qa\\render.v2.json",
+  "boundary_count": 43,
+  "flagged_boundary_count": 0,
+  "boundaries": [
+    {
+      "id": "cut-0001",
+      "time_sec": 21.120367,
+      "left_source": "raw/GX010130.MP4",
+      "right_source": "raw/GX010130.MP4",
+      "planned_time_sec": 21.04,
+      "actual_time_sec": 21.120367,
+      "drift_sec": 0.080367,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 21.000367,
+        "after": 21.240367
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0001-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0001-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0002",
+      "time_sec": 59.658134,
+      "left_source": "raw/GX010130.MP4",
+      "right_source": "raw/GX010130.MP4",
+      "planned_time_sec": 59.52,
+      "actual_time_sec": 59.658134,
+      "drift_sec": 0.138134,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0006,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 59.538134,
+        "after": 59.778134
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0002-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0002-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0003",
+      "time_sec": 69.144467,
+      "left_source": "raw/GX010130.MP4",
+      "right_source": "raw/GX010132.MP4",
+      "planned_time_sec": 68.94,
+      "actual_time_sec": 69.144467,
+      "drift_sec": 0.204467,
+      "status": "auto_passed",
+      "audio_jump_score": 0.001,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 69.024467,
+        "after": 69.264467
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0003-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0003-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0004",
+      "time_sec": 97.4108,
+      "left_source": "raw/GX010132.MP4",
+      "right_source": "raw/GX010134.MP4",
+      "planned_time_sec": 97.14,
+      "actual_time_sec": 97.4108,
+      "drift_sec": 0.2708,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0001,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 97.2908,
+        "after": 97.5308
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0004-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0004-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0005",
+      "time_sec": 123.2025,
+      "left_source": "raw/GX010134.MP4",
+      "right_source": "raw/GX010135.MP4",
+      "planned_time_sec": 122.88,
+      "actual_time_sec": 123.2025,
+      "drift_sec": 0.3225,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0005,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 123.0825,
+        "after": 123.3225
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0005-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0005-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0006",
+      "time_sec": 132.888833,
+      "left_source": "raw/GX010135.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 132.5,
+      "actual_time_sec": 132.888833,
+      "drift_sec": 0.388833,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 132.768833,
+        "after": 133.008833
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0006-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0006-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0007",
+      "time_sec": 148.170033,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 147.74,
+      "actual_time_sec": 148.170033,
+      "drift_sec": 0.430033,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 148.050033,
+        "after": 148.290033
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0007-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0007-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0008",
+      "time_sec": 158.3795,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 157.89,
+      "actual_time_sec": 158.3795,
+      "drift_sec": 0.4895,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 158.2595,
+        "after": 158.4995
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0008-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0008-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0009",
+      "time_sec": 193.847533,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 193.28,
+      "actual_time_sec": 193.847533,
+      "drift_sec": 0.567533,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 193.727533,
+        "after": 193.967533
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0009-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0009-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0010",
+      "time_sec": 206.993266,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 206.38,
+      "actual_time_sec": 206.993266,
+      "drift_sec": 0.613266,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0023,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 206.873266,
+        "after": 207.113266
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0010-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0010-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0011",
+      "time_sec": 212.699599,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 212.02,
+      "actual_time_sec": 212.699599,
+      "drift_sec": 0.679599,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0001,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 212.579599,
+        "after": 212.819599
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0011-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0011-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0012",
+      "time_sec": 237.295932,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 236.55,
+      "actual_time_sec": 237.295932,
+      "drift_sec": 0.745932,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 237.175932,
+        "after": 237.415932
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0012-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0012-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0013",
+      "time_sec": 265.957165,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 265.15,
+      "actual_time_sec": 265.957165,
+      "drift_sec": 0.807165,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0001,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 265.837165,
+        "after": 266.077165
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0013-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0013-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0014",
+      "time_sec": 270.143498,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 269.27,
+      "actual_time_sec": 270.143498,
+      "drift_sec": 0.873498,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0007,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 270.023498,
+        "after": 270.263498
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0014-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0014-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0015",
+      "time_sec": 301.819831,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 300.88,
+      "actual_time_sec": 301.819831,
+      "drift_sec": 0.939831,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0006,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 301.699831,
+        "after": 301.939831
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0015-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0015-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0016",
+      "time_sec": 321.572164,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 320.56,
+      "actual_time_sec": 321.572164,
+      "drift_sec": 1.012164,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 321.452164,
+        "after": 321.692164
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0016-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0016-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0017",
+      "time_sec": 349.599431,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 348.55,
+      "actual_time_sec": 349.599431,
+      "drift_sec": 1.049431,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0001,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 349.479431,
+        "after": 349.719431
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0017-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0017-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0018",
+      "time_sec": 377.293031,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 376.2,
+      "actual_time_sec": 377.293031,
+      "drift_sec": 1.093031,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0002,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 377.173031,
+        "after": 377.413031
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0018-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0018-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0019",
+      "time_sec": 400.782431,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 399.61,
+      "actual_time_sec": 400.782431,
+      "drift_sec": 1.172431,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 400.662431,
+        "after": 400.902431
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0019-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0019-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0020",
+      "time_sec": 430.411298,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 429.2,
+      "actual_time_sec": 430.411298,
+      "drift_sec": 1.211298,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0001,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 430.291298,
+        "after": 430.531298
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0020-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0020-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0021",
+      "time_sec": 459.139265,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 457.89,
+      "actual_time_sec": 459.139265,
+      "drift_sec": 1.249265,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0074,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 459.019265,
+        "after": 459.259265
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0021-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0021-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0022",
+      "time_sec": 477.895598,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 476.58,
+      "actual_time_sec": 477.895598,
+      "drift_sec": 1.315598,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 477.775598,
+        "after": 478.015598
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0022-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0022-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0023",
+      "time_sec": 520.070331,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 518.7,
+      "actual_time_sec": 520.070331,
+      "drift_sec": 1.370331,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 519.950331,
+        "after": 520.190331
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0023-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0023-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0024",
+      "time_sec": 533.850031,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 532.42,
+      "actual_time_sec": 533.850031,
+      "drift_sec": 1.430031,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0001,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 533.730031,
+        "after": 533.970031
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0024-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0024-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0025",
+      "time_sec": 569.718464,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 568.22,
+      "actual_time_sec": 569.718464,
+      "drift_sec": 1.498464,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 569.598464,
+        "after": 569.838464
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0025-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0025-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0026",
+      "time_sec": 588.202864,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010136.MP4",
+      "planned_time_sec": 586.64,
+      "actual_time_sec": 588.202864,
+      "drift_sec": 1.562864,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0001,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 588.082864,
+        "after": 588.322864
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0026-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0026-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0027",
+      "time_sec": 616.630533,
+      "left_source": "raw/GX010136.MP4",
+      "right_source": "raw/GX010138.MP4",
+      "planned_time_sec": 614.99,
+      "actual_time_sec": 616.630533,
+      "drift_sec": 1.640533,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0009,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 616.510533,
+        "after": 616.750533
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0027-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0027-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0028",
+      "time_sec": 620.700533,
+      "left_source": "raw/GX010138.MP4",
+      "right_source": "raw/GX010139.MP4",
+      "planned_time_sec": 618.99,
+      "actual_time_sec": 620.700533,
+      "drift_sec": 1.710533,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 620.580533,
+        "after": 620.820533
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0028-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0028-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0029",
+      "time_sec": 625.738166,
+      "left_source": "raw/GX010139.MP4",
+      "right_source": "raw/GX010141.MP4",
+      "planned_time_sec": 623.99,
+      "actual_time_sec": 625.738166,
+      "drift_sec": 1.748166,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0009,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 625.618166,
+        "after": 625.858166
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0029-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0029-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0030",
+      "time_sec": 630.809166,
+      "left_source": "raw/GX010141.MP4",
+      "right_source": "raw/GX010143.MP4",
+      "planned_time_sec": 628.99,
+      "actual_time_sec": 630.809166,
+      "drift_sec": 1.819166,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0004,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 630.689166,
+        "after": 630.929166
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0030-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0030-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0031",
+      "time_sec": 633.878166,
+      "left_source": "raw/GX010143.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 631.99,
+      "actual_time_sec": 633.878166,
+      "drift_sec": 1.888166,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0291,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 633.758166,
+        "after": 633.998166
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0031-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0031-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0032",
+      "time_sec": 646.924499,
+      "left_source": "raw/GX010144.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 644.97,
+      "actual_time_sec": 646.924499,
+      "drift_sec": 1.954499,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0008,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 646.804499,
+        "after": 647.044499
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0032-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0032-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0033",
+      "time_sec": 662.005499,
+      "left_source": "raw/GX010144.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 659.97,
+      "actual_time_sec": 662.005499,
+      "drift_sec": 2.035499,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0005,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 661.885499,
+        "after": 662.125499
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0033-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0033-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0034",
+      "time_sec": 664.651832,
+      "left_source": "raw/GX010144.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 662.55,
+      "actual_time_sec": 664.651832,
+      "drift_sec": 2.101832,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0018,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 664.531832,
+        "after": 664.771832
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0034-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0034-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0035",
+      "time_sec": 691.928165,
+      "left_source": "raw/GX010144.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 689.76,
+      "actual_time_sec": 691.928165,
+      "drift_sec": 2.168165,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0005,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 691.808165,
+        "after": 692.048165
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0035-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0035-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0036",
+      "time_sec": 718.334498,
+      "left_source": "raw/GX010144.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 716.1,
+      "actual_time_sec": 718.334498,
+      "drift_sec": 2.234498,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0051,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 718.214498,
+        "after": 718.454498
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0036-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0036-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0037",
+      "time_sec": 745.140831,
+      "left_source": "raw/GX010144.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 742.84,
+      "actual_time_sec": 745.140831,
+      "drift_sec": 2.300831,
+      "status": "auto_passed",
+      "audio_jump_score": 0.001,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 745.020831,
+        "after": 745.260831
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0037-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0037-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0038",
+      "time_sec": 764.192464,
+      "left_source": "raw/GX010144.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 761.82,
+      "actual_time_sec": 764.192464,
+      "drift_sec": 2.372464,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 764.072464,
+        "after": 764.312464
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0038-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0038-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0039",
+      "time_sec": 769.697231,
+      "left_source": "raw/GX010144.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 767.28,
+      "actual_time_sec": 769.697231,
+      "drift_sec": 2.417231,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0016,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 769.577231,
+        "after": 769.817231
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0039-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0039-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0040",
+      "time_sec": 795.163564,
+      "left_source": "raw/GX010144.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 792.68,
+      "actual_time_sec": 795.163564,
+      "drift_sec": 2.483564,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0001,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 795.043564,
+        "after": 795.283564
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0040-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0040-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0041",
+      "time_sec": 824.325297,
+      "left_source": "raw/GX010144.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 821.8,
+      "actual_time_sec": 824.325297,
+      "drift_sec": 2.525297,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0003,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 824.205297,
+        "after": 824.445297
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0041-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0041-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0042",
+      "time_sec": 844.67863,
+      "left_source": "raw/GX010144.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 842.12,
+      "actual_time_sec": 844.67863,
+      "drift_sec": 2.55863,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0151,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 844.55863,
+        "after": 844.79863
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0042-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0042-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    },
+    {
+      "id": "cut-0043",
+      "time_sec": 847.680897,
+      "left_source": "raw/GX010144.MP4",
+      "right_source": "raw/GX010144.MP4",
+      "planned_time_sec": 845.04,
+      "actual_time_sec": 847.680897,
+      "drift_sec": 2.640897,
+      "status": "auto_passed",
+      "audio_jump_score": 0.0034,
+      "black_ranges": [],
+      "silence_markers": 0,
+      "review_frame_times_sec": {
+        "before": 847.560897,
+        "after": 847.800897
+      },
+      "review_frames": [
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0043-before.jpg",
+        "${PROJECT_ROOT}\\work\\qa\\cut-review.v2-proxy\\cut-0043-after.jpg"
+      ],
+      "issues": [],
+      "manual_checks": [
+        "visual_continuity",
+        "speech_truncation",
+        "subtitle_visibility"
+      ]
+    }
+  ],
+  "created_at": "2026-08-02T10:04:07.510251+00:00",
+  "note": "Automatic checks do not replace human review of visual meaning and speech completeness."
+}

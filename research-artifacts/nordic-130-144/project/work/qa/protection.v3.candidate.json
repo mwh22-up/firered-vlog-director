@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "plan_version": 3,
+  "status": "passed",
+  "blocking_count": 0,
+  "warning_count": 0,
+  "policy": {
+    "locked_min_coverage": 0.95,
+    "protected_min_coverage": 0.8,
+    "protected_warning_coverage": 0.95,
+    "group_member_min_coverage": 0.8
+  },
+  "coverage_by_moment": {
+    "moment_crab_population_joke": 1.0,
+    "moment_salmon_fjord_context": 1.0,
+    "moment_bus_captive_joke": 1.0,
+    "moment_nordic_winter_context": 1.0,
+    "moment_fjord_formation": 1.0,
+    "moment_snow_promise": 1.0,
+    "moment_slippery_arrival": 1.0,
+    "moment_snow_arrival_reaction": 1.0,
+    "moment_first_photo_setup": 1.0,
+    "moment_first_pose": 1.0,
+    "moment_first_focus_failure": 1.0,
+    "moment_first_photo_reaction": 1.0,
+    "moment_big_eyes_joke": 1.0,
+    "moment_directing_pose": 1.0,
+    "moment_one_good_photo": 1.0,
+    "moment_photo_ugly_reaction": 1.0,
+    "moment_find_warmer_angle": 1.0,
+    "moment_pair_photo_setup": 1.0,
+    "moment_walking_photo_payoff": 1.0,
+    "moment_slippery_not_listening": 1.0,
+    "moment_camera_cold_failure": 1.0,
+    "moment_focus_still_broken": 1.0,
+    "moment_climb_indecision": 1.0,
+    "moment_cold_camera_explanation": 1.0,
+    "moment_slippery_finale": 1.0,
+    "moment_snow_ridge_breath": 1.0,
+    "moment_snow_valley_breath": 1.0,
+    "moment_clean_snow_breath": 1.0,
+    "moment_framed_snow_breath": 1.0,
+    "moment_waterfall_arrival": 0.7721,
+    "moment_waterfall_photo_setup": 1.0,
+    "moment_waterfall_photo_countdown": 1.0,
+    "moment_train_pose_laugh": 1.0,
+    "moment_photo_result_before_boarding": 1.0,
+    "moment_board_train": 1.0,
+    "moment_jump_photo_praise": 1.0,
+    "moment_bad_crop_joke": 1.0,
+    "moment_train_photo_review": 1.0,
+    "moment_movie_face_banter": 1.0
+  },
+  "coverage_by_group": {
+    "group_route_to_snow": {
+      "setup": 1.0,
+      "payoff": 1.0,
+      "reaction": 1.0
+    },
+    "group_first_photo_focus": {
+      "setup": 1.0,
+      "payoff": 1.0,
+      "reaction": 1.0
+    },
+    "group_photo_coaching": {
+      "setup": 1.0,
+      "payoff": 1.0,
+      "reaction": 1.0
+    },
+    "group_cold_camera_failure": {
+      "setup": 1.0,
+      "payoff": 1.0,
+      "reaction": 1.0
+    },
+    "group_waterfall_to_train": {
+      "setup": 1.0,
+      "payoff": 1.0,
+      "reaction": 1.0
+    },
+    "group_good_bad_photo_review": {
+      "setup": 1.0,
+      "payoff": 1.0,
+      "reaction": 1.0
+    }
+  },
+  "issues": []
+}

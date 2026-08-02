@@ -1,0 +1,1661 @@
+{
+  "schema_version": "1.0",
+  "source": {
+    "source_id": "GX010135",
+    "url": "local-target://GX010135.MP4",
+    "media_path": "${PROJECT_ROOT}\\work\\proxy\\ec5938b4dc2e5737.mp4",
+    "target_source": "raw/GX010135.MP4",
+    "aliases": [
+      "GX010135.MP4",
+      "raw/GX010135.MP4"
+    ]
+  },
+  "generated_at": "2026-08-02T09:33:33.465175+00:00",
+  "configuration": {
+    "scene_threshold": 0.22,
+    "visual_fps": 2.0,
+    "audio_window_sec": 0.5,
+    "asr_provider": "faster-whisper",
+    "asr_model": "large-v3-turbo",
+    "language": "zh"
+  },
+  "media": {
+    "duration_sec": 33.133,
+    "size_bytes": 4956975,
+    "streams": [
+      {
+        "index": 0,
+        "codec_type": "video",
+        "width": 960,
+        "height": 540,
+        "r_frame_rate": "30000/1001"
+      },
+      {
+        "index": 1,
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "index": 2,
+        "codec_type": "data",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "shot_count": 1,
+    "median_shot_duration_sec": 33.133,
+    "p75_shot_duration_sec": 33.133,
+    "shots_under_1_sec": 0,
+    "shots_over_5_sec": 1,
+    "silent_ratio": 0.0,
+    "audio_kind_ratios": {
+      "music_likely": 0.1962,
+      "speech": 0.8149
+    },
+    "opening_15_sec": {
+      "shot_count": 1,
+      "average_shot_duration_sec": 33.133
+    }
+  },
+  "transcription": {
+    "status": "ready",
+    "provider": "faster-whisper",
+    "model": "large-v3-turbo",
+    "language": "zh",
+    "language_probability": 1.0,
+    "duration_sec": 33.109,
+    "segments": [
+      {
+        "id": "asr-0001",
+        "start_sec": 4.24,
+        "end_sec": 5.44,
+        "text": "能不能进入清隧道呢",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 4.24,
+            "end_sec": 4.3,
+            "text": "能",
+            "probability": 0.7281
+          },
+          {
+            "start_sec": 4.3,
+            "end_sec": 4.44,
+            "text": "不能",
+            "probability": 0.9977
+          },
+          {
+            "start_sec": 4.44,
+            "end_sec": 4.68,
+            "text": "进",
+            "probability": 0.878
+          },
+          {
+            "start_sec": 4.68,
+            "end_sec": 4.82,
+            "text": "入",
+            "probability": 0.9961
+          },
+          {
+            "start_sec": 4.82,
+            "end_sec": 4.96,
+            "text": "清",
+            "probability": 0.3189
+          },
+          {
+            "start_sec": 4.96,
+            "end_sec": 5.16,
+            "text": "隧",
+            "probability": 0.7174
+          },
+          {
+            "start_sec": 5.16,
+            "end_sec": 5.28,
+            "text": "道",
+            "probability": 0.9966
+          },
+          {
+            "start_sec": 5.28,
+            "end_sec": 5.44,
+            "text": "呢",
+            "probability": 0.504
+          }
+        ]
+      },
+      {
+        "id": "asr-0002",
+        "start_sec": 5.44,
+        "end_sec": 9.36,
+        "text": "然后挪威这一路会穿越很多的这个山水隧道",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 5.44,
+            "end_sec": 5.66,
+            "text": "然后",
+            "probability": 0.1444
+          },
+          {
+            "start_sec": 5.66,
+            "end_sec": 5.94,
+            "text": "挪",
+            "probability": 0.9943
+          },
+          {
+            "start_sec": 5.94,
+            "end_sec": 6.08,
+            "text": "威",
+            "probability": 0.9836
+          },
+          {
+            "start_sec": 6.08,
+            "end_sec": 6.26,
+            "text": "这",
+            "probability": 0.6371
+          },
+          {
+            "start_sec": 6.26,
+            "end_sec": 6.38,
+            "text": "一",
+            "probability": 0.9934
+          },
+          {
+            "start_sec": 6.38,
+            "end_sec": 6.56,
+            "text": "路",
+            "probability": 0.9992
+          },
+          {
+            "start_sec": 6.56,
+            "end_sec": 6.98,
+            "text": "会",
+            "probability": 0.4222
+          },
+          {
+            "start_sec": 6.98,
+            "end_sec": 7.26,
+            "text": "穿",
+            "probability": 0.9953
+          },
+          {
+            "start_sec": 7.26,
+            "end_sec": 7.44,
+            "text": "越",
+            "probability": 0.9973
+          },
+          {
+            "start_sec": 7.44,
+            "end_sec": 7.82,
+            "text": "很多",
+            "probability": 0.9096
+          },
+          {
+            "start_sec": 7.82,
+            "end_sec": 8.04,
+            "text": "的",
+            "probability": 0.9057
+          },
+          {
+            "start_sec": 8.04,
+            "end_sec": 8.22,
+            "text": "这个",
+            "probability": 0.7176
+          },
+          {
+            "start_sec": 8.22,
+            "end_sec": 8.68,
+            "text": "山",
+            "probability": 0.9774
+          },
+          {
+            "start_sec": 8.68,
+            "end_sec": 8.92,
+            "text": "水",
+            "probability": 0.1462
+          },
+          {
+            "start_sec": 8.92,
+            "end_sec": 9.22,
+            "text": "隧",
+            "probability": 0.9936
+          },
+          {
+            "start_sec": 9.22,
+            "end_sec": 9.36,
+            "text": "道",
+            "probability": 0.9991
+          }
+        ]
+      },
+      {
+        "id": "asr-0003",
+        "start_sec": 9.36,
+        "end_sec": 12.62,
+        "text": "挪威是世界上隧道工程做的最好",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 9.36,
+            "end_sec": 10.06,
+            "text": "挪",
+            "probability": 0.9817
+          },
+          {
+            "start_sec": 10.06,
+            "end_sec": 10.24,
+            "text": "威",
+            "probability": 0.998
+          },
+          {
+            "start_sec": 10.24,
+            "end_sec": 10.44,
+            "text": "是",
+            "probability": 0.9709
+          },
+          {
+            "start_sec": 10.44,
+            "end_sec": 10.74,
+            "text": "世界",
+            "probability": 0.9623
+          },
+          {
+            "start_sec": 10.74,
+            "end_sec": 10.96,
+            "text": "上",
+            "probability": 0.9914
+          },
+          {
+            "start_sec": 10.96,
+            "end_sec": 11.28,
+            "text": "隧",
+            "probability": 0.9953
+          },
+          {
+            "start_sec": 11.28,
+            "end_sec": 11.46,
+            "text": "道",
+            "probability": 0.9983
+          },
+          {
+            "start_sec": 11.46,
+            "end_sec": 11.68,
+            "text": "工",
+            "probability": 0.9903
+          },
+          {
+            "start_sec": 11.68,
+            "end_sec": 11.92,
+            "text": "程",
+            "probability": 0.9984
+          },
+          {
+            "start_sec": 11.92,
+            "end_sec": 12.12,
+            "text": "做",
+            "probability": 0.9255
+          },
+          {
+            "start_sec": 12.12,
+            "end_sec": 12.24,
+            "text": "的",
+            "probability": 0.6491
+          },
+          {
+            "start_sec": 12.24,
+            "end_sec": 12.44,
+            "text": "最",
+            "probability": 0.9956
+          },
+          {
+            "start_sec": 12.44,
+            "end_sec": 12.62,
+            "text": "好",
+            "probability": 0.8384
+          }
+        ]
+      },
+      {
+        "id": "asr-0004",
+        "start_sec": 12.62,
+        "end_sec": 13.96,
+        "text": "最多地方的国家",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 12.62,
+            "end_sec": 12.84,
+            "text": "最",
+            "probability": 0.1042
+          },
+          {
+            "start_sec": 12.84,
+            "end_sec": 13.28,
+            "text": "多",
+            "probability": 0.1464
+          },
+          {
+            "start_sec": 13.28,
+            "end_sec": 13.46,
+            "text": "地方",
+            "probability": 0.1838
+          },
+          {
+            "start_sec": 13.46,
+            "end_sec": 13.62,
+            "text": "的",
+            "probability": 0.7164
+          },
+          {
+            "start_sec": 13.62,
+            "end_sec": 13.76,
+            "text": "国",
+            "probability": 0.8037
+          },
+          {
+            "start_sec": 13.76,
+            "end_sec": 13.96,
+            "text": "家",
+            "probability": 0.9994
+          }
+        ]
+      },
+      {
+        "id": "asr-0005",
+        "start_sec": 13.96,
+        "end_sec": 14.76,
+        "text": "因为就没办法",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 13.96,
+            "end_sec": 14.12,
+            "text": "因为",
+            "probability": 0.3435
+          },
+          {
+            "start_sec": 14.12,
+            "end_sec": 14.26,
+            "text": "就",
+            "probability": 0.4349
+          },
+          {
+            "start_sec": 14.26,
+            "end_sec": 14.38,
+            "text": "没",
+            "probability": 0.9965
+          },
+          {
+            "start_sec": 14.38,
+            "end_sec": 14.58,
+            "text": "办",
+            "probability": 0.9976
+          },
+          {
+            "start_sec": 14.58,
+            "end_sec": 14.76,
+            "text": "法",
+            "probability": 0.9944
+          }
+        ]
+      },
+      {
+        "id": "asr-0006",
+        "start_sec": 14.76,
+        "end_sec": 17.28,
+        "text": "这个国家呢不是一人类生存",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 14.76,
+            "end_sec": 15.34,
+            "text": "这个",
+            "probability": 0.9321
+          },
+          {
+            "start_sec": 15.34,
+            "end_sec": 15.62,
+            "text": "国",
+            "probability": 0.9929
+          },
+          {
+            "start_sec": 15.62,
+            "end_sec": 15.82,
+            "text": "家",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 15.82,
+            "end_sec": 15.94,
+            "text": "呢",
+            "probability": 0.5344
+          },
+          {
+            "start_sec": 15.94,
+            "end_sec": 16.28,
+            "text": "不是",
+            "probability": 0.7124
+          },
+          {
+            "start_sec": 16.28,
+            "end_sec": 16.54,
+            "text": "一",
+            "probability": 0.2403
+          },
+          {
+            "start_sec": 16.54,
+            "end_sec": 16.74,
+            "text": "人",
+            "probability": 0.9829
+          },
+          {
+            "start_sec": 16.74,
+            "end_sec": 16.88,
+            "text": "类",
+            "probability": 0.9991
+          },
+          {
+            "start_sec": 16.88,
+            "end_sec": 17.04,
+            "text": "生",
+            "probability": 0.8221
+          },
+          {
+            "start_sec": 17.04,
+            "end_sec": 17.28,
+            "text": "存",
+            "probability": 0.8456
+          }
+        ]
+      },
+      {
+        "id": "asr-0007",
+        "start_sec": 17.28,
+        "end_sec": 18.56,
+        "text": "前面有雪山了",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 17.28,
+            "end_sec": 17.72,
+            "text": "前",
+            "probability": 0.6984
+          },
+          {
+            "start_sec": 17.72,
+            "end_sec": 17.86,
+            "text": "面",
+            "probability": 0.9953
+          },
+          {
+            "start_sec": 17.86,
+            "end_sec": 17.96,
+            "text": "有",
+            "probability": 0.9966
+          },
+          {
+            "start_sec": 17.96,
+            "end_sec": 18.14,
+            "text": "雪",
+            "probability": 0.9979
+          },
+          {
+            "start_sec": 18.14,
+            "end_sec": 18.38,
+            "text": "山",
+            "probability": 0.9981
+          },
+          {
+            "start_sec": 18.38,
+            "end_sec": 18.56,
+            "text": "了",
+            "probability": 0.9002
+          }
+        ]
+      },
+      {
+        "id": "asr-0008",
+        "start_sec": 18.56,
+        "end_sec": 20.02,
+        "text": "哦 雪山很好",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 18.56,
+            "end_sec": 19.12,
+            "text": "哦",
+            "probability": 0.23
+          },
+          {
+            "start_sec": 19.46,
+            "end_sec": 19.58,
+            "text": " 雪",
+            "probability": 0.9132
+          },
+          {
+            "start_sec": 19.58,
+            "end_sec": 19.74,
+            "text": "山",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 19.74,
+            "end_sec": 20.02,
+            "text": "很好",
+            "probability": 0.0551
+          }
+        ]
+      },
+      {
+        "id": "asr-0009",
+        "start_sec": 20.02,
+        "end_sec": 23.24,
+        "text": "对 没事咱们下午就会开上雪山",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 20.02,
+            "end_sec": 20.6,
+            "text": "对",
+            "probability": 0.4054
+          },
+          {
+            "start_sec": 20.78,
+            "end_sec": 21.48,
+            "text": " 没事",
+            "probability": 0.9758
+          },
+          {
+            "start_sec": 21.48,
+            "end_sec": 21.72,
+            "text": "咱",
+            "probability": 0.9086
+          },
+          {
+            "start_sec": 21.72,
+            "end_sec": 21.84,
+            "text": "们",
+            "probability": 0.9994
+          },
+          {
+            "start_sec": 21.84,
+            "end_sec": 21.98,
+            "text": "下",
+            "probability": 0.9988
+          },
+          {
+            "start_sec": 21.98,
+            "end_sec": 22.18,
+            "text": "午",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 22.18,
+            "end_sec": 22.32,
+            "text": "就",
+            "probability": 0.8706
+          },
+          {
+            "start_sec": 22.32,
+            "end_sec": 22.52,
+            "text": "会",
+            "probability": 0.9964
+          },
+          {
+            "start_sec": 22.52,
+            "end_sec": 22.7,
+            "text": "开",
+            "probability": 0.9988
+          },
+          {
+            "start_sec": 22.7,
+            "end_sec": 22.88,
+            "text": "上",
+            "probability": 0.9012
+          },
+          {
+            "start_sec": 22.88,
+            "end_sec": 23.04,
+            "text": "雪",
+            "probability": 0.9981
+          },
+          {
+            "start_sec": 23.04,
+            "end_sec": 23.24,
+            "text": "山",
+            "probability": 0.9999
+          }
+        ]
+      },
+      {
+        "id": "asr-0010",
+        "start_sec": 23.24,
+        "end_sec": 24.78,
+        "text": "我还会给大家时间呢",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 23.24,
+            "end_sec": 23.66,
+            "text": "我",
+            "probability": 0.9662
+          },
+          {
+            "start_sec": 23.66,
+            "end_sec": 23.82,
+            "text": "还",
+            "probability": 0.9947
+          },
+          {
+            "start_sec": 23.82,
+            "end_sec": 23.96,
+            "text": "会",
+            "probability": 0.9946
+          },
+          {
+            "start_sec": 23.96,
+            "end_sec": 24.08,
+            "text": "给",
+            "probability": 0.9989
+          },
+          {
+            "start_sec": 24.08,
+            "end_sec": 24.34,
+            "text": "大家",
+            "probability": 0.999
+          },
+          {
+            "start_sec": 24.34,
+            "end_sec": 24.62,
+            "text": "时间",
+            "probability": 0.9968
+          },
+          {
+            "start_sec": 24.62,
+            "end_sec": 24.78,
+            "text": "呢",
+            "probability": 0.7702
+          }
+        ]
+      },
+      {
+        "id": "asr-0011",
+        "start_sec": 24.78,
+        "end_sec": 26.9,
+        "text": "会站在雪山上拍照",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 24.78,
+            "end_sec": 25.02,
+            "text": "会",
+            "probability": 0.9132
+          },
+          {
+            "start_sec": 25.02,
+            "end_sec": 25.54,
+            "text": "站",
+            "probability": 0.9931
+          },
+          {
+            "start_sec": 25.54,
+            "end_sec": 25.8,
+            "text": "在",
+            "probability": 0.9994
+          },
+          {
+            "start_sec": 25.8,
+            "end_sec": 26.02,
+            "text": "雪",
+            "probability": 0.9993
+          },
+          {
+            "start_sec": 26.02,
+            "end_sec": 26.24,
+            "text": "山",
+            "probability": 0.9999
+          },
+          {
+            "start_sec": 26.24,
+            "end_sec": 26.44,
+            "text": "上",
+            "probability": 0.9972
+          },
+          {
+            "start_sec": 26.44,
+            "end_sec": 26.64,
+            "text": "拍",
+            "probability": 0.9977
+          },
+          {
+            "start_sec": 26.64,
+            "end_sec": 26.9,
+            "text": "照",
+            "probability": 0.9897
+          }
+        ]
+      },
+      {
+        "id": "asr-0012",
+        "start_sec": 28.96,
+        "end_sec": 30.94,
+        "text": "这边主要是纬度高",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 28.96,
+            "end_sec": 29.36,
+            "text": "这",
+            "probability": 0.196
+          },
+          {
+            "start_sec": 29.36,
+            "end_sec": 29.76,
+            "text": "边",
+            "probability": 0.9329
+          },
+          {
+            "start_sec": 29.76,
+            "end_sec": 29.98,
+            "text": "主",
+            "probability": 0.9872
+          },
+          {
+            "start_sec": 29.98,
+            "end_sec": 30.14,
+            "text": "要",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 30.14,
+            "end_sec": 30.3,
+            "text": "是",
+            "probability": 0.9975
+          },
+          {
+            "start_sec": 30.3,
+            "end_sec": 30.52,
+            "text": "纬",
+            "probability": 0.7029
+          },
+          {
+            "start_sec": 30.52,
+            "end_sec": 30.74,
+            "text": "度",
+            "probability": 0.8786
+          },
+          {
+            "start_sec": 30.74,
+            "end_sec": 30.94,
+            "text": "高",
+            "probability": 0.9965
+          }
+        ]
+      },
+      {
+        "id": "asr-0013",
+        "start_sec": 30.94,
+        "end_sec": 32.5,
+        "text": "冬天最冷呢",
+        "avg_logprob": -0.3192,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 30.94,
+            "end_sec": 31.6,
+            "text": "冬",
+            "probability": 0.817
+          },
+          {
+            "start_sec": 31.6,
+            "end_sec": 31.82,
+            "text": "天",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 31.82,
+            "end_sec": 32.06,
+            "text": "最",
+            "probability": 0.999
+          },
+          {
+            "start_sec": 32.06,
+            "end_sec": 32.32,
+            "text": "冷",
+            "probability": 0.9994
+          },
+          {
+            "start_sec": 32.32,
+            "end_sec": 32.5,
+            "text": "呢",
+            "probability": 0.6503
+          }
+        ]
+      },
+      {
+        "id": "asr-0014",
+        "start_sec": 32.5,
+        "end_sec": 33.08,
+        "text": "可能明显",
+        "avg_logprob": -0.5307,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 32.5,
+            "end_sec": 32.8,
+            "text": "可能",
+            "probability": 0.6191
+          },
+          {
+            "start_sec": 32.8,
+            "end_sec": 32.96,
+            "text": "明",
+            "probability": 0.3468
+          },
+          {
+            "start_sec": 32.96,
+            "end_sec": 33.08,
+            "text": "显",
+            "probability": 0.467
+          }
+        ]
+      }
+    ],
+    "words": [
+      {
+        "start_sec": 4.24,
+        "end_sec": 4.3,
+        "text": "能",
+        "probability": 0.7281
+      },
+      {
+        "start_sec": 4.3,
+        "end_sec": 4.44,
+        "text": "不能",
+        "probability": 0.9977
+      },
+      {
+        "start_sec": 4.44,
+        "end_sec": 4.68,
+        "text": "进",
+        "probability": 0.878
+      },
+      {
+        "start_sec": 4.68,
+        "end_sec": 4.82,
+        "text": "入",
+        "probability": 0.9961
+      },
+      {
+        "start_sec": 4.82,
+        "end_sec": 4.96,
+        "text": "清",
+        "probability": 0.3189
+      },
+      {
+        "start_sec": 4.96,
+        "end_sec": 5.16,
+        "text": "隧",
+        "probability": 0.7174
+      },
+      {
+        "start_sec": 5.16,
+        "end_sec": 5.28,
+        "text": "道",
+        "probability": 0.9966
+      },
+      {
+        "start_sec": 5.28,
+        "end_sec": 5.44,
+        "text": "呢",
+        "probability": 0.504
+      },
+      {
+        "start_sec": 5.44,
+        "end_sec": 5.66,
+        "text": "然后",
+        "probability": 0.1444
+      },
+      {
+        "start_sec": 5.66,
+        "end_sec": 5.94,
+        "text": "挪",
+        "probability": 0.9943
+      },
+      {
+        "start_sec": 5.94,
+        "end_sec": 6.08,
+        "text": "威",
+        "probability": 0.9836
+      },
+      {
+        "start_sec": 6.08,
+        "end_sec": 6.26,
+        "text": "这",
+        "probability": 0.6371
+      },
+      {
+        "start_sec": 6.26,
+        "end_sec": 6.38,
+        "text": "一",
+        "probability": 0.9934
+      },
+      {
+        "start_sec": 6.38,
+        "end_sec": 6.56,
+        "text": "路",
+        "probability": 0.9992
+      },
+      {
+        "start_sec": 6.56,
+        "end_sec": 6.98,
+        "text": "会",
+        "probability": 0.4222
+      },
+      {
+        "start_sec": 6.98,
+        "end_sec": 7.26,
+        "text": "穿",
+        "probability": 0.9953
+      },
+      {
+        "start_sec": 7.26,
+        "end_sec": 7.44,
+        "text": "越",
+        "probability": 0.9973
+      },
+      {
+        "start_sec": 7.44,
+        "end_sec": 7.82,
+        "text": "很多",
+        "probability": 0.9096
+      },
+      {
+        "start_sec": 7.82,
+        "end_sec": 8.04,
+        "text": "的",
+        "probability": 0.9057
+      },
+      {
+        "start_sec": 8.04,
+        "end_sec": 8.22,
+        "text": "这个",
+        "probability": 0.7176
+      },
+      {
+        "start_sec": 8.22,
+        "end_sec": 8.68,
+        "text": "山",
+        "probability": 0.9774
+      },
+      {
+        "start_sec": 8.68,
+        "end_sec": 8.92,
+        "text": "水",
+        "probability": 0.1462
+      },
+      {
+        "start_sec": 8.92,
+        "end_sec": 9.22,
+        "text": "隧",
+        "probability": 0.9936
+      },
+      {
+        "start_sec": 9.22,
+        "end_sec": 9.36,
+        "text": "道",
+        "probability": 0.9991
+      },
+      {
+        "start_sec": 9.36,
+        "end_sec": 10.06,
+        "text": "挪",
+        "probability": 0.9817
+      },
+      {
+        "start_sec": 10.06,
+        "end_sec": 10.24,
+        "text": "威",
+        "probability": 0.998
+      },
+      {
+        "start_sec": 10.24,
+        "end_sec": 10.44,
+        "text": "是",
+        "probability": 0.9709
+      },
+      {
+        "start_sec": 10.44,
+        "end_sec": 10.74,
+        "text": "世界",
+        "probability": 0.9623
+      },
+      {
+        "start_sec": 10.74,
+        "end_sec": 10.96,
+        "text": "上",
+        "probability": 0.9914
+      },
+      {
+        "start_sec": 10.96,
+        "end_sec": 11.28,
+        "text": "隧",
+        "probability": 0.9953
+      },
+      {
+        "start_sec": 11.28,
+        "end_sec": 11.46,
+        "text": "道",
+        "probability": 0.9983
+      },
+      {
+        "start_sec": 11.46,
+        "end_sec": 11.68,
+        "text": "工",
+        "probability": 0.9903
+      },
+      {
+        "start_sec": 11.68,
+        "end_sec": 11.92,
+        "text": "程",
+        "probability": 0.9984
+      },
+      {
+        "start_sec": 11.92,
+        "end_sec": 12.12,
+        "text": "做",
+        "probability": 0.9255
+      },
+      {
+        "start_sec": 12.12,
+        "end_sec": 12.24,
+        "text": "的",
+        "probability": 0.6491
+      },
+      {
+        "start_sec": 12.24,
+        "end_sec": 12.44,
+        "text": "最",
+        "probability": 0.9956
+      },
+      {
+        "start_sec": 12.44,
+        "end_sec": 12.62,
+        "text": "好",
+        "probability": 0.8384
+      },
+      {
+        "start_sec": 12.62,
+        "end_sec": 12.84,
+        "text": "最",
+        "probability": 0.1042
+      },
+      {
+        "start_sec": 12.84,
+        "end_sec": 13.28,
+        "text": "多",
+        "probability": 0.1464
+      },
+      {
+        "start_sec": 13.28,
+        "end_sec": 13.46,
+        "text": "地方",
+        "probability": 0.1838
+      },
+      {
+        "start_sec": 13.46,
+        "end_sec": 13.62,
+        "text": "的",
+        "probability": 0.7164
+      },
+      {
+        "start_sec": 13.62,
+        "end_sec": 13.76,
+        "text": "国",
+        "probability": 0.8037
+      },
+      {
+        "start_sec": 13.76,
+        "end_sec": 13.96,
+        "text": "家",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 13.96,
+        "end_sec": 14.12,
+        "text": "因为",
+        "probability": 0.3435
+      },
+      {
+        "start_sec": 14.12,
+        "end_sec": 14.26,
+        "text": "就",
+        "probability": 0.4349
+      },
+      {
+        "start_sec": 14.26,
+        "end_sec": 14.38,
+        "text": "没",
+        "probability": 0.9965
+      },
+      {
+        "start_sec": 14.38,
+        "end_sec": 14.58,
+        "text": "办",
+        "probability": 0.9976
+      },
+      {
+        "start_sec": 14.58,
+        "end_sec": 14.76,
+        "text": "法",
+        "probability": 0.9944
+      },
+      {
+        "start_sec": 14.76,
+        "end_sec": 15.34,
+        "text": "这个",
+        "probability": 0.9321
+      },
+      {
+        "start_sec": 15.34,
+        "end_sec": 15.62,
+        "text": "国",
+        "probability": 0.9929
+      },
+      {
+        "start_sec": 15.62,
+        "end_sec": 15.82,
+        "text": "家",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 15.82,
+        "end_sec": 15.94,
+        "text": "呢",
+        "probability": 0.5344
+      },
+      {
+        "start_sec": 15.94,
+        "end_sec": 16.28,
+        "text": "不是",
+        "probability": 0.7124
+      },
+      {
+        "start_sec": 16.28,
+        "end_sec": 16.54,
+        "text": "一",
+        "probability": 0.2403
+      },
+      {
+        "start_sec": 16.54,
+        "end_sec": 16.74,
+        "text": "人",
+        "probability": 0.9829
+      },
+      {
+        "start_sec": 16.74,
+        "end_sec": 16.88,
+        "text": "类",
+        "probability": 0.9991
+      },
+      {
+        "start_sec": 16.88,
+        "end_sec": 17.04,
+        "text": "生",
+        "probability": 0.8221
+      },
+      {
+        "start_sec": 17.04,
+        "end_sec": 17.28,
+        "text": "存",
+        "probability": 0.8456
+      },
+      {
+        "start_sec": 17.28,
+        "end_sec": 17.72,
+        "text": "前",
+        "probability": 0.6984
+      },
+      {
+        "start_sec": 17.72,
+        "end_sec": 17.86,
+        "text": "面",
+        "probability": 0.9953
+      },
+      {
+        "start_sec": 17.86,
+        "end_sec": 17.96,
+        "text": "有",
+        "probability": 0.9966
+      },
+      {
+        "start_sec": 17.96,
+        "end_sec": 18.14,
+        "text": "雪",
+        "probability": 0.9979
+      },
+      {
+        "start_sec": 18.14,
+        "end_sec": 18.38,
+        "text": "山",
+        "probability": 0.9981
+      },
+      {
+        "start_sec": 18.38,
+        "end_sec": 18.56,
+        "text": "了",
+        "probability": 0.9002
+      },
+      {
+        "start_sec": 18.56,
+        "end_sec": 19.12,
+        "text": "哦",
+        "probability": 0.23
+      },
+      {
+        "start_sec": 19.46,
+        "end_sec": 19.58,
+        "text": " 雪",
+        "probability": 0.9132
+      },
+      {
+        "start_sec": 19.58,
+        "end_sec": 19.74,
+        "text": "山",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 19.74,
+        "end_sec": 20.02,
+        "text": "很好",
+        "probability": 0.0551
+      },
+      {
+        "start_sec": 20.02,
+        "end_sec": 20.6,
+        "text": "对",
+        "probability": 0.4054
+      },
+      {
+        "start_sec": 20.78,
+        "end_sec": 21.48,
+        "text": " 没事",
+        "probability": 0.9758
+      },
+      {
+        "start_sec": 21.48,
+        "end_sec": 21.72,
+        "text": "咱",
+        "probability": 0.9086
+      },
+      {
+        "start_sec": 21.72,
+        "end_sec": 21.84,
+        "text": "们",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 21.84,
+        "end_sec": 21.98,
+        "text": "下",
+        "probability": 0.9988
+      },
+      {
+        "start_sec": 21.98,
+        "end_sec": 22.18,
+        "text": "午",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 22.18,
+        "end_sec": 22.32,
+        "text": "就",
+        "probability": 0.8706
+      },
+      {
+        "start_sec": 22.32,
+        "end_sec": 22.52,
+        "text": "会",
+        "probability": 0.9964
+      },
+      {
+        "start_sec": 22.52,
+        "end_sec": 22.7,
+        "text": "开",
+        "probability": 0.9988
+      },
+      {
+        "start_sec": 22.7,
+        "end_sec": 22.88,
+        "text": "上",
+        "probability": 0.9012
+      },
+      {
+        "start_sec": 22.88,
+        "end_sec": 23.04,
+        "text": "雪",
+        "probability": 0.9981
+      },
+      {
+        "start_sec": 23.04,
+        "end_sec": 23.24,
+        "text": "山",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 23.24,
+        "end_sec": 23.66,
+        "text": "我",
+        "probability": 0.9662
+      },
+      {
+        "start_sec": 23.66,
+        "end_sec": 23.82,
+        "text": "还",
+        "probability": 0.9947
+      },
+      {
+        "start_sec": 23.82,
+        "end_sec": 23.96,
+        "text": "会",
+        "probability": 0.9946
+      },
+      {
+        "start_sec": 23.96,
+        "end_sec": 24.08,
+        "text": "给",
+        "probability": 0.9989
+      },
+      {
+        "start_sec": 24.08,
+        "end_sec": 24.34,
+        "text": "大家",
+        "probability": 0.999
+      },
+      {
+        "start_sec": 24.34,
+        "end_sec": 24.62,
+        "text": "时间",
+        "probability": 0.9968
+      },
+      {
+        "start_sec": 24.62,
+        "end_sec": 24.78,
+        "text": "呢",
+        "probability": 0.7702
+      },
+      {
+        "start_sec": 24.78,
+        "end_sec": 25.02,
+        "text": "会",
+        "probability": 0.9132
+      },
+      {
+        "start_sec": 25.02,
+        "end_sec": 25.54,
+        "text": "站",
+        "probability": 0.9931
+      },
+      {
+        "start_sec": 25.54,
+        "end_sec": 25.8,
+        "text": "在",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 25.8,
+        "end_sec": 26.02,
+        "text": "雪",
+        "probability": 0.9993
+      },
+      {
+        "start_sec": 26.02,
+        "end_sec": 26.24,
+        "text": "山",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 26.24,
+        "end_sec": 26.44,
+        "text": "上",
+        "probability": 0.9972
+      },
+      {
+        "start_sec": 26.44,
+        "end_sec": 26.64,
+        "text": "拍",
+        "probability": 0.9977
+      },
+      {
+        "start_sec": 26.64,
+        "end_sec": 26.9,
+        "text": "照",
+        "probability": 0.9897
+      },
+      {
+        "start_sec": 28.96,
+        "end_sec": 29.36,
+        "text": "这",
+        "probability": 0.196
+      },
+      {
+        "start_sec": 29.36,
+        "end_sec": 29.76,
+        "text": "边",
+        "probability": 0.9329
+      },
+      {
+        "start_sec": 29.76,
+        "end_sec": 29.98,
+        "text": "主",
+        "probability": 0.9872
+      },
+      {
+        "start_sec": 29.98,
+        "end_sec": 30.14,
+        "text": "要",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 30.14,
+        "end_sec": 30.3,
+        "text": "是",
+        "probability": 0.9975
+      },
+      {
+        "start_sec": 30.3,
+        "end_sec": 30.52,
+        "text": "纬",
+        "probability": 0.7029
+      },
+      {
+        "start_sec": 30.52,
+        "end_sec": 30.74,
+        "text": "度",
+        "probability": 0.8786
+      },
+      {
+        "start_sec": 30.74,
+        "end_sec": 30.94,
+        "text": "高",
+        "probability": 0.9965
+      },
+      {
+        "start_sec": 30.94,
+        "end_sec": 31.6,
+        "text": "冬",
+        "probability": 0.817
+      },
+      {
+        "start_sec": 31.6,
+        "end_sec": 31.82,
+        "text": "天",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 31.82,
+        "end_sec": 32.06,
+        "text": "最",
+        "probability": 0.999
+      },
+      {
+        "start_sec": 32.06,
+        "end_sec": 32.32,
+        "text": "冷",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 32.32,
+        "end_sec": 32.5,
+        "text": "呢",
+        "probability": 0.6503
+      },
+      {
+        "start_sec": 32.5,
+        "end_sec": 32.8,
+        "text": "可能",
+        "probability": 0.6191
+      },
+      {
+        "start_sec": 32.8,
+        "end_sec": 32.96,
+        "text": "明",
+        "probability": 0.3468
+      },
+      {
+        "start_sec": 32.96,
+        "end_sec": 33.08,
+        "text": "显",
+        "probability": 0.467
+      }
+    ]
+  },
+  "audio_segments": [
+    {
+      "start_sec": 0.0,
+      "end_sec": 4.0,
+      "kind": "music_likely",
+      "average_rms": 0.137872,
+      "peak": 0.416504
+    },
+    {
+      "start_sec": 4.0,
+      "end_sec": 27.0,
+      "kind": "speech",
+      "average_rms": 0.147793,
+      "peak": 0.599792
+    },
+    {
+      "start_sec": 27.0,
+      "end_sec": 29.0,
+      "kind": "music_likely",
+      "average_rms": 0.151376,
+      "peak": 0.536011
+    },
+    {
+      "start_sec": 29.0,
+      "end_sec": 33.0,
+      "kind": "speech",
+      "average_rms": 0.135519,
+      "peak": 0.509705
+    },
+    {
+      "start_sec": 33.0,
+      "end_sec": 33.5,
+      "kind": "music_likely",
+      "average_rms": 0.060629,
+      "peak": 0.353333
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "shot-0001",
+      "start_sec": 0.0,
+      "end_sec": 33.133,
+      "duration_sec": 33.133,
+      "role": "dialogue",
+      "speech_ratio": 0.8083,
+      "visual": {
+        "brightness": 0.31341,
+        "contrast": 0.19019,
+        "sharpness": 0.02954,
+        "motion": 0.0448,
+        "visual_hash": "ffffffff3fff07ff01ff01f4000000000000"
+      },
+      "audio": {
+        "rms": 0.144056,
+        "peak": 0.599792,
+        "spectral_centroid_hz": 545.28,
+        "spectral_flatness": 0.090124,
+        "kind": "speech"
+      },
+      "novelty_score": 1.0,
+      "quality_score": 0.504,
+      "keep_score": 0.6437,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "画面清晰度较低"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event_id": "event-001",
+      "start_sec": 0.0,
+      "end_sec": 33.133,
+      "duration_sec": 33.133,
+      "event_type": "conversation",
+      "shot_count": 1,
+      "role_counts": {
+        "dialogue": 1
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.5934,
+      "recommendation": "optional",
+      "key_shot_ids": [
+        "shot-0001"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0001",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0001"
+      }
+    }
+  ],
+  "learning_summary": {
+    "retention_archetypes": [
+      {
+        "role": "dialogue",
+        "shot_count": 1,
+        "retained_count": 1,
+        "retained_ratio": 1.0,
+        "average_duration_sec": 33.133,
+        "average_keep_score": 0.6437
+      }
+    ],
+    "cut_first_signals": [],
+    "event_patterns": [
+      {
+        "event_type": "conversation",
+        "event_count": 1
+      }
+    ],
+    "evidence_limits": [
+      "参考片是已经剪完的成片，只能直接学习被保留镜头的正向模式。",
+      "cut_first 来自重复、模糊、曝光、无动作和无语义等弱信号，不代表原作者真实删除记录。",
+      "要监督学习真正的保留与删除偏好，需要同时提供原始素材和最终成片。"
+    ]
+  }
+}

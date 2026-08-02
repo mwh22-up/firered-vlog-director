@@ -1,0 +1,7604 @@
+{
+  "schema_version": "1.0",
+  "source": {
+    "source_id": "GX010131",
+    "url": "local-target://GX010131.MP4",
+    "media_path": "${PROJECT_ROOT}\\work\\proxy\\76640eddb8743ed6.mp4",
+    "target_source": "raw/GX010131.MP4",
+    "aliases": [
+      "GX010131.MP4",
+      "raw/GX010131.MP4"
+    ]
+  },
+  "generated_at": "2026-08-02T09:21:48.418232+00:00",
+  "configuration": {
+    "scene_threshold": 0.22,
+    "visual_fps": 2.0,
+    "audio_window_sec": 0.5,
+    "asr_provider": "faster-whisper",
+    "asr_model": "large-v3-turbo",
+    "language": "zh"
+  },
+  "media": {
+    "duration_sec": 168.668,
+    "size_bytes": 54193497,
+    "streams": [
+      {
+        "index": 0,
+        "codec_type": "video",
+        "width": 960,
+        "height": 540,
+        "r_frame_rate": "30000/1001"
+      },
+      {
+        "index": 1,
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "index": 2,
+        "codec_type": "data",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "shot_count": 1,
+    "median_shot_duration_sec": 168.668,
+    "p75_shot_duration_sec": 168.668,
+    "shots_under_1_sec": 0,
+    "shots_over_5_sec": 1,
+    "silent_ratio": 0.0,
+    "audio_kind_ratios": {
+      "ambient_likely": 0.003,
+      "music_likely": 0.1601,
+      "speech": 0.8389
+    },
+    "opening_15_sec": {
+      "shot_count": 1,
+      "average_shot_duration_sec": 168.668
+    }
+  },
+  "transcription": {
+    "status": "ready",
+    "provider": "faster-whisper",
+    "model": "large-v3-turbo",
+    "language": "zh",
+    "language_probability": 1.0,
+    "duration_sec": 168.64,
+    "segments": [
+      {
+        "id": "asr-0001",
+        "start_sec": 0.0,
+        "end_sec": 2.08,
+        "text": "大概都是什么时候建核的呢",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 0.0,
+            "end_sec": 0.38,
+            "text": "大概",
+            "probability": 0.5466
+          },
+          {
+            "start_sec": 0.38,
+            "end_sec": 0.8,
+            "text": "都是",
+            "probability": 0.9077
+          },
+          {
+            "start_sec": 0.8,
+            "end_sec": 1.08,
+            "text": "什么",
+            "probability": 0.7751
+          },
+          {
+            "start_sec": 1.08,
+            "end_sec": 1.36,
+            "text": "时候",
+            "probability": 0.9982
+          },
+          {
+            "start_sec": 1.36,
+            "end_sec": 1.58,
+            "text": "建",
+            "probability": 0.8917
+          },
+          {
+            "start_sec": 1.58,
+            "end_sec": 1.82,
+            "text": "核",
+            "probability": 0.5653
+          },
+          {
+            "start_sec": 1.82,
+            "end_sec": 1.96,
+            "text": "的",
+            "probability": 0.7504
+          },
+          {
+            "start_sec": 1.96,
+            "end_sec": 2.08,
+            "text": "呢",
+            "probability": 0.8287
+          }
+        ]
+      },
+      {
+        "id": "asr-0002",
+        "start_sec": 2.08,
+        "end_sec": 2.98,
+        "text": "不像咱们中国",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 2.08,
+            "end_sec": 2.22,
+            "text": "不",
+            "probability": 0.2625
+          },
+          {
+            "start_sec": 2.22,
+            "end_sec": 2.36,
+            "text": "像",
+            "probability": 0.9957
+          },
+          {
+            "start_sec": 2.36,
+            "end_sec": 2.5,
+            "text": "咱",
+            "probability": 0.995
+          },
+          {
+            "start_sec": 2.5,
+            "end_sec": 2.62,
+            "text": "们",
+            "probability": 0.9983
+          },
+          {
+            "start_sec": 2.62,
+            "end_sec": 2.98,
+            "text": "中国",
+            "probability": 0.991
+          }
+        ]
+      },
+      {
+        "id": "asr-0003",
+        "start_sec": 3.42,
+        "end_sec": 5.36,
+        "text": "中国一说我们都引以为豪",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 3.42,
+            "end_sec": 3.84,
+            "text": "中国",
+            "probability": 0.9132
+          },
+          {
+            "start_sec": 3.84,
+            "end_sec": 4.1,
+            "text": "一",
+            "probability": 0.9431
+          },
+          {
+            "start_sec": 4.1,
+            "end_sec": 4.28,
+            "text": "说",
+            "probability": 0.9922
+          },
+          {
+            "start_sec": 4.28,
+            "end_sec": 4.5,
+            "text": "我们",
+            "probability": 0.9759
+          },
+          {
+            "start_sec": 4.5,
+            "end_sec": 4.62,
+            "text": "都",
+            "probability": 0.9944
+          },
+          {
+            "start_sec": 4.62,
+            "end_sec": 4.8,
+            "text": "引",
+            "probability": 0.941
+          },
+          {
+            "start_sec": 4.8,
+            "end_sec": 4.96,
+            "text": "以",
+            "probability": 0.9023
+          },
+          {
+            "start_sec": 4.96,
+            "end_sec": 5.14,
+            "text": "为",
+            "probability": 0.9964
+          },
+          {
+            "start_sec": 5.14,
+            "end_sec": 5.36,
+            "text": "豪",
+            "probability": 0.878
+          }
+        ]
+      },
+      {
+        "id": "asr-0004",
+        "start_sec": 5.36,
+        "end_sec": 7.96,
+        "text": "我们叫做上下五千年",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 5.36,
+            "end_sec": 5.9,
+            "text": "我们",
+            "probability": 0.2503
+          },
+          {
+            "start_sec": 5.9,
+            "end_sec": 6.22,
+            "text": "叫",
+            "probability": 0.9543
+          },
+          {
+            "start_sec": 6.22,
+            "end_sec": 6.36,
+            "text": "做",
+            "probability": 0.984
+          },
+          {
+            "start_sec": 6.36,
+            "end_sec": 6.7,
+            "text": "上",
+            "probability": 0.995
+          },
+          {
+            "start_sec": 6.7,
+            "end_sec": 7.12,
+            "text": "下",
+            "probability": 0.9973
+          },
+          {
+            "start_sec": 7.12,
+            "end_sec": 7.5,
+            "text": "五",
+            "probability": 0.7042
+          },
+          {
+            "start_sec": 7.5,
+            "end_sec": 7.7,
+            "text": "千",
+            "probability": 0.9993
+          },
+          {
+            "start_sec": 7.7,
+            "end_sec": 7.96,
+            "text": "年",
+            "probability": 0.9934
+          }
+        ]
+      },
+      {
+        "id": "asr-0005",
+        "start_sec": 8.52,
+        "end_sec": 11.28,
+        "text": "我们一来就上下五千年的历史",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 8.52,
+            "end_sec": 8.94,
+            "text": "我们",
+            "probability": 0.9885
+          },
+          {
+            "start_sec": 8.94,
+            "end_sec": 9.18,
+            "text": "一",
+            "probability": 0.7424
+          },
+          {
+            "start_sec": 9.18,
+            "end_sec": 9.42,
+            "text": "来",
+            "probability": 0.9994
+          },
+          {
+            "start_sec": 9.42,
+            "end_sec": 9.9,
+            "text": "就",
+            "probability": 0.9707
+          },
+          {
+            "start_sec": 9.9,
+            "end_sec": 10.12,
+            "text": "上",
+            "probability": 0.999
+          },
+          {
+            "start_sec": 10.12,
+            "end_sec": 10.32,
+            "text": "下",
+            "probability": 0.9995
+          },
+          {
+            "start_sec": 10.32,
+            "end_sec": 10.54,
+            "text": "五",
+            "probability": 0.9984
+          },
+          {
+            "start_sec": 10.54,
+            "end_sec": 10.72,
+            "text": "千",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 10.72,
+            "end_sec": 10.98,
+            "text": "年的",
+            "probability": 0.997
+          },
+          {
+            "start_sec": 10.98,
+            "end_sec": 11.16,
+            "text": "历",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 11.16,
+            "end_sec": 11.28,
+            "text": "史",
+            "probability": 0.9997
+          }
+        ]
+      },
+      {
+        "id": "asr-0006",
+        "start_sec": 11.28,
+        "end_sec": 12.5,
+        "text": "公元前两千多年",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 11.28,
+            "end_sec": 11.5,
+            "text": "公",
+            "probability": 0.9041
+          },
+          {
+            "start_sec": 11.5,
+            "end_sec": 11.66,
+            "text": "元",
+            "probability": 0.9837
+          },
+          {
+            "start_sec": 11.66,
+            "end_sec": 11.86,
+            "text": "前",
+            "probability": 0.9982
+          },
+          {
+            "start_sec": 11.86,
+            "end_sec": 12.04,
+            "text": "两",
+            "probability": 0.9817
+          },
+          {
+            "start_sec": 12.04,
+            "end_sec": 12.2,
+            "text": "千",
+            "probability": 0.9984
+          },
+          {
+            "start_sec": 12.2,
+            "end_sec": 12.34,
+            "text": "多",
+            "probability": 0.9982
+          },
+          {
+            "start_sec": 12.34,
+            "end_sec": 12.5,
+            "text": "年",
+            "probability": 0.9988
+          }
+        ]
+      },
+      {
+        "id": "asr-0007",
+        "start_sec": 12.5,
+        "end_sec": 13.96,
+        "text": "一直到公元后两千多年",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 12.5,
+            "end_sec": 12.74,
+            "text": "一直",
+            "probability": 0.9393
+          },
+          {
+            "start_sec": 12.74,
+            "end_sec": 12.94,
+            "text": "到",
+            "probability": 0.9994
+          },
+          {
+            "start_sec": 12.94,
+            "end_sec": 13.1,
+            "text": "公",
+            "probability": 0.9745
+          },
+          {
+            "start_sec": 13.1,
+            "end_sec": 13.22,
+            "text": "元",
+            "probability": 0.9994
+          },
+          {
+            "start_sec": 13.22,
+            "end_sec": 13.36,
+            "text": "后",
+            "probability": 0.9992
+          },
+          {
+            "start_sec": 13.36,
+            "end_sec": 13.5,
+            "text": "两",
+            "probability": 0.993
+          },
+          {
+            "start_sec": 13.5,
+            "end_sec": 13.66,
+            "text": "千",
+            "probability": 0.9997
+          },
+          {
+            "start_sec": 13.66,
+            "end_sec": 13.78,
+            "text": "多",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 13.78,
+            "end_sec": 13.96,
+            "text": "年",
+            "probability": 0.9988
+          }
+        ]
+      },
+      {
+        "id": "asr-0008",
+        "start_sec": 13.96,
+        "end_sec": 15.58,
+        "text": "我们有五千年的历史",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 13.96,
+            "end_sec": 14.58,
+            "text": "我们",
+            "probability": 0.9975
+          },
+          {
+            "start_sec": 14.58,
+            "end_sec": 14.74,
+            "text": "有",
+            "probability": 0.7504
+          },
+          {
+            "start_sec": 14.74,
+            "end_sec": 14.92,
+            "text": "五",
+            "probability": 0.9986
+          },
+          {
+            "start_sec": 14.92,
+            "end_sec": 15.06,
+            "text": "千",
+            "probability": 0.9999
+          },
+          {
+            "start_sec": 15.06,
+            "end_sec": 15.26,
+            "text": "年的",
+            "probability": 0.9966
+          },
+          {
+            "start_sec": 15.26,
+            "end_sec": 15.46,
+            "text": "历",
+            "probability": 1.0
+          },
+          {
+            "start_sec": 15.46,
+            "end_sec": 15.58,
+            "text": "史",
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": "asr-0009",
+        "start_sec": 15.58,
+        "end_sec": 17.0,
+        "text": "北欧有这么久吗",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 15.58,
+            "end_sec": 16.1,
+            "text": "北",
+            "probability": 0.9818
+          },
+          {
+            "start_sec": 16.1,
+            "end_sec": 16.28,
+            "text": "欧",
+            "probability": 0.9985
+          },
+          {
+            "start_sec": 16.28,
+            "end_sec": 16.44,
+            "text": "有",
+            "probability": 0.9959
+          },
+          {
+            "start_sec": 16.44,
+            "end_sec": 16.62,
+            "text": "这么",
+            "probability": 0.995
+          },
+          {
+            "start_sec": 16.62,
+            "end_sec": 16.8,
+            "text": "久",
+            "probability": 0.995
+          },
+          {
+            "start_sec": 16.8,
+            "end_sec": 17.0,
+            "text": "吗",
+            "probability": 0.9763
+          }
+        ]
+      },
+      {
+        "id": "asr-0010",
+        "start_sec": 17.0,
+        "end_sec": 18.32,
+        "text": "根本就没有",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 17.0,
+            "end_sec": 17.42,
+            "text": "根",
+            "probability": 0.9069
+          },
+          {
+            "start_sec": 17.42,
+            "end_sec": 17.74,
+            "text": "本",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 17.74,
+            "end_sec": 18.02,
+            "text": "就",
+            "probability": 0.9969
+          },
+          {
+            "start_sec": 18.02,
+            "end_sec": 18.32,
+            "text": "没有",
+            "probability": 0.9995
+          }
+        ]
+      },
+      {
+        "id": "asr-0011",
+        "start_sec": 18.32,
+        "end_sec": 21.78,
+        "text": "北欧开始形成这种",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 18.32,
+            "end_sec": 19.16,
+            "text": "北",
+            "probability": 0.9319
+          },
+          {
+            "start_sec": 19.16,
+            "end_sec": 19.5,
+            "text": "欧",
+            "probability": 1.0
+          },
+          {
+            "start_sec": 19.5,
+            "end_sec": 20.16,
+            "text": "开始",
+            "probability": 0.9991
+          },
+          {
+            "start_sec": 20.16,
+            "end_sec": 20.96,
+            "text": "形",
+            "probability": 0.9768
+          },
+          {
+            "start_sec": 20.96,
+            "end_sec": 21.38,
+            "text": "成",
+            "probability": 0.9999
+          },
+          {
+            "start_sec": 21.38,
+            "end_sec": 21.58,
+            "text": "这",
+            "probability": 0.9359
+          },
+          {
+            "start_sec": 21.58,
+            "end_sec": 21.78,
+            "text": "种",
+            "probability": 0.9997
+          }
+        ]
+      },
+      {
+        "id": "asr-0012",
+        "start_sec": 21.78,
+        "end_sec": 22.92,
+        "text": "都不能叫国家",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 21.78,
+            "end_sec": 21.98,
+            "text": "都",
+            "probability": 0.9454
+          },
+          {
+            "start_sec": 21.98,
+            "end_sec": 22.24,
+            "text": "不能",
+            "probability": 0.9838
+          },
+          {
+            "start_sec": 22.24,
+            "end_sec": 22.44,
+            "text": "叫",
+            "probability": 0.3835
+          },
+          {
+            "start_sec": 22.44,
+            "end_sec": 22.66,
+            "text": "国",
+            "probability": 0.9636
+          },
+          {
+            "start_sec": 22.66,
+            "end_sec": 22.92,
+            "text": "家",
+            "probability": 0.9998
+          }
+        ]
+      },
+      {
+        "id": "asr-0013",
+        "start_sec": 22.92,
+        "end_sec": 25.06,
+        "text": "形成这种陆落聚集的时候",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 22.92,
+            "end_sec": 23.22,
+            "text": "形",
+            "probability": 0.8373
+          },
+          {
+            "start_sec": 23.22,
+            "end_sec": 23.44,
+            "text": "成",
+            "probability": 0.9989
+          },
+          {
+            "start_sec": 23.44,
+            "end_sec": 23.58,
+            "text": "这",
+            "probability": 0.989
+          },
+          {
+            "start_sec": 23.58,
+            "end_sec": 23.72,
+            "text": "种",
+            "probability": 0.9999
+          },
+          {
+            "start_sec": 23.72,
+            "end_sec": 24.04,
+            "text": "陆",
+            "probability": 0.8125
+          },
+          {
+            "start_sec": 24.04,
+            "end_sec": 24.28,
+            "text": "落",
+            "probability": 0.9061
+          },
+          {
+            "start_sec": 24.28,
+            "end_sec": 24.5,
+            "text": "聚",
+            "probability": 0.9584
+          },
+          {
+            "start_sec": 24.5,
+            "end_sec": 24.68,
+            "text": "集",
+            "probability": 0.985
+          },
+          {
+            "start_sec": 24.68,
+            "end_sec": 25.06,
+            "text": "的时候",
+            "probability": 0.9975
+          }
+        ]
+      },
+      {
+        "id": "asr-0014",
+        "start_sec": 25.06,
+        "end_sec": 27.58,
+        "text": "是在公元七百多年的时候",
+        "avg_logprob": -0.1771,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 25.06,
+            "end_sec": 25.66,
+            "text": "是",
+            "probability": 0.9954
+          },
+          {
+            "start_sec": 25.66,
+            "end_sec": 25.92,
+            "text": "在",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 25.92,
+            "end_sec": 26.12,
+            "text": "公",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 26.12,
+            "end_sec": 26.38,
+            "text": "元",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 26.38,
+            "end_sec": 26.66,
+            "text": "七",
+            "probability": 0.9171
+          },
+          {
+            "start_sec": 26.66,
+            "end_sec": 26.82,
+            "text": "百",
+            "probability": 0.9997
+          },
+          {
+            "start_sec": 26.82,
+            "end_sec": 27.0,
+            "text": "多",
+            "probability": 0.9982
+          },
+          {
+            "start_sec": 27.0,
+            "end_sec": 27.22,
+            "text": "年的",
+            "probability": 0.9858
+          },
+          {
+            "start_sec": 27.22,
+            "end_sec": 27.58,
+            "text": "时候",
+            "probability": 0.999
+          }
+        ]
+      },
+      {
+        "id": "asr-0015",
+        "start_sec": 28.2,
+        "end_sec": 30.28,
+        "text": "七百多年到九百多年",
+        "avg_logprob": -0.1639,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 28.2,
+            "end_sec": 28.64,
+            "text": "七",
+            "probability": 0.2384
+          },
+          {
+            "start_sec": 28.64,
+            "end_sec": 28.9,
+            "text": "百",
+            "probability": 0.9973
+          },
+          {
+            "start_sec": 28.9,
+            "end_sec": 29.08,
+            "text": "多",
+            "probability": 0.9953
+          },
+          {
+            "start_sec": 29.08,
+            "end_sec": 29.28,
+            "text": "年",
+            "probability": 0.9959
+          },
+          {
+            "start_sec": 29.28,
+            "end_sec": 29.52,
+            "text": "到",
+            "probability": 0.968
+          },
+          {
+            "start_sec": 29.52,
+            "end_sec": 29.74,
+            "text": "九",
+            "probability": 0.9833
+          },
+          {
+            "start_sec": 29.74,
+            "end_sec": 29.9,
+            "text": "百",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 29.9,
+            "end_sec": 30.08,
+            "text": "多",
+            "probability": 0.996
+          },
+          {
+            "start_sec": 30.08,
+            "end_sec": 30.28,
+            "text": "年",
+            "probability": 0.9948
+          }
+        ]
+      },
+      {
+        "id": "asr-0016",
+        "start_sec": 30.28,
+        "end_sec": 33.66,
+        "text": "那会儿北欧是一个什么概念",
+        "avg_logprob": -0.1639,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 30.28,
+            "end_sec": 30.88,
+            "text": "那",
+            "probability": 0.8008
+          },
+          {
+            "start_sec": 30.88,
+            "end_sec": 31.12,
+            "text": "会",
+            "probability": 0.6981
+          },
+          {
+            "start_sec": 31.12,
+            "end_sec": 31.22,
+            "text": "儿",
+            "probability": 0.7334
+          },
+          {
+            "start_sec": 31.22,
+            "end_sec": 31.48,
+            "text": "北",
+            "probability": 0.9725
+          },
+          {
+            "start_sec": 31.48,
+            "end_sec": 31.72,
+            "text": "欧",
+            "probability": 0.6069
+          },
+          {
+            "start_sec": 31.72,
+            "end_sec": 32.8,
+            "text": "是",
+            "probability": 0.9779
+          },
+          {
+            "start_sec": 32.8,
+            "end_sec": 33.0,
+            "text": "一个",
+            "probability": 0.9942
+          },
+          {
+            "start_sec": 33.0,
+            "end_sec": 33.18,
+            "text": "什么",
+            "probability": 0.9974
+          },
+          {
+            "start_sec": 33.18,
+            "end_sec": 33.4,
+            "text": "概",
+            "probability": 0.9994
+          },
+          {
+            "start_sec": 33.4,
+            "end_sec": 33.66,
+            "text": "念",
+            "probability": 0.9977
+          }
+        ]
+      },
+      {
+        "id": "asr-0017",
+        "start_sec": 33.66,
+        "end_sec": 37.02,
+        "text": "就是海盗畅东武祖的地儿",
+        "avg_logprob": -0.1639,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 33.66,
+            "end_sec": 34.42,
+            "text": "就是",
+            "probability": 0.8403
+          },
+          {
+            "start_sec": 34.42,
+            "end_sec": 35.0,
+            "text": "海",
+            "probability": 0.9859
+          },
+          {
+            "start_sec": 35.0,
+            "end_sec": 35.36,
+            "text": "盗",
+            "probability": 0.7347
+          },
+          {
+            "start_sec": 35.36,
+            "end_sec": 35.86,
+            "text": "畅",
+            "probability": 0.9751
+          },
+          {
+            "start_sec": 35.86,
+            "end_sec": 36.14,
+            "text": "东",
+            "probability": 0.2134
+          },
+          {
+            "start_sec": 36.14,
+            "end_sec": 36.4,
+            "text": "武",
+            "probability": 0.2987
+          },
+          {
+            "start_sec": 36.4,
+            "end_sec": 36.54,
+            "text": "祖",
+            "probability": 0.9246
+          },
+          {
+            "start_sec": 36.54,
+            "end_sec": 36.68,
+            "text": "的",
+            "probability": 0.4359
+          },
+          {
+            "start_sec": 36.68,
+            "end_sec": 36.82,
+            "text": "地",
+            "probability": 0.6864
+          },
+          {
+            "start_sec": 36.82,
+            "end_sec": 37.02,
+            "text": "儿",
+            "probability": 0.3833
+          }
+        ]
+      },
+      {
+        "id": "asr-0018",
+        "start_sec": 37.02,
+        "end_sec": 38.9,
+        "text": "是一个海盗横行的地儿",
+        "avg_logprob": -0.1639,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 37.02,
+            "end_sec": 37.32,
+            "text": "是",
+            "probability": 0.8437
+          },
+          {
+            "start_sec": 37.32,
+            "end_sec": 37.46,
+            "text": "一个",
+            "probability": 0.9504
+          },
+          {
+            "start_sec": 37.46,
+            "end_sec": 37.68,
+            "text": "海",
+            "probability": 0.997
+          },
+          {
+            "start_sec": 37.68,
+            "end_sec": 37.86,
+            "text": "盗",
+            "probability": 0.9242
+          },
+          {
+            "start_sec": 37.86,
+            "end_sec": 38.06,
+            "text": "横",
+            "probability": 0.9791
+          },
+          {
+            "start_sec": 38.06,
+            "end_sec": 38.22,
+            "text": "行",
+            "probability": 0.9953
+          },
+          {
+            "start_sec": 38.22,
+            "end_sec": 38.36,
+            "text": "的",
+            "probability": 0.9952
+          },
+          {
+            "start_sec": 38.36,
+            "end_sec": 38.46,
+            "text": "地",
+            "probability": 0.9769
+          },
+          {
+            "start_sec": 38.46,
+            "end_sec": 38.9,
+            "text": "儿",
+            "probability": 0.9874
+          }
+        ]
+      },
+      {
+        "id": "asr-0019",
+        "start_sec": 38.9,
+        "end_sec": 41.1,
+        "text": "所以海盗我们接触的不多",
+        "avg_logprob": -0.1639,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 38.9,
+            "end_sec": 39.08,
+            "text": "所以",
+            "probability": 0.982
+          },
+          {
+            "start_sec": 39.08,
+            "end_sec": 39.42,
+            "text": "海",
+            "probability": 0.9963
+          },
+          {
+            "start_sec": 39.42,
+            "end_sec": 39.74,
+            "text": "盗",
+            "probability": 0.9957
+          },
+          {
+            "start_sec": 39.74,
+            "end_sec": 40.34,
+            "text": "我们",
+            "probability": 0.99
+          },
+          {
+            "start_sec": 40.34,
+            "end_sec": 40.56,
+            "text": "接",
+            "probability": 0.9892
+          },
+          {
+            "start_sec": 40.56,
+            "end_sec": 40.72,
+            "text": "触",
+            "probability": 0.9493
+          },
+          {
+            "start_sec": 40.72,
+            "end_sec": 40.82,
+            "text": "的",
+            "probability": 0.8834
+          },
+          {
+            "start_sec": 40.82,
+            "end_sec": 41.1,
+            "text": "不多",
+            "probability": 0.843
+          }
+        ]
+      },
+      {
+        "id": "asr-0020",
+        "start_sec": 41.1,
+        "end_sec": 43.92,
+        "text": "因为中国除了在福建那边",
+        "avg_logprob": -0.1639,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 41.1,
+            "end_sec": 41.56,
+            "text": "因为",
+            "probability": 0.2149
+          },
+          {
+            "start_sec": 41.56,
+            "end_sec": 41.98,
+            "text": "中国",
+            "probability": 0.9939
+          },
+          {
+            "start_sec": 41.98,
+            "end_sec": 42.52,
+            "text": "除",
+            "probability": 0.9938
+          },
+          {
+            "start_sec": 42.52,
+            "end_sec": 42.64,
+            "text": "了",
+            "probability": 0.9987
+          },
+          {
+            "start_sec": 42.64,
+            "end_sec": 42.78,
+            "text": "在",
+            "probability": 0.9884
+          },
+          {
+            "start_sec": 42.78,
+            "end_sec": 43.14,
+            "text": "福",
+            "probability": 0.9903
+          },
+          {
+            "start_sec": 43.14,
+            "end_sec": 43.38,
+            "text": "建",
+            "probability": 0.9942
+          },
+          {
+            "start_sec": 43.38,
+            "end_sec": 43.74,
+            "text": "那",
+            "probability": 0.8898
+          },
+          {
+            "start_sec": 43.74,
+            "end_sec": 43.92,
+            "text": "边",
+            "probability": 0.9985
+          }
+        ]
+      },
+      {
+        "id": "asr-0021",
+        "start_sec": 43.92,
+        "end_sec": 46.14,
+        "text": "东南沿海有一些海盗以外",
+        "avg_logprob": -0.1639,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 43.92,
+            "end_sec": 44.08,
+            "text": "东",
+            "probability": 0.9733
+          },
+          {
+            "start_sec": 44.08,
+            "end_sec": 44.3,
+            "text": "南",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 44.3,
+            "end_sec": 44.48,
+            "text": "沿",
+            "probability": 0.9304
+          },
+          {
+            "start_sec": 44.48,
+            "end_sec": 44.76,
+            "text": "海",
+            "probability": 0.9977
+          },
+          {
+            "start_sec": 44.76,
+            "end_sec": 45.06,
+            "text": "有一",
+            "probability": 0.972
+          },
+          {
+            "start_sec": 45.06,
+            "end_sec": 45.42,
+            "text": "些",
+            "probability": 0.9997
+          },
+          {
+            "start_sec": 45.42,
+            "end_sec": 45.64,
+            "text": "海",
+            "probability": 0.9994
+          },
+          {
+            "start_sec": 45.64,
+            "end_sec": 45.8,
+            "text": "盗",
+            "probability": 0.9979
+          },
+          {
+            "start_sec": 45.8,
+            "end_sec": 45.94,
+            "text": "以",
+            "probability": 0.9756
+          },
+          {
+            "start_sec": 45.94,
+            "end_sec": 46.14,
+            "text": "外",
+            "probability": 0.9999
+          }
+        ]
+      },
+      {
+        "id": "asr-0022",
+        "start_sec": 46.14,
+        "end_sec": 49.48,
+        "text": "剩下我们中国包括咱们的江浙户地区",
+        "avg_logprob": -0.1639,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 46.14,
+            "end_sec": 46.84,
+            "text": "剩",
+            "probability": 0.7531
+          },
+          {
+            "start_sec": 46.84,
+            "end_sec": 47.08,
+            "text": "下",
+            "probability": 0.8419
+          },
+          {
+            "start_sec": 47.08,
+            "end_sec": 47.34,
+            "text": "我们",
+            "probability": 0.9474
+          },
+          {
+            "start_sec": 47.34,
+            "end_sec": 47.68,
+            "text": "中国",
+            "probability": 0.4109
+          },
+          {
+            "start_sec": 47.68,
+            "end_sec": 48.26,
+            "text": "包括",
+            "probability": 0.9657
+          },
+          {
+            "start_sec": 48.26,
+            "end_sec": 48.48,
+            "text": "咱",
+            "probability": 0.8925
+          },
+          {
+            "start_sec": 48.48,
+            "end_sec": 48.6,
+            "text": "们",
+            "probability": 0.998
+          },
+          {
+            "start_sec": 48.6,
+            "end_sec": 48.7,
+            "text": "的",
+            "probability": 0.944
+          },
+          {
+            "start_sec": 48.7,
+            "end_sec": 48.84,
+            "text": "江",
+            "probability": 0.9608
+          },
+          {
+            "start_sec": 48.84,
+            "end_sec": 49.02,
+            "text": "浙",
+            "probability": 0.9236
+          },
+          {
+            "start_sec": 49.02,
+            "end_sec": 49.14,
+            "text": "户",
+            "probability": 0.6107
+          },
+          {
+            "start_sec": 49.14,
+            "end_sec": 49.32,
+            "text": "地",
+            "probability": 0.9982
+          },
+          {
+            "start_sec": 49.32,
+            "end_sec": 49.48,
+            "text": "区",
+            "probability": 0.9989
+          }
+        ]
+      },
+      {
+        "id": "asr-0023",
+        "start_sec": 49.48,
+        "end_sec": 50.58,
+        "text": "基本上也没有海盗",
+        "avg_logprob": -0.1639,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 49.48,
+            "end_sec": 49.78,
+            "text": "基本",
+            "probability": 0.9927
+          },
+          {
+            "start_sec": 49.78,
+            "end_sec": 49.9,
+            "text": "上",
+            "probability": 0.9911
+          },
+          {
+            "start_sec": 49.9,
+            "end_sec": 50.0,
+            "text": "也",
+            "probability": 0.9605
+          },
+          {
+            "start_sec": 50.0,
+            "end_sec": 50.22,
+            "text": "没有",
+            "probability": 0.9974
+          },
+          {
+            "start_sec": 50.22,
+            "end_sec": 50.38,
+            "text": "海",
+            "probability": 0.9993
+          },
+          {
+            "start_sec": 50.38,
+            "end_sec": 50.58,
+            "text": "盗",
+            "probability": 0.999
+          }
+        ]
+      },
+      {
+        "id": "asr-0024",
+        "start_sec": 50.58,
+        "end_sec": 53.02,
+        "text": "中国原来最早都是农农的",
+        "avg_logprob": -0.1639,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 50.58,
+            "end_sec": 51.26,
+            "text": "中国",
+            "probability": 0.6112
+          },
+          {
+            "start_sec": 51.26,
+            "end_sec": 51.74,
+            "text": "原",
+            "probability": 0.9917
+          },
+          {
+            "start_sec": 51.74,
+            "end_sec": 51.92,
+            "text": "来",
+            "probability": 0.9995
+          },
+          {
+            "start_sec": 51.92,
+            "end_sec": 52.06,
+            "text": "最",
+            "probability": 0.9958
+          },
+          {
+            "start_sec": 52.06,
+            "end_sec": 52.22,
+            "text": "早",
+            "probability": 0.9964
+          },
+          {
+            "start_sec": 52.22,
+            "end_sec": 52.48,
+            "text": "都是",
+            "probability": 0.9428
+          },
+          {
+            "start_sec": 52.48,
+            "end_sec": 52.7,
+            "text": "农",
+            "probability": 0.6763
+          },
+          {
+            "start_sec": 52.7,
+            "end_sec": 52.86,
+            "text": "农",
+            "probability": 0.558
+          },
+          {
+            "start_sec": 52.86,
+            "end_sec": 53.02,
+            "text": "的",
+            "probability": 0.8958
+          }
+        ]
+      },
+      {
+        "id": "asr-0025",
+        "start_sec": 53.02,
+        "end_sec": 55.24,
+        "text": "比如从河南从中原开始发展",
+        "avg_logprob": -0.1639,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 53.02,
+            "end_sec": 53.16,
+            "text": "比如",
+            "probability": 0.8033
+          },
+          {
+            "start_sec": 53.16,
+            "end_sec": 53.5,
+            "text": "从",
+            "probability": 0.9243
+          },
+          {
+            "start_sec": 53.5,
+            "end_sec": 53.76,
+            "text": "河",
+            "probability": 0.9993
+          },
+          {
+            "start_sec": 53.76,
+            "end_sec": 53.94,
+            "text": "南",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 53.94,
+            "end_sec": 54.14,
+            "text": "从",
+            "probability": 0.7063
+          },
+          {
+            "start_sec": 54.14,
+            "end_sec": 54.36,
+            "text": "中",
+            "probability": 0.9997
+          },
+          {
+            "start_sec": 54.36,
+            "end_sec": 54.52,
+            "text": "原",
+            "probability": 0.9947
+          },
+          {
+            "start_sec": 54.52,
+            "end_sec": 54.84,
+            "text": "开始",
+            "probability": 0.9986
+          },
+          {
+            "start_sec": 54.84,
+            "end_sec": 55.06,
+            "text": "发",
+            "probability": 0.9975
+          },
+          {
+            "start_sec": 55.06,
+            "end_sec": 55.24,
+            "text": "展",
+            "probability": 0.9985
+          }
+        ]
+      },
+      {
+        "id": "asr-0026",
+        "start_sec": 55.24,
+        "end_sec": 57.72,
+        "text": "我们最多有点土匪",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 55.24,
+            "end_sec": 56.02,
+            "text": "我们",
+            "probability": 0.9116
+          },
+          {
+            "start_sec": 56.02,
+            "end_sec": 56.68,
+            "text": "最",
+            "probability": 0.9863
+          },
+          {
+            "start_sec": 56.68,
+            "end_sec": 56.88,
+            "text": "多",
+            "probability": 0.9997
+          },
+          {
+            "start_sec": 56.88,
+            "end_sec": 57.16,
+            "text": "有",
+            "probability": 0.9927
+          },
+          {
+            "start_sec": 57.16,
+            "end_sec": 57.26,
+            "text": "点",
+            "probability": 1.0
+          },
+          {
+            "start_sec": 57.26,
+            "end_sec": 57.48,
+            "text": "土",
+            "probability": 0.9962
+          },
+          {
+            "start_sec": 57.48,
+            "end_sec": 57.72,
+            "text": "匪",
+            "probability": 0.9902
+          }
+        ]
+      },
+      {
+        "id": "asr-0027",
+        "start_sec": 57.72,
+        "end_sec": 59.02,
+        "text": "那有点山贼",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 57.72,
+            "end_sec": 58.2,
+            "text": "那",
+            "probability": 0.3209
+          },
+          {
+            "start_sec": 58.2,
+            "end_sec": 58.42,
+            "text": "有",
+            "probability": 0.7329
+          },
+          {
+            "start_sec": 58.42,
+            "end_sec": 58.54,
+            "text": "点",
+            "probability": 0.9999
+          },
+          {
+            "start_sec": 58.54,
+            "end_sec": 58.76,
+            "text": "山",
+            "probability": 0.9993
+          },
+          {
+            "start_sec": 58.76,
+            "end_sec": 59.02,
+            "text": "贼",
+            "probability": 0.9978
+          }
+        ]
+      },
+      {
+        "id": "asr-0028",
+        "start_sec": 59.02,
+        "end_sec": 59.94,
+        "text": "那是海盗",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 59.02,
+            "end_sec": 59.48,
+            "text": "那",
+            "probability": 0.6238
+          },
+          {
+            "start_sec": 59.48,
+            "end_sec": 59.6,
+            "text": "是",
+            "probability": 0.9276
+          },
+          {
+            "start_sec": 59.6,
+            "end_sec": 59.78,
+            "text": "海",
+            "probability": 0.9988
+          },
+          {
+            "start_sec": 59.78,
+            "end_sec": 59.94,
+            "text": "盗",
+            "probability": 0.9838
+          }
+        ]
+      },
+      {
+        "id": "asr-0029",
+        "start_sec": 59.94,
+        "end_sec": 61.5,
+        "text": "其实跟他们的意思差不多",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 59.94,
+            "end_sec": 60.22,
+            "text": "其实",
+            "probability": 0.9794
+          },
+          {
+            "start_sec": 60.22,
+            "end_sec": 60.46,
+            "text": "跟",
+            "probability": 0.999
+          },
+          {
+            "start_sec": 60.46,
+            "end_sec": 60.7,
+            "text": "他们",
+            "probability": 0.9726
+          },
+          {
+            "start_sec": 60.7,
+            "end_sec": 60.84,
+            "text": "的",
+            "probability": 0.517
+          },
+          {
+            "start_sec": 60.84,
+            "end_sec": 61.1,
+            "text": "意思",
+            "probability": 0.9999
+          },
+          {
+            "start_sec": 61.1,
+            "end_sec": 61.5,
+            "text": "差不多",
+            "probability": 0.9988
+          }
+        ]
+      },
+      {
+        "id": "asr-0030",
+        "start_sec": 61.5,
+        "end_sec": 63.14,
+        "text": "只不过土匪山贼",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 61.5,
+            "end_sec": 62.1,
+            "text": "只",
+            "probability": 0.9968
+          },
+          {
+            "start_sec": 62.1,
+            "end_sec": 62.2,
+            "text": "不",
+            "probability": 0.9828
+          },
+          {
+            "start_sec": 62.2,
+            "end_sec": 62.28,
+            "text": "过",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 62.28,
+            "end_sec": 62.5,
+            "text": "土",
+            "probability": 0.9988
+          },
+          {
+            "start_sec": 62.5,
+            "end_sec": 62.7,
+            "text": "匪",
+            "probability": 0.9999
+          },
+          {
+            "start_sec": 62.7,
+            "end_sec": 62.88,
+            "text": "山",
+            "probability": 0.9905
+          },
+          {
+            "start_sec": 62.88,
+            "end_sec": 63.14,
+            "text": "贼",
+            "probability": 0.9997
+          }
+        ]
+      },
+      {
+        "id": "asr-0031",
+        "start_sec": 63.14,
+        "end_sec": 64.72,
+        "text": "生活在平原和山地",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 63.14,
+            "end_sec": 63.56,
+            "text": "生活",
+            "probability": 0.9947
+          },
+          {
+            "start_sec": 63.56,
+            "end_sec": 63.78,
+            "text": "在",
+            "probability": 0.9995
+          },
+          {
+            "start_sec": 63.78,
+            "end_sec": 63.98,
+            "text": "平",
+            "probability": 0.9982
+          },
+          {
+            "start_sec": 63.98,
+            "end_sec": 64.18,
+            "text": "原",
+            "probability": 0.9984
+          },
+          {
+            "start_sec": 64.18,
+            "end_sec": 64.34,
+            "text": "和",
+            "probability": 0.9075
+          },
+          {
+            "start_sec": 64.34,
+            "end_sec": 64.52,
+            "text": "山",
+            "probability": 0.9994
+          },
+          {
+            "start_sec": 64.52,
+            "end_sec": 64.72,
+            "text": "地",
+            "probability": 0.9973
+          }
+        ]
+      },
+      {
+        "id": "asr-0032",
+        "start_sec": 64.72,
+        "end_sec": 67.22,
+        "text": "海盗生活在沿海城市",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 64.72,
+            "end_sec": 65.24,
+            "text": "海",
+            "probability": 0.992
+          },
+          {
+            "start_sec": 65.24,
+            "end_sec": 65.48,
+            "text": "盗",
+            "probability": 0.9984
+          },
+          {
+            "start_sec": 65.48,
+            "end_sec": 65.96,
+            "text": "生活",
+            "probability": 0.478
+          },
+          {
+            "start_sec": 65.96,
+            "end_sec": 66.3,
+            "text": "在",
+            "probability": 0.9995
+          },
+          {
+            "start_sec": 66.3,
+            "end_sec": 66.46,
+            "text": "沿",
+            "probability": 0.9874
+          },
+          {
+            "start_sec": 66.46,
+            "end_sec": 66.74,
+            "text": "海",
+            "probability": 0.9991
+          },
+          {
+            "start_sec": 66.74,
+            "end_sec": 66.96,
+            "text": "城",
+            "probability": 0.9995
+          },
+          {
+            "start_sec": 66.96,
+            "end_sec": 67.22,
+            "text": "市",
+            "probability": 0.9998
+          }
+        ]
+      },
+      {
+        "id": "asr-0033",
+        "start_sec": 67.22,
+        "end_sec": 69.92,
+        "text": "它就是因为一元政治的位置",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 67.22,
+            "end_sec": 68.02,
+            "text": "它",
+            "probability": 0.7651
+          },
+          {
+            "start_sec": 68.02,
+            "end_sec": 68.28,
+            "text": "就是",
+            "probability": 0.999
+          },
+          {
+            "start_sec": 68.28,
+            "end_sec": 68.52,
+            "text": "因为",
+            "probability": 0.978
+          },
+          {
+            "start_sec": 68.52,
+            "end_sec": 68.76,
+            "text": "一",
+            "probability": 0.3883
+          },
+          {
+            "start_sec": 68.76,
+            "end_sec": 69.08,
+            "text": "元",
+            "probability": 0.6674
+          },
+          {
+            "start_sec": 69.08,
+            "end_sec": 69.5,
+            "text": "政治",
+            "probability": 0.8024
+          },
+          {
+            "start_sec": 69.5,
+            "end_sec": 69.66,
+            "text": "的",
+            "probability": 0.8362
+          },
+          {
+            "start_sec": 69.66,
+            "end_sec": 69.78,
+            "text": "位",
+            "probability": 0.6211
+          },
+          {
+            "start_sec": 69.78,
+            "end_sec": 69.92,
+            "text": "置",
+            "probability": 0.9668
+          }
+        ]
+      },
+      {
+        "id": "asr-0034",
+        "start_sec": 69.92,
+        "end_sec": 70.92,
+        "text": "留于地理的位置",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 69.92,
+            "end_sec": 70.12,
+            "text": "留",
+            "probability": 0.7748
+          },
+          {
+            "start_sec": 70.12,
+            "end_sec": 70.26,
+            "text": "于",
+            "probability": 0.9048
+          },
+          {
+            "start_sec": 70.26,
+            "end_sec": 70.36,
+            "text": "地",
+            "probability": 0.9962
+          },
+          {
+            "start_sec": 70.36,
+            "end_sec": 70.5,
+            "text": "理",
+            "probability": 0.9664
+          },
+          {
+            "start_sec": 70.5,
+            "end_sec": 70.64,
+            "text": "的",
+            "probability": 0.9935
+          },
+          {
+            "start_sec": 70.64,
+            "end_sec": 70.76,
+            "text": "位",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 70.76,
+            "end_sec": 70.92,
+            "text": "置",
+            "probability": 0.9997
+          }
+        ]
+      },
+      {
+        "id": "asr-0035",
+        "start_sec": 70.92,
+        "end_sec": 72.78,
+        "text": "所以这边主要都是海盗",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 70.92,
+            "end_sec": 71.38,
+            "text": "所以",
+            "probability": 0.9985
+          },
+          {
+            "start_sec": 71.38,
+            "end_sec": 71.62,
+            "text": "这",
+            "probability": 0.9997
+          },
+          {
+            "start_sec": 71.62,
+            "end_sec": 71.8,
+            "text": "边",
+            "probability": 0.9982
+          },
+          {
+            "start_sec": 71.8,
+            "end_sec": 72.1,
+            "text": "主",
+            "probability": 0.8832
+          },
+          {
+            "start_sec": 72.1,
+            "end_sec": 72.18,
+            "text": "要",
+            "probability": 0.9914
+          },
+          {
+            "start_sec": 72.18,
+            "end_sec": 72.42,
+            "text": "都是",
+            "probability": 0.9817
+          },
+          {
+            "start_sec": 72.42,
+            "end_sec": 72.62,
+            "text": "海",
+            "probability": 0.9999
+          },
+          {
+            "start_sec": 72.62,
+            "end_sec": 72.78,
+            "text": "盗",
+            "probability": 0.9992
+          }
+        ]
+      },
+      {
+        "id": "asr-0036",
+        "start_sec": 72.78,
+        "end_sec": 74.42,
+        "text": "海盗生活在哪呢",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 72.78,
+            "end_sec": 73.28,
+            "text": "海",
+            "probability": 0.9983
+          },
+          {
+            "start_sec": 73.28,
+            "end_sec": 73.48,
+            "text": "盗",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 73.48,
+            "end_sec": 73.8,
+            "text": "生活",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 73.8,
+            "end_sec": 74.06,
+            "text": "在",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 74.06,
+            "end_sec": 74.24,
+            "text": "哪",
+            "probability": 0.9979
+          },
+          {
+            "start_sec": 74.24,
+            "end_sec": 74.42,
+            "text": "呢",
+            "probability": 0.8736
+          }
+        ]
+      },
+      {
+        "id": "asr-0037",
+        "start_sec": 74.42,
+        "end_sec": 75.34,
+        "text": "打开地图",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 74.42,
+            "end_sec": 74.68,
+            "text": "打",
+            "probability": 0.9759
+          },
+          {
+            "start_sec": 74.68,
+            "end_sec": 74.92,
+            "text": "开",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 74.92,
+            "end_sec": 75.12,
+            "text": "地",
+            "probability": 0.9934
+          },
+          {
+            "start_sec": 75.12,
+            "end_sec": 75.34,
+            "text": "图",
+            "probability": 0.9976
+          }
+        ]
+      },
+      {
+        "id": "asr-0038",
+        "start_sec": 75.34,
+        "end_sec": 76.86,
+        "text": "您就沿着这个海边看",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 75.34,
+            "end_sec": 75.56,
+            "text": "您",
+            "probability": 0.9151
+          },
+          {
+            "start_sec": 75.56,
+            "end_sec": 75.72,
+            "text": "就",
+            "probability": 0.9993
+          },
+          {
+            "start_sec": 75.72,
+            "end_sec": 75.9,
+            "text": "沿",
+            "probability": 0.9876
+          },
+          {
+            "start_sec": 75.9,
+            "end_sec": 76.04,
+            "text": "着",
+            "probability": 0.9988
+          },
+          {
+            "start_sec": 76.04,
+            "end_sec": 76.2,
+            "text": "这个",
+            "probability": 0.7836
+          },
+          {
+            "start_sec": 76.2,
+            "end_sec": 76.4,
+            "text": "海",
+            "probability": 0.9997
+          },
+          {
+            "start_sec": 76.4,
+            "end_sec": 76.6,
+            "text": "边",
+            "probability": 0.9997
+          },
+          {
+            "start_sec": 76.6,
+            "end_sec": 76.86,
+            "text": "看",
+            "probability": 0.9973
+          }
+        ]
+      },
+      {
+        "id": "asr-0039",
+        "start_sec": 76.86,
+        "end_sec": 79.86,
+        "text": "这一圈挪威的左边和下边",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 76.86,
+            "end_sec": 77.42,
+            "text": "这",
+            "probability": 0.9852
+          },
+          {
+            "start_sec": 77.42,
+            "end_sec": 77.66,
+            "text": "一",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 77.66,
+            "end_sec": 77.94,
+            "text": "圈",
+            "probability": 0.9993
+          },
+          {
+            "start_sec": 77.94,
+            "end_sec": 78.34,
+            "text": "挪",
+            "probability": 0.996
+          },
+          {
+            "start_sec": 78.34,
+            "end_sec": 78.48,
+            "text": "威",
+            "probability": 0.9987
+          },
+          {
+            "start_sec": 78.48,
+            "end_sec": 78.64,
+            "text": "的",
+            "probability": 0.9999
+          },
+          {
+            "start_sec": 78.64,
+            "end_sec": 78.94,
+            "text": "左",
+            "probability": 0.9984
+          },
+          {
+            "start_sec": 78.94,
+            "end_sec": 79.22,
+            "text": "边",
+            "probability": 0.9993
+          },
+          {
+            "start_sec": 79.22,
+            "end_sec": 79.42,
+            "text": "和",
+            "probability": 0.9988
+          },
+          {
+            "start_sec": 79.42,
+            "end_sec": 79.64,
+            "text": "下",
+            "probability": 0.8605
+          },
+          {
+            "start_sec": 79.64,
+            "end_sec": 79.86,
+            "text": "边",
+            "probability": 0.9994
+          }
+        ]
+      },
+      {
+        "id": "asr-0040",
+        "start_sec": 79.86,
+        "end_sec": 80.52,
+        "text": "还有上边",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 79.86,
+            "end_sec": 80.08,
+            "text": "还有",
+            "probability": 0.9972
+          },
+          {
+            "start_sec": 80.08,
+            "end_sec": 80.36,
+            "text": "上",
+            "probability": 0.8061
+          },
+          {
+            "start_sec": 80.36,
+            "end_sec": 80.52,
+            "text": "边",
+            "probability": 0.9996
+          }
+        ]
+      },
+      {
+        "id": "asr-0041",
+        "start_sec": 80.52,
+        "end_sec": 82.16,
+        "text": "就基本上都是海盗",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 80.52,
+            "end_sec": 81.04,
+            "text": "就",
+            "probability": 0.9319
+          },
+          {
+            "start_sec": 81.04,
+            "end_sec": 81.4,
+            "text": "基本",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 81.4,
+            "end_sec": 81.6,
+            "text": "上",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 81.6,
+            "end_sec": 81.8,
+            "text": "都是",
+            "probability": 0.9986
+          },
+          {
+            "start_sec": 81.8,
+            "end_sec": 82.0,
+            "text": "海",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 82.0,
+            "end_sec": 82.16,
+            "text": "盗",
+            "probability": 0.9925
+          }
+        ]
+      },
+      {
+        "id": "asr-0042",
+        "start_sec": 82.16,
+        "end_sec": 83.28,
+        "text": "上边都很少",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 82.16,
+            "end_sec": 82.54,
+            "text": "上",
+            "probability": 0.6317
+          },
+          {
+            "start_sec": 82.54,
+            "end_sec": 82.76,
+            "text": "边",
+            "probability": 0.9976
+          },
+          {
+            "start_sec": 82.76,
+            "end_sec": 82.92,
+            "text": "都",
+            "probability": 0.9936
+          },
+          {
+            "start_sec": 82.92,
+            "end_sec": 83.08,
+            "text": "很",
+            "probability": 0.9975
+          },
+          {
+            "start_sec": 83.08,
+            "end_sec": 83.28,
+            "text": "少",
+            "probability": 0.9932
+          }
+        ]
+      },
+      {
+        "id": "asr-0043",
+        "start_sec": 83.28,
+        "end_sec": 84.76,
+        "text": "因为上面都进入北极圈了",
+        "avg_logprob": -0.1439,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 83.28,
+            "end_sec": 83.48,
+            "text": "因为",
+            "probability": 0.9395
+          },
+          {
+            "start_sec": 83.48,
+            "end_sec": 83.72,
+            "text": "上面",
+            "probability": 0.8183
+          },
+          {
+            "start_sec": 83.72,
+            "end_sec": 83.88,
+            "text": "都",
+            "probability": 0.8906
+          },
+          {
+            "start_sec": 83.88,
+            "end_sec": 84.0,
+            "text": "进",
+            "probability": 0.9961
+          },
+          {
+            "start_sec": 84.0,
+            "end_sec": 84.12,
+            "text": "入",
+            "probability": 0.9997
+          },
+          {
+            "start_sec": 84.12,
+            "end_sec": 84.26,
+            "text": "北",
+            "probability": 0.9979
+          },
+          {
+            "start_sec": 84.26,
+            "end_sec": 84.38,
+            "text": "极",
+            "probability": 0.9805
+          },
+          {
+            "start_sec": 84.38,
+            "end_sec": 84.58,
+            "text": "圈",
+            "probability": 0.9982
+          },
+          {
+            "start_sec": 84.58,
+            "end_sec": 84.76,
+            "text": "了",
+            "probability": 0.999
+          }
+        ]
+      },
+      {
+        "id": "asr-0044",
+        "start_sec": 84.76,
+        "end_sec": 86.74,
+        "text": "更不适合人类的生活",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 84.76,
+            "end_sec": 85.26,
+            "text": "更",
+            "probability": 0.6082
+          },
+          {
+            "start_sec": 85.26,
+            "end_sec": 85.5,
+            "text": "不",
+            "probability": 0.9937
+          },
+          {
+            "start_sec": 85.5,
+            "end_sec": 85.7,
+            "text": "适",
+            "probability": 0.9974
+          },
+          {
+            "start_sec": 85.7,
+            "end_sec": 85.86,
+            "text": "合",
+            "probability": 0.9995
+          },
+          {
+            "start_sec": 85.86,
+            "end_sec": 86.1,
+            "text": "人",
+            "probability": 0.9908
+          },
+          {
+            "start_sec": 86.1,
+            "end_sec": 86.26,
+            "text": "类",
+            "probability": 0.9992
+          },
+          {
+            "start_sec": 86.26,
+            "end_sec": 86.38,
+            "text": "的",
+            "probability": 0.9953
+          },
+          {
+            "start_sec": 86.38,
+            "end_sec": 86.74,
+            "text": "生活",
+            "probability": 0.995
+          }
+        ]
+      },
+      {
+        "id": "asr-0045",
+        "start_sec": 86.74,
+        "end_sec": 89.18,
+        "text": "其实就是在它的这个西南",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 86.74,
+            "end_sec": 87.32,
+            "text": "其实",
+            "probability": 0.6842
+          },
+          {
+            "start_sec": 87.32,
+            "end_sec": 87.66,
+            "text": "就是",
+            "probability": 0.9971
+          },
+          {
+            "start_sec": 87.66,
+            "end_sec": 87.88,
+            "text": "在",
+            "probability": 0.9986
+          },
+          {
+            "start_sec": 87.88,
+            "end_sec": 88.22,
+            "text": "它的",
+            "probability": 0.8102
+          },
+          {
+            "start_sec": 88.22,
+            "end_sec": 88.5,
+            "text": "这个",
+            "probability": 0.8603
+          },
+          {
+            "start_sec": 88.5,
+            "end_sec": 88.9,
+            "text": "西",
+            "probability": 0.9966
+          },
+          {
+            "start_sec": 88.9,
+            "end_sec": 89.18,
+            "text": "南",
+            "probability": 0.9991
+          }
+        ]
+      },
+      {
+        "id": "asr-0046",
+        "start_sec": 89.18,
+        "end_sec": 90.08,
+        "text": "台湾县",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 89.18,
+            "end_sec": 89.72,
+            "text": "台",
+            "probability": 0.6702
+          },
+          {
+            "start_sec": 89.72,
+            "end_sec": 89.9,
+            "text": "湾",
+            "probability": 0.9442
+          },
+          {
+            "start_sec": 89.9,
+            "end_sec": 90.08,
+            "text": "县",
+            "probability": 0.8805
+          }
+        ]
+      },
+      {
+        "id": "asr-0047",
+        "start_sec": 90.08,
+        "end_sec": 92.34,
+        "text": "从贝尔根一直往南",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 90.08,
+            "end_sec": 90.62,
+            "text": "从",
+            "probability": 0.913
+          },
+          {
+            "start_sec": 90.62,
+            "end_sec": 90.8,
+            "text": "贝",
+            "probability": 0.9983
+          },
+          {
+            "start_sec": 90.8,
+            "end_sec": 90.9,
+            "text": "尔",
+            "probability": 0.9993
+          },
+          {
+            "start_sec": 90.9,
+            "end_sec": 91.02,
+            "text": "根",
+            "probability": 0.9863
+          },
+          {
+            "start_sec": 91.02,
+            "end_sec": 91.64,
+            "text": "一直",
+            "probability": 0.9953
+          },
+          {
+            "start_sec": 91.64,
+            "end_sec": 92.04,
+            "text": "往",
+            "probability": 0.9984
+          },
+          {
+            "start_sec": 92.04,
+            "end_sec": 92.34,
+            "text": "南",
+            "probability": 0.9995
+          }
+        ]
+      },
+      {
+        "id": "asr-0048",
+        "start_sec": 92.34,
+        "end_sec": 93.48,
+        "text": "到奥斯陆这一圈",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 92.34,
+            "end_sec": 92.68,
+            "text": "到",
+            "probability": 0.9726
+          },
+          {
+            "start_sec": 92.68,
+            "end_sec": 92.82,
+            "text": "奥",
+            "probability": 0.7818
+          },
+          {
+            "start_sec": 92.82,
+            "end_sec": 92.9,
+            "text": "斯",
+            "probability": 0.9947
+          },
+          {
+            "start_sec": 92.9,
+            "end_sec": 93.02,
+            "text": "陆",
+            "probability": 0.748
+          },
+          {
+            "start_sec": 93.02,
+            "end_sec": 93.18,
+            "text": "这",
+            "probability": 0.9934
+          },
+          {
+            "start_sec": 93.18,
+            "end_sec": 93.3,
+            "text": "一",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 93.3,
+            "end_sec": 93.48,
+            "text": "圈",
+            "probability": 0.9966
+          }
+        ]
+      },
+      {
+        "id": "asr-0049",
+        "start_sec": 93.48,
+        "end_sec": 95.48,
+        "text": "基本上海盗的生活在这边",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 93.48,
+            "end_sec": 94.1,
+            "text": "基本",
+            "probability": 0.9498
+          },
+          {
+            "start_sec": 94.1,
+            "end_sec": 94.28,
+            "text": "上",
+            "probability": 0.9987
+          },
+          {
+            "start_sec": 94.28,
+            "end_sec": 94.44,
+            "text": "海",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 94.44,
+            "end_sec": 94.58,
+            "text": "盗",
+            "probability": 0.8782
+          },
+          {
+            "start_sec": 94.58,
+            "end_sec": 94.72,
+            "text": "的",
+            "probability": 0.8855
+          },
+          {
+            "start_sec": 94.72,
+            "end_sec": 94.94,
+            "text": "生活",
+            "probability": 0.9964
+          },
+          {
+            "start_sec": 94.94,
+            "end_sec": 95.16,
+            "text": "在",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 95.16,
+            "end_sec": 95.32,
+            "text": "这",
+            "probability": 0.989
+          },
+          {
+            "start_sec": 95.32,
+            "end_sec": 95.48,
+            "text": "边",
+            "probability": 0.9965
+          }
+        ]
+      },
+      {
+        "id": "asr-0050",
+        "start_sec": 96.06,
+        "end_sec": 98.16,
+        "text": "所以挪威的这个地理位置",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 96.06,
+            "end_sec": 96.46,
+            "text": "所以",
+            "probability": 0.5822
+          },
+          {
+            "start_sec": 96.46,
+            "end_sec": 96.86,
+            "text": "挪",
+            "probability": 0.9635
+          },
+          {
+            "start_sec": 96.86,
+            "end_sec": 97.06,
+            "text": "威",
+            "probability": 0.9967
+          },
+          {
+            "start_sec": 97.06,
+            "end_sec": 97.26,
+            "text": "的",
+            "probability": 0.9962
+          },
+          {
+            "start_sec": 97.26,
+            "end_sec": 97.46,
+            "text": "这个",
+            "probability": 0.9377
+          },
+          {
+            "start_sec": 97.46,
+            "end_sec": 97.68,
+            "text": "地",
+            "probability": 0.9988
+          },
+          {
+            "start_sec": 97.68,
+            "end_sec": 97.84,
+            "text": "理",
+            "probability": 0.9803
+          },
+          {
+            "start_sec": 97.84,
+            "end_sec": 98.0,
+            "text": "位",
+            "probability": 0.9994
+          },
+          {
+            "start_sec": 98.0,
+            "end_sec": 98.16,
+            "text": "置",
+            "probability": 0.9994
+          }
+        ]
+      },
+      {
+        "id": "asr-0051",
+        "start_sec": 98.16,
+        "end_sec": 99.06,
+        "text": "是特别优异的",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 98.16,
+            "end_sec": 98.32,
+            "text": "是",
+            "probability": 0.9982
+          },
+          {
+            "start_sec": 98.32,
+            "end_sec": 98.5,
+            "text": "特",
+            "probability": 0.9957
+          },
+          {
+            "start_sec": 98.5,
+            "end_sec": 98.62,
+            "text": "别",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 98.62,
+            "end_sec": 98.8,
+            "text": "优",
+            "probability": 0.995
+          },
+          {
+            "start_sec": 98.8,
+            "end_sec": 98.94,
+            "text": "异",
+            "probability": 0.9905
+          },
+          {
+            "start_sec": 98.94,
+            "end_sec": 99.06,
+            "text": "的",
+            "probability": 0.9997
+          }
+        ]
+      },
+      {
+        "id": "asr-0052",
+        "start_sec": 99.06,
+        "end_sec": 100.62,
+        "text": "因为它的这个海盗",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 99.06,
+            "end_sec": 99.56,
+            "text": "因为",
+            "probability": 0.9939
+          },
+          {
+            "start_sec": 99.56,
+            "end_sec": 100.0,
+            "text": "它的",
+            "probability": 0.9781
+          },
+          {
+            "start_sec": 100.0,
+            "end_sec": 100.24,
+            "text": "这个",
+            "probability": 0.9955
+          },
+          {
+            "start_sec": 100.24,
+            "end_sec": 100.4,
+            "text": "海",
+            "probability": 0.9999
+          },
+          {
+            "start_sec": 100.4,
+            "end_sec": 100.62,
+            "text": "盗",
+            "probability": 0.9475
+          }
+        ]
+      },
+      {
+        "id": "asr-0053",
+        "start_sec": 100.62,
+        "end_sec": 101.14,
+        "text": "可以看到",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 100.62,
+            "end_sec": 100.86,
+            "text": "可以",
+            "probability": 0.3563
+          },
+          {
+            "start_sec": 100.86,
+            "end_sec": 101.14,
+            "text": "看到",
+            "probability": 0.999
+          }
+        ]
+      },
+      {
+        "id": "asr-0054",
+        "start_sec": 101.14,
+        "end_sec": 102.24,
+        "text": "从贝尔根",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 101.14,
+            "end_sec": 101.7,
+            "text": "从",
+            "probability": 0.9786
+          },
+          {
+            "start_sec": 101.7,
+            "end_sec": 101.92,
+            "text": "贝",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 101.92,
+            "end_sec": 102.06,
+            "text": "尔",
+            "probability": 1.0
+          },
+          {
+            "start_sec": 102.06,
+            "end_sec": 102.24,
+            "text": "根",
+            "probability": 0.9991
+          }
+        ]
+      },
+      {
+        "id": "asr-0055",
+        "start_sec": 102.24,
+        "end_sec": 104.1,
+        "text": "滑着团地图上没显示",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 102.24,
+            "end_sec": 102.66,
+            "text": "滑",
+            "probability": 0.556
+          },
+          {
+            "start_sec": 102.66,
+            "end_sec": 102.76,
+            "text": "着",
+            "probability": 0.7767
+          },
+          {
+            "start_sec": 102.76,
+            "end_sec": 102.96,
+            "text": "团",
+            "probability": 0.9112
+          },
+          {
+            "start_sec": 102.96,
+            "end_sec": 103.16,
+            "text": "地",
+            "probability": 0.996
+          },
+          {
+            "start_sec": 103.16,
+            "end_sec": 103.34,
+            "text": "图",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 103.34,
+            "end_sec": 103.5,
+            "text": "上",
+            "probability": 0.9989
+          },
+          {
+            "start_sec": 103.5,
+            "end_sec": 103.68,
+            "text": "没",
+            "probability": 0.9746
+          },
+          {
+            "start_sec": 103.68,
+            "end_sec": 103.92,
+            "text": "显",
+            "probability": 0.9987
+          },
+          {
+            "start_sec": 103.92,
+            "end_sec": 104.1,
+            "text": "示",
+            "probability": 0.9995
+          }
+        ]
+      },
+      {
+        "id": "asr-0056",
+        "start_sec": 104.1,
+        "end_sec": 105.36,
+        "text": "但实际上在往左",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 104.1,
+            "end_sec": 104.34,
+            "text": "但",
+            "probability": 0.7815
+          },
+          {
+            "start_sec": 104.34,
+            "end_sec": 104.54,
+            "text": "实",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 104.54,
+            "end_sec": 104.66,
+            "text": "际",
+            "probability": 0.9997
+          },
+          {
+            "start_sec": 104.66,
+            "end_sec": 104.82,
+            "text": "上",
+            "probability": 0.9989
+          },
+          {
+            "start_sec": 104.82,
+            "end_sec": 104.96,
+            "text": "在",
+            "probability": 0.6055
+          },
+          {
+            "start_sec": 104.96,
+            "end_sec": 105.16,
+            "text": "往",
+            "probability": 0.9821
+          },
+          {
+            "start_sec": 105.16,
+            "end_sec": 105.36,
+            "text": "左",
+            "probability": 0.9911
+          }
+        ]
+      },
+      {
+        "id": "asr-0057",
+        "start_sec": 105.36,
+        "end_sec": 106.54,
+        "text": "就是英国",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 105.36,
+            "end_sec": 106.06,
+            "text": "就是",
+            "probability": 0.9883
+          },
+          {
+            "start_sec": 106.06,
+            "end_sec": 106.28,
+            "text": "英",
+            "probability": 0.9949
+          },
+          {
+            "start_sec": 106.28,
+            "end_sec": 106.54,
+            "text": "国",
+            "probability": 0.9848
+          }
+        ]
+      },
+      {
+        "id": "asr-0058",
+        "start_sec": 106.54,
+        "end_sec": 109.1,
+        "text": "曾经挪威和丹麦的海盗",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 106.54,
+            "end_sec": 107.14,
+            "text": "曾",
+            "probability": 0.9946
+          },
+          {
+            "start_sec": 107.14,
+            "end_sec": 107.54,
+            "text": "经",
+            "probability": 0.9993
+          },
+          {
+            "start_sec": 107.54,
+            "end_sec": 107.92,
+            "text": "挪",
+            "probability": 0.9927
+          },
+          {
+            "start_sec": 107.92,
+            "end_sec": 108.1,
+            "text": "威",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 108.1,
+            "end_sec": 108.28,
+            "text": "和",
+            "probability": 0.977
+          },
+          {
+            "start_sec": 108.28,
+            "end_sec": 108.44,
+            "text": "丹",
+            "probability": 0.9879
+          },
+          {
+            "start_sec": 108.44,
+            "end_sec": 108.62,
+            "text": "麦",
+            "probability": 0.99
+          },
+          {
+            "start_sec": 108.62,
+            "end_sec": 108.76,
+            "text": "的",
+            "probability": 0.997
+          },
+          {
+            "start_sec": 108.76,
+            "end_sec": 108.92,
+            "text": "海",
+            "probability": 0.9997
+          },
+          {
+            "start_sec": 108.92,
+            "end_sec": 109.1,
+            "text": "盗",
+            "probability": 0.9835
+          }
+        ]
+      },
+      {
+        "id": "asr-0059",
+        "start_sec": 109.1,
+        "end_sec": 110.94,
+        "text": "还占领过英国",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 109.1,
+            "end_sec": 109.58,
+            "text": "还",
+            "probability": 0.9977
+          },
+          {
+            "start_sec": 109.58,
+            "end_sec": 109.9,
+            "text": "占",
+            "probability": 0.9681
+          },
+          {
+            "start_sec": 109.9,
+            "end_sec": 110.12,
+            "text": "领",
+            "probability": 0.9965
+          },
+          {
+            "start_sec": 110.12,
+            "end_sec": 110.34,
+            "text": "过",
+            "probability": 0.9977
+          },
+          {
+            "start_sec": 110.34,
+            "end_sec": 110.54,
+            "text": "英",
+            "probability": 0.9984
+          },
+          {
+            "start_sec": 110.54,
+            "end_sec": 110.94,
+            "text": "国",
+            "probability": 0.9926
+          }
+        ]
+      },
+      {
+        "id": "asr-0060",
+        "start_sec": 110.94,
+        "end_sec": 112.78,
+        "text": "占领过英国本岛",
+        "avg_logprob": -0.1496,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 110.94,
+            "end_sec": 111.48,
+            "text": "占",
+            "probability": 0.7319
+          },
+          {
+            "start_sec": 111.48,
+            "end_sec": 111.72,
+            "text": "领",
+            "probability": 0.9959
+          },
+          {
+            "start_sec": 111.72,
+            "end_sec": 111.94,
+            "text": "过",
+            "probability": 0.9974
+          },
+          {
+            "start_sec": 111.94,
+            "end_sec": 112.12,
+            "text": "英",
+            "probability": 0.9957
+          },
+          {
+            "start_sec": 112.12,
+            "end_sec": 112.36,
+            "text": "国",
+            "probability": 0.9924
+          },
+          {
+            "start_sec": 112.36,
+            "end_sec": 112.48,
+            "text": "本",
+            "probability": 0.1917
+          },
+          {
+            "start_sec": 112.48,
+            "end_sec": 112.78,
+            "text": "岛",
+            "probability": 0.9494
+          }
+        ]
+      },
+      {
+        "id": "asr-0061",
+        "start_sec": 112.78,
+        "end_sec": 114.76,
+        "text": "然后并且抢法",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 112.78,
+            "end_sec": 113.34,
+            "text": "然后",
+            "probability": 0.4213
+          },
+          {
+            "start_sec": 113.34,
+            "end_sec": 113.74,
+            "text": "并",
+            "probability": 0.9867
+          },
+          {
+            "start_sec": 113.74,
+            "end_sec": 114.04,
+            "text": "且",
+            "probability": 0.9995
+          },
+          {
+            "start_sec": 114.04,
+            "end_sec": 114.44,
+            "text": "抢",
+            "probability": 0.863
+          },
+          {
+            "start_sec": 114.44,
+            "end_sec": 114.76,
+            "text": "法",
+            "probability": 0.9971
+          }
+        ]
+      },
+      {
+        "id": "asr-0062",
+        "start_sec": 114.76,
+        "end_sec": 115.98,
+        "text": "抹抢德国",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 114.76,
+            "end_sec": 115.14,
+            "text": "抹",
+            "probability": 0.244
+          },
+          {
+            "start_sec": 115.14,
+            "end_sec": 115.42,
+            "text": "抢",
+            "probability": 0.951
+          },
+          {
+            "start_sec": 115.42,
+            "end_sec": 115.72,
+            "text": "德",
+            "probability": 0.906
+          },
+          {
+            "start_sec": 115.72,
+            "end_sec": 115.98,
+            "text": "国",
+            "probability": 0.9976
+          }
+        ]
+      },
+      {
+        "id": "asr-0063",
+        "start_sec": 115.98,
+        "end_sec": 118.16,
+        "text": "所以说北欧的这个海盗",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 115.98,
+            "end_sec": 116.6,
+            "text": "所以",
+            "probability": 0.5926
+          },
+          {
+            "start_sec": 116.6,
+            "end_sec": 116.8,
+            "text": "说",
+            "probability": 0.9871
+          },
+          {
+            "start_sec": 116.8,
+            "end_sec": 117.3,
+            "text": "北",
+            "probability": 0.9444
+          },
+          {
+            "start_sec": 117.3,
+            "end_sec": 117.46,
+            "text": "欧",
+            "probability": 0.9982
+          },
+          {
+            "start_sec": 117.46,
+            "end_sec": 117.58,
+            "text": "的",
+            "probability": 0.9714
+          },
+          {
+            "start_sec": 117.58,
+            "end_sec": 117.74,
+            "text": "这个",
+            "probability": 0.7139
+          },
+          {
+            "start_sec": 117.74,
+            "end_sec": 117.98,
+            "text": "海",
+            "probability": 0.9974
+          },
+          {
+            "start_sec": 117.98,
+            "end_sec": 118.16,
+            "text": "盗",
+            "probability": 0.8666
+          }
+        ]
+      },
+      {
+        "id": "asr-0064",
+        "start_sec": 118.16,
+        "end_sec": 119.38,
+        "text": "是恒星天下",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 118.16,
+            "end_sec": 118.48,
+            "text": "是",
+            "probability": 0.4504
+          },
+          {
+            "start_sec": 118.48,
+            "end_sec": 118.74,
+            "text": "恒",
+            "probability": 0.8002
+          },
+          {
+            "start_sec": 118.74,
+            "end_sec": 118.94,
+            "text": "星",
+            "probability": 0.8012
+          },
+          {
+            "start_sec": 118.94,
+            "end_sec": 119.12,
+            "text": "天",
+            "probability": 0.9962
+          },
+          {
+            "start_sec": 119.12,
+            "end_sec": 119.38,
+            "text": "下",
+            "probability": 0.9971
+          }
+        ]
+      },
+      {
+        "id": "asr-0065",
+        "start_sec": 119.38,
+        "end_sec": 120.46,
+        "text": "这也就有了这个",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 119.38,
+            "end_sec": 119.78,
+            "text": "这",
+            "probability": 0.7827
+          },
+          {
+            "start_sec": 119.78,
+            "end_sec": 119.9,
+            "text": "也",
+            "probability": 0.6677
+          },
+          {
+            "start_sec": 119.9,
+            "end_sec": 119.98,
+            "text": "就",
+            "probability": 0.9926
+          },
+          {
+            "start_sec": 119.98,
+            "end_sec": 120.14,
+            "text": "有",
+            "probability": 0.9974
+          },
+          {
+            "start_sec": 120.14,
+            "end_sec": 120.28,
+            "text": "了",
+            "probability": 0.9967
+          },
+          {
+            "start_sec": 120.28,
+            "end_sec": 120.46,
+            "text": "这个",
+            "probability": 0.9696
+          }
+        ]
+      },
+      {
+        "id": "asr-0066",
+        "start_sec": 120.46,
+        "end_sec": 122.0,
+        "text": "挪威海盗的这个传说",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 120.46,
+            "end_sec": 120.66,
+            "text": "挪",
+            "probability": 0.9203
+          },
+          {
+            "start_sec": 120.66,
+            "end_sec": 120.84,
+            "text": "威",
+            "probability": 0.9888
+          },
+          {
+            "start_sec": 120.84,
+            "end_sec": 121.04,
+            "text": "海",
+            "probability": 0.9988
+          },
+          {
+            "start_sec": 121.04,
+            "end_sec": 121.2,
+            "text": "盗",
+            "probability": 0.975
+          },
+          {
+            "start_sec": 121.2,
+            "end_sec": 121.32,
+            "text": "的",
+            "probability": 0.9814
+          },
+          {
+            "start_sec": 121.32,
+            "end_sec": 121.5,
+            "text": "这个",
+            "probability": 0.8776
+          },
+          {
+            "start_sec": 121.5,
+            "end_sec": 121.74,
+            "text": "传",
+            "probability": 0.9983
+          },
+          {
+            "start_sec": 121.74,
+            "end_sec": 122.0,
+            "text": "说",
+            "probability": 0.9991
+          }
+        ]
+      },
+      {
+        "id": "asr-0067",
+        "start_sec": 122.0,
+        "end_sec": 123.94,
+        "text": "他们留着红锅",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 122.0,
+            "end_sec": 122.58,
+            "text": "他们",
+            "probability": 0.9089
+          },
+          {
+            "start_sec": 122.58,
+            "end_sec": 123.28,
+            "text": "留",
+            "probability": 0.952
+          },
+          {
+            "start_sec": 123.28,
+            "end_sec": 123.4,
+            "text": "着",
+            "probability": 0.991
+          },
+          {
+            "start_sec": 123.4,
+            "end_sec": 123.64,
+            "text": "红",
+            "probability": 0.9637
+          },
+          {
+            "start_sec": 123.64,
+            "end_sec": 123.94,
+            "text": "锅",
+            "probability": 0.4658
+          }
+        ]
+      },
+      {
+        "id": "asr-0068",
+        "start_sec": 123.94,
+        "end_sec": 126.28,
+        "text": "瞪着这个大眼睛",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 123.94,
+            "end_sec": 124.6,
+            "text": "瞪",
+            "probability": 0.8591
+          },
+          {
+            "start_sec": 124.6,
+            "end_sec": 125.42,
+            "text": "着",
+            "probability": 0.9961
+          },
+          {
+            "start_sec": 125.42,
+            "end_sec": 125.44,
+            "text": "这个",
+            "probability": 0.1529
+          },
+          {
+            "start_sec": 125.44,
+            "end_sec": 125.78,
+            "text": "大",
+            "probability": 0.9802
+          },
+          {
+            "start_sec": 125.78,
+            "end_sec": 126.04,
+            "text": "眼",
+            "probability": 0.9989
+          },
+          {
+            "start_sec": 126.04,
+            "end_sec": 126.28,
+            "text": "睛",
+            "probability": 0.934
+          }
+        ]
+      },
+      {
+        "id": "asr-0069",
+        "start_sec": 126.28,
+        "end_sec": 127.72,
+        "text": "戴着那个牛角帽",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 126.28,
+            "end_sec": 126.78,
+            "text": "戴",
+            "probability": 0.9076
+          },
+          {
+            "start_sec": 126.78,
+            "end_sec": 126.96,
+            "text": "着",
+            "probability": 0.9979
+          },
+          {
+            "start_sec": 126.96,
+            "end_sec": 127.14,
+            "text": "那个",
+            "probability": 0.8595
+          },
+          {
+            "start_sec": 127.14,
+            "end_sec": 127.34,
+            "text": "牛",
+            "probability": 0.9901
+          },
+          {
+            "start_sec": 127.34,
+            "end_sec": 127.52,
+            "text": "角",
+            "probability": 0.9922
+          },
+          {
+            "start_sec": 127.52,
+            "end_sec": 127.72,
+            "text": "帽",
+            "probability": 0.9947
+          }
+        ]
+      },
+      {
+        "id": "asr-0070",
+        "start_sec": 127.72,
+        "end_sec": 129.24,
+        "text": "拿着这个战符锅",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 127.72,
+            "end_sec": 128.08,
+            "text": "拿",
+            "probability": 0.8655
+          },
+          {
+            "start_sec": 128.08,
+            "end_sec": 128.28,
+            "text": "着",
+            "probability": 0.9979
+          },
+          {
+            "start_sec": 128.28,
+            "end_sec": 128.46,
+            "text": "这个",
+            "probability": 0.9868
+          },
+          {
+            "start_sec": 128.46,
+            "end_sec": 128.7,
+            "text": "战",
+            "probability": 0.9906
+          },
+          {
+            "start_sec": 128.7,
+            "end_sec": 128.92,
+            "text": "符",
+            "probability": 0.3492
+          },
+          {
+            "start_sec": 128.92,
+            "end_sec": 129.24,
+            "text": "锅",
+            "probability": 0.937
+          }
+        ]
+      },
+      {
+        "id": "asr-0071",
+        "start_sec": 130.02,
+        "end_sec": 131.76,
+        "text": "再加上他们的信仰",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 130.02,
+            "end_sec": 130.26,
+            "text": "再",
+            "probability": 0.9871
+          },
+          {
+            "start_sec": 130.26,
+            "end_sec": 130.54,
+            "text": "加",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 130.54,
+            "end_sec": 130.72,
+            "text": "上",
+            "probability": 0.9999
+          },
+          {
+            "start_sec": 130.72,
+            "end_sec": 130.96,
+            "text": "他们",
+            "probability": 0.9626
+          },
+          {
+            "start_sec": 130.96,
+            "end_sec": 131.16,
+            "text": "的",
+            "probability": 0.9992
+          },
+          {
+            "start_sec": 131.16,
+            "end_sec": 131.42,
+            "text": "信",
+            "probability": 0.8378
+          },
+          {
+            "start_sec": 131.42,
+            "end_sec": 131.76,
+            "text": "仰",
+            "probability": 0.9572
+          }
+        ]
+      },
+      {
+        "id": "asr-0072",
+        "start_sec": 132.4,
+        "end_sec": 134.22,
+        "text": "为什么说这个北欧的海盗",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 132.4,
+            "end_sec": 132.84,
+            "text": "为什么",
+            "probability": 0.9775
+          },
+          {
+            "start_sec": 132.84,
+            "end_sec": 133.12,
+            "text": "说",
+            "probability": 0.9981
+          },
+          {
+            "start_sec": 133.12,
+            "end_sec": 133.3,
+            "text": "这个",
+            "probability": 0.9199
+          },
+          {
+            "start_sec": 133.3,
+            "end_sec": 133.54,
+            "text": "北",
+            "probability": 0.9976
+          },
+          {
+            "start_sec": 133.54,
+            "end_sec": 133.74,
+            "text": "欧",
+            "probability": 0.9999
+          },
+          {
+            "start_sec": 133.74,
+            "end_sec": 133.86,
+            "text": "的",
+            "probability": 0.9669
+          },
+          {
+            "start_sec": 133.86,
+            "end_sec": 134.04,
+            "text": "海",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 134.04,
+            "end_sec": 134.22,
+            "text": "盗",
+            "probability": 0.9979
+          }
+        ]
+      },
+      {
+        "id": "asr-0073",
+        "start_sec": 134.22,
+        "end_sec": 134.82,
+        "text": "特别厉害",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 134.22,
+            "end_sec": 134.36,
+            "text": "特",
+            "probability": 0.2199
+          },
+          {
+            "start_sec": 134.36,
+            "end_sec": 134.46,
+            "text": "别",
+            "probability": 0.9143
+          },
+          {
+            "start_sec": 134.46,
+            "end_sec": 134.7,
+            "text": "厉",
+            "probability": 0.9971
+          },
+          {
+            "start_sec": 134.7,
+            "end_sec": 134.82,
+            "text": "害",
+            "probability": 0.9995
+          }
+        ]
+      },
+      {
+        "id": "asr-0074",
+        "start_sec": 134.82,
+        "end_sec": 136.7,
+        "text": "其他的地方的这个人",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 134.82,
+            "end_sec": 135.1,
+            "text": "其",
+            "probability": 0.9718
+          },
+          {
+            "start_sec": 135.1,
+            "end_sec": 135.36,
+            "text": "他的",
+            "probability": 0.9563
+          },
+          {
+            "start_sec": 135.36,
+            "end_sec": 135.72,
+            "text": "地方",
+            "probability": 0.9861
+          },
+          {
+            "start_sec": 135.72,
+            "end_sec": 136.28,
+            "text": "的",
+            "probability": 0.8135
+          },
+          {
+            "start_sec": 136.28,
+            "end_sec": 136.48,
+            "text": "这个",
+            "probability": 0.9873
+          },
+          {
+            "start_sec": 136.48,
+            "end_sec": 136.7,
+            "text": "人",
+            "probability": 0.9992
+          }
+        ]
+      },
+      {
+        "id": "asr-0075",
+        "start_sec": 136.7,
+        "end_sec": 138.36,
+        "text": "就没有北欧海盗这么厉害",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 136.7,
+            "end_sec": 136.96,
+            "text": "就",
+            "probability": 0.9873
+          },
+          {
+            "start_sec": 136.96,
+            "end_sec": 137.22,
+            "text": "没有",
+            "probability": 0.998
+          },
+          {
+            "start_sec": 137.22,
+            "end_sec": 137.42,
+            "text": "北",
+            "probability": 0.9966
+          },
+          {
+            "start_sec": 137.42,
+            "end_sec": 137.58,
+            "text": "欧",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 137.58,
+            "end_sec": 137.7,
+            "text": "海",
+            "probability": 0.9981
+          },
+          {
+            "start_sec": 137.7,
+            "end_sec": 137.8,
+            "text": "盗",
+            "probability": 0.9957
+          },
+          {
+            "start_sec": 137.8,
+            "end_sec": 137.98,
+            "text": "这么",
+            "probability": 0.9219
+          },
+          {
+            "start_sec": 137.98,
+            "end_sec": 138.2,
+            "text": "厉",
+            "probability": 0.9998
+          },
+          {
+            "start_sec": 138.2,
+            "end_sec": 138.36,
+            "text": "害",
+            "probability": 0.9998
+          }
+        ]
+      },
+      {
+        "id": "asr-0076",
+        "start_sec": 138.36,
+        "end_sec": 139.48,
+        "text": "两个重要原因",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 138.36,
+            "end_sec": 138.72,
+            "text": "两",
+            "probability": 0.9408
+          },
+          {
+            "start_sec": 138.72,
+            "end_sec": 138.9,
+            "text": "个",
+            "probability": 0.9978
+          },
+          {
+            "start_sec": 138.9,
+            "end_sec": 139.2,
+            "text": "重要",
+            "probability": 0.9944
+          },
+          {
+            "start_sec": 139.2,
+            "end_sec": 139.48,
+            "text": "原因",
+            "probability": 0.9836
+          }
+        ]
+      },
+      {
+        "id": "asr-0077",
+        "start_sec": 139.48,
+        "end_sec": 167.04,
+        "text": "咱们把这个安全带都系上",
+        "avg_logprob": -0.247,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 139.48,
+            "end_sec": 139.98,
+            "text": "咱",
+            "probability": 0.9903
+          },
+          {
+            "start_sec": 165.26,
+            "end_sec": 165.4,
+            "text": "们",
+            "probability": 0.9996
+          },
+          {
+            "start_sec": 165.4,
+            "end_sec": 165.54,
+            "text": "把",
+            "probability": 0.9926
+          },
+          {
+            "start_sec": 165.54,
+            "end_sec": 165.8,
+            "text": "这个",
+            "probability": 0.9931
+          },
+          {
+            "start_sec": 165.8,
+            "end_sec": 166.34,
+            "text": "安全",
+            "probability": 0.9322
+          },
+          {
+            "start_sec": 166.34,
+            "end_sec": 166.54,
+            "text": "带",
+            "probability": 0.9862
+          },
+          {
+            "start_sec": 166.54,
+            "end_sec": 166.68,
+            "text": "都",
+            "probability": 0.9984
+          },
+          {
+            "start_sec": 166.68,
+            "end_sec": 166.82,
+            "text": "系",
+            "probability": 0.9705
+          },
+          {
+            "start_sec": 166.82,
+            "end_sec": 167.04,
+            "text": "上",
+            "probability": 0.9982
+          }
+        ]
+      },
+      {
+        "id": "asr-0078",
+        "start_sec": 167.84,
+        "end_sec": 168.44,
+        "text": "现在毕竟",
+        "avg_logprob": -0.7529,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 167.84,
+            "end_sec": 168.24,
+            "text": "现在",
+            "probability": 0.1888
+          },
+          {
+            "start_sec": 168.24,
+            "end_sec": 168.24,
+            "text": "毕",
+            "probability": 0.5621
+          },
+          {
+            "start_sec": 168.24,
+            "end_sec": 168.44,
+            "text": "竟",
+            "probability": 0.8915
+          }
+        ]
+      },
+      {
+        "id": "asr-0079",
+        "start_sec": 168.44,
+        "end_sec": 168.62,
+        "text": "现在毕竟",
+        "avg_logprob": -0.7529,
+        "no_speech_probability": 0.0,
+        "words": [
+          {
+            "start_sec": 168.44,
+            "end_sec": 168.44,
+            "text": "现在",
+            "probability": 0.0025
+          },
+          {
+            "start_sec": 168.44,
+            "end_sec": 168.62,
+            "text": "毕",
+            "probability": 0.8108
+          },
+          {
+            "start_sec": 168.62,
+            "end_sec": 168.62,
+            "text": "竟",
+            "probability": 0.9524
+          }
+        ]
+      }
+    ],
+    "words": [
+      {
+        "start_sec": 0.0,
+        "end_sec": 0.38,
+        "text": "大概",
+        "probability": 0.5466
+      },
+      {
+        "start_sec": 0.38,
+        "end_sec": 0.8,
+        "text": "都是",
+        "probability": 0.9077
+      },
+      {
+        "start_sec": 0.8,
+        "end_sec": 1.08,
+        "text": "什么",
+        "probability": 0.7751
+      },
+      {
+        "start_sec": 1.08,
+        "end_sec": 1.36,
+        "text": "时候",
+        "probability": 0.9982
+      },
+      {
+        "start_sec": 1.36,
+        "end_sec": 1.58,
+        "text": "建",
+        "probability": 0.8917
+      },
+      {
+        "start_sec": 1.58,
+        "end_sec": 1.82,
+        "text": "核",
+        "probability": 0.5653
+      },
+      {
+        "start_sec": 1.82,
+        "end_sec": 1.96,
+        "text": "的",
+        "probability": 0.7504
+      },
+      {
+        "start_sec": 1.96,
+        "end_sec": 2.08,
+        "text": "呢",
+        "probability": 0.8287
+      },
+      {
+        "start_sec": 2.08,
+        "end_sec": 2.22,
+        "text": "不",
+        "probability": 0.2625
+      },
+      {
+        "start_sec": 2.22,
+        "end_sec": 2.36,
+        "text": "像",
+        "probability": 0.9957
+      },
+      {
+        "start_sec": 2.36,
+        "end_sec": 2.5,
+        "text": "咱",
+        "probability": 0.995
+      },
+      {
+        "start_sec": 2.5,
+        "end_sec": 2.62,
+        "text": "们",
+        "probability": 0.9983
+      },
+      {
+        "start_sec": 2.62,
+        "end_sec": 2.98,
+        "text": "中国",
+        "probability": 0.991
+      },
+      {
+        "start_sec": 3.42,
+        "end_sec": 3.84,
+        "text": "中国",
+        "probability": 0.9132
+      },
+      {
+        "start_sec": 3.84,
+        "end_sec": 4.1,
+        "text": "一",
+        "probability": 0.9431
+      },
+      {
+        "start_sec": 4.1,
+        "end_sec": 4.28,
+        "text": "说",
+        "probability": 0.9922
+      },
+      {
+        "start_sec": 4.28,
+        "end_sec": 4.5,
+        "text": "我们",
+        "probability": 0.9759
+      },
+      {
+        "start_sec": 4.5,
+        "end_sec": 4.62,
+        "text": "都",
+        "probability": 0.9944
+      },
+      {
+        "start_sec": 4.62,
+        "end_sec": 4.8,
+        "text": "引",
+        "probability": 0.941
+      },
+      {
+        "start_sec": 4.8,
+        "end_sec": 4.96,
+        "text": "以",
+        "probability": 0.9023
+      },
+      {
+        "start_sec": 4.96,
+        "end_sec": 5.14,
+        "text": "为",
+        "probability": 0.9964
+      },
+      {
+        "start_sec": 5.14,
+        "end_sec": 5.36,
+        "text": "豪",
+        "probability": 0.878
+      },
+      {
+        "start_sec": 5.36,
+        "end_sec": 5.9,
+        "text": "我们",
+        "probability": 0.2503
+      },
+      {
+        "start_sec": 5.9,
+        "end_sec": 6.22,
+        "text": "叫",
+        "probability": 0.9543
+      },
+      {
+        "start_sec": 6.22,
+        "end_sec": 6.36,
+        "text": "做",
+        "probability": 0.984
+      },
+      {
+        "start_sec": 6.36,
+        "end_sec": 6.7,
+        "text": "上",
+        "probability": 0.995
+      },
+      {
+        "start_sec": 6.7,
+        "end_sec": 7.12,
+        "text": "下",
+        "probability": 0.9973
+      },
+      {
+        "start_sec": 7.12,
+        "end_sec": 7.5,
+        "text": "五",
+        "probability": 0.7042
+      },
+      {
+        "start_sec": 7.5,
+        "end_sec": 7.7,
+        "text": "千",
+        "probability": 0.9993
+      },
+      {
+        "start_sec": 7.7,
+        "end_sec": 7.96,
+        "text": "年",
+        "probability": 0.9934
+      },
+      {
+        "start_sec": 8.52,
+        "end_sec": 8.94,
+        "text": "我们",
+        "probability": 0.9885
+      },
+      {
+        "start_sec": 8.94,
+        "end_sec": 9.18,
+        "text": "一",
+        "probability": 0.7424
+      },
+      {
+        "start_sec": 9.18,
+        "end_sec": 9.42,
+        "text": "来",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 9.42,
+        "end_sec": 9.9,
+        "text": "就",
+        "probability": 0.9707
+      },
+      {
+        "start_sec": 9.9,
+        "end_sec": 10.12,
+        "text": "上",
+        "probability": 0.999
+      },
+      {
+        "start_sec": 10.12,
+        "end_sec": 10.32,
+        "text": "下",
+        "probability": 0.9995
+      },
+      {
+        "start_sec": 10.32,
+        "end_sec": 10.54,
+        "text": "五",
+        "probability": 0.9984
+      },
+      {
+        "start_sec": 10.54,
+        "end_sec": 10.72,
+        "text": "千",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 10.72,
+        "end_sec": 10.98,
+        "text": "年的",
+        "probability": 0.997
+      },
+      {
+        "start_sec": 10.98,
+        "end_sec": 11.16,
+        "text": "历",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 11.16,
+        "end_sec": 11.28,
+        "text": "史",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 11.28,
+        "end_sec": 11.5,
+        "text": "公",
+        "probability": 0.9041
+      },
+      {
+        "start_sec": 11.5,
+        "end_sec": 11.66,
+        "text": "元",
+        "probability": 0.9837
+      },
+      {
+        "start_sec": 11.66,
+        "end_sec": 11.86,
+        "text": "前",
+        "probability": 0.9982
+      },
+      {
+        "start_sec": 11.86,
+        "end_sec": 12.04,
+        "text": "两",
+        "probability": 0.9817
+      },
+      {
+        "start_sec": 12.04,
+        "end_sec": 12.2,
+        "text": "千",
+        "probability": 0.9984
+      },
+      {
+        "start_sec": 12.2,
+        "end_sec": 12.34,
+        "text": "多",
+        "probability": 0.9982
+      },
+      {
+        "start_sec": 12.34,
+        "end_sec": 12.5,
+        "text": "年",
+        "probability": 0.9988
+      },
+      {
+        "start_sec": 12.5,
+        "end_sec": 12.74,
+        "text": "一直",
+        "probability": 0.9393
+      },
+      {
+        "start_sec": 12.74,
+        "end_sec": 12.94,
+        "text": "到",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 12.94,
+        "end_sec": 13.1,
+        "text": "公",
+        "probability": 0.9745
+      },
+      {
+        "start_sec": 13.1,
+        "end_sec": 13.22,
+        "text": "元",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 13.22,
+        "end_sec": 13.36,
+        "text": "后",
+        "probability": 0.9992
+      },
+      {
+        "start_sec": 13.36,
+        "end_sec": 13.5,
+        "text": "两",
+        "probability": 0.993
+      },
+      {
+        "start_sec": 13.5,
+        "end_sec": 13.66,
+        "text": "千",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 13.66,
+        "end_sec": 13.78,
+        "text": "多",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 13.78,
+        "end_sec": 13.96,
+        "text": "年",
+        "probability": 0.9988
+      },
+      {
+        "start_sec": 13.96,
+        "end_sec": 14.58,
+        "text": "我们",
+        "probability": 0.9975
+      },
+      {
+        "start_sec": 14.58,
+        "end_sec": 14.74,
+        "text": "有",
+        "probability": 0.7504
+      },
+      {
+        "start_sec": 14.74,
+        "end_sec": 14.92,
+        "text": "五",
+        "probability": 0.9986
+      },
+      {
+        "start_sec": 14.92,
+        "end_sec": 15.06,
+        "text": "千",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 15.06,
+        "end_sec": 15.26,
+        "text": "年的",
+        "probability": 0.9966
+      },
+      {
+        "start_sec": 15.26,
+        "end_sec": 15.46,
+        "text": "历",
+        "probability": 1.0
+      },
+      {
+        "start_sec": 15.46,
+        "end_sec": 15.58,
+        "text": "史",
+        "probability": 1.0
+      },
+      {
+        "start_sec": 15.58,
+        "end_sec": 16.1,
+        "text": "北",
+        "probability": 0.9818
+      },
+      {
+        "start_sec": 16.1,
+        "end_sec": 16.28,
+        "text": "欧",
+        "probability": 0.9985
+      },
+      {
+        "start_sec": 16.28,
+        "end_sec": 16.44,
+        "text": "有",
+        "probability": 0.9959
+      },
+      {
+        "start_sec": 16.44,
+        "end_sec": 16.62,
+        "text": "这么",
+        "probability": 0.995
+      },
+      {
+        "start_sec": 16.62,
+        "end_sec": 16.8,
+        "text": "久",
+        "probability": 0.995
+      },
+      {
+        "start_sec": 16.8,
+        "end_sec": 17.0,
+        "text": "吗",
+        "probability": 0.9763
+      },
+      {
+        "start_sec": 17.0,
+        "end_sec": 17.42,
+        "text": "根",
+        "probability": 0.9069
+      },
+      {
+        "start_sec": 17.42,
+        "end_sec": 17.74,
+        "text": "本",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 17.74,
+        "end_sec": 18.02,
+        "text": "就",
+        "probability": 0.9969
+      },
+      {
+        "start_sec": 18.02,
+        "end_sec": 18.32,
+        "text": "没有",
+        "probability": 0.9995
+      },
+      {
+        "start_sec": 18.32,
+        "end_sec": 19.16,
+        "text": "北",
+        "probability": 0.9319
+      },
+      {
+        "start_sec": 19.16,
+        "end_sec": 19.5,
+        "text": "欧",
+        "probability": 1.0
+      },
+      {
+        "start_sec": 19.5,
+        "end_sec": 20.16,
+        "text": "开始",
+        "probability": 0.9991
+      },
+      {
+        "start_sec": 20.16,
+        "end_sec": 20.96,
+        "text": "形",
+        "probability": 0.9768
+      },
+      {
+        "start_sec": 20.96,
+        "end_sec": 21.38,
+        "text": "成",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 21.38,
+        "end_sec": 21.58,
+        "text": "这",
+        "probability": 0.9359
+      },
+      {
+        "start_sec": 21.58,
+        "end_sec": 21.78,
+        "text": "种",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 21.78,
+        "end_sec": 21.98,
+        "text": "都",
+        "probability": 0.9454
+      },
+      {
+        "start_sec": 21.98,
+        "end_sec": 22.24,
+        "text": "不能",
+        "probability": 0.9838
+      },
+      {
+        "start_sec": 22.24,
+        "end_sec": 22.44,
+        "text": "叫",
+        "probability": 0.3835
+      },
+      {
+        "start_sec": 22.44,
+        "end_sec": 22.66,
+        "text": "国",
+        "probability": 0.9636
+      },
+      {
+        "start_sec": 22.66,
+        "end_sec": 22.92,
+        "text": "家",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 22.92,
+        "end_sec": 23.22,
+        "text": "形",
+        "probability": 0.8373
+      },
+      {
+        "start_sec": 23.22,
+        "end_sec": 23.44,
+        "text": "成",
+        "probability": 0.9989
+      },
+      {
+        "start_sec": 23.44,
+        "end_sec": 23.58,
+        "text": "这",
+        "probability": 0.989
+      },
+      {
+        "start_sec": 23.58,
+        "end_sec": 23.72,
+        "text": "种",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 23.72,
+        "end_sec": 24.04,
+        "text": "陆",
+        "probability": 0.8125
+      },
+      {
+        "start_sec": 24.04,
+        "end_sec": 24.28,
+        "text": "落",
+        "probability": 0.9061
+      },
+      {
+        "start_sec": 24.28,
+        "end_sec": 24.5,
+        "text": "聚",
+        "probability": 0.9584
+      },
+      {
+        "start_sec": 24.5,
+        "end_sec": 24.68,
+        "text": "集",
+        "probability": 0.985
+      },
+      {
+        "start_sec": 24.68,
+        "end_sec": 25.06,
+        "text": "的时候",
+        "probability": 0.9975
+      },
+      {
+        "start_sec": 25.06,
+        "end_sec": 25.66,
+        "text": "是",
+        "probability": 0.9954
+      },
+      {
+        "start_sec": 25.66,
+        "end_sec": 25.92,
+        "text": "在",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 25.92,
+        "end_sec": 26.12,
+        "text": "公",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 26.12,
+        "end_sec": 26.38,
+        "text": "元",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 26.38,
+        "end_sec": 26.66,
+        "text": "七",
+        "probability": 0.9171
+      },
+      {
+        "start_sec": 26.66,
+        "end_sec": 26.82,
+        "text": "百",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 26.82,
+        "end_sec": 27.0,
+        "text": "多",
+        "probability": 0.9982
+      },
+      {
+        "start_sec": 27.0,
+        "end_sec": 27.22,
+        "text": "年的",
+        "probability": 0.9858
+      },
+      {
+        "start_sec": 27.22,
+        "end_sec": 27.58,
+        "text": "时候",
+        "probability": 0.999
+      },
+      {
+        "start_sec": 28.2,
+        "end_sec": 28.64,
+        "text": "七",
+        "probability": 0.2384
+      },
+      {
+        "start_sec": 28.64,
+        "end_sec": 28.9,
+        "text": "百",
+        "probability": 0.9973
+      },
+      {
+        "start_sec": 28.9,
+        "end_sec": 29.08,
+        "text": "多",
+        "probability": 0.9953
+      },
+      {
+        "start_sec": 29.08,
+        "end_sec": 29.28,
+        "text": "年",
+        "probability": 0.9959
+      },
+      {
+        "start_sec": 29.28,
+        "end_sec": 29.52,
+        "text": "到",
+        "probability": 0.968
+      },
+      {
+        "start_sec": 29.52,
+        "end_sec": 29.74,
+        "text": "九",
+        "probability": 0.9833
+      },
+      {
+        "start_sec": 29.74,
+        "end_sec": 29.9,
+        "text": "百",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 29.9,
+        "end_sec": 30.08,
+        "text": "多",
+        "probability": 0.996
+      },
+      {
+        "start_sec": 30.08,
+        "end_sec": 30.28,
+        "text": "年",
+        "probability": 0.9948
+      },
+      {
+        "start_sec": 30.28,
+        "end_sec": 30.88,
+        "text": "那",
+        "probability": 0.8008
+      },
+      {
+        "start_sec": 30.88,
+        "end_sec": 31.12,
+        "text": "会",
+        "probability": 0.6981
+      },
+      {
+        "start_sec": 31.12,
+        "end_sec": 31.22,
+        "text": "儿",
+        "probability": 0.7334
+      },
+      {
+        "start_sec": 31.22,
+        "end_sec": 31.48,
+        "text": "北",
+        "probability": 0.9725
+      },
+      {
+        "start_sec": 31.48,
+        "end_sec": 31.72,
+        "text": "欧",
+        "probability": 0.6069
+      },
+      {
+        "start_sec": 31.72,
+        "end_sec": 32.8,
+        "text": "是",
+        "probability": 0.9779
+      },
+      {
+        "start_sec": 32.8,
+        "end_sec": 33.0,
+        "text": "一个",
+        "probability": 0.9942
+      },
+      {
+        "start_sec": 33.0,
+        "end_sec": 33.18,
+        "text": "什么",
+        "probability": 0.9974
+      },
+      {
+        "start_sec": 33.18,
+        "end_sec": 33.4,
+        "text": "概",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 33.4,
+        "end_sec": 33.66,
+        "text": "念",
+        "probability": 0.9977
+      },
+      {
+        "start_sec": 33.66,
+        "end_sec": 34.42,
+        "text": "就是",
+        "probability": 0.8403
+      },
+      {
+        "start_sec": 34.42,
+        "end_sec": 35.0,
+        "text": "海",
+        "probability": 0.9859
+      },
+      {
+        "start_sec": 35.0,
+        "end_sec": 35.36,
+        "text": "盗",
+        "probability": 0.7347
+      },
+      {
+        "start_sec": 35.36,
+        "end_sec": 35.86,
+        "text": "畅",
+        "probability": 0.9751
+      },
+      {
+        "start_sec": 35.86,
+        "end_sec": 36.14,
+        "text": "东",
+        "probability": 0.2134
+      },
+      {
+        "start_sec": 36.14,
+        "end_sec": 36.4,
+        "text": "武",
+        "probability": 0.2987
+      },
+      {
+        "start_sec": 36.4,
+        "end_sec": 36.54,
+        "text": "祖",
+        "probability": 0.9246
+      },
+      {
+        "start_sec": 36.54,
+        "end_sec": 36.68,
+        "text": "的",
+        "probability": 0.4359
+      },
+      {
+        "start_sec": 36.68,
+        "end_sec": 36.82,
+        "text": "地",
+        "probability": 0.6864
+      },
+      {
+        "start_sec": 36.82,
+        "end_sec": 37.02,
+        "text": "儿",
+        "probability": 0.3833
+      },
+      {
+        "start_sec": 37.02,
+        "end_sec": 37.32,
+        "text": "是",
+        "probability": 0.8437
+      },
+      {
+        "start_sec": 37.32,
+        "end_sec": 37.46,
+        "text": "一个",
+        "probability": 0.9504
+      },
+      {
+        "start_sec": 37.46,
+        "end_sec": 37.68,
+        "text": "海",
+        "probability": 0.997
+      },
+      {
+        "start_sec": 37.68,
+        "end_sec": 37.86,
+        "text": "盗",
+        "probability": 0.9242
+      },
+      {
+        "start_sec": 37.86,
+        "end_sec": 38.06,
+        "text": "横",
+        "probability": 0.9791
+      },
+      {
+        "start_sec": 38.06,
+        "end_sec": 38.22,
+        "text": "行",
+        "probability": 0.9953
+      },
+      {
+        "start_sec": 38.22,
+        "end_sec": 38.36,
+        "text": "的",
+        "probability": 0.9952
+      },
+      {
+        "start_sec": 38.36,
+        "end_sec": 38.46,
+        "text": "地",
+        "probability": 0.9769
+      },
+      {
+        "start_sec": 38.46,
+        "end_sec": 38.9,
+        "text": "儿",
+        "probability": 0.9874
+      },
+      {
+        "start_sec": 38.9,
+        "end_sec": 39.08,
+        "text": "所以",
+        "probability": 0.982
+      },
+      {
+        "start_sec": 39.08,
+        "end_sec": 39.42,
+        "text": "海",
+        "probability": 0.9963
+      },
+      {
+        "start_sec": 39.42,
+        "end_sec": 39.74,
+        "text": "盗",
+        "probability": 0.9957
+      },
+      {
+        "start_sec": 39.74,
+        "end_sec": 40.34,
+        "text": "我们",
+        "probability": 0.99
+      },
+      {
+        "start_sec": 40.34,
+        "end_sec": 40.56,
+        "text": "接",
+        "probability": 0.9892
+      },
+      {
+        "start_sec": 40.56,
+        "end_sec": 40.72,
+        "text": "触",
+        "probability": 0.9493
+      },
+      {
+        "start_sec": 40.72,
+        "end_sec": 40.82,
+        "text": "的",
+        "probability": 0.8834
+      },
+      {
+        "start_sec": 40.82,
+        "end_sec": 41.1,
+        "text": "不多",
+        "probability": 0.843
+      },
+      {
+        "start_sec": 41.1,
+        "end_sec": 41.56,
+        "text": "因为",
+        "probability": 0.2149
+      },
+      {
+        "start_sec": 41.56,
+        "end_sec": 41.98,
+        "text": "中国",
+        "probability": 0.9939
+      },
+      {
+        "start_sec": 41.98,
+        "end_sec": 42.52,
+        "text": "除",
+        "probability": 0.9938
+      },
+      {
+        "start_sec": 42.52,
+        "end_sec": 42.64,
+        "text": "了",
+        "probability": 0.9987
+      },
+      {
+        "start_sec": 42.64,
+        "end_sec": 42.78,
+        "text": "在",
+        "probability": 0.9884
+      },
+      {
+        "start_sec": 42.78,
+        "end_sec": 43.14,
+        "text": "福",
+        "probability": 0.9903
+      },
+      {
+        "start_sec": 43.14,
+        "end_sec": 43.38,
+        "text": "建",
+        "probability": 0.9942
+      },
+      {
+        "start_sec": 43.38,
+        "end_sec": 43.74,
+        "text": "那",
+        "probability": 0.8898
+      },
+      {
+        "start_sec": 43.74,
+        "end_sec": 43.92,
+        "text": "边",
+        "probability": 0.9985
+      },
+      {
+        "start_sec": 43.92,
+        "end_sec": 44.08,
+        "text": "东",
+        "probability": 0.9733
+      },
+      {
+        "start_sec": 44.08,
+        "end_sec": 44.3,
+        "text": "南",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 44.3,
+        "end_sec": 44.48,
+        "text": "沿",
+        "probability": 0.9304
+      },
+      {
+        "start_sec": 44.48,
+        "end_sec": 44.76,
+        "text": "海",
+        "probability": 0.9977
+      },
+      {
+        "start_sec": 44.76,
+        "end_sec": 45.06,
+        "text": "有一",
+        "probability": 0.972
+      },
+      {
+        "start_sec": 45.06,
+        "end_sec": 45.42,
+        "text": "些",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 45.42,
+        "end_sec": 45.64,
+        "text": "海",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 45.64,
+        "end_sec": 45.8,
+        "text": "盗",
+        "probability": 0.9979
+      },
+      {
+        "start_sec": 45.8,
+        "end_sec": 45.94,
+        "text": "以",
+        "probability": 0.9756
+      },
+      {
+        "start_sec": 45.94,
+        "end_sec": 46.14,
+        "text": "外",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 46.14,
+        "end_sec": 46.84,
+        "text": "剩",
+        "probability": 0.7531
+      },
+      {
+        "start_sec": 46.84,
+        "end_sec": 47.08,
+        "text": "下",
+        "probability": 0.8419
+      },
+      {
+        "start_sec": 47.08,
+        "end_sec": 47.34,
+        "text": "我们",
+        "probability": 0.9474
+      },
+      {
+        "start_sec": 47.34,
+        "end_sec": 47.68,
+        "text": "中国",
+        "probability": 0.4109
+      },
+      {
+        "start_sec": 47.68,
+        "end_sec": 48.26,
+        "text": "包括",
+        "probability": 0.9657
+      },
+      {
+        "start_sec": 48.26,
+        "end_sec": 48.48,
+        "text": "咱",
+        "probability": 0.8925
+      },
+      {
+        "start_sec": 48.48,
+        "end_sec": 48.6,
+        "text": "们",
+        "probability": 0.998
+      },
+      {
+        "start_sec": 48.6,
+        "end_sec": 48.7,
+        "text": "的",
+        "probability": 0.944
+      },
+      {
+        "start_sec": 48.7,
+        "end_sec": 48.84,
+        "text": "江",
+        "probability": 0.9608
+      },
+      {
+        "start_sec": 48.84,
+        "end_sec": 49.02,
+        "text": "浙",
+        "probability": 0.9236
+      },
+      {
+        "start_sec": 49.02,
+        "end_sec": 49.14,
+        "text": "户",
+        "probability": 0.6107
+      },
+      {
+        "start_sec": 49.14,
+        "end_sec": 49.32,
+        "text": "地",
+        "probability": 0.9982
+      },
+      {
+        "start_sec": 49.32,
+        "end_sec": 49.48,
+        "text": "区",
+        "probability": 0.9989
+      },
+      {
+        "start_sec": 49.48,
+        "end_sec": 49.78,
+        "text": "基本",
+        "probability": 0.9927
+      },
+      {
+        "start_sec": 49.78,
+        "end_sec": 49.9,
+        "text": "上",
+        "probability": 0.9911
+      },
+      {
+        "start_sec": 49.9,
+        "end_sec": 50.0,
+        "text": "也",
+        "probability": 0.9605
+      },
+      {
+        "start_sec": 50.0,
+        "end_sec": 50.22,
+        "text": "没有",
+        "probability": 0.9974
+      },
+      {
+        "start_sec": 50.22,
+        "end_sec": 50.38,
+        "text": "海",
+        "probability": 0.9993
+      },
+      {
+        "start_sec": 50.38,
+        "end_sec": 50.58,
+        "text": "盗",
+        "probability": 0.999
+      },
+      {
+        "start_sec": 50.58,
+        "end_sec": 51.26,
+        "text": "中国",
+        "probability": 0.6112
+      },
+      {
+        "start_sec": 51.26,
+        "end_sec": 51.74,
+        "text": "原",
+        "probability": 0.9917
+      },
+      {
+        "start_sec": 51.74,
+        "end_sec": 51.92,
+        "text": "来",
+        "probability": 0.9995
+      },
+      {
+        "start_sec": 51.92,
+        "end_sec": 52.06,
+        "text": "最",
+        "probability": 0.9958
+      },
+      {
+        "start_sec": 52.06,
+        "end_sec": 52.22,
+        "text": "早",
+        "probability": 0.9964
+      },
+      {
+        "start_sec": 52.22,
+        "end_sec": 52.48,
+        "text": "都是",
+        "probability": 0.9428
+      },
+      {
+        "start_sec": 52.48,
+        "end_sec": 52.7,
+        "text": "农",
+        "probability": 0.6763
+      },
+      {
+        "start_sec": 52.7,
+        "end_sec": 52.86,
+        "text": "农",
+        "probability": 0.558
+      },
+      {
+        "start_sec": 52.86,
+        "end_sec": 53.02,
+        "text": "的",
+        "probability": 0.8958
+      },
+      {
+        "start_sec": 53.02,
+        "end_sec": 53.16,
+        "text": "比如",
+        "probability": 0.8033
+      },
+      {
+        "start_sec": 53.16,
+        "end_sec": 53.5,
+        "text": "从",
+        "probability": 0.9243
+      },
+      {
+        "start_sec": 53.5,
+        "end_sec": 53.76,
+        "text": "河",
+        "probability": 0.9993
+      },
+      {
+        "start_sec": 53.76,
+        "end_sec": 53.94,
+        "text": "南",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 53.94,
+        "end_sec": 54.14,
+        "text": "从",
+        "probability": 0.7063
+      },
+      {
+        "start_sec": 54.14,
+        "end_sec": 54.36,
+        "text": "中",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 54.36,
+        "end_sec": 54.52,
+        "text": "原",
+        "probability": 0.9947
+      },
+      {
+        "start_sec": 54.52,
+        "end_sec": 54.84,
+        "text": "开始",
+        "probability": 0.9986
+      },
+      {
+        "start_sec": 54.84,
+        "end_sec": 55.06,
+        "text": "发",
+        "probability": 0.9975
+      },
+      {
+        "start_sec": 55.06,
+        "end_sec": 55.24,
+        "text": "展",
+        "probability": 0.9985
+      },
+      {
+        "start_sec": 55.24,
+        "end_sec": 56.02,
+        "text": "我们",
+        "probability": 0.9116
+      },
+      {
+        "start_sec": 56.02,
+        "end_sec": 56.68,
+        "text": "最",
+        "probability": 0.9863
+      },
+      {
+        "start_sec": 56.68,
+        "end_sec": 56.88,
+        "text": "多",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 56.88,
+        "end_sec": 57.16,
+        "text": "有",
+        "probability": 0.9927
+      },
+      {
+        "start_sec": 57.16,
+        "end_sec": 57.26,
+        "text": "点",
+        "probability": 1.0
+      },
+      {
+        "start_sec": 57.26,
+        "end_sec": 57.48,
+        "text": "土",
+        "probability": 0.9962
+      },
+      {
+        "start_sec": 57.48,
+        "end_sec": 57.72,
+        "text": "匪",
+        "probability": 0.9902
+      },
+      {
+        "start_sec": 57.72,
+        "end_sec": 58.2,
+        "text": "那",
+        "probability": 0.3209
+      },
+      {
+        "start_sec": 58.2,
+        "end_sec": 58.42,
+        "text": "有",
+        "probability": 0.7329
+      },
+      {
+        "start_sec": 58.42,
+        "end_sec": 58.54,
+        "text": "点",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 58.54,
+        "end_sec": 58.76,
+        "text": "山",
+        "probability": 0.9993
+      },
+      {
+        "start_sec": 58.76,
+        "end_sec": 59.02,
+        "text": "贼",
+        "probability": 0.9978
+      },
+      {
+        "start_sec": 59.02,
+        "end_sec": 59.48,
+        "text": "那",
+        "probability": 0.6238
+      },
+      {
+        "start_sec": 59.48,
+        "end_sec": 59.6,
+        "text": "是",
+        "probability": 0.9276
+      },
+      {
+        "start_sec": 59.6,
+        "end_sec": 59.78,
+        "text": "海",
+        "probability": 0.9988
+      },
+      {
+        "start_sec": 59.78,
+        "end_sec": 59.94,
+        "text": "盗",
+        "probability": 0.9838
+      },
+      {
+        "start_sec": 59.94,
+        "end_sec": 60.22,
+        "text": "其实",
+        "probability": 0.9794
+      },
+      {
+        "start_sec": 60.22,
+        "end_sec": 60.46,
+        "text": "跟",
+        "probability": 0.999
+      },
+      {
+        "start_sec": 60.46,
+        "end_sec": 60.7,
+        "text": "他们",
+        "probability": 0.9726
+      },
+      {
+        "start_sec": 60.7,
+        "end_sec": 60.84,
+        "text": "的",
+        "probability": 0.517
+      },
+      {
+        "start_sec": 60.84,
+        "end_sec": 61.1,
+        "text": "意思",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 61.1,
+        "end_sec": 61.5,
+        "text": "差不多",
+        "probability": 0.9988
+      },
+      {
+        "start_sec": 61.5,
+        "end_sec": 62.1,
+        "text": "只",
+        "probability": 0.9968
+      },
+      {
+        "start_sec": 62.1,
+        "end_sec": 62.2,
+        "text": "不",
+        "probability": 0.9828
+      },
+      {
+        "start_sec": 62.2,
+        "end_sec": 62.28,
+        "text": "过",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 62.28,
+        "end_sec": 62.5,
+        "text": "土",
+        "probability": 0.9988
+      },
+      {
+        "start_sec": 62.5,
+        "end_sec": 62.7,
+        "text": "匪",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 62.7,
+        "end_sec": 62.88,
+        "text": "山",
+        "probability": 0.9905
+      },
+      {
+        "start_sec": 62.88,
+        "end_sec": 63.14,
+        "text": "贼",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 63.14,
+        "end_sec": 63.56,
+        "text": "生活",
+        "probability": 0.9947
+      },
+      {
+        "start_sec": 63.56,
+        "end_sec": 63.78,
+        "text": "在",
+        "probability": 0.9995
+      },
+      {
+        "start_sec": 63.78,
+        "end_sec": 63.98,
+        "text": "平",
+        "probability": 0.9982
+      },
+      {
+        "start_sec": 63.98,
+        "end_sec": 64.18,
+        "text": "原",
+        "probability": 0.9984
+      },
+      {
+        "start_sec": 64.18,
+        "end_sec": 64.34,
+        "text": "和",
+        "probability": 0.9075
+      },
+      {
+        "start_sec": 64.34,
+        "end_sec": 64.52,
+        "text": "山",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 64.52,
+        "end_sec": 64.72,
+        "text": "地",
+        "probability": 0.9973
+      },
+      {
+        "start_sec": 64.72,
+        "end_sec": 65.24,
+        "text": "海",
+        "probability": 0.992
+      },
+      {
+        "start_sec": 65.24,
+        "end_sec": 65.48,
+        "text": "盗",
+        "probability": 0.9984
+      },
+      {
+        "start_sec": 65.48,
+        "end_sec": 65.96,
+        "text": "生活",
+        "probability": 0.478
+      },
+      {
+        "start_sec": 65.96,
+        "end_sec": 66.3,
+        "text": "在",
+        "probability": 0.9995
+      },
+      {
+        "start_sec": 66.3,
+        "end_sec": 66.46,
+        "text": "沿",
+        "probability": 0.9874
+      },
+      {
+        "start_sec": 66.46,
+        "end_sec": 66.74,
+        "text": "海",
+        "probability": 0.9991
+      },
+      {
+        "start_sec": 66.74,
+        "end_sec": 66.96,
+        "text": "城",
+        "probability": 0.9995
+      },
+      {
+        "start_sec": 66.96,
+        "end_sec": 67.22,
+        "text": "市",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 67.22,
+        "end_sec": 68.02,
+        "text": "它",
+        "probability": 0.7651
+      },
+      {
+        "start_sec": 68.02,
+        "end_sec": 68.28,
+        "text": "就是",
+        "probability": 0.999
+      },
+      {
+        "start_sec": 68.28,
+        "end_sec": 68.52,
+        "text": "因为",
+        "probability": 0.978
+      },
+      {
+        "start_sec": 68.52,
+        "end_sec": 68.76,
+        "text": "一",
+        "probability": 0.3883
+      },
+      {
+        "start_sec": 68.76,
+        "end_sec": 69.08,
+        "text": "元",
+        "probability": 0.6674
+      },
+      {
+        "start_sec": 69.08,
+        "end_sec": 69.5,
+        "text": "政治",
+        "probability": 0.8024
+      },
+      {
+        "start_sec": 69.5,
+        "end_sec": 69.66,
+        "text": "的",
+        "probability": 0.8362
+      },
+      {
+        "start_sec": 69.66,
+        "end_sec": 69.78,
+        "text": "位",
+        "probability": 0.6211
+      },
+      {
+        "start_sec": 69.78,
+        "end_sec": 69.92,
+        "text": "置",
+        "probability": 0.9668
+      },
+      {
+        "start_sec": 69.92,
+        "end_sec": 70.12,
+        "text": "留",
+        "probability": 0.7748
+      },
+      {
+        "start_sec": 70.12,
+        "end_sec": 70.26,
+        "text": "于",
+        "probability": 0.9048
+      },
+      {
+        "start_sec": 70.26,
+        "end_sec": 70.36,
+        "text": "地",
+        "probability": 0.9962
+      },
+      {
+        "start_sec": 70.36,
+        "end_sec": 70.5,
+        "text": "理",
+        "probability": 0.9664
+      },
+      {
+        "start_sec": 70.5,
+        "end_sec": 70.64,
+        "text": "的",
+        "probability": 0.9935
+      },
+      {
+        "start_sec": 70.64,
+        "end_sec": 70.76,
+        "text": "位",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 70.76,
+        "end_sec": 70.92,
+        "text": "置",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 70.92,
+        "end_sec": 71.38,
+        "text": "所以",
+        "probability": 0.9985
+      },
+      {
+        "start_sec": 71.38,
+        "end_sec": 71.62,
+        "text": "这",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 71.62,
+        "end_sec": 71.8,
+        "text": "边",
+        "probability": 0.9982
+      },
+      {
+        "start_sec": 71.8,
+        "end_sec": 72.1,
+        "text": "主",
+        "probability": 0.8832
+      },
+      {
+        "start_sec": 72.1,
+        "end_sec": 72.18,
+        "text": "要",
+        "probability": 0.9914
+      },
+      {
+        "start_sec": 72.18,
+        "end_sec": 72.42,
+        "text": "都是",
+        "probability": 0.9817
+      },
+      {
+        "start_sec": 72.42,
+        "end_sec": 72.62,
+        "text": "海",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 72.62,
+        "end_sec": 72.78,
+        "text": "盗",
+        "probability": 0.9992
+      },
+      {
+        "start_sec": 72.78,
+        "end_sec": 73.28,
+        "text": "海",
+        "probability": 0.9983
+      },
+      {
+        "start_sec": 73.28,
+        "end_sec": 73.48,
+        "text": "盗",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 73.48,
+        "end_sec": 73.8,
+        "text": "生活",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 73.8,
+        "end_sec": 74.06,
+        "text": "在",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 74.06,
+        "end_sec": 74.24,
+        "text": "哪",
+        "probability": 0.9979
+      },
+      {
+        "start_sec": 74.24,
+        "end_sec": 74.42,
+        "text": "呢",
+        "probability": 0.8736
+      },
+      {
+        "start_sec": 74.42,
+        "end_sec": 74.68,
+        "text": "打",
+        "probability": 0.9759
+      },
+      {
+        "start_sec": 74.68,
+        "end_sec": 74.92,
+        "text": "开",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 74.92,
+        "end_sec": 75.12,
+        "text": "地",
+        "probability": 0.9934
+      },
+      {
+        "start_sec": 75.12,
+        "end_sec": 75.34,
+        "text": "图",
+        "probability": 0.9976
+      },
+      {
+        "start_sec": 75.34,
+        "end_sec": 75.56,
+        "text": "您",
+        "probability": 0.9151
+      },
+      {
+        "start_sec": 75.56,
+        "end_sec": 75.72,
+        "text": "就",
+        "probability": 0.9993
+      },
+      {
+        "start_sec": 75.72,
+        "end_sec": 75.9,
+        "text": "沿",
+        "probability": 0.9876
+      },
+      {
+        "start_sec": 75.9,
+        "end_sec": 76.04,
+        "text": "着",
+        "probability": 0.9988
+      },
+      {
+        "start_sec": 76.04,
+        "end_sec": 76.2,
+        "text": "这个",
+        "probability": 0.7836
+      },
+      {
+        "start_sec": 76.2,
+        "end_sec": 76.4,
+        "text": "海",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 76.4,
+        "end_sec": 76.6,
+        "text": "边",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 76.6,
+        "end_sec": 76.86,
+        "text": "看",
+        "probability": 0.9973
+      },
+      {
+        "start_sec": 76.86,
+        "end_sec": 77.42,
+        "text": "这",
+        "probability": 0.9852
+      },
+      {
+        "start_sec": 77.42,
+        "end_sec": 77.66,
+        "text": "一",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 77.66,
+        "end_sec": 77.94,
+        "text": "圈",
+        "probability": 0.9993
+      },
+      {
+        "start_sec": 77.94,
+        "end_sec": 78.34,
+        "text": "挪",
+        "probability": 0.996
+      },
+      {
+        "start_sec": 78.34,
+        "end_sec": 78.48,
+        "text": "威",
+        "probability": 0.9987
+      },
+      {
+        "start_sec": 78.48,
+        "end_sec": 78.64,
+        "text": "的",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 78.64,
+        "end_sec": 78.94,
+        "text": "左",
+        "probability": 0.9984
+      },
+      {
+        "start_sec": 78.94,
+        "end_sec": 79.22,
+        "text": "边",
+        "probability": 0.9993
+      },
+      {
+        "start_sec": 79.22,
+        "end_sec": 79.42,
+        "text": "和",
+        "probability": 0.9988
+      },
+      {
+        "start_sec": 79.42,
+        "end_sec": 79.64,
+        "text": "下",
+        "probability": 0.8605
+      },
+      {
+        "start_sec": 79.64,
+        "end_sec": 79.86,
+        "text": "边",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 79.86,
+        "end_sec": 80.08,
+        "text": "还有",
+        "probability": 0.9972
+      },
+      {
+        "start_sec": 80.08,
+        "end_sec": 80.36,
+        "text": "上",
+        "probability": 0.8061
+      },
+      {
+        "start_sec": 80.36,
+        "end_sec": 80.52,
+        "text": "边",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 80.52,
+        "end_sec": 81.04,
+        "text": "就",
+        "probability": 0.9319
+      },
+      {
+        "start_sec": 81.04,
+        "end_sec": 81.4,
+        "text": "基本",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 81.4,
+        "end_sec": 81.6,
+        "text": "上",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 81.6,
+        "end_sec": 81.8,
+        "text": "都是",
+        "probability": 0.9986
+      },
+      {
+        "start_sec": 81.8,
+        "end_sec": 82.0,
+        "text": "海",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 82.0,
+        "end_sec": 82.16,
+        "text": "盗",
+        "probability": 0.9925
+      },
+      {
+        "start_sec": 82.16,
+        "end_sec": 82.54,
+        "text": "上",
+        "probability": 0.6317
+      },
+      {
+        "start_sec": 82.54,
+        "end_sec": 82.76,
+        "text": "边",
+        "probability": 0.9976
+      },
+      {
+        "start_sec": 82.76,
+        "end_sec": 82.92,
+        "text": "都",
+        "probability": 0.9936
+      },
+      {
+        "start_sec": 82.92,
+        "end_sec": 83.08,
+        "text": "很",
+        "probability": 0.9975
+      },
+      {
+        "start_sec": 83.08,
+        "end_sec": 83.28,
+        "text": "少",
+        "probability": 0.9932
+      },
+      {
+        "start_sec": 83.28,
+        "end_sec": 83.48,
+        "text": "因为",
+        "probability": 0.9395
+      },
+      {
+        "start_sec": 83.48,
+        "end_sec": 83.72,
+        "text": "上面",
+        "probability": 0.8183
+      },
+      {
+        "start_sec": 83.72,
+        "end_sec": 83.88,
+        "text": "都",
+        "probability": 0.8906
+      },
+      {
+        "start_sec": 83.88,
+        "end_sec": 84.0,
+        "text": "进",
+        "probability": 0.9961
+      },
+      {
+        "start_sec": 84.0,
+        "end_sec": 84.12,
+        "text": "入",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 84.12,
+        "end_sec": 84.26,
+        "text": "北",
+        "probability": 0.9979
+      },
+      {
+        "start_sec": 84.26,
+        "end_sec": 84.38,
+        "text": "极",
+        "probability": 0.9805
+      },
+      {
+        "start_sec": 84.38,
+        "end_sec": 84.58,
+        "text": "圈",
+        "probability": 0.9982
+      },
+      {
+        "start_sec": 84.58,
+        "end_sec": 84.76,
+        "text": "了",
+        "probability": 0.999
+      },
+      {
+        "start_sec": 84.76,
+        "end_sec": 85.26,
+        "text": "更",
+        "probability": 0.6082
+      },
+      {
+        "start_sec": 85.26,
+        "end_sec": 85.5,
+        "text": "不",
+        "probability": 0.9937
+      },
+      {
+        "start_sec": 85.5,
+        "end_sec": 85.7,
+        "text": "适",
+        "probability": 0.9974
+      },
+      {
+        "start_sec": 85.7,
+        "end_sec": 85.86,
+        "text": "合",
+        "probability": 0.9995
+      },
+      {
+        "start_sec": 85.86,
+        "end_sec": 86.1,
+        "text": "人",
+        "probability": 0.9908
+      },
+      {
+        "start_sec": 86.1,
+        "end_sec": 86.26,
+        "text": "类",
+        "probability": 0.9992
+      },
+      {
+        "start_sec": 86.26,
+        "end_sec": 86.38,
+        "text": "的",
+        "probability": 0.9953
+      },
+      {
+        "start_sec": 86.38,
+        "end_sec": 86.74,
+        "text": "生活",
+        "probability": 0.995
+      },
+      {
+        "start_sec": 86.74,
+        "end_sec": 87.32,
+        "text": "其实",
+        "probability": 0.6842
+      },
+      {
+        "start_sec": 87.32,
+        "end_sec": 87.66,
+        "text": "就是",
+        "probability": 0.9971
+      },
+      {
+        "start_sec": 87.66,
+        "end_sec": 87.88,
+        "text": "在",
+        "probability": 0.9986
+      },
+      {
+        "start_sec": 87.88,
+        "end_sec": 88.22,
+        "text": "它的",
+        "probability": 0.8102
+      },
+      {
+        "start_sec": 88.22,
+        "end_sec": 88.5,
+        "text": "这个",
+        "probability": 0.8603
+      },
+      {
+        "start_sec": 88.5,
+        "end_sec": 88.9,
+        "text": "西",
+        "probability": 0.9966
+      },
+      {
+        "start_sec": 88.9,
+        "end_sec": 89.18,
+        "text": "南",
+        "probability": 0.9991
+      },
+      {
+        "start_sec": 89.18,
+        "end_sec": 89.72,
+        "text": "台",
+        "probability": 0.6702
+      },
+      {
+        "start_sec": 89.72,
+        "end_sec": 89.9,
+        "text": "湾",
+        "probability": 0.9442
+      },
+      {
+        "start_sec": 89.9,
+        "end_sec": 90.08,
+        "text": "县",
+        "probability": 0.8805
+      },
+      {
+        "start_sec": 90.08,
+        "end_sec": 90.62,
+        "text": "从",
+        "probability": 0.913
+      },
+      {
+        "start_sec": 90.62,
+        "end_sec": 90.8,
+        "text": "贝",
+        "probability": 0.9983
+      },
+      {
+        "start_sec": 90.8,
+        "end_sec": 90.9,
+        "text": "尔",
+        "probability": 0.9993
+      },
+      {
+        "start_sec": 90.9,
+        "end_sec": 91.02,
+        "text": "根",
+        "probability": 0.9863
+      },
+      {
+        "start_sec": 91.02,
+        "end_sec": 91.64,
+        "text": "一直",
+        "probability": 0.9953
+      },
+      {
+        "start_sec": 91.64,
+        "end_sec": 92.04,
+        "text": "往",
+        "probability": 0.9984
+      },
+      {
+        "start_sec": 92.04,
+        "end_sec": 92.34,
+        "text": "南",
+        "probability": 0.9995
+      },
+      {
+        "start_sec": 92.34,
+        "end_sec": 92.68,
+        "text": "到",
+        "probability": 0.9726
+      },
+      {
+        "start_sec": 92.68,
+        "end_sec": 92.82,
+        "text": "奥",
+        "probability": 0.7818
+      },
+      {
+        "start_sec": 92.82,
+        "end_sec": 92.9,
+        "text": "斯",
+        "probability": 0.9947
+      },
+      {
+        "start_sec": 92.9,
+        "end_sec": 93.02,
+        "text": "陆",
+        "probability": 0.748
+      },
+      {
+        "start_sec": 93.02,
+        "end_sec": 93.18,
+        "text": "这",
+        "probability": 0.9934
+      },
+      {
+        "start_sec": 93.18,
+        "end_sec": 93.3,
+        "text": "一",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 93.3,
+        "end_sec": 93.48,
+        "text": "圈",
+        "probability": 0.9966
+      },
+      {
+        "start_sec": 93.48,
+        "end_sec": 94.1,
+        "text": "基本",
+        "probability": 0.9498
+      },
+      {
+        "start_sec": 94.1,
+        "end_sec": 94.28,
+        "text": "上",
+        "probability": 0.9987
+      },
+      {
+        "start_sec": 94.28,
+        "end_sec": 94.44,
+        "text": "海",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 94.44,
+        "end_sec": 94.58,
+        "text": "盗",
+        "probability": 0.8782
+      },
+      {
+        "start_sec": 94.58,
+        "end_sec": 94.72,
+        "text": "的",
+        "probability": 0.8855
+      },
+      {
+        "start_sec": 94.72,
+        "end_sec": 94.94,
+        "text": "生活",
+        "probability": 0.9964
+      },
+      {
+        "start_sec": 94.94,
+        "end_sec": 95.16,
+        "text": "在",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 95.16,
+        "end_sec": 95.32,
+        "text": "这",
+        "probability": 0.989
+      },
+      {
+        "start_sec": 95.32,
+        "end_sec": 95.48,
+        "text": "边",
+        "probability": 0.9965
+      },
+      {
+        "start_sec": 96.06,
+        "end_sec": 96.46,
+        "text": "所以",
+        "probability": 0.5822
+      },
+      {
+        "start_sec": 96.46,
+        "end_sec": 96.86,
+        "text": "挪",
+        "probability": 0.9635
+      },
+      {
+        "start_sec": 96.86,
+        "end_sec": 97.06,
+        "text": "威",
+        "probability": 0.9967
+      },
+      {
+        "start_sec": 97.06,
+        "end_sec": 97.26,
+        "text": "的",
+        "probability": 0.9962
+      },
+      {
+        "start_sec": 97.26,
+        "end_sec": 97.46,
+        "text": "这个",
+        "probability": 0.9377
+      },
+      {
+        "start_sec": 97.46,
+        "end_sec": 97.68,
+        "text": "地",
+        "probability": 0.9988
+      },
+      {
+        "start_sec": 97.68,
+        "end_sec": 97.84,
+        "text": "理",
+        "probability": 0.9803
+      },
+      {
+        "start_sec": 97.84,
+        "end_sec": 98.0,
+        "text": "位",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 98.0,
+        "end_sec": 98.16,
+        "text": "置",
+        "probability": 0.9994
+      },
+      {
+        "start_sec": 98.16,
+        "end_sec": 98.32,
+        "text": "是",
+        "probability": 0.9982
+      },
+      {
+        "start_sec": 98.32,
+        "end_sec": 98.5,
+        "text": "特",
+        "probability": 0.9957
+      },
+      {
+        "start_sec": 98.5,
+        "end_sec": 98.62,
+        "text": "别",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 98.62,
+        "end_sec": 98.8,
+        "text": "优",
+        "probability": 0.995
+      },
+      {
+        "start_sec": 98.8,
+        "end_sec": 98.94,
+        "text": "异",
+        "probability": 0.9905
+      },
+      {
+        "start_sec": 98.94,
+        "end_sec": 99.06,
+        "text": "的",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 99.06,
+        "end_sec": 99.56,
+        "text": "因为",
+        "probability": 0.9939
+      },
+      {
+        "start_sec": 99.56,
+        "end_sec": 100.0,
+        "text": "它的",
+        "probability": 0.9781
+      },
+      {
+        "start_sec": 100.0,
+        "end_sec": 100.24,
+        "text": "这个",
+        "probability": 0.9955
+      },
+      {
+        "start_sec": 100.24,
+        "end_sec": 100.4,
+        "text": "海",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 100.4,
+        "end_sec": 100.62,
+        "text": "盗",
+        "probability": 0.9475
+      },
+      {
+        "start_sec": 100.62,
+        "end_sec": 100.86,
+        "text": "可以",
+        "probability": 0.3563
+      },
+      {
+        "start_sec": 100.86,
+        "end_sec": 101.14,
+        "text": "看到",
+        "probability": 0.999
+      },
+      {
+        "start_sec": 101.14,
+        "end_sec": 101.7,
+        "text": "从",
+        "probability": 0.9786
+      },
+      {
+        "start_sec": 101.7,
+        "end_sec": 101.92,
+        "text": "贝",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 101.92,
+        "end_sec": 102.06,
+        "text": "尔",
+        "probability": 1.0
+      },
+      {
+        "start_sec": 102.06,
+        "end_sec": 102.24,
+        "text": "根",
+        "probability": 0.9991
+      },
+      {
+        "start_sec": 102.24,
+        "end_sec": 102.66,
+        "text": "滑",
+        "probability": 0.556
+      },
+      {
+        "start_sec": 102.66,
+        "end_sec": 102.76,
+        "text": "着",
+        "probability": 0.7767
+      },
+      {
+        "start_sec": 102.76,
+        "end_sec": 102.96,
+        "text": "团",
+        "probability": 0.9112
+      },
+      {
+        "start_sec": 102.96,
+        "end_sec": 103.16,
+        "text": "地",
+        "probability": 0.996
+      },
+      {
+        "start_sec": 103.16,
+        "end_sec": 103.34,
+        "text": "图",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 103.34,
+        "end_sec": 103.5,
+        "text": "上",
+        "probability": 0.9989
+      },
+      {
+        "start_sec": 103.5,
+        "end_sec": 103.68,
+        "text": "没",
+        "probability": 0.9746
+      },
+      {
+        "start_sec": 103.68,
+        "end_sec": 103.92,
+        "text": "显",
+        "probability": 0.9987
+      },
+      {
+        "start_sec": 103.92,
+        "end_sec": 104.1,
+        "text": "示",
+        "probability": 0.9995
+      },
+      {
+        "start_sec": 104.1,
+        "end_sec": 104.34,
+        "text": "但",
+        "probability": 0.7815
+      },
+      {
+        "start_sec": 104.34,
+        "end_sec": 104.54,
+        "text": "实",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 104.54,
+        "end_sec": 104.66,
+        "text": "际",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 104.66,
+        "end_sec": 104.82,
+        "text": "上",
+        "probability": 0.9989
+      },
+      {
+        "start_sec": 104.82,
+        "end_sec": 104.96,
+        "text": "在",
+        "probability": 0.6055
+      },
+      {
+        "start_sec": 104.96,
+        "end_sec": 105.16,
+        "text": "往",
+        "probability": 0.9821
+      },
+      {
+        "start_sec": 105.16,
+        "end_sec": 105.36,
+        "text": "左",
+        "probability": 0.9911
+      },
+      {
+        "start_sec": 105.36,
+        "end_sec": 106.06,
+        "text": "就是",
+        "probability": 0.9883
+      },
+      {
+        "start_sec": 106.06,
+        "end_sec": 106.28,
+        "text": "英",
+        "probability": 0.9949
+      },
+      {
+        "start_sec": 106.28,
+        "end_sec": 106.54,
+        "text": "国",
+        "probability": 0.9848
+      },
+      {
+        "start_sec": 106.54,
+        "end_sec": 107.14,
+        "text": "曾",
+        "probability": 0.9946
+      },
+      {
+        "start_sec": 107.14,
+        "end_sec": 107.54,
+        "text": "经",
+        "probability": 0.9993
+      },
+      {
+        "start_sec": 107.54,
+        "end_sec": 107.92,
+        "text": "挪",
+        "probability": 0.9927
+      },
+      {
+        "start_sec": 107.92,
+        "end_sec": 108.1,
+        "text": "威",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 108.1,
+        "end_sec": 108.28,
+        "text": "和",
+        "probability": 0.977
+      },
+      {
+        "start_sec": 108.28,
+        "end_sec": 108.44,
+        "text": "丹",
+        "probability": 0.9879
+      },
+      {
+        "start_sec": 108.44,
+        "end_sec": 108.62,
+        "text": "麦",
+        "probability": 0.99
+      },
+      {
+        "start_sec": 108.62,
+        "end_sec": 108.76,
+        "text": "的",
+        "probability": 0.997
+      },
+      {
+        "start_sec": 108.76,
+        "end_sec": 108.92,
+        "text": "海",
+        "probability": 0.9997
+      },
+      {
+        "start_sec": 108.92,
+        "end_sec": 109.1,
+        "text": "盗",
+        "probability": 0.9835
+      },
+      {
+        "start_sec": 109.1,
+        "end_sec": 109.58,
+        "text": "还",
+        "probability": 0.9977
+      },
+      {
+        "start_sec": 109.58,
+        "end_sec": 109.9,
+        "text": "占",
+        "probability": 0.9681
+      },
+      {
+        "start_sec": 109.9,
+        "end_sec": 110.12,
+        "text": "领",
+        "probability": 0.9965
+      },
+      {
+        "start_sec": 110.12,
+        "end_sec": 110.34,
+        "text": "过",
+        "probability": 0.9977
+      },
+      {
+        "start_sec": 110.34,
+        "end_sec": 110.54,
+        "text": "英",
+        "probability": 0.9984
+      },
+      {
+        "start_sec": 110.54,
+        "end_sec": 110.94,
+        "text": "国",
+        "probability": 0.9926
+      },
+      {
+        "start_sec": 110.94,
+        "end_sec": 111.48,
+        "text": "占",
+        "probability": 0.7319
+      },
+      {
+        "start_sec": 111.48,
+        "end_sec": 111.72,
+        "text": "领",
+        "probability": 0.9959
+      },
+      {
+        "start_sec": 111.72,
+        "end_sec": 111.94,
+        "text": "过",
+        "probability": 0.9974
+      },
+      {
+        "start_sec": 111.94,
+        "end_sec": 112.12,
+        "text": "英",
+        "probability": 0.9957
+      },
+      {
+        "start_sec": 112.12,
+        "end_sec": 112.36,
+        "text": "国",
+        "probability": 0.9924
+      },
+      {
+        "start_sec": 112.36,
+        "end_sec": 112.48,
+        "text": "本",
+        "probability": 0.1917
+      },
+      {
+        "start_sec": 112.48,
+        "end_sec": 112.78,
+        "text": "岛",
+        "probability": 0.9494
+      },
+      {
+        "start_sec": 112.78,
+        "end_sec": 113.34,
+        "text": "然后",
+        "probability": 0.4213
+      },
+      {
+        "start_sec": 113.34,
+        "end_sec": 113.74,
+        "text": "并",
+        "probability": 0.9867
+      },
+      {
+        "start_sec": 113.74,
+        "end_sec": 114.04,
+        "text": "且",
+        "probability": 0.9995
+      },
+      {
+        "start_sec": 114.04,
+        "end_sec": 114.44,
+        "text": "抢",
+        "probability": 0.863
+      },
+      {
+        "start_sec": 114.44,
+        "end_sec": 114.76,
+        "text": "法",
+        "probability": 0.9971
+      },
+      {
+        "start_sec": 114.76,
+        "end_sec": 115.14,
+        "text": "抹",
+        "probability": 0.244
+      },
+      {
+        "start_sec": 115.14,
+        "end_sec": 115.42,
+        "text": "抢",
+        "probability": 0.951
+      },
+      {
+        "start_sec": 115.42,
+        "end_sec": 115.72,
+        "text": "德",
+        "probability": 0.906
+      },
+      {
+        "start_sec": 115.72,
+        "end_sec": 115.98,
+        "text": "国",
+        "probability": 0.9976
+      },
+      {
+        "start_sec": 115.98,
+        "end_sec": 116.6,
+        "text": "所以",
+        "probability": 0.5926
+      },
+      {
+        "start_sec": 116.6,
+        "end_sec": 116.8,
+        "text": "说",
+        "probability": 0.9871
+      },
+      {
+        "start_sec": 116.8,
+        "end_sec": 117.3,
+        "text": "北",
+        "probability": 0.9444
+      },
+      {
+        "start_sec": 117.3,
+        "end_sec": 117.46,
+        "text": "欧",
+        "probability": 0.9982
+      },
+      {
+        "start_sec": 117.46,
+        "end_sec": 117.58,
+        "text": "的",
+        "probability": 0.9714
+      },
+      {
+        "start_sec": 117.58,
+        "end_sec": 117.74,
+        "text": "这个",
+        "probability": 0.7139
+      },
+      {
+        "start_sec": 117.74,
+        "end_sec": 117.98,
+        "text": "海",
+        "probability": 0.9974
+      },
+      {
+        "start_sec": 117.98,
+        "end_sec": 118.16,
+        "text": "盗",
+        "probability": 0.8666
+      },
+      {
+        "start_sec": 118.16,
+        "end_sec": 118.48,
+        "text": "是",
+        "probability": 0.4504
+      },
+      {
+        "start_sec": 118.48,
+        "end_sec": 118.74,
+        "text": "恒",
+        "probability": 0.8002
+      },
+      {
+        "start_sec": 118.74,
+        "end_sec": 118.94,
+        "text": "星",
+        "probability": 0.8012
+      },
+      {
+        "start_sec": 118.94,
+        "end_sec": 119.12,
+        "text": "天",
+        "probability": 0.9962
+      },
+      {
+        "start_sec": 119.12,
+        "end_sec": 119.38,
+        "text": "下",
+        "probability": 0.9971
+      },
+      {
+        "start_sec": 119.38,
+        "end_sec": 119.78,
+        "text": "这",
+        "probability": 0.7827
+      },
+      {
+        "start_sec": 119.78,
+        "end_sec": 119.9,
+        "text": "也",
+        "probability": 0.6677
+      },
+      {
+        "start_sec": 119.9,
+        "end_sec": 119.98,
+        "text": "就",
+        "probability": 0.9926
+      },
+      {
+        "start_sec": 119.98,
+        "end_sec": 120.14,
+        "text": "有",
+        "probability": 0.9974
+      },
+      {
+        "start_sec": 120.14,
+        "end_sec": 120.28,
+        "text": "了",
+        "probability": 0.9967
+      },
+      {
+        "start_sec": 120.28,
+        "end_sec": 120.46,
+        "text": "这个",
+        "probability": 0.9696
+      },
+      {
+        "start_sec": 120.46,
+        "end_sec": 120.66,
+        "text": "挪",
+        "probability": 0.9203
+      },
+      {
+        "start_sec": 120.66,
+        "end_sec": 120.84,
+        "text": "威",
+        "probability": 0.9888
+      },
+      {
+        "start_sec": 120.84,
+        "end_sec": 121.04,
+        "text": "海",
+        "probability": 0.9988
+      },
+      {
+        "start_sec": 121.04,
+        "end_sec": 121.2,
+        "text": "盗",
+        "probability": 0.975
+      },
+      {
+        "start_sec": 121.2,
+        "end_sec": 121.32,
+        "text": "的",
+        "probability": 0.9814
+      },
+      {
+        "start_sec": 121.32,
+        "end_sec": 121.5,
+        "text": "这个",
+        "probability": 0.8776
+      },
+      {
+        "start_sec": 121.5,
+        "end_sec": 121.74,
+        "text": "传",
+        "probability": 0.9983
+      },
+      {
+        "start_sec": 121.74,
+        "end_sec": 122.0,
+        "text": "说",
+        "probability": 0.9991
+      },
+      {
+        "start_sec": 122.0,
+        "end_sec": 122.58,
+        "text": "他们",
+        "probability": 0.9089
+      },
+      {
+        "start_sec": 122.58,
+        "end_sec": 123.28,
+        "text": "留",
+        "probability": 0.952
+      },
+      {
+        "start_sec": 123.28,
+        "end_sec": 123.4,
+        "text": "着",
+        "probability": 0.991
+      },
+      {
+        "start_sec": 123.4,
+        "end_sec": 123.64,
+        "text": "红",
+        "probability": 0.9637
+      },
+      {
+        "start_sec": 123.64,
+        "end_sec": 123.94,
+        "text": "锅",
+        "probability": 0.4658
+      },
+      {
+        "start_sec": 123.94,
+        "end_sec": 124.6,
+        "text": "瞪",
+        "probability": 0.8591
+      },
+      {
+        "start_sec": 124.6,
+        "end_sec": 125.42,
+        "text": "着",
+        "probability": 0.9961
+      },
+      {
+        "start_sec": 125.42,
+        "end_sec": 125.44,
+        "text": "这个",
+        "probability": 0.1529
+      },
+      {
+        "start_sec": 125.44,
+        "end_sec": 125.78,
+        "text": "大",
+        "probability": 0.9802
+      },
+      {
+        "start_sec": 125.78,
+        "end_sec": 126.04,
+        "text": "眼",
+        "probability": 0.9989
+      },
+      {
+        "start_sec": 126.04,
+        "end_sec": 126.28,
+        "text": "睛",
+        "probability": 0.934
+      },
+      {
+        "start_sec": 126.28,
+        "end_sec": 126.78,
+        "text": "戴",
+        "probability": 0.9076
+      },
+      {
+        "start_sec": 126.78,
+        "end_sec": 126.96,
+        "text": "着",
+        "probability": 0.9979
+      },
+      {
+        "start_sec": 126.96,
+        "end_sec": 127.14,
+        "text": "那个",
+        "probability": 0.8595
+      },
+      {
+        "start_sec": 127.14,
+        "end_sec": 127.34,
+        "text": "牛",
+        "probability": 0.9901
+      },
+      {
+        "start_sec": 127.34,
+        "end_sec": 127.52,
+        "text": "角",
+        "probability": 0.9922
+      },
+      {
+        "start_sec": 127.52,
+        "end_sec": 127.72,
+        "text": "帽",
+        "probability": 0.9947
+      },
+      {
+        "start_sec": 127.72,
+        "end_sec": 128.08,
+        "text": "拿",
+        "probability": 0.8655
+      },
+      {
+        "start_sec": 128.08,
+        "end_sec": 128.28,
+        "text": "着",
+        "probability": 0.9979
+      },
+      {
+        "start_sec": 128.28,
+        "end_sec": 128.46,
+        "text": "这个",
+        "probability": 0.9868
+      },
+      {
+        "start_sec": 128.46,
+        "end_sec": 128.7,
+        "text": "战",
+        "probability": 0.9906
+      },
+      {
+        "start_sec": 128.7,
+        "end_sec": 128.92,
+        "text": "符",
+        "probability": 0.3492
+      },
+      {
+        "start_sec": 128.92,
+        "end_sec": 129.24,
+        "text": "锅",
+        "probability": 0.937
+      },
+      {
+        "start_sec": 130.02,
+        "end_sec": 130.26,
+        "text": "再",
+        "probability": 0.9871
+      },
+      {
+        "start_sec": 130.26,
+        "end_sec": 130.54,
+        "text": "加",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 130.54,
+        "end_sec": 130.72,
+        "text": "上",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 130.72,
+        "end_sec": 130.96,
+        "text": "他们",
+        "probability": 0.9626
+      },
+      {
+        "start_sec": 130.96,
+        "end_sec": 131.16,
+        "text": "的",
+        "probability": 0.9992
+      },
+      {
+        "start_sec": 131.16,
+        "end_sec": 131.42,
+        "text": "信",
+        "probability": 0.8378
+      },
+      {
+        "start_sec": 131.42,
+        "end_sec": 131.76,
+        "text": "仰",
+        "probability": 0.9572
+      },
+      {
+        "start_sec": 132.4,
+        "end_sec": 132.84,
+        "text": "为什么",
+        "probability": 0.9775
+      },
+      {
+        "start_sec": 132.84,
+        "end_sec": 133.12,
+        "text": "说",
+        "probability": 0.9981
+      },
+      {
+        "start_sec": 133.12,
+        "end_sec": 133.3,
+        "text": "这个",
+        "probability": 0.9199
+      },
+      {
+        "start_sec": 133.3,
+        "end_sec": 133.54,
+        "text": "北",
+        "probability": 0.9976
+      },
+      {
+        "start_sec": 133.54,
+        "end_sec": 133.74,
+        "text": "欧",
+        "probability": 0.9999
+      },
+      {
+        "start_sec": 133.74,
+        "end_sec": 133.86,
+        "text": "的",
+        "probability": 0.9669
+      },
+      {
+        "start_sec": 133.86,
+        "end_sec": 134.04,
+        "text": "海",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 134.04,
+        "end_sec": 134.22,
+        "text": "盗",
+        "probability": 0.9979
+      },
+      {
+        "start_sec": 134.22,
+        "end_sec": 134.36,
+        "text": "特",
+        "probability": 0.2199
+      },
+      {
+        "start_sec": 134.36,
+        "end_sec": 134.46,
+        "text": "别",
+        "probability": 0.9143
+      },
+      {
+        "start_sec": 134.46,
+        "end_sec": 134.7,
+        "text": "厉",
+        "probability": 0.9971
+      },
+      {
+        "start_sec": 134.7,
+        "end_sec": 134.82,
+        "text": "害",
+        "probability": 0.9995
+      },
+      {
+        "start_sec": 134.82,
+        "end_sec": 135.1,
+        "text": "其",
+        "probability": 0.9718
+      },
+      {
+        "start_sec": 135.1,
+        "end_sec": 135.36,
+        "text": "他的",
+        "probability": 0.9563
+      },
+      {
+        "start_sec": 135.36,
+        "end_sec": 135.72,
+        "text": "地方",
+        "probability": 0.9861
+      },
+      {
+        "start_sec": 135.72,
+        "end_sec": 136.28,
+        "text": "的",
+        "probability": 0.8135
+      },
+      {
+        "start_sec": 136.28,
+        "end_sec": 136.48,
+        "text": "这个",
+        "probability": 0.9873
+      },
+      {
+        "start_sec": 136.48,
+        "end_sec": 136.7,
+        "text": "人",
+        "probability": 0.9992
+      },
+      {
+        "start_sec": 136.7,
+        "end_sec": 136.96,
+        "text": "就",
+        "probability": 0.9873
+      },
+      {
+        "start_sec": 136.96,
+        "end_sec": 137.22,
+        "text": "没有",
+        "probability": 0.998
+      },
+      {
+        "start_sec": 137.22,
+        "end_sec": 137.42,
+        "text": "北",
+        "probability": 0.9966
+      },
+      {
+        "start_sec": 137.42,
+        "end_sec": 137.58,
+        "text": "欧",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 137.58,
+        "end_sec": 137.7,
+        "text": "海",
+        "probability": 0.9981
+      },
+      {
+        "start_sec": 137.7,
+        "end_sec": 137.8,
+        "text": "盗",
+        "probability": 0.9957
+      },
+      {
+        "start_sec": 137.8,
+        "end_sec": 137.98,
+        "text": "这么",
+        "probability": 0.9219
+      },
+      {
+        "start_sec": 137.98,
+        "end_sec": 138.2,
+        "text": "厉",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 138.2,
+        "end_sec": 138.36,
+        "text": "害",
+        "probability": 0.9998
+      },
+      {
+        "start_sec": 138.36,
+        "end_sec": 138.72,
+        "text": "两",
+        "probability": 0.9408
+      },
+      {
+        "start_sec": 138.72,
+        "end_sec": 138.9,
+        "text": "个",
+        "probability": 0.9978
+      },
+      {
+        "start_sec": 138.9,
+        "end_sec": 139.2,
+        "text": "重要",
+        "probability": 0.9944
+      },
+      {
+        "start_sec": 139.2,
+        "end_sec": 139.48,
+        "text": "原因",
+        "probability": 0.9836
+      },
+      {
+        "start_sec": 139.48,
+        "end_sec": 139.98,
+        "text": "咱",
+        "probability": 0.9903
+      },
+      {
+        "start_sec": 165.26,
+        "end_sec": 165.4,
+        "text": "们",
+        "probability": 0.9996
+      },
+      {
+        "start_sec": 165.4,
+        "end_sec": 165.54,
+        "text": "把",
+        "probability": 0.9926
+      },
+      {
+        "start_sec": 165.54,
+        "end_sec": 165.8,
+        "text": "这个",
+        "probability": 0.9931
+      },
+      {
+        "start_sec": 165.8,
+        "end_sec": 166.34,
+        "text": "安全",
+        "probability": 0.9322
+      },
+      {
+        "start_sec": 166.34,
+        "end_sec": 166.54,
+        "text": "带",
+        "probability": 0.9862
+      },
+      {
+        "start_sec": 166.54,
+        "end_sec": 166.68,
+        "text": "都",
+        "probability": 0.9984
+      },
+      {
+        "start_sec": 166.68,
+        "end_sec": 166.82,
+        "text": "系",
+        "probability": 0.9705
+      },
+      {
+        "start_sec": 166.82,
+        "end_sec": 167.04,
+        "text": "上",
+        "probability": 0.9982
+      },
+      {
+        "start_sec": 167.84,
+        "end_sec": 168.24,
+        "text": "现在",
+        "probability": 0.1888
+      },
+      {
+        "start_sec": 168.24,
+        "end_sec": 168.24,
+        "text": "毕",
+        "probability": 0.5621
+      },
+      {
+        "start_sec": 168.24,
+        "end_sec": 168.44,
+        "text": "竟",
+        "probability": 0.8915
+      },
+      {
+        "start_sec": 168.44,
+        "end_sec": 168.44,
+        "text": "现在",
+        "probability": 0.0025
+      },
+      {
+        "start_sec": 168.44,
+        "end_sec": 168.62,
+        "text": "毕",
+        "probability": 0.8108
+      },
+      {
+        "start_sec": 168.62,
+        "end_sec": 168.62,
+        "text": "竟",
+        "probability": 0.9524
+      }
+    ]
+  },
+  "audio_segments": [
+    {
+      "start_sec": 0.0,
+      "end_sec": 27.5,
+      "kind": "speech",
+      "average_rms": 0.16707,
+      "peak": 0.519318
+    },
+    {
+      "start_sec": 27.5,
+      "end_sec": 28.0,
+      "kind": "music_likely",
+      "average_rms": 0.127302,
+      "peak": 0.336304
+    },
+    {
+      "start_sec": 28.0,
+      "end_sec": 129.5,
+      "kind": "speech",
+      "average_rms": 0.144632,
+      "peak": 0.578888
+    },
+    {
+      "start_sec": 129.5,
+      "end_sec": 130.0,
+      "kind": "music_likely",
+      "average_rms": 0.117295,
+      "peak": 0.298523
+    },
+    {
+      "start_sec": 130.0,
+      "end_sec": 132.0,
+      "kind": "speech",
+      "average_rms": 0.125328,
+      "peak": 0.451996
+    },
+    {
+      "start_sec": 132.0,
+      "end_sec": 132.5,
+      "kind": "music_likely",
+      "average_rms": 0.118502,
+      "peak": 0.319519
+    },
+    {
+      "start_sec": 132.5,
+      "end_sec": 140.0,
+      "kind": "speech",
+      "average_rms": 0.125445,
+      "peak": 0.554474
+    },
+    {
+      "start_sec": 140.0,
+      "end_sec": 165.0,
+      "kind": "music_likely",
+      "average_rms": 0.124863,
+      "peak": 0.606506
+    },
+    {
+      "start_sec": 165.0,
+      "end_sec": 167.0,
+      "kind": "speech",
+      "average_rms": 0.137084,
+      "peak": 0.611053
+    },
+    {
+      "start_sec": 167.0,
+      "end_sec": 167.5,
+      "kind": "music_likely",
+      "average_rms": 0.11456,
+      "peak": 0.304657
+    },
+    {
+      "start_sec": 167.5,
+      "end_sec": 168.5,
+      "kind": "speech",
+      "average_rms": 0.138714,
+      "peak": 0.556152
+    },
+    {
+      "start_sec": 168.5,
+      "end_sec": 169.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.056474,
+      "peak": 0.342682
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "shot-0001",
+      "start_sec": 0.0,
+      "end_sec": 168.668,
+      "duration_sec": 168.668,
+      "role": "dialogue",
+      "speech_ratio": 0.833,
+      "visual": {
+        "brightness": 0.39929,
+        "contrast": 0.17664,
+        "sharpness": 0.07363,
+        "motion": 0.06291,
+        "visual_hash": "ffffffff7f801800040f7ffe3fe00000000c"
+      },
+      "audio": {
+        "rms": 0.143595,
+        "peak": 0.611053,
+        "spectral_centroid_hz": 459.52,
+        "spectral_flatness": 0.077893,
+        "kind": "speech"
+      },
+      "novelty_score": 1.0,
+      "quality_score": 0.6643,
+      "keep_score": 0.8846,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event_id": "event-001",
+      "start_sec": 0.0,
+      "end_sec": 168.668,
+      "duration_sec": 168.668,
+      "event_type": "conversation",
+      "shot_count": 1,
+      "role_counts": {
+        "dialogue": 1
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.75,
+      "recommendation": "retain",
+      "key_shot_ids": [
+        "shot-0001"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0001",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0001"
+      }
+    }
+  ],
+  "learning_summary": {
+    "retention_archetypes": [
+      {
+        "role": "dialogue",
+        "shot_count": 1,
+        "retained_count": 1,
+        "retained_ratio": 1.0,
+        "average_duration_sec": 168.668,
+        "average_keep_score": 0.8846
+      }
+    ],
+    "cut_first_signals": [],
+    "event_patterns": [
+      {
+        "event_type": "conversation",
+        "event_count": 1
+      }
+    ],
+    "evidence_limits": [
+      "参考片是已经剪完的成片，只能直接学习被保留镜头的正向模式。",
+      "cut_first 来自重复、模糊、曝光、无动作和无语义等弱信号，不代表原作者真实删除记录。",
+      "要监督学习真正的保留与删除偏好，需要同时提供原始素材和最终成片。"
+    ]
+  }
+}

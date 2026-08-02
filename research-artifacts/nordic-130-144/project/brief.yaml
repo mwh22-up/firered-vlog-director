@@ -1,0 +1,25 @@
+project_id: nordic-130-144
+source_directory: "${RAW_MEDIA_ROOT}"
+selected_files:
+  - GX010130.MP4
+  - GX010131.MP4
+  - GX010132.MP4
+  - GX010133.MP4
+  - GX010134.MP4
+  - GX010135.MP4
+  - GX010136.MP4
+  - GX010137.MP4
+  - GX010138.MP4
+  - GX010139.MP4
+  - GX010140.MP4
+  - GX010141.MP4
+  - GX010142.MP4
+  - GX010143.MP4
+  - GX010144.MP4
+target_duration_sec: 900
+aspect_ratio: "16:9"
+mode: timeline
+keep_dialogue: true
+need_voiceover: false
+creative_direction: "优先保留有内容、有意义、有趣的对话、互动、事件起伏和真实反应；窗外雪景与美景只作短暂建立镜头和呼吸转场，删除重复、空转、长时间无事件的窗景及明显失焦片段。"
+must_keep: []
