@@ -62,6 +62,22 @@
   -Version 1
 ```
 
+## 真实 smoke gate
+
+提交增强渲染改动前，运行可移植 smoke gate：
+
+```powershell
+$python = (Resolve-Path .\.venv-test\Scripts\python.exe).Path
+$ffmpeg = & $python -c "from imageio_ffmpeg import get_ffmpeg_exe; print(get_ffmpeg_exe())"
+.\scripts\smoke-render.ps1 `
+  -PythonExecutable $python `
+  -FFmpegExecutable $ffmpeg
+```
+
+`-FFmpegExecutable` 可省略；脚本会通过所选 Python 的 `imageio_ffmpeg` 查找 bundled FFmpeg，而不依赖系统 `PATH`。脚本先检查同一 FFmpeg 的 filter 清单：核心 filter 缺失时立即失败，字幕、贴图和防抖等可选能力只在实际可用时启用，否则输出明确的跳过信息。
+
+smoke 数据只写入唯一的系统临时目录，结束时自动清理。门禁覆盖正式及运行时 enhancement plan Schema、真实增强渲染、audio QA，以及用同一 FFmpeg 强制映射视频流和音频流后的完整解码；不依赖 `ffprobe`。
+
 ## 已实现的本地执行器
 
 - `scripts/stabilize.ps1`：通过 `vidstabdetect` + `vidstabtransform` 两遍防抖；
