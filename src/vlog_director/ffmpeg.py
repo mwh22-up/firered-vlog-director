@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import shutil
 import subprocess
 from pathlib import Path
@@ -11,6 +12,12 @@ class FFmpegError(RuntimeError):
 
 
 def find_ffmpeg(executable: str = "ffmpeg") -> str:
+    configured_home = os.environ.get("VLOG_FFMPEG_HOME")
+    if configured_home and Path(executable).name == executable:
+        filename = executable if Path(executable).suffix else f"{executable}.exe"
+        configured = Path(configured_home) / filename
+        if configured.is_file():
+            return str(configured.resolve())
     resolved = shutil.which(executable)
     if resolved is None:
         raise FileNotFoundError(f"FFmpeg executable was not found: {executable}")

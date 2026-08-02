@@ -4,7 +4,6 @@ import json
 import math
 import os
 import re
-import shutil
 import subprocess
 from pathlib import Path
 from typing import Any
@@ -15,9 +14,7 @@ from .ffmpeg import FFmpegError, filter_path, find_ffmpeg, run_command
 
 
 def probe_media(media_path: Path) -> dict[str, Any]:
-    executable = shutil.which("ffprobe")
-    if executable is None:
-        raise FileNotFoundError("FFprobe executable was not found")
+    executable = find_ffmpeg("ffprobe")
     completed = subprocess.run(
         [
             executable,
