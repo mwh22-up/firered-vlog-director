@@ -32,6 +32,7 @@ cookies.txt
 # Rebuildable project media and render caches never belong in research handoffs.
 research-artifacts/**/project/work/proxy/
 research-artifacts/**/project/work/render/
+research-artifacts/**/project/work/jobs/
 research-artifacts/**/project/output/chapters/
 
 # Test media must be synthesized at runtime; fixtures stay text-only.

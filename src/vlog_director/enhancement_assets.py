@@ -6,6 +6,12 @@ import re
 from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
+from .subtitle_approval import validate_subtitle_approval
+from .subtitle_readability import (
+    canonical_subtitle_payload_digest,
+    canonical_subtitle_style_digest,
+    canonical_verified_cue_set_digest,
+)
 
 REQUIRED_MUSIC_RIGHTS_SCOPES = frozenset(
     {
@@ -16,11 +22,40 @@ REQUIRED_MUSIC_RIGHTS_SCOPES = frozenset(
     }
 )
 SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
+SUBTITLE_READY_EVIDENCE_VERSION = "subtitle-ready-evidence-v1"
+SUBTITLE_EVIDENCE_BINDING_NAMES = (
+    "readability",
+    "layout",
+    "visual",
+    "human_review",
+    "approval",
+)
+SUBTITLE_EVIDENCE_DIGEST_NAMES = (
+    "subtitle_payload_sha256",
+    "subtitle_style_sha256",
+    "verified_cue_set_sha256",
+)
+SUBTITLE_READY_EVIDENCE_FIELDS = frozenset(
+    {
+        "contract_version",
+        *SUBTITLE_EVIDENCE_BINDING_NAMES,
+        *SUBTITLE_EVIDENCE_DIGEST_NAMES,
+    }
+)
 
 
 def _issue(code: str, subject_id: str, message: str) -> dict[str, Any]:
     return {
         "severity": "error",
+        "code": code,
+        "subject_id": subject_id,
+        "message": message,
+    }
+
+
+def _warning(code: str, subject_id: str, message: str) -> dict[str, Any]:
+    return {
+        "severity": "warning",
         "code": code,
         "subject_id": subject_id,
         "message": message,
@@ -542,6 +577,179 @@ def _validate_music(
                 )
 
 
+def subtitle_ready_evidence_contract_issues(evidence: Any) -> list[str]:
+    """Return structural evidence-contract defects without trusting status fields."""
+    if not isinstance(evidence, dict):
+        return ["evidence must be an object"]
+    issues: list[str] = []
+    unknown = sorted(set(evidence) - SUBTITLE_READY_EVIDENCE_FIELDS)
+    missing = sorted(SUBTITLE_READY_EVIDENCE_FIELDS - set(evidence))
+    if unknown:
+        issues.append(f"unknown fields: {unknown}")
+    if missing:
+        issues.append(f"missing fields: {missing}")
+    if evidence.get("contract_version") != SUBTITLE_READY_EVIDENCE_VERSION:
+        issues.append("contract_version is unsupported")
+    for field in SUBTITLE_EVIDENCE_DIGEST_NAMES:
+        value = evidence.get(field)
+        if not isinstance(value, str) or not SHA256_PATTERN.fullmatch(value):
+            issues.append(f"{field} must be a lowercase SHA-256")
+    for name in SUBTITLE_EVIDENCE_BINDING_NAMES:
+        binding = evidence.get(name)
+        if not isinstance(binding, dict):
+            issues.append(f"{name} must be a path/SHA binding")
+            continue
+        if set(binding) != {"path", "sha256"}:
+            issues.append(f"{name} binding fields must be exactly path and sha256")
+        value = binding.get("path")
+        if (
+            not isinstance(value, str)
+            or _unsafe_relative_path(value)
+            or PurePosixPath(value).parts[:2] != ("work", "qa")
+        ):
+            issues.append(f"{name}.path must be a portable work/qa path")
+        sha256 = binding.get("sha256")
+        if not isinstance(sha256, str) or not SHA256_PATTERN.fullmatch(sha256):
+            issues.append(f"{name}.sha256 must be a lowercase SHA-256")
+    return issues
+
+
+def _validate_ready_subtitle_evidence(
+    project: Path,
+    subtitles: dict[str, Any],
+    source_path: Path,
+    source: dict[str, Any],
+    issues: list[dict[str, Any]],
+    hash_cache: dict[Path, str],
+) -> None:
+    evidence = subtitles.get("evidence")
+    if evidence is None:
+        issues.append(
+            _issue(
+                "subtitle_ready_evidence_legacy",
+                "subtitles.evidence",
+                "Legacy ready subtitles have no hash-bound readability, layout, visual, human-review, and approval evidence.",
+            )
+        )
+        return
+    contract_issues = subtitle_ready_evidence_contract_issues(evidence)
+    if contract_issues:
+        issues.append(
+            _issue(
+                "subtitle_ready_evidence_invalid",
+                "subtitles.evidence",
+                "Ready subtitle evidence contract is invalid: "
+                + "; ".join(contract_issues),
+            )
+        )
+        if not SUBTITLE_READY_EVIDENCE_FIELDS.issubset(evidence) or any(
+            not isinstance(evidence.get(name), dict)
+            or not {"path", "sha256"}.issubset(evidence[name])
+            for name in SUBTITLE_EVIDENCE_BINDING_NAMES
+        ):
+            return
+
+    try:
+        computed_digests = {
+            "subtitle_payload_sha256": canonical_subtitle_payload_digest(source),
+            "subtitle_style_sha256": canonical_subtitle_style_digest(
+                subtitles.get("style", {})
+            ),
+            "verified_cue_set_sha256": canonical_verified_cue_set_digest(
+                source.get("cues", [])
+            ),
+        }
+    except (TypeError, ValueError) as error:
+        issues.append(
+            _issue(
+                "subtitle_ready_digest_invalid",
+                "subtitles.evidence",
+                f"Ready subtitle source/style cannot be canonically bound: {error}",
+            )
+        )
+        return
+    digest_issue_codes = {
+        "subtitle_payload_sha256": "subtitle_payload_sha256_mismatch",
+        "subtitle_style_sha256": "subtitle_style_sha256_mismatch",
+        "verified_cue_set_sha256": "subtitle_verified_cue_set_sha256_mismatch",
+    }
+    for field, actual in computed_digests.items():
+        if evidence.get(field) != actual:
+            issues.append(
+                _issue(
+                    digest_issue_codes[field],
+                    f"subtitles.evidence.{field}",
+                    f"Ready subtitle {field} does not match current content.",
+                )
+            )
+
+    resolved: dict[str, Path] = {}
+    binding_failed = False
+    for name in SUBTITLE_EVIDENCE_BINDING_NAMES:
+        binding = evidence[name]
+        subject_id = f"subtitles.evidence.{name}"
+        bound_path = _resolve_confined_file(
+            project,
+            binding["path"],
+            project / "work" / "qa",
+            subject_id,
+            issues,
+        )
+        if bound_path is None:
+            binding_failed = True
+            continue
+        resolved[name] = bound_path
+        try:
+            actual_sha256 = _sha256_file(bound_path, hash_cache)
+        except OSError:
+            binding_failed = True
+            issues.append(
+                _issue(
+                    "enhancement_asset_unreadable",
+                    subject_id,
+                    "Subtitle QA evidence could not be read for SHA-256 validation.",
+                )
+            )
+            continue
+        if actual_sha256 != binding["sha256"]:
+            binding_failed = True
+            issues.append(
+                _issue(
+                    "subtitle_evidence_sha256_mismatch",
+                    subject_id,
+                    "Subtitle QA evidence SHA-256 does not match the ready contract.",
+                )
+            )
+    if binding_failed or len(resolved) != len(SUBTITLE_EVIDENCE_BINDING_NAMES):
+        return
+
+    try:
+        approval_result = validate_subtitle_approval(
+            subtitle_source_path=source_path,
+            plan_style=subtitles.get("style", {}),
+            readability_qa_path=resolved["readability"],
+            layout_qa_path=resolved["layout"],
+            visual_qa_path=resolved["visual"],
+            human_review_path=resolved["human_review"],
+            approval_path=resolved["approval"],
+        )
+    except (KeyError, OSError, TypeError, ValueError) as error:
+        approval_issues = [str(error)]
+    else:
+        approval_issues = [str(item) for item in approval_result.get("issues", [])]
+        if approval_result.get("status") != "passed" and not approval_issues:
+            approval_issues = ["approval validation did not pass"]
+    if approval_issues:
+        issues.append(
+            _issue(
+                "subtitle_approval_invalid",
+                "subtitles.evidence.approval",
+                "Ready subtitle approval is stale or invalid: "
+                + "; ".join(approval_issues[:8]),
+            )
+        )
+
+
 def _subtitle_cue_projection(cues: list[Any]) -> list[dict[str, Any]]:
     projected: list[dict[str, Any]] = []
     for cue in cues:
@@ -552,8 +760,14 @@ def _subtitle_cue_projection(cues: list[Any]) -> list[dict[str, Any]]:
             field: cue.get(field)
             for field in ("start_sec", "end_sec", "text", "review_status")
         }
-        if "position" in cue:
-            item["position"] = cue.get("position")
+        for field in (
+            "cue_id",
+            "segment_id",
+            "chapter_id",
+            "position",
+        ):
+            if field in cue:
+                item[field] = cue.get(field)
         projected.append(item)
     return projected
 
@@ -718,6 +932,23 @@ def _validate_subtitles(
                 "subtitle_source_plan_mismatch",
                 "subtitles",
                 "Rendered subtitle cues must exactly match the source cue projection.",
+            )
+        )
+    if require_ready:
+        _validate_ready_subtitle_evidence(
+            project,
+            subtitles,
+            source_path,
+            source,
+            issues,
+            hash_cache,
+        )
+    else:
+        issues.append(
+            _warning(
+                "subtitle_review_not_release_ready",
+                "subtitles",
+                "Review subtitles may render in preview, but unresolved readability/layout/approval evidence is not release-ready.",
             )
         )
 

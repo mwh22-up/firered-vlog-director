@@ -56,7 +56,9 @@ class SubtitleTests(unittest.TestCase):
 
             self.assertIn("PlayResX: 1920", content)
             self.assertIn("PlayResY: 1080", content)
-            self.assertIn(",192,192,108,1", content)
+            # Box/outline pixels extend beyond the text anchor, so the ASS
+            # margin adds an edge guard inside the requested 10% safe area.
+            self.assertIn(",201,201,117,1", content)
             self.assertIn("&H80101010", content)
             self.assertIn(r"\N", content)
 

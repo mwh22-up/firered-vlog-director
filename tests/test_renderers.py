@@ -438,7 +438,7 @@ class RendererTests(unittest.TestCase):
                 "music": {"status": "planned", "tracks": []},
                 "illustration_motion": {"status": "planned", "items": []},
                 "subtitles": {
-                    "status": "ready",
+                    "status": "review",
                     "coverage": {"status": "verified"},
                     "cues": [
                         {
@@ -466,7 +466,7 @@ class RendererTests(unittest.TestCase):
                 },
             }
             plan["subtitles"].update(
-                _ready_subtitle_source(project, plan["subtitles"]["cues"])
+                _review_subtitle_source(project, plan["subtitles"]["cues"])
             )
             with (
                 patch("vlog_director.renderers.find_ffmpeg", return_value="ffmpeg"),
@@ -591,7 +591,7 @@ class RendererTests(unittest.TestCase):
                     ],
                 },
                 "subtitles": {
-                    "status": "ready",
+                    "status": "review",
                     "coverage": {"status": "verified"},
                     "cues": [
                         {
@@ -605,7 +605,7 @@ class RendererTests(unittest.TestCase):
                 },
             }
             plan["subtitles"].update(
-                _ready_subtitle_source(project, plan["subtitles"]["cues"])
+                _review_subtitle_source(project, plan["subtitles"]["cues"])
             )
             with (
                 patch("vlog_director.renderers.find_ffmpeg", return_value="ffmpeg"),

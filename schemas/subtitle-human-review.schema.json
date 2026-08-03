@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/subtitle-human-review.schema.json",
+  "title": "Subtitle Human Review",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "document_type",
+    "status",
+    "project_id",
+    "subtitle_source_sha256",
+    "subtitle_payload_sha256",
+    "subtitle_style_sha256",
+    "verified_cue_set_sha256",
+    "readability_qa_sha256",
+    "layout_qa_sha256",
+    "visual_qa_sha256",
+    "cue_ids",
+    "checks",
+    "approved_by",
+    "approved_at",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "document_type": { "const": "subtitle_human_review" },
+    "status": { "enum": ["pending", "approved", "rejected"] },
+    "project_id": { "type": "string", "minLength": 1 },
+    "subtitle_source_sha256": { "$ref": "#/$defs/sha256" },
+    "subtitle_payload_sha256": { "$ref": "#/$defs/sha256" },
+    "subtitle_style_sha256": { "$ref": "#/$defs/sha256" },
+    "verified_cue_set_sha256": { "$ref": "#/$defs/sha256" },
+    "readability_qa_sha256": { "$ref": "#/$defs/sha256" },
+    "layout_qa_sha256": { "$ref": "#/$defs/sha256" },
+    "visual_qa_sha256": { "$ref": "#/$defs/sha256" },
+    "cue_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "checks": {
+      "type": "object",
+      "required": [
+        "audio_text_accuracy",
+        "timing_and_cut_boundaries",
+        "readability",
+        "layout_and_safe_area",
+        "visual_evidence_review"
+      ],
+      "properties": {
+        "audio_text_accuracy": { "$ref": "#/$defs/check_status" },
+        "timing_and_cut_boundaries": { "$ref": "#/$defs/check_status" },
+        "readability": { "$ref": "#/$defs/check_status" },
+        "layout_and_safe_area": { "$ref": "#/$defs/check_status" },
+        "visual_evidence_review": { "$ref": "#/$defs/check_status" }
+      },
+      "additionalProperties": false
+    },
+    "approved_by": { "type": "string", "minLength": 1 },
+    "approved_at": { "type": "string", "minLength": 1 },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "check_status": {
+      "enum": ["pending", "approved", "rejected"]
+    }
+  },
+  "additionalProperties": false
+}

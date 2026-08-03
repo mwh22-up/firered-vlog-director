@@ -32,10 +32,13 @@
 
 ### 字幕
 
-- Whisper 生成词级时间戳，再按完整语义和停顿合并；
-- 每条最多两行，避免逐字跳动和过长整句；
-- 字幕位于安全区，并在插画动效之后渲染，确保始终可读；
-- 对白保留原文，口误是否修正由用户策略决定。
+- 将完整 ASR 词级时间戳投影到 realized timeline，且不跨 edit cut 合并；
+- 版本化 readability policy 审计时长、gap、overlap、中英文阅读速度、行数和切点邻近风险；
+- 机器只提出不跨切点、不制造 overlap 的合并/延长建议，不静默改正文，也不自动标记 `verified`；
+- preview 可以保留 review cue 并明确 warning，release 对超短、超速、overlap、越界和未解决切点风险 fail closed；
+- ready/release 使用与正式渲染相同的 FFmpeg、libass、ASS、字体和画布测量真实 bbox，不能仅依赖字符宽度估算；
+- 字幕位于安全区，并在插画动效之后渲染；正文、时间、位置或样式变化会使旧 QA 和 approval 失效；
+- 对白保留原文，文字准确性、口误修正和最终通过必须由人工听校确认。
 
 ### 插画动效
 
@@ -43,6 +46,40 @@
 - 类型包括插画、贴纸、标注、地图和标题卡；
 - 使用本地透明 PNG/WebP、短视频或后续生成的位图资产；
 - 默认避开字幕区和人物脸部，不用动效掩盖无内容镜头。
+
+## 字幕专属生产闭环
+
+字幕修改不需要先运行完整 enhancement render。正式顺序是：
+
+```text
+project-subtitles
+→ audit-subtitles
+→ probe-subtitle-layout
+→ render-subtitle-preview
+→ qa-subtitles
+→ 人工听校
+→ approve-subtitles
+→ guard-enhancement --mode release
+→ render-enhancement --mode release
+```
+
+`render-subtitle-preview` 要求用户显式指定 base/preview 视频，只生成正式 ASS 并烧录字幕，保留原音轨；它不执行逐段 treatment、音乐、ducking、overlay 或完整 enhancement render。支持 `scope=all|risk`，以及按 timeline、cue、segment 或 chapter 组织代理；risk 模式必须绑定 readability QA，不能输出完整 timeline。
+
+`qa-subtitles` 会基于当前 manifest、readability QA 和 layout QA 生成逐 cue 帧、高风险 cue 的入场/中间/退场帧，以及两行、密集段、位置变化、剪辑边界和超短字幕联系表。它还会让真实 libass 解析 ASS，并完整解码代理的视频流和音频流。视觉 QA 不执行 OCR，结果固定保留人工状态为 pending，只能说明：
+
+> 已生成视觉帧和布局证据，文字准确性仍需人工听校。
+
+`render-subtitle-preview` 和 `qa-subtitles` 默认提交 detached job，并在 `work/jobs/` 写入 spec、状态和 worker log；代理目录另有 `progress.jsonl`、FFmpeg 日志、manifest 和 SHA 绑定。长任务应检查最终状态、退出信息、QA JSON 和媒体 SHA，不能仅凭 PID 存在或暂时没有输出宣称成功。
+
+release 字幕必须同时绑定：
+
+- 通过的 release readability QA；
+- 每条 cue 均通过的真实 libass layout QA；
+- all-scope visual QA；
+- 独立、真实完成的 human review；
+- 由 CLI 生成的 approval、immutable ready source 和 `subtitle-ready-evidence-v1`。
+
+手改 `status=ready` 不能绕过门禁。六个 CLI 的完整 PowerShell 示例、目录白名单、后台作业检查、人工作业 Schema 和 evidence 接入方式见 [字幕生产闭环](subtitle-production-loop.md)。
 
 ## 使用方式
 
@@ -98,7 +135,9 @@ python -m vlog_director.cli render-enhancement `
   --base-video D:\vlog-projects\family-trip\output\directed.v3.mp4 `
   --plan D:\vlog-projects\family-trip\work\enhancement\enhancement_plan.v3.json `
   --realized-timeline D:\vlog-projects\family-trip\work\qa\render.v3.json `
-  --output D:\vlog-projects\family-trip\output\final.v4.mp4
+  --output D:\vlog-projects\family-trip\output\final.v4.mp4 `
+  --ffmpeg-executable $ffmpeg `
+  --mode release
 ```
 
 若省略 `--realized-timeline`，CLI 会查找 `work/qa/render.v<edit_plan_version>.json`。render report 的 `cut_boundaries.actual_time_sec` 是基础剪辑中的权威切点；计划时长不能替代实际编码时长。

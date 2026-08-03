@@ -3,6 +3,23 @@
   "$id": "https://example.local/schemas/enhancement-plan.schema.json",
   "title": "Vlog Enhancement Plan",
   "type": "object",
+  "$defs": {
+    "subtitleEvidenceBinding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(?!.*(?:^|/)\\.\\.(?:/|$))work/qa/[A-Za-z0-9][A-Za-z0-9._/-]*$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
   "required": [
     "schema_version",
     "project_id",
@@ -180,6 +197,23 @@
     },
     "subtitles": {
       "type": "object",
+      "$defs": {
+        "subtitleEvidenceBinding": {
+          "type": "object",
+          "required": ["path", "sha256"],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^(?!.*(?:^|/)\\.\\.(?:/|$))work/qa/[A-Za-z0-9][A-Za-z0-9._/-]*$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
       "required": ["status", "language", "source", "cues", "style"],
       "properties": {
         "status": { "enum": ["planned", "review", "ready", "disabled"] },
@@ -189,12 +223,50 @@
           "type": "string",
           "pattern": "^[0-9a-f]{64}$"
         },
+        "evidence": {
+          "type": "object",
+          "required": [
+            "contract_version",
+            "subtitle_payload_sha256",
+            "subtitle_style_sha256",
+            "verified_cue_set_sha256",
+            "readability",
+            "layout",
+            "visual",
+            "human_review",
+            "approval"
+          ],
+          "properties": {
+            "contract_version": { "const": "subtitle-ready-evidence-v1" },
+            "subtitle_payload_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "subtitle_style_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "verified_cue_set_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "readability": { "$ref": "#/$defs/subtitleEvidenceBinding" },
+            "layout": { "$ref": "#/$defs/subtitleEvidenceBinding" },
+            "visual": { "$ref": "#/$defs/subtitleEvidenceBinding" },
+            "human_review": { "$ref": "#/$defs/subtitleEvidenceBinding" },
+            "approval": { "$ref": "#/$defs/subtitleEvidenceBinding" }
+          },
+          "additionalProperties": false
+        },
         "cues": {
           "type": "array",
           "items": {
             "type": "object",
             "required": ["start_sec", "end_sec", "text"],
             "properties": {
+              "cue_id": { "type": "string", "minLength": 1 },
+              "segment_id": { "type": "string", "minLength": 1 },
+              "chapter_id": { "type": "string", "minLength": 1 },
               "start_sec": { "type": "number", "minimum": 0 },
               "end_sec": { "type": "number", "exclusiveMinimum": 0 },
               "text": { "type": "string", "minLength": 1 },
@@ -244,6 +316,25 @@
           },
           "then": {
             "required": ["source_sha256"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": { "const": "ready" }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "required": ["coverage", "evidence"],
+            "properties": {
+              "cues": { "minItems": 1 },
+              "coverage": {
+                "properties": {
+                  "status": { "const": "verified" }
+                }
+              }
+            }
           }
         }
       ],

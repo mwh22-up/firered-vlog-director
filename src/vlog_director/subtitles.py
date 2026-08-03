@@ -165,10 +165,15 @@ def write_ass_subtitles(
 
     title = _validate_ass_field(title, "title")
     font_name = _validate_ass_field(font_name, "font_name")
-    horizontal_margin = round(canvas_width * safe_margin_percent / 100.0)
-    vertical_margin = max(margin_v, round(canvas_height * safe_margin_percent / 100.0))
-    available_width = canvas_width - 2 * horizontal_margin
-    available_height = canvas_height - 2 * vertical_margin
+    safe_horizontal_margin = round(canvas_width * safe_margin_percent / 100.0)
+    safe_vertical_margin = max(
+        margin_v, round(canvas_height * safe_margin_percent / 100.0)
+    )
+    edge_guard = max(outline, background_padding) + shadow
+    horizontal_margin = safe_horizontal_margin + edge_guard
+    vertical_margin = safe_vertical_margin + edge_guard
+    available_width = canvas_width - 2 * safe_horizontal_margin
+    available_height = canvas_height - 2 * safe_vertical_margin
     line_capacity_units = min(
         float(max_chars_per_line),
         (available_width - 2 * (outline + background_padding)) / font_size,
@@ -180,7 +185,7 @@ def write_ass_subtitles(
     header = f"""[Script Info]
 Title: {title}
 ScriptType: v4.00+
-WrapStyle: 0
+WrapStyle: 2
 ScaledBorderAndShadow: yes
 PlayResX: {canvas_width}
 PlayResY: {canvas_height}

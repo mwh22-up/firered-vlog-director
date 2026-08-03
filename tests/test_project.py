@@ -27,6 +27,7 @@ class ProjectTests(unittest.TestCase):
             self.assertTrue((project / "work" / "analysis").is_dir())
             self.assertTrue((project / "work" / "plans").is_dir())
             self.assertTrue((project / "work" / "qa").is_dir())
+            self.assertTrue((project / "work" / "jobs").is_dir())
 
     def test_init_project_rejects_path_traversal(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:

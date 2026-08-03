@@ -6,8 +6,8 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
+from .enhancement_assets import subtitle_ready_evidence_contract_issues
 from .ffmpeg import find_ffmpeg
-
 
 INPUT_STREAM = re.compile(r"^\s*Stream #0:\d+(?:\[[^\]]+\])?(?:\([^)]*\))?:\s*(Video|Audio):", re.MULTILINE)
 DURATION = re.compile(r"Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)")
@@ -52,6 +52,30 @@ def release_readiness_issues(enhancement_plan: dict[str, Any]) -> list[dict[str,
                     "message": f"Release requires an explicit ready or disabled {section_name} section.",
                 }
             )
+    subtitles = enhancement_plan.get("subtitles", {})
+    if isinstance(subtitles, dict) and subtitles.get("status") == "ready":
+        evidence = subtitles.get("evidence")
+        if evidence is None:
+            issues.append(
+                {
+                    "severity": "error",
+                    "code": "release_subtitle_evidence_legacy",
+                    "subject_id": "subtitles.evidence",
+                    "message": "Release blocks legacy ready subtitles without the current evidence contract.",
+                }
+            )
+        else:
+            contract_issues = subtitle_ready_evidence_contract_issues(evidence)
+            if contract_issues:
+                issues.append(
+                    {
+                        "severity": "error",
+                        "code": "release_subtitle_evidence_invalid",
+                        "subject_id": "subtitles.evidence",
+                        "message": "Release subtitle evidence contract is incomplete or invalid: "
+                        + "; ".join(contract_issues),
+                    }
+                )
     return issues
 
 

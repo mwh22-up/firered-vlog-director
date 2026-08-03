@@ -38,17 +38,38 @@ class SchemaValidationTests(unittest.TestCase):
                 "reference-analysis.schema.json",
                 "reference-technique-aggregate.schema.json",
                 "reference-technique-study.schema.json",
+                "subtitle-approval.schema.json",
+                "subtitle-human-review.schema.json",
+                "subtitle-layout-qa.schema.json",
+                "subtitle-preview-manifest.schema.json",
+                "subtitle-readability-qa.schema.json",
+                "subtitle-visual-qa.schema.json",
             },
         )
         for name, schema in self.schemas.items():
             with self.subTest(schema=name):
                 Draft202012Validator.check_schema(schema)
 
-    def test_runtime_enhancement_schema_matches_formal_schema(self) -> None:
-        packaged = load_json(
-            PACKAGED_SCHEMA_DIRECTORY / "enhancement-plan.schema.json"
+    def test_every_runtime_schema_matches_its_formal_schema(self) -> None:
+        packaged_paths = sorted(PACKAGED_SCHEMA_DIRECTORY.glob("*.schema.json"))
+        self.assertEqual(
+            {path.name for path in packaged_paths},
+            {
+                name
+                for name in self.schemas
+                if name == "enhancement-plan.schema.json"
+                or name.startswith("subtitle-")
+            },
         )
-        self.assertEqual(packaged, self.schemas["enhancement-plan.schema.json"])
+        for path in packaged_paths:
+            with self.subTest(schema=path.name):
+                self.assertEqual(load_json(path), self.schemas[path.name])
+
+    def test_new_subtitle_artifact_schemas_fail_closed(self) -> None:
+        for name, schema in self.schemas.items():
+            if name.startswith("subtitle-"):
+                with self.subTest(schema=name):
+                    self.assertIs(schema.get("additionalProperties"), False)
 
     def test_renderable_music_schema_requires_audition_artifact_references(self) -> None:
         music_schema = self.schemas["enhancement-plan.schema.json"]["properties"][
@@ -123,6 +144,17 @@ class SchemaValidationTests(unittest.TestCase):
 
         self.assertTrue(list(validator.iter_errors(section)))
         section["source_sha256"] = "a" * 64
+        self.assertTrue(list(validator.iter_errors(section)))
+        section["evidence"] = {
+            "contract_version": "subtitle-ready-evidence-v1",
+            "subtitle_payload_sha256": "b" * 64,
+            "subtitle_style_sha256": "c" * 64,
+            "verified_cue_set_sha256": "d" * 64,
+            **{
+                name: {"path": f"work/qa/{name}.json", "sha256": "e" * 64}
+                for name in ("readability", "layout", "visual", "human_review", "approval")
+            },
+        }
         self.assertEqual(list(validator.iter_errors(section)), [])
         section["source_sha256"] = "not-a-sha256"
         self.assertTrue(list(validator.iter_errors(section)))
@@ -241,7 +273,7 @@ class SchemaValidationTests(unittest.TestCase):
             )
             for path in directory.glob("*.json")
         )
-        self.assertEqual(len(json_paths), 48)
+        self.assertEqual(len(json_paths), 54)
         for path in json_paths:
             with self.subTest(path=path.relative_to(REPOSITORY_ROOT)):
                 load_json(path)

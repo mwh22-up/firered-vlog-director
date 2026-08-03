@@ -20,6 +20,19 @@ def load_edit_plan() -> dict:
     return json.loads((FIXTURES / "edit_plan.valid.json").read_text(encoding="utf-8"))
 
 
+def _subtitle_ready_evidence() -> dict:
+    binding_names = ("readability", "layout", "visual", "human_review", "approval")
+    return {
+        "contract_version": "subtitle-ready-evidence-v1",
+        "subtitle_payload_sha256": "1" * 64,
+        "subtitle_style_sha256": "2" * 64,
+        "verified_cue_set_sha256": "3" * 64,
+        **{
+            name: {"path": f"work/qa/{name}.json", "sha256": "4" * 64}
+            for name in binding_names
+        },
+    }
+
 class EnhancementTests(unittest.TestCase):
     def test_build_plan_covers_every_segment(self) -> None:
         edit_plan = load_edit_plan()
@@ -463,6 +476,7 @@ class EnhancementTests(unittest.TestCase):
         plan = build_enhancement_plan(edit_plan)
         plan["subtitles"]["status"] = "ready"
         plan["subtitles"]["source_sha256"] = "0" * 64
+        plan["subtitles"]["evidence"] = _subtitle_ready_evidence()
         plan["subtitles"]["coverage"] = {"status": "verified"}
         plan["subtitles"]["cues"] = [
             {
@@ -493,11 +507,38 @@ class EnhancementTests(unittest.TestCase):
         self.assertIn("overlay_subtitle_safe_zone_violation", codes)
         self.assertIn("duplicate_overlay_id", codes)
 
+    def test_ready_subtitles_require_structural_qa_evidence(self) -> None:
+        edit_plan = load_edit_plan()
+        plan = build_enhancement_plan(edit_plan)
+        plan["subtitles"].update(
+            {
+                "status": "ready",
+                "source_sha256": "0" * 64,
+                "coverage": {"status": "verified"},
+                "cues": [
+                    {
+                        "start_sec": 1.0,
+                        "end_sec": 2.0,
+                        "text": "verified subtitle",
+                        "review_status": "verified",
+                    }
+                ],
+            }
+        )
+
+        result = validate_enhancement_plan(edit_plan, plan)
+
+        self.assertEqual(result["status"], "blocked")
+        self.assertIn(
+            "enhancement_schema_invalid",
+            {issue["code"] for issue in result["issues"]},
+        )
     def test_ready_subtitles_require_verified_coverage_and_cues(self) -> None:
         edit_plan = load_edit_plan()
         plan = build_enhancement_plan(edit_plan)
         plan["subtitles"]["status"] = "ready"
         plan["subtitles"]["source_sha256"] = "0" * 64
+        plan["subtitles"]["evidence"] = _subtitle_ready_evidence()
         plan["subtitles"]["coverage"] = {"status": "verified"}
         plan["subtitles"]["cues"] = [
             {
@@ -520,6 +561,7 @@ class EnhancementTests(unittest.TestCase):
         plan = build_enhancement_plan(edit_plan)
         plan["subtitles"]["status"] = "ready"
         plan["subtitles"]["source_sha256"] = "0" * 64
+        plan["subtitles"]["evidence"] = _subtitle_ready_evidence()
         plan["subtitles"]["coverage"] = {"status": "verified"}
 
         result = validate_enhancement_plan(edit_plan, plan)
@@ -535,6 +577,7 @@ class EnhancementTests(unittest.TestCase):
         plan = build_enhancement_plan(edit_plan)
         plan["subtitles"]["status"] = "ready"
         plan["subtitles"]["source_sha256"] = "0" * 64
+        plan["subtitles"]["evidence"] = _subtitle_ready_evidence()
         plan["subtitles"]["coverage"] = {"status": "verified"}
         plan["subtitles"]["cues"] = [
             {

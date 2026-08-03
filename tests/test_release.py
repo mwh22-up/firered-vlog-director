@@ -20,7 +20,11 @@ class ReleaseTests(unittest.TestCase):
 
         self.assertEqual(
             {issue["code"] for issue in issues},
-            {"release_section_planned", "release_ready_section_empty"},
+            {
+                "release_section_planned",
+                "release_ready_section_empty",
+                "release_subtitle_evidence_legacy",
+            },
         )
 
     def test_release_rejects_music_still_in_audition(self) -> None:
@@ -51,6 +55,68 @@ class ReleaseTests(unittest.TestCase):
         self.assertEqual(len(issues), 1)
         self.assertEqual(issues[0]["code"], "release_section_not_ready")
         self.assertEqual(issues[0]["subject_id"], "subtitles")
+
+    def test_release_ready_subtitles_require_complete_evidence_contract(self) -> None:
+        plan = {
+            "music": {"status": "disabled", "tracks": []},
+            "subtitles": {
+                "status": "ready",
+                "cues": [{"text": "Verified subtitle"}],
+            },
+            "illustration_motion": {"status": "disabled", "items": []},
+        }
+
+        issues = release_readiness_issues(plan)
+
+        self.assertIn(
+            "release_subtitle_evidence_legacy",
+            {item["code"] for item in issues},
+        )
+
+    def test_release_accepts_structurally_complete_ready_evidence(self) -> None:
+        def bound(suffix: str) -> dict[str, str]:
+            return {
+                "path": f"work/qa/{suffix}.json",
+                "sha256": "a" * 64,
+            }
+
+        plan = {
+            "music": {"status": "disabled", "tracks": []},
+            "subtitles": {
+                "status": "ready",
+                "cues": [{"text": "Verified subtitle"}],
+                "evidence": {
+                    "contract_version": "subtitle-ready-evidence-v1",
+                    "subtitle_payload_sha256": "b" * 64,
+                    "subtitle_style_sha256": "c" * 64,
+                    "verified_cue_set_sha256": "d" * 64,
+                    "readability": bound("readability"),
+                    "layout": bound("layout"),
+                    "visual": bound("visual"),
+                    "human_review": bound("human-review"),
+                    "approval": bound("subtitle-approval"),
+                },
+            },
+            "illustration_motion": {"status": "disabled", "items": []},
+        }
+
+        self.assertEqual(release_readiness_issues(plan), [])
+
+    def test_release_rejects_malformed_ready_evidence_without_trusting_status(
+        self,
+    ) -> None:
+        plan = {
+            "music": {"status": "disabled", "tracks": []},
+            "subtitles": {
+                "status": "ready",
+                "cues": [{"text": "x"}],
+                "evidence": {"contract_version": "subtitle-ready-evidence-v1"},
+            },
+            "illustration_motion": {"status": "disabled", "items": []},
+        }
+
+        codes = {item["code"] for item in release_readiness_issues(plan)}
+        self.assertIn("release_subtitle_evidence_invalid", codes)
 
     def test_media_verification_blocks_corrupt_and_missing_stream_outputs(self) -> None:
         ffmpeg = get_ffmpeg_exe()

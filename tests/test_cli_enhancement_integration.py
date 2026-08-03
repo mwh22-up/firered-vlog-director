@@ -394,6 +394,7 @@ class EnhancementCliIntegrationTests(unittest.TestCase):
                 project / "work" / "subtitles" / "review-required.json"
             )
             review_cue = {
+                "cue_id": "subtitle-review-1",
                 "start_sec": 0.25,
                 "end_sec": 1.5,
                 "text": "Review subtitle",
@@ -404,12 +405,7 @@ class EnhancementCliIntegrationTests(unittest.TestCase):
                 {
                     "status": "review_required",
                     "coverage": {"status": "pending"},
-                    "cues": [
-                        {
-                            **review_cue,
-                            "cue_id": "subtitle-review-1",
-                        }
-                    ],
+                    "cues": [review_cue],
                 },
             )
             review_plan = json.loads(json.dumps(enhancement))
@@ -435,7 +431,7 @@ class EnhancementCliIntegrationTests(unittest.TestCase):
                 "--version",
                 1,
             )
-            self.assertEqual(exit_code, 0)
+            self.assertEqual(exit_code, 0, review_guard)
             self.assertEqual(review_guard["status"], "preview_ready")
 
             exit_code, review_release_guard = _run_cli(

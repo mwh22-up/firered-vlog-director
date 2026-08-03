@@ -1,0 +1,416 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/subtitle-preview-manifest.schema.json",
+  "title": "Subtitle Preview Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "document_type",
+    "render_version",
+    "status",
+    "project_id",
+    "scope",
+    "proxy_unit",
+    "padding_sec",
+    "cue_count",
+    "actual_rendered_cue_count",
+    "selection",
+    "bindings",
+    "outputs",
+    "ass_bundle_sha256",
+    "media_bundle_sha256",
+    "progress_path",
+    "ffmpeg_log_path",
+    "manifest_path",
+    "cleanup_paths",
+    "created_at"
+  ],
+  "$defs": {
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "binding": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/path"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "policy_version": {
+          "type": "string"
+        },
+        "probe_version": {
+          "type": "string"
+        },
+        "probe_mode": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "mode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "media": {
+      "type": "object",
+      "required": [
+        "name",
+        "size_bytes",
+        "sha256",
+        "duration_sec",
+        "width",
+        "height",
+        "frame_rate",
+        "has_video",
+        "has_audio"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "duration_sec": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "frame_rate": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "has_video": {
+          "const": true
+        },
+        "has_audio": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "ffmpeg": {
+      "type": "object",
+      "required": [
+        "executable_name",
+        "executable_size_bytes",
+        "executable_sha256",
+        "version_line",
+        "configuration_sha256",
+        "filters_sha256",
+        "subtitles_filter_available",
+        "libass_enabled"
+      ],
+      "properties": {
+        "executable_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "executable_size_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "executable_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "version_line": {
+          "type": "string",
+          "minLength": 1
+        },
+        "configuration_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "filters_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "subtitles_filter_available": {
+          "type": "boolean"
+        },
+        "libass_enabled": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "document_type": {
+      "const": "subtitle_preview_manifest"
+    },
+    "render_version": {
+      "const": "subtitle-only-libass-v1"
+    },
+    "status": {
+      "const": "completed"
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "enum": [
+        "all",
+        "risk"
+      ]
+    },
+    "proxy_unit": {
+      "enum": [
+        "timeline",
+        "cue",
+        "segment",
+        "chapter"
+      ]
+    },
+    "padding_sec": {
+      "type": "number",
+      "minimum": 0
+    },
+    "cue_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "actual_rendered_cue_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "selection": {
+      "type": "object",
+      "required": [
+        "planned_cue_ids",
+        "selected_trigger_cue_ids",
+        "planned_rendered_cue_ids",
+        "missing_selected_cue_ids",
+        "unrendered_due_to_scope_cue_ids"
+      ],
+      "properties": {
+        "planned_cue_ids": {
+          "$ref": "#/$defs/ids"
+        },
+        "selected_trigger_cue_ids": {
+          "$ref": "#/$defs/ids"
+        },
+        "planned_rendered_cue_ids": {
+          "$ref": "#/$defs/ids"
+        },
+        "missing_selected_cue_ids": {
+          "$ref": "#/$defs/ids"
+        },
+        "unrendered_due_to_scope_cue_ids": {
+          "$ref": "#/$defs/ids"
+        }
+      },
+      "additionalProperties": false
+    },
+    "bindings": {
+      "type": "object",
+      "required": [
+        "subtitle_source",
+        "realized_timeline",
+        "base_media",
+        "ffmpeg_identity",
+        "readability_policy_version",
+        "layout_probe_version"
+      ],
+      "properties": {
+        "subtitle_source": {
+          "$ref": "#/$defs/binding"
+        },
+        "realized_timeline": {
+          "$ref": "#/$defs/binding"
+        },
+        "enhancement_plan": {
+          "$ref": "#/$defs/binding"
+        },
+        "readability_qa": {
+          "$ref": "#/$defs/binding"
+        },
+        "layout_qa": {
+          "$ref": "#/$defs/binding"
+        },
+        "base_media": {
+          "$ref": "#/$defs/media"
+        },
+        "ffmpeg_identity": {
+          "$ref": "#/$defs/ffmpeg"
+        },
+        "readability_policy_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "layout_probe_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "output_id",
+          "unit_type",
+          "unit_id",
+          "clip_start_sec",
+          "clip_end_sec",
+          "trigger_cue_ids",
+          "rendered_cue_ids",
+          "ass_path",
+          "ass_sha256",
+          "media_path",
+          "media_sha256",
+          "media_size_bytes",
+          "duration_sec",
+          "width",
+          "height",
+          "frame_rate",
+          "audio_stream_copied",
+          "ffmpeg_exit_code"
+        ],
+        "properties": {
+          "output_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit_type": {
+            "enum": [
+              "timeline",
+              "cue",
+              "segment",
+              "chapter"
+            ]
+          },
+          "unit_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "clip_start_sec": {
+            "type": "number",
+            "minimum": 0
+          },
+          "clip_end_sec": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "trigger_cue_ids": {
+            "$ref": "#/$defs/ids"
+          },
+          "rendered_cue_ids": {
+            "$ref": "#/$defs/ids"
+          },
+          "ass_path": {
+            "$ref": "#/$defs/path"
+          },
+          "ass_sha256": {
+            "$ref": "#/$defs/sha"
+          },
+          "media_path": {
+            "$ref": "#/$defs/path"
+          },
+          "media_sha256": {
+            "$ref": "#/$defs/sha"
+          },
+          "media_size_bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "duration_sec": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "frame_rate": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "exclusiveMinimum": 0
+          },
+          "audio_stream_copied": {
+            "const": true
+          },
+          "ffmpeg_exit_code": {
+            "const": 0
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "ass_bundle_sha256": {
+      "$ref": "#/$defs/sha"
+    },
+    "media_bundle_sha256": {
+      "$ref": "#/$defs/sha"
+    },
+    "progress_path": {
+      "$ref": "#/$defs/path"
+    },
+    "ffmpeg_log_path": {
+      "$ref": "#/$defs/path"
+    },
+    "manifest_path": {
+      "$ref": "#/$defs/path"
+    },
+    "cleanup_paths": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/path"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}

@@ -18,6 +18,7 @@
 - 参考片学习清单与导演档案契约；
 - ASR、镜头评分、事件分组、声音分段与跨视频聚合；
 - 配乐、防抖与连贯、字幕、插画动效的统一增强计划及运行时 Schema 门禁；
+- 字幕可读性硬门禁、真实 FFmpeg/libass 排版测量、字幕专属代理、视觉 QA 和 SHA 绑定人工审批；
 - 不依赖真实素材的单元测试，以及生成计划到基础 CLI 渲染与 QA 的 FFmpeg `lavfi` 集成测试。
 
 ## 推荐目录
@@ -46,7 +47,7 @@ python -m pip install -e ".[test]"
 .\scripts\test.ps1
 ```
 
-`test` extra 会安装单元测试、参考分析和固定版本的便携 FFmpeg 所需依赖；测试会校验全部 8 个 Schema、仓库中的正式 JSON 产物，并用临时 `lavfi` 音视频验证生成计划、运行时门禁、基础 CLI 渲染、音频 QA 和双流完整解码。合成媒体只存在于测试临时目录，不进入 Git。
+`test` extra 会安装单元测试、参考分析和固定版本的便携 FFmpeg 所需依赖；测试会校验全部 14 个 Schema、仓库中的正式 JSON 产物，并用临时 `lavfi` 音视频验证生成计划、运行时门禁、基础 CLI 渲染、字幕真实排版与专属代理、音频 QA 和双流完整解码。合成媒体只存在于测试临时目录，不进入 Git。
 
 校验剪辑计划：
 
@@ -102,6 +103,23 @@ git check-ignore -v .env reference-videos\sample.mp4 projects\demo\raw\private.m
 详细接入步骤见 `docs/home-integration.md`，后续改造顺序见 `docs/roadmap.md`。
 
 成片增强的处理顺序、约束和命令见 `docs/enhancement-pipeline.md`。
+
+## 字幕生产闭环
+
+正式字幕流程已接入六个 CLI：
+
+```text
+project-subtitles
+→ audit-subtitles
+→ probe-subtitle-layout
+→ render-subtitle-preview
+→ qa-subtitles
+→ approve-subtitles
+```
+
+字幕代理只烧录 ASS 并保留原音轨，不执行画面 treatment、音乐、ducking、overlay 或完整 enhancement render。`render-subtitle-preview` 和 `qa-subtitles` 默认提交可独立存活的 detached job；风险短代理支持按 cue、segment 或 chapter 输出，最终审批则要求 release readability、真实 libass layout、all-scope visual QA 和独立人工听校记录。
+
+机器视觉 QA 不执行 OCR，也不会伪造人工通过状态。它只能准确说明：“已生成视觉帧和布局证据，文字准确性仍需人工听校。”完整目录约束、后台状态检查、六个可复制 PowerShell 命令、人工审批和 `subtitle-ready-evidence-v1` 接入方式见 [字幕生产闭环](docs/subtitle-production-loop.md)。
 
 ## 参考片学习
 

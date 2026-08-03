@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/subtitle-layout-qa.schema.json",
+  "title": "Subtitle Layout QA",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "document_type",
+    "probe_version",
+    "status",
+    "mode",
+    "probe_mode",
+    "project_id",
+    "bindings",
+    "ffmpeg_identity",
+    "font_directory_identity",
+    "canvas",
+    "capabilities",
+    "summary",
+    "cues",
+    "warning_codes",
+    "blocker_codes",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "document_type": { "const": "subtitle_layout_qa" },
+    "probe_version": { "const": "libass-rgb24-bbox-v1" },
+    "status": { "enum": ["passed", "warning", "blocked"] },
+    "mode": { "enum": ["preview", "release"] },
+    "probe_mode": { "enum": ["real_libass", "heuristic"] },
+    "project_id": { "type": "string", "minLength": 1 },
+    "bindings": {
+      "type": "object",
+      "required": [
+        "subtitle_source_sha256",
+        "realized_timeline_sha256",
+        "readability_qa_sha256",
+        "readability_policy_sha256",
+        "ass_sha256",
+        "readability_policy_version"
+      ],
+      "properties": {
+        "subtitle_source_path": { "type": "string", "minLength": 1 },
+        "subtitle_source_sha256": { "$ref": "#/$defs/sha256" },
+        "realized_timeline_sha256": { "$ref": "#/$defs/sha256" },
+        "readability_qa_sha256": { "$ref": "#/$defs/sha256" },
+        "readability_policy_sha256": { "$ref": "#/$defs/sha256" },
+        "enhancement_plan_sha256": { "$ref": "#/$defs/sha256" },
+        "ass_sha256": { "$ref": "#/$defs/sha256" },
+        "readability_policy_version": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "ffmpeg_identity": {
+      "oneOf": [
+        { "type": "null" },
+        { "$ref": "#/$defs/ffmpeg_identity" }
+      ]
+    },
+    "font_directory_identity": { "$ref": "#/$defs/font_directory_identity" },
+    "canvas": { "$ref": "#/$defs/canvas" },
+    "capabilities": {
+      "type": "object",
+      "required": [
+        "subtitles_filter_available",
+        "libass_enabled",
+        "real_frame_measurement",
+        "ocr_performed"
+      ],
+      "properties": {
+        "subtitles_filter_available": { "type": "boolean" },
+        "libass_enabled": { "type": "boolean" },
+        "real_frame_measurement": { "type": "boolean" },
+        "ocr_performed": { "const": false }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "cue_count",
+        "real_layout_verified_count",
+        "cache_hit_count",
+        "blocker_count",
+        "warning_count"
+      ],
+      "properties": {
+        "cue_count": { "type": "integer", "minimum": 0 },
+        "real_layout_verified_count": { "type": "integer", "minimum": 0 },
+        "cache_hit_count": { "type": "integer", "minimum": 0 },
+        "blocker_count": { "type": "integer", "minimum": 0 },
+        "warning_count": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "cues": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/cue_result" }
+    },
+    "warning_codes": { "$ref": "#/$defs/code_array" },
+    "blocker_codes": { "$ref": "#/$defs/code_array" },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "code_array": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "canvas": {
+      "type": "object",
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "bbox": {
+      "type": "object",
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": { "type": "integer", "minimum": 0 },
+        "y": { "type": "integer", "minimum": 0 },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "font_file": {
+      "type": "object",
+      "required": ["path", "size_bytes", "sha256"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "size_bytes": { "type": "integer", "minimum": 0 },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      },
+      "additionalProperties": false
+    },
+    "font_directory_identity": {
+      "type": "object",
+      "required": ["present", "sha256", "file_count", "files"],
+      "properties": {
+        "present": { "type": "boolean" },
+        "sha256": {
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/sha256" }
+          ]
+        },
+        "file_count": { "type": "integer", "minimum": 0 },
+        "files": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/font_file" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ffmpeg_identity": {
+      "type": "object",
+      "required": [
+        "executable_name",
+        "executable_size_bytes",
+        "executable_sha256",
+        "version_line",
+        "configuration_sha256",
+        "filters_sha256",
+        "subtitles_filter_available",
+        "libass_enabled"
+      ],
+      "properties": {
+        "executable_name": { "type": "string", "minLength": 1 },
+        "executable_size_bytes": { "type": "integer", "minimum": 1 },
+        "executable_sha256": { "$ref": "#/$defs/sha256" },
+        "version_line": { "type": "string", "minLength": 1 },
+        "configuration_sha256": { "$ref": "#/$defs/sha256" },
+        "filters_sha256": { "$ref": "#/$defs/sha256" },
+        "subtitles_filter_available": { "type": "boolean" },
+        "libass_enabled": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "font_resolution": {
+      "type": "object",
+      "required": [
+        "requested_font",
+        "status",
+        "resolved_faces",
+        "fallback_detected",
+        "missing_glyph_observed",
+        "log_sha256"
+      ],
+      "properties": {
+        "requested_font": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["resolved", "fallback", "unknown"] },
+        "resolved_faces": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "fallback_detected": { "type": "boolean" },
+        "missing_glyph_observed": { "type": "boolean" },
+        "log_sha256": { "$ref": "#/$defs/sha256" }
+      },
+      "additionalProperties": false
+    },
+    "cue_result": {
+      "type": "object",
+      "required": [
+        "cue_id",
+        "text_sha256",
+        "style_sha256",
+        "ass_sha256",
+        "cache_key",
+        "cache_hit",
+        "sample_time_sec",
+        "position",
+        "line_count",
+        "line_count_source",
+        "effective_font_size",
+        "safe_area",
+        "measured_bbox",
+        "measured_pixel_count",
+        "clipped",
+        "inside_safe_area",
+        "real_layout_verified",
+        "measurement_method",
+        "font_resolution",
+        "warning_codes",
+        "blocker_codes"
+      ],
+      "properties": {
+        "cue_id": { "type": "string", "minLength": 1 },
+        "text_sha256": { "$ref": "#/$defs/sha256" },
+        "style_sha256": { "$ref": "#/$defs/sha256" },
+        "ass_sha256": { "$ref": "#/$defs/sha256" },
+        "cache_key": { "$ref": "#/$defs/sha256" },
+        "cache_hit": { "type": "boolean" },
+        "sample_time_sec": { "type": "number", "minimum": 0 },
+        "position": { "enum": ["bottom_center", "top_center"] },
+        "line_count": { "type": "integer", "minimum": 1 },
+        "line_count_source": {
+          "enum": [
+            "ass_dialogue_explicit_breaks",
+            "heuristic_input_fallback"
+          ]
+        },
+        "effective_font_size": { "type": "integer", "minimum": 1 },
+        "safe_area": { "$ref": "#/$defs/bbox" },
+        "measured_bbox": {
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/bbox" }
+          ]
+        },
+        "measured_pixel_count": { "type": "integer", "minimum": 0 },
+        "clipped": { "type": ["boolean", "null"] },
+        "inside_safe_area": { "type": ["boolean", "null"] },
+        "real_layout_verified": { "type": "boolean" },
+        "measurement_method": {
+          "enum": [
+            "ffmpeg-libass-rgb24-control-difference-v1",
+            "heuristic-only-unmeasured"
+          ]
+        },
+        "font_resolution": { "$ref": "#/$defs/font_resolution" },
+        "warning_codes": { "$ref": "#/$defs/code_array" },
+        "blocker_codes": { "$ref": "#/$defs/code_array" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

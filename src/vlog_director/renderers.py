@@ -16,6 +16,11 @@ from .enhancement import (
 from .enhancement_assets import validate_enhancement_assets
 from .ffmpeg import filter_path, find_ffmpeg, probe_media, require_filters, run_command
 from .overlays import SUPPORTED_OVERLAY_ANIMATIONS, build_overlay_filters
+from .subtitle_render_contract import (
+    build_subtitle_render_contract,
+    subtitle_filter_expression,
+    write_contract_ass,
+)
 from .subtitles import write_ass_subtitles
 
 TERMINAL_PAD_FRAMES = 1
@@ -521,10 +526,11 @@ def render_enhanced_video(
     if not base_video.is_file():
         raise FileNotFoundError(base_video)
     asset_issues = validate_enhancement_assets(project, enhancement_plan)
-    if asset_issues:
+    asset_errors = [issue for issue in asset_issues if issue.get("severity") == "error"]
+    if asset_errors:
         raise ValueError(
             "enhancement asset validation failed: "
-            + json.dumps(asset_issues, ensure_ascii=False)
+            + json.dumps(asset_errors, ensure_ascii=False)
         )
     non_finite_paths = find_non_finite_number_paths(enhancement_plan)
     if realized_timeline is not None:
@@ -786,55 +792,23 @@ def render_enhanced_video(
             subtitle_style = subtitle_section.get("style", {})
             width = int(media["width"])
             height = int(media["height"])
-            reference_scale = min(width / 1920.0, height / 1080.0)
-            write_ass_subtitles(
-                subtitle_cues,
-                subtitle_file,
-                font_name=str(subtitle_style.get("font_name", "Microsoft YaHei")),
-                font_size=max(
-                    1,
-                    round(int(subtitle_style.get("font_size", 64)) * reference_scale),
-                ),
-                margin_v=max(
-                    0,
-                    round(int(subtitle_style.get("margin_v", 72)) * reference_scale),
-                ),
-                outline=max(
-                    0,
-                    round(int(subtitle_style.get("outline", 4)) * reference_scale),
-                ),
-                shadow=max(
-                    0,
-                    round(int(subtitle_style.get("shadow", 1)) * reference_scale),
-                ),
-                bold=bool(subtitle_style.get("bold", True)),
-                position=str(subtitle_style.get("position", "bottom_center")),
-                max_lines=int(subtitle_style.get("max_lines", 2)),
-                safe_margin_percent=float(
-                    subtitle_style.get("safe_margin_percent", 8.0)
-                ),
+            subtitle_contract = build_subtitle_render_contract(
+                project,
+                subtitle_style,
                 canvas_width=width,
                 canvas_height=height,
-                max_chars_per_line=int(
-                    subtitle_style.get("max_chars_per_line", 18)
-                ),
-                minimum_font_size=max(1, round(60 * reference_scale)),
-                background_opacity_percent=float(
-                    subtitle_style.get("background_opacity_percent", 42.0)
-                ),
-                background_padding=max(
-                    0,
-                    round(
-                        int(subtitle_style.get("background_padding", 8))
-                        * reference_scale
-                    ),
-                ),
+            )
+            write_contract_ass(
+                subtitle_cues,
+                subtitle_contract,
+                subtitle_file,
+                writer=write_ass_subtitles,
             )
             next_video = "video_subtitled"
-            fonts_directory = project / "assets" / "fonts"
-            subtitle_filter = f"subtitles=filename='{filter_path(subtitle_file)}'"
-            if fonts_directory.is_dir():
-                subtitle_filter += f":fontsdir='{filter_path(fonts_directory)}'"
+            subtitle_filter = subtitle_filter_expression(
+                subtitle_file,
+                subtitle_contract,
+            )
             filters.append(f"[{video_label}]{subtitle_filter}[{next_video}]")
             video_label = next_video
 

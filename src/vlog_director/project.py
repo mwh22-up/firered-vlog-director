@@ -27,6 +27,7 @@ PROJECT_DIRECTORIES = (
     "work/analysis",
     "work/plans",
     "work/enhancement",
+    "work/jobs",
     "work/stabilized",
     "work/subtitles",
     "work/qa",
@@ -244,7 +245,8 @@ def guard_project_enhancement(
         result["warning_count"] = sum(
             issue["severity"] == "warning" for issue in result["issues"]
         )
-        result["status"] = "blocked"
+        if result["blocking_count"]:
+            result["status"] = "blocked"
     if mode == "release":
         release_issues = release_readiness_issues(enhancement_plan)
         if release_issues:
@@ -255,7 +257,8 @@ def guard_project_enhancement(
             result["warning_count"] = sum(
                 issue["severity"] == "warning" for issue in result["issues"]
             )
-            result["status"] = "blocked"
+            if result["blocking_count"]:
+                result["status"] = "blocked"
     if result["status"] == "passed":
         result["status"] = "ready" if mode == "release" else "preview_ready"
     result["mode"] = mode

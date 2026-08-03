@@ -9,6 +9,12 @@ from datetime import UTC, datetime
 from difflib import SequenceMatcher
 from pathlib import Path, PurePosixPath
 from typing import Any, Iterable, Mapping
+from .subtitle_readability import (
+    SubtitleReadabilityPolicy,
+    plan_safe_readability_repairs,
+    stable_cue_id,
+)
+
 
 
 TERMINAL_PUNCTUATION = "。！？!?；;"
@@ -203,12 +209,60 @@ def _realized_segments(
     edit_plan: dict[str, Any],
     render_report: dict[str, Any],
 ) -> list[dict[str, Any]]:
+    raw_measurements = render_report.get("segment_measurements")
+    if raw_measurements is None:
+        portable_segments = render_report.get("segments")
+        if not isinstance(portable_segments, list):
+            raise ValueError("realized timeline has no segment measurements")
+        expected: list[tuple[str, int, dict[str, Any]]] = []
+        for chapter_index, chapter in enumerate(
+            edit_plan.get("chapters", []), start=1
+        ):
+            chapter_id = str(chapter.get("id", f"ch{chapter_index:02d}"))
+            for segment_index, segment in enumerate(
+                chapter.get("segments", []), start=1
+            ):
+                expected.append((chapter_id, segment_index, segment))
+        if len(portable_segments) != len(expected):
+            raise ValueError(
+                "realized timeline segment count does not match the edit plan"
+            )
+        raw_measurements = []
+        for realized, (chapter_id, segment_index, segment) in zip(
+            portable_segments, expected
+        ):
+            if not isinstance(realized, dict):
+                raise ValueError("realized timeline segments must be objects")
+            expected_id = str(
+                segment.get("id", f"{chapter_id}-s{segment_index:03d}")
+            )
+            if str(realized.get("segment_id", "")) != expected_id:
+                raise ValueError(
+                    "realized timeline segment IDs do not match the edit plan"
+                )
+            raw_measurements.append(
+                {
+                    "chapter_id": chapter_id,
+                    "segment_index": segment_index,
+                    "source": str(segment["source"]),
+                    "planned_duration_sec": float(segment["out_sec"])
+                    - float(segment["in_sec"]),
+                    "actual_start_sec": realized.get("start_sec"),
+                    "actual_end_sec": realized.get("end_sec"),
+                }
+            )
+    if not isinstance(raw_measurements, list) or not all(
+        isinstance(item, dict) for item in raw_measurements
+    ):
+        raise ValueError("render report segment_measurements must be an array of objects")
     measurements = {
         (str(item.get("chapter_id")), int(item.get("segment_index", 0))): item
-        for item in render_report.get("segment_measurements", [])
+        for item in raw_measurements
     }
     segments: list[dict[str, Any]] = []
     previous_actual_end = 0.0
+    if len(measurements) != len(raw_measurements):
+        raise ValueError("render report segment measurements must be unique")
     for chapter_index, chapter in enumerate(edit_plan.get("chapters", []), start=1):
         chapter_id = str(chapter.get("id", f"ch{chapter_index:02d}"))
         for segment_index, segment in enumerate(chapter.get("segments", []), start=1):
@@ -567,11 +621,13 @@ def project_asr_to_realized_timeline(
     *,
     subtitle_version: int,
     policy: SubtitleMergePolicy | None = None,
+    readability_policy: SubtitleReadabilityPolicy | None = None,
     created_at: str | None = None,
 ) -> dict[str, Any]:
     if subtitle_version < 1:
         raise ValueError("subtitle_version must be positive")
     merge_policy = policy or SubtitleMergePolicy()
+    active_readability_policy = readability_policy or SubtitleReadabilityPolicy()
     analysis_by_source = _analysis_map(analyses)
     realized_segments = _realized_segments(edit_plan, render_report)
     cues: list[dict[str, Any]] = []
@@ -613,9 +669,9 @@ def project_asr_to_realized_timeline(
             }
         )
 
-    for cue_index, cue in enumerate(cues, start=1):
-        cues[cue_index - 1] = {
-            "cue_id": f"subtitle-v{subtitle_version}-{cue_index:04d}",
+    for cue_index, cue in enumerate(cues):
+        cues[cue_index] = {
+            "cue_id": stable_cue_id(cue, prefix=f"subtitle-v{subtitle_version}"),
             **cue,
         }
 
@@ -642,7 +698,7 @@ def project_asr_to_realized_timeline(
         float(item["source_out_sec"]) - float(item["source_in_sec"])
         for item in realized_segments
     )
-    return {
+    draft = {
         "schema_version": "1.0",
         "document_type": "subtitle_review_draft",
         "project_id": edit_plan.get("project_id"),
@@ -675,6 +731,22 @@ def project_asr_to_realized_timeline(
         "cues": cues,
         "created_at": created_at or datetime.now(UTC).isoformat(),
     }
+
+    repair_proposals = plan_safe_readability_repairs(
+        draft,
+        policy=active_readability_policy,
+    )
+    draft["readability"] = {
+        "policy_version": active_readability_policy.policy_version,
+        "policy": active_readability_policy.to_dict(),
+        "repair_proposal_count": len(repair_proposals),
+        "repair_proposals": repair_proposals,
+        "status": "review_required",
+        "limitations": [
+            "machine_repairs_are_proposals_and_never_mark_cues_verified"
+        ],
+    }
+    return draft
 
 
 _ARABIC_DIGIT_PATTERN = re.compile(r"\d+")
@@ -1163,6 +1235,7 @@ def build_subtitle_review_record(
         },
         "machine_crosscheck": draft.get("machine_crosscheck"),
         "machine_text_corrections": draft.get("machine_text_corrections"),
+        "readability": draft.get("readability"),
         "required_checks": [
             "audio_text_accuracy",
             "wording_and_proper_nouns",

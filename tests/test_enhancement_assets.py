@@ -10,6 +10,8 @@ from unittest.mock import patch
 
 from vlog_director.enhancement_assets import validate_enhancement_assets
 from vlog_director.renderers import render_enhanced_video
+from vlog_director.subtitle_approval import create_ready_subtitle_source
+from tests.test_subtitle_approval import _ApprovalFixture
 
 
 REQUIRED_SCOPES = [
@@ -96,6 +98,8 @@ class EnhancementAssetValidationTests(unittest.TestCase):
 
     def _ready_subtitle_plan(self) -> dict:
         cue = {
+            "cue_id": "subtitle-0001",
+            "segment_id": "segment-1",
             "start_sec": 0.25,
             "end_sec": 1.5,
             "text": "Verified subtitle",
@@ -123,8 +127,67 @@ class EnhancementAssetValidationTests(unittest.TestCase):
         }
         return plan
 
+    def _approved_ready_subtitle_plan(self) -> dict:
+        fixture = _ApprovalFixture(self.project)
+        approval = fixture.build()
+        ready_source = create_ready_subtitle_source(
+            review_source_path=fixture.source,
+            approval_path=fixture.approval,
+            output_path=fixture.ready,
+        )
+        plan = copy.deepcopy(self.plan)
+        plan["music"] = {"status": "planned", "tracks": []}
+        plan["subtitles"] = {
+            "status": "ready",
+            "language": ready_source["language"],
+            "source": "work/subtitles/ready.json",
+            "source_sha256": _sha256(fixture.ready),
+            "coverage": {"status": "verified"},
+            "cues": [
+                {
+                    "cue_id": cue["cue_id"],
+                    "segment_id": cue["segment_id"],
+                    "chapter_id": cue["chapter_id"],
+                    "start_sec": cue["start_sec"],                    "end_sec": cue["end_sec"],
+                    "text": cue["text"],
+                    "review_status": cue["review_status"],
+                    "position": cue["position"],
+                }
+                for cue in ready_source["cues"]
+            ],
+            "style": fixture.style,
+            "evidence": {
+                "contract_version": "subtitle-ready-evidence-v1",
+                "subtitle_payload_sha256": approval["subtitle_payload_sha256"],
+                "subtitle_style_sha256": approval["subtitle_style_sha256"],
+                "verified_cue_set_sha256": approval["verified_cue_set_sha256"],
+                "readability": {
+                    "path": "work/qa/readability.json",
+                    "sha256": _sha256(fixture.readability),
+                },
+                "layout": {
+                    "path": "work/qa/layout.json",
+                    "sha256": _sha256(fixture.layout),
+                },
+                "visual": {
+                    "path": "work/qa/visual.json",
+                    "sha256": _sha256(fixture.visual),
+                },
+                "human_review": {
+                    "path": "work/qa/human-review.json",
+                    "sha256": _sha256(fixture.human),
+                },
+                "approval": {
+                    "path": "work/qa/subtitle-approval.json",
+                    "sha256": _sha256(fixture.approval),
+                },
+            },
+        }
+        return plan
+
     def _review_subtitle_plan(self) -> dict:
         cue = {
+            "cue_id": "subtitle-0001",
             "start_sec": 0.25,
             "end_sec": 1.5,
             "text": "Review subtitle",
@@ -239,12 +302,72 @@ class EnhancementAssetValidationTests(unittest.TestCase):
     def test_ready_subtitle_source_and_plan_pass_when_equivalent(self) -> None:
         plan = self._ready_subtitle_plan()
 
+        self.assertIn("subtitle_ready_evidence_legacy", self._codes(plan))
+
+    def test_approved_ready_subtitle_evidence_passes(self) -> None:
+        plan = self._approved_ready_subtitle_plan()
+
         self.assertEqual(validate_enhancement_assets(self.project, plan), [])
+
+
+    def test_ready_evidence_paths_and_hashes_fail_closed(self) -> None:
+        plan = self._approved_ready_subtitle_plan()
+        plan["subtitles"]["evidence"]["layout"]["path"] = (
+            "work/qa/../layout.json"
+        )
+        plan["subtitles"]["evidence"]["visual"]["sha256"] = "0" * 64
+
+        codes = self._codes(plan)
+        self.assertIn("enhancement_asset_path_invalid", codes)
+        self.assertIn("subtitle_evidence_sha256_mismatch", codes)
+
+    def test_ready_evidence_binds_payload_and_verified_cue_set(self) -> None:
+        plan = self._approved_ready_subtitle_plan()
+        source_path = self.project / plan["subtitles"]["source"]
+        source = json.loads(source_path.read_text(encoding="utf-8"))
+        source["cues"][0]["text"] = "Changed after approval"
+        _write_json(source_path, source)
+        plan["subtitles"]["source_sha256"] = _sha256(source_path)
+        plan["subtitles"]["cues"][0]["text"] = "Changed after approval"
+        plan["subtitles"]["evidence"]["verified_cue_set_sha256"] = "0" * 64
+
+        codes = self._codes(plan)
+        self.assertIn("subtitle_payload_sha256_mismatch", codes)
+        self.assertIn("subtitle_verified_cue_set_sha256_mismatch", codes)
+        self.assertIn("subtitle_approval_invalid", codes)
+
+    def test_ready_evidence_unknown_fields_fail_closed(self) -> None:
+        plan = self._approved_ready_subtitle_plan()
+        plan["subtitles"]["evidence"]["unknown"] = True
+
+        self.assertIn("subtitle_ready_evidence_invalid", self._codes(plan))
+    def test_ready_evidence_content_style_and_approval_are_bound(self) -> None:
+        plan = self._approved_ready_subtitle_plan()
+        plan["subtitles"]["style"]["font_size"] += 1
+        approval_path = (
+            self.project / plan["subtitles"]["evidence"]["approval"]["path"]
+        )
+        approval = json.loads(approval_path.read_text(encoding="utf-8"))
+        approval["approved_by"] = "Tampered"
+        _write_json(approval_path, approval)
+        plan["subtitles"]["evidence"]["approval"]["sha256"] = _sha256(
+            approval_path
+        )
+
+        codes = self._codes(plan)
+        self.assertIn("subtitle_style_sha256_mismatch", codes)
+        self.assertIn("subtitle_approval_invalid", codes)
+
 
     def test_review_subtitle_source_and_plan_pass_when_equivalent(self) -> None:
         plan = self._review_subtitle_plan()
 
-        self.assertEqual(validate_enhancement_assets(self.project, plan), [])
+        issues = validate_enhancement_assets(self.project, plan)
+        self.assertEqual(
+            {item["code"] for item in issues},
+            {"subtitle_review_not_release_ready"},
+        )
+        self.assertEqual({item["severity"] for item in issues}, {"warning"})
 
     def test_review_subtitle_source_sha_and_projection_are_enforced(self) -> None:
         plan = self._review_subtitle_plan()

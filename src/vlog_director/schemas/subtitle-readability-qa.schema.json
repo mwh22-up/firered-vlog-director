@@ -1,0 +1,259 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/subtitle-readability-qa.schema.json",
+  "title": "Subtitle Readability QA",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "document_type",
+    "policy_version",
+    "project_id",
+    "mode",
+    "status",
+    "subtitle_source_sha256",
+    "realized_timeline_sha256",
+    "subtitle_payload_sha256",
+    "policy_sha256",
+    "cue_count",
+    "blocker_count",
+    "warning_count",
+    "repair_count",
+    "cue_ids",
+    "high_risk_cue_ids",
+    "document_blocker_codes",
+    "document_warning_codes",
+    "policy",
+    "cues",
+    "limitations",
+    "release_ready"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "document_type": { "const": "subtitle_readability_qa" },
+    "policy_version": { "const": "1.0" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "mode": { "enum": ["preview", "release"] },
+    "status": { "enum": ["passed", "warnings", "blocked"] },
+    "subtitle_source_sha256": { "$ref": "#/$defs/sha256" },
+    "realized_timeline_sha256": { "$ref": "#/$defs/sha256" },
+    "subtitle_payload_sha256": { "$ref": "#/$defs/sha256" },
+    "policy_sha256": { "$ref": "#/$defs/sha256" },
+    "cue_count": { "type": "integer", "minimum": 0 },
+    "blocker_count": { "type": "integer", "minimum": 0 },
+    "warning_count": { "type": "integer", "minimum": 0 },
+    "repair_count": { "type": "integer", "minimum": 0 },
+    "cue_ids": { "$ref": "#/$defs/string_array" },
+    "high_risk_cue_ids": { "$ref": "#/$defs/string_array" },
+    "document_blocker_codes": { "$ref": "#/$defs/string_array" },
+    "document_warning_codes": { "$ref": "#/$defs/string_array" },
+    "policy": { "$ref": "#/$defs/policy" },
+    "cues": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/cue_audit" }
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "release_ready": { "type": "boolean" }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "string_array": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "policy_version",
+        "min_duration_sec",
+        "max_duration_sec",
+        "min_gap_sec",
+        "max_merge_gap_sec",
+        "zh_max_chars_per_sec",
+        "latin_max_words_per_sec",
+        "latin_max_chars_per_sec",
+        "max_lines",
+        "max_chars_per_line",
+        "cut_boundary_tolerance_sec",
+        "allow_auto_merge",
+        "allow_safe_extension",
+        "preview_violation_action",
+        "release_violation_action"
+      ],
+      "properties": {
+        "policy_version": { "const": "1.0" },
+        "min_duration_sec": { "type": "number", "exclusiveMinimum": 0 },
+        "max_duration_sec": { "type": "number", "exclusiveMinimum": 0 },
+        "min_gap_sec": { "type": "number", "minimum": 0 },
+        "max_merge_gap_sec": { "type": "number", "minimum": 0 },
+        "zh_max_chars_per_sec": { "type": "number", "exclusiveMinimum": 0 },
+        "latin_max_words_per_sec": { "type": "number", "exclusiveMinimum": 0 },
+        "latin_max_chars_per_sec": { "type": "number", "exclusiveMinimum": 0 },
+        "max_lines": { "type": "integer", "minimum": 1, "maximum": 2 },
+        "max_chars_per_line": { "type": "integer", "minimum": 1 },
+        "cut_boundary_tolerance_sec": { "type": "number", "minimum": 0 },
+        "allow_auto_merge": { "type": "boolean" },
+        "allow_safe_extension": { "type": "boolean" },
+        "preview_violation_action": { "const": "warn" },
+        "release_violation_action": { "const": "block" }
+      },
+      "additionalProperties": false
+    },
+    "cue_state": {
+      "type": "object",
+      "required": ["cue_ids", "start_sec", "end_sec", "text"],
+      "properties": {
+        "cue_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "start_sec": { "type": "number" },
+        "end_sec": { "type": "number" },
+        "text": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "repair": {
+      "type": "object",
+      "required": [
+        "repair_id",
+        "type",
+        "target_cue_ids",
+        "original",
+        "proposed",
+        "reason",
+        "evidence",
+        "review_required"
+      ],
+      "properties": {
+        "repair_id": { "type": "string", "minLength": 1 },
+        "type": { "enum": ["merge", "extend"] },
+        "target_cue_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "original": { "$ref": "#/$defs/cue_state" },
+        "proposed": { "$ref": "#/$defs/cue_state" },
+        "reason": { "type": "string", "minLength": 1 },
+        "evidence": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "review_required": { "const": true }
+      },
+      "additionalProperties": false
+    },
+    "cut_proximity": {
+      "type": "object",
+      "required": [
+        "boundary_known",
+        "nearest_boundary",
+        "distance_sec",
+        "within_tolerance",
+        "crosses_boundary"
+      ],
+      "properties": {
+        "boundary_known": { "type": "boolean" },
+        "nearest_boundary": {
+          "oneOf": [
+            { "enum": ["start", "end"] },
+            { "type": "null" }
+          ]
+        },
+        "distance_sec": {
+          "oneOf": [
+            { "type": "number", "minimum": 0 },
+            { "type": "null" }
+          ]
+        },
+        "within_tolerance": { "type": "boolean" },
+        "crosses_boundary": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "cue_audit": {
+      "type": "object",
+      "required": [
+        "cue_id",
+        "cue_identity",
+        "segment_id",
+        "chapter_id",
+        "text_sha256",
+        "start_sec",
+        "end_sec",
+        "duration_sec",
+        "visible_char_count",
+        "zh_visible_char_count",
+        "latin_visible_char_count",
+        "latin_word_count",
+        "zh_chars_per_sec",
+        "latin_words_per_sec",
+        "latin_chars_per_sec",
+        "line_count",
+        "max_line_visible_char_count",
+        "previous_gap_sec",
+        "next_gap_sec",
+        "cut_proximity",
+        "risk_level",
+        "blocker_codes",
+        "warning_codes",
+        "source_risk_flags",
+        "proposed_repair",
+        "requires_human_review"
+      ],
+      "properties": {
+        "cue_id": { "type": "string", "minLength": 1 },
+        "cue_identity": { "$ref": "#/$defs/sha256" },
+        "segment_id": { "type": "string" },
+        "chapter_id": { "type": "string" },
+        "text_sha256": { "$ref": "#/$defs/sha256" },
+        "start_sec": { "type": "number" },
+        "end_sec": { "type": "number" },
+        "duration_sec": { "type": "number" },
+        "visible_char_count": { "type": "integer", "minimum": 0 },
+        "zh_visible_char_count": { "type": "integer", "minimum": 0 },
+        "latin_visible_char_count": { "type": "integer", "minimum": 0 },
+        "latin_word_count": { "type": "integer", "minimum": 0 },
+        "zh_chars_per_sec": { "type": "number", "minimum": 0 },
+        "latin_words_per_sec": { "type": "number", "minimum": 0 },
+        "latin_chars_per_sec": { "type": "number", "minimum": 0 },
+        "line_count": { "type": "integer", "minimum": 1 },
+        "max_line_visible_char_count": { "type": "integer", "minimum": 0 },
+        "previous_gap_sec": {
+          "oneOf": [{ "type": "number" }, { "type": "null" }]
+        },
+        "next_gap_sec": {
+          "oneOf": [{ "type": "number" }, { "type": "null" }]
+        },
+        "cut_proximity": { "$ref": "#/$defs/cut_proximity" },
+        "risk_level": { "enum": ["none", "warning", "blocker"] },
+        "blocker_codes": { "$ref": "#/$defs/string_array" },
+        "warning_codes": { "$ref": "#/$defs/string_array" },
+        "source_risk_flags": { "$ref": "#/$defs/string_array" },
+        "proposed_repair": {
+          "oneOf": [
+            { "$ref": "#/$defs/repair" },
+            { "type": "null" }
+          ]
+        },
+        "requires_human_review": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

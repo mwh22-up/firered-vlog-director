@@ -269,22 +269,23 @@ try {
     }
 
     if ($supportsSubtitles) {
-        $enhancementPlan.subtitles.status = 'ready'
+        $enhancementPlan.subtitles.status = 'review'
         $enhancementPlan.subtitles.source = 'work/subtitles/synthetic-reviewed.json'
         $enhancementPlan.subtitles.coverage = [pscustomobject]@{
-            status = 'verified'
+            status = 'pending'
         }
         $enhancementPlan.subtitles.cues = @(
             [pscustomobject]@{
+                cue_id = 'synthetic-subtitle-1'
                 start_sec = 0.4
                 end_sec = 1.5
-                text = '合成字幕测试'
-                review_status = 'verified'
+                text = 'Synthetic subtitle smoke'
+                review_status = 'review_required'
             }
         )
         Write-Utf8Json -Document @{
-            status = 'ready'
-            coverage = @{ status = 'verified' }
+            status = 'review_required'
+            coverage = @{ status = 'pending' }
             cues = $enhancementPlan.subtitles.cues
         } -Path $subtitleSource
         $enhancementPlan.subtitles | Add-Member -NotePropertyName source_sha256 -NotePropertyValue ((Get-FileHash -LiteralPath $subtitleSource -Algorithm SHA256).Hash.ToLowerInvariant()) -Force
