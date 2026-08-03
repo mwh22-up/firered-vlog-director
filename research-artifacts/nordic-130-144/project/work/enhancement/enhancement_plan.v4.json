@@ -1,0 +1,3343 @@
+{
+  "schema_version": "1.0",
+  "project_id": "nordic-130-144",
+  "version": 4,
+  "edit_plan_version": 3,
+  "timeline_duration_sec": 865.58,
+  "render_stages": [
+    "stabilize_and_reframe",
+    "assemble_continuity",
+    "normalize_dialogue",
+    "mix_music_with_ducking",
+    "compose_illustration_motion",
+    "burn_subtitles",
+    "final_encode"
+  ],
+  "video_treatments": [
+    {
+      "segment_id": "ch01-s001",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch01-s002",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch01-s003",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch01-s004",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch01-s005",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.02,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch01-s006",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.02,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s001",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.06,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.01,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s002",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s003",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s004",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s005",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1,
+        "saturation": 1,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s006",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1,
+        "saturation": 1,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s007",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s008",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1,
+        "saturation": 1,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s009",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.06,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.01,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s010",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.06,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.01,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s011",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s012",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s013",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s014",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.06,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.01,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s015",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.06,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.01,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s016",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s017",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s018",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s019",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s020",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch02-s021",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch03-s001",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.05,
+        "brightness": 0,
+        "contrast": 1.01,
+        "saturation": 0.96,
+        "gamma": 1.01,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "hqdn3d",
+          "luma_spatial": 0.5,
+          "chroma_spatial": 0.35,
+          "luma_temporal": 0.6,
+          "chroma_temporal": 0.4
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch03-s002",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.05,
+        "brightness": 0,
+        "contrast": 1.01,
+        "saturation": 0.97,
+        "gamma": 1.015,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "hqdn3d",
+          "luma_spatial": 0.5,
+          "chroma_spatial": 0.35,
+          "luma_temporal": 0.6,
+          "chroma_temporal": 0.4
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch03-s003",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch03-s004",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1,
+        "saturation": 1,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s001",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1.005,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s002",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1.005,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s003",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s004",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1.005,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s005",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1,
+        "saturation": 1,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s006",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1,
+        "saturation": 1,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s007",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.035,
+        "brightness": 0,
+        "contrast": 1.015,
+        "saturation": 1,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s008",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0,
+        "brightness": 0,
+        "contrast": 1,
+        "saturation": 1,
+        "gamma": 1,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "off"
+        },
+        "sharpen": {
+          "mode": "off"
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s009",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.025,
+        "brightness": 0,
+        "contrast": 1.01,
+        "saturation": 0.985,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "hqdn3d",
+          "luma_spatial": 0.6,
+          "chroma_spatial": 0.4,
+          "luma_temporal": 1,
+          "chroma_temporal": 0.7
+        },
+        "sharpen": {
+          "mode": "unsharp",
+          "amount": 0.1
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s010",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.025,
+        "brightness": 0,
+        "contrast": 1.01,
+        "saturation": 0.985,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "hqdn3d",
+          "luma_spatial": 0.6,
+          "chroma_spatial": 0.4,
+          "luma_temporal": 1,
+          "chroma_temporal": 0.7
+        },
+        "sharpen": {
+          "mode": "unsharp",
+          "amount": 0.1
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s011",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.025,
+        "brightness": 0,
+        "contrast": 1.01,
+        "saturation": 0.985,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "hqdn3d",
+          "luma_spatial": 0.6,
+          "chroma_spatial": 0.4,
+          "luma_temporal": 1,
+          "chroma_temporal": 0.7
+        },
+        "sharpen": {
+          "mode": "unsharp",
+          "amount": 0.1
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s012",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.025,
+        "brightness": 0,
+        "contrast": 1.01,
+        "saturation": 0.985,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "hqdn3d",
+          "luma_spatial": 0.6,
+          "chroma_spatial": 0.4,
+          "luma_temporal": 1,
+          "chroma_temporal": 0.7
+        },
+        "sharpen": {
+          "mode": "unsharp",
+          "amount": 0.1
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    },
+    {
+      "segment_id": "ch04-s013",
+      "stabilization": {
+        "mode": "off",
+        "strength": 0,
+        "max_crop_percent": 0
+      },
+      "continuity": {
+        "transition": "hard_cut",
+        "duration_sec": 0.0,
+        "match_action": false
+      },
+      "audio": {
+        "preserve_original": true,
+        "normalize_dialogue": true,
+        "gain_db": 0.0,
+        "mute": false
+      },
+      "visual": {
+        "exposure_ev": 0.025,
+        "brightness": 0,
+        "contrast": 1.01,
+        "saturation": 0.985,
+        "gamma": 1.005,
+        "speed": 1,
+        "white_balance": {
+          "red_shift": 0,
+          "green_shift": 0,
+          "blue_shift": 0
+        },
+        "denoise": {
+          "mode": "hqdn3d",
+          "luma_spatial": 0.6,
+          "chroma_spatial": 0.4,
+          "luma_temporal": 1,
+          "chroma_temporal": 0.7
+        },
+        "sharpen": {
+          "mode": "unsharp",
+          "amount": 0.1
+        },
+        "reframe": {
+          "mode": "off"
+        }
+      }
+    }
+  ],
+  "music": {
+    "status": "audition",
+    "rights_manifest": "assets/music/music-assets.v4.json",
+    "audition_report": "work/qa/music-audition.v4.json",
+    "tracks": [
+      {
+        "id": "opening-hook",
+        "source": "assets/music/nordic-v4-opening-hook.flac",
+        "start_sec": 0.0,
+        "end_sec": 12.0,
+        "gain_db": -16.0,
+        "fade_in_sec": 0.6,
+        "fade_out_sec": 1.2
+      },
+      {
+        "id": "snow-arrival-breath",
+        "source": "assets/music/nordic-v4-snow-arrival.flac",
+        "start_sec": 137.526,
+        "end_sec": 147.736,
+        "gain_db": -12.0,
+        "fade_in_sec": 0.6,
+        "fade_out_sec": 1.0
+      },
+      {
+        "id": "mountain-train-breath",
+        "source": "assets/music/nordic-v4-mountain-train.flac",
+        "start_sec": 605.987,
+        "end_sec": 620.165,
+        "gain_db": -10.0,
+        "fade_in_sec": 1.2,
+        "fade_out_sec": 1.8
+      },
+      {
+        "id": "waterfall-transition",
+        "source": "assets/music/nordic-v4-waterfall.flac",
+        "start_sec": 636.281,
+        "end_sec": 651.362,
+        "gain_db": -12.0,
+        "fade_in_sec": 1.0,
+        "fade_out_sec": 2.0
+      },
+      {
+        "id": "closing-resolution",
+        "source": "assets/music/nordic-v4-closing.flac",
+        "start_sec": 848.0,
+        "end_sec": 868.311,
+        "gain_db": -16.0,
+        "fade_in_sec": 1.5,
+        "fade_out_sec": 3.0
+      }
+    ],
+    "ducking": {
+      "enabled": true,
+      "threshold": 0.125,
+      "ratio": 8,
+      "attack_ms": 20,
+      "release_ms": 250
+    }
+  },
+  "subtitles": {
+    "status": "review",
+    "language": "zh-CN",
+    "source": "work/subtitles/subtitles.v4.review-required.json",
+    "cues": [
+      {
+        "start_sec": 0.0,
+        "end_sec": 3.252,
+        "text": "它不像帝王蟹\n帝王蟹都是在海里捕捞的",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 3.252,
+        "end_sec": 5.26,
+        "text": "没有这个养殖",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 5.26,
+        "end_sec": 6.706,
+        "text": "因为这个东西泛滥",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 6.706,
+        "end_sec": 8.914,
+        "text": "挪威有五百多万人",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 8.914,
+        "end_sec": 13.311,
+        "text": "但是在这个海里有五千万只帝王蟹",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 13.311,
+        "end_sec": 16.704,
+        "text": "也就是说这个帝王蟹是人口的十倍",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 16.704,
+        "end_sec": 18.832,
+        "text": "所以我们要帮助它消灭它",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 19.414,
+        "end_sec": 21.12,
+        "text": "但是这个价格还不便宜",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 21.12,
+        "end_sec": 22.803,
+        "text": "它的养殖地点呢",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 22.803,
+        "end_sec": 26.729,
+        "text": "不是在这种死水都是在峡湾",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 26.729,
+        "end_sec": 29.032,
+        "text": "咱们下午要去的这个峡湾",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 29.032,
+        "end_sec": 34.44,
+        "text": "尤其是这个哈当厄尔峡湾就是\n最著名的挪威三文鱼养殖",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 34.44,
+        "end_sec": 34.741,
+        "text": "基地",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 36.163,
+        "end_sec": 38.386,
+        "text": "这条路上看不到有的那种深度",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 38.386,
+        "end_sec": 40.469,
+        "text": "它会看到有三文鱼的鱼场",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 40.469,
+        "end_sec": 42.653,
+        "text": "就是一个大的圈一个大的圈那种",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 42.653,
+        "end_sec": 44.616,
+        "text": "它是有网的固定的",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 44.616,
+        "end_sec": 46.078,
+        "text": "大概这个三文鱼呢",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 46.078,
+        "end_sec": 48.521,
+        "text": "要养三到四年",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 48.942,
+        "end_sec": 51.225,
+        "text": "这个体重要到十几斤甚至二十斤",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 51.225,
+        "end_sec": 53.829,
+        "text": "才可以达到这个标准去售卖",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 53.829,
+        "end_sec": 56.253,
+        "text": "这是挪威这边的一个标准",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 56.253,
+        "end_sec": 59.658,
+        "text": "挪威的标准是高于欧盟标准的",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 59.658,
+        "end_sec": 61.712,
+        "text": "车上呢咱们就多介绍一下",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 61.712,
+        "end_sec": 63.988,
+        "text": "因为车上大家坐着比较舒服",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 63.988,
+        "end_sec": 65.6,
+        "text": "关键是你们都跑不了",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 65.6,
+        "end_sec": 67.11,
+        "text": "就得听我跟这叨叨",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 67.976,
+        "end_sec": 69.144,
+        "text": "所以咱们就车上讲",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 69.385,
+        "end_sec": 73.575,
+        "text": "但是咱们来的这个季节\n就特别有这个北欧的特色",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 74.176,
+        "end_sec": 77.685,
+        "text": "什么叫黑暗不毛\n就您今天这种就叫黑暗不毛",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 77.685,
+        "end_sec": 81.493,
+        "text": "它这个冬天从十一过了以后",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 81.493,
+        "end_sec": 83.899,
+        "text": "天就开始黑得越来越早了",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 83.899,
+        "end_sec": 88.109,
+        "text": "像现在尤其您还没更晚来\n要是春节那会儿来",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 88.109,
+        "end_sec": 90.976,
+        "text": "那基本上一天能亮俩三小时就不错",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 90.976,
+        "end_sec": 94.664,
+        "text": "春节那会儿就基本\n上一整天都是黑的",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 94.664,
+        "end_sec": 97.411,
+        "text": "所以呢这就叫黑暗那不毛呢您",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 97.411,
+        "end_sec": 102.908,
+        "text": "这个峡湾历史上有三大特征\n第一就是咱们说的当年都是",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 102.908,
+        "end_sec": 106.881,
+        "text": "冰原后来这个雪化了\n以后切成了这样的峡湾",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 106.881,
+        "end_sec": 112.358,
+        "text": "这里的水是淡海水一部分是刚才\n咱们开车一路过来连着外边的外",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 112.358,
+        "end_sec": 112.559,
+        "text": "海",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 112.559,
+        "end_sec": 115.317,
+        "text": "前面有雪山了哦雪山很好",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 115.317,
+        "end_sec": 118.56,
+        "text": "对没事咱们下午就会开上雪山",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 118.56,
+        "end_sec": 120.11,
+        "text": "我还会给大家时间呢",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 120.11,
+        "end_sec": 122.245,
+        "text": "会站在雪山上拍照",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 122.245,
+        "end_sec": 123.729,
+        "text": "有点滑的好滑哦",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 126.216,
+        "end_sec": 127.419,
+        "text": "好像有点在下去",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 128.863,
+        "end_sec": 130.487,
+        "text": "好滑哎呦好滑",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 132.533,
+        "end_sec": 133.475,
+        "text": "没拉底光",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 134.618,
+        "end_sec": 136.102,
+        "text": "我去拿已经下来了",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 136.965,
+        "end_sec": 137.526,
+        "text": "慢点",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 137.526,
+        "end_sec": 138.371,
+        "text": "慢点",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 147.736,
+        "end_sec": 148.277,
+        "text": "你在那",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 152.045,
+        "end_sec": 152.727,
+        "text": "慢点我",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 155.092,
+        "end_sec": 156.976,
+        "text": "这可以站可以",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 160.183,
+        "end_sec": 162.568,
+        "text": "等一下我去你先站我去\n我这给拍两张",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 170.325,
+        "end_sec": 172.751,
+        "text": "别护着腰看着我",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 179.455,
+        "end_sec": 183.204,
+        "text": "哎把相机给我把相机给我",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 183.204,
+        "end_sec": 185.652,
+        "text": "对然后侧面对着我我",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 195.125,
+        "end_sec": 196.349,
+        "text": "拍个镜子嗯",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 196.349,
+        "end_sec": 196.714,
+        "text": "来",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 198.17,
+        "end_sec": 199.769,
+        "text": "来，弄点雪",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 200.761,
+        "end_sec": 202.056,
+        "text": "弄点雪拍点镜子",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 202.056,
+        "end_sec": 202.958,
+        "text": "眼睛别挤",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 205.164,
+        "end_sec": 206.127,
+        "text": "对不上焦，等一下",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 213.627,
+        "end_sec": 215.712,
+        "text": "对不上焦，对不",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 219.854,
+        "end_sec": 220.636,
+        "text": "上了对",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 221.919,
+        "end_sec": 224.346,
+        "text": "不上了",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 225.85,
+        "end_sec": 226.652,
+        "text": "拿着",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 226.652,
+        "end_sec": 227.133,
+        "text": "来",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 229.498,
+        "end_sec": 230.38,
+        "text": "把相机给我",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 242.245,
+        "end_sec": 243.207,
+        "text": "对就这样",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 245.011,
+        "end_sec": 247.256,
+        "text": "好美啊再来两个",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 250.794,
+        "end_sec": 251.816,
+        "text": "长了点不好笑",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 254.371,
+        "end_sec": 255.313,
+        "text": "等一下再来两个",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 255.313,
+        "end_sec": 258.077,
+        "text": "这是不是眼太大了这有什么大的",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 259.134,
+        "end_sec": 259.5,
+        "text": "啊",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 259.5,
+        "end_sec": 260.442,
+        "text": "别耽误时间",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 264.741,
+        "end_sec": 266.163,
+        "text": "别耽误时间快",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 266.945,
+        "end_sec": 268.569,
+        "text": "还往那走呢侧",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 278.7,
+        "end_sec": 280.002,
+        "text": "面站这样一个飞",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 286.226,
+        "end_sec": 291.176,
+        "text": "包不能露出来太丑了\n别别别不要这样",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 291.176,
+        "end_sec": 293.023,
+        "text": "对对对看着我仰头看着我",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 294.388,
+        "end_sec": 295.492,
+        "text": "然后看然后",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 297.238,
+        "end_sec": 298.061,
+        "text": "看仰头",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 299.265,
+        "end_sec": 300.129,
+        "text": "不要翻白眼",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 301.193,
+        "end_sec": 301.835,
+        "text": "低脸",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 303.521,
+        "end_sec": 304.725,
+        "text": "然后侧面站一下",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 305.508,
+        "end_sec": 305.87,
+        "text": "对",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 309.824,
+        "end_sec": 310.928,
+        "text": "对你帮我拍了一片",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 310.928,
+        "end_sec": 312.43,
+        "text": "走我往往那走走",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 313.692,
+        "end_sec": 315.634,
+        "text": "一边走一边拍把底光",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 317.177,
+        "end_sec": 317.958,
+        "text": "打你了",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 319.299,
+        "end_sec": 320.881,
+        "text": "拍的是什么角度",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 320.881,
+        "end_sec": 322.363,
+        "text": "你看我给你拍的吗",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 324.536,
+        "end_sec": 327.0,
+        "text": "好我知道你过去我再重新拍看",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 331.486,
+        "end_sec": 333.648,
+        "text": "拍到上面再给你讲一下我跟你说",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 333.648,
+        "end_sec": 336.412,
+        "text": "就是你拍那么多没有用你一张不出",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 336.412,
+        "end_sec": 338.955,
+        "text": "哪怕就拍这一张出片",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 338.955,
+        "end_sec": 340.258,
+        "text": "三二一",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 341.219,
+        "end_sec": 342.1,
+        "text": "三二",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 343.182,
+        "end_sec": 344.344,
+        "text": "头往那边仰",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 345.346,
+        "end_sec": 346.227,
+        "text": "三二",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 346.968,
+        "end_sec": 347.769,
+        "text": "再仰一点",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 348.911,
+        "end_sec": 349.813,
+        "text": "然后来远",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 353.749,
+        "end_sec": 355.271,
+        "text": "三二一直",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 358.446,
+        "end_sec": 360.109,
+        "text": "在那炸炸炸",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 362.773,
+        "end_sec": 363.154,
+        "text": "放开",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 365.127,
+        "end_sec": 366.649,
+        "text": "大老马要走了拍的好丑",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 366.649,
+        "end_sec": 367.974,
+        "text": "你站这感",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 371.536,
+        "end_sec": 373.362,
+        "text": "觉从这边拍过去好看",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 373.362,
+        "end_sec": 375.469,
+        "text": "那个没那个白对",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 376.151,
+        "end_sec": 378.84,
+        "text": "那边好看对太慢了对",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 380.446,
+        "end_sec": 382.131,
+        "text": "要拍那边好看",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 382.131,
+        "end_sec": 387.189,
+        "text": "那边太冷了这边太冷了这边不要焦",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 388.573,
+        "end_sec": 390.138,
+        "text": "就拿辆公交车拍",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 390.138,
+        "end_sec": 394.024,
+        "text": "不搞不搞不搞不搞太冷了\n不搞不搞不是我要给他拍照片",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 396.287,
+        "end_sec": 400.873,
+        "text": "一边走一边拍吧走走",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 401.714,
+        "end_sec": 403.696,
+        "text": "哈哈帮你们俩拍",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 405.388,
+        "end_sec": 408.853,
+        "text": "圆圈刚刚去帮我家子好好看\n我过去我走的时候",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 410.495,
+        "end_sec": 411.276,
+        "text": "不要驼背",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 414.13,
+        "end_sec": 415.912,
+        "text": "你慢点走就是了",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 418.406,
+        "end_sec": 419.767,
+        "text": "站直腿别弯",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 419.767,
+        "end_sec": 424.293,
+        "text": "三二一再两张换个姿势\n换个姿势你走路",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 424.293,
+        "end_sec": 428.619,
+        "text": "向我走走来从那边\n远一点向我走来远一点",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 428.619,
+        "end_sec": 430.782,
+        "text": "从这边就快往这边走",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 434.467,
+        "end_sec": 436.69,
+        "text": "可以然后你往这站一点走",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 438.582,
+        "end_sec": 439.764,
+        "text": "这边对",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 440.785,
+        "end_sec": 442.447,
+        "text": "往回来一点往回来一点",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 443.889,
+        "end_sec": 445.471,
+        "text": "走三二一走",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 448.135,
+        "end_sec": 448.495,
+        "text": "可以",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 448.495,
+        "end_sec": 453.754,
+        "text": "对吧看这边是好看\n嗯相机呢相机在这",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 454.356,
+        "end_sec": 458.471,
+        "text": "这边太滑了这边太滑了\n别在这了我们往那走了抓住",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 460.498,
+        "end_sec": 462.364,
+        "text": "那那边更好看你别在这拍了",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 464.361,
+        "end_sec": 467.252,
+        "text": "你根本就不听我的我就不听你怎样",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 467.252,
+        "end_sec": 469.394,
+        "text": "慢点很滑很滑",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 473.52,
+        "end_sec": 475.843,
+        "text": "卧槽卧槽",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 478.446,
+        "end_sec": 481.65,
+        "text": "对不上焦了\n你手相机别拿着的给我吧滑",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 483.282,
+        "end_sec": 486.306,
+        "text": "走慢一点太好吵了相机对不上焦",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 488.599,
+        "end_sec": 490.221,
+        "text": "相机对不上焦，你拿着这个",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 493.265,
+        "end_sec": 496.169,
+        "text": "你给我我来弄我来弄你拿着这个好",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 503.258,
+        "end_sec": 506.322,
+        "text": "你慢点走啊我来把它对焦给它对上",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 507.344,
+        "end_sec": 509.426,
+        "text": "完了这不会相机彻底坏掉了吧",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 509.426,
+        "end_sec": 510.491,
+        "text": "完全对不上了",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 517.381,
+        "end_sec": 518.807,
+        "text": "往上走啊这",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 520.414,
+        "end_sec": 523.206,
+        "text": "边怎么会对不上啊\n他们俩在后面走啊",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 523.206,
+        "end_sec": 524.749,
+        "text": "扶着杆子走一点",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 530.871,
+        "end_sec": 532.955,
+        "text": "都不好看扶了那",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 536.351,
+        "end_sec": 538.976,
+        "text": "边好不好看啊就那样",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 538.976,
+        "end_sec": 541.441,
+        "text": "我感觉没什么好看呢",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 541.962,
+        "end_sec": 543.565,
+        "text": "你要怕滑最好就别去",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 543.565,
+        "end_sec": 545.268,
+        "text": "我感觉我不想去了",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 545.268,
+        "end_sec": 550.037,
+        "text": "你去那边拍吧蛮好的那边\n那边我想去往那边走走拍",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 550.037,
+        "end_sec": 551.801,
+        "text": "行行那你扶着我",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 551.801,
+        "end_sec": 556.029,
+        "text": "我觉得感觉也一般般\n不想上去我有点想去呢",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 556.029,
+        "end_sec": 559.075,
+        "text": "那你去我在外面等你\n行你去我可以我上去",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 559.075,
+        "end_sec": 560.279,
+        "text": "别摔倒啊",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 564.794,
+        "end_sec": 568.869,
+        "text": "嗯哎这妈的相机怎么对不了焦啊\n动了吧",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 570.856,
+        "end_sec": 572.12,
+        "text": "它天冷就这样",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 573.545,
+        "end_sec": 575.351,
+        "text": "天天冷有人手机开心就过",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 576.937,
+        "end_sec": 577.559,
+        "text": "放不去了",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 577.559,
+        "end_sec": 580.868,
+        "text": "那你扶着我扶着我走\n我也不去了你扶着我",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 583.505,
+        "end_sec": 584.648,
+        "text": "我在你前面",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 589.812,
+        "end_sec": 592.299,
+        "text": "只要踩着这个湿雪就不会滑倒",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 593.222,
+        "end_sec": 595.588,
+        "text": "我不会滑倒啊这个鞋子最好",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 601.033,
+        "end_sec": 605.987,
+        "text": "太滑了建议不要来了不要来了\n太滑了是吧太滑了是吧",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 620.441,
+        "end_sec": 623.234,
+        "text": "可以在桌上拉到地上\n不用管了可以在",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 633.607,
+        "end_sec": 636.281,
+        "text": "我感觉那个标记那\n里拍一个还挺好看",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 652.203,
+        "end_sec": 654.008,
+        "text": "好看吗那个",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 654.008,
+        "end_sec": 655.572,
+        "text": "来这边这边这边",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 656.714,
+        "end_sec": 657.516,
+        "text": "坐坐",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 664.764,
+        "end_sec": 669.455,
+        "text": "我帮你拍这没什么好看",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 669.455,
+        "end_sec": 670.438,
+        "text": "你站着你站着",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 671.801,
+        "end_sec": 674.227,
+        "text": "我要穿这个拿一个近近一点",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 674.849,
+        "end_sec": 676.673,
+        "text": "我穿我的毛衣盘",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 677.836,
+        "end_sec": 679.841,
+        "text": "我的毛衣盘谢谢",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 679.841,
+        "end_sec": 681.284,
+        "text": "谢谢这边穿大衣盘",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 681.284,
+        "end_sec": 682.569,
+        "text": "往这边来",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 688.692,
+        "end_sec": 689.836,
+        "text": "这里边再远一点",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 694.493,
+        "end_sec": 696.922,
+        "text": "再来两个3 2 1",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 698.147,
+        "end_sec": 699.452,
+        "text": "3 2 1",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 700.576,
+        "end_sec": 700.977,
+        "text": "可以",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 702.021,
+        "end_sec": 703.105,
+        "text": "我这边一点都不冷",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 703.105,
+        "end_sec": 708.218,
+        "text": "哦头头头头头哦头头头头",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 708.218,
+        "end_sec": 712.629,
+        "text": "这边上刚刚刚刚刚才走\n感受一下拍到这边",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 712.629,
+        "end_sec": 717.441,
+        "text": "这边有纸了\n看我看我看我看说低一点",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 717.441,
+        "end_sec": 718.423,
+        "text": "好往那一看",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 718.423,
+        "end_sec": 723.616,
+        "text": "然后不再看往一二三看往一二三\n看往一二三看往一二三看往一二",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 726.804,
+        "end_sec": 729.912,
+        "text": "你都拍得糊了，哈哈哈哈",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 729.912,
+        "end_sec": 734.027,
+        "text": "拍是拍到的很好拍的\n他今天很好真好",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 736.838,
+        "end_sec": 738.464,
+        "text": "这都不见了",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 741.736,
+        "end_sec": 743.202,
+        "text": "这好看他做",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 744.687,
+        "end_sec": 746.594,
+        "text": "删除还删腰呢",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 747.257,
+        "end_sec": 748.963,
+        "text": "没有删除快快",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 748.963,
+        "end_sec": 754.387,
+        "text": "上车上车上车上车了上车了快",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 754.387,
+        "end_sec": 754.468,
+        "text": "快",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 754.468,
+        "end_sec": 755.991,
+        "text": "你有几张拍的好好看",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 757.073,
+        "end_sec": 761.241,
+        "text": "我前面在那边帮你跳起来抓\n拍到很好看这张不行这张好",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 762.383,
+        "end_sec": 767.332,
+        "text": "这张好看有人说这张好看\n这张这张好看",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 767.332,
+        "end_sec": 770.037,
+        "text": "我跟你说你前面在那个架台的时候",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 770.037,
+        "end_sec": 772.962,
+        "text": "你跳起来就让我抓拍绝了\n我还不如自己真的",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 775.046,
+        "end_sec": 777.09,
+        "text": "我还没发拍我赶紧",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 777.09,
+        "end_sec": 781.136,
+        "text": "你看他给我拍的\n要么没身体要么没头",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 782.698,
+        "end_sec": 785.502,
+        "text": "你看没头就一个身体",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 786.764,
+        "end_sec": 787.965,
+        "text": "刚才一个头",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 790.549,
+        "end_sec": 792.392,
+        "text": "你在开玩笑你走啊",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 793.433,
+        "end_sec": 794.895,
+        "text": "我们拍的一本证据",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 795.937,
+        "end_sec": 798.981,
+        "text": "你说的是这个吗\n把我拍的绝美的这个",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 801.565,
+        "end_sec": 806.252,
+        "text": "他说把我拍的绝美的我这个抓\n拍可以吧他跳起来被我抓拍到",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 806.252,
+        "end_sec": 808.619,
+        "text": "我这张好看好看",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 808.619,
+        "end_sec": 812.17,
+        "text": "而且这张拍又很好看\n还有没有我还拍了三张",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 812.17,
+        "end_sec": 815.059,
+        "text": "我这张也好看你们有我吗也没有",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 815.059,
+        "end_sec": 817.346,
+        "text": "但是这张要的还行啊我来看文件",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 819.091,
+        "end_sec": 823.244,
+        "text": "我也觉得我也觉得知道你把它不\n写的谢谢这张品质也还是刚才按",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 823.244,
+        "end_sec": 825.27,
+        "text": "我又说所以就这样",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 825.27,
+        "end_sec": 828.272,
+        "text": "我刚刚觉得这张也好看看你的铁柜",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 828.272,
+        "end_sec": 829.575,
+        "text": "其实还好还",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 836.919,
+        "end_sec": 838.522,
+        "text": "行这张也",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 841.508,
+        "end_sec": 843.372,
+        "text": "没有拍好",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 846.178,
+        "end_sec": 848.302,
+        "text": "但是你这张其实是好看的对的",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 850.506,
+        "end_sec": 852.791,
+        "text": "这个是你帮他拍的对",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 853.612,
+        "end_sec": 854.574,
+        "text": "我拍的还行的",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 855.897,
+        "end_sec": 861.227,
+        "text": "但是他随便拍的，他很上相\n他很上镜你知道吗？他把眼镜摘掉",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 861.227,
+        "end_sec": 862.61,
+        "text": "他就",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 865.746,
+        "end_sec": 866.528,
+        "text": "易烊千玺",
+        "review_status": "review_required"
+      },
+      {
+        "start_sec": 867.269,
+        "end_sec": 868.311,
+        "text": "电影脸他是",
+        "review_status": "review_required"
+      }
+    ],
+    "coverage": {
+      "status": "pending"
+    },
+    "style": {
+      "max_lines": 2,
+      "safe_margin_percent": 8,
+      "position": "bottom_center",
+      "font_name": "Microsoft YaHei",
+      "font_size": 64,
+      "margin_v": 72,
+      "outline": 4,
+      "shadow": 1,
+      "bold": true,
+      "max_chars_per_line": 18,
+      "background_opacity_percent": 36,
+      "background_padding": 8
+    },
+    "source_sha256": "057407dd345e88acc96be63d93c01593c0587afbd6ead42edb882b0a85d5bc90"
+  },
+  "illustration_motion": {
+    "status": "ready",
+    "items": [
+      {
+        "id": "chapter-01-port-to-snow",
+        "type": "title_card",
+        "source": "assets/illustrations/nordic-v4-title-ch01.png",
+        "start_sec": 0.8,
+        "end_sec": 4.8,
+        "anchor": "top_left",
+        "animation": "fade",
+        "animation_duration_sec": 0.35,
+        "scale_percent": 36,
+        "margin_percent": 5
+      },
+      {
+        "id": "chapter-02-snow-photo",
+        "type": "title_card",
+        "source": "assets/illustrations/nordic-v4-title-ch02.png",
+        "start_sec": 123.045,
+        "end_sec": 127.045,
+        "anchor": "top_left",
+        "animation": "slide",
+        "animation_duration_sec": 0.35,
+        "scale_percent": 36,
+        "margin_percent": 5
+      },
+      {
+        "id": "chapter-03-mountain-train",
+        "type": "title_card",
+        "source": "assets/illustrations/nordic-v4-title-ch03.png",
+        "start_sec": 606.287,
+        "end_sec": 609.287,
+        "anchor": "top_left",
+        "animation": "fade",
+        "animation_duration_sec": 0.3,
+        "scale_percent": 36,
+        "margin_percent": 5
+      },
+      {
+        "id": "chapter-04-waterfall-flamsbana",
+        "type": "title_card",
+        "source": "assets/illustrations/nordic-v4-title-ch04.png",
+        "start_sec": 623.734,
+        "end_sec": 627.734,
+        "anchor": "top_left",
+        "animation": "slide",
+        "animation_duration_sec": 0.35,
+        "scale_percent": 36,
+        "margin_percent": 5
+      }
+    ],
+    "subtitle_safe_zone": true
+  }
+}

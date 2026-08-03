@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -55,6 +56,12 @@ def _build_parser() -> argparse.ArgumentParser:
     guard_enhancement = subparsers.add_parser("guard-enhancement")
     guard_enhancement.add_argument("--project", type=Path, required=True)
     guard_enhancement.add_argument("--version", type=int, required=True)
+    guard_enhancement.add_argument("--realized-timeline", type=Path)
+    guard_enhancement.add_argument(
+        "--mode",
+        choices=["preview", "release"],
+        default="preview",
+    )
 
     stabilize = subparsers.add_parser("stabilize")
     stabilize.add_argument("--input", type=Path, required=True)
@@ -71,6 +78,28 @@ def _build_parser() -> argparse.ArgumentParser:
     render_enhancement.add_argument("--output", type=Path, required=True)
     render_enhancement.add_argument("--qa-output", type=Path)
     render_enhancement.add_argument("--ffmpeg-executable", default="ffmpeg")
+    render_enhancement.add_argument("--realized-timeline", type=Path)
+    render_enhancement.add_argument(
+        "--mode",
+        choices=["preview", "release"],
+        default="preview",
+    )
+    render_enhancement.add_argument(
+        "--video-preset",
+        choices=[
+            "ultrafast",
+            "superfast",
+            "veryfast",
+            "faster",
+            "fast",
+            "medium",
+            "slow",
+            "slower",
+            "veryslow",
+        ],
+        default="medium",
+    )
+    render_enhancement.add_argument("--video-crf", type=int, default=18)
 
     qa_music = subparsers.add_parser("qa-music")
     qa_music.add_argument("--media", type=Path, required=True)
@@ -231,9 +260,14 @@ def main() -> int:
         _write_result(init_project_enhancement(args.project, args.version), None)
         return 0
     if args.command == "guard-enhancement":
-        result = guard_project_enhancement(args.project, args.version)
+        result = guard_project_enhancement(
+            args.project,
+            args.version,
+            args.realized_timeline,
+            mode=args.mode,
+        )
         _write_result(result, None)
-        return 0 if result["status"] == "passed" else 2
+        return 0 if result["status"] in {"preview_ready", "ready"} else 2
     if args.command == "stabilize":
         stabilize_video(
             args.input,
@@ -247,18 +281,87 @@ def main() -> int:
         return 0
     if args.command == "render-enhancement":
         from .enhancement import (
+            normalize_realized_timeline,
             normalize_enhancement_plan,
             validate_enhancement_plan,
         )
+        from .enhancement_assets import validate_enhancement_assets
+        from .schema_validation import enhancement_schema_errors
+        from .release import release_readiness_issues, verify_rendered_media
 
         project = args.project.resolve()
         enhancement_plan, migrations = normalize_enhancement_plan(load_json(args.plan))
+        schema_errors = enhancement_schema_errors(enhancement_plan)
+        if schema_errors:
+            result = {
+                "status": "blocked",
+                "mode": args.mode,
+                "issues": [
+                    {
+                        "severity": "error",
+                        "code": "enhancement_schema_invalid",
+                        "subject_id": str(error.json_path),
+                        "message": error.message,
+                    }
+                    for error in schema_errors
+                ],
+            }
+            if migrations:
+                result["migrations"] = migrations
+            _write_result(result, None)
+            return 2
         edit_version = enhancement_plan.get("edit_plan_version")
         edit_plan_path = project / "work" / "plans" / f"edit_plan.v{edit_version}.json"
         if not edit_plan_path.is_file():
             raise FileNotFoundError(f"edit plan is missing: {edit_plan_path}")
-        validation = validate_enhancement_plan(load_json(edit_plan_path), enhancement_plan)
+        edit_plan = load_json(edit_plan_path)
+        realized_timeline_path = args.realized_timeline
+        if realized_timeline_path is None:
+            candidate = project / "work" / "qa" / f"render.v{edit_version}.json"
+            realized_timeline_path = candidate if candidate.is_file() else None
+        elif not realized_timeline_path.is_file():
+            raise FileNotFoundError(realized_timeline_path)
+        realized_timeline = (
+            normalize_realized_timeline(
+                edit_plan,
+                load_json(realized_timeline_path),
+                edit_plan_sha256=hashlib.sha256(edit_plan_path.read_bytes()).hexdigest(),
+            )
+            if realized_timeline_path is not None
+            else None
+        )
+        validation = validate_enhancement_plan(
+            edit_plan,
+            enhancement_plan,
+            realized_timeline=realized_timeline,
+        )
+        asset_issues = validate_enhancement_assets(project, enhancement_plan)
+        if asset_issues:
+            validation["issues"].extend(asset_issues)
+            validation["blocking_count"] = sum(
+                issue["severity"] == "error" for issue in validation["issues"]
+            )
+            validation["warning_count"] = sum(
+                issue["severity"] == "warning" for issue in validation["issues"]
+            )
+            validation["status"] = "blocked"
+        if args.mode == "release":
+            release_issues = release_readiness_issues(enhancement_plan)
+            if release_issues:
+                validation["issues"].extend(release_issues)
+                validation["blocking_count"] = sum(
+                    issue["severity"] == "error"
+                    for issue in validation["issues"]
+                )
+                validation["warning_count"] = sum(
+                    issue["severity"] == "warning"
+                    for issue in validation["issues"]
+                )
+                validation["status"] = "blocked"
         if validation["status"] != "passed":
+            validation["mode"] = args.mode
+            if migrations:
+                validation["migrations"] = migrations
             _write_result(validation, None)
             return 2
         render_enhanced_video(
@@ -267,24 +370,55 @@ def main() -> int:
             enhancement_plan,
             args.output.resolve(),
             executable=args.ffmpeg_executable,
+            realized_timeline=realized_timeline,
+            video_preset=args.video_preset,
+            video_crf=args.video_crf,
         )
         from .audio_qa import analyze_music_mix, write_music_mix_qa
 
-        qa_report = analyze_music_mix(
+        verification, verification_issues = verify_rendered_media(
             args.output.resolve(),
             enhancement_plan,
+            realized_timeline=realized_timeline,
             executable=args.ffmpeg_executable,
         )
+        if verification_issues:
+            qa_report = {
+                "schema_version": "1.0",
+                "status": "blocked",
+                "media": str(args.output.resolve()),
+                "issues": verification_issues,
+                "blocking_count": len(verification_issues),
+                "warning_count": 0,
+            }
+        else:
+            qa_report = analyze_music_mix(
+                args.output.resolve(),
+                enhancement_plan,
+                executable=args.ffmpeg_executable,
+            )
+        qa_report["mode"] = args.mode
+        qa_report["render_verification"] = verification
         qa_output = args.qa_output or args.output.with_suffix(".music-mix-qa.json")
         write_music_mix_qa(qa_report, qa_output.resolve())
         result = {
-            "status": "ready" if qa_report["status"] == "passed" else "blocked",
+            "status": (
+                "ready"
+                if args.mode == "release" and qa_report["status"] == "passed"
+                else "preview_ready"
+                if args.mode == "preview" and qa_report["status"] == "passed"
+                else "blocked"
+            ),
+            "mode": args.mode,
             "output": str(args.output.resolve()),
             "music_mix_qa": str(qa_output.resolve()),
             "qa_status": qa_report["status"],
+            "render_verification": verification,
         }
         if migrations:
             result["migrations"] = migrations
+        if realized_timeline_path is not None:
+            result["realized_timeline"] = str(realized_timeline_path.resolve())
         _write_result(result, None)
         return 0 if qa_report["status"] == "passed" else 2
     if args.command == "qa-music":

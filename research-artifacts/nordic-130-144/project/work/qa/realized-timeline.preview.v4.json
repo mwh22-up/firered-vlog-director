@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.0",
+  "project_id": "nordic-130-144",
+  "version": 3,
+  "plan_sha256": "e98b10e75a22739d2ffc174bb2433360f5e06593faae735dfdff543f6496aea4",
+  "duration_sec": 868.3114,
+  "segments": [
+    {
+      "segment_id": "ch01-s001",
+      "start_sec": 0,
+      "end_sec": 21.120367
+    },
+    {
+      "segment_id": "ch01-s002",
+      "start_sec": 21.120367,
+      "end_sec": 59.658134
+    },
+    {
+      "segment_id": "ch01-s003",
+      "start_sec": 59.658134,
+      "end_sec": 69.144467
+    },
+    {
+      "segment_id": "ch01-s004",
+      "start_sec": 69.144467,
+      "end_sec": 97.4108
+    },
+    {
+      "segment_id": "ch01-s005",
+      "start_sec": 97.4108,
+      "end_sec": 112.558533
+    },
+    {
+      "segment_id": "ch01-s006",
+      "start_sec": 112.558533,
+      "end_sec": 122.244866
+    },
+    {
+      "segment_id": "ch02-s001",
+      "start_sec": 122.244875,
+      "end_sec": 137.526075
+    },
+    {
+      "segment_id": "ch02-s002",
+      "start_sec": 137.526075,
+      "end_sec": 147.735542
+    },
+    {
+      "segment_id": "ch02-s003",
+      "start_sec": 147.735542,
+      "end_sec": 183.203575
+    },
+    {
+      "segment_id": "ch02-s004",
+      "start_sec": 183.203575,
+      "end_sec": 196.349308
+    },
+    {
+      "segment_id": "ch02-s005",
+      "start_sec": 196.349308,
+      "end_sec": 202.055641
+    },
+    {
+      "segment_id": "ch02-s006",
+      "start_sec": 202.055641,
+      "end_sec": 226.651974
+    },
+    {
+      "segment_id": "ch02-s007",
+      "start_sec": 226.651974,
+      "end_sec": 255.313207
+    },
+    {
+      "segment_id": "ch02-s008",
+      "start_sec": 255.313207,
+      "end_sec": 259.49954
+    },
+    {
+      "segment_id": "ch02-s009",
+      "start_sec": 259.49954,
+      "end_sec": 291.175873
+    },
+    {
+      "segment_id": "ch02-s010",
+      "start_sec": 291.175873,
+      "end_sec": 310.928206
+    },
+    {
+      "segment_id": "ch02-s011",
+      "start_sec": 310.928206,
+      "end_sec": 338.955473
+    },
+    {
+      "segment_id": "ch02-s012",
+      "start_sec": 338.955473,
+      "end_sec": 366.649073
+    },
+    {
+      "segment_id": "ch02-s013",
+      "start_sec": 366.649073,
+      "end_sec": 390.138473
+    },
+    {
+      "segment_id": "ch02-s014",
+      "start_sec": 390.138473,
+      "end_sec": 419.76734
+    },
+    {
+      "segment_id": "ch02-s015",
+      "start_sec": 419.76734,
+      "end_sec": 448.495307
+    },
+    {
+      "segment_id": "ch02-s016",
+      "start_sec": 448.495307,
+      "end_sec": 467.25164
+    },
+    {
+      "segment_id": "ch02-s017",
+      "start_sec": 467.25164,
+      "end_sec": 509.426373
+    },
+    {
+      "segment_id": "ch02-s018",
+      "start_sec": 509.426373,
+      "end_sec": 523.206073
+    },
+    {
+      "segment_id": "ch02-s019",
+      "start_sec": 523.206073,
+      "end_sec": 559.074506
+    },
+    {
+      "segment_id": "ch02-s020",
+      "start_sec": 559.074506,
+      "end_sec": 577.558906
+    },
+    {
+      "segment_id": "ch02-s021",
+      "start_sec": 577.558906,
+      "end_sec": 605.986573
+    },
+    {
+      "segment_id": "ch03-s001",
+      "start_sec": 605.986575,
+      "end_sec": 610.056575
+    },
+    {
+      "segment_id": "ch03-s002",
+      "start_sec": 610.056575,
+      "end_sec": 615.094208
+    },
+    {
+      "segment_id": "ch03-s003",
+      "start_sec": 615.094208,
+      "end_sec": 620.165208
+    },
+    {
+      "segment_id": "ch03-s004",
+      "start_sec": 620.165208,
+      "end_sec": 623.234208
+    },
+    {
+      "segment_id": "ch04-s001",
+      "start_sec": 623.234208,
+      "end_sec": 636.280541
+    },
+    {
+      "segment_id": "ch04-s002",
+      "start_sec": 636.280541,
+      "end_sec": 651.361541
+    },
+    {
+      "segment_id": "ch04-s003",
+      "start_sec": 651.361541,
+      "end_sec": 654.007874
+    },
+    {
+      "segment_id": "ch04-s004",
+      "start_sec": 654.007874,
+      "end_sec": 681.284207
+    },
+    {
+      "segment_id": "ch04-s005",
+      "start_sec": 681.284207,
+      "end_sec": 703.105274
+    },
+    {
+      "segment_id": "ch04-s006",
+      "start_sec": 703.105274,
+      "end_sec": 729.911607
+    },
+    {
+      "segment_id": "ch04-s007",
+      "start_sec": 729.911607,
+      "end_sec": 748.96324
+    },
+    {
+      "segment_id": "ch04-s008",
+      "start_sec": 748.96324,
+      "end_sec": 754.468007
+    },
+    {
+      "segment_id": "ch04-s009",
+      "start_sec": 754.468007,
+      "end_sec": 777.089874
+    },
+    {
+      "segment_id": "ch04-s010",
+      "start_sec": 777.089874,
+      "end_sec": 806.251607
+    },
+    {
+      "segment_id": "ch04-s011",
+      "start_sec": 806.251607,
+      "end_sec": 825.269874
+    },
+    {
+      "segment_id": "ch04-s012",
+      "start_sec": 825.269874,
+      "end_sec": 828.272141
+    },
+    {
+      "segment_id": "ch04-s013",
+      "start_sec": 828.272141,
+      "end_sec": 868.311408
+    }
+  ],
+  "output_identity": {
+    "path_base": "project_root",
+    "path": "../media/preview.v3.mp4",
+    "size_bytes": 182872089,
+    "sha256": "73b5476a8ba2d82a39944d639006cbacd21fb5245546ac298fd328b9c0ca92cf"
+  }
+}

@@ -1,10 +1,11 @@
 import os
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from vlog_director.ffmpeg import find_ffmpeg
+from vlog_director.ffmpeg import FFmpegError, find_ffmpeg, require_filters
 
 
 class FFmpegResolutionTests(unittest.TestCase):
@@ -29,6 +30,21 @@ class FFmpegResolutionTests(unittest.TestCase):
             ),
         ):
             self.assertEqual(find_ffmpeg(), "C:/tools/ffmpeg.exe")
+
+    def test_filter_inventory_requires_an_exact_filter_name(self) -> None:
+        inventory = " ... ass V->V Render ASS subtitles onto input video using libass.\n"
+        completed = subprocess.CompletedProcess(
+            args=["ffmpeg", "-filters"],
+            returncode=0,
+            stdout=inventory,
+            stderr="",
+        )
+        with (
+            patch("vlog_director.ffmpeg.find_ffmpeg", return_value="ffmpeg"),
+            patch("vlog_director.ffmpeg.subprocess.run", return_value=completed),
+            self.assertRaisesRegex(FFmpegError, "subtitles"),
+        ):
+            require_filters("ffmpeg", {"subtitles"})
 
 
 if __name__ == "__main__":

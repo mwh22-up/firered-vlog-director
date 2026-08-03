@@ -1,0 +1,5446 @@
+{
+  "schema_version": "1.0",
+  "document_type": "subtitle_machine_crosscheck_report",
+  "project_id": "nordic-130-144",
+  "subtitle_version": 4,
+  "status": "review_required",
+  "coverage": {
+    "status": "pending"
+  },
+  "draft": "work/subtitles/subtitles.v4.review-required.json",
+  "draft_sha256": "057407dd345e88acc96be63d93c01593c0587afbd6ead42edb882b0a85d5bc90",
+  "draft_srt_sha256": "63da3f77e32db3d1be6405967e83d538500e34aeb0bc0e7d09e336b9b528f579",
+  "machine_crosscheck": {
+    "status": "completed_review_still_required",
+    "provider": "faster-whisper",
+    "model": "small",
+    "language": "zh",
+    "source_id": "nordic-v3-directed-crosscheck",
+    "method": "exclusive_word_timeline_assignment_and_normalized_text_similarity",
+    "policy": {
+      "boundary_tolerance_sec": 0.15,
+      "context_window_sec": 1.5,
+      "timing_midpoint_tolerance_sec": 0.75,
+      "strong_match_threshold": 0.75,
+      "partial_match_threshold": 0.45,
+      "low_confidence_threshold": 0.2
+    },
+    "summary": {
+      "cue_count": 225,
+      "assigned_word_count": 1562,
+      "unassigned_word_count": 171,
+      "status_counts": {
+        "disagreement": 48,
+        "no_evidence": 16,
+        "partial_match": 54,
+        "strong_match": 107
+      },
+      "risk_flag_counts": {
+        "cross_asr_disagreement": 48,
+        "cross_asr_low_confidence_word": 83,
+        "cross_asr_no_evidence": 16,
+        "cross_asr_partial_match": 54,
+        "cross_asr_timing_disagreement": 10
+      },
+      "disagreement_cue_count": 48,
+      "no_evidence_cue_count": 16
+    },
+    "limitations": [
+      "cross_asr_is_a_machine_second_opinion_not_human_audio_review",
+      "agreement_does_not_mark_a_cue_verified",
+      "disagreement_requires_listening_before_final_text_selection"
+    ],
+    "crosschecked_at": "2026-08-03T02:25:53.410124+00:00"
+  },
+  "machine_text_corrections": {
+    "status": "applied_review_still_required",
+    "count": 17,
+    "items": [
+      {
+        "cue_id": "subtitle-v4-0003",
+        "original_text": "因为这个东西断滥",
+        "replacement_text": "因为这个东西泛滥",
+        "reason": "修正同音错字",
+        "evidence": [
+          "主 ASR 与 cross ASR 均识别出接近 fan/hen + lan 的双音节",
+          "前后文说明帝王蟹数量失控，固定搭配应为泛滥"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0012",
+        "original_text": "尤其是这个哈当瑞尔峡湾就是\n最著名的挪威的三文鱼的养殖",
+        "replacement_text": "尤其是这个哈当厄尔峡湾就是\n最著名的挪威三文鱼养殖",
+        "reason": "修正地名并清理重复助词",
+        "evidence": [
+          "两套 ASR 均在该时间段识别到哈当峡湾及挪威三文鱼养殖",
+          "Hardangerfjord 的规范中文地名为哈当厄尔峡湾"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0021",
+        "original_text": "才可以这个到这个标准去受败",
+        "replacement_text": "才可以达到这个标准去售卖",
+        "reason": "修正同音错字和明显乱码",
+        "evidence": [
+          "cross ASR 明确识别为才可以到这个标准去售卖",
+          "前文讨论三文鱼达到重量标准后才能销售"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0061",
+        "original_text": "来弄点血",
+        "replacement_text": "来，弄点雪",
+        "reason": "修正雪景语境中的同音错字",
+        "evidence": [
+          "cross ASR 明确识别为弄点雪",
+          "该章节画面与对话均为雪地拍照"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0062",
+        "original_text": "弄点血拍点镜子",
+        "replacement_text": "弄点雪拍点镜子",
+        "reason": "修正雪景语境中的同音错字",
+        "evidence": [
+          "cross ASR 在对应时间识别为弄点雪",
+          "该章节画面与对话均为雪地拍照"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0064",
+        "original_text": "对不上胶等一下",
+        "replacement_text": "对不上焦，等一下",
+        "reason": "修正摄影术语同音错字",
+        "evidence": [
+          "前后多次明确讨论相机无法对焦",
+          "对不上焦是相机操作语境中的固定表达"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0065",
+        "original_text": "对不上胶对不",
+        "replacement_text": "对不上焦，对不",
+        "reason": "修正摄影术语同音错字并保留未完话语",
+        "evidence": [
+          "前后多次明确讨论相机无法对焦",
+          "对不上焦是相机操作语境中的固定表达"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0107",
+        "original_text": "发开",
+        "replacement_text": "放开",
+        "reason": "修正 cross ASR 上下文可确认的错字",
+        "evidence": [
+          "cross ASR 邻近上下文完整识别为放开",
+          "主 ASR 的发开不是有效中文搭配"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0120",
+        "original_text": "不要偷背",
+        "replacement_text": "不要驼背",
+        "reason": "修正拍照姿势指令中的同音错字",
+        "evidence": [
+          "两套 ASR 都识别到接近 tuo bei 的发音",
+          "相邻对话持续给出站直腿和姿势调整指令"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0137",
+        "original_text": "对不上胶了\n你手相机别拿着的给我吧滑",
+        "replacement_text": "对不上焦了\n你手相机别拿着的给我吧滑",
+        "reason": "修正摄影术语同音错字",
+        "evidence": [
+          "cross ASR 明确识别为对不上焦了",
+          "前后对话持续讨论相机无法对焦"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0138",
+        "original_text": "走慢一点太好吵了相机对不上胶",
+        "replacement_text": "走慢一点太好吵了相机对不上焦",
+        "reason": "修正摄影术语同音错字",
+        "evidence": [
+          "cross ASR 明确识别为相机对不上焦",
+          "前后对话持续讨论相机无法对焦"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0139",
+        "original_text": "相机对不上胶你拿着这个",
+        "replacement_text": "相机对不上焦，你拿着这个",
+        "reason": "修正摄影术语同音错字",
+        "evidence": [
+          "cross ASR 明确识别为相机对不上焦",
+          "前后对话持续讨论相机无法对焦"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0146",
+        "original_text": "扶着干子走一点",
+        "replacement_text": "扶着杆子走一点",
+        "reason": "修正雪地行走语境中的同音错字",
+        "evidence": [
+          "两套 ASR 均识别到扶着 gan zi 走的表达",
+          "雪地行走时可扶持的实体是杆子"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0163",
+        "original_text": "只要踩着这个湿血就不会滑倒",
+        "replacement_text": "只要踩着这个湿雪就不会滑倒",
+        "reason": "修正雪地语境中的同音错字",
+        "evidence": [
+          "两套 ASR 均识别到 shi xue 的发音",
+          "上下文讨论踩雪与避免滑倒，语义对象只能是湿雪"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0188",
+        "original_text": "你都拍的都厚了哈哈哈哈",
+        "replacement_text": "你都拍得糊了，哈哈哈哈",
+        "reason": "修正照片评价语境中的近音错字",
+        "evidence": [
+          "主 ASR 的厚了与 cross ASR 的护了都指向 hu le 发音",
+          "相邻对话正在评价照片成像质量，拍糊了是符合语境的表达"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0222",
+        "original_text": "但是他随便拍的他随便拍的他很上\n相他很伤心你知道吗他要眼睛打掉",
+        "replacement_text": "但是他随便拍的，他很上相\n他很上镜你知道吗？他把眼镜摘掉",
+        "reason": "修正照片评价语境中的连续同音乱码",
+        "evidence": [
+          "两套 ASR 均保留随便拍、上相及眼镜摘掉的近音序列",
+          "相邻对话正在比较人物照片，后续紧接电影脸评价"
+        ],
+        "review_status": "review_required"
+      },
+      {
+        "cue_id": "subtitle-v4-0224",
+        "original_text": "一昂迁徙",
+        "replacement_text": "易烊千玺",
+        "reason": "修正人物姓名乱码",
+        "evidence": [
+          "主 ASR 的一昂迁徙与 cross ASR 邻近上下文的一牙牵均为姓名近音",
+          "下一条紧接电影脸评价，语义指向演员易烊千玺"
+        ],
+        "review_status": "review_required"
+      }
+    ],
+    "limitations": [
+      "corrections_are_machine_assisted_and_require_full_audio_review",
+      "no_cue_is_marked_verified_by_this_step"
+    ]
+  },
+  "flagged_cue_count": 154,
+  "flagged_cues": [
+    {
+      "cue_id": "subtitle-v4-0003",
+      "segment_id": "ch01-s001",
+      "start_sec": 5.26,
+      "end_sec": 6.706,
+      "text": "因为这个东西泛滥",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "因为这个东西很烂",
+        "similarity": 0.75,
+        "matched_word_count": 6,
+        "start_sec": 5.26,
+        "end_sec": 6.66,
+        "asr_segment_ids": [
+          "asr-0004"
+        ],
+        "minimum_word_probability": 0.1608,
+        "midpoint_offset_sec": 0.023,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0003",
+        "original_text": "因为这个东西断滥",
+        "replacement_text": "因为这个东西泛滥",
+        "reason": "修正同音错字",
+        "evidence": [
+          "主 ASR 与 cross ASR 均识别出接近 fan/hen + lan 的双音节",
+          "前后文说明帝王蟹数量失控，固定搭配应为泛滥"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_low_confidence_word",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0010",
+      "segment_id": "ch01-s002",
+      "start_sec": 22.803,
+      "end_sec": 26.729,
+      "text": "不是在这种死水都是在峡湾",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "不是在此水都是在峡湾",
+        "similarity": 0.8182,
+        "matched_word_count": 8,
+        "start_sec": 22.68,
+        "end_sec": 26.72,
+        "asr_segment_ids": [
+          "asr-0012",
+          "asr-0013"
+        ],
+        "minimum_word_probability": 0.1849,
+        "midpoint_offset_sec": 0.066,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0012",
+      "segment_id": "ch01-s002",
+      "start_sec": 29.032,
+      "end_sec": 34.44,
+      "text": "尤其是这个哈当厄尔峡湾就是\n最著名的挪威三文鱼养殖",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "尤其是哈当勒下万最著名的罗威的三文鱼的养殖",
+        "similarity": 0.6667,
+        "matched_word_count": 21,
+        "start_sec": 29.0,
+        "end_sec": 34.38,
+        "asr_segment_ids": [
+          "asr-0015",
+          "asr-0016"
+        ],
+        "minimum_word_probability": 0.1014,
+        "midpoint_offset_sec": 0.046,
+        "nearby_context_text": "们下午要去的峡湾尤其是哈当勒下万最著名的罗威的三文鱼的养殖基地",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0012",
+        "original_text": "尤其是这个哈当瑞尔峡湾就是\n最著名的挪威的三文鱼的养殖",
+        "replacement_text": "尤其是这个哈当厄尔峡湾就是\n最著名的挪威三文鱼养殖",
+        "reason": "修正地名并清理重复助词",
+        "evidence": [
+          "两套 ASR 均在该时间段识别到哈当峡湾及挪威三文鱼养殖",
+          "Hardangerfjord 的规范中文地名为哈当厄尔峡湾"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0016",
+      "segment_id": "ch01-s002",
+      "start_sec": 40.469,
+      "end_sec": 42.653,
+      "text": "就是一个大的圈一个大的圈那种",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "一个大的圈一个大的圈那边",
+        "similarity": 0.8462,
+        "matched_word_count": 8,
+        "start_sec": 40.46,
+        "end_sec": 42.6,
+        "asr_segment_ids": [
+          "asr-0019",
+          "asr-0020"
+        ],
+        "minimum_word_probability": 0.0793,
+        "midpoint_offset_sec": 0.031,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0021",
+      "segment_id": "ch01-s002",
+      "start_sec": 51.225,
+      "end_sec": 53.829,
+      "text": "才可以达到这个标准去售卖",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "斤才可以到这个标准去售卖",
+        "similarity": 0.9167,
+        "matched_word_count": 10,
+        "start_sec": 50.98,
+        "end_sec": 53.78,
+        "asr_segment_ids": [
+          "asr-0024",
+          "asr-0025"
+        ],
+        "minimum_word_probability": 0.5915,
+        "midpoint_offset_sec": 0.147,
+        "nearby_context_text": "",
+        "risk_flags": []
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0021",
+        "original_text": "才可以这个到这个标准去受败",
+        "replacement_text": "才可以达到这个标准去售卖",
+        "reason": "修正同音错字和明显乱码",
+        "evidence": [
+          "cross ASR 明确识别为才可以到这个标准去售卖",
+          "前文讨论三文鱼达到重量标准后才能销售"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "low_confidence_word",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0033",
+      "segment_id": "ch01-s004",
+      "start_sec": 83.899,
+      "end_sec": 88.109,
+      "text": "像现在尤其您还没更晚来\n要是春节那会儿来",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "像现在尤其您还没更晚来要是春节那会来",
+        "similarity": 0.973,
+        "matched_word_count": 17,
+        "start_sec": 84.06,
+        "end_sec": 88.26,
+        "asr_segment_ids": [
+          "asr-0039",
+          "asr-0040"
+        ],
+        "minimum_word_probability": 0.1666,
+        "midpoint_offset_sec": -0.156,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0036",
+      "segment_id": "ch01-s004",
+      "start_sec": 94.664,
+      "end_sec": 97.411,
+      "text": "所以呢这就叫黑暗那不毛呢您",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "所以这就叫黑不毛的",
+        "similarity": 0.7273,
+        "matched_word_count": 8,
+        "start_sec": 94.58,
+        "end_sec": 97.3,
+        "asr_segment_ids": [
+          "asr-0043",
+          "asr-0044"
+        ],
+        "minimum_word_probability": 0.0816,
+        "midpoint_offset_sec": 0.097,
+        "nearby_context_text": "一整天都是黑的所以这就叫黑不毛的这个狭湾历",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "near_cut_out",
+        "source_boundary_clipped",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0039",
+      "segment_id": "ch01-s005",
+      "start_sec": 106.881,
+      "end_sec": 112.358,
+      "text": "这里的水是淡海水一部分是刚才\n咱们开车一路过来连着外边的外",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "这里的水是淡海水一部分是咱们开车一路过来连到外边的外海",
+        "similarity": 0.9091,
+        "matched_word_count": 25,
+        "start_sec": 106.96,
+        "end_sec": 112.38,
+        "asr_segment_ids": [
+          "asr-0049",
+          "asr-0050",
+          "asr-0051",
+          "asr-0052"
+        ],
+        "minimum_word_probability": 0.1534,
+        "midpoint_offset_sec": -0.05,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "near_cut_out",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0040",
+      "segment_id": "ch01-s005",
+      "start_sec": 112.358,
+      "end_sec": 112.559,
+      "text": "海",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "一路过来连到外边的外海前面有雪山了",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "short_duration",
+        "near_cut_out",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0041",
+      "segment_id": "ch01-s006",
+      "start_sec": 112.559,
+      "end_sec": 115.317,
+      "text": "前面有雪山了哦雪山很好",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "前面有雪山了雪山好",
+        "similarity": 0.9,
+        "matched_word_count": 9,
+        "start_sec": 112.38,
+        "end_sec": 115.12,
+        "asr_segment_ids": [
+          "asr-0053",
+          "asr-0054"
+        ],
+        "minimum_word_probability": 0.1379,
+        "midpoint_offset_sec": 0.188,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0042",
+      "segment_id": "ch01-s006",
+      "start_sec": 115.317,
+      "end_sec": 118.56,
+      "text": "对没事咱们下午就会开上雪山",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "对没事咱们下午就会开上雪山",
+        "similarity": 1.0,
+        "matched_word_count": 12,
+        "start_sec": 115.12,
+        "end_sec": 118.38,
+        "asr_segment_ids": [
+          "asr-0055",
+          "asr-0056"
+        ],
+        "minimum_word_probability": 0.0092,
+        "midpoint_offset_sec": 0.189,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0045",
+      "segment_id": "ch02-s001",
+      "start_sec": 122.245,
+      "end_sec": 123.729,
+      "text": "有点滑的好滑哦",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "有点滑的",
+        "similarity": 0.7273,
+        "matched_word_count": 4,
+        "start_sec": 122.0,
+        "end_sec": 122.98,
+        "asr_segment_ids": [
+          "asr-0059"
+        ],
+        "minimum_word_probability": 0.9195,
+        "midpoint_offset_sec": 0.497,
+        "nearby_context_text": "在雪山上拍照有点滑的",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0047",
+      "segment_id": "ch02-s001",
+      "start_sec": 128.863,
+      "end_sec": 130.487,
+      "text": "好滑哎呦好滑",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "好滑哎呦好滑",
+        "similarity": 1.0,
+        "matched_word_count": 6,
+        "start_sec": 128.68,
+        "end_sec": 130.26,
+        "asr_segment_ids": [
+          "asr-0061",
+          "asr-0062"
+        ],
+        "minimum_word_probability": 0.1616,
+        "midpoint_offset_sec": 0.205,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0048",
+      "segment_id": "ch02-s001",
+      "start_sec": 132.533,
+      "end_sec": 133.475,
+      "text": "没拉底光",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "没拉李光",
+        "similarity": 0.75,
+        "matched_word_count": 4,
+        "start_sec": 131.02,
+        "end_sec": 133.22,
+        "asr_segment_ids": [
+          "asr-0063"
+        ],
+        "minimum_word_probability": 0.267,
+        "midpoint_offset_sec": 0.884,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_timing_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_timing_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0049",
+      "segment_id": "ch02-s001",
+      "start_sec": 134.618,
+      "end_sec": 136.102,
+      "text": "我去拿已经下来了",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "拿我去拿你先下来稍微慢",
+        "similarity": 0.5263,
+        "matched_word_count": 11,
+        "start_sec": 134.44,
+        "end_sec": 136.26,
+        "asr_segment_ids": [
+          "asr-0064",
+          "asr-0065",
+          "asr-0066"
+        ],
+        "minimum_word_probability": 0.5033,
+        "midpoint_offset_sec": 0.01,
+        "nearby_context_text": "光李光没拿我去拿你先下来稍微慢点慢点",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0051",
+      "segment_id": "ch02-s002",
+      "start_sec": 137.526,
+      "end_sec": 138.371,
+      "text": "慢点",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "慢点慢点",
+        "similarity": 0.6667,
+        "matched_word_count": 4,
+        "start_sec": 137.64,
+        "end_sec": 138.72,
+        "asr_segment_ids": [
+          "asr-0067"
+        ],
+        "minimum_word_probability": 0.8012,
+        "midpoint_offset_sec": -0.231,
+        "nearby_context_text": "稍微慢点慢点慢点慢点",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "near_cut_in",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0052",
+      "segment_id": "ch02-s003",
+      "start_sec": 147.736,
+      "end_sec": 148.277,
+      "text": "你在那",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "你在哪",
+        "similarity": 0.6667,
+        "matched_word_count": 2,
+        "start_sec": 147.54,
+        "end_sec": 148.34,
+        "asr_segment_ids": [
+          "asr-0068"
+        ],
+        "minimum_word_probability": 0.0494,
+        "midpoint_offset_sec": 0.066,
+        "nearby_context_text": "你在哪",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "short_duration",
+        "near_cut_in",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0055",
+      "segment_id": "ch02-s003",
+      "start_sec": 160.183,
+      "end_sec": 162.568,
+      "text": "等一下我去你先站我去\n我这给拍两张",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "等一下我先你先站我这边拍两张",
+        "similarity": 0.8,
+        "matched_word_count": 12,
+        "start_sec": 159.85,
+        "end_sec": 162.37,
+        "asr_segment_ids": [
+          "asr-0071",
+          "asr-0072"
+        ],
+        "minimum_word_probability": 0.1035,
+        "midpoint_offset_sec": 0.265,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0056",
+      "segment_id": "ch02-s003",
+      "start_sec": 170.325,
+      "end_sec": 172.751,
+      "text": "别护着腰看着我",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "别活着腰看着我",
+        "similarity": 0.8571,
+        "matched_word_count": 7,
+        "start_sec": 169.98,
+        "end_sec": 172.26,
+        "asr_segment_ids": [
+          "asr-0073"
+        ],
+        "minimum_word_probability": 0.1688,
+        "midpoint_offset_sec": 0.418,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0057",
+      "segment_id": "ch02-s003",
+      "start_sec": 179.455,
+      "end_sec": 183.204,
+      "text": "哎把相机给我把相机给我",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "把相机给我相机给我",
+        "similarity": 0.9,
+        "matched_word_count": 9,
+        "start_sec": 178.95,
+        "end_sec": 183.13,
+        "asr_segment_ids": [
+          "asr-0074",
+          "asr-0075"
+        ],
+        "minimum_word_probability": 0.1087,
+        "midpoint_offset_sec": 0.29,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0059",
+      "segment_id": "ch02-s004",
+      "start_sec": 195.125,
+      "end_sec": 196.349,
+      "text": "拍个镜子嗯",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "来",
+        "similarity": 0.0,
+        "matched_word_count": 1,
+        "start_sec": 195.82,
+        "end_sec": 196.42,
+        "asr_segment_ids": [
+          "asr-0078"
+        ],
+        "minimum_word_probability": 0.9064,
+        "midpoint_offset_sec": -0.383,
+        "nearby_context_text": "来来",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "near_cut_out",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0060",
+      "segment_id": "ch02-s005",
+      "start_sec": 196.349,
+      "end_sec": 196.714,
+      "text": "来",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "来来",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "short_duration",
+        "near_cut_in",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0061",
+      "segment_id": "ch02-s005",
+      "start_sec": 198.17,
+      "end_sec": 199.769,
+      "text": "来，弄点雪",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "来弄点雪",
+        "similarity": 1.0,
+        "matched_word_count": 4,
+        "start_sec": 197.84,
+        "end_sec": 199.42,
+        "asr_segment_ids": [
+          "asr-0079",
+          "asr-0080"
+        ],
+        "minimum_word_probability": 0.258,
+        "midpoint_offset_sec": 0.339,
+        "nearby_context_text": "",
+        "risk_flags": []
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0061",
+        "original_text": "来弄点血",
+        "replacement_text": "来，弄点雪",
+        "reason": "修正雪景语境中的同音错字",
+        "evidence": [
+          "cross ASR 明确识别为弄点雪",
+          "该章节画面与对话均为雪地拍照"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0062",
+      "segment_id": "ch02-s005",
+      "start_sec": 200.761,
+      "end_sec": 202.056,
+      "text": "弄点雪拍点镜子",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "弄点雪拍点清净眼",
+        "similarity": 0.6667,
+        "matched_word_count": 8,
+        "start_sec": 200.4,
+        "end_sec": 202.1,
+        "asr_segment_ids": [
+          "asr-0081",
+          "asr-0082",
+          "asr-0083"
+        ],
+        "minimum_word_probability": 0.2338,
+        "midpoint_offset_sec": 0.159,
+        "nearby_context_text": "雪弄点雪拍点清净眼睛别挤",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0062",
+        "original_text": "弄点血拍点镜子",
+        "replacement_text": "弄点雪拍点镜子",
+        "reason": "修正雪景语境中的同音错字",
+        "evidence": [
+          "cross ASR 在对应时间识别为弄点雪",
+          "该章节画面与对话均为雪地拍照"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "near_cut_out",
+        "cross_asr_partial_match",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0064",
+      "segment_id": "ch02-s006",
+      "start_sec": 205.164,
+      "end_sec": 206.127,
+      "text": "对不上焦，等一下",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "对不上胶等一下",
+        "similarity": 0.8571,
+        "matched_word_count": 5,
+        "start_sec": 204.78,
+        "end_sec": 205.78,
+        "asr_segment_ids": [
+          "asr-0084",
+          "asr-0085"
+        ],
+        "minimum_word_probability": 0.6962,
+        "midpoint_offset_sec": 0.365,
+        "nearby_context_text": "",
+        "risk_flags": []
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0064",
+        "original_text": "对不上胶等一下",
+        "replacement_text": "对不上焦，等一下",
+        "reason": "修正摄影术语同音错字",
+        "evidence": [
+          "前后多次明确讨论相机无法对焦",
+          "对不上焦是相机操作语境中的固定表达"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0065",
+      "segment_id": "ch02-s006",
+      "start_sec": 213.627,
+      "end_sec": 215.712,
+      "text": "对不上焦，对不",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "对不上胶对不",
+        "similarity": 0.8333,
+        "matched_word_count": 6,
+        "start_sec": 212.92,
+        "end_sec": 215.28,
+        "asr_segment_ids": [
+          "asr-0087",
+          "asr-0088"
+        ],
+        "minimum_word_probability": 0.7174,
+        "midpoint_offset_sec": 0.57,
+        "nearby_context_text": "",
+        "risk_flags": []
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0065",
+        "original_text": "对不上胶对不",
+        "replacement_text": "对不上焦，对不",
+        "reason": "修正摄影术语同音错字并保留未完话语",
+        "evidence": [
+          "前后多次明确讨论相机无法对焦",
+          "对不上焦是相机操作语境中的固定表达"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "low_confidence_word",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0066",
+      "segment_id": "ch02-s006",
+      "start_sec": 219.854,
+      "end_sec": 220.636,
+      "text": "上了对",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "了",
+        "similarity": 0.5,
+        "matched_word_count": 1,
+        "start_sec": 219.64,
+        "end_sec": 220.1,
+        "asr_segment_ids": [
+          "asr-0088"
+        ],
+        "minimum_word_probability": 0.9569,
+        "midpoint_offset_sec": 0.375,
+        "nearby_context_text": "上了",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "short_duration",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0067",
+      "segment_id": "ch02-s006",
+      "start_sec": 221.919,
+      "end_sec": 224.346,
+      "text": "不上了",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0068",
+      "segment_id": "ch02-s006",
+      "start_sec": 225.85,
+      "end_sec": 226.652,
+      "text": "拿着",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "来",
+        "similarity": 0.0,
+        "matched_word_count": 1,
+        "start_sec": 226.15,
+        "end_sec": 226.77,
+        "asr_segment_ids": [
+          "asr-0089"
+        ],
+        "minimum_word_probability": 0.6784,
+        "midpoint_offset_sec": -0.209,
+        "nearby_context_text": "来",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "near_cut_out",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0069",
+      "segment_id": "ch02-s007",
+      "start_sec": 226.652,
+      "end_sec": 227.133,
+      "text": "来",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "来",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "short_duration",
+        "near_cut_in",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0071",
+      "segment_id": "ch02-s007",
+      "start_sec": 242.245,
+      "end_sec": 243.207,
+      "text": "对就这样",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "对就这样",
+        "similarity": 1.0,
+        "matched_word_count": 3,
+        "start_sec": 241.86,
+        "end_sec": 242.82,
+        "asr_segment_ids": [
+          "asr-0091"
+        ],
+        "minimum_word_probability": 0.0561,
+        "midpoint_offset_sec": 0.386,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0072",
+      "segment_id": "ch02-s007",
+      "start_sec": 245.011,
+      "end_sec": 247.256,
+      "text": "好美啊再来两个",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "好美啊好看再来一张",
+        "similarity": 0.625,
+        "matched_word_count": 9,
+        "start_sec": 244.6,
+        "end_sec": 246.78,
+        "asr_segment_ids": [
+          "asr-0092",
+          "asr-0093",
+          "asr-0094"
+        ],
+        "minimum_word_probability": 0.0264,
+        "midpoint_offset_sec": 0.444,
+        "nearby_context_text": "好美啊好看再来一张",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0073",
+      "segment_id": "ch02-s007",
+      "start_sec": 250.794,
+      "end_sec": 251.816,
+      "text": "长了点不好笑",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "长了点不好笑",
+        "similarity": 1.0,
+        "matched_word_count": 5,
+        "start_sec": 250.36,
+        "end_sec": 251.38,
+        "asr_segment_ids": [
+          "asr-0095"
+        ],
+        "minimum_word_probability": 0.0391,
+        "midpoint_offset_sec": 0.435,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0074",
+      "segment_id": "ch02-s007",
+      "start_sec": 254.371,
+      "end_sec": 255.313,
+      "text": "等一下再来两个",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "对再来一张这个",
+        "similarity": 0.4286,
+        "matched_word_count": 6,
+        "start_sec": 253.85,
+        "end_sec": 255.29,
+        "asr_segment_ids": [
+          "asr-0096",
+          "asr-0097"
+        ],
+        "minimum_word_probability": 0.2723,
+        "midpoint_offset_sec": 0.272,
+        "nearby_context_text": "对再来一张这个是不是眼太大了",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "near_cut_out",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0075",
+      "segment_id": "ch02-s008",
+      "start_sec": 255.313,
+      "end_sec": 258.077,
+      "text": "这是不是眼太大了这有什么大的",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "是不是眼太大了这个什么大",
+        "similarity": 0.8462,
+        "matched_word_count": 8,
+        "start_sec": 255.29,
+        "end_sec": 257.61,
+        "asr_segment_ids": [
+          "asr-0097",
+          "asr-0098"
+        ],
+        "minimum_word_probability": 0.1665,
+        "midpoint_offset_sec": 0.245,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "near_cut_in",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0076",
+      "segment_id": "ch02-s008",
+      "start_sec": 259.134,
+      "end_sec": 259.5,
+      "text": "啊",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "别耽",
+        "similarity": 0.0,
+        "matched_word_count": 2,
+        "start_sec": 258.89,
+        "end_sec": 259.61,
+        "asr_segment_ids": [
+          "asr-0099"
+        ],
+        "minimum_word_probability": 0.0395,
+        "midpoint_offset_sec": 0.067,
+        "nearby_context_text": "别耽误时间对别",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "short_duration",
+        "near_cut_out",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0077",
+      "segment_id": "ch02-s009",
+      "start_sec": 259.5,
+      "end_sec": 260.442,
+      "text": "别耽误时间",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "误时间对",
+        "similarity": 0.6667,
+        "matched_word_count": 3,
+        "start_sec": 259.61,
+        "end_sec": 260.73,
+        "asr_segment_ids": [
+          "asr-0099",
+          "asr-0100"
+        ],
+        "minimum_word_probability": 0.2276,
+        "midpoint_offset_sec": -0.199,
+        "nearby_context_text": "别耽误时间对别",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "near_cut_in",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0078",
+      "segment_id": "ch02-s009",
+      "start_sec": 264.741,
+      "end_sec": 266.163,
+      "text": "别耽误时间快",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "耽误时间带了",
+        "similarity": 0.6667,
+        "matched_word_count": 5,
+        "start_sec": 264.43,
+        "end_sec": 266.37,
+        "asr_segment_ids": [
+          "asr-0101",
+          "asr-0102"
+        ],
+        "minimum_word_probability": 0.5331,
+        "midpoint_offset_sec": 0.052,
+        "nearby_context_text": "耽误时间带了什么还往那走呢侧",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0080",
+      "segment_id": "ch02-s009",
+      "start_sec": 278.7,
+      "end_sec": 280.002,
+      "text": "面站这样一个飞",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "那个背",
+        "similarity": 0.2,
+        "matched_word_count": 2,
+        "start_sec": 278.54,
+        "end_sec": 279.52,
+        "asr_segment_ids": [
+          "asr-0104",
+          "asr-0105"
+        ],
+        "minimum_word_probability": 0.2748,
+        "midpoint_offset_sec": 0.321,
+        "nearby_context_text": "面站那个背",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0081",
+      "segment_id": "ch02-s009",
+      "start_sec": 286.226,
+      "end_sec": 291.176,
+      "text": "包不能露出来太丑了\n别别别不要这样",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "不能摸出来太丑别别别对我这样",
+        "similarity": 0.7333,
+        "matched_word_count": 11,
+        "start_sec": 285.92,
+        "end_sec": 291.14,
+        "asr_segment_ids": [
+          "asr-0105",
+          "asr-0106",
+          "asr-0107",
+          "asr-0108"
+        ],
+        "minimum_word_probability": 0.0076,
+        "midpoint_offset_sec": 0.171,
+        "nearby_context_text": "包不能摸出来太丑别别别对我这样对对看着我摇头看着我",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "zero_duration_word_timing",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0082",
+      "segment_id": "ch02-s010",
+      "start_sec": 291.176,
+      "end_sec": 293.023,
+      "text": "对对对看着我仰头看着我",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "对对看着我摇头看着我",
+        "similarity": 0.8571,
+        "matched_word_count": 10,
+        "start_sec": 291.14,
+        "end_sec": 292.58,
+        "asr_segment_ids": [
+          "asr-0109",
+          "asr-0110"
+        ],
+        "minimum_word_probability": 0.1803,
+        "midpoint_offset_sec": 0.24,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "near_cut_in",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0084",
+      "segment_id": "ch02-s010",
+      "start_sec": 297.238,
+      "end_sec": 298.061,
+      "text": "看仰头",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "摇头",
+        "similarity": 0.4,
+        "matched_word_count": 2,
+        "start_sec": 296.98,
+        "end_sec": 297.56,
+        "asr_segment_ids": [
+          "asr-0114"
+        ],
+        "minimum_word_probability": 0.0442,
+        "midpoint_offset_sec": 0.38,
+        "nearby_context_text": "对摇头然后翻白眼",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0085",
+      "segment_id": "ch02-s010",
+      "start_sec": 299.265,
+      "end_sec": 300.129,
+      "text": "不要翻白眼",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "然后翻白眼",
+        "similarity": 0.6,
+        "matched_word_count": 4,
+        "start_sec": 298.7,
+        "end_sec": 299.84,
+        "asr_segment_ids": [
+          "asr-0115"
+        ],
+        "minimum_word_probability": 0.0505,
+        "midpoint_offset_sec": 0.427,
+        "nearby_context_text": "然后翻白眼低脸",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0088",
+      "segment_id": "ch02-s010",
+      "start_sec": 305.508,
+      "end_sec": 305.87,
+      "text": "对",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "一下",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "short_duration",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0089",
+      "segment_id": "ch02-s010",
+      "start_sec": 309.824,
+      "end_sec": 310.928,
+      "text": "对你帮我拍了一片",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "走往",
+        "similarity": 0.0,
+        "matched_word_count": 2,
+        "start_sec": 310.35,
+        "end_sec": 310.99,
+        "asr_segment_ids": [
+          "asr-0118"
+        ],
+        "minimum_word_probability": 0.0888,
+        "midpoint_offset_sec": -0.294,
+        "nearby_context_text": "走往往那走",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0090",
+      "segment_id": "ch02-s011",
+      "start_sec": 310.928,
+      "end_sec": 312.43,
+      "text": "走我往往那走走",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "往那走",
+        "similarity": 0.6,
+        "matched_word_count": 3,
+        "start_sec": 310.99,
+        "end_sec": 311.75,
+        "asr_segment_ids": [
+          "asr-0119"
+        ],
+        "minimum_word_probability": 0.0012,
+        "midpoint_offset_sec": 0.309,
+        "nearby_context_text": "走往往那走一边走一边",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0091",
+      "segment_id": "ch02-s011",
+      "start_sec": 313.692,
+      "end_sec": 315.634,
+      "text": "一边走一边拍把底光",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "一边走一边拍把底光",
+        "similarity": 1.0,
+        "matched_word_count": 9,
+        "start_sec": 313.07,
+        "end_sec": 315.11,
+        "asr_segment_ids": [
+          "asr-0120",
+          "asr-0121"
+        ],
+        "minimum_word_probability": 0.1585,
+        "midpoint_offset_sec": 0.573,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0093",
+      "segment_id": "ch02-s011",
+      "start_sec": 319.299,
+      "end_sec": 320.881,
+      "text": "拍的是什么角度",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "拍的是啥吗找度你看我",
+        "similarity": 0.4706,
+        "matched_word_count": 8,
+        "start_sec": 318.93,
+        "end_sec": 321.05,
+        "asr_segment_ids": [
+          "asr-0123",
+          "asr-0124",
+          "asr-0125"
+        ],
+        "minimum_word_probability": 0.1071,
+        "midpoint_offset_sec": 0.1,
+        "nearby_context_text": "你拍的是啥吗找度你看我给你拍的吗",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0096",
+      "segment_id": "ch02-s011",
+      "start_sec": 331.486,
+      "end_sec": 333.648,
+      "text": "拍到上面再给你讲一下我跟你说",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "上面再跟你讲一下我跟你说就是你",
+        "similarity": 0.7586,
+        "matched_word_count": 9,
+        "start_sec": 331.19,
+        "end_sec": 333.83,
+        "asr_segment_ids": [
+          "asr-0128",
+          "asr-0129",
+          "asr-0130",
+          "asr-0131"
+        ],
+        "minimum_word_probability": 0.0192,
+        "midpoint_offset_sec": 0.057,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0101",
+      "segment_id": "ch02-s012",
+      "start_sec": 343.182,
+      "end_sec": 344.344,
+      "text": "头往那边仰",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "头往那边一样三",
+        "similarity": 0.6667,
+        "matched_word_count": 7,
+        "start_sec": 342.67,
+        "end_sec": 344.85,
+        "asr_segment_ids": [
+          "asr-0138",
+          "asr-0139"
+        ],
+        "minimum_word_probability": 0.3597,
+        "midpoint_offset_sec": 0.003,
+        "nearby_context_text": "头往那边一样三二",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0102",
+      "segment_id": "ch02-s012",
+      "start_sec": 345.346,
+      "end_sec": 346.227,
+      "text": "三二",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "二",
+        "similarity": 0.6667,
+        "matched_word_count": 1,
+        "start_sec": 344.85,
+        "end_sec": 345.85,
+        "asr_segment_ids": [
+          "asr-0139"
+        ],
+        "minimum_word_probability": 0.9898,
+        "midpoint_offset_sec": 0.436,
+        "nearby_context_text": "样三二再扬一点",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0106",
+      "segment_id": "ch02-s012",
+      "start_sec": 358.446,
+      "end_sec": 360.109,
+      "text": "在那炸炸炸",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "抓抓抓",
+        "similarity": 0.0,
+        "matched_word_count": 3,
+        "start_sec": 358.26,
+        "end_sec": 359.36,
+        "asr_segment_ids": [
+          "asr-0143"
+        ],
+        "minimum_word_probability": 0.6093,
+        "midpoint_offset_sec": 0.468,
+        "nearby_context_text": "在那抓抓抓",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0107",
+      "segment_id": "ch02-s012",
+      "start_sec": 362.773,
+      "end_sec": 363.154,
+      "text": "放开",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "开",
+        "similarity": 0.6667,
+        "matched_word_count": 1,
+        "start_sec": 362.43,
+        "end_sec": 363.15,
+        "asr_segment_ids": [
+          "asr-0144"
+        ],
+        "minimum_word_probability": 0.9165,
+        "midpoint_offset_sec": 0.174,
+        "nearby_context_text": "放开",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0107",
+        "original_text": "发开",
+        "replacement_text": "放开",
+        "reason": "修正 cross ASR 上下文可确认的错字",
+        "evidence": [
+          "cross ASR 邻近上下文完整识别为放开",
+          "主 ASR 的发开不是有效中文搭配"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "short_duration",
+        "cross_asr_partial_match",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0108",
+      "segment_id": "ch02-s012",
+      "start_sec": 365.127,
+      "end_sec": 366.649,
+      "text": "大老马要走了拍的好丑",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "放我往那走拍的好丑你看",
+        "similarity": 0.4762,
+        "matched_word_count": 10,
+        "start_sec": 364.66,
+        "end_sec": 366.58,
+        "asr_segment_ids": [
+          "asr-0145",
+          "asr-0146",
+          "asr-0147"
+        ],
+        "minimum_word_probability": 0.1255,
+        "midpoint_offset_sec": 0.268,
+        "nearby_context_text": "放我往那走拍的好丑你看这",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0109",
+      "segment_id": "ch02-s013",
+      "start_sec": 366.649,
+      "end_sec": 367.974,
+      "text": "你站这感",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "这",
+        "similarity": 0.4,
+        "matched_word_count": 1,
+        "start_sec": 366.58,
+        "end_sec": 366.84,
+        "asr_segment_ids": [
+          "asr-0147"
+        ],
+        "minimum_word_probability": 0.9237,
+        "midpoint_offset_sec": 0.602,
+        "nearby_context_text": "往那走拍的好丑你看这",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0110",
+      "segment_id": "ch02-s013",
+      "start_sec": 371.536,
+      "end_sec": 373.362,
+      "text": "觉从这边拍过去好看",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "从这边拍过去这个",
+        "similarity": 0.7059,
+        "matched_word_count": 7,
+        "start_sec": 371.23,
+        "end_sec": 373.39,
+        "asr_segment_ids": [
+          "asr-0148",
+          "asr-0149"
+        ],
+        "minimum_word_probability": 0.0699,
+        "midpoint_offset_sec": 0.139,
+        "nearby_context_text": "我感觉从这边拍过去这个没那个白对",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0111",
+      "segment_id": "ch02-s013",
+      "start_sec": 373.362,
+      "end_sec": 375.469,
+      "text": "那个没那个白对",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "没那个白对那",
+        "similarity": 0.7692,
+        "matched_word_count": 5,
+        "start_sec": 373.39,
+        "end_sec": 376.03,
+        "asr_segment_ids": [
+          "asr-0149",
+          "asr-0150",
+          "asr-0151"
+        ],
+        "minimum_word_probability": 0.0043,
+        "midpoint_offset_sec": -0.294,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0112",
+      "segment_id": "ch02-s013",
+      "start_sec": 376.151,
+      "end_sec": 378.84,
+      "text": "那边好看对太慢了对",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "边好看对气死",
+        "similarity": 0.5333,
+        "matched_word_count": 6,
+        "start_sec": 376.03,
+        "end_sec": 379.63,
+        "asr_segment_ids": [
+          "asr-0151",
+          "asr-0152",
+          "asr-0153"
+        ],
+        "minimum_word_probability": 0.012,
+        "midpoint_offset_sec": -0.334,
+        "nearby_context_text": "对那边好看对气死我了我这边拍",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0113",
+      "segment_id": "ch02-s013",
+      "start_sec": 380.446,
+      "end_sec": 382.131,
+      "text": "要拍那边好看",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "拍那边好看再扬",
+        "similarity": 0.7692,
+        "matched_word_count": 7,
+        "start_sec": 380.05,
+        "end_sec": 381.99,
+        "asr_segment_ids": [
+          "asr-0154",
+          "asr-0155"
+        ],
+        "minimum_word_probability": 0.0011,
+        "midpoint_offset_sec": 0.269,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0114",
+      "segment_id": "ch02-s013",
+      "start_sec": 382.131,
+      "end_sec": 387.189,
+      "text": "那边太冷了这边太冷了这边不要焦",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "一点这边太冷了太冷了这边比较焦这边比",
+        "similarity": 0.4848,
+        "matched_word_count": 17,
+        "start_sec": 381.99,
+        "end_sec": 387.43,
+        "asr_segment_ids": [
+          "asr-0155",
+          "asr-0156",
+          "asr-0157",
+          "asr-0158",
+          "asr-0159"
+        ],
+        "minimum_word_probability": 0.0196,
+        "midpoint_offset_sec": -0.05,
+        "nearby_context_text": "那边好看再扬一点这边太冷了太冷了这边比较焦这边比较焦就买辆",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "zero_duration_word_timing",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0115",
+      "segment_id": "ch02-s013",
+      "start_sec": 388.573,
+      "end_sec": 390.138,
+      "text": "就拿辆公交车拍",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "就买辆公交车拍不搞不",
+        "similarity": 0.7059,
+        "matched_word_count": 10,
+        "start_sec": 387.81,
+        "end_sec": 390.19,
+        "asr_segment_ids": [
+          "asr-0160",
+          "asr-0161"
+        ],
+        "minimum_word_probability": 0.1069,
+        "midpoint_offset_sec": 0.356,
+        "nearby_context_text": "这边比较焦就买辆公交车拍不搞不搞不搞不搞太冷了",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "near_cut_out",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0116",
+      "segment_id": "ch02-s014",
+      "start_sec": 390.138,
+      "end_sec": 394.024,
+      "text": "不搞不搞不搞不搞太冷了\n不搞不搞不是我要给他拍照片",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "搞不搞不搞太冷了不是我要给他拍照片",
+        "similarity": 0.8293,
+        "matched_word_count": 15,
+        "start_sec": 390.19,
+        "end_sec": 394.41,
+        "asr_segment_ids": [
+          "asr-0161",
+          "asr-0162",
+          "asr-0163",
+          "asr-0164",
+          "asr-0165"
+        ],
+        "minimum_word_probability": 0.0157,
+        "midpoint_offset_sec": -0.219,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "zero_duration_word_timing",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0117",
+      "segment_id": "ch02-s014",
+      "start_sec": 396.287,
+      "end_sec": 400.873,
+      "text": "一边走一边拍吧走走",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "我就觉得这个小我们往那走一边走一边拍吧走好",
+        "similarity": 0.5333,
+        "matched_word_count": 17,
+        "start_sec": 395.61,
+        "end_sec": 401.37,
+        "asr_segment_ids": [
+          "asr-0167",
+          "asr-0168",
+          "asr-0169",
+          "asr-0170",
+          "asr-0171"
+        ],
+        "minimum_word_probability": 0.0279,
+        "midpoint_offset_sec": 0.09,
+        "nearby_context_text": "冒风我就觉得这个小我们往那走一边走一边拍吧走好好",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0118",
+      "segment_id": "ch02-s014",
+      "start_sec": 401.714,
+      "end_sec": 403.696,
+      "text": "哈哈帮你们俩拍",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "好",
+        "similarity": 0.0,
+        "matched_word_count": 1,
+        "start_sec": 401.37,
+        "end_sec": 401.67,
+        "asr_segment_ids": [
+          "asr-0172"
+        ],
+        "minimum_word_probability": 0.0097,
+        "midpoint_offset_sec": 1.185,
+        "nearby_context_text": "好好按这个圆圈",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word",
+          "cross_asr_timing_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word",
+        "cross_asr_timing_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0119",
+      "segment_id": "ch02-s014",
+      "start_sec": 405.388,
+      "end_sec": 408.853,
+      "text": "圆圈刚刚去帮我家子好好看\n我过去我走的时候",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "圈刚刚去帮我这边好好看我过去",
+        "similarity": 0.7059,
+        "matched_word_count": 13,
+        "start_sec": 405.11,
+        "end_sec": 407.59,
+        "asr_segment_ids": [
+          "asr-0173",
+          "asr-0174",
+          "asr-0175"
+        ],
+        "minimum_word_probability": 0.0523,
+        "midpoint_offset_sec": 0.77,
+        "nearby_context_text": "按这个圆圈刚刚去帮我这边好好看我过去比较",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word",
+          "cross_asr_timing_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word",
+        "cross_asr_timing_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0120",
+      "segment_id": "ch02-s014",
+      "start_sec": 410.495,
+      "end_sec": 411.276,
+      "text": "不要驼背",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "较投背",
+        "similarity": 0.2857,
+        "matched_word_count": 3,
+        "start_sec": 410.01,
+        "end_sec": 410.71,
+        "asr_segment_ids": [
+          "asr-0176"
+        ],
+        "minimum_word_probability": 0.4723,
+        "midpoint_offset_sec": 0.525,
+        "nearby_context_text": "比较投背",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0120",
+        "original_text": "不要偷背",
+        "replacement_text": "不要驼背",
+        "reason": "修正拍照姿势指令中的同音错字",
+        "evidence": [
+          "两套 ASR 都识别到接近 tuo bei 的发音",
+          "相邻对话持续给出站直腿和姿势调整指令"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "short_duration",
+        "cross_asr_disagreement",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0127",
+      "segment_id": "ch02-s015",
+      "start_sec": 438.582,
+      "end_sec": 439.764,
+      "text": "这边对",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "对",
+        "similarity": 0.5,
+        "matched_word_count": 1,
+        "start_sec": 437.83,
+        "end_sec": 438.53,
+        "asr_segment_ids": [
+          "asr-0189"
+        ],
+        "minimum_word_probability": 0.5682,
+        "midpoint_offset_sec": 0.993,
+        "nearby_context_text": "对往回来一点往回",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_timing_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_timing_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0128",
+      "segment_id": "ch02-s015",
+      "start_sec": 440.785,
+      "end_sec": 442.447,
+      "text": "往回来一点往回来一点",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "回来一点往回来一点",
+        "similarity": 0.9474,
+        "matched_word_count": 7,
+        "start_sec": 440.43,
+        "end_sec": 441.93,
+        "asr_segment_ids": [
+          "asr-0190",
+          "asr-0191"
+        ],
+        "minimum_word_probability": 0.044,
+        "midpoint_offset_sec": 0.436,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0130",
+      "segment_id": "ch02-s015",
+      "start_sec": 448.135,
+      "end_sec": 448.495,
+      "text": "可以",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "吧",
+        "similarity": 0.0,
+        "matched_word_count": 1,
+        "start_sec": 447.91,
+        "end_sec": 448.79,
+        "asr_segment_ids": [
+          "asr-0194"
+        ],
+        "minimum_word_probability": 0.9128,
+        "midpoint_offset_sec": -0.035,
+        "nearby_context_text": "对吧但这边是好看",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "short_duration",
+        "near_cut_out",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0134",
+      "segment_id": "ch02-s016",
+      "start_sec": 464.361,
+      "end_sec": 467.252,
+      "text": "你根本就不听我的我就不听你怎样",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "本就不听我的慢点",
+        "similarity": 0.5217,
+        "matched_word_count": 7,
+        "start_sec": 464.21,
+        "end_sec": 467.37,
+        "asr_segment_ids": [
+          "asr-0204",
+          "asr-0205"
+        ],
+        "minimum_word_probability": 0.1569,
+        "midpoint_offset_sec": 0.017,
+        "nearby_context_text": "根本就不听我的慢点很滑很滑",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0136",
+      "segment_id": "ch02-s017",
+      "start_sec": 473.52,
+      "end_sec": 475.843,
+      "text": "卧槽卧槽",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "我操",
+        "similarity": 0.0,
+        "matched_word_count": 2,
+        "start_sec": 473.95,
+        "end_sec": 474.51,
+        "asr_segment_ids": [
+          "asr-0208"
+        ],
+        "minimum_word_probability": 0.0694,
+        "midpoint_offset_sec": 0.452,
+        "nearby_context_text": "我操我操",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0137",
+      "segment_id": "ch02-s017",
+      "start_sec": 478.446,
+      "end_sec": 481.65,
+      "text": "对不上焦了\n你手相机别拿着的给我吧滑",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "焦了你上机别拿着的给我吧还",
+        "similarity": 0.7333,
+        "matched_word_count": 12,
+        "start_sec": 478.2,
+        "end_sec": 480.88,
+        "asr_segment_ids": [
+          "asr-0209",
+          "asr-0210",
+          "asr-0211",
+          "asr-0212"
+        ],
+        "minimum_word_probability": 0.332,
+        "midpoint_offset_sec": 0.508,
+        "nearby_context_text": "对不上焦了你上机别拿着的给我吧还走慢一点",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0137",
+        "original_text": "对不上胶了\n你手相机别拿着的给我吧滑",
+        "replacement_text": "对不上焦了\n你手相机别拿着的给我吧滑",
+        "reason": "修正摄影术语同音错字",
+        "evidence": [
+          "cross ASR 明确识别为对不上焦了",
+          "前后对话持续讨论相机无法对焦"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0138",
+      "segment_id": "ch02-s017",
+      "start_sec": 483.282,
+      "end_sec": 486.306,
+      "text": "走慢一点太好吵了相机对不上焦",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "一点相机对不上焦",
+        "similarity": 0.7273,
+        "matched_word_count": 7,
+        "start_sec": 483.04,
+        "end_sec": 485.72,
+        "asr_segment_ids": [
+          "asr-0212",
+          "asr-0213"
+        ],
+        "minimum_word_probability": 0.0275,
+        "midpoint_offset_sec": 0.414,
+        "nearby_context_text": "走慢一点相机对不上焦",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0138",
+        "original_text": "走慢一点太好吵了相机对不上胶",
+        "replacement_text": "走慢一点太好吵了相机对不上焦",
+        "reason": "修正摄影术语同音错字",
+        "evidence": [
+          "cross ASR 明确识别为相机对不上焦",
+          "前后对话持续讨论相机无法对焦"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0139",
+      "segment_id": "ch02-s017",
+      "start_sec": 488.599,
+      "end_sec": 490.221,
+      "text": "相机对不上焦，你拿着这个",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "机对不上焦你拿着这个",
+        "similarity": 0.9524,
+        "matched_word_count": 9,
+        "start_sec": 488.39,
+        "end_sec": 489.85,
+        "asr_segment_ids": [
+          "asr-0214",
+          "asr-0215"
+        ],
+        "minimum_word_probability": 0.7189,
+        "midpoint_offset_sec": 0.29,
+        "nearby_context_text": "",
+        "risk_flags": []
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0139",
+        "original_text": "相机对不上胶你拿着这个",
+        "replacement_text": "相机对不上焦，你拿着这个",
+        "reason": "修正摄影术语同音错字",
+        "evidence": [
+          "cross ASR 明确识别为相机对不上焦",
+          "前后对话持续讨论相机无法对焦"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0140",
+      "segment_id": "ch02-s017",
+      "start_sec": 493.265,
+      "end_sec": 496.169,
+      "text": "你给我我来弄我来弄你拿着这个好",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "给我我来弄我来弄你拿着这个气死了好",
+        "similarity": 0.875,
+        "matched_word_count": 15,
+        "start_sec": 492.97,
+        "end_sec": 496.49,
+        "asr_segment_ids": [
+          "asr-0216",
+          "asr-0217",
+          "asr-0218",
+          "asr-0219"
+        ],
+        "minimum_word_probability": 0.021,
+        "midpoint_offset_sec": -0.013,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0142",
+      "segment_id": "ch02-s017",
+      "start_sec": 507.344,
+      "end_sec": 509.426,
+      "text": "完了这不会相机彻底坏掉了吧",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "不会上机车里坏掉了吧我完全对不",
+        "similarity": 0.5,
+        "matched_word_count": 12,
+        "start_sec": 507.19,
+        "end_sec": 509.43,
+        "asr_segment_ids": [
+          "asr-0223",
+          "asr-0224"
+        ],
+        "minimum_word_probability": 0.6081,
+        "midpoint_offset_sec": 0.075,
+        "nearby_context_text": "完了这不会上机车里坏掉了吧我完全对不上了",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "near_cut_out",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0143",
+      "segment_id": "ch02-s018",
+      "start_sec": 509.426,
+      "end_sec": 510.491,
+      "text": "完全对不上了",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "上了",
+        "similarity": 0.5,
+        "matched_word_count": 2,
+        "start_sec": 509.43,
+        "end_sec": 509.89,
+        "asr_segment_ids": [
+          "asr-0224"
+        ],
+        "minimum_word_probability": 0.3852,
+        "midpoint_offset_sec": 0.298,
+        "nearby_context_text": "机车里坏掉了吧我完全对不上了",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "near_cut_in",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0144",
+      "segment_id": "ch02-s018",
+      "start_sec": 517.381,
+      "end_sec": 518.807,
+      "text": "往上走啊这",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "走这",
+        "similarity": 0.5714,
+        "matched_word_count": 2,
+        "start_sec": 517.22,
+        "end_sec": 518.12,
+        "asr_segment_ids": [
+          "asr-0225",
+          "asr-0226"
+        ],
+        "minimum_word_probability": 0.4799,
+        "midpoint_offset_sec": 0.424,
+        "nearby_context_text": "往上走这边什么会对不",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0145",
+      "segment_id": "ch02-s018",
+      "start_sec": 520.414,
+      "end_sec": 523.206,
+      "text": "边怎么会对不上啊\n他们俩在后面走啊",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "对不上他们两个在后面走扶着干",
+        "similarity": 0.6,
+        "matched_word_count": 13,
+        "start_sec": 520.15,
+        "end_sec": 523.15,
+        "asr_segment_ids": [
+          "asr-0226",
+          "asr-0227",
+          "asr-0228",
+          "asr-0229"
+        ],
+        "minimum_word_probability": 0.2116,
+        "midpoint_offset_sec": 0.16,
+        "nearby_context_text": "边什么会对不上他们两个在后面走扶着干子走一点",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "near_cut_out",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0146",
+      "segment_id": "ch02-s019",
+      "start_sec": 523.206,
+      "end_sec": 524.749,
+      "text": "扶着杆子走一点",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "子走一点",
+        "similarity": 0.7273,
+        "matched_word_count": 3,
+        "start_sec": 523.15,
+        "end_sec": 524.21,
+        "asr_segment_ids": [
+          "asr-0229",
+          "asr-0230"
+        ],
+        "minimum_word_probability": 0.6667,
+        "midpoint_offset_sec": 0.297,
+        "nearby_context_text": "在后面走扶着干子走一点",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0146",
+        "original_text": "扶着干子走一点",
+        "replacement_text": "扶着杆子走一点",
+        "reason": "修正雪地行走语境中的同音错字",
+        "evidence": [
+          "两套 ASR 均识别到扶着 gan zi 走的表达",
+          "雪地行走时可扶持的实体是杆子"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "low_confidence_word",
+        "near_cut_in",
+        "cross_asr_partial_match",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0147",
+      "segment_id": "ch02-s019",
+      "start_sec": 530.871,
+      "end_sec": 532.955,
+      "text": "都不好看扶了那",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "看扶了好不好",
+        "similarity": 0.4615,
+        "matched_word_count": 4,
+        "start_sec": 530.6,
+        "end_sec": 532.48,
+        "asr_segment_ids": [
+          "asr-0230",
+          "asr-0231",
+          "asr-0232"
+        ],
+        "minimum_word_probability": 0.1669,
+        "midpoint_offset_sec": 0.373,
+        "nearby_context_text": "都不好看扶了好不好",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0148",
+      "segment_id": "ch02-s019",
+      "start_sec": 536.351,
+      "end_sec": 538.976,
+      "text": "边好不好看啊就那样",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "看就这样我感",
+        "similarity": 0.4,
+        "matched_word_count": 5,
+        "start_sec": 536.03,
+        "end_sec": 539.05,
+        "asr_segment_ids": [
+          "asr-0232",
+          "asr-0233",
+          "asr-0234"
+        ],
+        "minimum_word_probability": 0.0033,
+        "midpoint_offset_sec": 0.124,
+        "nearby_context_text": "看就这样我感觉没什么好看",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0150",
+      "segment_id": "ch02-s019",
+      "start_sec": 541.962,
+      "end_sec": 543.565,
+      "text": "你要怕滑最好就别去",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "我感",
+        "similarity": 0.0,
+        "matched_word_count": 2,
+        "start_sec": 542.83,
+        "end_sec": 543.71,
+        "asr_segment_ids": [
+          "asr-0235"
+        ],
+        "minimum_word_probability": 0.0889,
+        "midpoint_offset_sec": -0.506,
+        "nearby_context_text": "看的我感觉我不想去了你",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0152",
+      "segment_id": "ch02-s019",
+      "start_sec": 545.268,
+      "end_sec": 550.037,
+      "text": "你去那边拍吧蛮好的那边\n那边我想去往那边走走拍",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "去那边拍吧那边那边我想去往那边走走行你",
+        "similarity": 0.8293,
+        "matched_word_count": 18,
+        "start_sec": 545.25,
+        "end_sec": 550.37,
+        "asr_segment_ids": [
+          "asr-0236",
+          "asr-0237",
+          "asr-0238",
+          "asr-0239",
+          "asr-0240",
+          "asr-0241"
+        ],
+        "minimum_word_probability": 0.0937,
+        "midpoint_offset_sec": -0.157,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0153",
+      "segment_id": "ch02-s019",
+      "start_sec": 550.037,
+      "end_sec": 551.801,
+      "text": "行行那你扶着我",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "扶着我我觉得",
+        "similarity": 0.4615,
+        "matched_word_count": 4,
+        "start_sec": 550.37,
+        "end_sec": 551.87,
+        "asr_segment_ids": [
+          "asr-0241",
+          "asr-0242"
+        ],
+        "minimum_word_probability": 0.8919,
+        "midpoint_offset_sec": -0.201,
+        "nearby_context_text": "那边走走行你扶着我我觉得感觉也一般吧我有",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0154",
+      "segment_id": "ch02-s019",
+      "start_sec": 551.801,
+      "end_sec": 556.029,
+      "text": "我觉得感觉也一般般\n不想上去我有点想去呢",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "感觉也一般吧我有点想去那你去",
+        "similarity": 0.6061,
+        "matched_word_count": 13,
+        "start_sec": 551.87,
+        "end_sec": 555.95,
+        "asr_segment_ids": [
+          "asr-0242",
+          "asr-0243",
+          "asr-0244"
+        ],
+        "minimum_word_probability": 0.0333,
+        "midpoint_offset_sec": 0.005,
+        "nearby_context_text": "你扶着我我觉得感觉也一般吧我有点想去那你去我在外面等你行你去我",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0155",
+      "segment_id": "ch02-s019",
+      "start_sec": 556.029,
+      "end_sec": 559.075,
+      "text": "那你去我在外面等你\n行你去我可以我上去",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "我在外面等你行你去我上去别摔",
+        "similarity": 0.75,
+        "matched_word_count": 13,
+        "start_sec": 555.95,
+        "end_sec": 559.03,
+        "asr_segment_ids": [
+          "asr-0245",
+          "asr-0246",
+          "asr-0247",
+          "asr-0248"
+        ],
+        "minimum_word_probability": 0.1534,
+        "midpoint_offset_sec": 0.062,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0156",
+      "segment_id": "ch02-s020",
+      "start_sec": 559.075,
+      "end_sec": 560.279,
+      "text": "别摔倒啊",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "倒应该",
+        "similarity": 0.2857,
+        "matched_word_count": 3,
+        "start_sec": 559.03,
+        "end_sec": 560.51,
+        "asr_segment_ids": [
+          "asr-0248",
+          "asr-0249"
+        ],
+        "minimum_word_probability": 0.0166,
+        "midpoint_offset_sec": -0.093,
+        "nearby_context_text": "我上去别摔倒应该好多肉逼你弄这妈",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "near_cut_in",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0157",
+      "segment_id": "ch02-s020",
+      "start_sec": 564.794,
+      "end_sec": 568.869,
+      "text": "嗯哎这妈的相机怎么对不了焦啊\n动了吧",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "的相机怎么对不了焦动了吧",
+        "similarity": 0.8276,
+        "matched_word_count": 9,
+        "start_sec": 562.89,
+        "end_sec": 568.19,
+        "asr_segment_ids": [
+          "asr-0250",
+          "asr-0251"
+        ],
+        "minimum_word_probability": 0.0815,
+        "midpoint_offset_sec": 1.292,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word",
+          "cross_asr_timing_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "zero_duration_word_timing",
+        "cross_asr_low_confidence_word",
+        "cross_asr_timing_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0159",
+      "segment_id": "ch02-s020",
+      "start_sec": 573.545,
+      "end_sec": 575.351,
+      "text": "天天冷有人手机开心就过",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "我不去那",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0160",
+      "segment_id": "ch02-s020",
+      "start_sec": 576.937,
+      "end_sec": 577.559,
+      "text": "放不去了",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "去那你扶着",
+        "similarity": 0.2222,
+        "matched_word_count": 5,
+        "start_sec": 576.39,
+        "end_sec": 577.55,
+        "asr_segment_ids": [
+          "asr-0253",
+          "asr-0254"
+        ],
+        "minimum_word_probability": 0.6585,
+        "midpoint_offset_sec": 0.278,
+        "nearby_context_text": "我不去那你扶着我你扶着我走",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "short_duration",
+        "near_cut_out",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0162",
+      "segment_id": "ch02-s021",
+      "start_sec": 583.505,
+      "end_sec": 584.648,
+      "text": "我在你前面",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "前面别摔倒了",
+        "similarity": 0.3636,
+        "matched_word_count": 6,
+        "start_sec": 583.26,
+        "end_sec": 585.26,
+        "asr_segment_ids": [
+          "asr-0258",
+          "asr-0259"
+        ],
+        "minimum_word_probability": 0.0012,
+        "midpoint_offset_sec": -0.183,
+        "nearby_context_text": "我在你前面别摔倒了你扶着",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0163",
+      "segment_id": "ch02-s021",
+      "start_sec": 589.812,
+      "end_sec": 592.299,
+      "text": "只要踩着这个湿雪就不会滑倒",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "踩着这个湿血就不会滑倒我不",
+        "similarity": 0.7692,
+        "matched_word_count": 10,
+        "start_sec": 589.64,
+        "end_sec": 592.82,
+        "asr_segment_ids": [
+          "asr-0261",
+          "asr-0262",
+          "asr-0263"
+        ],
+        "minimum_word_probability": 0.1706,
+        "midpoint_offset_sec": -0.175,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0163",
+        "original_text": "只要踩着这个湿血就不会滑倒",
+        "replacement_text": "只要踩着这个湿雪就不会滑倒",
+        "reason": "修正雪地语境中的同音错字",
+        "evidence": [
+          "两套 ASR 均识别到 shi xue 的发音",
+          "上下文讨论踩雪与避免滑倒，语义对象只能是湿雪"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_low_confidence_word",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0164",
+      "segment_id": "ch02-s021",
+      "start_sec": 593.222,
+      "end_sec": 595.588,
+      "text": "我不会滑倒啊这个鞋子最好",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "滑倒",
+        "similarity": 0.2857,
+        "matched_word_count": 2,
+        "start_sec": 593.02,
+        "end_sec": 593.32,
+        "asr_segment_ids": [
+          "asr-0263"
+        ],
+        "minimum_word_probability": 0.9448,
+        "midpoint_offset_sec": 1.235,
+        "nearby_context_text": "我不会滑倒",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_timing_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_disagreement",
+        "cross_asr_timing_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0165",
+      "segment_id": "ch02-s021",
+      "start_sec": 601.033,
+      "end_sec": 605.987,
+      "text": "太滑了建议不要来了不要来了\n太滑了是吧太滑了是吧",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "滑了建议不要来了不要来了太滑了我",
+        "similarity": 0.7692,
+        "matched_word_count": 12,
+        "start_sec": 600.5,
+        "end_sec": 605.72,
+        "asr_segment_ids": [
+          "asr-0264",
+          "asr-0265",
+          "asr-0266",
+          "asr-0267",
+          "asr-0268"
+        ],
+        "minimum_word_probability": 0.142,
+        "midpoint_offset_sec": 0.4,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "zero_duration_word_timing",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0166",
+      "segment_id": "ch03-s004",
+      "start_sec": 620.441,
+      "end_sec": 623.234,
+      "text": "可以在桌上拉到地上\n不用管了可以在",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "感觉",
+        "similarity": 0.0,
+        "matched_word_count": 2,
+        "start_sec": 618.45,
+        "end_sec": 623.09,
+        "asr_segment_ids": [
+          "asr-0268"
+        ],
+        "minimum_word_probability": 0.2061,
+        "midpoint_offset_sec": 1.068,
+        "nearby_context_text": "感觉",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_timing_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "near_cut_out",
+        "source_boundary_clipped",
+        "low_asr_logprob",
+        "cross_asr_disagreement",
+        "cross_asr_timing_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0167",
+      "segment_id": "ch04-s001",
+      "start_sec": 633.607,
+      "end_sec": 636.281,
+      "text": "我感觉那个标记那\n里拍一个还挺好看",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "标筋那里拍一个还挺好看的",
+        "similarity": 0.7143,
+        "matched_word_count": 11,
+        "start_sec": 633.44,
+        "end_sec": 635.68,
+        "asr_segment_ids": [
+          "asr-0268",
+          "asr-0269",
+          "asr-0270"
+        ],
+        "minimum_word_probability": 0.3527,
+        "midpoint_offset_sec": 0.384,
+        "nearby_context_text": "那个标筋那里拍一个还挺好看的",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "near_cut_out",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0168",
+      "segment_id": "ch04-s003",
+      "start_sec": 652.203,
+      "end_sec": 654.008,
+      "text": "好看吗那个",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "吗那个来这边这",
+        "similarity": 0.5,
+        "matched_word_count": 6,
+        "start_sec": 652.04,
+        "end_sec": 653.88,
+        "asr_segment_ids": [
+          "asr-0272",
+          "asr-0273",
+          "asr-0274"
+        ],
+        "minimum_word_probability": 0.0366,
+        "midpoint_offset_sec": 0.145,
+        "nearby_context_text": "好看吗那个来这边这边走",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0169",
+      "segment_id": "ch04-s004",
+      "start_sec": 654.008,
+      "end_sec": 655.572,
+      "text": "来这边这边这边",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "边走",
+        "similarity": 0.2222,
+        "matched_word_count": 2,
+        "start_sec": 653.88,
+        "end_sec": 655.58,
+        "asr_segment_ids": [
+          "asr-0274",
+          "asr-0275"
+        ],
+        "minimum_word_probability": 0.2004,
+        "midpoint_offset_sec": 0.06,
+        "nearby_context_text": "那个来这边这边走",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "near_cut_in",
+        "zero_duration_word_timing",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0170",
+      "segment_id": "ch04-s004",
+      "start_sec": 656.714,
+      "end_sec": 657.516,
+      "text": "坐坐",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "走",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0171",
+      "segment_id": "ch04-s004",
+      "start_sec": 664.764,
+      "end_sec": 669.455,
+      "text": "我帮你拍这没什么好看",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "我帮你拍这没什么好拍你转转",
+        "similarity": 0.7826,
+        "matched_word_count": 12,
+        "start_sec": 666.0,
+        "end_sec": 668.96,
+        "asr_segment_ids": [
+          "asr-0276",
+          "asr-0277",
+          "asr-0278"
+        ],
+        "minimum_word_probability": 0.0835,
+        "midpoint_offset_sec": -0.37,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0172",
+      "segment_id": "ch04-s004",
+      "start_sec": 669.455,
+      "end_sec": 670.438,
+      "text": "你站着你站着",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "没什么好拍你转转拿一个",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0173",
+      "segment_id": "ch04-s004",
+      "start_sec": 671.801,
+      "end_sec": 674.227,
+      "text": "我要穿这个拿一个近近一点",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "拿一个静一点我猜",
+        "similarity": 0.5,
+        "matched_word_count": 6,
+        "start_sec": 671.22,
+        "end_sec": 674.5,
+        "asr_segment_ids": [
+          "asr-0279",
+          "asr-0280"
+        ],
+        "minimum_word_probability": 0.0325,
+        "midpoint_offset_sec": 0.154,
+        "nearby_context_text": "拿一个静一点我猜我的毛衣裁",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0174",
+      "segment_id": "ch04-s004",
+      "start_sec": 674.849,
+      "end_sec": 676.673,
+      "text": "我穿我的毛衣盘",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "我的毛衣裁我的",
+        "similarity": 0.5714,
+        "matched_word_count": 5,
+        "start_sec": 674.5,
+        "end_sec": 677.18,
+        "asr_segment_ids": [
+          "asr-0280",
+          "asr-0281"
+        ],
+        "minimum_word_probability": 0.0626,
+        "midpoint_offset_sec": -0.079,
+        "nearby_context_text": "我猜我的毛衣裁我的毛衣裁谢谢",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0175",
+      "segment_id": "ch04-s004",
+      "start_sec": 677.836,
+      "end_sec": 679.841,
+      "text": "我的毛衣盘谢谢",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "裁谢谢这两参大",
+        "similarity": 0.2857,
+        "matched_word_count": 6,
+        "start_sec": 677.56,
+        "end_sec": 679.88,
+        "asr_segment_ids": [
+          "asr-0281",
+          "asr-0282",
+          "asr-0283"
+        ],
+        "minimum_word_probability": 0.0781,
+        "midpoint_offset_sec": 0.119,
+        "nearby_context_text": "我的毛衣裁谢谢这两参大衣裁往这来",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0176",
+      "segment_id": "ch04-s004",
+      "start_sec": 679.841,
+      "end_sec": 681.284,
+      "text": "谢谢这边穿大衣盘",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "衣裁往这来",
+        "similarity": 0.1538,
+        "matched_word_count": 5,
+        "start_sec": 679.88,
+        "end_sec": 681.36,
+        "asr_segment_ids": [
+          "asr-0283",
+          "asr-0284"
+        ],
+        "minimum_word_probability": 0.2006,
+        "midpoint_offset_sec": -0.058,
+        "nearby_context_text": "谢谢这两参大衣裁往这来",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0177",
+      "segment_id": "ch04-s005",
+      "start_sec": 681.284,
+      "end_sec": 682.569,
+      "text": "往这边来",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "大衣裁往这来",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "near_cut_in",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0178",
+      "segment_id": "ch04-s005",
+      "start_sec": 688.692,
+      "end_sec": 689.836,
+      "text": "这里边再远一点",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "远一点",
+        "similarity": 0.6,
+        "matched_word_count": 2,
+        "start_sec": 688.38,
+        "end_sec": 688.82,
+        "asr_segment_ids": [
+          "asr-0285"
+        ],
+        "minimum_word_probability": 0.9878,
+        "midpoint_offset_sec": 0.664,
+        "nearby_context_text": "这地方再远一点",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0179",
+      "segment_id": "ch04-s005",
+      "start_sec": 694.493,
+      "end_sec": 696.922,
+      "text": "再来两个3 2 1",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "三二一三",
+        "similarity": 0.5455,
+        "matched_word_count": 4,
+        "start_sec": 694.1,
+        "end_sec": 697.42,
+        "asr_segment_ids": [
+          "asr-0287",
+          "asr-0288",
+          "asr-0289",
+          "asr-0290"
+        ],
+        "minimum_word_probability": 0.2725,
+        "midpoint_offset_sec": -0.053,
+        "nearby_context_text": "再来一两三二一三二一",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0180",
+      "segment_id": "ch04-s005",
+      "start_sec": 698.147,
+      "end_sec": 699.452,
+      "text": "3 2 1",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "一可以",
+        "similarity": 0.3333,
+        "matched_word_count": 2,
+        "start_sec": 697.94,
+        "end_sec": 699.92,
+        "asr_segment_ids": [
+          "asr-0292",
+          "asr-0293"
+        ],
+        "minimum_word_probability": 0.8706,
+        "midpoint_offset_sec": -0.13,
+        "nearby_context_text": "三二一可以你来了",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0181",
+      "segment_id": "ch04-s005",
+      "start_sec": 700.576,
+      "end_sec": 700.977,
+      "text": "可以",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "我",
+        "similarity": 0.0,
+        "matched_word_count": 1,
+        "start_sec": 701.08,
+        "end_sec": 701.38,
+        "asr_segment_ids": [
+          "asr-0295"
+        ],
+        "minimum_word_probability": 0.6274,
+        "midpoint_offset_sec": -0.454,
+        "nearby_context_text": "可以你来了我前面一点都不热",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "short_duration",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0182",
+      "segment_id": "ch04-s005",
+      "start_sec": 702.021,
+      "end_sec": 703.105,
+      "text": "我这边一点都不冷",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "不热再",
+        "similarity": 0.1818,
+        "matched_word_count": 3,
+        "start_sec": 701.86,
+        "end_sec": 703.06,
+        "asr_segment_ids": [
+          "asr-0295",
+          "asr-0296"
+        ],
+        "minimum_word_probability": 0.0708,
+        "midpoint_offset_sec": 0.103,
+        "nearby_context_text": "我前面一点都不热再转一圈",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0183",
+      "segment_id": "ch04-s006",
+      "start_sec": 703.105,
+      "end_sec": 708.218,
+      "text": "哦头头头头头哦头头头头",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "转一圈对对对我来",
+        "similarity": 0.0,
+        "matched_word_count": 8,
+        "start_sec": 703.06,
+        "end_sec": 708.06,
+        "asr_segment_ids": [
+          "asr-0296",
+          "asr-0297",
+          "asr-0298"
+        ],
+        "minimum_word_probability": 0.0115,
+        "midpoint_offset_sec": 0.101,
+        "nearby_context_text": "一点都不热再转一圈对对对我来感受",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "zero_duration_word_timing",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0184",
+      "segment_id": "ch04-s006",
+      "start_sec": 708.218,
+      "end_sec": 712.629,
+      "text": "这边上刚刚刚刚刚才走\n感受一下拍到这边",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "感受一下看",
+        "similarity": 0.3478,
+        "matched_word_count": 4,
+        "start_sec": 708.06,
+        "end_sec": 712.82,
+        "asr_segment_ids": [
+          "asr-0299",
+          "asr-0300"
+        ],
+        "minimum_word_probability": 0.0134,
+        "midpoint_offset_sec": -0.017,
+        "nearby_context_text": "对对对我来感受一下看我套",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "zero_duration_word_timing",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0185",
+      "segment_id": "ch04-s006",
+      "start_sec": 712.629,
+      "end_sec": 717.441,
+      "text": "这边有纸了\n看我看我看我看说低一点",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "我套好往那边看",
+        "similarity": 0.1739,
+        "matched_word_count": 7,
+        "start_sec": 712.82,
+        "end_sec": 717.34,
+        "asr_segment_ids": [
+          "asr-0300",
+          "asr-0301",
+          "asr-0302"
+        ],
+        "minimum_word_probability": 0.0195,
+        "midpoint_offset_sec": -0.045,
+        "nearby_context_text": "看我套好往那边看一二三再近点",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "zero_duration_word_timing",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0186",
+      "segment_id": "ch04-s006",
+      "start_sec": 717.441,
+      "end_sec": 718.423,
+      "text": "好往那一看",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "一二三",
+        "similarity": 0.25,
+        "matched_word_count": 3,
+        "start_sec": 717.34,
+        "end_sec": 718.36,
+        "asr_segment_ids": [
+          "asr-0303"
+        ],
+        "minimum_word_probability": 0.0798,
+        "midpoint_offset_sec": 0.082,
+        "nearby_context_text": "好往那边看一二三再近点",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "zero_duration_word_timing",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0187",
+      "segment_id": "ch04-s006",
+      "start_sec": 718.423,
+      "end_sec": 723.616,
+      "text": "然后不再看往一二三看往一二三\n看往一二三看往一二三看往一二",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "再近点",
+        "similarity": 0.0645,
+        "matched_word_count": 3,
+        "start_sec": 718.36,
+        "end_sec": 719.38,
+        "asr_segment_ids": [
+          "asr-0304"
+        ],
+        "minimum_word_probability": 0.0132,
+        "midpoint_offset_sec": 2.149,
+        "nearby_context_text": "往那边看一二三再近点",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word",
+          "cross_asr_timing_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "zero_duration_word_timing",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word",
+        "cross_asr_timing_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0188",
+      "segment_id": "ch04-s006",
+      "start_sec": 726.804,
+      "end_sec": 729.912,
+      "text": "你都拍得糊了，哈哈哈哈",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "都护了拍是拍到的",
+        "similarity": 0.2222,
+        "matched_word_count": 8,
+        "start_sec": 726.64,
+        "end_sec": 729.98,
+        "asr_segment_ids": [
+          "asr-0305",
+          "asr-0306"
+        ],
+        "minimum_word_probability": 0.6427,
+        "midpoint_offset_sec": 0.048,
+        "nearby_context_text": "你都拍的都护了拍是拍到的很好拍的他拍",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0188",
+        "original_text": "你都拍的都厚了哈哈哈哈",
+        "replacement_text": "你都拍得糊了，哈哈哈哈",
+        "reason": "修正照片评价语境中的近音错字",
+        "evidence": [
+          "主 ASR 的厚了与 cross ASR 的护了都指向 hu le 发音",
+          "相邻对话正在评价照片成像质量，拍糊了是符合语境的表达"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "cross_asr_disagreement",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0189",
+      "segment_id": "ch04-s007",
+      "start_sec": 729.912,
+      "end_sec": 734.027,
+      "text": "拍是拍到的很好拍的\n他今天很好真好",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "很好拍的他拍的很好很好",
+        "similarity": 0.5926,
+        "matched_word_count": 8,
+        "start_sec": 729.98,
+        "end_sec": 732.74,
+        "asr_segment_ids": [
+          "asr-0307",
+          "asr-0308",
+          "asr-0309"
+        ],
+        "minimum_word_probability": 0.0106,
+        "midpoint_offset_sec": 0.61,
+        "nearby_context_text": "拍是拍到的很好拍的他拍的很好很好",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0190",
+      "segment_id": "ch04-s007",
+      "start_sec": 736.838,
+      "end_sec": 738.464,
+      "text": "这都不见了",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0191",
+      "segment_id": "ch04-s007",
+      "start_sec": 741.736,
+      "end_sec": 743.202,
+      "text": "这好看他做",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "删除还删",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0192",
+      "segment_id": "ch04-s007",
+      "start_sec": 744.687,
+      "end_sec": 746.594,
+      "text": "删除还删腰呢",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "删腰呢没有删",
+        "similarity": 0.5,
+        "matched_word_count": 5,
+        "start_sec": 744.5,
+        "end_sec": 746.82,
+        "asr_segment_ids": [
+          "asr-0311",
+          "asr-0312"
+        ],
+        "minimum_word_probability": 0.8047,
+        "midpoint_offset_sec": -0.02,
+        "nearby_context_text": "删除还删腰呢没有删除快快上",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0193",
+      "segment_id": "ch04-s007",
+      "start_sec": 747.257,
+      "end_sec": 748.963,
+      "text": "没有删除快快",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "快快上车上车上车了",
+        "similarity": 0.2667,
+        "matched_word_count": 9,
+        "start_sec": 746.96,
+        "end_sec": 749.04,
+        "asr_segment_ids": [
+          "asr-0313",
+          "asr-0314"
+        ],
+        "minimum_word_probability": 0.0886,
+        "midpoint_offset_sec": 0.11,
+        "nearby_context_text": "没有删除快快上车上车上车了快",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "near_cut_out",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0194",
+      "segment_id": "ch04-s008",
+      "start_sec": 748.963,
+      "end_sec": 754.387,
+      "text": "上车上车上车上车了上车了快",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "快",
+        "similarity": 0.1429,
+        "matched_word_count": 1,
+        "start_sec": 750.12,
+        "end_sec": 750.44,
+        "asr_segment_ids": [
+          "asr-0315"
+        ],
+        "minimum_word_probability": 0.6707,
+        "midpoint_offset_sec": 1.395,
+        "nearby_context_text": "快快上车上车上车了快我前面",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_timing_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "near_cut_out",
+        "zero_duration_word_timing",
+        "cross_asr_disagreement",
+        "cross_asr_timing_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0195",
+      "segment_id": "ch04-s008",
+      "start_sec": 754.387,
+      "end_sec": 754.468,
+      "text": "快",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "我前面",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "short_duration",
+        "near_cut_out",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0196",
+      "segment_id": "ch04-s009",
+      "start_sec": 754.468,
+      "end_sec": 755.991,
+      "text": "你有几张拍的好好看",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "我前面",
+        "similarity": 0.0,
+        "matched_word_count": 3,
+        "start_sec": 754.48,
+        "end_sec": 756.48,
+        "asr_segment_ids": [
+          "asr-0316"
+        ],
+        "minimum_word_probability": 0.0442,
+        "midpoint_offset_sec": -0.251,
+        "nearby_context_text": "我前面你在这边我帮你跳",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0197",
+      "segment_id": "ch04-s009",
+      "start_sec": 757.073,
+      "end_sec": 761.241,
+      "text": "我前面在那边帮你跳起来抓\n拍到很好看这张不行这张好",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "这边我帮你跳起来抓拍到很好看这张不行这张好",
+        "similarity": 0.8444,
+        "matched_word_count": 19,
+        "start_sec": 756.88,
+        "end_sec": 762.18,
+        "asr_segment_ids": [
+          "asr-0316",
+          "asr-0317",
+          "asr-0318",
+          "asr-0319",
+          "asr-0320"
+        ],
+        "minimum_word_probability": 0.0321,
+        "midpoint_offset_sec": -0.373,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0198",
+      "segment_id": "ch04-s009",
+      "start_sec": 762.383,
+      "end_sec": 767.332,
+      "text": "这张好看有人说这张好看\n这张这张好看",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "看这张好看有一个开车开车这张好看我跟你说",
+        "similarity": 0.4865,
+        "matched_word_count": 17,
+        "start_sec": 762.18,
+        "end_sec": 767.62,
+        "asr_segment_ids": [
+          "asr-0320",
+          "asr-0321",
+          "asr-0322",
+          "asr-0323",
+          "asr-0324",
+          "asr-0325"
+        ],
+        "minimum_word_probability": 0.0045,
+        "midpoint_offset_sec": -0.042,
+        "nearby_context_text": "好看这张好看有一个开车开车这张好看我跟你说你前面在那个站起来的时候",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "zero_duration_word_timing",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0199",
+      "segment_id": "ch04-s009",
+      "start_sec": 767.332,
+      "end_sec": 770.037,
+      "text": "我跟你说你前面在那个架台的时候",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "你前面在那个站起来的时候你跳起来让我抓拍",
+        "similarity": 0.5143,
+        "matched_word_count": 17,
+        "start_sec": 767.62,
+        "end_sec": 769.96,
+        "asr_segment_ids": [
+          "asr-0326",
+          "asr-0327",
+          "asr-0328"
+        ],
+        "minimum_word_probability": 0.22,
+        "midpoint_offset_sec": -0.105,
+        "nearby_context_text": "张好看我跟你说你前面在那个站起来的时候你跳起来让我抓拍觉得我还不如自己真的",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0200",
+      "segment_id": "ch04-s009",
+      "start_sec": 770.037,
+      "end_sec": 772.962,
+      "text": "你跳起来就让我抓拍绝了\n我还不如自己真的",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "觉得我还不如自己真的",
+        "similarity": 0.5517,
+        "matched_word_count": 7,
+        "start_sec": 769.96,
+        "end_sec": 771.86,
+        "asr_segment_ids": [
+          "asr-0328",
+          "asr-0329",
+          "asr-0330"
+        ],
+        "minimum_word_probability": 0.3289,
+        "midpoint_offset_sec": 0.589,
+        "nearby_context_text": "站起来的时候你跳起来让我抓拍觉得我还不如自己真的我还没",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0201",
+      "segment_id": "ch04-s009",
+      "start_sec": 775.046,
+      "end_sec": 777.09,
+      "text": "我还没发拍我赶紧",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "没发拍你拍他给我拍",
+        "similarity": 0.4706,
+        "matched_word_count": 8,
+        "start_sec": 774.4,
+        "end_sec": 777.04,
+        "asr_segment_ids": [
+          "asr-0331",
+          "asr-0332"
+        ],
+        "minimum_word_probability": 0.0897,
+        "midpoint_offset_sec": 0.348,
+        "nearby_context_text": "我还没发拍你拍他给我拍的要么没",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0203",
+      "segment_id": "ch04-s010",
+      "start_sec": 782.698,
+      "end_sec": 785.502,
+      "text": "你看没头就一个身体",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "就一个身体刚",
+        "similarity": 0.6667,
+        "matched_word_count": 5,
+        "start_sec": 783.06,
+        "end_sec": 786.02,
+        "asr_segment_ids": [
+          "asr-0336",
+          "asr-0337"
+        ],
+        "minimum_word_probability": 0.5165,
+        "midpoint_offset_sec": -0.44,
+        "nearby_context_text": "你看没头就一个身体刚才一颗头",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0204",
+      "segment_id": "ch04-s010",
+      "start_sec": 786.764,
+      "end_sec": 787.965,
+      "text": "刚才一个头",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "头",
+        "similarity": 0.3333,
+        "matched_word_count": 1,
+        "start_sec": 786.5,
+        "end_sec": 786.88,
+        "asr_segment_ids": [
+          "asr-0337"
+        ],
+        "minimum_word_probability": 0.9947,
+        "midpoint_offset_sec": 0.674,
+        "nearby_context_text": "刚才一颗头你在",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0205",
+      "segment_id": "ch04-s010",
+      "start_sec": 790.549,
+      "end_sec": 792.392,
+      "text": "你在开玩笑你走啊",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "笑吗我们",
+        "similarity": 0.1667,
+        "matched_word_count": 3,
+        "start_sec": 790.2,
+        "end_sec": 792.58,
+        "asr_segment_ids": [
+          "asr-0338",
+          "asr-0339"
+        ],
+        "minimum_word_probability": 0.5747,
+        "midpoint_offset_sec": 0.08,
+        "nearby_context_text": "你在开玩笑吗我们拍的一本证据呢",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0206",
+      "segment_id": "ch04-s010",
+      "start_sec": 793.433,
+      "end_sec": 794.895,
+      "text": "我们拍的一本证据",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "本证据呢你说",
+        "similarity": 0.4286,
+        "matched_word_count": 5,
+        "start_sec": 793.2,
+        "end_sec": 795.28,
+        "asr_segment_ids": [
+          "asr-0339",
+          "asr-0340"
+        ],
+        "minimum_word_probability": 0.1701,
+        "midpoint_offset_sec": -0.076,
+        "nearby_context_text": "我们拍的一本证据呢你说的是这个吗我",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0207",
+      "segment_id": "ch04-s010",
+      "start_sec": 795.937,
+      "end_sec": 798.981,
+      "text": "你说的是这个吗\n把我拍的绝美的这个",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "吗我拍的绝美的这个",
+        "similarity": 0.72,
+        "matched_word_count": 8,
+        "start_sec": 795.78,
+        "end_sec": 797.76,
+        "asr_segment_ids": [
+          "asr-0340",
+          "asr-0341",
+          "asr-0342"
+        ],
+        "minimum_word_probability": 0.5774,
+        "midpoint_offset_sec": 0.689,
+        "nearby_context_text": "你说的是这个吗我拍的绝美的这个他是",
+        "risk_flags": [
+          "cross_asr_partial_match"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_partial_match"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0208",
+      "segment_id": "ch04-s010",
+      "start_sec": 801.565,
+      "end_sec": 806.252,
+      "text": "他说把我拍的绝美的我这个抓\n拍可以吧他跳起来被我抓拍到",
+      "cross_asr_evidence": {
+        "status": "strong_match",
+        "text": "拍的绝美的我这个抓拍可以吧他跳起来被我抓拍到这张好看好",
+        "similarity": 0.8302,
+        "matched_word_count": 25,
+        "start_sec": 801.24,
+        "end_sec": 806.08,
+        "asr_segment_ids": [
+          "asr-0344",
+          "asr-0345",
+          "asr-0346",
+          "asr-0347",
+          "asr-0348",
+          "asr-0349"
+        ],
+        "minimum_word_probability": 0.0363,
+        "midpoint_offset_sec": 0.248,
+        "nearby_context_text": "",
+        "risk_flags": [
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "near_cut_out",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0209",
+      "segment_id": "ch04-s011",
+      "start_sec": 806.252,
+      "end_sec": 808.619,
+      "text": "我这张好看好看",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "看而且这张拍就",
+        "similarity": 0.2857,
+        "matched_word_count": 6,
+        "start_sec": 806.08,
+        "end_sec": 808.6,
+        "asr_segment_ids": [
+          "asr-0349",
+          "asr-0350"
+        ],
+        "minimum_word_probability": 0.1049,
+        "midpoint_offset_sec": 0.096,
+        "nearby_context_text": "抓拍到这张好看好看而且这张拍就很好看还有没有我",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0210",
+      "segment_id": "ch04-s011",
+      "start_sec": 808.619,
+      "end_sec": 812.17,
+      "text": "而且这张拍又很好看\n还有没有我还拍了三张",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "很好看还有没有我还拍了三张物品的这张",
+        "similarity": 0.7027,
+        "matched_word_count": 15,
+        "start_sec": 808.6,
+        "end_sec": 812.16,
+        "asr_segment_ids": [
+          "asr-0350",
+          "asr-0351",
+          "asr-0352",
+          "asr-0353"
+        ],
+        "minimum_word_probability": 0.1464,
+        "midpoint_offset_sec": 0.014,
+        "nearby_context_text": "看而且这张拍就很好看还有没有我还拍了三张物品的这张也好看你们有网吗没有",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0211",
+      "segment_id": "ch04-s011",
+      "start_sec": 812.17,
+      "end_sec": 815.059,
+      "text": "我这张也好看你们有我吗也没有",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "也好看你们有网吗没有但是这张要的",
+        "similarity": 0.6,
+        "matched_word_count": 13,
+        "start_sec": 812.16,
+        "end_sec": 815.04,
+        "asr_segment_ids": [
+          "asr-0353",
+          "asr-0354",
+          "asr-0355",
+          "asr-0356"
+        ],
+        "minimum_word_probability": 0.1765,
+        "midpoint_offset_sec": 0.014,
+        "nearby_context_text": "三张物品的这张也好看你们有网吗没有但是这张要的还行来看文件",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "zero_duration_word_timing",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0212",
+      "segment_id": "ch04-s011",
+      "start_sec": 815.059,
+      "end_sec": 817.346,
+      "text": "但是这张要的还行啊我来看文件",
+      "cross_asr_evidence": {
+        "status": "partial_match",
+        "text": "还行来看文件",
+        "similarity": 0.6,
+        "matched_word_count": 6,
+        "start_sec": 815.04,
+        "end_sec": 816.14,
+        "asr_segment_ids": [
+          "asr-0356",
+          "asr-0357"
+        ],
+        "minimum_word_probability": 0.0711,
+        "midpoint_offset_sec": 0.613,
+        "nearby_context_text": "没有但是这张要的还行来看文件我也觉得知道",
+        "risk_flags": [
+          "cross_asr_partial_match",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_partial_match",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0213",
+      "segment_id": "ch04-s011",
+      "start_sec": 819.091,
+      "end_sec": 823.244,
+      "text": "我也觉得我也觉得知道你把它不\n写的谢谢这张品质也还是刚才按",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "知道你把它剃了一遍",
+        "similarity": 0.2703,
+        "matched_word_count": 7,
+        "start_sec": 818.54,
+        "end_sec": 820.2,
+        "asr_segment_ids": [
+          "asr-0359"
+        ],
+        "minimum_word_probability": 0.2024,
+        "midpoint_offset_sec": 1.798,
+        "nearby_context_text": "我也觉得知道你把它剃了一遍我刚刚",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_timing_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "zero_duration_word_timing",
+        "cross_asr_disagreement",
+        "cross_asr_timing_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0214",
+      "segment_id": "ch04-s011",
+      "start_sec": 823.244,
+      "end_sec": 825.27,
+      "text": "我又说所以就这样",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "我刚刚觉得这张也",
+        "similarity": 0.25,
+        "matched_word_count": 7,
+        "start_sec": 823.88,
+        "end_sec": 825.24,
+        "asr_segment_ids": [
+          "asr-0360"
+        ],
+        "minimum_word_probability": 0.0752,
+        "midpoint_offset_sec": -0.303,
+        "nearby_context_text": "我刚刚觉得这张也好看看你的鞋子",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_out",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0215",
+      "segment_id": "ch04-s012",
+      "start_sec": 825.27,
+      "end_sec": 828.272,
+      "text": "我刚刚觉得这张也好看看你的铁柜",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "好看看你的鞋子鞋还好",
+        "similarity": 0.4,
+        "matched_word_count": 9,
+        "start_sec": 825.24,
+        "end_sec": 827.8,
+        "asr_segment_ids": [
+          "asr-0360",
+          "asr-0361",
+          "asr-0362"
+        ],
+        "minimum_word_probability": 0.1869,
+        "midpoint_offset_sec": 0.251,
+        "nearby_context_text": "我刚刚觉得这张也好看看你的鞋子鞋还好",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "near_cut_out",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0216",
+      "segment_id": "ch04-s013",
+      "start_sec": 828.272,
+      "end_sec": 829.575,
+      "text": "其实还好还",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "子鞋还好",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "near_cut_in",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0217",
+      "segment_id": "ch04-s013",
+      "start_sec": 836.919,
+      "end_sec": 838.522,
+      "text": "行这张也",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "这张还行对",
+        "similarity": 0.4444,
+        "matched_word_count": 5,
+        "start_sec": 836.4,
+        "end_sec": 838.3,
+        "asr_segment_ids": [
+          "asr-0365",
+          "asr-0366"
+        ],
+        "minimum_word_probability": 0.2249,
+        "midpoint_offset_sec": 0.371,
+        "nearby_context_text": "还行这张还行对",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0218",
+      "segment_id": "ch04-s013",
+      "start_sec": 841.508,
+      "end_sec": 843.372,
+      "text": "没有拍好",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "张礼拜了",
+        "similarity": 0.0,
+        "matched_word_count": 4,
+        "start_sec": 841.34,
+        "end_sec": 842.32,
+        "asr_segment_ids": [
+          "asr-0367"
+        ],
+        "minimum_word_probability": 0.0372,
+        "midpoint_offset_sec": 0.61,
+        "nearby_context_text": "这张礼拜了",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0219",
+      "segment_id": "ch04-s013",
+      "start_sec": 846.178,
+      "end_sec": 848.302,
+      "text": "但是你这张其实是好看的对的",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "这里帮",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0220",
+      "segment_id": "ch04-s013",
+      "start_sec": 850.506,
+      "end_sec": 852.791,
+      "text": "这个是你帮他拍的对",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "拍的对我拍的还",
+        "similarity": 0.375,
+        "matched_word_count": 7,
+        "start_sec": 850.25,
+        "end_sec": 852.95,
+        "asr_segment_ids": [
+          "asr-0368",
+          "asr-0369",
+          "asr-0370"
+        ],
+        "minimum_word_probability": 0.5984,
+        "midpoint_offset_sec": 0.048,
+        "nearby_context_text": "这里帮他拍的对我拍的还行的",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0221",
+      "segment_id": "ch04-s013",
+      "start_sec": 853.612,
+      "end_sec": 854.574,
+      "text": "我拍的还行的",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "他是",
+        "similarity": 0.0,
+        "matched_word_count": 1,
+        "start_sec": 854.59,
+        "end_sec": 854.95,
+        "asr_segment_ids": [
+          "asr-0371"
+        ],
+        "minimum_word_probability": 0.0475,
+        "midpoint_offset_sec": -0.677,
+        "nearby_context_text": "我拍的还行的他是他随便拍的他随",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0222",
+      "segment_id": "ch04-s013",
+      "start_sec": 855.897,
+      "end_sec": 861.227,
+      "text": "但是他随便拍的，他很上相\n他很上镜你知道吗？他把眼镜摘掉",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "的他随便拍他很像很伤心他有眼睛打掉各上",
+        "similarity": 0.3182,
+        "matched_word_count": 19,
+        "start_sec": 855.71,
+        "end_sec": 860.29,
+        "asr_segment_ids": [
+          "asr-0371",
+          "asr-0372",
+          "asr-0373",
+          "asr-0374",
+          "asr-0375"
+        ],
+        "minimum_word_probability": 0.2879,
+        "midpoint_offset_sec": 0.562,
+        "nearby_context_text": "他是他随便拍的他随便拍他很像很伤心他有眼睛打掉各上",
+        "risk_flags": [
+          "cross_asr_disagreement"
+        ]
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0222",
+        "original_text": "但是他随便拍的他随便拍的他很上\n相他很伤心你知道吗他要眼睛打掉",
+        "replacement_text": "但是他随便拍的，他很上相\n他很上镜你知道吗？他把眼镜摘掉",
+        "reason": "修正照片评价语境中的连续同音乱码",
+        "evidence": [
+          "两套 ASR 均保留随便拍、上相及眼镜摘掉的近音序列",
+          "相邻对话正在比较人物照片，后续紧接电影脸评价"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "zero_duration_word_timing",
+        "machine_text_corrected_review_required",
+        "cross_asr_disagreement"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0223",
+      "segment_id": "ch04-s013",
+      "start_sec": 861.227,
+      "end_sec": 862.61,
+      "text": "他就",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "打掉各上他就",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "low_confidence_word",
+        "very_low_confidence_word",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0224",
+      "segment_id": "ch04-s013",
+      "start_sec": 865.746,
+      "end_sec": 866.528,
+      "text": "易烊千玺",
+      "cross_asr_evidence": {
+        "status": "disagreement",
+        "text": "电影脸",
+        "similarity": 0.0,
+        "matched_word_count": 3,
+        "start_sec": 865.88,
+        "end_sec": 866.62,
+        "asr_segment_ids": [
+          "asr-0377"
+        ],
+        "minimum_word_probability": 0.0008,
+        "midpoint_offset_sec": -0.113,
+        "nearby_context_text": "就一牙牵电影脸",
+        "risk_flags": [
+          "cross_asr_disagreement",
+          "cross_asr_low_confidence_word"
+        ]
+      },
+      "machine_text_correction": {
+        "cue_id": "subtitle-v4-0224",
+        "original_text": "一昂迁徙",
+        "replacement_text": "易烊千玺",
+        "reason": "修正人物姓名乱码",
+        "evidence": [
+          "主 ASR 的一昂迁徙与 cross ASR 邻近上下文的一牙牵均为姓名近音",
+          "下一条紧接电影脸评价，语义指向演员易烊千玺"
+        ],
+        "review_status": "review_required"
+      },
+      "risk_flags": [
+        "low_confidence_word",
+        "short_duration",
+        "cross_asr_disagreement",
+        "cross_asr_low_confidence_word",
+        "machine_text_corrected_review_required"
+      ],
+      "review_status": "review_required"
+    },
+    {
+      "cue_id": "subtitle-v4-0225",
+      "segment_id": "ch04-s013",
+      "start_sec": 867.269,
+      "end_sec": 868.311,
+      "text": "电影脸他是",
+      "cross_asr_evidence": {
+        "status": "no_evidence",
+        "text": "",
+        "similarity": null,
+        "matched_word_count": 0,
+        "start_sec": null,
+        "end_sec": null,
+        "asr_segment_ids": [],
+        "minimum_word_probability": null,
+        "midpoint_offset_sec": null,
+        "nearby_context_text": "电影脸",
+        "risk_flags": [
+          "cross_asr_no_evidence"
+        ]
+      },
+      "machine_text_correction": null,
+      "risk_flags": [
+        "near_cut_out",
+        "cross_asr_no_evidence"
+      ],
+      "review_status": "review_required"
+    }
+  ],
+  "human_review_requirements": [
+    "listen_to_every_cue_before_setting_review_status_verified",
+    "resolve_all_cross_asr_disagreements_and_missing_evidence",
+    "confirm_timing_at_every_edit_boundary",
+    "recheck_every_machine_text_correction_against_audio"
+  ],
+  "created_at": "2026-08-03T02:44:43.736242+00:00"
+}

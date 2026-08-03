@@ -1,1 +1,2 @@
 research-artifacts/nordic-130-144/media/*.mp4 filter=lfs diff=lfs merge=lfs -text
+research-artifacts/nordic-130-144/project/assets/music/*.flac filter=lfs diff=lfs merge=lfs -text

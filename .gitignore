@@ -29,4 +29,9 @@ cookies.txt
 # Curated, portable research handoffs may include finished videos through Git LFS.
 !research-artifacts/nordic-130-144/media/*.mp4
 
+# Rebuildable project media and render caches never belong in research handoffs.
+research-artifacts/**/project/work/proxy/
+research-artifacts/**/project/work/render/
+research-artifacts/**/project/output/chapters/
+
 # Test media must be synthesized at runtime; fixtures stay text-only.

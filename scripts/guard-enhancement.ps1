@@ -3,7 +3,10 @@ param(
     [string]$ProjectPath,
 
     [Parameter(Mandatory = $true)]
-    [int]$Version
+    [int]$Version,
+
+    [ValidateSet('preview', 'release')]
+    [string]$Mode = 'preview'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -15,7 +18,8 @@ try {
     Push-Location $projectRoot
     python -m vlog_director.cli guard-enhancement `
         --project $ProjectPath `
-        --version $Version
+        --version $Version `
+        --mode $Mode
     if ($LASTEXITCODE -ne 0) {
         throw "Enhancement guard blocked final render with exit code $LASTEXITCODE"
     }

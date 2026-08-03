@@ -50,6 +50,112 @@ class SchemaValidationTests(unittest.TestCase):
         )
         self.assertEqual(packaged, self.schemas["enhancement-plan.schema.json"])
 
+    def test_renderable_music_schema_requires_audition_artifact_references(self) -> None:
+        music_schema = self.schemas["enhancement-plan.schema.json"]["properties"][
+            "music"
+        ]
+        validator = Draft202012Validator(music_schema)
+        section = {
+            "status": "audition",
+            "tracks": [
+                {
+                    "id": "bed",
+                    "source": "assets/music/bed.wav",
+                    "start_sec": 0.0,
+                    "end_sec": 2.0,
+                    "gain_db": -18.0,
+                }
+            ],
+            "ducking": {
+                "enabled": True,
+                "threshold": 0.125,
+                "ratio": 8.0,
+                "attack_ms": 20,
+                "release_ms": 250,
+            },
+        }
+
+        for status in ("audition", "ready"):
+            with self.subTest(status=status):
+                section["status"] = status
+                section.pop("rights_manifest", None)
+                section.pop("audition_report", None)
+                self.assertTrue(list(validator.iter_errors(section)))
+                section["rights_manifest"] = "assets/music/rights.json"
+                section["audition_report"] = "work/qa/audition.json"
+                self.assertEqual(list(validator.iter_errors(section)), [])
+                section["tracks"] = []
+                self.assertTrue(list(validator.iter_errors(section)))
+                section["tracks"] = [
+                    {
+                        "id": "bed",
+                        "source": "assets/music/bed.wav",
+                        "start_sec": 0.0,
+                        "end_sec": 2.0,
+                        "gain_db": -18.0,
+                    }
+                ]
+
+    def test_ready_subtitle_schema_requires_verified_source_identity(self) -> None:
+        subtitle_schema = self.schemas["enhancement-plan.schema.json"]["properties"][
+            "subtitles"
+        ]
+        validator = Draft202012Validator(subtitle_schema)
+        section = {
+            "status": "ready",
+            "language": "zh-CN",
+            "source": "work/subtitles/reviewed.json",
+            "coverage": {"status": "verified"},
+            "cues": [
+                {
+                    "start_sec": 0.0,
+                    "end_sec": 1.0,
+                    "text": "verified",
+                    "review_status": "verified",
+                }
+            ],
+            "style": {
+                "max_lines": 2,
+                "safe_margin_percent": 8.0,
+                "position": "bottom_center",
+            },
+        }
+
+        self.assertTrue(list(validator.iter_errors(section)))
+        section["source_sha256"] = "a" * 64
+        self.assertEqual(list(validator.iter_errors(section)), [])
+        section["source_sha256"] = "not-a-sha256"
+        self.assertTrue(list(validator.iter_errors(section)))
+
+    def test_review_subtitle_schema_requires_source_identity(self) -> None:
+        subtitle_schema = self.schemas["enhancement-plan.schema.json"]["properties"][
+            "subtitles"
+        ]
+        validator = Draft202012Validator(subtitle_schema)
+        section = {
+            "status": "review",
+            "language": "zh-CN",
+            "source": "work/subtitles/review-required.json",
+            "coverage": {"status": "pending"},
+            "cues": [
+                {
+                    "start_sec": 0.0,
+                    "end_sec": 1.0,
+                    "text": "review me",
+                    "review_status": "review_required",
+                }
+            ],
+            "style": {
+                "max_lines": 2,
+                "safe_margin_percent": 8.0,
+                "position": "bottom_center",
+            },
+        }
+
+        self.assertTrue(list(validator.iter_errors(section)))
+        section["source_sha256"] = "b" * 64
+        self.assertEqual(list(validator.iter_errors(section)), [])
+
     def test_every_formal_json_artifact_matches_its_schema(self) -> None:
         director_profiles = sorted(
             path

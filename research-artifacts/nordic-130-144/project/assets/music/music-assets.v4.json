@@ -1,0 +1,249 @@
+{
+  "schema_version": "1.0",
+  "document_type": "project_original_music_assets",
+  "project_id": "nordic-130-144",
+  "version": 4,
+  "status": "generated_pending_audition_and_rights_approval",
+  "usage_rights": {
+    "basis": "project_original_procedural_synthesis",
+    "third_party_recordings": false,
+    "third_party_samples": false,
+    "third_party_midi": false,
+    "external_models": false,
+    "statement": "Generated locally from the committed synthesis source specifically for this project; no downloaded music, source recording, or third-party sample is used."
+  },
+  "rights_approval": {
+    "status": "pending_user_confirmation",
+    "rights_holder": null,
+    "approved_by": null,
+    "approved_at": null,
+    "required_scope": [
+      "synchronize",
+      "modify",
+      "render",
+      "distribute_with_project"
+    ]
+  },
+  "generation_environment": {
+    "generator": "scripts/generate-nordic-v4-score.py",
+    "generator_sha256": "b5e1f54a7a9e6452b5f9ad15576896796ef7a02f3cd6f6f92565677903402f62",
+    "python": "3.12.10",
+    "numpy": "2.4.4",
+    "ffmpeg": "ffmpeg version 8.1.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+    "command": "python scripts/generate-nordic-v4-score.py --output-dir research-artifacts/nordic-130-144/project/assets/music"
+  },
+  "assets": [
+    {
+      "id": "opening-hook",
+      "path": "nordic-v4-opening-hook.flac",
+      "duration_sec": 13.0,
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sha256": "6a7e8db2286107438ed268c22c99254b1ab77609e5308db76f36cb9afb650406",
+      "size_bytes": 607315,
+      "generation": {
+        "bpm": 88,
+        "character": "pluck",
+        "generator": "scripts/generate-nordic-v4-score.py",
+        "seed": 20260804,
+        "chords_midi": [
+          [
+            50,
+            57,
+            62,
+            66
+          ],
+          [
+            47,
+            54,
+            59,
+            62
+          ],
+          [
+            43,
+            50,
+            55,
+            59
+          ],
+          [
+            45,
+            52,
+            57,
+            62
+          ]
+        ]
+      }
+    },
+    {
+      "id": "snow-arrival-breath",
+      "path": "nordic-v4-snow-arrival.flac",
+      "duration_sec": 11.2,
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sha256": "dba5b99f018c181dbf5750025774bb31140e0fd638dbee28b05e854c4e1281fc",
+      "size_bytes": 537646,
+      "generation": {
+        "bpm": 82,
+        "character": "felt",
+        "generator": "scripts/generate-nordic-v4-score.py",
+        "seed": 20260805,
+        "chords_midi": [
+          [
+            55,
+            62,
+            67,
+            71
+          ],
+          [
+            54,
+            57,
+            62,
+            66
+          ],
+          [
+            52,
+            59,
+            64,
+            67
+          ],
+          [
+            48,
+            55,
+            60,
+            64
+          ]
+        ]
+      }
+    },
+    {
+      "id": "mountain-train-breath",
+      "path": "nordic-v4-mountain-train.flac",
+      "duration_sec": 15.2,
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sha256": "a1149e1ad906024cf548a6b1cbd5b058317264f9ea55c3ef63ca6c3374798b70",
+      "size_bytes": 838341,
+      "generation": {
+        "bpm": 70,
+        "character": "air",
+        "generator": "scripts/generate-nordic-v4-score.py",
+        "seed": 20260806,
+        "chords_midi": [
+          [
+            50,
+            57,
+            62,
+            66
+          ],
+          [
+            49,
+            52,
+            57,
+            61
+          ],
+          [
+            47,
+            54,
+            59,
+            62
+          ],
+          [
+            43,
+            50,
+            55,
+            59
+          ]
+        ]
+      }
+    },
+    {
+      "id": "waterfall-transition",
+      "path": "nordic-v4-waterfall.flac",
+      "duration_sec": 16.1,
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sha256": "70ec2a2d334a6795404b9a728a3168075edd35ae71206bf27ea940c0a744d414",
+      "size_bytes": 704650,
+      "generation": {
+        "bpm": 76,
+        "character": "acoustic",
+        "generator": "scripts/generate-nordic-v4-score.py",
+        "seed": 20260807,
+        "chords_midi": [
+          [
+            48,
+            55,
+            59,
+            64
+          ],
+          [
+            47,
+            55,
+            59,
+            62
+          ],
+          [
+            45,
+            52,
+            55,
+            60
+          ],
+          [
+            41,
+            48,
+            52,
+            57
+          ]
+        ]
+      }
+    },
+    {
+      "id": "closing-resolution",
+      "path": "nordic-v4-closing.flac",
+      "duration_sec": 21.4,
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sha256": "df880508413645f8d55f6fb813a6190cc146f9765de3b8a8c72361c2d1c82d89",
+      "size_bytes": 986597,
+      "generation": {
+        "bpm": 66,
+        "character": "warm",
+        "generator": "scripts/generate-nordic-v4-score.py",
+        "seed": 20260808,
+        "chords_midi": [
+          [
+            43,
+            50,
+            55,
+            59
+          ],
+          [
+            42,
+            50,
+            54,
+            57
+          ],
+          [
+            40,
+            47,
+            52,
+            55
+          ],
+          [
+            48,
+            55,
+            59,
+            64
+          ],
+          [
+            43,
+            50,
+            55,
+            59
+          ]
+        ]
+      }
+    }
+  ],
+  "created_at": "2026-08-03T04:59:19.648079+00:00"
+}

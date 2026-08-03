@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "document_type": "music_audition_qa",
+  "project_id": "nordic-130-144",
+  "version": 4,
+  "status": "pending",
+  "blocking_items": [
+    "Audition every selected track in context with dialogue and production ambience.",
+    "Confirm project usage and Git distribution rights before release."
+  ],
+  "assets": [
+    {
+      "id": "opening-hook",
+      "audition_status": "pending"
+    },
+    {
+      "id": "snow-arrival-breath",
+      "audition_status": "pending"
+    },
+    {
+      "id": "mountain-train-breath",
+      "audition_status": "pending"
+    },
+    {
+      "id": "waterfall-transition",
+      "audition_status": "pending"
+    },
+    {
+      "id": "closing-resolution",
+      "audition_status": "pending"
+    }
+  ]
+}

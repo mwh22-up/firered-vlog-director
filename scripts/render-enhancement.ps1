@@ -7,7 +7,10 @@ param(
 
     [string]$BaseVideo = "output\preview.mp4",
     [string]$OutputVideo = "output\final.mp4",
-    [string]$FFmpegExecutable = "ffmpeg"
+    [string]$FFmpegExecutable = "ffmpeg",
+
+    [ValidateSet('preview', 'release')]
+    [string]$Mode = 'preview'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -22,12 +25,13 @@ try {
     $env:PYTHONPATH = Join-Path $repositoryRoot 'src'
     Push-Location $repositoryRoot
     .\scripts\guard-render.ps1 -ProjectPath $resolvedProject -Version $Version
-    .\scripts\guard-enhancement.ps1 -ProjectPath $resolvedProject -Version $Version
+    .\scripts\guard-enhancement.ps1 -ProjectPath $resolvedProject -Version $Version -Mode $Mode
     python -m vlog_director.cli render-enhancement `
         --project $resolvedProject `
         --base-video $basePath `
         --plan $planPath `
         --output $outputPath `
+        --mode $Mode `
         --ffmpeg-executable $FFmpegExecutable
 }
 finally {

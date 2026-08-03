@@ -230,7 +230,25 @@ try {
     $planPath = Join-Path $project 'work\enhancement\enhancement_plan.v1.json'
     $enhancementPlan = Get-Content -LiteralPath $planPath -Raw -Encoding UTF8 |
         ConvertFrom-Json
+    $subtitleDirectory = Join-Path $project 'work\subtitles'
+    $subtitleSource = Join-Path $subtitleDirectory 'synthetic-reviewed.json'
+    $musicDirectory = Join-Path $project 'assets\music'
+    $illustrationDirectory = Join-Path $project 'assets\illustrations'
+    $outputDirectory = Join-Path $project 'output'
+    $stabilizedDirectory = Join-Path $project 'work\stabilized'
+    New-Item -ItemType Directory -Path @(
+        $subtitleDirectory,
+        $musicDirectory,
+        $illustrationDirectory,
+        $outputDirectory,
+        $stabilizedDirectory
+    ) -Force | Out-Null
+    $music = Join-Path $musicDirectory 'bed.wav'
+    $illustration = Join-Path $illustrationDirectory 'card.png'
+    New-Item -ItemType Directory -Path $subtitleDirectory -Force | Out-Null
     $enhancementPlan.music.status = 'ready'
+    $enhancementPlan.music | Add-Member -NotePropertyName rights_manifest -NotePropertyValue 'assets/music/rights-manifest.json' -Force
+    $enhancementPlan.music | Add-Member -NotePropertyName audition_report -NotePropertyValue 'assets/music/audition-report.json' -Force
     $enhancementPlan.music.tracks = @(
         [pscustomobject]@{
             id = 'music-1'
@@ -252,7 +270,7 @@ try {
 
     if ($supportsSubtitles) {
         $enhancementPlan.subtitles.status = 'ready'
-        $enhancementPlan.subtitles.source = 'synthetic-reviewed'
+        $enhancementPlan.subtitles.source = 'work/subtitles/synthetic-reviewed.json'
         $enhancementPlan.subtitles.coverage = [pscustomobject]@{
             status = 'verified'
         }
@@ -264,6 +282,12 @@ try {
                 review_status = 'verified'
             }
         )
+        Write-Utf8Json -Document @{
+            status = 'ready'
+            coverage = @{ status = 'verified' }
+            cues = $enhancementPlan.subtitles.cues
+        } -Path $subtitleSource
+        $enhancementPlan.subtitles | Add-Member -NotePropertyName source_sha256 -NotePropertyValue ((Get-FileHash -LiteralPath $subtitleSource -Algorithm SHA256).Hash.ToLowerInvariant()) -Force
     }
     else {
         $enhancementPlan.subtitles.status = 'disabled'
@@ -288,6 +312,53 @@ try {
     else {
         $enhancementPlan.illustration_motion.status = 'disabled'
         $enhancementPlan.illustration_motion.items = @()
+    }
+
+    $musicArguments = @(
+        '-y', '-hide_banner', '-loglevel', 'error',
+        '-f', 'lavfi', '-i', 'sine=frequency=220:sample_rate=48000:duration=3',
+        '-c:a', 'pcm_s16le', $music
+    )
+    & $ffmpeg @musicArguments
+    if ($LASTEXITCODE -ne 0) {
+        throw "Synthetic music generation failed: $LASTEXITCODE"
+    }
+    $musicHash = (Get-FileHash -LiteralPath $music -Algorithm SHA256).Hash.ToLowerInvariant()
+    Write-Utf8Json -Document @{
+        assets = @(
+            @{
+                id = 'music-1'
+                path = 'bed.wav'
+                size_bytes = [int64](Get-Item -LiteralPath $music).Length
+                sha256 = $musicHash
+            }
+        )
+        rights_approval = @{
+            status = 'approved'
+            rights_holder = 'synthetic smoke fixture'
+            approved_by = 'smoke gate'
+            approved_at = '2026-01-01T00:00:00Z'
+            scopes = @('synchronize', 'modify', 'render', 'distribute_with_project')
+        }
+    } -Path (Join-Path $musicDirectory 'rights-manifest.json')
+    Write-Utf8Json -Document @{
+        status = 'passed'
+        blocking_items = @()
+        assets = @(
+            @{ id = 'music-1'; audition_status = 'passed' }
+        )
+    } -Path (Join-Path $musicDirectory 'audition-report.json')
+
+    if ($supportsOverlay) {
+        $illustrationArguments = @(
+            '-y', '-hide_banner', '-loglevel', 'error',
+            '-f', 'lavfi', '-i', 'color=c=yellow@0.85:s=180x100:d=1',
+            '-frames:v', '1', $illustration
+        )
+        & $ffmpeg @illustrationArguments
+        if ($LASTEXITCODE -ne 0) {
+            throw "Synthetic illustration generation failed: $LASTEXITCODE"
+        }
     }
     Write-Utf8Json -Document $enhancementPlan -Path $planPath
 
@@ -328,24 +399,11 @@ if errors:
         '--project', $project,
         '--version', '1'
     )
-    if ($enhancementGuard.status -ne 'passed') {
+    if ($enhancementGuard.status -ne 'preview_ready') {
         throw "Runtime enhancement guard returned status: $($enhancementGuard.status)"
     }
 
-    $musicDirectory = Join-Path $project 'assets\music'
-    $illustrationDirectory = Join-Path $project 'assets\illustrations'
-    $outputDirectory = Join-Path $project 'output'
-    $stabilizedDirectory = Join-Path $project 'work\stabilized'
-    New-Item -ItemType Directory -Path @(
-        $musicDirectory,
-        $illustrationDirectory,
-        $outputDirectory,
-        $stabilizedDirectory
-    ) -Force | Out-Null
-
     $preview = Join-Path $outputDirectory 'preview.mkv'
-    $music = Join-Path $musicDirectory 'bed.wav'
-    $illustration = Join-Path $illustrationDirectory 'card.png'
     $stabilized = Join-Path $stabilizedDirectory 'preview.mp4'
     $final = Join-Path $outputDirectory 'final.mp4'
     $qaOutput = Join-Path $project 'work\qa\music-mix.json'
@@ -361,28 +419,6 @@ if errors:
         throw "Synthetic preview generation failed: $LASTEXITCODE"
     }
     Write-Host '[passed] Synthetic preview generation'
-
-    $musicArguments = @(
-        '-y', '-hide_banner', '-loglevel', 'error',
-        '-f', 'lavfi', '-i', 'sine=frequency=220:sample_rate=48000:duration=3',
-        '-c:a', 'pcm_s16le', $music
-    )
-    & $ffmpeg @musicArguments
-    if ($LASTEXITCODE -ne 0) {
-        throw "Synthetic music generation failed: $LASTEXITCODE"
-    }
-
-    if ($supportsOverlay) {
-        $illustrationArguments = @(
-            '-y', '-hide_banner', '-loglevel', 'error',
-            '-f', 'lavfi', '-i', 'color=c=yellow@0.85:s=180x100:d=1',
-            '-frames:v', '1', $illustration
-        )
-        & $ffmpeg @illustrationArguments
-        if ($LASTEXITCODE -ne 0) {
-            throw "Synthetic illustration generation failed: $LASTEXITCODE"
-        }
-    }
 
     $baseVideo = $preview
     if ($supportsStabilization) {
@@ -413,7 +449,7 @@ if errors:
         '--qa-output', $qaOutput,
         '--ffmpeg-executable', $ffmpeg
     )
-    if ($renderResult.status -ne 'ready' -or $renderResult.qa_status -ne 'passed') {
+    if ($renderResult.status -ne 'preview_ready' -or $renderResult.qa_status -ne 'passed') {
         throw "Enhancement render QA returned status: $($renderResult.qa_status)"
     }
     if ($renderResult.PSObject.Properties.Name -contains 'migrations') {

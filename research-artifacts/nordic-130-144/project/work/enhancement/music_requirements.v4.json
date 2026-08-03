@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0",
+  "project_id": "nordic-130-144",
+  "version": 4,
+  "status": "generated_pending_audition_and_rights_approval",
+  "asset_manifest": "project/assets/music/music-assets.v4.json",
+  "blocking_reasons": [
+    {
+      "code": "music_audition_incomplete",
+      "message": "Five project-original procedural assets exist and pass technical decode QA, but none has been auditioned in context yet."
+    },
+    {
+      "code": "rights_holder_approval_incomplete",
+      "message": "The project rights holder has not yet confirmed synchronization, modification, rendering, and Git distribution of the generated assets."
+    }
+  ],
+  "selection_gate": {
+    "required_before_ready": [
+      "audio file exists inside project/assets/music and matches its recorded SHA-256",
+      "project/assets/music/music-assets.v4.json rights_approval.status is approved",
+      "track is auditioned against dialogue and production sound",
+      "fade and ducking render passes music-mix QA"
+    ],
+    "forbidden": [
+      "unknown-source copyrighted music",
+      "stream-ripped audio",
+      "a track marked ready without an existing local asset"
+    ]
+  },
+  "candidate_assignments": [
+    {
+      "id": "opening-hook",
+      "source": "assets/music/nordic-v4-opening-hook.flac",
+      "start_sec": 0.0,
+      "end_sec": 12.0,
+      "proposed_gain_db": -16.0,
+      "fade_in_sec": 0.6,
+      "fade_out_sec": 1.2,
+      "status": "pending_audition"
+    },
+    {
+      "id": "snow-arrival-breath",
+      "source": "assets/music/nordic-v4-snow-arrival.flac",
+      "start_sec": 137.526,
+      "end_sec": 147.736,
+      "proposed_gain_db": -12.0,
+      "fade_in_sec": 0.6,
+      "fade_out_sec": 1.0,
+      "status": "pending_audition"
+    },
+    {
+      "id": "mountain-train-breath",
+      "source": "assets/music/nordic-v4-mountain-train.flac",
+      "start_sec": 605.987,
+      "end_sec": 620.165,
+      "proposed_gain_db": -10.0,
+      "fade_in_sec": 1.2,
+      "fade_out_sec": 1.8,
+      "status": "pending_audition"
+    },
+    {
+      "id": "waterfall-transition",
+      "source": "assets/music/nordic-v4-waterfall.flac",
+      "start_sec": 636.281,
+      "end_sec": 651.362,
+      "proposed_gain_db": -12.0,
+      "fade_in_sec": 1.0,
+      "fade_out_sec": 2.0,
+      "status": "pending_audition"
+    },
+    {
+      "id": "closing-resolution",
+      "source": "assets/music/nordic-v4-closing.flac",
+      "start_sec": 848.0,
+      "end_sec": 868.311,
+      "proposed_gain_db": -16.0,
+      "fade_in_sec": 1.5,
+      "fade_out_sec": 3.0,
+      "status": "pending_audition"
+    }
+  ],
+  "mix_contract": {
+    "dialogue_priority": true,
+    "preserve_meaningful_production_sound": true,
+    "target_integrated_lufs": -16.0,
+    "maximum_true_peak_dbfs": -1.0,
+    "ducking": {
+      "enabled": true,
+      "threshold": 0.125,
+      "ratio": 8.0,
+      "attack_ms": 20,
+      "release_ms": 250
+    },
+    "required_track_fields": [
+      "fade_in_sec",
+      "fade_out_sec",
+      "gain_db"
+    ]
+  },
+  "candidate_slots": [
+    {
+      "id": "opening-hook",
+      "start_sec": 0.0,
+      "end_sec": 12.0,
+      "priority": "conditional",
+      "intent": "Establish restrained travel momentum without masking the opening narration.",
+      "mood": [
+        "curious",
+        "light",
+        "forward"
+      ],
+      "tempo_bpm": {
+        "minimum": 82,
+        "maximum": 96
+      },
+      "arrangement": "Sparse acoustic pulse, no vocals, no dominant lead melody.",
+      "audition_note": "Use only after the opening subtitle and dialogue review confirms enough space."
+    },
+    {
+      "id": "snow-arrival-breath",
+      "start_sec": 137.526,
+      "end_sec": 147.736,
+      "priority": "preferred",
+      "intent": "Open a short breath as the trip reaches the snow setting.",
+      "mood": [
+        "bright",
+        "wintry",
+        "restrained"
+      ],
+      "tempo_bpm": {
+        "minimum": 76,
+        "maximum": 90
+      },
+      "arrangement": "Soft plucked or felt-piano texture with minimal percussion and no vocals."
+    },
+    {
+      "id": "mountain-train-breath",
+      "start_sec": 605.987,
+      "end_sec": 620.165,
+      "priority": "preferred",
+      "intent": "Support the short scenic train montage while retaining train ambience.",
+      "mood": [
+        "spacious",
+        "reflective",
+        "cold-clear"
+      ],
+      "tempo_bpm": {
+        "minimum": 64,
+        "maximum": 76
+      },
+      "arrangement": "Airy neoclassical pad or felt piano, no heavy bass, no vocals."
+    },
+    {
+      "id": "waterfall-transition",
+      "start_sec": 636.281,
+      "end_sec": 651.362,
+      "priority": "preferred",
+      "intent": "Bridge the waterfall reveal into the station sequence without covering water ambience.",
+      "mood": [
+        "open",
+        "natural",
+        "gently-resolving"
+      ],
+      "tempo_bpm": {
+        "minimum": 68,
+        "maximum": 82
+      },
+      "arrangement": "Low-density acoustic or ambient texture with a clean ending and no vocals."
+    },
+    {
+      "id": "closing-resolution",
+      "start_sec": 848.0,
+      "end_sec": 868.311,
+      "priority": "conditional",
+      "intent": "Provide a quiet ending only if the final dialogue review leaves room.",
+      "mood": [
+        "warm",
+        "settled",
+        "understated"
+      ],
+      "tempo_bpm": {
+        "minimum": 60,
+        "maximum": 72
+      },
+      "arrangement": "Simple resolving motif, no vocals, no dramatic swell.",
+      "audition_note": "Do not use if it competes with the final exchange or train ambience."
+    }
+  ]
+}

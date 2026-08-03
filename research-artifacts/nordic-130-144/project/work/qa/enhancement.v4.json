@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "status": "preview_ready",
+  "blocking_count": 0,
+  "warning_count": 0,
+  "timeline_duration_sec": 865.58,
+  "issues": [],
+  "mode": "preview",
+  "project_path": "${PROJECT_ROOT}",
+  "edit_plan_path": "${PROJECT_ROOT}/work/plans/edit_plan.v3.json",
+  "enhancement_plan_path": "${PROJECT_ROOT}/work/enhancement/enhancement_plan.v4.json",
+  "enhancement_plan_sha256": "f8f792903b4861cd5f316947b73a326a9c5f91b5e2e5030f6afc7b8c1bf9aa60",
+  "realized_timeline_path": "${PROJECT_ROOT}/work/qa/realized-timeline.preview.v4.json",
+  "realized_timeline_sha256": "fbe74d49b1f9969f10c510ea4bacc0c8bafcd78e695aea655d9d9a5006f5e6d9",
+  "realized_timeline_duration_sec": 868.3114,
+  "report_path": "${PROJECT_ROOT}/work/qa/enhancement.v4.json"
+}

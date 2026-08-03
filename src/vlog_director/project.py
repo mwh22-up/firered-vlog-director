@@ -1,12 +1,19 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from pathlib import Path
 from typing import Any
 
-from .enhancement import build_enhancement_plan, validate_enhancement_plan
+from .enhancement import (
+    build_enhancement_plan,
+    normalize_realized_timeline,
+    validate_enhancement_plan,
+)
+from .enhancement_assets import validate_enhancement_assets
 from .protection import validate_protection
+from .release import release_readiness_issues
 
 PROJECT_ID_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
 PROJECT_DIRECTORIES = (
@@ -33,6 +40,26 @@ def _write_json(path: Path, document: dict[str, Any]) -> None:
         json.dumps(document, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
+
+
+def _portable_report_paths(
+    result: dict[str, Any],
+    project: Path,
+    keys: tuple[str, ...],
+) -> dict[str, Any]:
+    portable = dict(result)
+    portable["project_path"] = "${PROJECT_ROOT}"
+    for key in keys:
+        if key not in portable:
+            continue
+        resolved = Path(str(portable[key])).resolve()
+        try:
+            relative = resolved.relative_to(project)
+        except ValueError:
+            portable[key] = "${EXTERNAL_INPUT}/" + resolved.name
+        else:
+            portable[key] = "${PROJECT_ROOT}/" + relative.as_posix()
+    return portable
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -122,7 +149,14 @@ def guard_project_render(
     result["moments_path"] = str(moments_path)
     result["plan_path"] = str(plan_path)
     result["report_path"] = str(output_path)
-    _write_json(output_path, result)
+    _write_json(
+        output_path,
+        _portable_report_paths(
+            result,
+            project,
+            ("moments_path", "plan_path", "report_path"),
+        ),
+    )
     return result
 
 
@@ -154,25 +188,101 @@ def init_project_enhancement(project: Path, edit_version: int) -> dict[str, Any]
     }
 
 
-def guard_project_enhancement(project: Path, version: int) -> dict[str, Any]:
+def guard_project_enhancement(
+    project: Path,
+    version: int,
+    realized_timeline_path: Path | None = None,
+    mode: str = "preview",
+) -> dict[str, Any]:
+    if mode not in {"preview", "release"}:
+        raise ValueError("mode must be preview or release")
     project = project.expanduser().resolve()
-    edit_path = project / "work" / "plans" / f"edit_plan.v{version}.json"
     enhancement_path = (
         project / "work" / "enhancement" / f"enhancement_plan.v{version}.json"
     )
     output_path = project / "work" / "qa" / f"enhancement.v{version}.json"
 
-    missing = [str(path) for path in (edit_path, enhancement_path) if not path.is_file()]
-    if missing:
-        raise FileNotFoundError("required enhancement files are missing: " + ", ".join(missing))
+    if not enhancement_path.is_file():
+        raise FileNotFoundError(
+            "required enhancement file is missing: " + str(enhancement_path)
+        )
+    enhancement_plan = _read_json(enhancement_path)
+    edit_version = enhancement_plan.get("edit_plan_version")
+    if not isinstance(edit_version, int) or isinstance(edit_version, bool) or edit_version < 1:
+        raise ValueError("enhancement plan requires a positive edit_plan_version")
+    edit_path = project / "work" / "plans" / f"edit_plan.v{edit_version}.json"
+    if not edit_path.is_file():
+        raise FileNotFoundError("required edit plan is missing: " + str(edit_path))
 
-    result = validate_enhancement_plan(
-        _read_json(edit_path),
-        _read_json(enhancement_path),
+    if realized_timeline_path is None:
+        candidate = project / "work" / "qa" / f"render.v{edit_version}.json"
+        realized_timeline_path = candidate if candidate.is_file() else None
+    elif not realized_timeline_path.is_file():
+        raise FileNotFoundError(realized_timeline_path)
+
+    edit_plan = _read_json(edit_path)
+    realized_timeline = (
+        normalize_realized_timeline(
+            edit_plan,
+            _read_json(realized_timeline_path),
+            edit_plan_sha256=hashlib.sha256(edit_path.read_bytes()).hexdigest(),
+        )
+        if realized_timeline_path is not None
+        else None
     )
+    result = validate_enhancement_plan(
+        edit_plan,
+        enhancement_plan,
+        realized_timeline=realized_timeline,
+    )
+    asset_issues = validate_enhancement_assets(project, enhancement_plan)
+    if asset_issues:
+        result["issues"].extend(asset_issues)
+        result["blocking_count"] = sum(
+            issue["severity"] == "error" for issue in result["issues"]
+        )
+        result["warning_count"] = sum(
+            issue["severity"] == "warning" for issue in result["issues"]
+        )
+        result["status"] = "blocked"
+    if mode == "release":
+        release_issues = release_readiness_issues(enhancement_plan)
+        if release_issues:
+            result["issues"].extend(release_issues)
+            result["blocking_count"] = sum(
+                issue["severity"] == "error" for issue in result["issues"]
+            )
+            result["warning_count"] = sum(
+                issue["severity"] == "warning" for issue in result["issues"]
+            )
+            result["status"] = "blocked"
+    if result["status"] == "passed":
+        result["status"] = "ready" if mode == "release" else "preview_ready"
+    result["mode"] = mode
     result["project_path"] = str(project)
     result["edit_plan_path"] = str(edit_path)
     result["enhancement_plan_path"] = str(enhancement_path)
+    result["enhancement_plan_sha256"] = hashlib.sha256(
+        enhancement_path.read_bytes()
+    ).hexdigest()
+    if realized_timeline_path is not None:
+        result["realized_timeline_path"] = str(realized_timeline_path)
+        result["realized_timeline_sha256"] = hashlib.sha256(
+            realized_timeline_path.read_bytes()
+        ).hexdigest()
+        result["realized_timeline_duration_sec"] = float(
+            realized_timeline["duration_sec"]
+        )
     result["report_path"] = str(output_path)
-    _write_json(output_path, result)
+    persisted = _portable_report_paths(
+        result,
+        project,
+        (
+            "edit_plan_path",
+            "enhancement_plan_path",
+            "realized_timeline_path",
+            "report_path",
+        ),
+    )
+    _write_json(output_path, persisted)
     return result

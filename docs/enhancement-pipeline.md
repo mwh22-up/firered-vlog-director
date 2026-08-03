@@ -80,8 +80,8 @@ smoke 数据只写入唯一的系统临时目录，结束时自动清理。门�
 
 ## 已实现的本地执行器
 
-- `scripts/stabilize.ps1`：通过 `vidstabdetect` + `vidstabtransform` 两遍防抖；
-- `scripts/render-enhancement.ps1`：对白 `loudnorm`、配乐侧链 ducking、静态插画 overlay、ASS 字幕和最终编码；
+- `scripts/stabilize.ps1`：提供整支输入的独立两遍防抖工具；它不代表逐段 enhancement treatment 已执行；
+- `scripts/render-enhancement.ps1`：逐段画面/原声 treatment、对白 `loudnorm`、配乐侧链 ducking、静态插画 overlay、ASS 字幕和最终编码；
 - 最终渲染前自动执行高光保护门禁和增强计划门禁。
 
 ```powershell
@@ -90,4 +90,24 @@ smoke 数据只写入唯一的系统临时目录，结束时自动清理。门�
   -Version 1
 ```
 
-当前 `render-enhancement` 以已完成基础剪辑的 `output/preview.mp4` 为输入。逐片段防抖完成后，应由家里的现有粗剪流水线重新生成该预览，再执行最终增强。
+当前 `render-enhancement` 以已完成基础剪辑的 `output/preview.mp4` 为输入。存在逐段非中性 treatment 时，必须同时提供实际编码边界：
+
+```powershell
+python -m vlog_director.cli render-enhancement `
+  --project D:\vlog-projects\family-trip `
+  --base-video D:\vlog-projects\family-trip\output\directed.v3.mp4 `
+  --plan D:\vlog-projects\family-trip\work\enhancement\enhancement_plan.v3.json `
+  --realized-timeline D:\vlog-projects\family-trip\work\qa\render.v3.json `
+  --output D:\vlog-projects\family-trip\output\final.v4.mp4
+```
+
+若省略 `--realized-timeline`，CLI 会查找 `work/qa/render.v<edit_plan_version>.json`。render report 的 `cut_boundaries.actual_time_sec` 是基础剪辑中的权威切点；计划时长不能替代实际编码时长。
+
+逐段执行器支持：
+
+- `exposure_ev`、`brightness`、`contrast`、`saturation`、`gamma` 和 RGB white-balance shift；
+- `hqdn3d` 轻度降噪、`unsharp` 锐化，以及保持原宽高比并缩放回输出画布的 crop/reframe；
+- 原声 `gain_db`、mute/preserve，以及全片一致的 dialogue normalization 决策；
+- 基于实际边界的 `trim/atrim`、时长补齐和硬切 concat，滤镜脚本写入系统临时目录并在渲染后清理。
+
+当前逐段防抖 `auto/force`、非硬切 transition、`match_action=true` 和非 `1.0` speed 尚未形成可靠的确定性实现，运行时会在启动 FFmpeg 前明确阻断。`stabilization.mode=off` 必须使用 `strength=0`、`max_crop_percent=0`。
