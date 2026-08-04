@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/music-audition-report.schema.json",
+  "type": "object",
+  "required": ["schema_version", "contract_version", "status", "project_id", "enhancement_plan_sha256", "rights_manifest_sha256", "blocking_items", "assets", "human_review", "speech_intelligibility"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "contract_version": { "const": "music-audition-report-v1" },
+    "status": { "enum": ["review_required", "passed", "blocked"] },
+    "project_id": { "type": "string", "minLength": 1 },
+    "enhancement_plan_sha256": { "$ref": "#/$defs/sha" },
+    "rights_manifest_sha256": { "$ref": "#/$defs/sha" },
+    "blocking_items": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "source", "sha256", "audition_status", "tempo", "speech_band_energy_ratio", "beat_grid_sec"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "source": { "type": "string", "pattern": "^assets/music/" },
+          "sha256": { "$ref": "#/$defs/sha" },
+          "audition_status": { "enum": ["review_required", "passed", "rejected"] },
+          "tempo": {
+            "type": "object",
+            "required": ["bpm", "confidence"],
+            "properties": {
+              "bpm": { "type": ["number", "null"], "minimum": 40, "maximum": 240 },
+              "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+            },
+            "additionalProperties": false
+          },
+          "speech_band_energy_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+          "beat_grid_sec": { "type": "array", "items": { "type": "number", "minimum": 0 }, "maxItems": 256 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "human_review": {
+      "type": "object",
+      "required": ["status"],
+      "properties": { "status": { "enum": ["pending", "approved", "rejected"] } },
+      "additionalProperties": false
+    },
+    "speech_intelligibility": {
+      "type": "object",
+      "required": ["verified", "method", "statement"],
+      "properties": {
+        "verified": { "const": false },
+        "method": { "const": "spectral_masking_risk_only" },
+        "statement": { "const": "频谱遮蔽风险已计算，对白可懂度仍需人工试听确认。" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": { "sha": { "type": "string", "pattern": "^[0-9a-f]{64}$" } },
+  "additionalProperties": false
+}

@@ -548,6 +548,8 @@ def render_enhanced_video(
 ) -> Path:
     if not base_video.is_file():
         raise FileNotFoundError(base_video)
+    if output_path.exists():
+        raise FileExistsError(output_path)
     asset_issues = validate_enhancement_assets(project, enhancement_plan)
     asset_errors = [issue for issue in asset_issues if issue.get("severity") == "error"]
     if asset_errors:
@@ -744,7 +746,7 @@ def render_enhanced_video(
     require_filters(ffmpeg, required_filters)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    command = [ffmpeg, "-y", "-hide_banner", "-loglevel", "error", "-i", str(base_video)]
+    command = [ffmpeg, "-n", "-hide_banner", "-loglevel", "error", "-i", str(base_video)]
     input_index = 1
     overlay_inputs: list[tuple[int, dict[str, Any]]] = []
     for item in overlay_items:

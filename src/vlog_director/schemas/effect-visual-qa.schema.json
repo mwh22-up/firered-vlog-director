@@ -6,7 +6,7 @@
   "properties": {
     "schema_version": { "const": "1.0" },
     "contract_version": { "const": "effect-visual-qa-v1" },
-    "status": { "const": "evidence_ready" },
+    "status": { "enum": ["evidence_ready", "blocked"] },
     "project_id": { "type": "string", "minLength": 1 },
     "edit_plan_version": { "type": "integer", "minimum": 1 },
     "edit_plan_sha256": { "$ref": "#/$defs/sha" },
@@ -43,7 +43,9 @@
               "properties": {
                 "role": { "enum": ["entry", "peak", "exit"] },
                 "path": { "type": "string", "minLength": 1 },
-                "sha256": { "$ref": "#/$defs/sha" }
+                "sha256": { "$ref": "#/$defs/sha" },
+                "alpha_bbox": { "oneOf": [{ "$ref": "#/$defs/bbox" }, { "type": "null" }] },
+                "collisions": { "type": "array", "items": { "$ref": "#/$defs/collision" } }
               },
               "additionalProperties": false
             }
@@ -55,13 +57,26 @@
               "decode": { "const": "passed" },
               "duration": { "const": "passed" },
               "geometry": { "const": "passed" },
-              "alpha": { "const": "passed" }
+              "alpha": { "const": "passed" },
+              "protected_regions": { "enum": ["not_provided", "passed", "blocked"] }
             },
             "additionalProperties": false
           }
         },
         "additionalProperties": false
       }
+    },
+    "protected_region_bindings": { "type": "array", "items": { "$ref": "#/$defs/binding" } },
+    "collision_summary": {
+      "type": "object",
+      "required": ["sample_count", "finding_count", "blocking_count", "warning_count"],
+      "properties": {
+        "sample_count": { "type": "integer", "minimum": 0 },
+        "finding_count": { "type": "integer", "minimum": 0 },
+        "blocking_count": { "type": "integer", "minimum": 0 },
+        "warning_count": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
     },
     "human_review": {
       "type": "object",
@@ -79,6 +94,32 @@
       "properties": {
         "path": { "type": "string", "minLength": 1 },
         "sha256": { "$ref": "#/$defs/sha" }
+      },
+      "additionalProperties": false
+    },
+    "bbox": {
+      "type": "object",
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": { "type": "integer", "minimum": 0 },
+        "y": { "type": "integer", "minimum": 0 },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "collision": {
+      "type": "object",
+      "required": ["effect_id", "sample_time_sec", "protected_id", "protected_type", "intersection_area_px", "protected_overlap_ratio", "effect_overlap_ratio", "severity"],
+      "properties": {
+        "effect_id": { "type": "string", "minLength": 1 },
+        "sample_time_sec": { "type": "number", "minimum": 0 },
+        "protected_id": { "type": "string", "minLength": 1 },
+        "protected_type": { "enum": ["subtitle", "face", "main_subject"] },
+        "intersection_area_px": { "type": "integer", "minimum": 1 },
+        "protected_overlap_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+        "effect_overlap_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+        "severity": { "enum": ["error", "warning"] }
       },
       "additionalProperties": false
     }

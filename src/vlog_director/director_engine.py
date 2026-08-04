@@ -4,7 +4,6 @@ import json
 from copy import deepcopy
 from dataclasses import dataclass
 from pathlib import Path
-from statistics import mean
 from typing import Any, Iterable
 
 from .learning_memory import content_signals, direction_policy, feedback_adjustment

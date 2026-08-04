@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 import math
 import os
 import re
@@ -10,35 +9,38 @@ from typing import Any
 
 import numpy as np
 
-from .ffmpeg import FFmpegError, filter_path, find_ffmpeg, run_command
+from .ffmpeg import (
+    FFmpegError,
+    filter_path,
+    find_ffmpeg,
+    probe_media as probe_media_with_ffmpeg,
+    run_command,
+)
 
 
 def probe_media(media_path: Path) -> dict[str, Any]:
-    executable = find_ffmpeg("ffprobe")
-    completed = subprocess.run(
-        [
-            executable,
-            "-v",
-            "error",
-            "-show_entries",
-            "format=duration,size:stream=index,codec_type,width,height,r_frame_rate",
-            "-of",
-            "json",
-            str(media_path),
-        ],
-        check=False,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-    )
-    if completed.returncode != 0:
-        raise FFmpegError(completed.stderr.strip() or "FFprobe failed")
-    payload = json.loads(completed.stdout)
+    """Probe analysis media with the same FFmpeg binary used by the pipeline.
+
+    A separate ffprobe executable is intentionally not required: bundled
+    deployments commonly contain only FFmpeg, and mixing executable builds
+    would weaken analysis reproducibility.
+    """
+    resolved = media_path.resolve()
+    payload = probe_media_with_ffmpeg(find_ffmpeg(), resolved)
+    streams: list[dict[str, Any]] = [
+        {
+            "index": 0,
+            "codec_type": "video",
+            "width": int(payload["width"]),
+            "height": int(payload["height"]),
+        }
+    ]
+    if payload["has_audio"]:
+        streams.append({"index": 1, "codec_type": "audio"})
     return {
-        "duration_sec": round(float(payload["format"]["duration"]), 3),
-        "size_bytes": int(payload["format"].get("size", 0)),
-        "streams": payload.get("streams", []),
+        "duration_sec": round(float(payload["duration_sec"]), 3),
+        "size_bytes": resolved.stat().st_size,
+        "streams": streams,
     }
 
 

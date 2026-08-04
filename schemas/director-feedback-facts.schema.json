@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/director-feedback-facts.schema.json",
+  "type": "object",
+  "required": ["schema_version", "contract_version", "status", "project_id", "bindings", "operations", "metrics", "learning_policy"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "contract_version": { "const": "director-feedback-facts-v1" },
+    "status": { "enum": ["review_required", "confirmed"] },
+    "project_id": { "type": "string", "minLength": 1 },
+    "bindings": {
+      "type": "object",
+      "required": ["candidate", "final"],
+      "properties": {
+        "candidate": { "$ref": "#/$defs/binding" },
+        "final": { "$ref": "#/$defs/binding" },
+        "baseline": { "$ref": "#/$defs/binding" }
+      },
+      "additionalProperties": false
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["operation_id", "type", "source", "review_status"],
+        "properties": {
+          "operation_id": { "type": "string", "minLength": 1 },
+          "type": { "enum": ["restore", "add", "remove", "extend", "shorten", "reorder"] },
+          "source": { "type": "string", "minLength": 1 },
+          "candidate": { "$ref": "#/$defs/interval" },
+          "final": { "$ref": "#/$defs/interval" },
+          "delta_sec": { "type": "number" },
+          "candidate_index": { "type": "integer", "minimum": 0 },
+          "final_index": { "type": "integer", "minimum": 0 },
+          "review_status": { "enum": ["pending", "accepted", "rejected"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": ["candidate_segment_count", "final_segment_count", "operation_counts"],
+      "properties": {
+        "candidate_segment_count": { "type": "integer", "minimum": 0 },
+        "final_segment_count": { "type": "integer", "minimum": 0 },
+        "operation_counts": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }
+      },
+      "additionalProperties": false
+    },
+    "learning_policy": {
+      "type": "object",
+      "required": ["automatic_weight_update", "human_confirmation_required"],
+      "properties": {
+        "automatic_weight_update": { "const": false },
+        "human_confirmation_required": { "const": true }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "sha": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "binding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^work/plans/" },
+        "sha256": { "$ref": "#/$defs/sha" }
+      },
+      "additionalProperties": false
+    },
+    "interval": {
+      "type": "object",
+      "required": ["in_sec", "out_sec"],
+      "properties": {
+        "in_sec": { "type": "number", "minimum": 0 },
+        "out_sec": { "type": "number", "exclusiveMinimum": 0 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -8,6 +8,9 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
+from jsonschema import Draft202012Validator
+
+from .effect_collision import audit_effect_collisions
 from .effect_plan import canonical_effect_payload_sha256, validate_effect_plan
 from .ffmpeg import FFmpegError, find_ffmpeg, probe_media, run_command
 
@@ -132,6 +135,96 @@ def _write_report(path: Path, report: dict[str, Any]) -> None:
     )
 
 
+def _sample_alpha_bbox(
+    executable: str,
+    media: Path,
+    time_sec: float,
+    width: int,
+    height: int,
+) -> dict[str, int] | None:
+    completed = subprocess.run(
+        [
+            executable, "-hide_banner", "-loglevel", "error",
+            "-ss", f"{time_sec:.6f}", "-i", str(media),
+            "-frames:v", "1", "-vf", "alphaextract",
+            "-pix_fmt", "gray", "-f", "rawvideo", "-",
+        ],
+        check=False,
+        capture_output=True,
+    )
+    if completed.returncode != 0:
+        raise FFmpegError("Unable to sample HyperFrames alpha channel")
+    pixels = completed.stdout
+    expected = width * height
+    if len(pixels) < expected:
+        raise FFmpegError("HyperFrames alpha sample is incomplete")
+    min_x, min_y, max_x, max_y = width, height, -1, -1
+    for index, value in enumerate(pixels[:expected]):
+        if value <= 8:
+            continue
+        y, x = divmod(index, width)
+        min_x = min(min_x, x)
+        min_y = min(min_y, y)
+        max_x = max(max_x, x)
+        max_y = max(max_y, y)
+    if max_x < min_x or max_y < min_y:
+        return None
+    return {"x": min_x, "y": min_y, "width": max_x - min_x + 1, "height": max_y - min_y + 1}
+
+
+def _load_collision_regions(
+    project: Path,
+    *,
+    base_media_sha256: str,
+    width: int,
+    height: int,
+    layout_qa_path: Path | None,
+    protected_regions_path: Path | None,
+) -> tuple[list[dict[str, Any]], list[dict[str, str]]]:
+    regions: list[dict[str, Any]] = []
+    bindings: list[dict[str, str]] = []
+    if layout_qa_path is not None:
+        layout_path = _confined_file(project, _project_relative(project, layout_qa_path), project / "work" / "qa", "subtitle layout QA")
+        layout = _load_json(layout_path, "subtitle layout QA")
+        if layout.get("probe_mode") != "real_libass":
+            raise ValueError("effect collision QA requires real libass subtitle layout")
+        if layout.get("canvas") != {"width": width, "height": height}:
+            raise ValueError("subtitle layout canvas differs from effect media")
+        source_relative = layout.get("bindings", {}).get("subtitle_source_path")
+        source_path = _confined_file(project, source_relative, project / "work" / "subtitles", "subtitle source")
+        if _sha256_file(source_path) != layout.get("bindings", {}).get("subtitle_source_sha256"):
+            raise ValueError("subtitle layout source SHA-256 changed")
+        source = _load_json(source_path, "subtitle source")
+        timing = {
+            str(cue.get("cue_id")): (float(cue["start_sec"]), float(cue["end_sec"]))
+            for cue in source.get("cues", [])
+            if isinstance(cue, dict) and cue.get("cue_id")
+        }
+        for cue in layout.get("cues", []):
+            cue_id = str(cue.get("cue_id"))
+            bbox = cue.get("measured_bbox")
+            if cue.get("real_layout_verified") is not True or not isinstance(bbox, dict) or cue_id not in timing:
+                continue
+            start, end = timing[cue_id]
+            regions.append({"region_id": cue_id, "region_type": "subtitle", "start_sec": start, "end_sec": end, "bbox": bbox})
+        bindings.append({"path": _project_relative(project, layout_path), "sha256": _sha256_file(layout_path)})
+    if protected_regions_path is not None:
+        protected_path = _confined_file(project, _project_relative(project, protected_regions_path), project / "work" / "qa", "protected regions")
+        document = _load_json(protected_path, "protected regions")
+        schema = _load_json(Path(__file__).with_name("schemas") / "effect-protected-regions.schema.json", "protected regions schema")
+        if list(Draft202012Validator(schema).iter_errors(document)):
+            raise ValueError("protected regions schema invalid")
+        if document.get("base_media_sha256") != base_media_sha256 or document.get("provider", {}).get("input_media_sha256") != base_media_sha256:
+            raise ValueError("protected regions base media SHA-256 changed")
+        regions.extend(dict(region) for region in document.get("regions", []))
+        bindings.append({"path": _project_relative(project, protected_path), "sha256": _sha256_file(protected_path)})
+    for region in regions:
+        bbox = region["bbox"]
+        if int(bbox["x"]) + int(bbox["width"]) > width or int(bbox["y"]) + int(bbox["height"]) > height:
+            raise ValueError("protected region escaped the effect canvas")
+    return regions, bindings
+
+
 def qa_hyperframes_effects(
     project: Path,
     effect_plan_path: Path,
@@ -140,6 +233,8 @@ def qa_hyperframes_effects(
     output_directory: Path,
     *,
     executable: str = "ffmpeg",
+    layout_qa_path: Path | None = None,
+    protected_regions_path: Path | None = None,
 ) -> dict[str, Any]:
     project = project.resolve()
     output = _strict_output_directory(project, output_directory)
@@ -207,9 +302,20 @@ def qa_hyperframes_effects(
         raise ValueError("effect QA base media requires video and audio")
     if float(base_info["duration_sec"]) + 0.05 < float(effect_plan["timeline_duration_sec"]):
         raise ValueError("effect QA base media is shorter than the approved edit timeline")
+    base_media_sha256 = _sha256_file(base_media)
+    protected_regions, protected_bindings = _load_collision_regions(
+        project,
+        base_media_sha256=base_media_sha256,
+        width=int(base_info["width"]),
+        height=int(base_info["height"]),
+        layout_qa_path=layout_qa_path,
+        protected_regions_path=protected_regions_path,
+    )
     output.mkdir(parents=True, exist_ok=False)
     plan_by_id = {str(row["effect_id"]): row for row in effect_plan["effects"]}
     qa_rows: list[dict[str, Any]] = []
+    all_collisions: list[dict[str, Any]] = []
+    collision_sample_count = 0
     for rendered in render_rows:
         effect_id = str(rendered["effect_id"])
         cue = plan_by_id[effect_id]
@@ -281,7 +387,7 @@ def qa_hyperframes_effects(
                 min(expected_duration * 0.85, expected_duration - 0.08),
             ),
         }
-        frames: list[dict[str, str]] = []
+        frames: list[dict[str, Any]] = []
         for role, time_sec in times.items():
             frame = output / f"{effect_id}.{role}.png"
             run_command(
@@ -302,13 +408,31 @@ def qa_hyperframes_effects(
             )
             if not frame.is_file() or frame.stat().st_size <= 0:
                 raise RuntimeError(f"effect QA frame was not created: {effect_id}/{role}")
-            frames.append(
-                {
-                    "role": role,
-                    "path": _project_relative(project, frame),
-                    "sha256": _sha256_file(frame),
-                }
-            )
+            frame_evidence: dict[str, Any] = {
+                "role": role,
+                "path": _project_relative(project, frame),
+                "sha256": _sha256_file(frame),
+            }
+            if protected_bindings:
+                collision_sample_count += 1
+                alpha_bbox = _sample_alpha_bbox(
+                    ffmpeg,
+                    effect_file,
+                    time_sec,
+                    int(effect_info["width"]),
+                    int(effect_info["height"]),
+                )
+                collisions = audit_effect_collisions(
+                    effect_id=effect_id,
+                    sample_time_sec=start + time_sec,
+                    effect_bbox=alpha_bbox,
+                    protected_regions=protected_regions,
+                )
+                frame_evidence["alpha_bbox"] = alpha_bbox
+                frame_evidence["collisions"] = collisions
+                all_collisions.extend(collisions)
+            frames.append(frame_evidence)
+        effect_collisions = [row for row in all_collisions if row["effect_id"] == effect_id]
         qa_rows.append(
             {
                 "effect_id": effect_id,
@@ -323,14 +447,23 @@ def qa_hyperframes_effects(
                     "duration": "passed",
                     "geometry": "passed",
                     "alpha": "passed",
+                    "protected_regions": (
+                        "blocked"
+                        if any(row["severity"] == "error" for row in effect_collisions)
+                        else "passed"
+                        if protected_bindings
+                        else "not_provided"
+                    ),
                 },
             }
         )
 
+    collision_blockers = sum(row["severity"] == "error" for row in all_collisions)
+    collision_warnings = sum(row["severity"] == "warning" for row in all_collisions)
     report = {
         "schema_version": "1.0",
         "contract_version": "effect-visual-qa-v1",
-        "status": "evidence_ready",
+        "status": "blocked" if collision_blockers else "evidence_ready",
         "project_id": effect_plan["project_id"],
         "edit_plan_version": effect_plan["edit_plan_version"],
         "edit_plan_sha256": edit_sha256,
@@ -340,11 +473,19 @@ def qa_hyperframes_effects(
         "base_media": {
             "path": _project_relative(project, base_media),
             "size_bytes": base_media.stat().st_size,
-            "sha256": _sha256_file(base_media),
+            "sha256": base_media_sha256,
         },
         "effects": qa_rows,
         "human_review": {"status": "pending"},
         "conclusion": "已生成视觉帧和布局证据，效果适配性仍需人工检查。",
     }
+    if protected_bindings:
+        report["protected_region_bindings"] = protected_bindings
+        report["collision_summary"] = {
+            "sample_count": collision_sample_count,
+            "finding_count": len(all_collisions),
+            "blocking_count": collision_blockers,
+            "warning_count": collision_warnings,
+        }
     _write_report(output / "visual-qa.json", report)
     return report

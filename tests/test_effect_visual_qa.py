@@ -225,6 +225,72 @@ class EffectVisualQATests(unittest.TestCase):
                     )
             run.assert_not_called()
 
+    def test_real_alpha_bbox_collision_blocks_effect_evidence(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            project, effect_path, render_path, base, _ = self._fixture(Path(temporary))
+            output = project / "work" / "qa" / "effects" / "qa-collision"
+            protected_path = project / "work" / "qa" / "protected-regions.json"
+            _write(
+                protected_path,
+                {
+                    "schema_version": "1.0",
+                    "contract_version": "effect-protected-regions-v1",
+                    "project_id": "qa-demo",
+                    "base_media_sha256": _sha(base),
+                    "provider": {
+                        "name": "synthetic-detector",
+                        "version": "1",
+                        "input_media_sha256": _sha(base),
+                    },
+                    "regions": [
+                        {
+                            "region_id": "face-1",
+                            "region_type": "face",
+                            "start_sec": 0.0,
+                            "end_sec": 2.0,
+                            "bbox": {"x": 700, "y": 300, "width": 400, "height": 400},
+                            "confidence": 0.99,
+                        }
+                    ],
+                },
+            )
+            expected_duration = json.loads(render_path.read_text(encoding="utf-8"))["effects"][0]["duration_sec"]
+
+            def fake_run(command: list[str]) -> None:
+                Path(command[-1]).write_bytes(b"generated")
+
+            with (
+                patch("vlog_director.effect_visual_qa.find_ffmpeg", return_value="ffmpeg"),
+                patch(
+                    "vlog_director.effect_visual_qa.probe_media",
+                    return_value={"duration_sec": 2.0, "width": 1920, "height": 1080, "has_video": True, "has_audio": True},
+                ),
+                patch(
+                    "vlog_director.effect_visual_qa._probe_effect_video",
+                    return_value={"duration_sec": expected_duration, "width": 1920, "height": 1080, "has_alpha": True},
+                ),
+                patch(
+                    "vlog_director.effect_visual_qa._sample_alpha_bbox",
+                    return_value={"x": 0, "y": 0, "width": 1920, "height": 1080},
+                ),
+                patch("vlog_director.effect_visual_qa.run_command", side_effect=fake_run),
+            ):
+                report = qa_hyperframes_effects(
+                    project,
+                    effect_path,
+                    render_path,
+                    base,
+                    output,
+                    protected_regions_path=protected_path,
+                )
+
+            self.assertEqual(report["status"], "blocked")
+            self.assertGreater(report["collision_summary"]["blocking_count"], 0)
+            self.assertEqual(
+                report["effects"][0]["machine_checks"]["protected_regions"],
+                "blocked",
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

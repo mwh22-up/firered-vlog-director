@@ -139,7 +139,7 @@ class HyperFramesEffectTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             project, effect_path, _ = self._project(Path(temporary))
             job = project / "work" / "effects" / "job-001"
-            composition = build_hyperframes_compositions(project, effect_path, job)
+            build_hyperframes_compositions(project, effect_path, job)
             composition_manifest = job / "composition-manifest.json"
             commands: list[list[str]] = []
 

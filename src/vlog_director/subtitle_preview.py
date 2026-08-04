@@ -9,7 +9,6 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Iterable, Mapping
 
-from .subtitle_readability import select_high_risk_cue_ids
 
 
 PREVIEW_MANIFEST_SCHEMA_VERSION = "1.0"

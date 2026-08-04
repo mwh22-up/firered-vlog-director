@@ -32,14 +32,23 @@ class SchemaValidationTests(unittest.TestCase):
             {
                 "director-profile-aggregate.schema.json",
                 "director-profile.schema.json",
+                "director-feedback-facts.schema.json",
+                "directed-base-contract.schema.json",
                 "effect-approval.schema.json",
                 "effect-human-review.schema.json",
                 "effect-plan.schema.json",
+                "effect-protected-regions.schema.json",
                 "effect-visual-qa.schema.json",
                 "enhancement-plan.schema.json",
+                "hyperframes-composition-manifest.schema.json",
+                "hyperframes-render-manifest.schema.json",
                 "moments.schema.json",
+                "music-audition-report.schema.json",
                 "protection-policy.schema.json",
                 "reference-analysis.schema.json",
+                "release-visual-qa.schema.json",
+                "release-approval.schema.json",
+                "release-human-review.schema.json",
                 "reference-technique-aggregate.schema.json",
                 "reference-technique-study.schema.json",
                 "subtitle-approval.schema.json",
@@ -48,6 +57,8 @@ class SchemaValidationTests(unittest.TestCase):
                 "subtitle-preview-manifest.schema.json",
                 "subtitle-readability-qa.schema.json",
                 "subtitle-visual-qa.schema.json",
+                "vlm-analysis-evidence.schema.json",
+                "vlm-analysis-request.schema.json",
             },
         )
         for name, schema in self.schemas.items():
@@ -61,7 +72,19 @@ class SchemaValidationTests(unittest.TestCase):
             {
                 name
                 for name in self.schemas
-                if name == "enhancement-plan.schema.json"
+                if name in {
+                    "enhancement-plan.schema.json",
+                    "directed-base-contract.schema.json",
+                    "hyperframes-composition-manifest.schema.json",
+                    "hyperframes-render-manifest.schema.json",
+                    "release-visual-qa.schema.json",
+                    "director-feedback-facts.schema.json",
+                    "vlm-analysis-evidence.schema.json",
+                    "vlm-analysis-request.schema.json",
+                    "music-audition-report.schema.json",
+                    "release-approval.schema.json",
+                    "release-human-review.schema.json",
+                }
                 or name.startswith("effect-")
                 or name.startswith("subtitle-")
             },
@@ -278,7 +301,7 @@ class SchemaValidationTests(unittest.TestCase):
             )
             for path in directory.glob("*.json")
         )
-        self.assertEqual(len(json_paths), 58)
+        self.assertEqual(len(json_paths), 69)
         for path in json_paths:
             with self.subTest(path=path.relative_to(REPOSITORY_ROOT)):
                 load_json(path)

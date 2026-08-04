@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/release-approval.schema.json",
+  "type": "object",
+  "required": ["schema_version", "contract_version", "status", "project_id", "media", "enhancement_plan", "directed_base_contract", "visual_qa", "human_review", "approved_by", "approved_at"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "contract_version": { "const": "release-approval-v1" },
+    "status": { "const": "approved" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "media": { "$ref": "#/$defs/media" },
+    "enhancement_plan": { "$ref": "#/$defs/binding" },
+    "directed_base_contract": { "$ref": "#/$defs/binding" },
+    "visual_qa": { "$ref": "#/$defs/binding" },
+    "human_review": { "$ref": "#/$defs/binding" },
+    "approved_by": { "type": "string", "minLength": 1 },
+    "approved_at": { "type": "string", "format": "date-time" }
+  },
+  "$defs": {
+    "sha": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "binding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^work/(?:enhancement|qa)/" },
+        "sha256": { "$ref": "#/$defs/sha" }
+      },
+      "additionalProperties": false
+    },
+    "media": {
+      "type": "object",
+      "required": ["path", "sha256", "size_bytes"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^output/" },
+        "sha256": { "$ref": "#/$defs/sha" },
+        "size_bytes": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

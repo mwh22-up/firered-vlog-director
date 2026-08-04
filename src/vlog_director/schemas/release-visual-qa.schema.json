@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/release-visual-qa.schema.json",
+  "type": "object",
+  "required": ["schema_version", "contract_version", "status", "project_id", "bindings", "policy", "observations", "frames", "blocking_count", "warning_count", "issues", "ocr", "human_review", "text_accuracy_statement"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "contract_version": { "const": "release-visual-qa-v1" },
+    "status": { "enum": ["passed", "warning", "blocked"] },
+    "project_id": { "type": "string", "minLength": 1 },
+    "bindings": {
+      "type": "object",
+      "required": ["media", "enhancement_plan", "ffmpeg_identity"],
+      "properties": {
+        "media": { "$ref": "#/$defs/media" },
+        "enhancement_plan": { "$ref": "#/$defs/binding" },
+        "realized_timeline": { "$ref": "#/$defs/binding" },
+        "directed_base_contract": { "$ref": "#/$defs/binding" },
+        "ffmpeg_identity": { "type": "object", "required": ["executable_sha256", "version_line"], "additionalProperties": true }
+      },
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "required": ["black_min_duration_sec", "freeze_min_duration_sec", "internal_black_blocker_sec", "freeze_blocker_sec"],
+      "properties": {
+        "black_min_duration_sec": { "type": "number", "minimum": 0 },
+        "freeze_min_duration_sec": { "type": "number", "minimum": 0 },
+        "internal_black_blocker_sec": { "type": "number", "minimum": 0 },
+        "freeze_blocker_sec": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "observations": {
+      "type": "object",
+      "required": ["black_intervals", "freeze_intervals"],
+      "properties": {
+        "black_intervals": { "type": "array", "items": { "$ref": "#/$defs/interval" } },
+        "freeze_intervals": { "type": "array", "items": { "$ref": "#/$defs/interval" } }
+      },
+      "additionalProperties": false
+    },
+    "frames": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["role", "time_sec", "path", "sha256"],
+        "properties": {
+          "role": { "type": "string", "minLength": 1 },
+          "time_sec": { "type": "number", "minimum": 0 },
+          "path": { "type": "string", "pattern": "^work/qa/release-visual/" },
+          "sha256": { "$ref": "#/$defs/sha" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "blocking_count": { "type": "integer", "minimum": 0 },
+    "warning_count": { "type": "integer", "minimum": 0 },
+    "issues": { "type": "array", "items": { "$ref": "#/$defs/issue" } },
+    "ocr": {
+      "type": "object",
+      "required": ["status", "text_accuracy_verified"],
+      "properties": {
+        "status": { "const": "not_run" },
+        "text_accuracy_verified": { "const": false }
+      },
+      "additionalProperties": false
+    },
+    "human_review": {
+      "type": "object",
+      "required": ["status"],
+      "properties": { "status": { "const": "pending" } },
+      "additionalProperties": false
+    },
+    "text_accuracy_statement": { "const": "已生成视觉帧和布局证据，文字准确性仍需人工听校。" }
+  },
+  "$defs": {
+    "sha": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "binding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^work/(?:enhancement|qa)/" },
+        "sha256": { "$ref": "#/$defs/sha" }
+      },
+      "additionalProperties": false
+    },
+    "media": {
+      "type": "object",
+      "required": ["name", "sha256", "size_bytes", "duration_sec", "width", "height"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha" },
+        "size_bytes": { "type": "integer", "minimum": 1 },
+        "duration_sec": { "type": "number", "exclusiveMinimum": 0 },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "interval": {
+      "type": "object",
+      "required": ["start_sec", "end_sec", "duration_sec"],
+      "properties": {
+        "start_sec": { "type": "number", "minimum": 0 },
+        "end_sec": { "type": "number", "minimum": 0 },
+        "duration_sec": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "issue": {
+      "type": "object",
+      "required": ["severity", "code", "message"],
+      "properties": {
+        "severity": { "enum": ["error", "warning"] },
+        "code": { "type": "string", "minLength": 1 },
+        "message": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

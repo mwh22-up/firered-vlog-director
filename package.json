@@ -1,0 +1,15 @@
+{
+  "name": "firered-vlog-director-tools",
+  "private": true,
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=22 <25"
+  },
+  "devDependencies": {
+    "ffprobe-static": "3.1.0",
+    "hyperframes": "0.7.90"
+  },
+  "scripts": {
+    "hyperframes:version": "hyperframes --version"
+  }
+}

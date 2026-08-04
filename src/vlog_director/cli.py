@@ -290,6 +290,7 @@ def _build_parser() -> argparse.ArgumentParser:
         choices=["draft", "standard", "high"],
         default="standard",
     )
+    render_effects.add_argument("--detached", action="store_true")
 
     qa_effects = subparsers.add_parser("qa-effects")
     qa_effects.add_argument("--project", type=Path, required=True)
@@ -298,6 +299,9 @@ def _build_parser() -> argparse.ArgumentParser:
     qa_effects.add_argument("--base-video", type=Path, required=True)
     qa_effects.add_argument("--output-directory", type=Path, required=True)
     qa_effects.add_argument("--ffmpeg-executable", default="ffmpeg")
+    qa_effects.add_argument("--layout-qa", type=Path)
+    qa_effects.add_argument("--protected-regions", type=Path)
+    qa_effects.add_argument("--detached", action="store_true")
 
     approve_effects = subparsers.add_parser("approve-effects")
     approve_effects.add_argument("--project", type=Path, required=True)
@@ -354,12 +358,52 @@ def _build_parser() -> argparse.ArgumentParser:
         default="medium",
     )
     render_enhancement.add_argument("--video-crf", type=int, default=18)
+    render_enhancement.add_argument("--detached", action="store_true")
+
+    bind_directed_base = subparsers.add_parser("bind-directed-base")
+    bind_directed_base.add_argument("--project", type=Path, required=True)
+    bind_directed_base.add_argument("--edit-plan", type=Path, required=True)
+    bind_directed_base.add_argument("--approval", type=Path, required=True)
+    bind_directed_base.add_argument("--realized-timeline", type=Path, required=True)
+    bind_directed_base.add_argument("--base-video", type=Path, required=True)
+    bind_directed_base.add_argument("--producer-repository", required=True)
+    bind_directed_base.add_argument("--producer-commit", required=True)
+    bind_directed_base.add_argument("--producer-contract", required=True)
+    bind_directed_base.add_argument("--output", type=Path, required=True)
+    bind_directed_base.add_argument("--ffmpeg-executable", default="ffmpeg")
+
+    qa_release_visual = subparsers.add_parser("qa-release-visual")
+    qa_release_visual.add_argument("--project", type=Path, required=True)
+    qa_release_visual.add_argument("--media", type=Path, required=True)
+    qa_release_visual.add_argument("--enhancement-plan", type=Path, required=True)
+    qa_release_visual.add_argument("--output-directory", type=Path, required=True)
+    qa_release_visual.add_argument("--realized-timeline", type=Path)
+    qa_release_visual.add_argument("--directed-base-contract", type=Path)
+    qa_release_visual.add_argument("--ffmpeg-executable", default="ffmpeg")
+    qa_release_visual.add_argument("--detached", action="store_true")
+
+    approve_release = subparsers.add_parser("approve-release")
+    approve_release.add_argument("--project", type=Path, required=True)
+    approve_release.add_argument("--media", type=Path, required=True)
+    approve_release.add_argument("--enhancement-plan", type=Path, required=True)
+    approve_release.add_argument("--directed-base-contract", type=Path, required=True)
+    approve_release.add_argument("--visual-qa", type=Path, required=True)
+    approve_release.add_argument("--human-review", type=Path, required=True)
+    approve_release.add_argument("--output", type=Path, required=True)
 
     qa_music = subparsers.add_parser("qa-music")
     qa_music.add_argument("--media", type=Path, required=True)
     qa_music.add_argument("--plan", type=Path, required=True)
     qa_music.add_argument("--output", type=Path, required=True)
     qa_music.add_argument("--ffmpeg-executable", default="ffmpeg")
+
+    audition_music = subparsers.add_parser("audition-music")
+    audition_music.add_argument("--project", type=Path, required=True)
+    audition_music.add_argument("--enhancement-plan", type=Path, required=True)
+    audition_music.add_argument("--rights-manifest", type=Path, required=True)
+    audition_music.add_argument("--output", type=Path, required=True)
+    audition_music.add_argument("--ffmpeg-executable", default="ffmpeg")
+    audition_music.add_argument("--detached", action="store_true")
 
     analyze_reference = subparsers.add_parser("analyze-reference")
     analyze_reference.add_argument("--input", type=Path, required=True)
@@ -380,6 +424,8 @@ def _build_parser() -> argparse.ArgumentParser:
     analyze_reference.add_argument("--visual-fps", type=float, default=2.0)
     analyze_reference.add_argument("--review-directory", type=Path)
     analyze_reference.add_argument("--review-event-limit", type=int, default=12)
+    analyze_reference.add_argument("--project", type=Path)
+    analyze_reference.add_argument("--detached", action="store_true")
 
     aggregate_reference = subparsers.add_parser("aggregate-reference")
     aggregate_reference.add_argument(
@@ -416,6 +462,13 @@ def _build_parser() -> argparse.ArgumentParser:
     compare_revision.add_argument("--minimum-change-ratio", type=float, default=0.08)
     compare_revision.add_argument("--output", type=Path)
 
+    derive_feedback = subparsers.add_parser("derive-feedback")
+    derive_feedback.add_argument("--project", type=Path, required=True)
+    derive_feedback.add_argument("--candidate", type=Path, required=True)
+    derive_feedback.add_argument("--final", type=Path, required=True)
+    derive_feedback.add_argument("--baseline", type=Path)
+    derive_feedback.add_argument("--output", type=Path, required=True)
+
     compile_revision_parser = subparsers.add_parser("compile-revision")
     compile_revision_parser.add_argument("--parent", type=Path, required=True)
     compile_revision_parser.add_argument("--profile", type=Path, required=True)
@@ -438,6 +491,25 @@ def _build_parser() -> argparse.ArgumentParser:
     analyze_target.add_argument("--language", default="zh")
     analyze_target.add_argument("--scene-threshold", type=float, default=0.22)
     analyze_target.add_argument("--visual-fps", type=float, default=2.0)
+    analyze_target.add_argument("--project", type=Path)
+    analyze_target.add_argument("--detached", action="store_true")
+
+    prepare_vlm = subparsers.add_parser("prepare-vlm-request")
+    prepare_vlm.add_argument("--project-id", required=True)
+    prepare_vlm.add_argument("--media", type=Path, required=True)
+    prepare_vlm.add_argument("--shots", type=Path, required=True)
+    prepare_vlm.add_argument("--provider", required=True)
+    prepare_vlm.add_argument("--model", required=True)
+    prepare_vlm.add_argument("--provider-version", required=True)
+    prepare_vlm.add_argument("--prompt-file", type=Path, required=True)
+    prepare_vlm.add_argument("--output", type=Path, required=True)
+
+    validate_vlm = subparsers.add_parser("validate-vlm-evidence")
+    validate_vlm.add_argument("--request", type=Path, required=True)
+    validate_vlm.add_argument("--evidence", type=Path, required=True)
+
+    cancel_job = subparsers.add_parser("cancel-job")
+    cancel_job.add_argument("--job-directory", type=Path, required=True)
 
     analyze_project = subparsers.add_parser("analyze-project")
     analyze_project.add_argument("--project", type=Path, required=True)
@@ -583,6 +655,76 @@ def _build_parser() -> argparse.ArgumentParser:
 
 def main() -> int:
     args = _build_parser().parse_args()
+    if args.command == "cancel-job":
+        from .durable_jobs import request_job_cancel
+
+        _write_result(request_job_cancel(args.job_directory), None)
+        return 0
+    if args.command == "bind-directed-base":
+        from .production_contract import bind_directed_base
+
+        result = bind_directed_base(
+            project=args.project,
+            edit_plan_path=args.edit_plan,
+            approval_path=args.approval,
+            realized_timeline_path=args.realized_timeline,
+            base_media_path=args.base_video,
+            output_path=args.output,
+            producer={
+                "repository": args.producer_repository,
+                "commit_sha": args.producer_commit,
+                "contract": args.producer_contract,
+            },
+            executable=args.ffmpeg_executable,
+        )
+        _write_result(result, None)
+        return 0
+    if args.command == "qa-release-visual":
+        arguments = {
+            "project": str(args.project.resolve()),
+            "media": str(args.media.resolve()),
+            "enhancement_plan": str(args.enhancement_plan.resolve()),
+            "output_directory": str(args.output_directory.resolve()),
+            "realized_timeline": str(args.realized_timeline.resolve()) if args.realized_timeline else None,
+            "directed_base_contract": str(args.directed_base_contract.resolve()) if args.directed_base_contract else None,
+            "ffmpeg_executable": args.ffmpeg_executable,
+        }
+        if args.detached:
+            from .durable_jobs import submit_durable_job
+
+            result = submit_durable_job(
+                project=args.project.resolve(),
+                operation="qa-release-visual",
+                arguments=arguments,
+            )
+        else:
+            from .release_visual_qa import qa_release_visual
+
+            result = qa_release_visual(
+                project=args.project,
+                media_path=args.media,
+                enhancement_plan_path=args.enhancement_plan,
+                output_directory=args.output_directory,
+                realized_timeline_path=args.realized_timeline,
+                directed_base_contract_path=args.directed_base_contract,
+                executable=args.ffmpeg_executable,
+            )
+        _write_result(result, None)
+        return 0 if result["status"] in {"queued", "passed", "warning"} else 2
+    if args.command == "approve-release":
+        from .release_approval import approve_release
+
+        result = approve_release(
+            project=args.project,
+            media_path=args.media,
+            enhancement_plan_path=args.enhancement_plan,
+            directed_base_contract_path=args.directed_base_contract,
+            visual_qa_path=args.visual_qa,
+            human_review_path=args.human_review,
+            output_path=args.output,
+        )
+        _write_result(result, None)
+        return 0
     if args.command == "project-subtitles":
         try:
             from .subtitle_projection import (
@@ -1141,6 +1283,22 @@ def main() -> int:
             )
             return 2
     if args.command == "render-effects":
+        if args.detached:
+            from .durable_jobs import submit_durable_job
+
+            result = submit_durable_job(
+                project=args.project.resolve(),
+                operation="render-effects",
+                arguments={
+                    "project": str(args.project.resolve()),
+                    "plan": str(args.plan.resolve()),
+                    "composition_manifest": str(args.composition_manifest.resolve()),
+                    "hyperframes_executable": args.hyperframes_executable,
+                    "quality": args.quality,
+                },
+            )
+            _write_result(result, None)
+            return 0
         try:
             from .hyperframes_effects import render_hyperframes_compositions
 
@@ -1168,6 +1326,25 @@ def main() -> int:
             )
             return 2
     if args.command == "qa-effects":
+        if args.detached:
+            from .durable_jobs import submit_durable_job
+
+            result = submit_durable_job(
+                project=args.project.resolve(),
+                operation="qa-effects",
+                arguments={
+                    "project": str(args.project.resolve()),
+                    "plan": str(args.plan.resolve()),
+                    "render_manifest": str(args.render_manifest.resolve()),
+                    "base_video": str(args.base_video.resolve()),
+                    "output_directory": str(args.output_directory.resolve()),
+                    "ffmpeg_executable": args.ffmpeg_executable,
+                    "layout_qa": str(args.layout_qa.resolve()) if args.layout_qa else None,
+                    "protected_regions": str(args.protected_regions.resolve()) if args.protected_regions else None,
+                },
+            )
+            _write_result(result, None)
+            return 0
         try:
             from .effect_visual_qa import qa_hyperframes_effects
 
@@ -1178,6 +1355,8 @@ def main() -> int:
                 args.base_video.resolve(),
                 args.output_directory.resolve(),
                 executable=args.ffmpeg_executable,
+                layout_qa_path=args.layout_qa.resolve() if args.layout_qa else None,
+                protected_regions_path=args.protected_regions.resolve() if args.protected_regions else None,
             )
             _write_result(result, None)
             return 0
@@ -1270,6 +1449,27 @@ def main() -> int:
         _write_result({"status": "ready", "output": str(args.output.resolve())}, None)
         return 0
     if args.command == "render-enhancement":
+        if args.detached:
+            from .durable_jobs import submit_durable_job
+
+            result = submit_durable_job(
+                project=args.project.resolve(),
+                operation="render-enhancement",
+                arguments={
+                    "project": str(args.project.resolve()),
+                    "base_video": str(args.base_video.resolve()),
+                    "plan": str(args.plan.resolve()),
+                    "output": str(args.output.resolve()),
+                    "qa_output": str(args.qa_output.resolve()) if args.qa_output else None,
+                    "ffmpeg_executable": args.ffmpeg_executable,
+                    "realized_timeline": str(args.realized_timeline.resolve()) if args.realized_timeline else None,
+                    "mode": args.mode,
+                    "video_preset": args.video_preset,
+                    "video_crf": args.video_crf,
+                },
+            )
+            _write_result(result, None)
+            return 0
         from .enhancement import (
             normalize_realized_timeline,
             normalize_enhancement_plan,
@@ -1430,7 +1630,58 @@ def main() -> int:
         write_music_mix_qa(report, args.output.resolve())
         _write_result(report, None)
         return 0 if report["status"] == "passed" else 2
+    if args.command == "audition-music":
+        arguments = {
+            "project": str(args.project.resolve()),
+            "enhancement_plan": str(args.enhancement_plan.resolve()),
+            "rights_manifest": str(args.rights_manifest.resolve()),
+            "output": str(args.output.resolve()),
+            "ffmpeg_executable": args.ffmpeg_executable,
+        }
+        if args.detached:
+            from .durable_jobs import submit_durable_job
+
+            result = submit_durable_job(project=args.project.resolve(), operation="audition-music", arguments=arguments)
+        else:
+            from .music_audition import build_music_audition_report
+
+            result = build_music_audition_report(
+                project=args.project,
+                enhancement_plan_path=args.enhancement_plan,
+                rights_manifest_path=args.rights_manifest,
+                output_path=args.output,
+                executable=args.ffmpeg_executable,
+            )
+        _write_result(result, None)
+        return 0 if result["status"] in {"queued", "review_required"} else 2
     if args.command == "analyze-reference":
+        if args.detached:
+            if args.project is None:
+                raise ValueError("detached analysis requires --project")
+            from .durable_jobs import submit_durable_job
+
+            result = submit_durable_job(
+                project=args.project.resolve(),
+                operation="analyze-reference",
+                arguments={
+                    "input": str(args.input.resolve()),
+                    "source_id": args.source_id,
+                    "source_url": args.url,
+                    "work_directory": str(args.work_directory.resolve()),
+                    "output": str(args.output.resolve()),
+                    "portable_output": str(args.portable_output.resolve()) if args.portable_output else None,
+                    "transcript": str(args.transcript.resolve()) if args.transcript else None,
+                    "asr_provider": args.asr_provider,
+                    "asr_model": args.asr_model,
+                    "language": args.language or None,
+                    "scene_threshold": args.scene_threshold,
+                    "visual_fps": args.visual_fps,
+                    "review_directory": str(args.review_directory.resolve()) if args.review_directory else None,
+                    "review_event_limit": args.review_event_limit,
+                },
+            )
+            _write_result(result, None)
+            return 0
         from .reference_learning import (
             analyze_reference,
             write_analysis,
@@ -1479,6 +1730,31 @@ def main() -> int:
         )
         return 0
     if args.command == "analyze-target":
+        if args.detached:
+            if args.project is None:
+                raise ValueError("detached analysis requires --project")
+            from .durable_jobs import submit_durable_job
+
+            result = submit_durable_job(
+                project=args.project.resolve(),
+                operation="analyze-target",
+                arguments={
+                    "input": str(args.input.resolve()),
+                    "source_id": Path(args.source).stem,
+                    "source_url": "local-target://" + args.source,
+                    "target_source": args.source,
+                    "work_directory": str(args.work_directory.resolve()),
+                    "output": str(args.output.resolve()),
+                    "transcript": str(args.transcript.resolve()) if args.transcript else None,
+                    "asr_provider": args.asr_provider,
+                    "asr_model": args.asr_model,
+                    "language": args.language or None,
+                    "scene_threshold": args.scene_threshold,
+                    "visual_fps": args.visual_fps,
+                },
+            )
+            _write_result(result, None)
+            return 0
         from .reference_learning import analyze_reference, write_analysis
 
         analysis = analyze_reference(
@@ -1582,6 +1858,45 @@ def main() -> int:
             minimum_change_ratio=args.minimum_change_ratio,
         )
         _write_result(result, args.output)
+        return 0 if result["status"] == "passed" else 2
+    if args.command == "derive-feedback":
+        from .feedback_facts import derive_feedback_facts
+
+        result = derive_feedback_facts(
+            project=args.project,
+            candidate_path=args.candidate,
+            final_path=args.final,
+            baseline_path=args.baseline,
+            output_path=args.output,
+        )
+        _write_result(result, None)
+        return 0
+    if args.command == "prepare-vlm-request":
+        from .vlm_provider import build_vlm_request
+
+        if args.output.exists():
+            raise FileExistsError(args.output)
+        shots_document = _read_json(args.shots)
+        shots = shots_document.get("shots", shots_document.get("segments", []))
+        result = build_vlm_request(
+            project_id=args.project_id,
+            media_path=args.media,
+            shots=shots,
+            provider_name=args.provider,
+            model=args.model,
+            provider_version=args.provider_version,
+            prompt=args.prompt_file.read_text(encoding="utf-8"),
+        )
+        _write_result(result, args.output)
+        return 0
+    if args.command == "validate-vlm-evidence":
+        from .vlm_provider import validate_vlm_evidence
+
+        result = validate_vlm_evidence(
+            _read_json(args.request),
+            _read_json(args.evidence),
+        )
+        _write_result(result, None)
         return 0 if result["status"] == "passed" else 2
     if args.command == "compile-revision":
         from .revision import compile_revision

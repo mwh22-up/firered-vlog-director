@@ -492,7 +492,7 @@ def _collect_contract(
     elif human.get("approved_by") != reviewer:
         issues.append("human review approved_by does not match requested approver")
     try:
-        human_approved_at = _aware_datetime(human.get("approved_at"), "human review approved_at")
+        _aware_datetime(human.get("approved_at"), "human review approved_at")
     except ValueError as error:
         issues.append(str(error))
         human_approved_at_value = ""

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/release-human-review.schema.json",
+  "type": "object",
+  "required": ["schema_version", "contract_version", "status", "project_id", "bindings", "decisions", "reviewed_by", "reviewed_at"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "contract_version": { "const": "release-human-review-v1" },
+    "status": { "enum": ["approved", "changes_required"] },
+    "project_id": { "type": "string", "minLength": 1 },
+    "bindings": {
+      "type": "object",
+      "required": ["media_sha256", "enhancement_plan_sha256", "visual_qa_sha256"],
+      "properties": {
+        "media_sha256": { "$ref": "#/$defs/sha" },
+        "enhancement_plan_sha256": { "$ref": "#/$defs/sha" },
+        "visual_qa_sha256": { "$ref": "#/$defs/sha" }
+      },
+      "additionalProperties": false
+    },
+    "decisions": {
+      "type": "object",
+      "required": ["black_and_freeze", "framing_and_crop", "subtitle_and_effect_collisions", "text_accuracy_listened", "overall_visual"],
+      "properties": {
+        "black_and_freeze": { "enum": ["approved", "changes_required"] },
+        "framing_and_crop": { "enum": ["approved", "changes_required"] },
+        "subtitle_and_effect_collisions": { "enum": ["approved", "changes_required"] },
+        "text_accuracy_listened": { "enum": ["approved", "changes_required"] },
+        "overall_visual": { "enum": ["approved", "changes_required"] }
+      },
+      "additionalProperties": false
+    },
+    "reviewed_by": { "type": "string", "minLength": 1 },
+    "reviewed_at": { "type": "string", "format": "date-time" },
+    "notes": { "type": "string" }
+  },
+  "$defs": { "sha": { "type": "string", "pattern": "^[0-9a-f]{64}$" } },
+  "additionalProperties": false
+}

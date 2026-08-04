@@ -9,6 +9,8 @@ import subprocess
 from pathlib import Path
 from typing import Any, Mapping
 
+from jsonschema import Draft202012Validator
+
 from .effect_plan import (
     HYPERFRAMES_NPM_INTEGRITY,
     HYPERFRAMES_VERSION,
@@ -18,6 +20,16 @@ from .effect_plan import (
 
 
 VERSION_PATTERN = re.compile(r"(?<![0-9])([0-9]+\.[0-9]+\.[0-9]+)(?![0-9])")
+
+
+def _schema_issues(document: Mapping[str, Any], schema_name: str) -> list[str]:
+    schema_path = Path(__file__).with_name("schemas") / schema_name
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    errors = sorted(
+        Draft202012Validator(schema).iter_errors(document),
+        key=lambda error: tuple(str(value) for value in error.absolute_path),
+    )
+    return [f"{error.json_path}: {error.message}" for error in errors]
 
 
 def _sha256_file(path: Path) -> str:
@@ -372,6 +384,9 @@ def build_hyperframes_compositions(
         },
         "effects": effects,
     }
+    issues = _schema_issues(result, "hyperframes-composition-manifest.schema.json")
+    if issues:
+        raise ValueError("composition manifest schema invalid: " + "; ".join(issues))
     _write_new_json(output / "composition-manifest.json", result)
     return result
 
@@ -431,6 +446,14 @@ def render_hyperframes_compositions(
     except ValueError as error:
         raise ValueError("composition manifest must stay under project/work/effects") from error
     manifest = _load_json(manifest_path, "composition manifest")
+    composition_issues = _schema_issues(
+        manifest,
+        "hyperframes-composition-manifest.schema.json",
+    )
+    if composition_issues:
+        raise ValueError(
+            "composition manifest schema invalid: " + "; ".join(composition_issues)
+        )
     render_manifest_path = manifest_path.parent / "render-manifest.json"
     if render_manifest_path.exists():
         raise FileExistsError(render_manifest_path)
@@ -520,5 +543,8 @@ def render_hyperframes_compositions(
         },
         "effects": rendered,
     }
+    render_issues = _schema_issues(result, "hyperframes-render-manifest.schema.json")
+    if render_issues:
+        raise ValueError("render manifest schema invalid: " + "; ".join(render_issues))
     _write_new_json(render_manifest_path, result)
     return result
