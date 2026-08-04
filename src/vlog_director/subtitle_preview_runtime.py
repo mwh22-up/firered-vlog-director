@@ -40,6 +40,25 @@ from .subtitle_render_contract import (
 )
 
 
+_PREVIEW_JOB_IDENTIFIER = re.compile(r"^\d{8}T\d{6}-[0-9a-f]{12}$")
+_JOB_REQUIRED_FIELDS = frozenset(
+    {
+        "project",
+        "base_video",
+        "subtitle_source",
+        "realized_timeline",
+        "scope",
+        "proxy_unit",
+        "padding_sec",
+        "output_directory",
+        "executable",
+    }
+)
+_JOB_OPTIONAL_FIELDS = frozenset(
+    {"enhancement_plan", "readability_qa", "layout_qa"}
+)
+
+
 @lru_cache(maxsize=None)
 def _runtime_validator(schema_name: str) -> Draft202012Validator:
     schema_path = Path(__file__).with_name("schemas") / schema_name
@@ -291,6 +310,20 @@ def render_subtitle_preview(
             raise ValueError("readability QA realized timeline SHA does not match")
         if readability.get("project_id") != source.get("project_id"):
             raise ValueError("readability QA project ID does not match")
+        policy = readability.get("policy")
+        if not isinstance(policy, dict):
+            raise ValueError("readability QA policy content is invalid")
+        readability_policy_sha = _canonical_sha256(policy)
+        if readability.get("policy_sha256") != readability_policy_sha:
+            raise ValueError(
+                "readability QA policy SHA does not match canonical policy content"
+            )
+        if policy.get("policy_version") != readability.get("policy_version"):
+            raise ValueError(
+                "readability QA policy version does not match policy content"
+            )
+    else:
+        readability_policy_sha = None
     if layout is not None:
         layout_issues = _schema_issues(layout, "subtitle-layout-qa.schema.json")
         if layout_issues:
@@ -308,9 +341,7 @@ def render_subtitle_preview(
             readability_path
         ):
             raise ValueError("layout QA readability QA SHA does not match")
-        if layout_bindings.get("readability_policy_sha256") != readability.get(
-            "policy_sha256"
-        ):
+        if layout_bindings.get("readability_policy_sha256") != readability_policy_sha:
             raise ValueError("layout QA readability policy SHA does not match")
         if layout_bindings.get("enhancement_plan_sha256") != _sha256_file(plan_path):
             raise ValueError("layout QA enhancement plan SHA does not match")
@@ -358,6 +389,15 @@ def render_subtitle_preview(
     progress_path = job_directory / "progress.jsonl"
     log_path = job_directory / "ffmpeg.log"
     manifest_path = job_directory / "manifest.json"
+    protected_outputs = [progress_path, log_path, manifest_path]
+    protected_outputs.extend(job_directory.glob("*.ass"))
+    protected_outputs.extend(job_directory.glob("*.mkv"))
+    existing_outputs = [path for path in protected_outputs if path.exists()]
+    if existing_outputs:
+        raise FileExistsError(
+            "subtitle preview output directory contains existing evidence: "
+            + ", ".join(sorted(path.name for path in existing_outputs))
+        )
     sequence = 0
 
     def progress(stage: str, status: str, **details: Any) -> None:
@@ -410,6 +450,10 @@ def render_subtitle_preview(
         )
         ass_path = job_directory / f"{output_id}.ass"
         media_path = job_directory / f"{output_id}.mkv"
+        if ass_path.exists() or media_path.exists():
+            raise FileExistsError(
+                f"subtitle preview output already exists: {output_id}"
+            )
         unit_cues = _rebased_cues(
             cues_by_id,
             unit["rendered_cue_ids"],
@@ -434,7 +478,7 @@ def render_subtitle_preview(
         command = [
             ffmpeg,
             "-nostdin",
-            "-y",
+            "-n",
             "-hide_banner",
             "-loglevel",
             "verbose",
@@ -556,6 +600,8 @@ def render_subtitle_preview(
         raise ValueError(
             "subtitle preview manifest schema invalid: " + "; ".join(manifest_issues)
         )
+    if manifest_path.exists():
+        raise FileExistsError(manifest_path)
     _write_json(manifest_path, manifest)
     progress("manifest", "completed", manifest_path=manifest["manifest_path"])
     return manifest
@@ -572,6 +618,85 @@ def _write_job_status(path: Path, status: str, **fields: Any) -> None:
             **fields,
         },
     )
+
+
+def _validated_job_directory(
+    spec_path: Path,
+    spec: Mapping[str, Any],
+) -> tuple[Path, Path]:
+    unknown = sorted(set(spec) - _JOB_REQUIRED_FIELDS - _JOB_OPTIONAL_FIELDS)
+    missing = sorted(_JOB_REQUIRED_FIELDS - set(spec))
+    if unknown or missing:
+        raise ValueError(
+            "subtitle preview job spec fields are invalid: "
+            f"unknown={unknown}, missing={missing}"
+        )
+    project = Path(str(spec["project"])).resolve()
+    jobs_root = (project / "work" / "proxy" / "subtitle-preview").resolve()
+    try:
+        relative = spec_path.relative_to(jobs_root)
+    except ValueError as error:
+        raise ValueError(
+            "subtitle preview job spec must be inside a unique subtitle preview directory"
+        ) from error
+    if (
+        len(relative.parts) != 2
+        or relative.parts[1] != "job.json"
+        or not _PREVIEW_JOB_IDENTIFIER.fullmatch(relative.parts[0])
+    ):
+        raise ValueError(
+            "subtitle preview job spec must be job.json inside a unique subtitle preview directory"
+        )
+    job_directory = spec_path.parent.resolve()
+    output_directory = Path(str(spec["output_directory"])).resolve()
+    if output_directory != job_directory:
+        raise ValueError("subtitle preview job output_directory must equal its job directory")
+    return project, job_directory
+
+
+def _assert_fresh_job(job_directory: Path, status_path: Path) -> None:
+    if not status_path.is_file():
+        raise FileNotFoundError(status_path)
+    status = _load_json(status_path, "subtitle preview job status")
+    if status.get("status") != "queued":
+        raise ValueError("subtitle preview job status must be queued and never replayed")
+    conflicts = [
+        job_directory / "manifest.json",
+        job_directory / "ffmpeg.log",
+        job_directory / "progress.jsonl",
+        *job_directory.glob("*.ass"),
+        *job_directory.glob("*.mkv"),
+        *job_directory.glob("*.mp4"),
+        *job_directory.glob("*.mov"),
+        *job_directory.glob("*.webm"),
+    ]
+    existing = sorted({path.resolve() for path in conflicts if path.exists()})
+    if existing:
+        raise FileExistsError(
+            "subtitle preview job contains existing formal evidence: "
+            + ", ".join(path.name for path in existing)
+        )
+
+
+def _claim_job(job_directory: Path, spec_path: Path) -> None:
+    claim_path = job_directory / "claim.json"
+    try:
+        with claim_path.open("x", encoding="utf-8", newline="\n") as output:
+            json.dump(
+                {
+                    "schema_version": "1.0",
+                    "document_type": "subtitle_preview_job_claim",
+                    "job_spec_sha256": _sha256_file(spec_path),
+                    "claimed_at": _utc_now(),
+                },
+                output,
+                ensure_ascii=False,
+                indent=2,
+                allow_nan=False,
+            )
+            output.write("\n")
+    except FileExistsError as error:
+        raise ValueError("subtitle preview job has already been claimed") from error
 
 
 def submit_subtitle_preview_job(
@@ -651,7 +776,19 @@ def submit_subtitle_preview_job(
     else:
         kwargs["start_new_session"] = True
     try:
-        process = subprocess.Popen(command, **kwargs)
+        try:
+            process = subprocess.Popen(command, **kwargs)
+        except Exception as error:
+            _write_job_status(
+                status_path,
+                "failed",
+                job_spec=str(spec_path),
+                worker_log=str(worker_log_path),
+                error_type=type(error).__name__,
+                error_message=str(error),
+                exit_code=1,
+            )
+            raise
     finally:
         worker_log.close()
     return {
@@ -667,19 +804,22 @@ def submit_subtitle_preview_job(
 def run_subtitle_preview_job(job_spec: Path) -> dict[str, Any]:
     spec_path = Path(job_spec).resolve()
     spec = _load_json(spec_path, "subtitle preview job spec")
-    status_path = spec_path.parent / "status.json"
+    project, job_directory = _validated_job_directory(spec_path, spec)
+    status_path = job_directory / "status.json"
+    _assert_fresh_job(job_directory, status_path)
+    _claim_job(job_directory, spec_path)
     _write_job_status(status_path, "running", job_spec=str(spec_path))
-    arguments = dict(spec)
-    arguments["project"] = Path(arguments["project"])
-    arguments["base_video"] = Path(arguments["base_video"])
-    arguments["subtitle_source"] = Path(arguments["subtitle_source"])
-    arguments["realized_timeline"] = Path(arguments["realized_timeline"])
-    arguments["output_directory"] = Path(arguments["output_directory"])
-    for field in ("enhancement_plan", "readability_qa", "layout_qa"):
-        if field in arguments:
-            arguments[field] = Path(arguments[field])
-    arguments["_reuse_output_directory"] = True
     try:
+        arguments = dict(spec)
+        arguments["project"] = project
+        arguments["base_video"] = Path(arguments["base_video"])
+        arguments["subtitle_source"] = Path(arguments["subtitle_source"])
+        arguments["realized_timeline"] = Path(arguments["realized_timeline"])
+        arguments["output_directory"] = job_directory
+        for field in ("enhancement_plan", "readability_qa", "layout_qa"):
+            if field in arguments:
+                arguments[field] = Path(arguments[field])
+        arguments["_reuse_output_directory"] = True
         manifest = render_subtitle_preview(**arguments)
     except Exception as error:
         _write_job_status(

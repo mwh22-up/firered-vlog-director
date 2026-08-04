@@ -307,6 +307,42 @@ def qa_subtitles(
                 manifest_schema_issues,
             )
         )
+    cleanup_paths = manifest.get("cleanup_paths")
+    if isinstance(cleanup_paths, list):
+        cleanup_roots = (
+            (project / "work" / "proxy").resolve(),
+            (project / "work" / "qa").resolve(),
+        )
+        for raw_path in cleanup_paths:
+            valid = isinstance(raw_path, str) and bool(raw_path)
+            relative = Path(raw_path) if valid else Path()
+            valid = bool(
+                valid
+                and not relative.is_absolute()
+                and ".." not in relative.parts
+            )
+            resolved = (project / relative).resolve() if valid else project
+            if valid:
+                valid = any(
+                    resolved != root and root in resolved.parents
+                    for root in cleanup_roots
+                )
+            if not valid:
+                blockers.append(
+                    _issue(
+                        "subtitle_cleanup_path_invalid",
+                        "cleanup_paths",
+                        "cleanup paths must be strict descendants of work/proxy or work/qa",
+                    )
+                )
+    else:
+        blockers.append(
+            _issue(
+                "subtitle_cleanup_path_invalid",
+                "cleanup_paths",
+                "cleanup paths must be an array of strict cleanup descendants",
+            )
+        )
     raw_bindings = manifest.get("bindings")
     bindings = raw_bindings if isinstance(raw_bindings, dict) else {}
     if not isinstance(raw_bindings, dict):
@@ -430,6 +466,35 @@ def qa_subtitles(
 
     readability = optional.get("readability_qa")
     layout = optional.get("layout_qa")
+    readability_policy_sha: str | None = None
+    if readability is not None:
+        policy = readability.get("policy")
+        if not isinstance(policy, dict):
+            blockers.append(
+                _issue(
+                    "readability_policy_content_invalid",
+                    "readability_qa",
+                    "readability QA policy content is missing or invalid",
+                )
+            )
+        else:
+            readability_policy_sha = _canonical_sha256(policy)
+            if readability.get("policy_sha256") != readability_policy_sha:
+                blockers.append(
+                    _issue(
+                        "readability_policy_sha_mismatch",
+                        "readability_qa",
+                        "readability QA policy SHA does not match canonical policy content",
+                    )
+                )
+            if policy.get("policy_version") != readability.get("policy_version"):
+                blockers.append(
+                    _issue(
+                        "readability_policy_version_mismatch",
+                        "readability_qa",
+                        "readability QA policy version does not match policy content",
+                    )
+                )
     try:
         high_risk = select_high_risk_cue_ids(readability) if readability else []
     except ValueError as error:
@@ -697,9 +762,7 @@ def qa_subtitles(
                     "layout QA does not bind the current readability QA artifact",
                 )
             )
-        if layout_bindings.get("readability_policy_sha256") != (
-            readability.get("policy_sha256") if readability else None
-        ):
+        if layout_bindings.get("readability_policy_sha256") != readability_policy_sha:
             blockers.append(
                 _issue(
                     "layout_readability_policy_sha_mismatch",
@@ -888,7 +951,7 @@ def qa_subtitles(
                 else None
             ),
             "readability_policy_sha256": (
-                readability.get("policy_sha256") if readability else None
+                readability_policy_sha
             ),
             "layout_qa_sha256": (
                 bindings.get("layout_qa", {}).get("sha256")

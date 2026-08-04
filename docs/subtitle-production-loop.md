@@ -22,7 +22,7 @@ ASR 词级时间 + 已批准 edit plan + realized timeline
 机器产物与人工结论必须分开：
 
 - `audit-subtitles` 会计算时长、gap、overlap、中文 CPS、拉丁 WPS/CPS、行数和切点邻近风险；它只提出确定性的合并或延长建议，不会静默修改正文，也不会把修复结果标记为 `verified`。
-- `probe-subtitle-layout` 使用指定 FFmpeg 的真实 `subtitles` filter/libass 和正式 ASS 渲染合同测量像素 bbox。draft 快速启发式可以用于 preview，但 release 必须有 `real_libass` 结果。
+- `probe-subtitle-layout` 使用指定 FFmpeg 的真实 `subtitles` filter/libass 和正式 ASS 渲染合同测量像素 bbox。preview 缺少真实布局时只能记录 warning，不能宣称真实布局通过；release 缺少真实 libass 证据必须成为 blocker。
 - `render-subtitle-preview` 只烧录字幕并保留原音轨；不会执行逐段画面处理、音乐、ducking、overlay 或完整 enhancement render。
 - `qa-subtitles` 会验证 cue 渲染证据、真实 libass 解析、代理双流完整解码、布局绑定并生成视觉帧和联系表；它不执行 OCR，也不会把人工状态改为通过。
 - `approve-subtitles` 只消费已经独立完成的人工审校记录。手改 `status=ready`、`review_status=verified` 或 QA 状态不能建立有效审批。
@@ -179,7 +179,7 @@ release 只有在所有硬门禁通过时返回 0；短 cue、阅读速度超限
 
 ## 3. 使用真实 FFmpeg/libass 测量布局
 
-preview 探针允许明确降级为 heuristic，并在 QA 中记录 warning；release 探针缺少 `subtitles` filter、libass、确定字体或真实像素测量时会阻断，不能静默退回字符估算。
+preview 探针允许明确降级为 heuristic，但此时只能在 QA 中记录 warning；release 探针缺少 `subtitles` filter、libass、确定字体或真实像素测量时必须阻断，不能静默退回字符估算，也不能复用磁盘 cache 代替本次真实测量。
 
 ```powershell
 $layoutCache = Join-Path $project 'work\qa\subtitle-layout-cache'
@@ -199,7 +199,7 @@ $layoutCache = Join-Path $project 'work\qa\subtitle-layout-cache'
 if ($LASTEXITCODE -ne 0) { throw "preview layout probe blocked: $LASTEXITCODE" }
 ```
 
-每个 cue 的结果绑定正文 hash、样式 hash、ASS hash、FFmpeg 身份、字体目录身份、实际画布、真实 bbox、安全区、行数、字号、位置、裁切和 fallback 状态。540p、1080p、横屏和竖屏必须分别以对应 base video 的实际画布测量；缓存键会隔离不同文本、换行、样式、画布、字体目录、FFmpeg 和 probe 版本。
+每个 cue 的结果绑定正文 hash、样式 hash、ASS hash、FFmpeg 身份、字体目录身份、实际画布、真实 bbox、安全区、行数、字号、位置、裁切和 fallback 状态。540p、1080p、横屏和竖屏必须分别以对应 base video 的实际画布测量；preview 缓存键会隔离不同文本、换行、样式、画布、字体目录、FFmpeg 和 probe 版本。release 即使提供了同一 cache 目录也会绕过读取、重新调用 FFmpeg/libass 测量；cache 只能保存本次结果供后续 preview 使用。
 
 人工修订完成后，使用 release readability QA 重跑 release 探针：
 
@@ -282,6 +282,8 @@ $queued = & $cli render-subtitle-preview `
 - `job_spec`：可审计参数；
 - `pid`：仅供诊断，进程存在不是成功证据。
 
+底层 `subtitle_preview_runtime` durable job 只能从 `work/proxy/subtitle-preview/<unique-id>/job.json` 启动，且 spec 的 `output_directory` 必须严格等于该 job 目录。job spec 和 status 使用原子替换写入；worker 以独占 claim 接管一次后不可重放。目录中只要已有 manifest、ASS、代理媒体、FFmpeg 日志或 progress，就会 fail closed，不会用旧 job 覆盖正式证据。FFmpeg 同样使用 no-overwrite 模式。
+
 代理输出目录包含 `manifest.json`、`progress.jsonl`、`ffmpeg.log`、ASS 和 MKV 短代理。可用以下命令检查，但必须以最终 status、退出信息、manifest、输出文件和 SHA 为准：
 
 ```powershell
@@ -293,7 +295,7 @@ Get-Content -Raw -Encoding UTF8 (Join-Path $allProxy 'manifest.json') | ConvertF
 
 短素材调试时可显式传 `--foreground` 同步等待。长任务应保持默认 detached；不能依附单个 Codex 前台工具回合存活。
 
-完成复核后，只能依据 manifest 的 `cleanup_paths` 清理这一次的唯一代理目录；不要对整个 `work/proxy/` 或项目根目录执行递归清理。
+完成复核后，只能依据 manifest 的 `cleanup_paths` 清理这一次的唯一代理目录。cleanup path 必须是 `work/proxy/` 或 `work/qa/` 下的严格子目录，不能等于这两个根目录；不要对整个 `work/proxy/`、`work/qa/` 或项目根目录执行递归清理。
 
 ## 5. 生成视觉 QA
 
@@ -322,7 +324,7 @@ $queued | Format-List status, pid, job_status, worker_log
 - 两行字幕、字幕密集段、top/bottom 位置变化、剪辑边界风险和超短字幕联系表；
 - 独立 FFmpeg 日志。
 
-机器通过后的 visual QA 仍应是 `status=review_required`、`human_review.status=pending`、`release_ready=false`。这是正确状态，不应手改。
+机器通过后的 visual QA 仍应是 `status=review_required`、`human_review.status=pending`、`release_ready=false`。这是正确状态，不应手改。没有 OCR 时只能写“已生成视觉帧和布局证据，文字准确性仍需人工听校。”；不得宣称机器完成了文字准确性验证或人工审批。
 
 ## 6. 人工听校、审批和 ready evidence
 
@@ -488,6 +490,7 @@ ready evidence 的结构属于 `schemas/enhancement-plan.schema.json` 中的 `su
 - release readability 为 `passed` 且 `release_ready=true`；
 - release layout 为 `passed`、`probe_mode=real_libass`，每条 cue 都有真实测量且无裁切/越界；
 - human review 是真实完成的独立证据；
+- readability policy 必须由 policy 内容重新计算 canonical SHA；layout 和 visual 必须绑定当前 readability/layout QA 的真实文件 SHA，任何正文、时间、位置、样式、策略或 QA 文件变化都会使旧 approval 失效；
 - `approve-subtitles` 新建 approval、ready source 和 ready evidence；
 - release guard 和最终渲染退出码均为 0；
 - 本地 Git 状态中没有媒体、ASS、PNG、日志、缓存、ASR 中间文件或凭据。

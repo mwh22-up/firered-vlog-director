@@ -867,6 +867,68 @@ class SubtitleCliContractTests(unittest.TestCase):
             self.assertEqual(report["cue_ids"], ["stable-cue-1"])
             self.assertEqual(report["mode"], "preview")
 
+    def test_layout_probe_recomputes_policy_hash_before_media_work(self) -> None:
+        with tempfile.TemporaryDirectory(
+            prefix="firered-subtitle-layout-policy-cli-"
+        ) as temporary:
+            project = Path(temporary) / "project"
+            source = project / "work" / "subtitles" / "source.json"
+            plan = project / "work" / "enhancement" / "plan.json"
+            timeline = project / "work" / "qa" / "timeline.json"
+            readability = project / "work" / "qa" / "readability.json"
+            output = project / "work" / "qa" / "layout.json"
+            source_document = {
+                "project_id": "layout-policy-cli",
+                "cues": [],
+            }
+            timeline_document = {"duration_sec": 1.0, "segments": []}
+            policy = {
+                "policy_version": "1.0",
+                "min_duration_sec": 0.8,
+            }
+            _write_json(source, source_document)
+            _write_json(plan, {"subtitles": {"style": {}}})
+            _write_json(timeline, timeline_document)
+            _write_json(
+                readability,
+                {
+                    "subtitle_source_sha256": hashlib.sha256(
+                        source.read_bytes()
+                    ).hexdigest(),
+                    "realized_timeline_sha256": hashlib.sha256(
+                        timeline.read_bytes()
+                    ).hexdigest(),
+                    "policy_version": "1.0",
+                    "policy_sha256": "0" * 64,
+                    "policy": policy,
+                },
+            )
+
+            exit_code, stdout, _ = _run_main(
+                "probe-subtitle-layout",
+                "--project",
+                project,
+                "--base-video",
+                Path(temporary) / "missing-base.mkv",
+                "--subtitle-source",
+                source,
+                "--plan",
+                plan,
+                "--realized-timeline",
+                timeline,
+                "--readability-qa",
+                readability,
+                "--output",
+                output,
+                "--mode",
+                "release",
+            )
+
+            self.assertEqual(exit_code, 2)
+            result = json.loads(stdout)
+            self.assertIn("policy SHA-256", result["issues"][0]["message"])
+            self.assertFalse(output.exists())
+
     def test_approve_subtitles_outputs_are_confined_by_artifact_type(self) -> None:
         cases = (
             ("approval", "work/subtitles/approval.json"),

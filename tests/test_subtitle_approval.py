@@ -478,6 +478,57 @@ class SubtitleApprovalTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "human review"):
                 fixture.build()
 
+    def test_visual_bindings_must_match_real_qa_and_policy_hashes(self) -> None:
+        mutations = (
+            ("readability_qa_sha256", "0" * 64, "visual QA readability QA"),
+            ("readability_policy_sha256", "1" * 64, "visual QA readability policy"),
+            ("layout_qa_sha256", "2" * 64, "visual QA layout QA"),
+        )
+        for field, forged_sha, expected_message in mutations:
+            with self.subTest(field=field), tempfile.TemporaryDirectory(
+                prefix="firered-subtitle-visual-binding-"
+            ) as tmp:
+                fixture = _ApprovalFixture(Path(tmp))
+                visual = json.loads(fixture.visual.read_text(encoding="utf-8"))
+                visual["bindings"][field] = forged_sha
+                _write(fixture.visual, visual)
+                human = json.loads(fixture.human.read_text(encoding="utf-8"))
+                human["visual_qa_sha256"] = _sha(fixture.visual)
+                _write(fixture.human, human)
+
+                with self.assertRaisesRegex(ValueError, expected_message):
+                    fixture.build()
+
+    def test_readability_policy_hash_is_recomputed_from_policy_content(self) -> None:
+        with tempfile.TemporaryDirectory(
+            prefix="firered-subtitle-policy-provenance-"
+        ) as tmp:
+            fixture = _ApprovalFixture(Path(tmp))
+            readability = json.loads(fixture.readability.read_text(encoding="utf-8"))
+            reported_policy_sha = readability["policy_sha256"]
+            readability["policy"]["max_duration_sec"] = 5.25
+            self.assertEqual(readability["policy_sha256"], reported_policy_sha)
+            _write(fixture.readability, readability)
+
+            layout = json.loads(fixture.layout.read_text(encoding="utf-8"))
+            layout["bindings"]["readability_qa_sha256"] = _sha(fixture.readability)
+            _write(fixture.layout, layout)
+            visual = json.loads(fixture.visual.read_text(encoding="utf-8"))
+            visual["bindings"]["readability_qa_sha256"] = _sha(fixture.readability)
+            visual["bindings"]["layout_qa_sha256"] = _sha(fixture.layout)
+            _write(fixture.visual, visual)
+            human = json.loads(fixture.human.read_text(encoding="utf-8"))
+            human["readability_qa_sha256"] = _sha(fixture.readability)
+            human["layout_qa_sha256"] = _sha(fixture.layout)
+            human["visual_qa_sha256"] = _sha(fixture.visual)
+            _write(fixture.human, human)
+
+            with self.assertRaisesRegex(
+                ValueError,
+                "readability QA policy SHA-256 does not match canonical policy content",
+            ):
+                fixture.build()
+
     def test_release_qa_and_full_visual_scope_are_mandatory(self) -> None:
         mutations = (
             ("readability", lambda value: value.update({"status": "warnings", "release_ready": False})),

@@ -342,6 +342,25 @@ def _collect_contract(
     policy_version = readability.get("policy_version")
     if not isinstance(policy_version, str) or not policy_version:
         issues.append("readability QA policy version is invalid")
+    policy_document = readability.get("policy")
+    if not isinstance(policy_document, dict):
+        policy_sha = None
+        issues.append("readability QA policy content is invalid")
+    else:
+        try:
+            policy_sha = _canonical_sha256(policy_document)
+        except ValueError as error:
+            policy_sha = None
+            issues.append(str(error))
+        else:
+            if readability.get("policy_sha256") != policy_sha:
+                issues.append(
+                    "readability QA policy SHA-256 does not match canonical policy content"
+                )
+            if policy_document.get("policy_version") != policy_version:
+                issues.append(
+                    "readability QA policy version does not match policy content"
+                )
 
     layout_bindings = layout.get("bindings")
     layout_bindings = layout_bindings if isinstance(layout_bindings, dict) else {}
@@ -359,9 +378,7 @@ def _collect_contract(
         issues.append("layout QA realized timeline SHA-256 mismatch")
     if layout_bindings.get("readability_qa_sha256") != readability_sha:
         issues.append("layout QA readability QA SHA-256 mismatch")
-    if layout_bindings.get("readability_policy_sha256") != readability.get(
-        "policy_sha256"
-    ):
+    if layout_bindings.get("readability_policy_sha256") != policy_sha:
         issues.append("layout QA readability policy SHA-256 mismatch")
     if layout_bindings.get("readability_policy_version") != policy_version:
         issues.append("layout QA readability policy version mismatch")
@@ -432,6 +449,12 @@ def _collect_contract(
         issues.append("visual QA subtitle source SHA-256 mismatch")
     if visual_bindings.get("realized_timeline_sha256") != realized_timeline_sha:
         issues.append("visual QA realized timeline SHA-256 mismatch")
+    if visual_bindings.get("readability_qa_sha256") != readability_sha:
+        issues.append("visual QA readability QA SHA-256 mismatch")
+    if visual_bindings.get("readability_policy_sha256") != policy_sha:
+        issues.append("visual QA readability policy SHA-256 mismatch")
+    if visual_bindings.get("layout_qa_sha256") != layout_sha:
+        issues.append("visual QA layout QA SHA-256 mismatch")
     if visual_bindings.get("readability_policy_version") != policy_version:
         issues.append("visual QA readability policy version mismatch")
     layout_probe_version = layout.get("probe_version")

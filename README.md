@@ -119,7 +119,7 @@ project-subtitles
 
 字幕代理只烧录 ASS 并保留原音轨，不执行画面 treatment、音乐、ducking、overlay 或完整 enhancement render。`render-subtitle-preview` 和 `qa-subtitles` 默认提交可独立存活的 detached job；风险短代理支持按 cue、segment 或 chapter 输出，最终审批则要求 release readability、真实 libass layout、all-scope visual QA 和独立人工听校记录。
 
-机器视觉 QA 不执行 OCR，也不会伪造人工通过状态。它只能准确说明：“已生成视觉帧和布局证据，文字准确性仍需人工听校。”完整目录约束、后台状态检查、六个可复制 PowerShell 命令、人工审批和 `subtitle-ready-evidence-v1` 接入方式见 [字幕生产闭环](docs/subtitle-production-loop.md)。
+机器视觉 QA 不执行 OCR，也不会伪造人工通过状态。没有 OCR 时它只能准确说明：“已生成视觉帧和布局证据，文字准确性仍需人工听校。”preview 缺少真实布局只能 warning；release 缺少真实 libass 证据必须 blocker，且会绕过磁盘布局 cache 重新测量。完整目录约束、不可重放后台 job、状态检查、六个可复制 PowerShell 命令、人工审批和 `subtitle-ready-evidence-v1` 接入方式见 [字幕生产闭环](docs/subtitle-production-loop.md)。
 
 ## 参考片学习
 

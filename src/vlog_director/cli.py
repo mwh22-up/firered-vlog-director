@@ -681,6 +681,26 @@ def main() -> int:
                 raise ValueError("readability QA subtitle source SHA-256 mismatch")
             if readability.get("realized_timeline_sha256") != timeline_sha:
                 raise ValueError("readability QA realized timeline SHA-256 mismatch")
+            policy = readability.get("policy")
+            if not isinstance(policy, dict):
+                raise ValueError("readability QA policy content is invalid")
+            policy_sha = hashlib.sha256(
+                json.dumps(
+                    policy,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                    allow_nan=False,
+                ).encode("utf-8")
+            ).hexdigest()
+            if readability.get("policy_sha256") != policy_sha:
+                raise ValueError(
+                    "readability QA policy SHA-256 does not match canonical policy content"
+                )
+            if policy.get("policy_version") != readability.get("policy_version"):
+                raise ValueError(
+                    "readability QA policy version does not match policy content"
+                )
             base_video = args.base_video.resolve()
             if not base_video.is_file():
                 raise FileNotFoundError(base_video)
@@ -717,7 +737,7 @@ def main() -> int:
                     subtitle_source_sha256=source_sha,
                     realized_timeline_sha256=timeline_sha,
                     readability_qa_sha256=_sha256_file(readability_path),
-                    readability_policy_sha256=str(readability.get("policy_sha256", "")),
+                    readability_policy_sha256=policy_sha,
                     readability_policy_version=str(readability.get("policy_version", "")),
                     fonts_directory=fonts_directory,
                     enhancement_plan_sha256=_sha256_file(plan_path),

@@ -176,6 +176,66 @@ class SubtitleLayoutProbeUnitTests(unittest.TestCase):
         self.assertIn("subtitles_filter_unavailable", preview["warning_codes"])
         self.assertIn("subtitles_filter_unavailable", release["blocker_codes"])
 
+    def test_release_probe_never_reads_a_disk_cache(self) -> None:
+        identity = {
+            "executable_name": "ffmpeg.exe",
+            "executable_size_bytes": 100,
+            "executable_sha256": "1" * 64,
+            "version_line": "ffmpeg version test",
+            "configuration_sha256": "2" * 64,
+            "filters_sha256": "3" * 64,
+            "subtitles_filter_available": True,
+            "libass_enabled": True,
+        }
+        width, height = 16, 16
+        control = bytes([255, 255, 255] * width * height)
+        rendered = bytearray(control)
+        rendered[(8 * width + 8) * 3 : (8 * width + 8) * 3 + 3] = b"\x00\x00\x00"
+        with tempfile.TemporaryDirectory(prefix="firered-layout-release-cache-") as temporary:
+            root = Path(temporary)
+            ass_path = root / "captions.ass"
+            cache = root / "cache"
+            cache.mkdir()
+            (cache / ("0" * 64 + ".json")).write_text("{}\n", encoding="utf-8")
+            ass_path.write_text(
+                "[Script Info]\nScriptType: v4.00+\n"
+                "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"
+                "Dialogue: 0,0:00:00.00,0:00:01.00,Default,,0,0,0,,Readable subtitle\n",
+                encoding="utf-8",
+            )
+            with patch(
+                "vlog_director.subtitle_layout_probe.inspect_ffmpeg_identity",
+                return_value=identity,
+            ), patch(
+                "vlog_director.subtitle_layout_probe.find_ffmpeg",
+                return_value="ffmpeg",
+            ), patch(
+                "vlog_director.subtitle_layout_probe._load_cache"
+            ) as load_cache, patch(
+                "vlog_director.subtitle_layout_probe._run_rgb_frame",
+                side_effect=[(control, ""), (bytes(rendered), "fontselect: (Arial, 400, 0) -> Arial")],
+            ) as run_frame:
+                report = probe_subtitle_layout(
+                    ass_path=ass_path,
+                    cues=[_cue()],
+                    style=_style(safe_margin_percent=0.0, margin_v=0),
+                    canvas_width=width,
+                    canvas_height=height,
+                    executable="ffmpeg",
+                    mode="release",
+                    project_id="project-test",
+                    subtitle_source_sha256="a" * 64,
+                    realized_timeline_sha256="b" * 64,
+                    readability_qa_sha256="c" * 64,
+                    readability_policy_sha256="d" * 64,
+                    readability_policy_version="1.0",
+                    cache_directory=cache,
+                )
+
+        load_cache.assert_not_called()
+        self.assertEqual(run_frame.call_count, 2)
+        self.assertFalse(report["cues"][0]["cache_hit"])
+
     def test_formal_and_runtime_schemas_match_and_fail_closed(self) -> None:
         formal = json.loads(
             (REPOSITORY_ROOT / "schemas" / "subtitle-layout-qa.schema.json").read_text(

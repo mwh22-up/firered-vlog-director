@@ -34,6 +34,10 @@
       "type": "string",
       "minLength": 1
     },
+    "cleanupPath": {
+      "type": "string",
+      "pattern": "^work/(?:proxy|qa)/(?!(?:\\.\\.)(?:/|$))[^/\\\\]+(?:/(?!(?:\\.\\.)(?:/|$))[^/\\\\]+)*$"
+    },
     "ids": {
       "type": "array",
       "items": {
@@ -402,7 +406,7 @@
     "cleanup_paths": {
       "type": "array",
       "items": {
-        "$ref": "#/$defs/path"
+        "$ref": "#/$defs/cleanupPath"
       },
       "minItems": 1,
       "uniqueItems": true
