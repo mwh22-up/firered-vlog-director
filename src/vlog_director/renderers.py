@@ -15,7 +15,11 @@ from .enhancement import (
 )
 from .enhancement_assets import validate_enhancement_assets
 from .ffmpeg import filter_path, find_ffmpeg, probe_media, require_filters, run_command
-from .overlays import SUPPORTED_OVERLAY_ANIMATIONS, build_overlay_filters
+from .overlays import (
+    SUPPORTED_OVERLAY_ANIMATIONS,
+    build_hyperframes_overlay_filters,
+    build_overlay_filters,
+)
 from .subtitle_render_contract import (
     build_subtitle_render_contract,
     subtitle_filter_expression,
@@ -61,6 +65,25 @@ def _resolve_project_asset(project: Path, source: str) -> Path:
         raise ValueError("enhancement assets must stay inside project/assets") from error
     if not resolved.is_file():
         raise FileNotFoundError(resolved)
+    return resolved
+
+
+def _resolve_overlay_asset(project: Path, item: dict[str, Any]) -> Path:
+    if item.get("type") != "hyperframes":
+        return _resolve_project_asset(project, str(item["source"]))
+    relative = Path(str(item["source"]))
+    if relative.is_absolute():
+        raise ValueError("HyperFrames assets must use project-relative paths")
+    allowed_root = (project / "work" / "effects").resolve()
+    resolved = (project / relative).resolve()
+    try:
+        resolved.relative_to(allowed_root)
+    except ValueError as error:
+        raise ValueError("HyperFrames assets must stay inside project/work/effects") from error
+    if not resolved.is_file():
+        raise FileNotFoundError(resolved)
+    if _sha256_file(resolved) != item.get("source_sha256"):
+        raise ValueError("HyperFrames asset SHA-256 does not match the approved effect")
     return resolved
 
 
@@ -532,6 +555,20 @@ def render_enhanced_video(
             "enhancement asset validation failed: "
             + json.dumps(asset_errors, ensure_ascii=False)
         )
+    effect_section = enhancement_plan.get("illustration_motion", {})
+    hyperframes_items = [
+        item
+        for item in effect_section.get("items", [])
+        if isinstance(item, dict) and item.get("type") == "hyperframes"
+    ]
+    if hyperframes_items:
+        expected_base_sha256 = effect_section.get("effect_evidence", {}).get(
+            "base_media_sha256"
+        )
+        if _sha256_file(base_video) != expected_base_sha256:
+            raise ValueError(
+                "HyperFrames effects were approved against a different base media SHA-256"
+            )
     non_finite_paths = find_non_finite_number_paths(enhancement_plan)
     if realized_timeline is not None:
         non_finite_paths.extend(
@@ -649,6 +686,7 @@ def render_enhanced_video(
         "callout",
         "map",
         "title_card",
+        "hyperframes",
     }
     if any(str(item.get("type", "")) not in supported_overlay_types for item in overlay_items):
         raise ValueError("overlay item type is unsupported")
@@ -710,8 +748,11 @@ def render_enhanced_video(
     input_index = 1
     overlay_inputs: list[tuple[int, dict[str, Any]]] = []
     for item in overlay_items:
-        source = _resolve_project_asset(project, str(item["source"]))
-        command.extend(["-loop", "1", "-framerate", "30", "-i", str(source)])
+        source = _resolve_overlay_asset(project, item)
+        if item.get("type") == "hyperframes":
+            command.extend(["-i", str(source)])
+        else:
+            command.extend(["-loop", "1", "-framerate", "30", "-i", str(source)])
         overlay_inputs.append((input_index, item))
         input_index += 1
 
@@ -725,13 +766,23 @@ def render_enhanced_video(
     for sequence, (index, item) in enumerate(overlay_inputs, start=1):
         if media is None:
             media = probe_media(ffmpeg, base_video)
-        overlay_filters, next_video, overlay_required = build_overlay_filters(
-            index,
-            sequence,
-            video_label,
-            item,
-            int(media["width"]),
-        )
+        if item.get("type") == "hyperframes":
+            overlay_filters, next_video, overlay_required = (
+                build_hyperframes_overlay_filters(
+                    index,
+                    sequence,
+                    video_label,
+                    item,
+                )
+            )
+        else:
+            overlay_filters, next_video, overlay_required = build_overlay_filters(
+                index,
+                sequence,
+                video_label,
+                item,
+                int(media["width"]),
+            )
         filters.extend(overlay_filters)
         required_filters.update(overlay_required)
         video_label = next_video

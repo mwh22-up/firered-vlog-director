@@ -1,5 +1,7 @@
 # 成片增强流水线
 
+> HyperFrames 动效现在有独立闭环：`plan-effects → compose-effects → render-effects → qa-effects → 人工复核 → approve-effects → apply-effects`。它生成真正的透明 MOV 并由 enhancement renderer 按 timeline offset 合成；没有独立人工复核和 SHA approval 时不得进入 release。视觉方向、固定版本和 PowerShell 命令见 [HyperFrames 大胆动效生产闭环](effect-production-loop.md)。
+
 `edit_plan.json` 决定镜头选择和故事顺序，`enhancement_plan.json` 决定如何处理这些镜头。增强阶段不得删除、缩短或重排导演计划中的片段。
 
 ## 固定渲染顺序

@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/effect-plan.schema.json",
+  "title": "Effect Plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "contract_version",
+    "project_id",
+    "version",
+    "edit_plan_version",
+    "edit_plan_sha256",
+    "timeline_duration_sec",
+    "style_pack",
+    "capability_registry",
+    "effects"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "contract_version": { "const": "effect-plan-v1" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "version": { "type": "integer", "minimum": 1 },
+    "edit_plan_version": { "type": "integer", "minimum": 1 },
+    "edit_plan_sha256": { "$ref": "#/$defs/sha256" },
+    "timeline_duration_sec": { "type": "number", "exclusiveMinimum": 0 },
+    "style_pack": {
+      "type": "object",
+      "required": ["id", "intensity", "palette", "typography", "motion", "budget"],
+      "properties": {
+        "id": { "const": "firecut-bold-v1" },
+        "intensity": { "type": "number", "minimum": 0.8, "maximum": 1 },
+        "palette": {
+          "type": "object",
+          "required": ["primary", "secondary", "contrast", "ink", "paper"],
+          "properties": {
+            "primary": { "$ref": "#/$defs/color" },
+            "secondary": { "$ref": "#/$defs/color" },
+            "contrast": { "$ref": "#/$defs/color" },
+            "ink": { "$ref": "#/$defs/color" },
+            "paper": { "$ref": "#/$defs/color" }
+          },
+          "additionalProperties": false
+        },
+        "typography": {
+          "type": "object",
+          "required": ["family", "title_weight", "uppercase_latin"],
+          "properties": {
+            "family": { "type": "string", "minLength": 1 },
+            "title_weight": { "type": "integer", "minimum": 700, "maximum": 1000 },
+            "uppercase_latin": { "type": "boolean" }
+          },
+          "additionalProperties": false
+        },
+        "motion": {
+          "type": "object",
+          "required": ["character", "overshoot", "entry_ratio", "exit_ratio"],
+          "properties": {
+            "character": { "const": "high_energy_editorial" },
+            "overshoot": { "type": "number", "minimum": 1, "maximum": 1.5 },
+            "entry_ratio": { "type": "number", "exclusiveMinimum": 0, "maximum": 0.4 },
+            "exit_ratio": { "type": "number", "exclusiveMinimum": 0, "maximum": 0.4 }
+          },
+          "additionalProperties": false
+        },
+        "budget": {
+          "type": "object",
+          "required": ["max_primary_effects_per_event", "max_effect_coverage_ratio", "minimum_gap_sec"],
+          "properties": {
+            "max_primary_effects_per_event": { "const": 1 },
+            "max_effect_coverage_ratio": { "type": "number", "exclusiveMinimum": 0, "maximum": 0.5 },
+            "minimum_gap_sec": { "type": "number", "minimum": 0, "maximum": 2 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "capability_registry": {
+      "type": "object",
+      "required": ["executor", "package", "version", "npm_integrity", "minimum_node_major", "output_format", "alpha", "recipes"],
+      "properties": {
+        "executor": { "const": "hyperframes" },
+        "package": { "const": "hyperframes" },
+        "version": { "const": "0.7.90" },
+        "npm_integrity": { "type": "string", "pattern": "^sha512-[A-Za-z0-9+/]+={0,2}$" },
+        "minimum_node_major": { "const": 22 },
+        "output_format": { "const": "mov" },
+        "alpha": { "const": true },
+        "recipes": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "impact_hit" },
+            { "const": "kinetic_explain" },
+            { "const": "place_reveal" },
+            { "const": "reaction_burst" }
+          ],
+          "items": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "effects": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/effect" }
+    }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+    "effect": {
+      "type": "object",
+      "required": ["effect_id", "event_id", "chapter_id", "target_segment_id", "intent", "evidence_ids", "placement", "recipe", "budget", "constraints", "status"],
+      "properties": {
+        "effect_id": { "type": "string", "minLength": 1 },
+        "event_id": { "type": "string", "minLength": 1 },
+        "chapter_id": { "type": "string", "minLength": 1 },
+        "target_segment_id": { "type": "string", "minLength": 1 },
+        "intent": { "enum": ["impact_hit", "kinetic_explain", "place_reveal", "reaction_burst"] },
+        "evidence_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "placement": {
+          "type": "object",
+          "required": ["start_sec", "end_sec"],
+          "properties": {
+            "start_sec": { "type": "number", "minimum": 0 },
+            "end_sec": { "type": "number", "exclusiveMinimum": 0 }
+          },
+          "additionalProperties": false
+        },
+        "recipe": {
+          "type": "object",
+          "required": ["executor", "type", "composition_format", "parameters"],
+          "properties": {
+            "executor": { "const": "hyperframes" },
+            "type": { "enum": ["impact_hit", "kinetic_explain", "place_reveal", "reaction_burst"] },
+            "composition_format": { "const": "transparent_mov" },
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "text": { "type": "string", "minLength": 1, "maxLength": 120 },
+                "layout": { "enum": ["bold_poster", "oversized_split"] },
+                "glyph": { "type": "string", "minLength": 1, "maxLength": 4 },
+                "burst_count": { "type": "integer", "minimum": 6, "maximum": 24 },
+                "pulse_count": { "type": "integer", "minimum": 1, "maximum": 4 },
+                "accent": { "enum": ["radial_flash"] }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "budget": {
+          "type": "object",
+          "required": ["role", "intensity"],
+          "properties": {
+            "role": { "enum": ["primary", "accent"] },
+            "intensity": { "type": "number", "minimum": 0.8, "maximum": 1 }
+          },
+          "additionalProperties": false
+        },
+        "constraints": {
+          "type": "object",
+          "required": ["preserve_duration", "avoid_subtitle_safe_zone", "avoid_face_occlusion", "protected_zones"],
+          "properties": {
+            "preserve_duration": { "const": true },
+            "avoid_subtitle_safe_zone": { "type": "boolean" },
+            "avoid_face_occlusion": { "type": "boolean" },
+            "protected_zones": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": { "enum": ["faces", "main_subject", "subtitles"] }
+            }
+          },
+          "additionalProperties": false
+        },
+        "status": { "const": "review_required" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

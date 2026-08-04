@@ -27,6 +27,7 @@ PROJECT_DIRECTORIES = (
     "work/analysis",
     "work/plans",
     "work/enhancement",
+    "work/effects",
     "work/jobs",
     "work/stabilized",
     "work/subtitles",

@@ -165,21 +165,155 @@ def _validate_overlays(
     enhancement_plan: dict[str, Any],
     issues: list[dict[str, Any]],
 ) -> None:
-    items = enhancement_plan.get("illustration_motion", {}).get("items", [])
+    section = enhancement_plan.get("illustration_motion", {})
+    items = section.get("items", [])
     if not isinstance(items, list):
         return
     assets_root = project / "assets"
+    effect_items: list[dict[str, Any]] = []
+    hash_cache: dict[Path, str] = {}
     for index, item in enumerate(items, start=1):
         if not isinstance(item, dict):
             continue
         subject_id = str(item.get("id") or f"overlay-{index}")
-        _resolve_confined_file(
+        if item.get("type") == "hyperframes":
+            effect_items.append(item)
+            source = _resolve_confined_file(
+                project,
+                item.get("source"),
+                project / "work" / "effects",
+                subject_id,
+                issues,
+            )
+            if source is not None and _sha256_file(source, hash_cache) != item.get("source_sha256"):
+                issues.append(
+                    _issue(
+                        "effect_output_sha256_mismatch",
+                        subject_id,
+                        "HyperFrames overlay SHA-256 differs from the approved output.",
+                    )
+                )
+        else:
+            _resolve_confined_file(
+                project,
+                item.get("source"),
+                assets_root,
+                subject_id,
+                issues,
+            )
+
+    if not effect_items:
+        return
+    evidence = section.get("effect_evidence")
+    if not isinstance(evidence, dict) or evidence.get("contract_version") != "effect-ready-evidence-v1":
+        issues.append(
+            _issue(
+                "effect_ready_evidence_missing",
+                "illustration_motion",
+                "HyperFrames overlays require CLI-generated effect-ready evidence.",
+            )
+        )
+        return
+    required_bindings = {
+        "effect_plan": project / "work" / "effects",
+        "render_manifest": project / "work" / "effects",
+        "visual_qa": project / "work" / "qa" / "effects",
+        "human_review": project / "work" / "qa" / "effects",
+        "approval": project / "work" / "qa" / "effects",
+    }
+    resolved: dict[str, Path] = {}
+    for name, allowed_root in required_bindings.items():
+        binding = evidence.get(name)
+        if not isinstance(binding, dict):
+            issues.append(
+                _issue(
+                    "effect_ready_evidence_invalid",
+                    name,
+                    "Effect evidence binding is missing.",
+                )
+            )
+            continue
+        path = _resolve_confined_file(
             project,
-            item.get("source"),
-            assets_root,
-            subject_id,
+            binding.get("path"),
+            allowed_root,
+            name,
             issues,
         )
+        if path is None:
+            continue
+        if _sha256_file(path, hash_cache) != binding.get("sha256"):
+            issues.append(
+                _issue(
+                    "effect_ready_evidence_sha256_mismatch",
+                    name,
+                    "Effect evidence file SHA-256 changed.",
+                )
+            )
+            continue
+        resolved[name] = path
+    if len(resolved) != len(required_bindings):
+        return
+    from .effect_approval import validate_effect_approval
+
+    approval_validation = validate_effect_approval(
+        project,
+        resolved["effect_plan"],
+        resolved["render_manifest"],
+        resolved["visual_qa"],
+        resolved["human_review"],
+        resolved["approval"],
+    )
+    if approval_validation["status"] != "passed":
+        for code in approval_validation.get("blocker_codes", ["effect_approval_invalid"]):
+            issues.append(
+                _issue(
+                    str(code),
+                    "illustration_motion",
+                    "HyperFrames approval no longer matches its evidence chain.",
+                )
+            )
+        return
+    approval_document = _load_json_document(resolved["approval"], "effect approval", issues)
+    if approval_document is None:
+        return
+    expected_approval = approval_document.get("approval_sha256")
+    expected_payload = approval_document.get("effect_payload_sha256")
+    if evidence.get("effect_payload_sha256") != expected_payload:
+        issues.append(
+            _issue(
+                "effect_ready_payload_mismatch",
+                "illustration_motion",
+                "Enhancement effect payload differs from the approved payload.",
+            )
+        )
+    if evidence.get("base_media_sha256") != approval_document.get("base_media_sha256"):
+        issues.append(
+            _issue(
+                "effect_ready_base_media_mismatch",
+                "illustration_motion",
+                "Enhancement effect evidence is bound to a different base edit.",
+            )
+        )
+    approval_ids = set(approval_document.get("effect_ids", []))
+    item_ids = {str(item.get("id")) for item in effect_items}
+    if item_ids != approval_ids:
+        issues.append(
+            _issue(
+                "effect_ready_set_mismatch",
+                "illustration_motion",
+                "Enhancement HyperFrames item set differs from the approved effect set.",
+            )
+        )
+    for item in effect_items:
+        if item.get("approval_sha256") != expected_approval:
+            issues.append(
+                _issue(
+                    "effect_item_approval_mismatch",
+                    str(item.get("id")),
+                    "HyperFrames item is not bound to the current approval.",
+                )
+            )
 
 
 def _music_manifest_assets(

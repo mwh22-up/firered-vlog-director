@@ -1,5 +1,7 @@
 # FireRed Vlog Director Core
 
+> 大胆动效已接入 HyperFrames 生产闭环：导演系统生成 `firecut-bold-v1` 效果计划，固定 `hyperframes@0.7.90` 渲染透明 MOV，再经过基础剪辑合成代理、三帧视觉证据、独立人工复核、SHA approval 和 enhancement release gate。四类首发 recipe 为 `impact_hit`、`kinetic_explain`、`place_reveal`、`reaction_burst`。完整命令与安全边界见 [HyperFrames 大胆动效生产闭环](docs/effect-production-loop.md)。
+
 可移植的“导演大脑”，用于分析目标原片、应用参考片经验、生成并评分多套候选 EDL、保护重要事件链，并在人工批准后驱动原片重剪。
 
 当前包含：

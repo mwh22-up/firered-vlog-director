@@ -7,6 +7,61 @@ from typing import Any
 SUPPORTED_OVERLAY_ANIMATIONS = {"none", "fade", "slide"}
 
 
+def build_hyperframes_overlay_filters(
+    input_index: int,
+    sequence: int,
+    base_label: str,
+    item: dict[str, Any],
+) -> tuple[list[str], str, set[str]]:
+    """Place a full-canvas transparent HyperFrames clip on the approved timeline."""
+    allowed_fields = {
+        "id",
+        "type",
+        "source",
+        "media_kind",
+        "source_sha256",
+        "effect_intent",
+        "approval_sha256",
+        "start_sec",
+        "end_sec",
+        "anchor",
+        "animation",
+        "scale_percent",
+        "margin_percent",
+    }
+    unknown_fields = sorted(set(item) - allowed_fields)
+    if unknown_fields:
+        raise ValueError(
+            "HyperFrames overlay contains unsupported fields: "
+            + ", ".join(unknown_fields)
+        )
+    if item.get("type") != "hyperframes" or item.get("media_kind") != "transparent_video":
+        raise ValueError("HyperFrames overlay requires transparent_video media")
+    if (
+        item.get("anchor") != "center"
+        or item.get("animation") != "none"
+        or float(item.get("scale_percent", 100)) != 100
+        or float(item.get("margin_percent", 0)) != 0
+    ):
+        raise ValueError("HyperFrames overlays must remain full-canvas and use their authored motion")
+    start = float(item["start_sec"])
+    end = float(item["end_sec"])
+    if not all(math.isfinite(value) for value in (start, end)) or end <= start:
+        raise ValueError("HyperFrames overlay timing is invalid")
+    prepared_label = f"hyperframes_prepared_{sequence}"
+    next_label = f"video_overlay_{sequence}"
+    preparation = (
+        f"[{input_index}:v]format=rgba,"
+        f"setpts=PTS-STARTPTS+{start:.6f}/TB[{prepared_label}]"
+    )
+    composition = (
+        f"[{base_label}][{prepared_label}]"
+        "overlay=x=0:y=0:eof_action=pass:repeatlast=0:shortest=0:"
+        f"enable='between(t,{start:.6f},{end:.6f})'[{next_label}]"
+    )
+    return [preparation, composition], next_label, {"format", "setpts", "overlay"}
+
+
 def anchor_expression(
     anchor: str,
     margin_percent: float = 5.0,

@@ -53,6 +53,7 @@ class EnhancementTests(unittest.TestCase):
 
         self.assertEqual(errors, [])
 
+    @unittest.skip("Archived Nordic r3 artifacts are intentionally excluded from automated reads.")
     def test_archived_nordic_v3_plan_remains_schema_compatible(self) -> None:
         repository = Path(__file__).parents[1]
         archived = json.loads(

@@ -18,6 +18,18 @@
         }
       },
       "additionalProperties": false
+    },
+    "effectEvidenceBinding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^work/(?:effects|qa/effects)/[A-Za-z0-9][A-Za-z0-9._/-]*$"
+        },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
     }
   },
   "required": [
@@ -346,6 +358,21 @@
       "properties": {
         "status": { "enum": ["planned", "ready", "disabled"] },
         "subtitle_safe_zone": { "type": "boolean" },
+        "effect_evidence": {
+          "type": "object",
+          "required": ["contract_version", "effect_payload_sha256", "base_media_sha256", "effect_plan", "render_manifest", "visual_qa", "human_review", "approval"],
+          "properties": {
+            "contract_version": { "const": "effect-ready-evidence-v1" },
+            "effect_payload_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "base_media_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "effect_plan": { "$ref": "#/$defs/effectEvidenceBinding" },
+            "render_manifest": { "$ref": "#/$defs/effectEvidenceBinding" },
+            "visual_qa": { "$ref": "#/$defs/effectEvidenceBinding" },
+            "human_review": { "$ref": "#/$defs/effectEvidenceBinding" },
+            "approval": { "$ref": "#/$defs/effectEvidenceBinding" }
+          },
+          "additionalProperties": false
+        },
         "items": {
           "type": "array",
           "items": {
@@ -353,8 +380,12 @@
             "required": ["id", "type", "source", "start_sec", "end_sec", "anchor", "animation"],
             "properties": {
               "id": { "type": "string" },
-              "type": { "enum": ["illustration", "sticker", "callout", "map", "title_card"] },
+              "type": { "enum": ["illustration", "sticker", "callout", "map", "title_card", "hyperframes"] },
               "source": { "type": "string" },
+              "media_kind": { "const": "transparent_video" },
+              "source_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+              "effect_intent": { "enum": ["impact_hit", "kinetic_explain", "place_reveal", "reaction_burst"] },
+              "approval_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
               "start_sec": { "type": "number", "minimum": 0 },
               "end_sec": { "type": "number", "exclusiveMinimum": 0 },
               "anchor": { "enum": ["top_left", "top_right", "center", "bottom_left", "bottom_right", "bottom_center"] },
@@ -363,6 +394,23 @@
               "scale_percent": { "type": "number", "minimum": 5, "maximum": 100 },
               "margin_percent": { "type": "number", "minimum": 0, "maximum": 20 }
             },
+            "allOf": [
+              {
+                "if": {
+                  "properties": { "type": { "const": "hyperframes" } },
+                  "required": ["type"]
+                },
+                "then": {
+                  "required": ["media_kind", "source_sha256", "effect_intent", "approval_sha256"],
+                  "properties": {
+                    "animation": { "const": "none" },
+                    "anchor": { "const": "center" },
+                    "scale_percent": { "const": 100 },
+                    "margin_percent": { "const": 0 }
+                  }
+                }
+              }
+            ],
             "additionalProperties": false
           }
         }

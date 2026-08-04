@@ -32,6 +32,10 @@ class SchemaValidationTests(unittest.TestCase):
             {
                 "director-profile-aggregate.schema.json",
                 "director-profile.schema.json",
+                "effect-approval.schema.json",
+                "effect-human-review.schema.json",
+                "effect-plan.schema.json",
+                "effect-visual-qa.schema.json",
                 "enhancement-plan.schema.json",
                 "moments.schema.json",
                 "protection-policy.schema.json",
@@ -58,6 +62,7 @@ class SchemaValidationTests(unittest.TestCase):
                 name
                 for name in self.schemas
                 if name == "enhancement-plan.schema.json"
+                or name.startswith("effect-")
                 or name.startswith("subtitle-")
             },
         )
@@ -273,7 +278,7 @@ class SchemaValidationTests(unittest.TestCase):
             )
             for path in directory.glob("*.json")
         )
-        self.assertEqual(len(json_paths), 54)
+        self.assertEqual(len(json_paths), 58)
         for path in json_paths:
             with self.subTest(path=path.relative_to(REPOSITORY_ROOT)):
                 load_json(path)

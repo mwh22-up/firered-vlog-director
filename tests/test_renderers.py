@@ -428,6 +428,70 @@ class RendererTests(unittest.TestCase):
             ):
                 render_enhanced_video(project, base_video, plan, project / "bad.mp4")
 
+    def test_renderer_composites_hyperframes_mov_without_image_looping(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            project = Path(temporary_directory)
+            base_video = project / "base.mkv"
+            effect_video = project / "work" / "effects" / "job-1" / "effect-1" / "overlay.mov"
+            base_video.write_bytes(b"base")
+            effect_video.parent.mkdir(parents=True)
+            effect_video.write_bytes(b"mov")
+            plan = {
+                "music": {"status": "planned", "tracks": []},
+                "subtitles": {"status": "planned", "cues": []},
+                "illustration_motion": {
+                    "status": "ready",
+                    "subtitle_safe_zone": True,
+                    "effect_evidence": {
+                        "base_media_sha256": hashlib.sha256(base_video.read_bytes()).hexdigest()
+                    },
+                    "items": [
+                        {
+                            "id": "effect-1",
+                            "type": "hyperframes",
+                            "source": "work/effects/job-1/effect-1/overlay.mov",
+                            "media_kind": "transparent_video",
+                            "source_sha256": hashlib.sha256(effect_video.read_bytes()).hexdigest(),
+                            "effect_intent": "impact_hit",
+                            "approval_sha256": "2" * 64,
+                            "start_sec": 1.0,
+                            "end_sec": 2.0,
+                            "anchor": "center",
+                            "animation": "none",
+                            "scale_percent": 100,
+                            "margin_percent": 0,
+                        }
+                    ],
+                },
+            }
+            captured: dict[str, object] = {}
+
+            def capture_filter(command: list[str]) -> None:
+                captured["command"] = list(command)
+                script_index = command.index("-filter_complex_script") + 1
+                captured["filter"] = Path(command[script_index]).read_text(encoding="utf-8")
+
+            with (
+                patch("vlog_director.renderers.validate_enhancement_assets", return_value=[]),
+                patch("vlog_director.renderers.find_ffmpeg", return_value="ffmpeg"),
+                patch("vlog_director.renderers.require_filters"),
+                patch(
+                    "vlog_director.renderers.probe_media",
+                    return_value={"width": 1920, "height": 1080},
+                ),
+                patch("vlog_director.renderers.run_command", side_effect=capture_filter),
+            ):
+                render_enhanced_video(project, base_video, plan, project / "output.mp4")
+
+            command = captured["command"]
+            effect_index = next(
+                index for index, value in enumerate(command) if str(value).endswith("overlay.mov")
+            )
+            self.assertNotIn("-loop", command[max(0, effect_index - 4):effect_index])
+            self.assertIn("setpts=PTS-STARTPTS+1.000000/TB", captured["filter"])
+            self.assertIn("overlay=x=0:y=0", captured["filter"])
+            self.assertIn("repeatlast=0", captured["filter"])
+
     def test_renderer_passes_subtitle_layout_and_uses_temporary_ass(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             project = Path(temporary_directory)

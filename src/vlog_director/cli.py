@@ -268,6 +268,55 @@ def _build_parser() -> argparse.ArgumentParser:
         default="preview",
     )
 
+    plan_effects = subparsers.add_parser("plan-effects")
+    plan_effects.add_argument("--project", type=Path, required=True)
+    plan_effects.add_argument("--version", type=int, required=True)
+    plan_effects.add_argument("--style-pack", default="firecut-bold-v1")
+
+    compose_effects = subparsers.add_parser("compose-effects")
+    compose_effects.add_argument("--project", type=Path, required=True)
+    compose_effects.add_argument("--plan", type=Path, required=True)
+    compose_effects.add_argument("--output-directory", type=Path, required=True)
+    compose_effects.add_argument("--canvas-width", type=int, default=1920)
+    compose_effects.add_argument("--canvas-height", type=int, default=1080)
+
+    render_effects = subparsers.add_parser("render-effects")
+    render_effects.add_argument("--project", type=Path, required=True)
+    render_effects.add_argument("--plan", type=Path, required=True)
+    render_effects.add_argument("--composition-manifest", type=Path, required=True)
+    render_effects.add_argument("--hyperframes-executable", default="hyperframes")
+    render_effects.add_argument(
+        "--quality",
+        choices=["draft", "standard", "high"],
+        default="standard",
+    )
+
+    qa_effects = subparsers.add_parser("qa-effects")
+    qa_effects.add_argument("--project", type=Path, required=True)
+    qa_effects.add_argument("--plan", type=Path, required=True)
+    qa_effects.add_argument("--render-manifest", type=Path, required=True)
+    qa_effects.add_argument("--base-video", type=Path, required=True)
+    qa_effects.add_argument("--output-directory", type=Path, required=True)
+    qa_effects.add_argument("--ffmpeg-executable", default="ffmpeg")
+
+    approve_effects = subparsers.add_parser("approve-effects")
+    approve_effects.add_argument("--project", type=Path, required=True)
+    approve_effects.add_argument("--plan", type=Path, required=True)
+    approve_effects.add_argument("--render-manifest", type=Path, required=True)
+    approve_effects.add_argument("--visual-qa", type=Path, required=True)
+    approve_effects.add_argument("--human-review", type=Path, required=True)
+    approve_effects.add_argument("--output", type=Path, required=True)
+
+    apply_effects = subparsers.add_parser("apply-effects")
+    apply_effects.add_argument("--project", type=Path, required=True)
+    apply_effects.add_argument("--enhancement-plan", type=Path, required=True)
+    apply_effects.add_argument("--plan", type=Path, required=True)
+    apply_effects.add_argument("--render-manifest", type=Path, required=True)
+    apply_effects.add_argument("--visual-qa", type=Path, required=True)
+    apply_effects.add_argument("--human-review", type=Path, required=True)
+    apply_effects.add_argument("--approval", type=Path, required=True)
+    apply_effects.add_argument("--output", type=Path, required=True)
+
     stabilize = subparsers.add_parser("stabilize")
     stabilize.add_argument("--input", type=Path, required=True)
     stabilize.add_argument("--output", type=Path, required=True)
@@ -1001,6 +1050,214 @@ def main() -> int:
         )
         _write_result(result, None)
         return 0 if result["status"] in {"preview_ready", "ready"} else 2
+    if args.command == "plan-effects":
+        try:
+            from .effect_plan import build_effect_plan, validate_effect_plan
+
+            project = args.project.resolve()
+            edit_path = project / "work" / "plans" / f"edit_plan.v{args.version}.json"
+            if not edit_path.is_file():
+                raise FileNotFoundError(f"edit plan is missing: {edit_path}")
+            output = project / "work" / "effects" / f"effect_plan.v{args.version}.json"
+            if output.exists():
+                raise FileExistsError(f"effect plan already exists: {output}")
+            edit_plan = _read_json(edit_path)
+            edit_plan_sha256 = hashlib.sha256(
+                json.dumps(
+                    edit_plan,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                    allow_nan=False,
+                ).encode("utf-8")
+            ).hexdigest()
+            effect_plan = build_effect_plan(
+                edit_plan,
+                edit_plan_sha256=edit_plan_sha256,
+                style_pack_id=args.style_pack,
+            )
+            validation = validate_effect_plan(
+                edit_plan,
+                effect_plan,
+                edit_plan_sha256=edit_plan_sha256,
+            )
+            if validation["status"] != "passed":
+                raise RuntimeError(
+                    "generated effect plan failed validation: "
+                    + json.dumps(validation["issues"], ensure_ascii=False)
+                )
+            output.parent.mkdir(parents=True, exist_ok=True)
+            _write_result(effect_plan, output)
+            _write_result(
+                {
+                    "status": "planned",
+                    "effect_plan": str(output),
+                    "effect_count": len(effect_plan["effects"]),
+                    "style_pack": effect_plan["style_pack"]["id"],
+                    "effect_payload_sha256": validation["effect_payload_sha256"],
+                },
+                None,
+            )
+            return 0
+        except Exception as error:
+            _write_result(
+                {
+                    "status": "blocked",
+                    "issues": [
+                        {
+                            "code": "effect_planning_failed",
+                            "message": str(error),
+                        }
+                    ],
+                },
+                None,
+            )
+            return 2
+    if args.command == "compose-effects":
+        try:
+            from .hyperframes_effects import build_hyperframes_compositions
+
+            result = build_hyperframes_compositions(
+                args.project.resolve(),
+                args.plan.resolve(),
+                args.output_directory.resolve(),
+                canvas_width=args.canvas_width,
+                canvas_height=args.canvas_height,
+            )
+            _write_result(result, None)
+            return 0
+        except Exception as error:
+            _write_result(
+                {
+                    "status": "blocked",
+                    "issues": [
+                        {
+                            "code": "effect_composition_failed",
+                            "message": str(error),
+                        }
+                    ],
+                },
+                None,
+            )
+            return 2
+    if args.command == "render-effects":
+        try:
+            from .hyperframes_effects import render_hyperframes_compositions
+
+            result = render_hyperframes_compositions(
+                args.project.resolve(),
+                args.plan.resolve(),
+                args.composition_manifest.resolve(),
+                executable=args.hyperframes_executable,
+                quality=args.quality,
+            )
+            _write_result(result, None)
+            return 0
+        except Exception as error:
+            _write_result(
+                {
+                    "status": "blocked",
+                    "issues": [
+                        {
+                            "code": "effect_render_failed",
+                            "message": str(error),
+                        }
+                    ],
+                },
+                None,
+            )
+            return 2
+    if args.command == "qa-effects":
+        try:
+            from .effect_visual_qa import qa_hyperframes_effects
+
+            result = qa_hyperframes_effects(
+                args.project.resolve(),
+                args.plan.resolve(),
+                args.render_manifest.resolve(),
+                args.base_video.resolve(),
+                args.output_directory.resolve(),
+                executable=args.ffmpeg_executable,
+            )
+            _write_result(result, None)
+            return 0
+        except Exception as error:
+            _write_result(
+                {
+                    "status": "blocked",
+                    "issues": [
+                        {"code": "effect_visual_qa_failed", "message": str(error)}
+                    ],
+                },
+                None,
+            )
+            return 2
+    if args.command == "approve-effects":
+        try:
+            from .effect_approval import build_effect_approval
+
+            result = build_effect_approval(
+                args.project.resolve(),
+                args.plan.resolve(),
+                args.render_manifest.resolve(),
+                args.visual_qa.resolve(),
+                args.human_review.resolve(),
+                args.output.resolve(),
+            )
+            _write_result(result, None)
+            return 0
+        except Exception as error:
+            _write_result(
+                {
+                    "status": "blocked",
+                    "issues": [
+                        {"code": "effect_approval_failed", "message": str(error)}
+                    ],
+                },
+                None,
+            )
+            return 2
+    if args.command == "apply-effects":
+        try:
+            from .effect_approval import apply_approved_effects
+
+            result = apply_approved_effects(
+                args.project.resolve(),
+                args.enhancement_plan.resolve(),
+                args.plan.resolve(),
+                args.render_manifest.resolve(),
+                args.visual_qa.resolve(),
+                args.human_review.resolve(),
+                args.approval.resolve(),
+                args.output.resolve(),
+            )
+            _write_result(
+                {
+                    "status": "ready",
+                    "output": str(args.output.resolve()),
+                    "enhancement_version": result["version"],
+                    "effect_count": len(
+                        [
+                            item
+                            for item in result["illustration_motion"]["items"]
+                            if item.get("type") == "hyperframes"
+                        ]
+                    ),
+                },
+                None,
+            )
+            return 0
+        except Exception as error:
+            _write_result(
+                {
+                    "status": "blocked",
+                    "issues": [
+                        {"code": "effect_apply_failed", "message": str(error)}
+                    ],
+                },
+                None,
+            )
+            return 2
     if args.command == "stabilize":
         stabilize_video(
             args.input,

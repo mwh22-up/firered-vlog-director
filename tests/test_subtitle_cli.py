@@ -1076,7 +1076,10 @@ class SubtitleCliContractTests(unittest.TestCase):
             self.assertEqual(validate_enhancement_assets(project, ready_plan), [])
 
             result = json.loads(stdout)
-            self.assertEqual(result["evidence_output"], str(evidence_output))
+            self.assertEqual(
+                Path(result["evidence_output"]).resolve(),
+                evidence_output.resolve(),
+            )
             self.assertEqual(result["ready_evidence"], evidence)
             self.assertTrue(ready.is_file())
             self.assertTrue(approval.is_file())
