@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-4cc17584d67e",
-  "generated_at": "2026-08-06T13:45:42.191572+00:00",
-  "source_count": 7,
+  "profile_id": "aggregated-reference-techniques-v1-7995f74331c2",
+  "generated_at": "2026-08-06T14:20:33.679100+00:00",
+  "source_count": 8,
   "source_ids": [
     "bilibili-BV15XMC6KETm",
     "bilibili-BV19sm2BBEDd",
@@ -10,6 +10,7 @@
     "bilibili-BV1CrHwzUEJa",
     "bilibili-BV1ETNMzEEWQ",
     "bilibili-BV1TNZUB4EF6",
+    "bilibili-BV1a7Tj6nEe9",
     "bilibili-BV1aDHQejEAP"
   ],
   "minimum_source_support": 2,
@@ -83,19 +84,22 @@
     {
       "technique_key": "graphic-inline-reference-card-over-live-scene",
       "category": "graphic",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV19sm2BBEDd",
-        "bilibili-BV1TNZUB4EF6"
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.965,
+      "average_confidence": 0.9667,
       "trigger_examples": [
         "远处动物难以仅凭现场低清画面辨认，需要短暂提供语义背景。",
-        "皇冠展品需要一条可见背景信息连接人物观察与现实事件。"
+        "皇冠展品需要一条可见背景信息连接人物观察与现实事件。",
+        "摄影师走红照片需要和现实巷道、光线与构图位置建立可验证映射。"
       ],
       "treatment_examples": [
         "在仍可看见底层草地的情况下叠加竖向白底图文卡，读完即撤，再回到动物近景。",
-        "在皇冠近景之间插入带来源标识的竖屏新闻素材，短暂解释卢浮宫失窃事件，随后直接回到展品和现场游览。"
+        "在皇冠近景之间插入带来源标识的竖屏新闻素材，短暂解释卢浮宫失窃事件，随后直接回到展品和现场游览。",
+        "短暂展示社交平台照片和手机页面，再切到同一地点的楼道、菜市场与俯视关系，让人物指出光线将进入的位置。"
       ],
       "parameter_variants": [
         {
@@ -108,6 +112,12 @@
           "returns_to_live_scene": true,
           "transition": "hard_cut",
           "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "reference_format": "vertical_social_post",
+          "returns_to_live_scene": true,
+          "composition_match": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
         }
       ],
       "guardrail_variants": [
@@ -126,6 +136,14 @@
             "引用素材必须具备使用权并保留必要来源。",
             "插入只补足当前观察，不脱离主线扩展成长解释。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-reference-image-to-real-place",
+          "guardrails": [
+            "引用图片须具备使用权和来源。",
+            "不能用后期画面伪装为当时光线。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -140,6 +158,12 @@
           "start_sec": 1299.36,
           "end_sec": 1305.72,
           "observation_id": "obs-louvre-news-reference-insert"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 756.1,
+          "end_sec": 885.8,
+          "observation_id": "obs-chongqing-reference-image-to-real-place"
         }
       ]
     },
@@ -363,7 +387,7 @@
     {
       "technique_key": "humor-preserve-real-awkward-process",
       "category": "humor",
-      "source_support": 7,
+      "source_support": 8,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
@@ -371,9 +395,10 @@
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
         "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9471,
+      "average_confidence": 0.9512,
       "trigger_examples": [
         "主讲人自称不懂足球，但仍要记录世界杯现场。",
         "山上点饮料时突然想不起‘吸管’的英文，只能通过反复描述和等待解决。",
@@ -381,6 +406,7 @@
         "列车员检查时票务页面打不开，主角无法独立解释，必须向同车旅客求助。",
         "人物到收费窗口后误解功能和工作人员指向，需要在陌生语言环境中找到正确位置。",
         "独自旅行请路人拍照时同时要交接手机和保管购物袋，产生真实递物误会。",
+        "主持人要复刻机车短视频动作，但对手势、腿部和转身顺序不熟。",
         "长时间问路同时存在语言障碍、地图理解和追加问题，快速跳到答案会失去真实关系变化。"
       ],
       "treatment_examples": [
@@ -390,6 +416,7 @@
         "保留查票、网络失败、双语沟通、旅客代为解释、分别问名字和事后复盘的完整过程，只用翻译字幕和轻量强调帮助观众跟上。",
         "保留走到窗口、提出买票、看不懂回应、发现正确位置在后面、再次办理及继续上楼的完整过程，而不是只截取一句口音笑点。",
         "保留提出拍照请求、示范构图、交接手机、误把包递给另一人、人物意识到错误和致谢的完整过程，再进入游船集合。",
+        "保留嘉宾逐步示范、人物夹腿转身、手势像鸡爪的纠正、互相扶持和重新尝试，再展示夜间移动结果。",
         "保留首次开口、双方理解失败、展示地图、尝试回答、追加问题、等待和暂时分开的全过程，让尴尬由真实停顿累积。"
       ],
       "parameter_variants": [
@@ -433,6 +460,12 @@
           "playback_rate": null,
           "overlay_stack": false,
           "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "instruction_steps_retained": true,
+          "failed_attempts_retained": true,
+          "playback_rate": null,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
         },
         {
           "language_barrier": true,
@@ -491,6 +524,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-pose-coaching-real-process",
+          "guardrails": [
+            "不要提前跳到成功结果。",
+            "拍摄动作必须符合实际安全要求。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1aDHQejEAP",
           "observation_id": "obs-schoolboy-directions-awkward-process",
           "guardrails": [
@@ -535,6 +576,12 @@
           "start_sec": 2478,
           "end_sec": 2502,
           "observation_id": "obs-stranger-photo-bag-mixup"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 485.6,
+          "end_sec": 584.7,
+          "observation_id": "obs-chongqing-pose-coaching-real-process"
         },
         {
           "source_id": "bilibili-BV1aDHQejEAP",
@@ -1342,23 +1389,25 @@
     {
       "technique_key": "narrative-failure-adaptation-payoff",
       "category": "narrative",
-      "source_support": 6,
+      "source_support": 7,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
-        "bilibili-BV1TNZUB4EF6"
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.9533,
+      "average_confidence": 0.9543,
       "trigger_examples": [
         "纽约暴雨打断原定户外计划，但人物已经准备替代选项。",
         "最后一天坐错车、买错票并选择没有明确路标的路线，原定轻松徒步失去确定性。",
         "夜间目的地花期已过，原计划的视觉目标失败。",
         "找车、通票、黄金列车和一分钟换乘连续出错，原定独行路线失去确定性。",
         "夜游、找晚餐、赶接驳和再拍星星连续失败，人物同时承受饥饿、疲惫和主观恐惧。",
-        "从德国到巴黎的移动连续出现晚点、站台不明、行李负担、巴士问路和同名地点误选。"
+        "从德国到巴黎的移动连续出现晚点、站台不明、行李负担、巴士问路和同名地点误选。",
+        "走红照片依赖阳光与蒸汽，但现场云层遮住光线。"
       ],
       "treatment_examples": [
         "先展示雨势和备选博物馆，再通过双人玩笑引出此前没去过的《老友记》体验馆；保留临时决定、进入展馆和不知道门后内容的悬念，直到橘色沙发揭示。",
@@ -1366,7 +1415,8 @@
         "保留夜路、失望、自嘲和重新查花期的过程，明确修改第二天路线，最终用盛花地点兑现回报。",
         "让每次误解引出一次求助，再让香港旅客和中国夫妻分别解决票务与换乘问题，最后把偶遇转化为同行和次日行程调整。",
         "完整保留寻找餐厅、停止点餐、黑暗夜路、错过车辆、饿着回房和取消夜拍；随后明确展示提前睡觉、日出前重启、清晨地标与早餐回报。",
-        "保留问题被发现、向人求助、重新确认、赶路、坐对巴士以及地图错误被纠正的过程，再以巴黎街景和继续前往酒店作为阶段回报。"
+        "保留问题被发现、向人求助、重新确认、赶路、坐对巴士以及地图错误被纠正的过程，再以巴黎街景和继续前往酒店作为阶段回报。",
+        "保留判断光线、等待、被路人认出、发现阳光再次被遮和决定不能把鸡蛋放一个篮子的过程，随后转去下一个历史街区。"
       ],
       "parameter_variants": [
         {
@@ -1431,6 +1481,12 @@
           "has_external_help": true,
           "has_explicit_correction": true,
           "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "obstacle": "cloud cover",
+          "desired_condition": "sunlight on steam",
+          "adaptation": "move to next location",
+          "source_id": "bilibili-BV1a7Tj6nEe9"
         }
       ],
       "guardrail_variants": [
@@ -1480,6 +1536,14 @@
             "不要只留抵达结果而删掉判断和修正。",
             "交通个案不能被泛化成路线或安全建议。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-wait-for-light-authenticity",
+          "guardrails": [
+            "天气失败不应伪造成功镜头。",
+            "等待段需要保留判断和调整，不必保留全部空耗。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -1518,6 +1582,12 @@
           "start_sec": 71.12,
           "end_sec": 541.72,
           "observation_id": "obs-arrival-failure-adaptation-chain"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 820,
+          "end_sec": 963.4,
+          "observation_id": "obs-chongqing-wait-for-light-authenticity"
         }
       ]
     },
@@ -1616,25 +1686,28 @@
     {
       "technique_key": "narrative-reflection-summary-forward-hook",
       "category": "narrative",
-      "source_support": 4,
+      "source_support": 5,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1CrHwzUEJa",
-        "bilibili-BV1TNZUB4EF6"
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.9625,
+      "average_confidence": 0.966,
       "trigger_examples": [
         "比赛结束后需要把球赛情绪重新放回纽约城市尺度，并说明记录本身的意义。",
         "六天旅行和最后四小时徒步需要在离开前沉淀成可复用的人物认知。",
         "第一天经历包含大量偶遇和情绪反差，需要在结束前把事件沉淀为人物认知。",
-        "巴黎仅有一天的行程需要把紧绷、消费、三万步、设备和环境感受沉淀成明确结论。"
+        "巴黎仅有一天的行程需要把紧绷、消费、三万步、设备和环境感受沉淀成明确结论。",
+        "两条路线看似差异很大，需要明确回答开场提出的同一城市问题。"
       ],
       "treatment_examples": [
         "以时代广场和夜间街道承载赛后旁白，从城市不因一场决赛改变转到稳定镜头、旋转视角和‘为什么记录’，最后落在纽约留在人物镜头里。",
         "在酒店保留完整口播，总结已完成与遗憾、错误路线和‘及时回头’，再用剪辑把数小时痛苦压缩成几分钟的自觉比喻连接观众与下一段旅程。",
         "回酒店保留完整正面口播，依次总结瑞士风景、当地人的松弛、偶遇旅伴和披萨体验，再用明日计划、致谢黑卡和下集风景预告收尾。",
-        "回酒店保留较长正面口播，总结未遇失窃、全程警惕、交通与气味感受、餐费和疲惫；进食后补充三万步、鞋损与房间气味，最后明确下一站圣米歇尔山并道别。"
+        "回酒店保留较长正面口播，总结未遇失窃、全程警惕、交通与气味感受、餐费和疲惫；进食后补充三万步、鞋损与房间气味，最后明确下一站圣米歇尔山并道别。",
+        "用火锅、轻轨、社区步道、居民和城市宽景交替承载旁白，指出科幻重庆与接地气重庆都是同一城市的生命力；随后回到栏目感谢、城市推荐和再见。"
       ],
       "parameter_variants": [
         {
@@ -1674,6 +1747,16 @@
           "has_forward_hook": true,
           "last_dialogue_sec": 2976.78,
           "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "opening_question_answered": true,
+          "synthesis_terms": [
+            "futuristic",
+            "grounded",
+            "resilient"
+          ],
+          "last_dialogue_sec": 1844.6,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
         }
       ],
       "guardrail_variants": [
@@ -1708,6 +1791,14 @@
             "反思保留人物主观视角，不推广为城市事实。",
             "下一站提示放在主题总结完成后。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-dual-view-ending-synthesis",
+          "guardrails": [
+            "总结保持片中人物观点，不把修辞当作城市事实。",
+            "平台号召放在主题结论之后。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -1734,6 +1825,12 @@
           "start_sec": 2839.92,
           "end_sec": 2976.78,
           "observation_id": "obs-hotel-reflection-next-stop-hook"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 1793.4,
+          "end_sec": 1844.6,
+          "observation_id": "obs-chongqing-dual-view-ending-synthesis"
         }
       ]
     },
@@ -1970,19 +2067,22 @@
     {
       "technique_key": "scenic-human-reaction-to-landmark-geography",
       "category": "scenic",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
-        "bilibili-BV1TNZUB4EF6"
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.965,
+      "average_confidence": 0.9633,
       "trigger_examples": [
         "中央公园既承担城市房价说明，也需要提供旅行中的空间与情绪释放。",
-        "塞纳河游船是巴黎一日行的主要视觉回报，需要兼顾地标、城市尺度和人物在场感。"
+        "塞纳河游船是巴黎一日行的主要视觉回报，需要兼顾地标、城市尺度和人物在场感。",
+        "本地路线需要展示热门景点之外的山城空间和日常使用方式。"
       ],
       "treatment_examples": [
         "先以俯瞰和地图逻辑说明公园位置，再用入口马车、人物步行、草坪活动、城市楼群与阿根廷旗帜交替建立尺度，最后回到两人的现场体验。",
-        "从登船和人物仰望进入埃菲尔铁塔，交替人物反应、河面宽景、桥梁、两岸建筑、蓝调天空与夜间亮灯，再回到岸上人物。"
+        "从登船和人物仰望进入埃菲尔铁塔，交替人物反应、河面宽景、桥梁、两岸建筑、蓝调天空与夜间亮灯，再回到岸上人物。",
+        "跟随人物穿过楼梯、树荫、居民楼、儿童活动区、棋牌桌和坡道，交替广角环境与居民互动，解释步道如何承担无车生活空间。"
       ],
       "parameter_variants": [
         {
@@ -2012,6 +2112,17 @@
             "riverbanks"
           ],
           "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "viewpoint": "walking",
+          "community_uses": [
+            "children",
+            "cards",
+            "rest",
+            "stairs"
+          ],
+          "tourist_density": "low",
+          "source_id": "bilibili-BV1a7Tj6nEe9"
         }
       ],
       "guardrail_variants": [
@@ -2030,6 +2141,14 @@
             "连续地标镜头必须改变人物、方向、光线或地理信息。",
             "移动视点要维持河流方向可读。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-community-walk-human-scale",
+          "guardrails": [
+            "社区不是供凝视的布景。",
+            "拍摄居民和儿童需遵守同意与隐私要求。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -2044,6 +2163,12 @@
           "start_sec": 2511.5,
           "end_sec": 2690,
           "observation_id": "obs-cruise-human-to-landmark-geography"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 1247,
+          "end_sec": 1502.5,
+          "observation_id": "obs-chongqing-community-walk-human-scale"
         }
       ]
     },
@@ -2134,6 +2259,155 @@
           "start_sec": 550.24,
           "end_sec": 682.04,
           "observation_id": "obs-landmark-ground-to-aerial"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-landmark-exterior-to-interior-detail",
+      "category": "scenic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.965,
+      "trigger_examples": [
+        "卢浮宫段需要同时交代抵达空间、代表展品、文化密度和人物在场感。",
+        "魁星楼、天桥和电梯的楼层关系很难靠单个宽景理解。"
+      ],
+      "treatment_examples": [
+        "先用街景、庭院、拱廊和金字塔建立外部地理，再进入油画、天花板、蒙娜丽莎、皇冠与雕塑中庭；人群和人物反应穿插其间，避免连续壁纸化展品。",
+        "让人物从高处、广场、天桥、电梯和江边方向连续移动，用楼层数字、俯视和脚步动作解释同一地点的垂直关系，再连接索道等公共交通。"
+      ],
+      "parameter_variants": [
+        {
+          "sequence": [
+            "street",
+            "courtyard",
+            "pyramid",
+            "galleries",
+            "Mona_Lisa",
+            "jewels",
+            "sculpture_court"
+          ],
+          "includes_people": true,
+          "changes_scale": true,
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "spatial_axes": [
+            "height",
+            "floor",
+            "bridge",
+            "river"
+          ],
+          "person_movement_retained": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-louvre-exterior-to-cultural-detail",
+          "guardrails": [
+            "展品连续出现时必须加入空间、人物或信息变化。",
+            "文化事实不得由画面外观臆测。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-vertical-city-public-transport",
+          "guardrails": [
+            "保持人物方向和上下关系可读。",
+            "公共交通价格与规则需按实际核验。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 1015,
+          "end_sec": 1497.92,
+          "observation_id": "obs-louvre-exterior-to-cultural-detail"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 200.1,
+          "end_sec": 398.3,
+          "observation_id": "obs-chongqing-vertical-city-public-transport"
+        }
+      ]
+    },
+    {
+      "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
+      "category": "subtitle",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm",
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.92,
+      "trigger_examples": [
+        "全片横跨城市说明、双人对谈、英语引用、产品内容和球场现场，需要稳定的信息层级。",
+        "全片包含方言、英语、多人对话、照片、社交页面、历史档案和栏目图形，需要清楚区分证据层。"
+      ],
+      "treatment_examples": [
+        "以底部居中浅色描边对白字幕为默认层，地点手写标题、FRIENDS 标识和 New York/纽约主标题只在对应章节短暂出现。",
+        "以底部居中浅色描边字幕为默认层；竖屏社交素材、实体相册、黑白档案、地点标题和‘来不来’栏目图形只在对应证据节点出现。"
+      ],
+      "parameter_variants": [
+        {
+          "base_position": "bottom_center",
+          "base_lines": "one_or_two",
+          "special_layers": [
+            "location",
+            "IP reveal",
+            "chapter title"
+          ],
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "base_position": "bottom_center",
+          "base_lines": "one_or_two",
+          "special_layers": [
+            "social_post",
+            "photo_album",
+            "archive",
+            "show_title"
+          ],
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-base-subtitle-hierarchy",
+          "guardrails": [
+            "未使用 OCR，不能声称逐字字幕准确。",
+            "特殊标题不能遮挡脸部、地标或赛事信息。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-subtitle-evidence-hierarchy",
+          "guardrails": [
+            "未使用 OCR，不能声称逐字字幕准确。",
+            "引用画面和字幕不能遮挡人物脸部或关键历史信息。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 0,
+          "end_sec": 1901.01,
+          "observation_id": "obs-base-subtitle-hierarchy"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 0,
+          "end_sec": 1848.448,
+          "observation_id": "obs-chongqing-subtitle-evidence-hierarchy"
         }
       ]
     },
@@ -2573,6 +2847,47 @@
           "start_sec": 2976.78,
           "end_sec": 2986.32,
           "observation_id": "obs-next-episode-crt-teaser"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-physical-archive-time-series",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "共同记忆和街区变化需要比口述更具体的时间证据。"
+      ],
+      "treatment_examples": [
+        "让人物翻看实体相册并指认 2019、2021 等同地点照片，穿插当前街巷，形成过去与现在的可见对照。"
+      ],
+      "parameter_variants": [
+        {
+          "archive_type": "physical_album",
+          "same_location_comparison": true,
+          "years_visible": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-album-time-series-evidence",
+          "guardrails": [
+            "照片版权和肖像权需确认。",
+            "年份必须能从相册或当事人证词核实。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 1031.7,
+          "end_sec": 1181,
+          "observation_id": "obs-chongqing-album-time-series-evidence"
         }
       ]
     },
@@ -3159,6 +3474,47 @@
       ]
     },
     {
+      "technique_key": "narrative-comparison-midpoint-role-switch",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "前半段已经充分展示流量路线，需要清楚切换比较对象和引导者。"
+      ],
+      "treatment_examples": [
+        "由第一位嘉宾主动回答更想展示市井烟火气，再交接给擅长记录老社区的本地摄影师，并以一张走红照片的现实位置启动第二条路线。"
+      ],
+      "parameter_variants": [
+        {
+          "guide_role_switch": true,
+          "route_two": "local everyday life",
+          "visual_anchor": "viral photograph",
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-dual-route-midpoint-pivot",
+          "guardrails": [
+            "第二条路线必须在叙事目的上不同。",
+            "不要暗示热门路线不真实或没有价值。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 672.6,
+          "end_sec": 820,
+          "observation_id": "obs-chongqing-dual-route-midpoint-pivot"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-crisis-caption-black-card-relief",
       "category": "subtitle",
       "source_support": 1,
@@ -3234,6 +3590,88 @@
           "start_sec": 13295,
           "end_sec": 13325,
           "observation_id": "obs-couple-return-callback"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "完成热门路线后需要判断它是否真的值得，而不是让 montage 自行得出结论。"
+      ],
+      "treatment_examples": [
+        "先由嘉宾说明固定 BGM 与海外传播语境，再让参与者用红绿牌和口头理由评价；最后追问抛开流量后本地人想展示什么。"
+      ],
+      "parameter_variants": [
+        {
+          "evaluation_method": "red_green_cards",
+          "reason_required": true,
+          "next_route_question": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-explicit-route-evaluation",
+          "guardrails": [
+            "反馈样本只是片中参与者观点。",
+            "评价结果不替代安全与适配判断。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 584.7,
+          "end_sec": 756.1,
+          "observation_id": "obs-chongqing-explicit-route-evaluation"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-guide-expertise-before-itinerary",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "第一条路线声称代表外国游客偏好，需要一个有实际带访经验的人建立依据。"
+      ],
+      "treatment_examples": [
+        "先展示嘉宾在李子坝被外国游客认出、其海外账号与带访经验，再由他公布轻轨、魁星楼和机车等路线。"
+      ],
+      "parameter_variants": [
+        {
+          "guide_role": "foreign-tourist route",
+          "social_proof_visible": true,
+          "route_announced": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-guest-expertise-sets-route",
+          "guardrails": [
+            "账号与经验数据需要核实。",
+            "嘉宾经验不能代表所有游客。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 88,
+          "end_sec": 200.1,
+          "observation_id": "obs-chongqing-guest-expertise-sets-route"
         }
       ]
     },
@@ -3405,6 +3843,51 @@
       ]
     },
     {
+      "technique_key": "narrative-object-builds-longitudinal-human-story",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "山城巷如果只讲建筑历史仍缺少本地人与游客长期关系。"
+      ],
+      "treatment_examples": [
+        "从摄影师偶遇老夫妻、重现走红照片进入实体相册、游客留言和多年同角度照片，让相册成为人物关系与地点变化的时间轴。"
+      ],
+      "parameter_variants": [
+        {
+          "story_object": "physical photo album",
+          "time_span_years": true,
+          "participants": [
+            "photographer",
+            "elderly couple",
+            "visitors"
+          ],
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-photo-story-human-relationship",
+          "guardrails": [
+            "尊重被摄者意愿与隐私。",
+            "照片年份和关系只按可见证据或本人陈述描述。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 963.4,
+          "end_sec": 1181,
+          "observation_id": "obs-chongqing-photo-story-human-relationship"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-place-detail-to-city-system",
       "category": "narrative",
       "source_support": 1,
@@ -3447,6 +3930,52 @@
           "start_sec": 269.07,
           "end_sec": 456.16,
           "observation_id": "obs-newyork-place-detail-explainer-chain"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-present-experience-to-historical-layer",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "防空洞火锅既是消费打卡点，也承载重庆战争历史和当代记忆。"
+      ],
+      "treatment_examples": [
+        "先以入口、温度、麻将与火锅建立当下体验，再用防空洞结构、档案画面和历史旁白解释战时用途，最后回到墙面展陈和城市韧性。"
+      ],
+      "parameter_variants": [
+        {
+          "layers": [
+            "food",
+            "temperature",
+            "childhood",
+            "wartime_shelter",
+            "city_resilience"
+          ],
+          "returns_to_present": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-cave-hotpot-history-transition",
+          "guardrails": [
+            "战争史、人口和容量数字需用可靠来源核验。",
+            "消费体验不能淡化历史伤痛。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 1609.3,
+          "end_sec": 1793.4,
+          "observation_id": "obs-chongqing-cave-hotpot-history-transition"
         }
       ]
     },
@@ -3538,6 +4067,52 @@
           "start_sec": 1296.8,
           "end_sec": 1445.97,
           "observation_id": "obs-begin-again-memory-callback"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-repeatable-experience-module",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "外国游客路线需要说明它为何能在短视频中反复复制。"
+      ],
+      "treatment_examples": [
+        "依次保留发现大量外国游客、嘉宾解释取景逻辑、机车动作教学、实拍夜景、回看成片和参与者红绿牌评价，形成设置—拍摄—结果—反馈闭环。"
+      ],
+      "parameter_variants": [
+        {
+          "stages": [
+            "social_context",
+            "instruction",
+            "capture",
+            "result",
+            "evaluation"
+          ],
+          "has_explicit_feedback": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-viral-route-modular-sequence",
+          "guardrails": [
+            "体验模块不能承诺所有人得到相同结果。",
+            "拍摄动作和交通安全优先。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 398.3,
+          "end_sec": 672.6,
+          "observation_id": "obs-chongqing-viral-route-modular-sequence"
         }
       ]
     },
@@ -3645,6 +4220,47 @@
       ]
     },
     {
+      "technique_key": "narrative-small-local-encounter-validates-place",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "步道段需要一个具体事件回报‘本地生活关系’而非只拍空景。"
+      ],
+      "treatment_examples": [
+        "保留人物担心大鹅会咬、询问名字和来历、得知生日，以及路过婆婆认识它的细节，再由主持人总结先当游客、再当本地人的玩法。"
+      ],
+      "parameter_variants": [
+        {
+          "encounter": "community goose",
+          "neighbor_recognition": true,
+          "route_summary_follows": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-animal-community-microstory",
+          "guardrails": [
+            "动物行为与安全判断以现场为准。",
+            "不补造社区关系。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 1502.5,
+          "end_sec": 1609.3,
+          "observation_id": "obs-chongqing-animal-community-microstory"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-theme-bridge-between-chapters",
       "category": "narrative",
       "source_support": 1,
@@ -3686,6 +4302,50 @@
           "start_sec": 1492.14,
           "end_sec": 1511.34,
           "observation_id": "obs-money-theme-bridges-to-football"
+        }
+      ]
+    },
+    {
+      "technique_key": "opening-contrast-thesis-with-concrete-question",
+      "category": "opening_montage",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "海外短视频中的重庆已有强烈固定印象，需要避免只是重复热门景点。"
+      ],
+      "treatment_examples": [
+        "从李子坝轻轨现场笑点进入海外竖屏素材和山城 montage，随后明确提出外国人视角与本地人视角为何错位、两者背后是否是同一座重庆。"
+      ],
+      "parameter_variants": [
+        {
+          "contrast": [
+            "viral_foreigner_view",
+            "local_view"
+          ],
+          "explicit_question": true,
+          "opening_event_count": 1,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-opening-viral-local-question",
+          "guardrails": [
+            "开场问题必须在全片获得两条路线的回答。",
+            "不能把短视频样本推广为所有外国人的观点。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 0,
+          "end_sec": 88,
+          "observation_id": "obs-chongqing-opening-viral-local-question"
         }
       ]
     },
@@ -3991,55 +4651,6 @@
       ]
     },
     {
-      "technique_key": "scenic-landmark-exterior-to-interior-detail",
-      "category": "scenic",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1TNZUB4EF6"
-      ],
-      "average_confidence": 0.97,
-      "trigger_examples": [
-        "卢浮宫段需要同时交代抵达空间、代表展品、文化密度和人物在场感。"
-      ],
-      "treatment_examples": [
-        "先用街景、庭院、拱廊和金字塔建立外部地理，再进入油画、天花板、蒙娜丽莎、皇冠与雕塑中庭；人群和人物反应穿插其间，避免连续壁纸化展品。"
-      ],
-      "parameter_variants": [
-        {
-          "sequence": [
-            "street",
-            "courtyard",
-            "pyramid",
-            "galleries",
-            "Mona_Lisa",
-            "jewels",
-            "sculpture_court"
-          ],
-          "includes_people": true,
-          "changes_scale": true,
-          "source_id": "bilibili-BV1TNZUB4EF6"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1TNZUB4EF6",
-          "observation_id": "obs-louvre-exterior-to-cultural-detail",
-          "guardrails": [
-            "展品连续出现时必须加入空间、人物或信息变化。",
-            "文化事实不得由画面外观臆测。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1TNZUB4EF6",
-          "start_sec": 1015,
-          "end_sec": 1497.92,
-          "observation_id": "obs-louvre-exterior-to-cultural-detail"
-        }
-      ]
-    },
-    {
       "technique_key": "scenic-pop-culture-memory-to-current-city",
       "category": "scenic",
       "source_support": 1,
@@ -4168,51 +4779,6 @@
           "start_sec": 2385,
           "end_sec": 2410,
           "observation_id": "obs-rainbow-arc-city-release"
-        }
-      ]
-    },
-    {
-      "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
-      "category": "subtitle",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV15XMC6KETm"
-      ],
-      "average_confidence": 0.92,
-      "trigger_examples": [
-        "全片横跨城市说明、双人对谈、英语引用、产品内容和球场现场，需要稳定的信息层级。"
-      ],
-      "treatment_examples": [
-        "以底部居中浅色描边对白字幕为默认层，地点手写标题、FRIENDS 标识和 New York/纽约主标题只在对应章节短暂出现。"
-      ],
-      "parameter_variants": [
-        {
-          "base_position": "bottom_center",
-          "base_lines": "one_or_two",
-          "special_layers": [
-            "location",
-            "IP reveal",
-            "chapter title"
-          ],
-          "source_id": "bilibili-BV15XMC6KETm"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "observation_id": "obs-base-subtitle-hierarchy",
-          "guardrails": [
-            "未使用 OCR，不能声称逐字字幕准确。",
-            "特殊标题不能遮挡脸部、地标或赛事信息。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "start_sec": 0,
-          "end_sec": 1901.01,
-          "observation_id": "obs-base-subtitle-hierarchy"
         }
       ]
     },
@@ -4489,6 +5055,41 @@
       },
       "rule": "先用短标题和旅程回顾完成承诺，再让风险口播、道具设定和真实反应成立；快切集中在移动与物流，不把整段开场做成均匀高速 montage。",
       "source_id": "bilibili-BV1TNZUB4EF6"
+    },
+    {
+      "total_reviewed_sec": 200.1,
+      "phases": [
+        {
+          "start_sec": 0,
+          "end_sec": 24,
+          "function": "在李子坝现场用‘轻轨饭前还是饭后吃’的即兴问答和游客互动先给轻松语气。"
+        },
+        {
+          "start_sec": 24,
+          "end_sec": 62,
+          "function": "穿插轻轨穿楼、竖屏海外短视频、山城建筑和游客反应，明确外网流行的赛博重庆视角。"
+        },
+        {
+          "start_sec": 62,
+          "end_sec": 88,
+          "function": "提出本地人为何觉得普通、两种视角背后是什么同一座重庆的核心问题，并以重庆栏目图形标题收束。"
+        },
+        {
+          "start_sec": 88,
+          "end_sec": 200.1,
+          "function": "引入熟悉外国游客路线的本地嘉宾，展示其现场知名度和川普式英语内容，再公布先走外国人路线、后走本地路线的比较结构。"
+        }
+      ],
+      "metrics": {
+        "opening_event_count": 2,
+        "reviewed_shot_count": 66,
+        "opening_15_sec_shot_count": 6,
+        "opening_15_sec_average_shot_sec": 2.62,
+        "main_question_sec": 62,
+        "guest_introduction_sec": 88
+      },
+      "rule": "先用具体地点笑点和海外爆款画面兑现主题，再提出可贯穿全片的双视角问题；嘉宾身份和两条路线必须在开场末尾说清，避免变成无比较标准的景点合集。",
+      "source_id": "bilibili-BV1a7Tj6nEe9"
     },
     {
       "total_reviewed_sec": 120.133,

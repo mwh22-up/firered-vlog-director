@@ -1,0 +1,379 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV1a7Tj6nEe9-v1",
+  "generated_at": "2026-08-06T14:35:00Z",
+  "source": {
+    "source_id": "bilibili-BV1a7Tj6nEe9",
+    "url": "https://www.bilibili.com/video/BV1a7Tj6nEe9/",
+    "title": "外国人严选VS本地人推荐，两种玩法打开最反差的重庆",
+    "duration_sec": 1848.448
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 2590483,
+    "proxy_full_decode_exit_code": 0,
+    "video_duration_sec": 1848.448,
+    "shot_count": 583,
+    "event_count": 22,
+    "audio_segment_count": 361,
+    "transcript_segment_count": 1134,
+    "transcript_word_count": 6275,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_language_probability": 1.0,
+    "asr_reported_duration_sec": 1848.448,
+    "transcript_end_sec": 1844.6,
+    "transcript_coverage_ratio": 0.997917,
+    "transcript_tail_gap_sec": 3.848,
+    "audio_class_ratios": {
+      "speech": 0.8218,
+      "ambient_likely": 0.1426,
+      "music_likely": 0.0179,
+      "silence": 0.0179
+    },
+    "shot_duration_median_sec": 2.502,
+    "shot_duration_p75_sec": 3.737,
+    "event_review_contact_sheet_count": 22,
+    "manual_overview_contact_sheet_count": 4,
+    "manual_review_ranges": [[0, 200.1], [200.1, 672.6], [672.6, 963.4], [963.4, 1247], [1247, 1609.3], [1609.3, 1793.4], [1793.4, 1848.448]],
+    "manual_review_focus": ["opening", "viral_route", "local_turn", "scenic", "human_story", "humor", "subtitle", "music_rhythm", "visual_effects", "history_climax", "ending"]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 200.1,
+    "phases": [
+      {"start_sec": 0, "end_sec": 24, "function": "在李子坝现场用‘轻轨饭前还是饭后吃’的即兴问答和游客互动先给轻松语气。"},
+      {"start_sec": 24, "end_sec": 62, "function": "穿插轻轨穿楼、竖屏海外短视频、山城建筑和游客反应，明确外网流行的赛博重庆视角。"},
+      {"start_sec": 62, "end_sec": 88, "function": "提出本地人为何觉得普通、两种视角背后是什么同一座重庆的核心问题，并以重庆栏目图形标题收束。"},
+      {"start_sec": 88, "end_sec": 200.1, "function": "引入熟悉外国游客路线的本地嘉宾，展示其现场知名度和川普式英语内容，再公布先走外国人路线、后走本地路线的比较结构。"}
+    ],
+    "metrics": {
+      "opening_event_count": 2,
+      "reviewed_shot_count": 66,
+      "opening_15_sec_shot_count": 6,
+      "opening_15_sec_average_shot_sec": 2.62,
+      "main_question_sec": 62,
+      "guest_introduction_sec": 88
+    },
+    "rule": "先用具体地点笑点和海外爆款画面兑现主题，再提出可贯穿全片的双视角问题；嘉宾身份和两条路线必须在开场末尾说清，避免变成无比较标准的景点合集。"
+  },
+  "narrative_model": {
+    "premise": "影片用同一组主持人与两位本地引导者，先体验外国游客眼中的轻轨、魁星楼、公共电梯、索道和机车夜景，再转入本地摄影师推荐的菜市场、山城巷、老照片、社区步道和居民关系，最后在防空洞火锅中连接战争历史与当代生活，把‘赛博/科幻’和‘市井/接地气’合并为同一座重庆的生命力。",
+    "beats": [
+      "用李子坝轻轨笑点和海外短视频建立外国游客模板",
+      "引入熟悉外国游客的本地嘉宾，明确第一条路线的专业性",
+      "依次体验轻轨、魁星楼、公共电梯、索道和机车落地签",
+      "让嘉宾和参与者明确评价这条流量路线，而不是由旁白代答",
+      "追问抛开流量后本地人更愿意展示什么，转入市井路线",
+      "用社交平台照片反向寻找真实拍摄地点，并等待阳光进入巷道",
+      "在山城巷通过老夫妻、照片相册和游客留言建立长期共同记忆",
+      "离开热门区域，进入居民生活、儿童活动、步道和邻里对话",
+      "用童年空间、动物和路人熟识感回报‘本地人路线’",
+      "进入防空洞火锅，从消费体验转向防空洞历史和城市韧性",
+      "结尾合并科幻与接地气两种重庆，并邀请观众推荐下一座城市"
+    ],
+    "rule": "比较型旅行片要让两条路线使用同一组人物和明确评价节点；第二条路线不只是换景点，而要在关系、时间和历史维度提供第一条路线缺失的信息。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "先给人物或网络图像解释为何来到此处",
+      "用高低落差、桥梁、轻轨或步道建立山城空间",
+      "加入人物移动和方向变化维持地理可读",
+      "切到食物、招牌、楼道、树木和居民活动等生活细节",
+      "在光线或历史信息变化后回到人物判断",
+      "用另一条路线的空间特征形成对照"
+    ],
+    "observed_ranges": [[24, 88], [200.1, 398.3], [398.3, 584.7], [756.1, 963.4], [963.4, 1247], [1247, 1609.3], [1609.3, 1848.448]],
+    "rule": "重庆的垂直景观要通过人物上下移动、公共交通和生活空间解释；城市宽景、赛博夜景与社区细节需要互相对照，不把居民区当作无语义的怀旧背景。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.0179,
+    "uses": [
+      "机车夜景段在对白中明确讨论海外短视频使用的固定 BGM，画面联系表确认动作教学、移动视点与夜景 montage，但本次环境未直接试听，不能确认曲名、BPM 或逐拍同步。",
+      "两条路线的转折主要由人物提问、回答和地点变化承担，不应让配乐替代比较逻辑。",
+      "防空洞历史段同时包含档案画面、旁白和现场环境，音乐若存在也必须让历史说明保持清晰。"
+    ],
+    "rule": "音乐可以区分赛博夜景、生活步行与历史反思，但人物评价、居民对话和事实说明优先；无独立试听或工程轨道时不声明曲名、版权、BPM、ducking 数值或逐拍因果。"
+  },
+  "subtitle_model": {
+    "base_style": "底部居中浅色简体中文字幕，配深色描边或半透明底；一至两行覆盖普通对话和旁白。",
+    "emphasis_patterns": [
+      "开场用竖屏社交平台素材和重庆栏目图形标题区分外网模板与正片",
+      "机车动作教学以短句字幕跟随手势，不用大段说明遮挡人物动作",
+      "社交平台照片和实体相册直接成为画面证据，字幕只补时间与关系",
+      "防空洞历史影像配来源说明和普通底部旁白字幕，不把事实文字做成夸张贴图",
+      "片尾‘来不来’栏目图形作为一次性品牌收束"
+    ],
+    "rule": "普通字幕先保证方言、英语和多人对话可理解；竖屏引用、照片、档案与栏目标题各自承担单一证据角色，不与主对白字幕争夺同一安全区。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "先建立轻轨、拍机车动作、找光线、爬步道或与居民交流的真实目标",
+      "保留人物答非所问、动作不协调、方言解释和现场互相纠正",
+      "让嘉宾、路人、实际画面或后续行动自然确认落点",
+      "字幕只在关键词或动作指令处轻量标点",
+      "保留问题解决和礼貌回应"
+    ],
+    "observed_ranges": [[0, 24], [301.7, 398.3], [485.6, 584.7], [885.8, 963.4], [1247, 1475], [1502.5, 1609.3]],
+    "rule": "笑点来自主持人的身体反应、语言误解、爬坡疲惫和本地人的自然回应；不嘲弄方言、外国游客、居民年龄或社区环境。",
+    "playback_rate_note": "机车、索道和城市 montage 存在快速运动与短切，但人工画面证据可由正常速度拍摄、移动相机和硬切解释；未确认 speed ramp、素材变速或具体倍率。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-chongqing-opening-viral-local-question",
+      "technique_key": "opening-contrast-thesis-with-concrete-question",
+      "start_sec": 0,
+      "end_sec": 88,
+      "category": "opening_montage",
+      "trigger": "海外短视频中的重庆已有强烈固定印象，需要避免只是重复热门景点。",
+      "treatment": "从李子坝轻轨现场笑点进入海外竖屏素材和山城 montage，随后明确提出外国人视角与本地人视角为何错位、两者背后是否是同一座重庆。",
+      "confidence": 0.98,
+      "parameters": {"contrast": ["viral_foreigner_view", "local_view"], "explicit_question": true, "opening_event_count": 1},
+      "evidence": {"event_id": "event-001", "manual_opening_sheet": true, "full_transcript": true},
+      "guardrails": ["开场问题必须在全片获得两条路线的回答。", "不能把短视频样本推广为所有外国人的观点。"]
+    },
+    {
+      "observation_id": "obs-chongqing-guest-expertise-sets-route",
+      "technique_key": "narrative-guide-expertise-before-itinerary",
+      "start_sec": 88,
+      "end_sec": 200.1,
+      "category": "narrative",
+      "trigger": "第一条路线声称代表外国游客偏好，需要一个有实际带访经验的人建立依据。",
+      "treatment": "先展示嘉宾在李子坝被外国游客认出、其海外账号与带访经验，再由他公布轻轨、魁星楼和机车等路线。",
+      "confidence": 0.95,
+      "parameters": {"guide_role": "foreign-tourist route", "social_proof_visible": true, "route_announced": true},
+      "evidence": {"event_id": "event-002", "manual_event_review": true, "transcript_range_verified": true},
+      "guardrails": ["账号与经验数据需要核实。", "嘉宾经验不能代表所有游客。"]
+    },
+    {
+      "observation_id": "obs-chongqing-vertical-city-public-transport",
+      "technique_key": "scenic-landmark-exterior-to-interior-detail",
+      "start_sec": 200.1,
+      "end_sec": 398.3,
+      "category": "scenic",
+      "trigger": "魁星楼、天桥和电梯的楼层关系很难靠单个宽景理解。",
+      "treatment": "让人物从高处、广场、天桥、电梯和江边方向连续移动，用楼层数字、俯视和脚步动作解释同一地点的垂直关系，再连接索道等公共交通。",
+      "confidence": 0.96,
+      "parameters": {"spatial_axes": ["height", "floor", "bridge", "river"], "person_movement_retained": true},
+      "evidence": {"events": ["event-003", "event-004"], "manual_contact_sheet": true, "full_transcript": true},
+      "guardrails": ["保持人物方向和上下关系可读。", "公共交通价格与规则需按实际核验。"]
+    },
+    {
+      "observation_id": "obs-chongqing-viral-route-modular-sequence",
+      "technique_key": "narrative-repeatable-experience-module",
+      "start_sec": 398.3,
+      "end_sec": 672.6,
+      "category": "narrative",
+      "trigger": "外国游客路线需要说明它为何能在短视频中反复复制。",
+      "treatment": "依次保留发现大量外国游客、嘉宾解释取景逻辑、机车动作教学、实拍夜景、回看成片和参与者红绿牌评价，形成设置—拍摄—结果—反馈闭环。",
+      "confidence": 0.97,
+      "parameters": {"stages": ["social_context", "instruction", "capture", "result", "evaluation"], "has_explicit_feedback": true},
+      "evidence": {"events": ["event-005", "event-006", "event-007"], "manual_viral_sheet": true, "transcript_range_verified": true},
+      "guardrails": ["体验模块不能承诺所有人得到相同结果。", "拍摄动作和交通安全优先。"]
+    },
+    {
+      "observation_id": "obs-chongqing-pose-coaching-real-process",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 485.6,
+      "end_sec": 584.7,
+      "category": "humor",
+      "trigger": "主持人要复刻机车短视频动作，但对手势、腿部和转身顺序不熟。",
+      "treatment": "保留嘉宾逐步示范、人物夹腿转身、手势像鸡爪的纠正、互相扶持和重新尝试，再展示夜间移动结果。",
+      "confidence": 0.98,
+      "parameters": {"instruction_steps_retained": true, "failed_attempts_retained": true, "playback_rate": null},
+      "evidence": {"event_id": "event-006", "manual_contact_sheet": true, "full_transcript": true},
+      "guardrails": ["不要提前跳到成功结果。", "拍摄动作必须符合实际安全要求。"]
+    },
+    {
+      "observation_id": "obs-chongqing-explicit-route-evaluation",
+      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "start_sec": 584.7,
+      "end_sec": 756.1,
+      "category": "narrative",
+      "trigger": "完成热门路线后需要判断它是否真的值得，而不是让 montage 自行得出结论。",
+      "treatment": "先由嘉宾说明固定 BGM 与海外传播语境，再让参与者用红绿牌和口头理由评价；最后追问抛开流量后本地人想展示什么。",
+      "confidence": 0.96,
+      "parameters": {"evaluation_method": "red_green_cards", "reason_required": true, "next_route_question": true},
+      "evidence": {"events": ["event-007", "event-008"], "manual_contact_sheet": true, "transcript_range_verified": true},
+      "guardrails": ["反馈样本只是片中参与者观点。", "评价结果不替代安全与适配判断。"]
+    },
+    {
+      "observation_id": "obs-chongqing-dual-route-midpoint-pivot",
+      "technique_key": "narrative-comparison-midpoint-role-switch",
+      "start_sec": 672.6,
+      "end_sec": 820,
+      "category": "narrative",
+      "trigger": "前半段已经充分展示流量路线，需要清楚切换比较对象和引导者。",
+      "treatment": "由第一位嘉宾主动回答更想展示市井烟火气，再交接给擅长记录老社区的本地摄影师，并以一张走红照片的现实位置启动第二条路线。",
+      "confidence": 0.98,
+      "parameters": {"guide_role_switch": true, "route_two": "local everyday life", "visual_anchor": "viral photograph"},
+      "evidence": {"events": ["event-008", "event-009"], "manual_local_sheet": true, "full_transcript": true},
+      "guardrails": ["第二条路线必须在叙事目的上不同。", "不要暗示热门路线不真实或没有价值。"]
+    },
+    {
+      "observation_id": "obs-chongqing-reference-image-to-real-place",
+      "technique_key": "graphic-inline-reference-card-over-live-scene",
+      "start_sec": 756.1,
+      "end_sec": 885.8,
+      "category": "graphic",
+      "trigger": "摄影师走红照片需要和现实巷道、光线与构图位置建立可验证映射。",
+      "treatment": "短暂展示社交平台照片和手机页面，再切到同一地点的楼道、菜市场与俯视关系，让人物指出光线将进入的位置。",
+      "confidence": 0.97,
+      "parameters": {"reference_format": "vertical_social_post", "returns_to_live_scene": true, "composition_match": true},
+      "evidence": {"events": ["event-009", "event-010"], "manual_contact_sheet": true, "manual_local_overview": true},
+      "guardrails": ["引用图片须具备使用权和来源。", "不能用后期画面伪装为当时光线。"]
+    },
+    {
+      "observation_id": "obs-chongqing-wait-for-light-authenticity",
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "start_sec": 820,
+      "end_sec": 963.4,
+      "category": "narrative",
+      "trigger": "走红照片依赖阳光与蒸汽，但现场云层遮住光线。",
+      "treatment": "保留判断光线、等待、被路人认出、发现阳光再次被遮和决定不能把鸡蛋放一个篮子的过程，随后转去下一个历史街区。",
+      "confidence": 0.96,
+      "parameters": {"obstacle": "cloud cover", "desired_condition": "sunlight on steam", "adaptation": "move to next location"},
+      "evidence": {"events": ["event-010", "event-011"], "manual_contact_sheet": true, "transcript_range_verified": true},
+      "guardrails": ["天气失败不应伪造成功镜头。", "等待段需要保留判断和调整，不必保留全部空耗。"]
+    },
+    {
+      "observation_id": "obs-chongqing-photo-story-human-relationship",
+      "technique_key": "narrative-object-builds-longitudinal-human-story",
+      "start_sec": 963.4,
+      "end_sec": 1181,
+      "category": "narrative",
+      "trigger": "山城巷如果只讲建筑历史仍缺少本地人与游客长期关系。",
+      "treatment": "从摄影师偶遇老夫妻、重现走红照片进入实体相册、游客留言和多年同角度照片，让相册成为人物关系与地点变化的时间轴。",
+      "confidence": 0.99,
+      "parameters": {"story_object": "physical photo album", "time_span_years": true, "participants": ["photographer", "elderly couple", "visitors"]},
+      "evidence": {"events": ["event-012", "event-013", "event-014"], "manual_contact_sheets": true, "full_transcript": true},
+      "guardrails": ["尊重被摄者意愿与隐私。", "照片年份和关系只按可见证据或本人陈述描述。"]
+    },
+    {
+      "observation_id": "obs-chongqing-album-time-series-evidence",
+      "technique_key": "graphic-physical-archive-time-series",
+      "start_sec": 1031.7,
+      "end_sec": 1181,
+      "category": "graphic",
+      "trigger": "共同记忆和街区变化需要比口述更具体的时间证据。",
+      "treatment": "让人物翻看实体相册并指认 2019、2021 等同地点照片，穿插当前街巷，形成过去与现在的可见对照。",
+      "confidence": 0.98,
+      "parameters": {"archive_type": "physical_album", "same_location_comparison": true, "years_visible": true},
+      "evidence": {"events": ["event-013", "event-014"], "manual_contact_sheet": true, "album_visible": true},
+      "guardrails": ["照片版权和肖像权需确认。", "年份必须能从相册或当事人证词核实。"]
+    },
+    {
+      "observation_id": "obs-chongqing-community-walk-human-scale",
+      "technique_key": "scenic-human-reaction-to-landmark-geography",
+      "start_sec": 1247,
+      "end_sec": 1502.5,
+      "category": "scenic",
+      "trigger": "本地路线需要展示热门景点之外的山城空间和日常使用方式。",
+      "treatment": "跟随人物穿过楼梯、树荫、居民楼、儿童活动区、棋牌桌和坡道，交替广角环境与居民互动，解释步道如何承担无车生活空间。",
+      "confidence": 0.96,
+      "parameters": {"viewpoint": "walking", "community_uses": ["children", "cards", "rest", "stairs"], "tourist_density": "low"},
+      "evidence": {"events": ["event-016", "event-017", "event-018"], "manual_contact_sheets": true, "manual_local_overview": true},
+      "guardrails": ["社区不是供凝视的布景。", "拍摄居民和儿童需遵守同意与隐私要求。"]
+    },
+    {
+      "observation_id": "obs-chongqing-resident-stair-humor",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 1364.1,
+      "end_sec": 1475,
+      "category": "humor",
+      "trigger": "主持人爬坡疲惫并与本地居民聊北京长城和重庆阶梯。",
+      "treatment": "保留居民主动欢迎、双方比较长城与重庆台阶、方言词解释、人物喘气和互相打趣，让笑点来自共同身体经验。",
+      "confidence": 0.96,
+      "parameters": {"resolution_retained": true, "subtitle_support": "dialect_context", "playback_rate": null},
+      "evidence": {"event_id": "event-017", "manual_contact_sheet": true, "full_transcript": true},
+      "guardrails": ["不以方言或居民身份作为嘲笑对象。", "保留友好回应和语境。"]
+    },
+    {
+      "observation_id": "obs-chongqing-animal-community-microstory",
+      "technique_key": "narrative-small-local-encounter-validates-place",
+      "start_sec": 1502.5,
+      "end_sec": 1609.3,
+      "category": "narrative",
+      "trigger": "步道段需要一个具体事件回报‘本地生活关系’而非只拍空景。",
+      "treatment": "保留人物担心大鹅会咬、询问名字和来历、得知生日，以及路过婆婆认识它的细节，再由主持人总结先当游客、再当本地人的玩法。",
+      "confidence": 0.94,
+      "parameters": {"encounter": "community goose", "neighbor_recognition": true, "route_summary_follows": true},
+      "evidence": {"event_id": "event-019", "manual_contact_sheet": true, "transcript_range_verified": true},
+      "guardrails": ["动物行为与安全判断以现场为准。", "不补造社区关系。"]
+    },
+    {
+      "observation_id": "obs-chongqing-cave-hotpot-history-transition",
+      "technique_key": "narrative-present-experience-to-historical-layer",
+      "start_sec": 1609.3,
+      "end_sec": 1793.4,
+      "category": "narrative",
+      "trigger": "防空洞火锅既是消费打卡点，也承载重庆战争历史和当代记忆。",
+      "treatment": "先以入口、温度、麻将与火锅建立当下体验，再用防空洞结构、档案画面和历史旁白解释战时用途，最后回到墙面展陈和城市韧性。",
+      "confidence": 0.97,
+      "parameters": {"layers": ["food", "temperature", "childhood", "wartime_shelter", "city_resilience"], "returns_to_present": true},
+      "evidence": {"events": ["event-020", "event-021"], "manual_ending_overview": true, "full_transcript": true},
+      "guardrails": ["战争史、人口和容量数字需用可靠来源核验。", "消费体验不能淡化历史伤痛。"]
+    },
+    {
+      "observation_id": "obs-chongqing-archive-inline-history",
+      "technique_key": "graphic-inline-reference-card-over-live-scene",
+      "start_sec": 1650,
+      "end_sec": 1720,
+      "category": "graphic",
+      "trigger": "仅凭当前火锅店无法理解防空洞最初用途。",
+      "treatment": "在现场洞体与讲解之间短暂插入黑白历史影像和来源说明，读完即回到洞内空间与墙面文字。",
+      "confidence": 0.93,
+      "parameters": {"insert_format": "archival_black_and_white", "source_mark_required": true, "returns_to_live_scene": true},
+      "evidence": {"event_id": "event-020", "manual_contact_sheet": true, "archival_frames_visible": true},
+      "guardrails": ["档案来源、年代与授权必须核实。", "不可用无关影像制造历史真实性。"]
+    },
+    {
+      "observation_id": "obs-chongqing-dual-view-ending-synthesis",
+      "technique_key": "narrative-reflection-summary-forward-hook",
+      "start_sec": 1793.4,
+      "end_sec": 1844.6,
+      "category": "narrative",
+      "trigger": "两条路线看似差异很大，需要明确回答开场提出的同一城市问题。",
+      "treatment": "用火锅、轻轨、社区步道、居民和城市宽景交替承载旁白，指出科幻重庆与接地气重庆都是同一城市的生命力；随后回到栏目感谢、城市推荐和再见。",
+      "confidence": 0.98,
+      "parameters": {"opening_question_answered": true, "synthesis_terms": ["futuristic", "grounded", "resilient"], "last_dialogue_sec": 1844.6},
+      "evidence": {"event_id": "event-022", "manual_contact_sheet": true, "asr_tail_verified": true},
+      "guardrails": ["总结保持片中人物观点，不把修辞当作城市事实。", "平台号召放在主题结论之后。"]
+    },
+    {
+      "observation_id": "obs-chongqing-subtitle-evidence-hierarchy",
+      "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
+      "start_sec": 0,
+      "end_sec": 1848.448,
+      "category": "subtitle",
+      "trigger": "全片包含方言、英语、多人对话、照片、社交页面、历史档案和栏目图形，需要清楚区分证据层。",
+      "treatment": "以底部居中浅色描边字幕为默认层；竖屏社交素材、实体相册、黑白档案、地点标题和‘来不来’栏目图形只在对应证据节点出现。",
+      "confidence": 0.92,
+      "parameters": {"base_position": "bottom_center", "base_lines": "one_or_two", "special_layers": ["social_post", "photo_album", "archive", "show_title"]},
+      "evidence": {"manual_event_contact_sheets": 12, "manual_overview_sheets": 4, "ocr_verified": false},
+      "guardrails": ["未使用 OCR，不能声称逐字字幕准确。", "引用画面和字幕不能遮挡人物脸部或关键历史信息。"]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 81728,
+    "serialized_utf8_bytes": 96508,
+    "maximum_characters": 180000,
+    "hard_request_limit_utf8_bytes": 200000,
+    "model_request_serialized_characters": 66734,
+    "model_request_utf8_bytes": 82000,
+    "model_request_body_sha256": "7123a92f39f82496397e5d7f273edd3c197a1505bce2c1265a13e7c8c07a6c53",
+    "request_contains_instructions_input_tools_and_manual_evidence": true,
+    "comparison": "strictly_less_than"
+  },
+  "limitations": [
+    "参考片是最终成片，只能学习被正向保留的内容、节奏和效果；没有原始素材与成片映射，不能推断作者真实删片偏好。",
+    "代理为 640×360，人工联系表和概览仍可能漏掉极短转场、小字号、细微贴图和复杂 VFX。",
+    "完整 ASR 使用 faster-whisper small/zh，最后可信对白到 1844.6 秒‘我们下期再见’，与媒体末尾相差约 3.85 秒；方言、英语、专名和历史名词存在误识别，事实不能直接照抄 ASR。",
+    "人工视觉复核覆盖开场、外国游客路线、机车动作、路线评价、中段转折、社交照片、山城巷相册、社区步道、防空洞历史与结尾；没有可靠 OCR，不能声明字幕逐字完全正确。",
+    "当前执行环境不能直接试听抽取音频；music_likely 仅为声学启发式，不能据此断言曲名、BPM、版权、ducking 数值或逐拍因果。",
+    "机车、索道和城市段的快速运动可由正常速度拍摄、移动相机和硬切解释；未确认 speed ramp、素材变速、具体倍率、复杂遮罩转场或独立音效。",
+    "海外短视频、社交平台照片、实体相册和历史档案只按成片可见功能描述；素材来源、版权、肖像权、历史年代和数字需在目标项目中独立核验。",
+    "片中外国游客、本地居民、方言、城市气质和路线评价均是有限样本与人物观点，不能推广为群体或城市客观结论。",
+    "完整 Responses body 只通过严格 UTF-8 字节门禁和最小结构校验，没有调用外部模型；本 study 由本地完整分析、ASR 与人工画面证据形成。"
+  ]
+}
