@@ -81,9 +81,21 @@ jobs:
           python-version: '3.12'
           cache: pip
           cache-dependency-path: pyproject.toml
+      - name: Install FFmpeg with libass and CJK fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+          sudo apt-get install --yes fonts-noto-cjk
       - run: python -m pip install --disable-pip-version-check -c constraints/test.txt -e ".[test]"
       - name: Require real libass subtitles filter
-        run: ffmpeg -hide_banner -filters 2>&1 | grep -E ' subtitles +V->V '
+        env:
+          PYTHONPATH: ${{ github.workspace }}/src
+        run: |
+          command -v ffmpeg
+          ffmpeg -version
+          ffmpeg -buildconf
+          ffmpeg -hide_banner -filters
+          python -c "from vlog_director.ffmpeg import require_filters; require_filters('ffmpeg', {'subtitles'})"
       - name: Run real libass layout integration
         env:
           PYTHONPATH: ${{ github.workspace }}/src

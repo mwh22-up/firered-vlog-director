@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import re
+import tomllib
 import unittest
 from pathlib import Path
 from urllib.parse import urlparse
@@ -15,6 +17,34 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 
 
 class DependencyLockTests(unittest.TestCase):
+    def test_python_matrix_uses_a_numpy_pin_compatible_with_python_311(self) -> None:
+        pyproject = tomllib.loads(
+            (REPOSITORY_ROOT / "pyproject.toml").read_text(encoding="utf-8")
+        )
+        workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "ci.yml").read_text(
+            encoding="utf-8"
+        )
+        constraints = (REPOSITORY_ROOT / "constraints" / "test.txt").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertEqual(pyproject["project"]["requires-python"], ">=3.11,<3.13")
+        self.assertRegex(workflow, r"python-version: \['3\.11', '3\.12'\]")
+        numpy_pins = re.findall(r"(?m)^numpy==([^;\s]+)", constraints)
+        self.assertEqual(numpy_pins, ["2.4.6"])
+
+    def test_libass_ci_provisions_ffmpeg_and_preserves_probe_diagnostics(self) -> None:
+        workflow = (REPOSITORY_ROOT / ".github" / "workflows" / "ci.yml").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn("sudo apt-get install --yes ffmpeg", workflow)
+        self.assertIn("ffmpeg -version", workflow)
+        self.assertIn("ffmpeg -buildconf", workflow)
+        self.assertIn("ffmpeg -hide_banner -filters", workflow)
+        self.assertIn("from vlog_director.ffmpeg import require_filters", workflow)
+        self.assertNotIn("| grep -E ' subtitles", workflow)
+
     def test_hyperframes_toolchain_is_pinned_to_public_npm_artifacts(self) -> None:
         package = json.loads(
             (REPOSITORY_ROOT / "package.json").read_text(encoding="utf-8")

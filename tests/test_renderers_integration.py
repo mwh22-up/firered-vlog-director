@@ -23,18 +23,18 @@ def _write_json(path: Path, document: dict) -> None:
     path.write_text(json.dumps(document) + "\n", encoding="utf-8")
 
 
-def _ready_subtitle_source(project: Path, cues: list[dict]) -> dict:
-    source_path = project / "work" / "subtitles" / "reviewed.json"
+def _review_subtitle_source(project: Path, cues: list[dict]) -> dict:
+    source_path = project / "work" / "subtitles" / "review-required.json"
     _write_json(
         source_path,
         {
-            "status": "ready",
-            "coverage": {"status": "verified"},
+            "status": "review_required",
+            "coverage": {"status": "pending"},
             "cues": cues,
         },
     )
     return {
-        "source": "work/subtitles/reviewed.json",
+        "source": "work/subtitles/review-required.json",
         "source_sha256": hashlib.sha256(source_path.read_bytes()).hexdigest(),
     }
 
@@ -377,7 +377,7 @@ class RendererIntegrationTests(unittest.TestCase):
             self.assertGreaterEqual(frames[-1][0], 3.2)
             self.assertGreater(frame_mean(3.2), 0.0)
 
-    def test_real_ffmpeg_composes_fade_overlay_and_verified_subtitle(self) -> None:
+    def test_real_ffmpeg_composes_fade_overlay_and_review_subtitle(self) -> None:
         ffmpeg = shutil.which("ffmpeg")
         if ffmpeg is None:
             self.skipTest("system ffmpeg is unavailable")
@@ -453,14 +453,14 @@ class RendererIntegrationTests(unittest.TestCase):
                     ],
                 },
                 "subtitles": {
-                    "status": "ready",
-                    "coverage": {"status": "verified"},
+                    "status": "review",
+                    "coverage": {"status": "pending"},
                     "cues": [
                         {
                             "start_sec": 0.5,
                             "end_sec": 2.5,
-                            "text": "Verified subtitle",
-                            "review_status": "verified",
+                            "text": "Review subtitle",
+                            "review_status": "review_required",
                         }
                     ],
                     "style": {
@@ -480,7 +480,7 @@ class RendererIntegrationTests(unittest.TestCase):
                 },
             }
             plan["subtitles"].update(
-                _ready_subtitle_source(project, plan["subtitles"]["cues"])
+                _review_subtitle_source(project, plan["subtitles"]["cues"])
             )
             render_enhanced_video(
                 project,
