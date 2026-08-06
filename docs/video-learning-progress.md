@@ -1,17 +1,17 @@
 # 参考视频 Technique Learning 计划进度
 
-更新时间：2026-07-31
+更新时间：2026-08-06
 执行分支：`feature/director-learning-loop`
 
 ## 总体进度
 
-- 计划视频：6 支
-- 已完成正式学习：6 支
+- 计划视频：11 支
+- 已完成正式学习：7 支
 - 已开始但未完成：0 支
-- 未开始正式学习：0 支
-- 完成率：6/6（100%）
+- 未开始正式学习：4 支
+- 完成率：7/11（63.64%）
 
-六支 Study 的完成状态按各条目完成时的证据与门禁成立。2026-08-01 以前的条目只保留了“实际请求字符数”，不能追溯声明已经验证 UTF-8 body 字节数；自完整请求字节门禁落地后，任何新增或重新生成的 Study 必须同时具备完整视频分析、可用 ASR/语义证据、人工重点区间复核、context packet 严格 `<180,000` 字符、包含实际 instructions/input/tools 等字段的最终请求 body 严格 `<200,000` UTF-8 字节及 body SHA-256，以及已提交的正式 `technique-study.<BV>.v1.json`。等于任一上限也必须阻断；仅下载代理视频、提取开场或生成预分析素材不算完成。
+前六支 Study 的完成状态按各条目完成时的证据与门禁成立。2026-08-01 以前的条目只保留了“实际请求字符数”，不能追溯声明已经验证 UTF-8 body 字节数；自完整请求字节门禁落地后，任何新增或重新生成的 Study 必须同时具备完整视频分析、可用 ASR/语义证据、人工重点区间复核、context packet 严格 `<180,000` 字符、包含实际 instructions/input/tools 等字段的最终请求 body 严格 `<200,000` UTF-8 字节及 body SHA-256，以及已提交的正式 `technique-study.<BV>.v1.json`。等于任一上限也必须阻断；仅下载代理视频、提取开场或生成预分析素材不算完成。
 
 ## 明细
 
@@ -76,26 +76,63 @@
 - 模型上下文：96,358 字符，严格 `<180,000`；加入 Schema、任务约束和人工证据后的实际序列化模型请求为 73,177 字符，严格 `<200,000`。
 - 门禁结果：Study Schema、JSON/UTF-8 无 BOM、中文与时间边界检查通过；15 项针对性 unittest、48 项 director 全量 unittest 全部通过；六来源聚合为 21 条稳定模式和 34 条单来源模式，显式 `minimum_source_support=2`。
 
+### 7. BV15XMC6KETm — 已完成
+
+- 标题：[这里是世界第一城！！纽约！](https://www.bilibili.com/video/BV15XMC6KETm/)
+- 时长：1,901.01 秒（约 31 分 41 秒）
+- 已完成：代理双流完整解码、完整视频分析、small / zh 全片 ASR、尾部覆盖核验、完整镜头/事件/音频与语义证据、人工重点区间复核、受限上下文、实际外层模型请求门禁和正式 technique study。
+- 正式产物：reference-learning/technique-study.BV15XMC6KETm.v1.json
+- 证据规模：636 个镜头、23 个事件、316 个音频段、996 个转写片段、5,671 个词、18 条 technique observations。
+- ASR 覆盖：ASR 报告处理到 1,901.013 秒；最后可信对白到 1,899.17 秒“再见”，与媒体末尾相差约 1.84 秒，可信对白覆盖率 99.9032%。
+- 人工复核：检查开场、雨天计划转折、《老友记》场景揭示和人物反应、中央公园美景、七年前电影记忆回环、球场现场与主题峰值、字幕层级和夜景收束；未使用 OCR，不声明字幕逐字完全正确。
+- 模型上下文：79,770 字符、92,764 UTF-8 字节，严格小于 180,000 字符；包含 instructions/input/tools 和人工证据的最终 Responses body 为 78,573 UTF-8 字节，严格小于 200,000，body SHA-256 为 adca819b653cb9986d3a879e2c84ea0ea54778d5bb6b4eb82c9f789f0ea55f18。
+- 证据限制：参考成片只支持正向保留模式；没有原始素材映射，不能推断作者真实删片偏好。未确认 speed ramp、具体播放倍率、复杂遮罩转场、独立音效、曲名、BPM 或逐拍因果。
+- 门禁结果：45 项参考学习专项 unittest 和 307 项 director 全量 unittest 全部通过（3 项按设计跳过）；正式 JSON/Schema、七来源 aggregate smoke、UTF-8 无 BOM、本地绝对路径与敏感信息扫描、changed-media 扫描及 git diff --check 通过。
+
+### 8. BV1a7Tj6nEe9 — 未开始
+
+- 标题：[外国人严选VS本地人推荐，两种玩法打开最反差的重庆](https://www.bilibili.com/video/BV1a7Tj6nEe9/)
+- 时长：约 1,849 秒。
+- 当前状态：未下载媒体、未执行完整分析或 ASR、未生成人工复核与正式 technique study，不计入正式聚合来源。
+
+### 9. BV1TYVA6sEhm — 未开始
+
+- 标题：[不办婚礼去旅行结婚，我们后悔了吗？](https://www.bilibili.com/video/BV1TYVA6sEhm/)
+- 时长：约 1,604 秒。
+- 当前状态：未下载媒体、未执行完整分析或 ASR、未生成人工复核与正式 technique study，不计入正式聚合来源。
+
+### 10. BV1Mi536EELv — 未开始
+
+- 标题：[欧洲最混乱的老城和顶级富豪岛，差距能有多大？](https://www.bilibili.com/video/BV1Mi536EELv/)
+- 时长：约 1,912 秒。
+- 当前状态：未下载媒体、未执行完整分析或 ASR、未生成人工复核与正式 technique study，不计入正式聚合来源。
+
+### 11. BV11Ao7BYEyv — 未开始
+
+- 标题：[泰拳女王给我当陪练，是种怎样的体验!?](https://www.bilibili.com/video/BV11Ao7BYEyv/)
+- 时长：约 2,214 秒。
+- 当前状态：未下载媒体、未执行完整分析或 ASR、未生成人工复核与正式 technique study，不计入正式聚合来源。
+
 ## 已沉淀的跨视频结果
 
-前六支已完成视频可聚合出：
+当前七支已完成视频可聚合出：
 
-- 完整来源数：6
-- 稳定模式：21 条（显式 `minimum_source_support=2`）
-- 单来源模式：34 条
+- 完整来源数：7
+- 稳定模式：23 条（显式 `minimum_source_support=2`）
+- 单来源模式：44 条
 - 正式聚合产物：`reference-learning/reference-techniques.aggregate.v1.json`
 - 聚合命令：`vlog-director aggregate-techniques`
 - 当前限制：`BV19sm2BBEDd` 的重叠首日不生成新增 observation。单来源模式不能计为稳定跨来源模式，开场预分析或未完成视频也不得进入正式聚合；参考成片只能提供正向保留模式，不能推断作者真实删片偏好。
 
-正式聚合已经接入 `direct-timeline --technique-profile`。当前只有 `humor-preserve-real-awkward-process` 具备白名单执行器：它需要目标镜头、事件或 optional moment 的显式 `fun_score >= 0.55`，并且只有当该证据让边缘镜头跨过选片阈值且最终通过预算拟合时才写入 `applied_patterns`。它不能重排本来已入选的镜头，用户反馈优先级为 `remove/avoid > lock > protect/dependency > cut_first/score`。`narrative-failure-adaptation-payoff` 在真实目标语义标注入口完成前降级为 guidance；正式档案共 1 条 executable pattern、54 条 guidance patterns，其中 34 条为单来源 guidance。没有目标证据时不得改变 EDL。
+正式聚合已经接入 `direct-timeline --technique-profile`。当前只有 `humor-preserve-real-awkward-process` 具备白名单执行器：它需要目标镜头、事件或 optional moment 的显式 `fun_score >= 0.55`，并且只有当该证据让边缘镜头跨过选片阈值且最终通过预算拟合时才写入 `applied_patterns`。它不能重排本来已入选的镜头，用户反馈优先级为 `remove/avoid > lock > protect/dependency > cut_first/score`。`narrative-failure-adaptation-payoff` 在真实目标语义标注入口完成前降级为 guidance；正式档案共 1 条 executable pattern、66 条 guidance patterns，其中 44 条为单来源 guidance。没有目标证据时不得改变 EDL。
 
 ## 完成状态
 
-1. 六支参考视频均已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、字符门禁和提交前验证。
-2. 六来源聚合已复核独立来源支持数；后续新增参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
-3. 六来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
-4. Aggregate 接入门禁：34 项针对性 unittest、75 项全量 unittest、六 Study 与 Aggregate Schema/运行时校验、CLI 聚合与导演 smoke、UTF-8 无 BOM、敏感信息/媒体扫描及 `git diff --check` 均通过。
-5. CI 已在干净 Python 环境显式安装 `test` extra，并以 3 项自动化 Schema 测试覆盖 8 个 Schema、34 个正式 reference JSON、moments fixture 与 protection policy；当前全量为 86 项 unittest。
+1. 七支参考视频均已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、上下文字符门禁和新增来源的完整请求 UTF-8 字节门禁。
+2. 七来源聚合已复核独立来源支持数；后续新增参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
+3. 七来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
+4. 当前七来源 Aggregate 门禁：45 项参考学习专项 unittest、307 项 director 全量 unittest、七 Study 与 Aggregate Schema/运行时校验、CLI 聚合 smoke、UTF-8 无 BOM、敏感信息/changed-media 扫描及 `git diff --check` 均通过。
+5. CI 在干净 Python 环境显式安装 `test` extra；自动化 Schema 测试覆盖所有正式 reference JSON、moments fixture 与 protection policy，当前本地全量基线为 307 项 unittest。
 6. 模型请求门禁已改为校验完整 Responses JSON body 的 UTF-8 字节数：程序内 transport 只消费已经校验的紧凑 body bytes，CLI 则校验待发送文件的原始字节并返回 SHA-256；中文多字节边界、完整 envelope、Responses 最小结构、重复字段与递归凭据字段拒绝、transport 零调用、不可压缩 packet、UTF-8 BOM 和本地 HTTP 413 网关均有回归覆盖。该门禁不替代不同 tool type 的上游 API Schema 校验；仅检查 context 字符数也不能作为已通过外层请求门禁的依据，历史字符记录不追溯标记为字节验证。
 7. CI 的 `test` extra 固定便携 FFmpeg 版本，并以 `lavfi` 临时生成 FFV1/PCM 音视频，实际通过基础增强 renderer 的 `loudnorm`、H.264/AAC 编码，再完整解码验证视频流和音频流；测试不依赖真实素材、系统预装 FFmpeg 或已提交媒体，CI job 设有 10 分钟硬超时。
 

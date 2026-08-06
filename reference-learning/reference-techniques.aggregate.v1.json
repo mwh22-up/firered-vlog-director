@@ -1,9 +1,10 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-30e44cc37595",
-  "generated_at": "2026-07-31T09:15:57.643552+00:00",
-  "source_count": 6,
+  "profile_id": "aggregated-reference-techniques-v1-4cc17584d67e",
+  "generated_at": "2026-08-06T13:45:42.191572+00:00",
+  "source_count": 7,
   "source_ids": [
+    "bilibili-BV15XMC6KETm",
     "bilibili-BV19sm2BBEDd",
     "bilibili-BV1C3546DEC6",
     "bilibili-BV1CrHwzUEJa",
@@ -362,8 +363,9 @@
     {
       "technique_key": "humor-preserve-real-awkward-process",
       "category": "humor",
-      "source_support": 6,
+      "source_support": 7,
       "source_ids": [
+        "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
@@ -371,8 +373,9 @@
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9467,
+      "average_confidence": 0.9471,
       "trigger_examples": [
+        "主讲人自称不懂足球，但仍要记录世界杯现场。",
         "山上点饮料时突然想不起‘吸管’的英文，只能通过反复描述和等待解决。",
         "支付和加热沟通连续失败，人物只能重复尝试。",
         "列车员检查时票务页面打不开，主角无法独立解释，必须向同车旅客求助。",
@@ -381,6 +384,7 @@
         "长时间问路同时存在语言障碍、地图理解和追加问题，快速跳到答案会失去真实关系变化。"
       ],
       "treatment_examples": [
+        "保留比分预测、模仿电视台开场、球员与球队关系说错或卡顿、旅伴纠正和人物自嘲，让非专业视角成为真实观看体验。",
         "保留提出需求、卡词、店员理解、继续等待、拿到饮料和人物事后偷笑的完整过程，以字幕和短配乐帮助观众跟上，不提前跳到结果。",
         "保留足够长的真实失败过程和停顿，用少量双语字幕、失败短句与反差配乐放大尴尬，不提前跳到结果。",
         "保留查票、网络失败、双语沟通、旅客代为解释、分别问名字和事后复盘的完整过程，只用翻译字幕和轻量强调帮助观众跟上。",
@@ -389,6 +393,13 @@
         "保留首次开口、双方理解失败、展示地图、尝试回答、追加问题、等待和暂时分开的全过程，让尴尬由真实停顿累积。"
       ],
       "parameter_variants": [
+        {
+          "expert_claim": false,
+          "corrections_retained": true,
+          "overlay_stack": false,
+          "playback_rate": null,
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
         {
           "language_barrier": true,
           "resolution_retained": true,
@@ -432,6 +443,14 @@
         }
       ],
       "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-nonexpert-live-commentary-humor",
+          "guardrails": [
+            "事实错误不能作为正式赛事信息传播。",
+            "笑点落在人物自身，不嘲弄球员或球迷。"
+          ]
+        },
         {
           "source_id": "bilibili-BV19sm2BBEDd",
           "observation_id": "obs-straw-language-awkward-process",
@@ -481,6 +500,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 1583.44,
+          "end_sec": 1683.5,
+          "observation_id": "obs-nonexpert-live-commentary-humor"
+        },
         {
           "source_id": "bilibili-BV19sm2BBEDd",
           "start_sec": 11570,
@@ -1317,16 +1342,18 @@
     {
       "technique_key": "narrative-failure-adaptation-payoff",
       "category": "narrative",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
+        "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
         "bilibili-BV1TNZUB4EF6"
       ],
-      "average_confidence": 0.95,
+      "average_confidence": 0.9533,
       "trigger_examples": [
+        "纽约暴雨打断原定户外计划，但人物已经准备替代选项。",
         "最后一天坐错车、买错票并选择没有明确路标的路线，原定轻松徒步失去确定性。",
         "夜间目的地花期已过，原计划的视觉目标失败。",
         "找车、通票、黄金列车和一分钟换乘连续出错，原定独行路线失去确定性。",
@@ -1334,6 +1361,7 @@
         "从德国到巴黎的移动连续出现晚点、站台不明、行李负担、巴士问路和同名地点误选。"
       ],
       "treatment_examples": [
+        "先展示雨势和备选博物馆，再通过双人玩笑引出此前没去过的《老友记》体验馆；保留临时决定、进入展馆和不知道门后内容的悬念，直到橘色沙发揭示。",
         "保留求助、地图、继续上山、缺水、语言尴尬、暴露山脊、摔倒、下雨和返程，把错误逐级升级，再以湖景、下山和晚间反思完成结果。",
         "保留夜路、失望、自嘲和重新查花期的过程，明确修改第二天路线，最终用盛花地点兑现回报。",
         "让每次误解引出一次求助，再让香港旅客和中国夫妻分别解决票务与换乘问题，最后把偶遇转化为同行和次日行程调整。",
@@ -1341,6 +1369,12 @@
         "保留问题被发现、向人求助、重新确认、赶路、坐对巴士以及地图错误被纠正的过程，再以巴黎街景和继续前往酒店作为阶段回报。"
       ],
       "parameter_variants": [
+        {
+          "obstacle": "heavy_rain",
+          "adaptation": "Friends experience",
+          "unknown_door_payoff": true,
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
         {
           "obstacles": [
             "wrong_train",
@@ -1401,6 +1435,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-newyork-rain-plan-adaptation",
+          "guardrails": [
+            "保留计划改变的因果链。",
+            "不要在揭示前用标题提前泄露结果。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV19sm2BBEDd",
           "observation_id": "obs-final-hike-failure-adaptation",
           "guardrails": [
@@ -1441,6 +1483,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 590.09,
+          "end_sec": 675.34,
+          "observation_id": "obs-newyork-rain-plan-adaptation"
+        },
         {
           "source_id": "bilibili-BV19sm2BBEDd",
           "start_sec": 10990,
@@ -1568,24 +1616,36 @@
     {
       "technique_key": "narrative-reflection-summary-forward-hook",
       "category": "narrative",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
+        "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1TNZUB4EF6"
       ],
-      "average_confidence": 0.96,
+      "average_confidence": 0.9625,
       "trigger_examples": [
+        "比赛结束后需要把球赛情绪重新放回纽约城市尺度，并说明记录本身的意义。",
         "六天旅行和最后四小时徒步需要在离开前沉淀成可复用的人物认知。",
         "第一天经历包含大量偶遇和情绪反差，需要在结束前把事件沉淀为人物认知。",
         "巴黎仅有一天的行程需要把紧绷、消费、三万步、设备和环境感受沉淀成明确结论。"
       ],
       "treatment_examples": [
+        "以时代广场和夜间街道承载赛后旁白，从城市不因一场决赛改变转到稳定镜头、旋转视角和‘为什么记录’，最后落在纽约留在人物镜头里。",
         "在酒店保留完整口播，总结已完成与遗憾、错误路线和‘及时回头’，再用剪辑把数小时痛苦压缩成几分钟的自觉比喻连接观众与下一段旅程。",
         "回酒店保留完整正面口播，依次总结瑞士风景、当地人的松弛、偶遇旅伴和披萨体验，再用明日计划、致谢黑卡和下集风景预告收尾。",
         "回酒店保留较长正面口播，总结未遇失窃、全程警惕、交通与气味感受、餐费和疲惫；进食后补充三万步、鞋损与房间气味，最后明确下一站圣米歇尔山并道别。"
       ],
       "parameter_variants": [
+        {
+          "visual_time": "night",
+          "topics": [
+            "city continuity",
+            "camera",
+            "recording motive"
+          ],
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
         {
           "reflection_topics": [
             "completed_goals",
@@ -1618,6 +1678,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-postmatch-city-recording-reflection",
+          "guardrails": [
+            "器材性能描述不能替代实际 QA。",
+            "反思应保持人物主观视角。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV19sm2BBEDd",
           "observation_id": "obs-final-reflection-editing-metaphor",
           "guardrails": [
@@ -1643,6 +1711,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 1796.2,
+          "end_sec": 1844.18,
+          "observation_id": "obs-postmatch-city-recording-reflection"
+        },
         {
           "source_id": "bilibili-BV19sm2BBEDd",
           "start_sec": 13050,
@@ -1894,6 +1968,86 @@
       ]
     },
     {
+      "technique_key": "scenic-human-reaction-to-landmark-geography",
+      "category": "scenic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm",
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.965,
+      "trigger_examples": [
+        "中央公园既承担城市房价说明，也需要提供旅行中的空间与情绪释放。",
+        "塞纳河游船是巴黎一日行的主要视觉回报，需要兼顾地标、城市尺度和人物在场感。"
+      ],
+      "treatment_examples": [
+        "先以俯瞰和地图逻辑说明公园位置，再用入口马车、人物步行、草坪活动、城市楼群与阿根廷旗帜交替建立尺度，最后回到两人的现场体验。",
+        "从登船和人物仰望进入埃菲尔铁塔，交替人物反应、河面宽景、桥梁、两岸建筑、蓝调天空与夜间亮灯，再回到岸上人物。"
+      ],
+      "parameter_variants": [
+        {
+          "sequence": [
+            "aerial_context",
+            "entrance",
+            "walking",
+            "lawn",
+            "skyline",
+            "people"
+          ],
+          "includes_people": true,
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "viewpoint": "moving_boat",
+          "includes_people": true,
+          "light_progression": [
+            "dusk",
+            "blue_hour",
+            "night"
+          ],
+          "geographic_anchors": [
+            "Eiffel_Tower",
+            "Seine",
+            "bridges",
+            "riverbanks"
+          ],
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-central-park-human-scale-geography",
+          "guardrails": [
+            "美景段仍需维持人物方向和叙事目的。",
+            "房价与历史信息需要独立事实核验。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-cruise-human-to-landmark-geography",
+          "guardrails": [
+            "连续地标镜头必须改变人物、方向、光线或地理信息。",
+            "移动视点要维持河流方向可读。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 1025.5,
+          "end_sec": 1180,
+          "observation_id": "obs-central-park-human-scale-geography"
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 2511.5,
+          "end_sec": 2690,
+          "observation_id": "obs-cruise-human-to-landmark-geography"
+        }
+      ]
+    },
+    {
       "technique_key": "scenic-human-scale-to-aerial-geography",
       "category": "scenic",
       "source_support": 3,
@@ -2051,6 +2205,76 @@
           "start_sec": 3482.8,
           "end_sec": 8832.81,
           "observation_id": "obs-hotel-1400-running-callback"
+        }
+      ]
+    },
+    {
+      "technique_key": "subtitle-location-title-delivers-promise",
+      "category": "subtitle",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm",
+        "bilibili-BV1TNZUB4EF6"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "开场城市 montage 需要快速确认具体地点并建立视觉语气。",
+        "开场需要在人物解释前确认国家、城市、独行主题和视觉期待。"
+      ],
+      "treatment_examples": [
+        "在自由女神与人物同框画面左下放黄色英文手写地点标题，下面配较小中文说明；随后恢复普通对白字幕。",
+        "在人物与巴黎夜景、教堂和落日地标上依次放置法国、巴黎、一个人旅行与 travel vlog 标题，随后干净切回早餐叙事。"
+      ],
+      "parameter_variants": [
+        {
+          "title_color": "yellow",
+          "title_style": "handwritten",
+          "secondary_caption": true,
+          "position": "lower_left",
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "shot_count": 6,
+          "title_roles": [
+            "country",
+            "city",
+            "solo_travel",
+            "vlog_format"
+          ],
+          "transition_out": "hard_cut",
+          "source_id": "bilibili-BV1TNZUB4EF6"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-newyork-handwritten-location-title",
+          "guardrails": [
+            "地点文字必须和真实画面一致。",
+            "标题不能遮挡人物脸部或地标主体。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "observation_id": "obs-paris-title-landmark-promise",
+          "guardrails": [
+            "标题只放开场一次，不反复遮挡后续地标。",
+            "文字必须与实际地点和成片内容一致。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 23.86,
+          "end_sec": 31.5,
+          "observation_id": "obs-newyork-handwritten-location-title"
+        },
+        {
+          "source_id": "bilibili-BV1TNZUB4EF6",
+          "start_sec": 0,
+          "end_sec": 8.88,
+          "observation_id": "obs-paris-title-landmark-promise"
         }
       ]
     },
@@ -2353,6 +2577,50 @@
       ]
     },
     {
+      "technique_key": "graphic-place-title-before-main-body-reset",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "城市命题与任务设定完成后，需要一个清楚的章节边界进入正片。"
+      ],
+      "treatment_examples": [
+        "在纽约天际线与水面上叠加白色 New York/纽约主标题，随后硬切室内双人对谈和比赛倒计时。"
+      ],
+      "parameter_variants": [
+        {
+          "title_language": [
+            "English",
+            "Chinese"
+          ],
+          "transition_out": "hard_cut",
+          "complex_vfx": false,
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-newyork-main-title-reset",
+          "guardrails": [
+            "主标题只出现一次。",
+            "章节切换后立即提供新信息。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 82.78,
+          "end_sec": 97.1,
+          "observation_id": "obs-newyork-main-title-reset"
+        }
+      ]
+    },
+    {
       "technique_key": "graphic-reference-frame-to-live-location-match",
       "category": "graphic",
       "source_support": 1,
@@ -2564,6 +2832,47 @@
           "start_sec": 5408,
           "end_sec": 5423,
           "observation_id": "obs-train-motion-ambient-bridge"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-fandom-reenactment-with-real-reaction",
+      "category": "humor",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "体验馆提供观众熟悉的场景、服装和台词，人物本身又有强烈情感投入。"
+      ],
+      "treatment_examples": [
+        "交替保留认场景、说原台词、穿角色服装、唱主题元素和旅伴即时吐槽，让笑点来自熟悉感与真实投入。"
+      ],
+      "parameter_variants": [
+        {
+          "has_costume": true,
+          "has_quote": true,
+          "reaction_resolution_retained": true,
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-friends-playful-reenactment",
+          "guardrails": [
+            "引用素材与标识需要合法使用。",
+            "不了解原作的观众仍应能跟上人物情绪。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 681.5,
+          "end_sec": 779.18,
+          "observation_id": "obs-friends-playful-reenactment"
         }
       ]
     },
@@ -2970,6 +3279,92 @@
       ]
     },
     {
+      "technique_key": "narrative-hidden-scene-reveal-authentic-reaction",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "人物不知道门后是什么，熟悉场景具有真实惊喜价值。"
+      ],
+      "treatment_examples": [
+        "保留走近、开门、橘色沙发和 FRIENDS 标识的逐步揭示，再停留在人物眼泪将出、认出台词和旅伴回应上，而不是立刻切成纯场景 montage。"
+      ],
+      "parameter_variants": [
+        {
+          "reveal_subject": "orange sofa and FRIENDS set",
+          "reaction_retained": true,
+          "pre_reveal_unknown": true,
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-friends-door-reveal-reaction",
+          "guardrails": [
+            "惊喜必须来自真实未知或明确叙事设置。",
+            "不可伪造人物反应顺序。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 650.68,
+          "end_sec": 705.62,
+          "observation_id": "obs-friends-door-reveal-reaction"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-live-event-to-universal-theme",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "比赛现场已经提供进球、观众和冲突素材，需要回答非球迷为什么仍然在意。"
+      ],
+      "treatment_examples": [
+        "先保留突然进球和人群反应，再从足球是微缩战争的比喻进入规则、文明底线和不同人共同观看同一事件的旁白，画面继续展示比赛、球迷与公共观看空间。"
+      ],
+      "parameter_variants": [
+        {
+          "theme": [
+            "conflict",
+            "rules",
+            "civilization",
+            "shared_attention"
+          ],
+          "returns_to_live_images": true,
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-football-conflict-rules-theme-rise",
+          "guardrails": [
+            "战争与球队背景属于敏感事实，必须核验后使用。",
+            "主题升华应建立在真实事件之后，不提前替现场下结论。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 1708.11,
+          "end_sec": 1777.24,
+          "observation_id": "obs-football-conflict-rules-theme-rise"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-location-revisit-reframes-risk",
       "category": "narrative",
       "source_support": 1,
@@ -3006,6 +3401,52 @@
           "start_sec": 1999.32,
           "end_sec": 2099.12,
           "observation_id": "obs-daylight-revisit-reframes-night"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-place-detail-to-city-system",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.93,
+      "trigger_examples": [
+        "纽约物价与空间压力若只用数字说明会抽象。"
+      ],
+      "treatment_examples": [
+        "从百年熟食店的排队、手工切肉和价格进入街道逃生梯，再连接到住宅缺少阳台、中央公园景观和房价，让食物与建筑细节共同解释城市系统。"
+      ],
+      "parameter_variants": [
+        {
+          "detail_chain": [
+            "deli",
+            "price",
+            "fire_escape",
+            "balcony",
+            "park_view",
+            "housing"
+          ],
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-newyork-place-detail-explainer-chain",
+          "guardrails": [
+            "历史和价格数字需另行核实。",
+            "成片个案不能推广为全城普遍事实。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 269.07,
+          "end_sec": 456.16,
+          "observation_id": "obs-newyork-place-detail-explainer-chain"
         }
       ]
     },
@@ -3056,6 +3497,47 @@
           "start_sec": 5400,
           "end_sec": 5690,
           "observation_id": "obs-hotel-price-delayed-lake-payoff"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-private-memory-location-callback",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "开场提到的第一部共同电影需要在纽约行程中获得具体地点和时间回报。"
+      ],
+      "treatment_examples": [
+        "在《Begin Again》相关取景地重新讲述七年前约会和看片细节，穿插电影中船上录歌的画面，再以‘第七年做到电影里的情景’完成关系回环。"
+      ],
+      "parameter_variants": [
+        {
+          "callback_to_opening": true,
+          "elapsed_relationship_years": 7,
+          "reference_insert": "film scene",
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-begin-again-memory-callback",
+          "guardrails": [
+            "外部电影片段必须具备使用权。",
+            "私人回忆只按人物表达描述，不补造事实。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 1296.8,
+          "end_sec": 1445.97,
+          "observation_id": "obs-begin-again-memory-callback"
         }
       ]
     },
@@ -3122,6 +3604,174 @@
       ]
     },
     {
+      "technique_key": "narrative-self-aware-deadline-pivot",
+      "category": "humor",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "电影回忆和公园体验已经形成情绪停留，但球赛主任务临近。"
+      ],
+      "treatment_examples": [
+        "让旅伴直接追问球赛时间，人物发现三点开赛且还要去新泽西，保留慌张确认和‘玩得太嗨差点忘了正事’，用真实截止时间结束抒情。"
+      ],
+      "parameter_variants": [
+        {
+          "deadline": "15:00 match",
+          "travel_constraint": "New Jersey",
+          "explicit_self_correction": true,
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-task-pivot-self-aware-deadline",
+          "guardrails": [
+            "转折必须来自真实任务约束。",
+            "不使用虚构倒计时制造紧张。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 1461.39,
+          "end_sec": 1492.14,
+          "observation_id": "obs-task-pivot-self-aware-deadline"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-theme-bridge-between-chapters",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "从中央公园与电影回忆切到世界杯，若只做交通跳切会显得章节断裂。"
+      ],
+      "treatment_examples": [
+        "用纽约给房子、景观、时间和世界杯标价的旁白，把前文物价线与球赛票价连接，再进入球场人群。"
+      ],
+      "parameter_variants": [
+        {
+          "bridge_topics": [
+            "housing",
+            "view",
+            "time",
+            "World Cup"
+          ],
+          "visual_transition": "hard_cut montage",
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-money-theme-bridges-to-football",
+          "guardrails": [
+            "价格数字需要事实核验。",
+            "章节桥接不应重复前文完整说明。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 1492.14,
+          "end_sec": 1511.34,
+          "observation_id": "obs-money-theme-bridges-to-football"
+        }
+      ]
+    },
+    {
+      "technique_key": "opening-place-thesis-to-concrete-mission",
+      "category": "opening_montage",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "需要同时兑现纽约视觉承诺并解释为什么此刻来到这里。"
+      ],
+      "treatment_examples": [
+        "用自由女神、街道、地铁、摩天楼、夜景、中央公园和球迷人群承载城市旁白，再以低价世界杯门票和决赛目标结束抽象命题。"
+      ],
+      "parameter_variants": [
+        {
+          "montage_duration_sec": 62.56,
+          "mission": "World Cup final",
+          "has_person_scale": true,
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-newyork-city-thesis-mission-montage",
+          "guardrails": [
+            "宏观旁白必须由可见城市信息支撑。",
+            "地标镜头应改变尺度、地点或人物状态。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 22.06,
+          "end_sec": 84.62,
+          "observation_id": "obs-newyork-city-thesis-mission-montage"
+        }
+      ]
+    },
+    {
+      "technique_key": "opening-private-memory-before-place-thesis",
+      "category": "opening_montage",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "纽约和世界杯题材尺度很大，需要先让双人关系成为观众的情感入口。"
+      ],
+      "treatment_examples": [
+        "先保留两人在中央公园谈七年前第一次共同看电影的完整片段，再由‘纽约和纽约以外’转入城市命题。"
+      ],
+      "parameter_variants": [
+        {
+          "relationship_memory": "first_shared_movie",
+          "city_thesis_follows": true,
+          "reviewed_shots": 7,
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-newyork-opening-private-memory-anchor",
+          "guardrails": [
+            "私人记忆必须在后文获得真实回扣。",
+            "不要为了快节奏剪碎完整关系语义。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 0,
+          "end_sec": 22.06,
+          "observation_id": "obs-newyork-opening-private-memory-anchor"
+        }
+      ]
+    },
+    {
       "technique_key": "playback-rate-no-confirmed-speedup-on-dialogue-fluster",
       "category": "playback_rate",
       "source_support": 1,
@@ -3159,6 +3809,53 @@
           "start_sec": 1313,
           "end_sec": 1364,
           "observation_id": "obs-ice-cream-no-confirmed-speedup"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-arrival-wide-detail-human-reaction",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "球赛是全片主任务，需要先让观众理解场外、入口、商店、看台和座位关系。"
+      ],
+      "treatment_examples": [
+        "从道路骑警、各队球迷和看台宽景进入纪念品店、人物互动和座位视角，最后以比分预测和开球口播进入比赛。"
+      ],
+      "parameter_variants": [
+        {
+          "sequence": [
+            "approach",
+            "crowd",
+            "retail",
+            "concourse",
+            "seat",
+            "field"
+          ],
+          "crowd_context_retained": true,
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-stadium-arrival-geography-crowd",
+          "guardrails": [
+            "人群镜头不得脱离空间方向。",
+            "不把单个球迷行为推广为群体属性。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 1517.28,
+          "end_sec": 1596.36,
+          "observation_id": "obs-stadium-arrival-geography-crowd"
         }
       ]
     },
@@ -3245,57 +3942,6 @@
           "start_sec": 12285,
           "end_sec": 12420,
           "observation_id": "obs-earned-lake-ridge-payoff"
-        }
-      ]
-    },
-    {
-      "technique_key": "scenic-human-reaction-to-landmark-geography",
-      "category": "scenic",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1TNZUB4EF6"
-      ],
-      "average_confidence": 0.98,
-      "trigger_examples": [
-        "塞纳河游船是巴黎一日行的主要视觉回报，需要兼顾地标、城市尺度和人物在场感。"
-      ],
-      "treatment_examples": [
-        "从登船和人物仰望进入埃菲尔铁塔，交替人物反应、河面宽景、桥梁、两岸建筑、蓝调天空与夜间亮灯，再回到岸上人物。"
-      ],
-      "parameter_variants": [
-        {
-          "viewpoint": "moving_boat",
-          "includes_people": true,
-          "light_progression": [
-            "dusk",
-            "blue_hour",
-            "night"
-          ],
-          "geographic_anchors": [
-            "Eiffel_Tower",
-            "Seine",
-            "bridges",
-            "riverbanks"
-          ],
-          "source_id": "bilibili-BV1TNZUB4EF6"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1TNZUB4EF6",
-          "observation_id": "obs-cruise-human-to-landmark-geography",
-          "guardrails": [
-            "连续地标镜头必须改变人物、方向、光线或地理信息。",
-            "移动视点要维持河流方向可读。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1TNZUB4EF6",
-          "start_sec": 2511.5,
-          "end_sec": 2690,
-          "observation_id": "obs-cruise-human-to-landmark-geography"
         }
       ]
     },
@@ -3526,6 +4172,51 @@
       ]
     },
     {
+      "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
+      "category": "subtitle",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.92,
+      "trigger_examples": [
+        "全片横跨城市说明、双人对谈、英语引用、产品内容和球场现场，需要稳定的信息层级。"
+      ],
+      "treatment_examples": [
+        "以底部居中浅色描边对白字幕为默认层，地点手写标题、FRIENDS 标识和 New York/纽约主标题只在对应章节短暂出现。"
+      ],
+      "parameter_variants": [
+        {
+          "base_position": "bottom_center",
+          "base_lines": "one_or_two",
+          "special_layers": [
+            "location",
+            "IP reveal",
+            "chapter title"
+          ],
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-base-subtitle-hierarchy",
+          "guardrails": [
+            "未使用 OCR，不能声称逐字字幕准确。",
+            "特殊标题不能遮挡脸部、地标或赛事信息。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 0,
+          "end_sec": 1901.01,
+          "observation_id": "obs-base-subtitle-hierarchy"
+        }
+      ]
+    },
+    {
       "technique_key": "subtitle-bilingual-action-instruction",
       "category": "subtitle",
       "source_support": 1,
@@ -3567,55 +4258,43 @@
           "observation_id": "obs-paragliding-bilingual-instruction"
         }
       ]
-    },
-    {
-      "technique_key": "subtitle-location-title-delivers-promise",
-      "category": "subtitle",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1TNZUB4EF6"
-      ],
-      "average_confidence": 0.99,
-      "trigger_examples": [
-        "开场需要在人物解释前确认国家、城市、独行主题和视觉期待。"
-      ],
-      "treatment_examples": [
-        "在人物与巴黎夜景、教堂和落日地标上依次放置法国、巴黎、一个人旅行与 travel vlog 标题，随后干净切回早餐叙事。"
-      ],
-      "parameter_variants": [
-        {
-          "shot_count": 6,
-          "title_roles": [
-            "country",
-            "city",
-            "solo_travel",
-            "vlog_format"
-          ],
-          "transition_out": "hard_cut",
-          "source_id": "bilibili-BV1TNZUB4EF6"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1TNZUB4EF6",
-          "observation_id": "obs-paris-title-landmark-promise",
-          "guardrails": [
-            "标题只放开场一次，不反复遮挡后续地标。",
-            "文字必须与实际地点和成片内容一致。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1TNZUB4EF6",
-          "start_sec": 0,
-          "end_sec": 8.88,
-          "observation_id": "obs-paris-title-landmark-promise"
-        }
-      ]
     }
   ],
   "opening_recipes": [
+    {
+      "total_reviewed_sec": 100,
+      "phases": [
+        {
+          "start_sec": 0,
+          "end_sec": 22.06,
+          "function": "先以中央公园双人对谈和七年前第一次共同看电影的私人回忆开场，让关系线早于城市说明成立。"
+        },
+        {
+          "start_sec": 22.06,
+          "end_sec": 63.62,
+          "function": "切入自由女神、街道、地铁、夜景和人物移动，用城市宽景与细节承载纽约的宏观命题。"
+        },
+        {
+          "start_sec": 63.62,
+          "end_sec": 84.62,
+          "function": "明确价值 80 元的世界杯门票和决赛目标，把城市命题收束为可追踪任务。"
+        },
+        {
+          "start_sec": 84.62,
+          "end_sec": 97.1,
+          "function": "以纽约图形标题完成章节承诺，再切到室内双人正片口播，交代倒计时和票价变化。"
+        }
+      ],
+      "metrics": {
+        "reviewed_shot_count": 41,
+        "opening_15_sec_shot_count": 5,
+        "opening_15_sec_average_shot_sec": 3.197,
+        "montage_start_sec": 22.06,
+        "main_title_sec": 84.62
+      },
+      "rule": "用一个可在后文回扣的私人记忆先建立人物关系，再用城市 montage 建立尺度和主题，随后明确本集任务；快切服务地理与命题，不覆盖完整情感对谈。",
+      "source_id": "bilibili-BV15XMC6KETm"
+    },
     {
       "total_reviewed_sec": 180,
       "phases": [

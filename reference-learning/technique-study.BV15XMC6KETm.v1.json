@@ -1,0 +1,375 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV15XMC6KETm-v1",
+  "generated_at": "2026-08-06T05:35:00Z",
+  "source": {
+    "source_id": "bilibili-BV15XMC6KETm",
+    "url": "https://www.bilibili.com/video/BV15XMC6KETm/",
+    "title": "这里是世界第一城！！纽约！",
+    "duration_sec": 1901.01
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 2423633,
+    "proxy_full_decode_exit_code": 0,
+    "video_duration_sec": 1901.01,
+    "shot_count": 636,
+    "event_count": 23,
+    "audio_segment_count": 316,
+    "transcript_segment_count": 996,
+    "transcript_word_count": 5671,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_language_probability": 1.0,
+    "asr_reported_duration_sec": 1901.013,
+    "transcript_end_sec": 1899.17,
+    "transcript_coverage_ratio": 0.999032,
+    "transcript_tail_gap_sec": 1.84,
+    "audio_class_ratios": {
+      "speech": 0.7293,
+      "ambient_likely": 0.2443,
+      "music_likely": 0.0174,
+      "silence": 0.0092
+    },
+    "shot_duration_median_sec": 2.386,
+    "shot_duration_p75_sec": 3.403,
+    "event_review_contact_sheet_count": 23,
+    "manual_review_ranges": [[0, 100], [590, 790], [990, 1239.7], [1296, 1517.3], [1517.3, 1789.8], [1789.8, 1901.01]],
+    "manual_review_focus": ["opening", "emotional_peak", "scenic", "narrative_turn", "humor", "subtitle", "music_rhythm", "visual_effects", "ending"]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 100,
+    "phases": [
+      {"start_sec": 0, "end_sec": 22.06, "function": "先以中央公园双人对谈和七年前第一次共同看电影的私人回忆开场，让关系线早于城市说明成立。"},
+      {"start_sec": 22.06, "end_sec": 63.62, "function": "切入自由女神、街道、地铁、夜景和人物移动，用城市宽景与细节承载纽约的宏观命题。"},
+      {"start_sec": 63.62, "end_sec": 84.62, "function": "明确价值 80 元的世界杯门票和决赛目标，把城市命题收束为可追踪任务。"},
+      {"start_sec": 84.62, "end_sec": 97.1, "function": "以纽约图形标题完成章节承诺，再切到室内双人正片口播，交代倒计时和票价变化。"}
+    ],
+    "metrics": {
+      "reviewed_shot_count": 41,
+      "opening_15_sec_shot_count": 5,
+      "opening_15_sec_average_shot_sec": 3.197,
+      "montage_start_sec": 22.06,
+      "main_title_sec": 84.62
+    },
+    "rule": "用一个可在后文回扣的私人记忆先建立人物关系，再用城市 montage 建立尺度和主题，随后明确本集任务；快切服务地理与命题，不覆盖完整情感对谈。"
+  },
+  "narrative_model": {
+    "premise": "两位旅行者以一张世界杯决赛门票进入纽约：城市历史、食物、影视记忆和中央公园不断扩展纽约的文化尺度，七年前共同观看《Begin Again》的私人回忆在取景地完成回环，随后回到球赛主任务，并从现场体验上升到规则、冲突与共同观看的主题，最后以记录的意义和下一集纽约历史线索收束。",
+    "beats": [
+      "用私人电影回忆、纽约宏观命题和世界杯决赛目标组成三重开场钩子",
+      "通过百年熟食店、物价、逃生梯和住宅景观把抽象城市变成可见细节",
+      "雨天改变计划，转入《老友记》体验馆并保留门后揭示与真实情绪反应",
+      "从科技交互和中央公园空间进入人物体验、产品说明与城市房价逻辑",
+      "在《Begin Again》取景地回扣七年前第一次共同看电影的关系记忆",
+      "用差点忘记球赛的自我揭示快速结束抒情，恢复倒计时和主任务",
+      "球场段交替现场比赛、人物即兴解说和观众反应，保留非专业观看视角",
+      "从足球的微缩战争隐喻上升到规则、文明和不同人共同观看的主题",
+      "比赛后用纽约夜景、拍摄工具与记录意义完成反思",
+      "回到双人室内对谈，前钩下一集移民与纽约历史线并告别"
+    ],
+    "rule": "宏观城市观点必须由可见地点、人物行动和具体任务承载；私人回忆要在后文获得地点回扣，主题升华应建立在现场事件之后，并在结尾回到人物记录动机。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "人物或任务先建立观看理由",
+      "地标宽景确认地点和尺度",
+      "街道、交通、建筑或文化细节补足城市纹理",
+      "人物反应和互动维持在场感",
+      "用不同时间、天气或视点提供变化",
+      "回到行动、解释或情感回扣"
+    ],
+    "observed_ranges": [[22.06, 84.62], [340, 456], [583, 675], [1025, 1180], [1296, 1445], [1517, 1596], [1796, 1844]],
+    "rule": "纽约景色不是独立壁纸；自由女神、街道、中央公园、球场和时代广场都由人物关系、城市命题或任务状态连接，宽景之后要回到人物或可验证细节。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.0174,
+    "uses": [
+      "开场 22 至 84 秒的城市 montage 具有连续配乐式段落组织，视觉上还出现英文手写地点标题，但本次环境不能直接试听，不能据此断言曲名、BPM 或逐拍同步。",
+      "《老友记》门后揭示和熟悉场景段存在声学峰值与成片引用声画，人物原声和反应仍是主要语义证据。",
+      "电影回环、球赛主题和赛后夜景均以长段旁白组织；声学分类只支持候选定位，不足以证明具体音乐切换。"
+    ],
+    "rule": "配乐若用于城市 montage、影视记忆或主题升华，应让对白和真实现场反应保持可懂；没有试听或工程轨道时，不声明曲名、版权、BPM、ducking 数值或逐拍因果。"
+  },
+  "subtitle_model": {
+    "base_style": "对白字幕以底部居中的浅色简体中文为主，带深色描边或阴影；一至两行保持人物和地点主体可见。",
+    "emphasis_patterns": [
+      "开场在自由女神等地标上使用黄色英文手写地点标题，并配较小中文说明，和常规对白字幕形成层级",
+      "约 84 秒使用独立 New York/纽约图形标题，完成从命题 montage 到正片章节的切换",
+      "约 670 秒使用可见 FRIENDS 标志和橘色沙发作为情绪揭示，不再堆叠额外解释文字",
+      "现场英语、影视原声和球队语境依靠基础字幕维持理解，主题旁白恢复普通底部样式"
+    ],
+    "rule": "基础字幕只承担对白可读性；地点手写标题、IP 标识和章节标题各自只承担一次明确功能，不把多层文字同时堆在人物反应或关键地标上。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "先建立下雨改计划、体验馆探索、球赛倒计时或非球迷解说等现实目标",
+      "保留人物忘词、误读、玩笑、激动和自我纠正",
+      "让门后场景、旅伴回应、比赛画面或后续行动自然确认落点",
+      "图形或引用片段只作一次标点",
+      "保留情绪和问题解决，不跳过善后"
+    ],
+    "observed_ranges": [[617, 633], [681, 779], [1355, 1381], [1461, 1492], [1583, 1684]],
+    "rule": "笑点主要来自两人关系、临时计划、真情流露和非专业现场解说；保留真实反应与自我纠正，不靠贬损游客、球迷、球队或城市群体。",
+    "playback_rate_note": "开场、体验馆和球场段虽有密集短切与运动，但人工联系表和关键帧不能排除正常速度拍摄与硬切；未确认 speed ramp、素材变速或具体倍率。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-newyork-opening-private-memory-anchor",
+      "technique_key": "opening-private-memory-before-place-thesis",
+      "start_sec": 0,
+      "end_sec": 22.06,
+      "category": "opening_montage",
+      "trigger": "纽约和世界杯题材尺度很大，需要先让双人关系成为观众的情感入口。",
+      "treatment": "先保留两人在中央公园谈七年前第一次共同看电影的完整片段，再由‘纽约和纽约以外’转入城市命题。",
+      "confidence": 0.98,
+      "parameters": {"relationship_memory": "first_shared_movie", "city_thesis_follows": true, "reviewed_shots": 7},
+      "evidence": {"full_transcript": true, "manual_dense_opening_sheet": true, "range_sec": [0, 22.06]},
+      "guardrails": ["私人记忆必须在后文获得真实回扣。", "不要为了快节奏剪碎完整关系语义。"]
+    },
+    {
+      "observation_id": "obs-newyork-city-thesis-mission-montage",
+      "technique_key": "opening-place-thesis-to-concrete-mission",
+      "start_sec": 22.06,
+      "end_sec": 84.62,
+      "category": "opening_montage",
+      "trigger": "需要同时兑现纽约视觉承诺并解释为什么此刻来到这里。",
+      "treatment": "用自由女神、街道、地铁、摩天楼、夜景、中央公园和球迷人群承载城市旁白，再以低价世界杯门票和决赛目标结束抽象命题。",
+      "confidence": 0.98,
+      "parameters": {"montage_duration_sec": 62.56, "mission": "World Cup final", "has_person_scale": true},
+      "evidence": {"manual_opening_contact_sheet": true, "shot_boundaries_verified": true, "transcript_range_verified": true},
+      "guardrails": ["宏观旁白必须由可见城市信息支撑。", "地标镜头应改变尺度、地点或人物状态。"]
+    },
+    {
+      "observation_id": "obs-newyork-handwritten-location-title",
+      "technique_key": "subtitle-location-title-delivers-promise",
+      "start_sec": 23.86,
+      "end_sec": 31.5,
+      "category": "subtitle",
+      "trigger": "开场城市 montage 需要快速确认具体地点并建立视觉语气。",
+      "treatment": "在自由女神与人物同框画面左下放黄色英文手写地点标题，下面配较小中文说明；随后恢复普通对白字幕。",
+      "confidence": 0.99,
+      "parameters": {"title_color": "yellow", "title_style": "handwritten", "secondary_caption": true, "position": "lower_left"},
+      "evidence": {"manual_frame_sec": 25, "title_visible": true, "subject_unobstructed": true},
+      "guardrails": ["地点文字必须和真实画面一致。", "标题不能遮挡人物脸部或地标主体。"]
+    },
+    {
+      "observation_id": "obs-newyork-main-title-reset",
+      "technique_key": "graphic-place-title-before-main-body-reset",
+      "start_sec": 82.78,
+      "end_sec": 97.1,
+      "category": "graphic",
+      "trigger": "城市命题与任务设定完成后，需要一个清楚的章节边界进入正片。",
+      "treatment": "在纽约天际线与水面上叠加白色 New York/纽约主标题，随后硬切室内双人对谈和比赛倒计时。",
+      "confidence": 0.99,
+      "parameters": {"title_language": ["English", "Chinese"], "transition_out": "hard_cut", "complex_vfx": false},
+      "evidence": {"manual_opening_sheet": true, "title_visible": true, "post_title_scene_change": true},
+      "guardrails": ["主标题只出现一次。", "章节切换后立即提供新信息。"]
+    },
+    {
+      "observation_id": "obs-newyork-place-detail-explainer-chain",
+      "technique_key": "narrative-place-detail-to-city-system",
+      "start_sec": 269.07,
+      "end_sec": 456.16,
+      "category": "narrative",
+      "trigger": "纽约物价与空间压力若只用数字说明会抽象。",
+      "treatment": "从百年熟食店的排队、手工切肉和价格进入街道逃生梯，再连接到住宅缺少阳台、中央公园景观和房价，让食物与建筑细节共同解释城市系统。",
+      "confidence": 0.93,
+      "parameters": {"detail_chain": ["deli", "price", "fire_escape", "balcony", "park_view", "housing"]},
+      "evidence": {"event_ids": ["event-004", "event-005", "event-006"], "full_transcript": true, "manual_event_review": true},
+      "guardrails": ["历史和价格数字需另行核实。", "成片个案不能推广为全城普遍事实。"]
+    },
+    {
+      "observation_id": "obs-newyork-rain-plan-adaptation",
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "start_sec": 590.09,
+      "end_sec": 675.34,
+      "category": "narrative",
+      "trigger": "纽约暴雨打断原定户外计划，但人物已经准备替代选项。",
+      "treatment": "先展示雨势和备选博物馆，再通过双人玩笑引出此前没去过的《老友记》体验馆；保留临时决定、进入展馆和不知道门后内容的悬念，直到橘色沙发揭示。",
+      "confidence": 0.97,
+      "parameters": {"obstacle": "heavy_rain", "adaptation": "Friends experience", "unknown_door_payoff": true},
+      "evidence": {"event_ids": ["event-009", "event-010"], "manual_contact_sheet": true, "transcript_range_verified": true},
+      "guardrails": ["保留计划改变的因果链。", "不要在揭示前用标题提前泄露结果。"]
+    },
+    {
+      "observation_id": "obs-friends-door-reveal-reaction",
+      "technique_key": "narrative-hidden-scene-reveal-authentic-reaction",
+      "start_sec": 650.68,
+      "end_sec": 705.62,
+      "category": "narrative",
+      "trigger": "人物不知道门后是什么，熟悉场景具有真实惊喜价值。",
+      "treatment": "保留走近、开门、橘色沙发和 FRIENDS 标识的逐步揭示，再停留在人物眼泪将出、认出台词和旅伴回应上，而不是立刻切成纯场景 montage。",
+      "confidence": 0.99,
+      "parameters": {"reveal_subject": "orange sofa and FRIENDS set", "reaction_retained": true, "pre_reveal_unknown": true},
+      "evidence": {"manual_frame_sec": 670, "manual_contact_sheet": true, "transcript_range_verified": true},
+      "guardrails": ["惊喜必须来自真实未知或明确叙事设置。", "不可伪造人物反应顺序。"]
+    },
+    {
+      "observation_id": "obs-friends-playful-reenactment",
+      "technique_key": "humor-fandom-reenactment-with-real-reaction",
+      "start_sec": 681.5,
+      "end_sec": 779.18,
+      "category": "humor",
+      "trigger": "体验馆提供观众熟悉的场景、服装和台词，人物本身又有强烈情感投入。",
+      "treatment": "交替保留认场景、说原台词、穿角色服装、唱主题元素和旅伴即时吐槽，让笑点来自熟悉感与真实投入。",
+      "confidence": 0.96,
+      "parameters": {"has_costume": true, "has_quote": true, "reaction_resolution_retained": true},
+      "evidence": {"event_id": "event-010", "manual_contact_sheet": true, "full_transcript": true},
+      "guardrails": ["引用素材与标识需要合法使用。", "不了解原作的观众仍应能跟上人物情绪。"]
+    },
+    {
+      "observation_id": "obs-central-park-human-scale-geography",
+      "technique_key": "scenic-human-reaction-to-landmark-geography",
+      "start_sec": 1025.5,
+      "end_sec": 1180,
+      "category": "scenic",
+      "trigger": "中央公园既承担城市房价说明，也需要提供旅行中的空间与情绪释放。",
+      "treatment": "先以俯瞰和地图逻辑说明公园位置，再用入口马车、人物步行、草坪活动、城市楼群与阿根廷旗帜交替建立尺度，最后回到两人的现场体验。",
+      "confidence": 0.95,
+      "parameters": {"sequence": ["aerial_context", "entrance", "walking", "lawn", "skyline", "people"], "includes_people": true},
+      "evidence": {"event_ids": ["event-013", "event-014", "event-015"], "manual_contact_sheet": true, "transcript_range_verified": true},
+      "guardrails": ["美景段仍需维持人物方向和叙事目的。", "房价与历史信息需要独立事实核验。"]
+    },
+    {
+      "observation_id": "obs-begin-again-memory-callback",
+      "technique_key": "narrative-private-memory-location-callback",
+      "start_sec": 1296.8,
+      "end_sec": 1445.97,
+      "category": "narrative",
+      "trigger": "开场提到的第一部共同电影需要在纽约行程中获得具体地点和时间回报。",
+      "treatment": "在《Begin Again》相关取景地重新讲述七年前约会和看片细节，穿插电影中船上录歌的画面，再以‘第七年做到电影里的情景’完成关系回环。",
+      "confidence": 0.98,
+      "parameters": {"callback_to_opening": true, "elapsed_relationship_years": 7, "reference_insert": "film scene"},
+      "evidence": {"manual_frame_sec": 1425, "opening_callback_transcript": true, "manual_turn_sheet": true},
+      "guardrails": ["外部电影片段必须具备使用权。", "私人回忆只按人物表达描述，不补造事实。"]
+    },
+    {
+      "observation_id": "obs-task-pivot-self-aware-deadline",
+      "technique_key": "narrative-self-aware-deadline-pivot",
+      "start_sec": 1461.39,
+      "end_sec": 1492.14,
+      "category": "humor",
+      "trigger": "电影回忆和公园体验已经形成情绪停留，但球赛主任务临近。",
+      "treatment": "让旅伴直接追问球赛时间，人物发现三点开赛且还要去新泽西，保留慌张确认和‘玩得太嗨差点忘了正事’，用真实截止时间结束抒情。",
+      "confidence": 0.99,
+      "parameters": {"deadline": "15:00 match", "travel_constraint": "New Jersey", "explicit_self_correction": true},
+      "evidence": {"manual_turn_sheet": true, "transcript_range_verified": true},
+      "guardrails": ["转折必须来自真实任务约束。", "不使用虚构倒计时制造紧张。"]
+    },
+    {
+      "observation_id": "obs-money-theme-bridges-to-football",
+      "technique_key": "narrative-theme-bridge-between-chapters",
+      "start_sec": 1492.14,
+      "end_sec": 1511.34,
+      "category": "narrative",
+      "trigger": "从中央公园与电影回忆切到世界杯，若只做交通跳切会显得章节断裂。",
+      "treatment": "用纽约给房子、景观、时间和世界杯标价的旁白，把前文物价线与球赛票价连接，再进入球场人群。",
+      "confidence": 0.94,
+      "parameters": {"bridge_topics": ["housing", "view", "time", "World Cup"], "visual_transition": "hard_cut montage"},
+      "evidence": {"manual_frame_sec": 1498, "transcript_range_verified": true, "event_boundary": "event-018 to event-019"},
+      "guardrails": ["价格数字需要事实核验。", "章节桥接不应重复前文完整说明。"]
+    },
+    {
+      "observation_id": "obs-stadium-arrival-geography-crowd",
+      "technique_key": "scenic-arrival-wide-detail-human-reaction",
+      "start_sec": 1517.28,
+      "end_sec": 1596.36,
+      "category": "scenic",
+      "trigger": "球赛是全片主任务，需要先让观众理解场外、入口、商店、看台和座位关系。",
+      "treatment": "从道路骑警、各队球迷和看台宽景进入纪念品店、人物互动和座位视角，最后以比分预测和开球口播进入比赛。",
+      "confidence": 0.95,
+      "parameters": {"sequence": ["approach", "crowd", "retail", "concourse", "seat", "field"], "crowd_context_retained": true},
+      "evidence": {"event_ids": ["event-019", "event-020"], "manual_contact_sheet": true, "full_transcript": true},
+      "guardrails": ["人群镜头不得脱离空间方向。", "不把单个球迷行为推广为群体属性。"]
+    },
+    {
+      "observation_id": "obs-nonexpert-live-commentary-humor",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 1583.44,
+      "end_sec": 1683.5,
+      "category": "humor",
+      "trigger": "主讲人自称不懂足球，但仍要记录世界杯现场。",
+      "treatment": "保留比分预测、模仿电视台开场、球员与球队关系说错或卡顿、旅伴纠正和人物自嘲，让非专业视角成为真实观看体验。",
+      "confidence": 0.95,
+      "parameters": {"expert_claim": false, "corrections_retained": true, "overlay_stack": false, "playback_rate": null},
+      "evidence": {"events": ["event-020", "event-021"], "manual_climax_sheet": true, "full_transcript": true},
+      "guardrails": ["事实错误不能作为正式赛事信息传播。", "笑点落在人物自身，不嘲弄球员或球迷。"]
+    },
+    {
+      "observation_id": "obs-football-conflict-rules-theme-rise",
+      "technique_key": "narrative-live-event-to-universal-theme",
+      "start_sec": 1708.11,
+      "end_sec": 1777.24,
+      "category": "narrative",
+      "trigger": "比赛现场已经提供进球、观众和冲突素材，需要回答非球迷为什么仍然在意。",
+      "treatment": "先保留突然进球和人群反应，再从足球是微缩战争的比喻进入规则、文明底线和不同人共同观看同一事件的旁白，画面继续展示比赛、球迷与公共观看空间。",
+      "confidence": 0.96,
+      "parameters": {"theme": ["conflict", "rules", "civilization", "shared_attention"], "returns_to_live_images": true},
+      "evidence": {"event_id": "event-021", "manual_contact_sheet": true, "manual_frame_sec": 1730, "transcript_range_verified": true},
+      "guardrails": ["战争与球队背景属于敏感事实，必须核验后使用。", "主题升华应建立在真实事件之后，不提前替现场下结论。"]
+    },
+    {
+      "observation_id": "obs-postmatch-city-recording-reflection",
+      "technique_key": "narrative-reflection-summary-forward-hook",
+      "start_sec": 1796.2,
+      "end_sec": 1844.18,
+      "category": "narrative",
+      "trigger": "比赛结束后需要把球赛情绪重新放回纽约城市尺度，并说明记录本身的意义。",
+      "treatment": "以时代广场和夜间街道承载赛后旁白，从城市不因一场决赛改变转到稳定镜头、旋转视角和‘为什么记录’，最后落在纽约留在人物镜头里。",
+      "confidence": 0.97,
+      "parameters": {"visual_time": "night", "topics": ["city continuity", "camera", "recording motive"]},
+      "evidence": {"event_id": "event-022", "manual_frame_sec": 1805, "manual_ending_sheet": true, "full_transcript": true},
+      "guardrails": ["器材性能描述不能替代实际 QA。", "反思应保持人物主观视角。"]
+    },
+    {
+      "observation_id": "obs-next-episode-history-hook",
+      "technique_key": "narrative-reflection-summary-forward-hook",
+      "start_sec": 1860.29,
+      "end_sec": 1899.17,
+      "category": "narrative",
+      "trigger": "本集已完成世界杯和记录主题，还需要把纽约为何成为纽约留给下一集。",
+      "treatment": "回到双人室内对谈，明确下一期承接西西里岛移民故事和《美国往事》主题，保留自嘲挖坑、一键三连与再见。",
+      "confidence": 0.96,
+      "parameters": {"next_topic": "Italian migration and New York history", "last_dialogue_sec": 1899.17, "has_call_to_action": true},
+      "evidence": {"event_id": "event-023", "manual_ending_sheet": true, "asr_tail_verified": true},
+      "guardrails": ["下一集承诺必须与实际后续内容一致。", "主题总结完成后再放平台号召。"]
+    },
+    {
+      "observation_id": "obs-base-subtitle-hierarchy",
+      "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
+      "start_sec": 0,
+      "end_sec": 1901.01,
+      "category": "subtitle",
+      "trigger": "全片横跨城市说明、双人对谈、英语引用、产品内容和球场现场，需要稳定的信息层级。",
+      "treatment": "以底部居中浅色描边对白字幕为默认层，地点手写标题、FRIENDS 标识和 New York/纽约主标题只在对应章节短暂出现。",
+      "confidence": 0.92,
+      "parameters": {"base_position": "bottom_center", "base_lines": "one_or_two", "special_layers": ["location", "IP reveal", "chapter title"]},
+      "evidence": {"manual_contact_sheets": 7, "manual_key_frames": [25, 55, 670, 1425, 1498, 1730, 1805], "ocr_verified": false},
+      "guardrails": ["未使用 OCR，不能声称逐字字幕准确。", "特殊标题不能遮挡脸部、地标或赛事信息。"]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 79770,
+    "serialized_utf8_bytes": 92764,
+    "maximum_characters": 180000,
+    "hard_request_limit_utf8_bytes": 200000,
+    "model_request_serialized_characters": 65113,
+    "model_request_utf8_bytes": 78573,
+    "model_request_body_sha256": "adca819b653cb9986d3a879e2c84ea0ea54778d5bb6b4eb82c9f789f0ea55f18",
+    "request_contains_instructions_input_tools_and_manual_evidence": true,
+    "comparison": "strictly_less_than"
+  },
+  "limitations": [
+    "参考片是最终成片，只能学习被正向保留的内容、节奏和效果；没有原始素材与成片映射，不能推断作者真实删片偏好。",
+    "分析代理为 640×360 HEVC，人工联系表和关键帧仍可能漏掉极短转场、小字号、细微贴图和复杂 VFX。",
+    "完整 ASR 使用 faster-whisper small/zh，覆盖到 1899.17 秒‘再见’，与媒体末尾相差约 1.84 秒；专名、英语、球队和影视名存在误识别，关键事实不能直接照抄 ASR。",
+    "本次人工视觉复核覆盖开场、雨天转折、《老友记》峰值、中央公园、电影回环、球场和结尾；没有可靠 OCR，不能声称字幕逐字完全正确。",
+    "当前执行环境不能直接试听抽取的短音频；music_likely 仅是声学启发式，不能据此断言曲名、BPM、版权、ducking 数值或逐拍因果。",
+    "成片可见黄色英文地点标题、New York/纽约主标题、FRIENDS 标识与外部电影/剧集引用；引用素材和商标的使用权需要在目标项目中独立确认。",
+    "开场和球场段的运动与短切可以由正常速度拍摄和硬切解释；未确认 speed ramp、素材加速、具体播放倍率、复杂遮罩转场或独立音效。",
+    "外部影视画面、球队、票价、历史、移民、战争与城市评价只按成片叙事结构描述，事实和权利均需在实际项目中另行核验。",
+    "完整 Responses body 只做了严格 UTF-8 字节门禁和最小结构校验，没有调用外部模型；本 study 由本地完整分析、ASR 与人工复核证据形成。"
+  ]
+}

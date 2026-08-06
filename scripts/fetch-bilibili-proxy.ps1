@@ -57,6 +57,7 @@ $audio = $play.data.dash.audio |
     Select-Object -First 1
 
 curl.exe -L --fail --retry 2 --silent --show-error `
+    --ssl-revoke-best-effort `
     -A 'Mozilla/5.0' `
     -e $sourceUrl `
     -o $videoPath `
@@ -66,6 +67,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 curl.exe -L --fail --retry 2 --silent --show-error `
+    --ssl-revoke-best-effort `
     -A 'Mozilla/5.0' `
     -e $sourceUrl `
     -o $audioPath `
