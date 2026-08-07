@@ -1,15 +1,15 @@
 # 参考视频 Technique Learning 计划进度
 
-更新时间：2026-08-06
+更新时间：2026-08-07
 执行分支：`feature/director-learning-loop`
 
 ## 总体进度
 
 - 计划视频：11 支
-- 已完成正式学习：8 支
+- 已完成正式学习：9 支
 - 已开始但未完成：0 支
-- 未开始正式学习：3 支
-- 完成率：8/11（72.73%）
+- 未开始正式学习：2 支
+- 完成率：9/11（81.82%）
 
 前六支 Study 的完成状态按各条目完成时的证据与门禁成立。2026-08-01 以前的条目只保留了“实际请求字符数”，不能追溯声明已经验证 UTF-8 body 字节数；自完整请求字节门禁落地后，任何新增或重新生成的 Study 必须同时具备完整视频分析、可用 ASR/语义证据、人工重点区间复核、context packet 严格 `<180,000` 字符、包含实际 instructions/input/tools 等字段的最终请求 body 严格 `<200,000` UTF-8 字节及 body SHA-256，以及已提交的正式 `technique-study.<BV>.v1.json`。等于任一上限也必须阻断；仅下载代理视频、提取开场或生成预分析素材不算完成。
 
@@ -100,11 +100,19 @@
 - 人工复核：检查开场双视角命题、外国游客热门路线、机车动作与反馈、中段本地路线转折、社交照片与真实地点、山城巷老照片和相册、社区步道与居民互动、防空洞历史、字幕证据层和结尾综合；未使用 OCR，不声明字幕逐字完全正确。
 - 模型上下文：81,728 字符、96,508 UTF-8 字节，严格 `<180,000` 字符；包含 instructions/input/tools 和人工证据的最终 Responses body 为 82,000 UTF-8 字节，严格 `<200,000`，body SHA-256 为 `7123a92f39f82496397e5d7f273edd3c197a1505bce2c1265a13e7c8c07a6c53`。
 - 证据限制：参考成片只支持正向保留模式；没有原始素材映射，不能推断作者真实删片偏好。未确认 speed ramp、具体倍率、复杂遮罩转场、独立音效、曲名、BPM 或逐拍因果；外部短视频、照片、档案、历史数字与群体观点需独立核验。
-### 9. BV1TYVA6sEhm — 未开始
+
+### 9. BV1TYVA6sEhm — 已完成
 
 - 标题：[不办婚礼去旅行结婚，我们后悔了吗？](https://www.bilibili.com/video/BV1TYVA6sEhm/)
-- 时长：约 1,604 秒。
-- 当前状态：未下载媒体、未执行完整分析或 ASR、未生成人工复核与正式 technique study，不计入正式聚合来源。
+- 时长：1,603.008 秒（约 26 分 43 秒）。
+- 已完成：匿名低清代理下载、HEVC 视频流与 AAC 音频流分别完整解码、small / zh 全片 ASR、完整镜头/事件/音频与语义分析、尾部覆盖核验、人工重点区间复核、受限 context、完整 Responses body 门禁和正式 technique study。
+- 正式产物：`reference-learning/technique-study.BV1TYVA6sEhm.v1.json`
+- 证据规模：475 个镜头、19 个事件、198 个音频段、1,207 个转写片段、5,909 个词、19 条 technique observations；人工复核包含 19 张事件联系表、5 张全片分段概览、1 张尾部密集联系表和 12 张选定事件表。
+- ASR 覆盖：ASR 报告处理到 1,603.008 秒；最后可信主持人对白到 1,578.6 秒“再见”，与媒体末尾相差 24.408 秒，可信对白覆盖率 98.4774%。尾部密集抽帧显示旅行合影、海岸、沙丘、夕阳与 credits；关闭 VAD 的独立尾检只产生低可信重复英文，按配乐或 ASR 不确定性处理，不并入主持人对白。
+- 人工复核：检查开场成本选择题和旅行证据、四章结构、传统婚礼对照、目的地推荐与美景、头纱和拍摄工具、夫妻相处笑点、父母沟通转折、《老友记》情绪峰值、赞助/字幕/编号图卡层和片尾收束；未执行 OCR，不声明字幕逐字完全正确。
+- 模型上下文：77,113 字符、91,589 UTF-8 字节，严格 `<180,000` 字符；包含 model、instructions、input、tools、text JSON Schema 和人工证据的最终 Responses body 为 91,292 字符、105,806 UTF-8 字节，严格 `<200,000`，body SHA-256 为 `a590a866d24766155f4bdb2125e99b094d2503f51423e97a0a3510025ff17d7b`。
+- 证据限制：参考成片只支持正向保留模式；没有原始素材映射，不能推断作者真实删片偏好。未确认 speed ramp、具体倍率、复杂转场机制、独立音效、曲名、BPM、ducking 数值或逐拍因果；婚礼金额、目的地条件、产品功效、家庭建议和外部影视片段需独立核验。
+- 门禁结果：正式 Study 运行时与 Schema、JSON/UTF-8 无 BOM、中文、时间边界、本地绝对路径与敏感信息扫描通过；九来源聚合为 26 条稳定模式和 60 条单来源模式，显式 `minimum_source_support=2`。
 
 ### 10. BV1Mi536EELv — 未开始
 
@@ -120,23 +128,23 @@
 
 ## 已沉淀的跨视频结果
 
-当前八支已完成视频可聚合出：
+当前九支已完成视频可聚合出：
 
-- 完整来源数：8
-- 稳定模式：25 条（显式 `minimum_source_support=2`）
-- 单来源模式：51 条
+- 完整来源数：9
+- 稳定模式：26 条（显式 `minimum_source_support=2`）
+- 单来源模式：60 条
 - 正式聚合产物：`reference-learning/reference-techniques.aggregate.v1.json`
 - 聚合命令：`vlog-director aggregate-techniques`
 - 当前限制：`BV19sm2BBEDd` 的重叠首日不生成新增 observation。单来源模式不能计为稳定跨来源模式，开场预分析或未完成视频也不得进入正式聚合；参考成片只能提供正向保留模式，不能推断作者真实删片偏好。
 
-正式聚合已经接入 `direct-timeline --technique-profile`。当前只有 `humor-preserve-real-awkward-process` 具备白名单执行器：它需要目标镜头、事件或 optional moment 的显式 `fun_score >= 0.55`，并且只有当该证据让边缘镜头跨过选片阈值且最终通过预算拟合时才写入 `applied_patterns`。它不能重排本来已入选的镜头，用户反馈优先级为 `remove/avoid > lock > protect/dependency > cut_first/score`。`narrative-failure-adaptation-payoff` 在真实目标语义标注入口完成前降级为 guidance；正式档案共 1 条 executable pattern、75 条 guidance patterns，其中 51 条为单来源 guidance。没有目标证据时不得改变 EDL。
+正式聚合已经接入 `direct-timeline --technique-profile`。当前只有 `humor-preserve-real-awkward-process` 具备白名单执行器：它需要目标镜头、事件或 optional moment 的显式 `fun_score >= 0.55`，并且只有当该证据让边缘镜头跨过选片阈值且最终通过预算拟合时才写入 `applied_patterns`。它不能重排本来已入选的镜头，用户反馈优先级为 `remove/avoid > lock > protect/dependency > cut_first/score`。`narrative-failure-adaptation-payoff` 在真实目标语义标注入口完成前降级为 guidance；正式档案共 1 条 executable pattern、85 条 guidance patterns，其中 60 条为单来源 guidance。没有目标证据时不得改变 EDL。
 
 ## 完成状态
 
-1. 八支参考视频均已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、上下文字符门禁和新增来源的完整请求 UTF-8 字节门禁。
-2. 八来源聚合已复核独立来源支持数；后续新增参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
-3. 八来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
-4. 当前八来源 Aggregate 门禁：45 项参考学习专项 unittest、307 项 director 全量 unittest、八 Study 与 Aggregate Schema/运行时校验、CLI 聚合 smoke、UTF-8 无 BOM、敏感信息/changed-media 扫描及 `git diff --check` 均通过。
+1. 九支参考视频均已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、上下文字符门禁和新增来源的完整请求 UTF-8 字节门禁。
+2. 九来源聚合已复核独立来源支持数；后续新增参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
+3. 九来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
+4. 当前九来源 Aggregate 门禁：45 项参考学习专项 unittest、307 项 director 全量 unittest、九 Study 与 Aggregate Schema/运行时校验、CLI 聚合 smoke、UTF-8 无 BOM、敏感信息/changed-media 扫描及 `git diff --check` 均通过。
 5. CI 在干净 Python 环境显式安装 `test` extra；自动化 Schema 测试覆盖所有正式 reference JSON、moments fixture 与 protection policy，当前本地全量基线为 307 项 unittest。
 6. 模型请求门禁已改为校验完整 Responses JSON body 的 UTF-8 字节数：程序内 transport 只消费已经校验的紧凑 body bytes，CLI 则校验待发送文件的原始字节并返回 SHA-256；中文多字节边界、完整 envelope、Responses 最小结构、重复字段与递归凭据字段拒绝、transport 零调用、不可压缩 packet、UTF-8 BOM 和本地 HTTP 413 网关均有回归覆盖。该门禁不替代不同 tool type 的上游 API Schema 校验；仅检查 context 字符数也不能作为已通过外层请求门禁的依据，历史字符记录不追溯标记为字节验证。
 7. CI 的 `test` extra 固定便携 FFmpeg 版本，并以 `lavfi` 临时生成 FFV1/PCM 音视频，实际通过基础增强 renderer 的 `loudnorm`、H.264/AAC 编码，再完整解码验证视频流和音频流；测试不依赖真实素材、系统预装 FFmpeg 或已提交媒体，CI job 设有 10 分钟硬超时。

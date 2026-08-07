@@ -1,0 +1,646 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV1TYVA6sEhm-v1",
+  "generated_at": "2026-08-07T02:20:00Z",
+  "source": {
+    "source_id": "bilibili-BV1TYVA6sEhm",
+    "url": "https://www.bilibili.com/video/BV1TYVA6sEhm/",
+    "title": "不办婚礼去旅行结婚，我们后悔了吗？",
+    "duration_sec": 1603.008
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 2387316,
+    "full_analysis_utf8_bytes": 2444586,
+    "proxy_video_full_decode_exit_code": 0,
+    "proxy_audio_full_decode_exit_code": 0,
+    "video_duration_sec": 1603.008,
+    "shot_count": 475,
+    "event_count": 19,
+    "audio_segment_count": 198,
+    "transcript_segment_count": 1207,
+    "transcript_word_count": 5909,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_language_probability": 1.0,
+    "asr_reported_duration_sec": 1603.008,
+    "transcript_end_sec": 1578.6,
+    "transcript_coverage_ratio": 0.984774,
+    "transcript_tail_gap_sec": 24.408,
+    "tail_validation": {
+      "last_credible_dialogue": "再见",
+      "last_credible_dialogue_end_sec": 1578.6,
+      "review_range_sec": [1540.0, 1603.008],
+      "no_vad_crosscheck_range_sec": [1558.0, 1603.008],
+      "result": "最后可信主持人对白之后是旅行合影、海岸、沙丘、夕阳与 credits；关闭 VAD 的复核只产生低可信重复英文，按配乐或 ASR 不确定性处理，不并入主持人对白。"
+    },
+    "audio_class_ratios": {
+      "speech": 0.8886,
+      "ambient_likely": 0.0876,
+      "music_likely": 0.0172,
+      "silence": 0.0069
+    },
+    "shot_duration_median_sec": 2.302,
+    "shot_duration_p75_sec": 3.938,
+    "event_review_contact_sheet_count": 19,
+    "manual_overview_contact_sheet_count": 5,
+    "manual_dense_tail_contact_sheet_count": 1,
+    "manual_selected_event_sheet_count": 12,
+    "manual_review_ranges": [
+      [0.0, 168.702],
+      [230.697, 322.823],
+      [410.744, 482.882],
+      [620.587, 718.418],
+      [892.792, 1185.718],
+      [1251.05, 1603.008]
+    ],
+    "manual_review_focus": [
+      "opening",
+      "narrative_turns",
+      "emotional_peak",
+      "scenic",
+      "humor",
+      "subtitle_layers",
+      "music_rhythm",
+      "suspected_effects",
+      "ending"
+    ]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 81.815,
+    "phases": [
+      {
+        "start_sec": 0.0,
+        "end_sec": 15.0,
+        "function": "直接抛出把几十万元用于一天婚礼还是长线旅行的二选一问题，并用正面主持人口播保证题意清楚。"
+      },
+      {
+        "start_sec": 15.0,
+        "end_sec": 46.0,
+        "function": "插入求婚、领证、北极圈、南极和头纱旅行画面，先证明两年多的实践经历，再承诺做一次复盘。"
+      },
+      {
+        "start_sec": 46.0,
+        "end_sec": 81.815,
+        "function": "回到双人桌谈，公布为什么旅行结婚、目的地、必备物品和相处法则四个章节，并标明赞助关系。"
+      }
+    ],
+    "metrics": {
+      "opening_event_count": 1,
+      "reviewed_shot_count": 39,
+      "opening_15_sec_shot_count": 9,
+      "opening_15_sec_average_shot_sec": 1.977,
+      "main_question_sec": 0.0,
+      "four_part_structure_sec": 46.0
+    },
+    "rule": "经验复盘型视频先用一个可讨论的资源选择题建立冲突，再以真实旅行片段证明发言资格，最后公开章节结构；开场的快慢变化服务于问题、证据和路线三步，不追求全程高速剪切。"
+  },
+  "narrative_model": {
+    "premise": "影片不是记录一次单独旅行，而是由一对已实践旅行结婚两年多的夫妻，把传统婚礼成本、目的地选择、头纱与拍摄工具、旅行冲突、父母沟通和长期婚姻想象组织成一次带回忆证据的项目复盘，最后回答不办婚礼是否后悔。",
+    "beats": [
+      "提出一天婚礼与长期旅行的资源选择题",
+      "用多次旅行和领证画面建立亲历资格并公布四章结构",
+      "拆解传统婚礼的时间、组织、预算和份子钱成本",
+      "先定义旅行结婚不等于目的地婚礼或单纯度假，再给目的地标准",
+      "以云南、新疆、罗弗敦和新西兰说明预算、季节、自驾与出片条件",
+      "从头纱、一次性用品、三脚架、手表、扇子、手机和护肤转入可执行清单",
+      "由物品转入夫妻相处，保留攻略分工、出门延误、拍照争执和语言纠正",
+      "把个人摩擦上升为允许变数、包容错误和状态管理",
+      "给父母异议提供先认可、摆成本、给方案和答谢宴替代路径",
+      "引用外部剧情片段讨论完美婚礼与长期未来的取舍",
+      "回到主持人总结共同经历、理解与陪伴，回答标题并邀请观众分享"
+    ],
+    "rule": "观点型旅行复盘要依次完成定义、比较标准、案例证据、操作清单、关系风险和价值回答；美景与旧素材承担证据或情绪回报，不能替代论证链。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "主持人口播提出一个目的地或相处判断",
+      "插入该次旅行的宽景、人物尺度和具体动作",
+      "用底部字幕保留当时情境或当前解释",
+      "回到桌谈给出预算、季节、交通或关系层面的评价",
+      "在结尾把多地景观重新组合为共同记忆"
+    ],
+    "observed_ranges": [
+      [15.0, 46.0],
+      [322.823, 555.989],
+      [718.418, 892.792],
+      [1003.035, 1090.022],
+      [1554.987, 1603.008]
+    ],
+    "rule": "回顾型成片中的景观镜头要能回答地点为何适合、两人如何行动或这段经历怎样改变关系；结尾纯景段可作为余韵，但前文必须已经完成主题回答。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.0172,
+    "uses": [
+      "旅行与婚姻回忆插入段为桌谈提供情绪和空间变化，但主持人信息仍由对白与字幕承担。",
+      "《老友记》引用段的原片声音和双语字幕承担主要情绪信息，不能被额外配乐覆盖。",
+      "1578.6 秒后的海岸、沙丘、夕阳和 credits 形成无新增主持人对白的片尾余韵。"
+    ],
+    "rule": "桌谈解释优先保证对白清晰，配乐只在旅行证据、情绪回忆和片尾蒙太奇中承担连接；本次证据不支持声明曲名、BPM、具体 ducking 数值或逐拍同步。"
+  },
+  "subtitle_model": {
+    "base_style": "底部居中浅色简体中文字幕，配深色描边或半透明底，覆盖主持人口播、旅行旧素材和引用片段。",
+    "emphasis_patterns": [
+      "用短问题或关键词强化开场的婚礼成本选择，不让大字长期覆盖人物",
+      "用四因素图卡和编号便签组织目的地标准与清单章节",
+      "头纱、三脚架、手机和护肤品用小型编号标签区分具体条目",
+      "聊天截图、统计和旅行旧片作为证据时保留来源语境，字幕只补解释",
+      "外部剧情片段使用中英双语字幕，并与主持人普通字幕保持视觉区隔",
+      "credits 覆盖在夕阳宽景上，不与新增对白竞争"
+    ],
+    "rule": "长桌谈用稳定底部字幕维持可读性，章节、编号、统计、赞助和外部引用各自使用稀疏独立层；未执行 OCR，不能声明字幕逐字完全正确。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "先建立婚礼预算、头纱固定、行李卫生、拍合照、出门或拍照的真实问题",
+      "保留夫妻之间的纠正、夸张反应、方言或发音争论和自嘲",
+      "让另一方的回应或旧旅行画面确认笑点落点",
+      "字幕只强化关键词、表情或编号，不叠加多种效果",
+      "随后回到可执行建议或关系修复"
+    ],
+    "observed_ranges": [
+      [81.815, 230.697],
+      [410.744, 482.882],
+      [555.989, 718.418],
+      [1003.035, 1251.05],
+      [1362.328, 1430.696]
+    ],
+    "rule": "夫妻复盘的笑点来自真实分工、身体需求、拍摄摩擦和互相纠正；必须保留问题、双方反应与后续解决，不能把伴侣、父母或婚礼选择剪成单向嘲弄。",
+    "playback_rate_note": "旅行旧素材和片尾蒙太奇存在短镜头与移动画面，但人工帧证据可由正常速度拍摄和硬切解释；未确认 speed ramp、素材变速或具体倍率。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-travel-marriage-opening-question-proof-roadmap",
+      "technique_key": "opening-phased-hook-not-uniform-fast-cut",
+      "start_sec": 0.0,
+      "end_sec": 81.815,
+      "category": "opening_montage",
+      "trigger": "主题涉及高成本且容易引发立场争论，需要快速说明问题、亲历资格和本片覆盖范围。",
+      "treatment": "先由主持人提出一天婚礼与长线旅行的选择题，再插入求婚、领证、极地和头纱旅行证据，最后回到桌谈公布四章结构和赞助。",
+      "confidence": 0.98,
+      "parameters": {
+        "phases": ["question", "experience_proof", "chapter_roadmap"],
+        "opening_event_count": 1,
+        "uniform_fast_cut": false
+      },
+      "evidence": {
+        "event_id": "event-001",
+        "manual_event_review": true,
+        "full_transcript": true
+      },
+      "guardrails": [
+        "开场承诺的四个部分必须在正文兑现。",
+        "旅行旧片只能证明主持人的经历，不能证明所有伴侣都会得到同样结果。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-explicit-four-part-roadmap",
+      "technique_key": "narrative-explicit-roadmap-for-practical-retrospective",
+      "start_sec": 46.0,
+      "end_sec": 81.815,
+      "category": "narrative",
+      "trigger": "复盘同时包含价值选择、目的地、物品和关系建议，容易变成无层级聊天。",
+      "treatment": "主持人把内容明确拆成为什么旅行结婚、目的地选择、必备好物和相处法则四部分，让后续长桌谈有可预期结构。",
+      "confidence": 0.97,
+      "parameters": {
+        "chapter_count": 4,
+        "roadmap_spoken": true,
+        "roadmap_visualized": true
+      },
+      "evidence": {
+        "event_id": "event-001",
+        "transcript_range_verified": true,
+        "manual_contact_sheet": true
+      },
+      "guardrails": [
+        "章节标题要对应真实内容，不用空泛标签制造结构感。",
+        "赞助声明与内容路线同时出现时必须清楚区分。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-cost-comparison-user-evidence",
+      "technique_key": "narrative-cost-comparison-with-lived-evidence",
+      "start_sec": 81.815,
+      "end_sec": 230.697,
+      "category": "narrative",
+      "trigger": "放弃传统婚礼容易被理解为单纯态度，需要展示资源约束和真实用户问题。",
+      "treatment": "从组织能力、完美主义、一次性日期风险、身边婚礼花销和份子钱回收依次说明成本，再用夫妻两人的不同经验互相补充。",
+      "confidence": 0.95,
+      "parameters": {
+        "comparison_axes": ["time", "energy", "budget", "single_day_risk", "gift_money"],
+        "multiple_host_perspectives": true
+      },
+      "evidence": {
+        "events": ["event-002", "event-003"],
+        "full_transcript": true,
+        "manual_event_review": true
+      },
+      "guardrails": [
+        "婚礼金额和份子钱样本是个人询问结果，不推广为普遍统计。",
+        "不能贬低选择传统婚礼的人。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-definition-before-destination-list",
+      "technique_key": "narrative-definition-before-recommendations",
+      "start_sec": 230.697,
+      "end_sec": 322.823,
+      "category": "narrative",
+      "trigger": "观众对旅行结婚、目的地婚礼和度假的理解不同，直接推荐地点会失去比较标准。",
+      "treatment": "先排除目的地婚礼和单纯酒店度假，把目标定义为用婚礼预算完成较长旅行与自己的仪式感，再提出预算、出片、新手友好和季节四项标准。",
+      "confidence": 0.98,
+      "parameters": {
+        "excluded_concepts": ["destination_wedding", "hotel_only_vacation"],
+        "criteria_count": 4
+      },
+      "evidence": {
+        "event_id": "event-004",
+        "four_factor_card": true,
+        "transcript_range_verified": true
+      },
+      "guardrails": [
+        "定义是本片的操作范围，不是行业统一定义。",
+        "后续推荐必须逐项回应已公布的标准。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-four-factor-reference-card",
+      "technique_key": "graphic-inline-reference-card-over-live-scene",
+      "start_sec": 281.0,
+      "end_sec": 322.823,
+      "category": "graphic",
+      "trigger": "口头列举四个目的地标准后，观众需要一个可回看的比较框架。",
+      "treatment": "在桌谈之间插入四色和便签式四因素图卡，把预算适配、出片、新手友好和出行月份固定为后续讨论的参照。",
+      "confidence": 0.96,
+      "parameters": {
+        "factor_count": 4,
+        "card_role": "comparison_reference",
+        "returns_to_live_scene": true
+      },
+      "evidence": {
+        "event_id": "event-004",
+        "manual_contact_sheet": true
+      },
+      "guardrails": [
+        "图卡只压缩已说出的标准，不额外创造未经解释的评分。",
+        "颜色不能成为唯一的信息区分方式。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-destination-evidence-evaluation",
+      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "start_sec": 322.823,
+      "end_sec": 555.989,
+      "category": "narrative",
+      "trigger": "云南、新疆、罗弗敦和新西兰的推荐若只靠美景，会缺少可执行条件。",
+      "treatment": "每个目的地由主持人先说温度、季节、自驾、日照或路线条件，插入亲历景观和人物画面，再回桌谈说明限制与适合人群。",
+      "confidence": 0.97,
+      "parameters": {
+        "destinations": ["云南", "新疆", "罗弗敦", "新西兰南岛"],
+        "evaluation_axes": ["season", "transport", "light", "budget", "beginner_friendly"]
+      },
+      "evidence": {
+        "events": ["event-005", "event-006", "event-007"],
+        "manual_overview_review": true,
+        "full_transcript": true
+      },
+      "guardrails": [
+        "天气、价格和交通规则需要按观众实际出行时间复核。",
+        "个人顺利经历不等于目的地对所有新手友好。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-scenic-human-proof",
+      "technique_key": "scenic-human-reaction-to-landmark-geography",
+      "start_sec": 322.823,
+      "end_sec": 555.989,
+      "category": "scenic",
+      "trigger": "目的地讨论需要同时说明空间规模和两个人在其中的真实体验。",
+      "treatment": "在雪山、海岸、湖泊和公路宽景中保留人物、车辆、自驾或拍摄动作，再回到主持人的季节与路线评价。",
+      "confidence": 0.91,
+      "parameters": {
+        "human_scale_visible": true,
+        "geography_types": ["snow_mountain", "coast", "lake", "road"]
+      },
+      "evidence": {
+        "events": ["event-005", "event-006", "event-007"],
+        "manual_event_review": true
+      },
+      "guardrails": [
+        "宽景必须与目的地判断相连，不把旧素材当作无语义填充。",
+        "不从单帧推断镜头速度或航拍设备。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-item-demonstration-memory-proof",
+      "technique_key": "narrative-practical-item-demonstration-with-memory-proof",
+      "start_sec": 555.989,
+      "end_sec": 892.792,
+      "category": "narrative",
+      "trigger": "头纱、一次性用品、三脚架、手表、扇子和手机的清单容易变成口播罗列。",
+      "treatment": "主持人在桌前直接演示形态、固定方式和失败模式，并插入挪威、意大利等旅行画面说明这些物品曾如何解决真实问题。",
+      "confidence": 0.96,
+      "parameters": {
+        "proof_types": ["live_demo", "failure_example", "travel_memory", "workflow_tip"],
+        "numbered_items": true
+      },
+      "evidence": {
+        "events": ["event-008", "event-009", "event-010", "event-011"],
+        "manual_event_review": true,
+        "transcript_range_verified": true
+      },
+      "guardrails": [
+        "卫生、皮肤和设备建议不替代专业医疗或安全意见。",
+        "品牌与型号只在有明确画面和口播时记录。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-numbered-tip-graphics",
+      "technique_key": "graphic-numbered-chaptered-explainer",
+      "start_sec": 555.989,
+      "end_sec": 1362.328,
+      "category": "graphic",
+      "trigger": "连续的物品清单和关系建议需要让观众知道当前条目与章节位置。",
+      "treatment": "用小型编号标签、便签图形和章节切换标识头纱、三脚架、手机等物品，并在父母沟通段用 No.1、No.2 视觉标签固定步骤。",
+      "confidence": 0.94,
+      "parameters": {
+        "label_scale": "small",
+        "persistent_fullscreen_overlay": false,
+        "supports_spoken_order": true
+      },
+      "evidence": {
+        "events": ["event-008", "event-009", "event-010", "event-011", "event-016"],
+        "manual_contact_sheets": true
+      },
+      "guardrails": [
+        "编号必须与口播顺序一致。",
+        "标签不遮挡示范动作、产品或人物表情。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-sponsor-demo-host-friction",
+      "technique_key": "narrative-sponsor-demonstration-with-host-friction",
+      "start_sec": 892.792,
+      "end_sec": 1003.035,
+      "category": "narrative",
+      "trigger": "护肤赞助位于实用物品章节，需要保持与旅行场景和人物关系的连续性。",
+      "treatment": "先用不同气候下的皮肤状态和意大利忘带产品的经历说明使用情境，再以双人护肤习惯的互相吐槽恢复节目语气，随后转入旅行冲突章节。",
+      "confidence": 0.91,
+      "parameters": {
+        "disclosure_visible": true,
+        "problem_demo": true,
+        "host_banter": true
+      },
+      "evidence": {
+        "event_id": "event-012",
+        "sponsor_label_visible": true,
+        "full_transcript": true
+      },
+      "guardrails": [
+        "功效和适用肤质属于商业与个人体验陈述，需要独立核验。",
+        "赞助内容必须保持明确披露，不伪装成无商业关系建议。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-couple-friction-process",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 1003.035,
+      "end_sec": 1251.05,
+      "category": "humor",
+      "trigger": "旅行结婚的相处建议如果只给结论，会缺少冲突为何发生和如何修复的可信度。",
+      "treatment": "保留攻略分工、出门前如厕、睡眠与水肿、拍照角度、夸奖敷衍和发音纠正的完整来回，让尴尬过程自然落到状态管理、允许变数和包容错误。",
+      "confidence": 0.98,
+      "parameters": {
+        "setup_reaction_resolution": true,
+        "both_partners_retain_agency": true,
+        "returns_to_advice": true
+      },
+      "evidence": {
+        "events": ["event-013", "event-014", "event-015"],
+        "manual_event_review": true,
+        "full_transcript": true
+      },
+      "guardrails": [
+        "不能只保留一方出丑而删除另一方回应和修复。",
+        "身体、外貌和方言笑点不得升级为羞辱。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-imperfect-trip-growth",
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "start_sec": 1003.035,
+      "end_sec": 1430.696,
+      "category": "narrative",
+      "trigger": "标题询问是否后悔，需要证明旅行中的错误与冲突怎样改变两人的关系。",
+      "treatment": "从攻略犯错、出门延误、照片不满意和旅行争吵讲到允许变数、包容错误、与父母协商，再总结两人如何在多次旅行中逐渐形成默契。",
+      "confidence": 0.97,
+      "parameters": {
+        "failure_types": ["planning", "timing", "photo", "communication"],
+        "adaptation_explicit": true,
+        "relationship_payoff": true
+      },
+      "evidence": {
+        "events": ["event-013", "event-014", "event-015", "event-016", "event-017"],
+        "transcript_range_verified": true,
+        "manual_overview_review": true
+      },
+      "guardrails": [
+        "只学习成片保留的失败到适应链，不能推断作者删除了哪些冲突。",
+        "关系建议不是对所有伴侣的普遍处方。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-role-rule-example-repair",
+      "technique_key": "narrative-couple-rule-example-and-repair",
+      "start_sec": 1003.035,
+      "end_sec": 1251.05,
+      "category": "narrative",
+      "trigger": "谁做攻略听谁的、不要排满行程和管理拍照状态等规则需要具体场景才能执行。",
+      "treatment": "每条规则后立刻给两人的真实反例、争论和修正，让抽象建议落到出门、拍摄和路线决定的可观察动作。",
+      "confidence": 0.95,
+      "parameters": {
+        "pattern": ["rule", "counterexample", "partner_response", "repair"],
+        "dialogue_driven": true
+      },
+      "evidence": {
+        "events": ["event-013", "event-014", "event-015"],
+        "full_transcript": true
+      },
+      "guardrails": [
+        "不能把个体相处规则包装为唯一正确答案。",
+        "反例要保留双方语境与解决方式。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-parent-objection-sequence",
+      "technique_key": "narrative-objection-acknowledge-cost-solution",
+      "start_sec": 1251.05,
+      "end_sec": 1362.328,
+      "category": "narrative",
+      "trigger": "不办传统婚礼可能触及父母的重视感、参与感和社交需要，不能只说服观众本人。",
+      "treatment": "先承认父母担心孩子不被重视和错过重要时刻，再摆筹备成本与旅行方案，最后提供答谢宴作为保留父母社交需求的替代路径。",
+      "confidence": 0.98,
+      "parameters": {
+        "sequence": ["acknowledge", "cost_and_plan", "fallback_solution"],
+        "stakeholders": ["couple", "parents", "family_friends"]
+      },
+      "evidence": {
+        "event_id": "event-016",
+        "numbered_labels_visible": true,
+        "transcript_range_verified": true
+      },
+      "guardrails": [
+        "家庭意见和地方习俗差异很大，方案必须按实际家庭协商。",
+        "不能把父母异议简化为金钱或面子问题。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-fiction-clip-personal-thesis",
+      "technique_key": "narrative-external-fiction-clip-to-personal-thesis",
+      "start_sec": 1362.328,
+      "end_sec": 1554.987,
+      "category": "narrative",
+      "trigger": "从实用建议转向婚姻价值回答时，需要一个能具体呈现完美婚礼与长期未来矛盾的情绪载体。",
+      "treatment": "主持人先回顾两人从犯错到默契的变化，再引用《老友记》中婚礼积蓄与未来生活的对话，随后回到镜头前总结共同经历、包容和理解才是旅行结婚内核。",
+      "confidence": 0.96,
+      "parameters": {
+        "bridge": ["personal_growth", "fictional_example", "host_synthesis"],
+        "bilingual_subtitles": true
+      },
+      "evidence": {
+        "events": ["event-017", "event-018"],
+        "manual_event_review": true,
+        "full_transcript": true
+      },
+      "guardrails": [
+        "外部影视片段的版权、台词准确性和剧情语境需要独立核验。",
+        "引用必须回到本片人物的明确总结，不能让外部作品代替主题回答。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-base-subtitle-layering",
+      "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
+      "start_sec": 0.0,
+      "end_sec": 1603.008,
+      "category": "subtitle",
+      "trigger": "长桌谈、旅行旧素材、图卡、赞助和外部影视片段共存，需要稳定而分层的信息系统。",
+      "treatment": "普通对白持续使用底部居中浅色字幕；章节与编号采用小型标签，图卡独立呈现结构，赞助保留标识，外部片段用中英双语层，片尾只保留 credits。",
+      "confidence": 0.95,
+      "parameters": {
+        "base_position": "bottom_center",
+        "base_lines": [1, 2],
+        "sparse_emphasis": true,
+        "bilingual_external_clip": true
+      },
+      "evidence": {
+        "event_contact_sheet_count": 19,
+        "manual_overview_sheet_count": 5,
+        "ocr_used": false
+      },
+      "guardrails": [
+        "未执行 OCR，不声明字幕逐字完整或完全正确。",
+        "章节、赞助和引用层不能遮挡底部主字幕或示范物品。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-ending-verbal-closure-montage",
+      "technique_key": "narrative-end-of-journey-montage-verbal-closure",
+      "start_sec": 1430.696,
+      "end_sec": 1603.008,
+      "category": "narrative",
+      "trigger": "片名提出是否后悔，结尾必须给出明确回答并让多年旅行画面形成情绪回报。",
+      "treatment": "在外部剧情片段后回到主持人总结共同经历、包容缺点和理解彼此，完成口头回答与观众邀请，再以多地旅行、合影、海岸和夕阳 credits 收束。",
+      "confidence": 0.98,
+      "parameters": {
+        "verbal_answer_before_montage": true,
+        "last_credible_dialogue_sec": 1578.6,
+        "tail_montage_sec": 24.408
+      },
+      "evidence": {
+        "events": ["event-018", "event-019"],
+        "manual_tail_sheet": true,
+        "tail_asr_crosscheck": true
+      },
+      "guardrails": [
+        "标题问题必须在片尾口头回答，不能只靠美景暗示。",
+        "尾部低可信英文识别不作为新增主持人对白。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-tail-music-dialogue-protection",
+      "technique_key": "music-scenic-block-dialogue-protection",
+      "start_sec": 1554.987,
+      "end_sec": 1603.008,
+      "category": "music_rhythm",
+      "trigger": "结尾需要从观众邀请平稳过渡到旅行回忆与 credits，同时保证最后一句话可辨。",
+      "treatment": "主持人完成邀请和再见后才完全交给旅行合影、海岸、沙丘、夕阳与 credits；尾段音频复核不支持在主持人对白之后加入新的叙事信息。",
+      "confidence": 0.86,
+      "parameters": {
+        "dialogue_first": true,
+        "scenic_tail": true,
+        "music_title_known": false,
+        "bpm_known": false
+      },
+      "evidence": {
+        "event_id": "event-019",
+        "manual_tail_sheet": true,
+        "audio_tail_crosscheck": true
+      },
+      "guardrails": [
+        "不声明曲名、BPM、逐拍剪辑或具体 ducking 数值。",
+        "关闭 VAD 的低可信重复英文只标记为配乐或识别不确定性。"
+      ]
+    },
+    {
+      "observation_id": "obs-travel-marriage-scenic-credits-after-goodbye",
+      "technique_key": "graphic-credits-over-scenic-ending",
+      "start_sec": 1578.6,
+      "end_sec": 1603.008,
+      "category": "graphic",
+      "trigger": "口头结束后仍需保留制作信息和共同旅行的余韵。",
+      "treatment": "在无新增主持人对白的海岸、沙丘与夕阳宽景上叠加克制的白色 credits，并以两人剪影和自然光收尾。",
+      "confidence": 0.97,
+      "parameters": {
+        "credits_over_scenic": true,
+        "new_host_dialogue": false,
+        "tail_duration_sec": 24.408
+      },
+      "evidence": {
+        "event_id": "event-019",
+        "dense_tail_contact_sheet": true,
+        "last_credible_dialogue_sec": 1578.6
+      },
+      "guardrails": [
+        "credits 要在背景明暗变化中保持可读。",
+        "片尾景观不新增未被正文支持的结论。"
+      ]
+    }
+  ],
+  "context_packet": {
+    "command": "pack-reference-context",
+    "maximum_characters": 180000,
+    "serialized_characters": 77113,
+    "serialized_utf8_bytes": 91589,
+    "comparison": "strictly_less_than",
+    "responses_request": {
+      "complete_envelope_fields": ["model", "instructions", "input", "tools", "text"],
+      "serialized_characters": 91292,
+      "serialized_utf8_bytes": 105806,
+      "maximum_utf8_bytes": 200000,
+      "comparison": "strictly_less_than",
+      "body_sha256": "a590a866d24766155f4bdb2125e99b094d2503f51423e97a0a3510025ff17d7b",
+      "body_binding": "exact_file_utf8_bytes",
+      "manual_evidence_included": true,
+      "json_schema_included": true
+    }
+  },
+  "limitations": [
+    "本 study 只基于已经剪完的参考成片学习正向保留模式；没有原始素材与成片映射，不能推断作者真实删片偏好。",
+    "人工抽帧支持硬切、插入旧素材、图卡、字幕层和片尾 credits，但不足以确认 speed ramp、具体播放倍率、复杂转场机制或素材变速。",
+    "没有分轨工程、曲库记录或逐帧音画标记，不声明独立音效、曲名、BPM、ducking 数值或逐拍因果。",
+    "未执行 OCR，字幕样式与层级来自人工画面复核，不声明逐字完整或完全正确。",
+    "婚礼花销、份子钱、目的地条件、产品功效、家庭协商建议和外部影视内容均属于片中陈述或引用，需要按实际场景独立核验。",
+    "关闭 VAD 的尾段复核在再见后产生低可信重复英文，结合尾部画面按配乐或 ASR 不确定性处理，不并入主持人对白。",
+    "外部旅行旧片、照片、聊天截图、统计、品牌信息和《老友记》片段的来源、授权与事实语境不由本次技术学习验证。"
+  ]
+}

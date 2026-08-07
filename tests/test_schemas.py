@@ -248,7 +248,7 @@ class SchemaValidationTests(unittest.TestCase):
         }
         expected_counts = {
             "reference-analysis.schema.json": 15,
-            "reference-technique-study.schema.json": 8,
+            "reference-technique-study.schema.json": 9,
             "reference-technique-aggregate.schema.json": 1,
             "director-profile.schema.json": 7,
             "director-profile-aggregate.schema.json": 5,
@@ -288,7 +288,7 @@ class SchemaValidationTests(unittest.TestCase):
             if ".example." not in path.name
         }
         self.assertEqual(mapped_reference_paths, formal_reference_paths)
-        self.assertEqual(len(formal_reference_paths), 36)
+        self.assertEqual(len(formal_reference_paths), 37)
 
     def test_all_repository_json_documents_are_parseable(self) -> None:
         json_paths = sorted(
@@ -301,7 +301,7 @@ class SchemaValidationTests(unittest.TestCase):
             )
             for path in directory.glob("*.json")
         )
-        self.assertEqual(len(json_paths), 71)
+        self.assertEqual(len(json_paths), 72)
         for path in json_paths:
             with self.subTest(path=path.relative_to(REPOSITORY_ROOT)):
                 load_json(path)

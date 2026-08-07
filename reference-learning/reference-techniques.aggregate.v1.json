@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-7995f74331c2",
-  "generated_at": "2026-08-06T14:20:33.679100+00:00",
-  "source_count": 8,
+  "profile_id": "aggregated-reference-techniques-v1-b5e4e89523ab",
+  "generated_at": "2026-08-07T02:17:26.451297+00:00",
+  "source_count": 9,
   "source_ids": [
     "bilibili-BV15XMC6KETm",
     "bilibili-BV19sm2BBEDd",
@@ -10,6 +10,7 @@
     "bilibili-BV1CrHwzUEJa",
     "bilibili-BV1ETNMzEEWQ",
     "bilibili-BV1TNZUB4EF6",
+    "bilibili-BV1TYVA6sEhm",
     "bilibili-BV1a7Tj6nEe9",
     "bilibili-BV1aDHQejEAP"
   ],
@@ -84,21 +85,24 @@
     {
       "technique_key": "graphic-inline-reference-card-over-live-scene",
       "category": "graphic",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.9667,
+      "average_confidence": 0.965,
       "trigger_examples": [
         "远处动物难以仅凭现场低清画面辨认，需要短暂提供语义背景。",
         "皇冠展品需要一条可见背景信息连接人物观察与现实事件。",
+        "口头列举四个目的地标准后，观众需要一个可回看的比较框架。",
         "摄影师走红照片需要和现实巷道、光线与构图位置建立可验证映射。"
       ],
       "treatment_examples": [
         "在仍可看见底层草地的情况下叠加竖向白底图文卡，读完即撤，再回到动物近景。",
         "在皇冠近景之间插入带来源标识的竖屏新闻素材，短暂解释卢浮宫失窃事件，随后直接回到展品和现场游览。",
+        "在桌谈之间插入四色和便签式四因素图卡，把预算适配、出片、新手友好和出行月份固定为后续讨论的参照。",
         "短暂展示社交平台照片和手机页面，再切到同一地点的楼道、菜市场与俯视关系，让人物指出光线将进入的位置。"
       ],
       "parameter_variants": [
@@ -112,6 +116,12 @@
           "returns_to_live_scene": true,
           "transition": "hard_cut",
           "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "factor_count": 4,
+          "card_role": "comparison_reference",
+          "returns_to_live_scene": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
         },
         {
           "reference_format": "vertical_social_post",
@@ -138,6 +148,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-four-factor-reference-card",
+          "guardrails": [
+            "图卡只压缩已说出的标准，不额外创造未经解释的评分。",
+            "颜色不能成为唯一的信息区分方式。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1a7Tj6nEe9",
           "observation_id": "obs-chongqing-reference-image-to-real-place",
           "guardrails": [
@@ -158,6 +176,12 @@
           "start_sec": 1299.36,
           "end_sec": 1305.72,
           "observation_id": "obs-louvre-news-reference-insert"
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 281.0,
+          "end_sec": 322.823,
+          "observation_id": "obs-travel-marriage-four-factor-reference-card"
         },
         {
           "source_id": "bilibili-BV1a7Tj6nEe9",
@@ -387,7 +411,7 @@
     {
       "technique_key": "humor-preserve-real-awkward-process",
       "category": "humor",
-      "source_support": 8,
+      "source_support": 9,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
@@ -395,10 +419,11 @@
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
         "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9512,
+      "average_confidence": 0.9544,
       "trigger_examples": [
         "主讲人自称不懂足球，但仍要记录世界杯现场。",
         "山上点饮料时突然想不起‘吸管’的英文，只能通过反复描述和等待解决。",
@@ -406,6 +431,7 @@
         "列车员检查时票务页面打不开，主角无法独立解释，必须向同车旅客求助。",
         "人物到收费窗口后误解功能和工作人员指向，需要在陌生语言环境中找到正确位置。",
         "独自旅行请路人拍照时同时要交接手机和保管购物袋，产生真实递物误会。",
+        "旅行结婚的相处建议如果只给结论，会缺少冲突为何发生和如何修复的可信度。",
         "主持人要复刻机车短视频动作，但对手势、腿部和转身顺序不熟。",
         "长时间问路同时存在语言障碍、地图理解和追加问题，快速跳到答案会失去真实关系变化。"
       ],
@@ -416,6 +442,7 @@
         "保留查票、网络失败、双语沟通、旅客代为解释、分别问名字和事后复盘的完整过程，只用翻译字幕和轻量强调帮助观众跟上。",
         "保留走到窗口、提出买票、看不懂回应、发现正确位置在后面、再次办理及继续上楼的完整过程，而不是只截取一句口音笑点。",
         "保留提出拍照请求、示范构图、交接手机、误把包递给另一人、人物意识到错误和致谢的完整过程，再进入游船集合。",
+        "保留攻略分工、出门前如厕、睡眠与水肿、拍照角度、夸奖敷衍和发音纠正的完整来回，让尴尬过程自然落到状态管理、允许变数和包容错误。",
         "保留嘉宾逐步示范、人物夹腿转身、手势像鸡爪的纠正、互相扶持和重新尝试，再展示夜间移动结果。",
         "保留首次开口、双方理解失败、展示地图、尝试回答、追加问题、等待和暂时分开的全过程，让尴尬由真实停顿累积。"
       ],
@@ -460,6 +487,12 @@
           "playback_rate": null,
           "overlay_stack": false,
           "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "setup_reaction_resolution": true,
+          "both_partners_retain_agency": true,
+          "returns_to_advice": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
         },
         {
           "instruction_steps_retained": true,
@@ -524,6 +557,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-couple-friction-process",
+          "guardrails": [
+            "不能只保留一方出丑而删除另一方回应和修复。",
+            "身体、外貌和方言笑点不得升级为羞辱。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1a7Tj6nEe9",
           "observation_id": "obs-chongqing-pose-coaching-real-process",
           "guardrails": [
@@ -576,6 +617,12 @@
           "start_sec": 2478,
           "end_sec": 2502,
           "observation_id": "obs-stranger-photo-bag-mixup"
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 1003.035,
+          "end_sec": 1251.05,
+          "observation_id": "obs-travel-marriage-couple-friction-process"
         },
         {
           "source_id": "bilibili-BV1a7Tj6nEe9",
@@ -902,28 +949,31 @@
     {
       "technique_key": "music-scenic-block-dialogue-protection",
       "category": "music_rhythm",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
-        "bilibili-BV1TNZUB4EF6"
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1TYVA6sEhm"
       ],
-      "average_confidence": 0.874,
+      "average_confidence": 0.8717,
       "trigger_examples": [
         "长段山脊、湖景和雨中下降需要持续情绪，同时包含问路、呼吸、跌倒和风险说明。",
         "连续樱花、河流、当地人活动和无人机镜头需要形成一段完整沉浸体验。",
         "长段湖泊、草地和渡船画面需要连续情绪，同时夹有现场感叹和临时交流。",
         "长段地标接近与日落揭示需要持续情绪，同时包含人物感叹、涉水和赶光线说明。",
-        "游船长段需要把黄昏、铁塔、河岸和夜色连成整体，同时保留人物即时观察与城市说明。"
+        "游船长段需要把黄昏、铁塔、河岸和夜色连成整体，同时保留人物即时观察与城市说明。",
+        "结尾需要从观众邀请平稳过渡到旅行回忆与 credits，同时保证最后一句话可辨。"
       ],
       "treatment_examples": [
         "用多个连续 music_likely 块连接无对白的移动和风景，在问路、人物状态与湿滑路面说明处保留现场声；12706 秒以可见 BGM credit 标明雨中段音乐。",
         "使用连续低干扰音乐把不同景别连成一段，现场对白或人物交流出现时优先让位于原声。",
         "用低干扰音乐连接无对白风景块，在人物说话、买东西和真实交流时降低存在感或让位现场声。",
         "用多个音乐候选块连接步行和风景，在人物说明、涉水动作与现场反应出现时保持可懂度，再进入更长的纯景色区间。",
-        "用持续音乐床连接无对白地标与移动镜头，在人物口播、历史说明和环境变化处保持语义可懂；画面可见 BGM credit，但不据此推断版权或逐拍关系。"
+        "用持续音乐床连接无对白地标与移动镜头，在人物口播、历史说明和环境变化处保持语义可懂；画面可见 BGM credit，但不据此推断版权或逐拍关系。",
+        "主持人完成邀请和再见后才完全交给旅行合影、海岸、沙丘、夕阳与 credits；尾段音频复核不支持在主持人对白之后加入新的叙事信息。"
       ],
       "parameter_variants": [
         {
@@ -1015,6 +1065,13 @@
           "track_identity_verified": false,
           "dialogue_priority": true,
           "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "dialogue_first": true,
+          "scenic_tail": true,
+          "music_title_known": false,
+          "bpm_known": false,
+          "source_id": "bilibili-BV1TYVA6sEhm"
         }
       ],
       "guardrail_variants": [
@@ -1056,6 +1113,14 @@
             "music_likely 与可见 credit 不用于曲名、BPM 或版权判断。",
             "人物口播和现场环境信息优先于音乐连续性。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-tail-music-dialogue-protection",
+          "guardrails": [
+            "不声明曲名、BPM、逐拍剪辑或具体 ducking 数值。",
+            "关闭 VAD 的低可信重复英文只标记为配乐或识别不确定性。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -1088,6 +1153,12 @@
           "start_sec": 2511.5,
           "end_sec": 2690,
           "observation_id": "obs-cruise-music-dialogue-protection"
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 1554.987,
+          "end_sec": 1603.008,
+          "observation_id": "obs-travel-marriage-tail-music-dialogue-protection"
         }
       ]
     },
@@ -1215,18 +1286,21 @@
     {
       "technique_key": "narrative-end-of-journey-montage-verbal-closure",
       "category": "narrative",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.96,
+      "average_confidence": 0.9667,
       "trigger_examples": [
         "多国旅行结尾既要完成真实返程，也要明确告诉观众这一系列已经结束。",
+        "片名提出是否后悔，结尾必须给出明确回答并让多年旅行画面形成情绪回报。",
         "两小时以上东京合集需要完成实际返程，并用可信对白明确旅程结束。"
       ],
       "treatment_examples": [
         "保留清晨出发、机场、机上座位小摩擦、窗外地理、睡不着和回家进度，最后用一句旅行结束、感谢、‘下个旅程再见’和黑底结束卡闭合。",
+        "在外部剧情片段后回到主持人总结共同经历、包容缺点和理解彼此，完成口头回答与观众邀请，再以多地旅行、合影、海岸和夕阳 credits 收束。",
         "用地铁换乘、餐食、步行和回顾镜头完成返程过程，再保留人工核验的最后五段对白，使结束、体验总结、下一篇章和价格回扣依次成立。"
       ],
       "parameter_variants": [
@@ -1240,6 +1314,12 @@
           ],
           "final_card": "谢谢观看",
           "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "verbal_answer_before_montage": true,
+          "last_credible_dialogue_sec": 1578.6,
+          "tail_montage_sec": 24.408,
+          "source_id": "bilibili-BV1TYVA6sEhm"
         },
         {
           "closure_steps": [
@@ -1267,6 +1347,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-ending-verbal-closure-montage",
+          "guardrails": [
+            "标题问题必须在片尾口头回答，不能只靠美景暗示。",
+            "尾部低可信英文识别不作为新增主持人对白。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1aDHQejEAP",
           "observation_id": "obs-tokyo-journey-verbal-closure",
           "guardrails": [
@@ -1281,6 +1369,12 @@
           "start_sec": 2854.2,
           "end_sec": 3038.453,
           "observation_id": "obs-homecoming-montage-closure"
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 1430.696,
+          "end_sec": 1603.008,
+          "observation_id": "obs-travel-marriage-ending-verbal-closure-montage"
         },
         {
           "source_id": "bilibili-BV1aDHQejEAP",
@@ -1387,9 +1481,83 @@
       ]
     },
     {
+      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1TYVA6sEhm",
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.965,
+      "trigger_examples": [
+        "云南、新疆、罗弗敦和新西兰的推荐若只靠美景，会缺少可执行条件。",
+        "完成热门路线后需要判断它是否真的值得，而不是让 montage 自行得出结论。"
+      ],
+      "treatment_examples": [
+        "每个目的地由主持人先说温度、季节、自驾、日照或路线条件，插入亲历景观和人物画面，再回桌谈说明限制与适合人群。",
+        "先由嘉宾说明固定 BGM 与海外传播语境，再让参与者用红绿牌和口头理由评价；最后追问抛开流量后本地人想展示什么。"
+      ],
+      "parameter_variants": [
+        {
+          "destinations": [
+            "云南",
+            "新疆",
+            "罗弗敦",
+            "新西兰南岛"
+          ],
+          "evaluation_axes": [
+            "season",
+            "transport",
+            "light",
+            "budget",
+            "beginner_friendly"
+          ],
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        },
+        {
+          "evaluation_method": "red_green_cards",
+          "reason_required": true,
+          "next_route_question": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-destination-evidence-evaluation",
+          "guardrails": [
+            "天气、价格和交通规则需要按观众实际出行时间复核。",
+            "个人顺利经历不等于目的地对所有新手友好。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-explicit-route-evaluation",
+          "guardrails": [
+            "反馈样本只是片中参与者观点。",
+            "评价结果不替代安全与适配判断。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 322.823,
+          "end_sec": 555.989,
+          "observation_id": "obs-travel-marriage-destination-evidence-evaluation"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 584.7,
+          "end_sec": 756.1,
+          "observation_id": "obs-chongqing-explicit-route-evaluation"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-failure-adaptation-payoff",
       "category": "narrative",
-      "source_support": 7,
+      "source_support": 8,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
@@ -1397,9 +1565,10 @@
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
         "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.9543,
+      "average_confidence": 0.9562,
       "trigger_examples": [
         "纽约暴雨打断原定户外计划，但人物已经准备替代选项。",
         "最后一天坐错车、买错票并选择没有明确路标的路线，原定轻松徒步失去确定性。",
@@ -1407,6 +1576,7 @@
         "找车、通票、黄金列车和一分钟换乘连续出错，原定独行路线失去确定性。",
         "夜游、找晚餐、赶接驳和再拍星星连续失败，人物同时承受饥饿、疲惫和主观恐惧。",
         "从德国到巴黎的移动连续出现晚点、站台不明、行李负担、巴士问路和同名地点误选。",
+        "标题询问是否后悔，需要证明旅行中的错误与冲突怎样改变两人的关系。",
         "走红照片依赖阳光与蒸汽，但现场云层遮住光线。"
       ],
       "treatment_examples": [
@@ -1416,6 +1586,7 @@
         "让每次误解引出一次求助，再让香港旅客和中国夫妻分别解决票务与换乘问题，最后把偶遇转化为同行和次日行程调整。",
         "完整保留寻找餐厅、停止点餐、黑暗夜路、错过车辆、饿着回房和取消夜拍；随后明确展示提前睡觉、日出前重启、清晨地标与早餐回报。",
         "保留问题被发现、向人求助、重新确认、赶路、坐对巴士以及地图错误被纠正的过程，再以巴黎街景和继续前往酒店作为阶段回报。",
+        "从攻略犯错、出门延误、照片不满意和旅行争吵讲到允许变数、包容错误、与父母协商，再总结两人如何在多次旅行中逐渐形成默契。",
         "保留判断光线、等待、被路人认出、发现阳光再次被遮和决定不能把鸡蛋放一个篮子的过程，随后转去下一个历史街区。"
       ],
       "parameter_variants": [
@@ -1483,6 +1654,17 @@
           "source_id": "bilibili-BV1TNZUB4EF6"
         },
         {
+          "failure_types": [
+            "planning",
+            "timing",
+            "photo",
+            "communication"
+          ],
+          "adaptation_explicit": true,
+          "relationship_payoff": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        },
+        {
           "obstacle": "cloud cover",
           "desired_condition": "sunlight on steam",
           "adaptation": "move to next location",
@@ -1538,6 +1720,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-imperfect-trip-growth",
+          "guardrails": [
+            "只学习成片保留的失败到适应链，不能推断作者删除了哪些冲突。",
+            "关系建议不是对所有伴侣的普遍处方。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1a7Tj6nEe9",
           "observation_id": "obs-chongqing-wait-for-light-authenticity",
           "guardrails": [
@@ -1582,6 +1772,12 @@
           "start_sec": 71.12,
           "end_sec": 541.72,
           "observation_id": "obs-arrival-failure-adaptation-chain"
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 1003.035,
+          "end_sec": 1430.696,
+          "observation_id": "obs-travel-marriage-imperfect-trip-growth"
         },
         {
           "source_id": "bilibili-BV1a7Tj6nEe9",
@@ -1837,20 +2033,22 @@
     {
       "technique_key": "opening-phased-hook-not-uniform-fast-cut",
       "category": "opening_montage",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
         "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.97,
+      "average_confidence": 0.9717,
       "trigger_examples": [
         "长篇旅行需要同时交代目的地承诺、人物动机和行动起点。",
         "长途独行VLOG需要同时兑现目的地视觉、交代人物动机并快速进入移动。",
         "长篇旅行终章需要同时兑现地标承诺、交代人物疲惫限制并启动真实行动。",
         "巴黎一日独行片需要迅速交代欧洲行最后一站，同时让设备安全焦虑和出发动作成立。",
+        "主题涉及高成本且容易引发立场争论，需要快速说明问题、亲历资格和本片覆盖范围。",
         "超长东京独行片需要同时兑现地点、快速启动跨境移动并保留人物真实反应。"
       ],
       "treatment_examples": [
@@ -1858,6 +2056,7 @@
         "先用十秒六镜风景标题预告，再保留完整口播设定和凌晨准备，最后把0.76至1.28秒中位镜长的快剪集中在告别与交通推进。",
         "先用 11.52 秒地标、日落和标题预览，再保留完整口播说明最后一站与班次选择；次日重启后才把较密镜头集中到离店和交通推进。",
         "先用 8.88 秒地标标题兑现地点，再以早餐旁白回顾前序旅程；酒店口播阶段明显减速建立风险和手机道具，最后把较密剪辑集中到收拾、列车与换乘。",
+        "先由主持人提出一天婚礼与长线旅行的选择题，再插入求婚、领证、极地和头纱旅行证据，最后回到桌谈公布四章结构和赞助。",
         "先用 16.433 秒地点与标题建立承诺，再把 0.25 秒中位镜长的超密短切集中在机场物流；安检和进食处减速，随后以登机、飞行和抵达重新推进。"
       ],
       "parameter_variants": [
@@ -1886,6 +2085,16 @@
           "fastest_phase_median_shot_sec": 0.96,
           "slowest_phase_median_shot_sec": 2.82,
           "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "phases": [
+            "question",
+            "experience_proof",
+            "chapter_roadmap"
+          ],
+          "opening_event_count": 1,
+          "uniform_fast_cut": false,
+          "source_id": "bilibili-BV1TYVA6sEhm"
         },
         {
           "phase_count": 5,
@@ -1929,6 +2138,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-opening-question-proof-roadmap",
+          "guardrails": [
+            "开场承诺的四个部分必须在正文兑现。",
+            "旅行旧片只能证明主持人的经历，不能证明所有伴侣都会得到同样结果。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1aDHQejEAP",
           "observation_id": "obs-opening-five-phase-tokyo-hook",
           "guardrails": [
@@ -1961,6 +2178,12 @@
           "start_sec": 0,
           "end_sec": 120,
           "observation_id": "obs-paris-opening-four-phase-hook"
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 0.0,
+          "end_sec": 81.815,
+          "observation_id": "obs-travel-marriage-opening-question-proof-roadmap"
         },
         {
           "source_id": "bilibili-BV1aDHQejEAP",
@@ -2067,21 +2290,24 @@
     {
       "technique_key": "scenic-human-reaction-to-landmark-geography",
       "category": "scenic",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.9633,
+      "average_confidence": 0.95,
       "trigger_examples": [
         "中央公园既承担城市房价说明，也需要提供旅行中的空间与情绪释放。",
         "塞纳河游船是巴黎一日行的主要视觉回报，需要兼顾地标、城市尺度和人物在场感。",
+        "目的地讨论需要同时说明空间规模和两个人在其中的真实体验。",
         "本地路线需要展示热门景点之外的山城空间和日常使用方式。"
       ],
       "treatment_examples": [
         "先以俯瞰和地图逻辑说明公园位置，再用入口马车、人物步行、草坪活动、城市楼群与阿根廷旗帜交替建立尺度，最后回到两人的现场体验。",
         "从登船和人物仰望进入埃菲尔铁塔，交替人物反应、河面宽景、桥梁、两岸建筑、蓝调天空与夜间亮灯，再回到岸上人物。",
+        "在雪山、海岸、湖泊和公路宽景中保留人物、车辆、自驾或拍摄动作，再回到主持人的季节与路线评价。",
         "跟随人物穿过楼梯、树荫、居民楼、儿童活动区、棋牌桌和坡道，交替广角环境与居民互动，解释步道如何承担无车生活空间。"
       ],
       "parameter_variants": [
@@ -2114,6 +2340,16 @@
           "source_id": "bilibili-BV1TNZUB4EF6"
         },
         {
+          "human_scale_visible": true,
+          "geography_types": [
+            "snow_mountain",
+            "coast",
+            "lake",
+            "road"
+          ],
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        },
+        {
           "viewpoint": "walking",
           "community_uses": [
             "children",
@@ -2143,6 +2379,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-scenic-human-proof",
+          "guardrails": [
+            "宽景必须与目的地判断相连，不把旧素材当作无语义填充。",
+            "不从单帧推断镜头速度或航拍设备。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1a7Tj6nEe9",
           "observation_id": "obs-chongqing-community-walk-human-scale",
           "guardrails": [
@@ -2163,6 +2407,12 @@
           "start_sec": 2511.5,
           "end_sec": 2690,
           "observation_id": "obs-cruise-human-to-landmark-geography"
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 322.823,
+          "end_sec": 555.989,
+          "observation_id": "obs-travel-marriage-scenic-human-proof"
         },
         {
           "source_id": "bilibili-BV1a7Tj6nEe9",
@@ -2341,18 +2591,21 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
       "category": "subtitle",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
+        "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.92,
+      "average_confidence": 0.93,
       "trigger_examples": [
         "全片横跨城市说明、双人对谈、英语引用、产品内容和球场现场，需要稳定的信息层级。",
+        "长桌谈、旅行旧素材、图卡、赞助和外部影视片段共存，需要稳定而分层的信息系统。",
         "全片包含方言、英语、多人对话、照片、社交页面、历史档案和栏目图形，需要清楚区分证据层。"
       ],
       "treatment_examples": [
         "以底部居中浅色描边对白字幕为默认层，地点手写标题、FRIENDS 标识和 New York/纽约主标题只在对应章节短暂出现。",
+        "普通对白持续使用底部居中浅色字幕；章节与编号采用小型标签，图卡独立呈现结构，赞助保留标识，外部片段用中英双语层，片尾只保留 credits。",
         "以底部居中浅色描边字幕为默认层；竖屏社交素材、实体相册、黑白档案、地点标题和‘来不来’栏目图形只在对应证据节点出现。"
       ],
       "parameter_variants": [
@@ -2365,6 +2618,16 @@
             "chapter title"
           ],
           "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "base_position": "bottom_center",
+          "base_lines": [
+            1,
+            2
+          ],
+          "sparse_emphasis": true,
+          "bilingual_external_clip": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
         },
         {
           "base_position": "bottom_center",
@@ -2388,6 +2651,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-base-subtitle-layering",
+          "guardrails": [
+            "未执行 OCR，不声明字幕逐字完整或完全正确。",
+            "章节、赞助和引用层不能遮挡底部主字幕或示范物品。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1a7Tj6nEe9",
           "observation_id": "obs-chongqing-subtitle-evidence-hierarchy",
           "guardrails": [
@@ -2402,6 +2673,12 @@
           "start_sec": 0,
           "end_sec": 1901.01,
           "observation_id": "obs-base-subtitle-hierarchy"
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 0.0,
+          "end_sec": 1603.008,
+          "observation_id": "obs-travel-marriage-base-subtitle-layering"
         },
         {
           "source_id": "bilibili-BV1a7Tj6nEe9",
@@ -2727,6 +3004,47 @@
       ]
     },
     {
+      "technique_key": "graphic-credits-over-scenic-ending",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TYVA6sEhm"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "口头结束后仍需保留制作信息和共同旅行的余韵。"
+      ],
+      "treatment_examples": [
+        "在无新增主持人对白的海岸、沙丘与夕阳宽景上叠加克制的白色 credits，并以两人剪影和自然光收尾。"
+      ],
+      "parameter_variants": [
+        {
+          "credits_over_scenic": true,
+          "new_host_dialogue": false,
+          "tail_duration_sec": 24.408,
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-scenic-credits-after-goodbye",
+          "guardrails": [
+            "credits 要在背景明暗变化中保持可读。",
+            "片尾景观不新增未被正文支持的结论。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 1578.6,
+          "end_sec": 1603.008,
+          "observation_id": "obs-travel-marriage-scenic-credits-after-goodbye"
+        }
+      ]
+    },
+    {
       "technique_key": "graphic-inline-fact-caption-over-live-scene",
       "category": "graphic",
       "source_support": 1,
@@ -2847,6 +3165,47 @@
           "start_sec": 2976.78,
           "end_sec": 2986.32,
           "observation_id": "obs-next-episode-crt-teaser"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-numbered-chaptered-explainer",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TYVA6sEhm"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "连续的物品清单和关系建议需要让观众知道当前条目与章节位置。"
+      ],
+      "treatment_examples": [
+        "用小型编号标签、便签图形和章节切换标识头纱、三脚架、手机等物品，并在父母沟通段用 No.1、No.2 视觉标签固定步骤。"
+      ],
+      "parameter_variants": [
+        {
+          "label_scale": "small",
+          "persistent_fullscreen_overlay": false,
+          "supports_spoken_order": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-numbered-tip-graphics",
+          "guardrails": [
+            "编号必须与口播顺序一致。",
+            "标签不遮挡示范动作、产品或人物表情。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 555.989,
+          "end_sec": 1362.328,
+          "observation_id": "obs-travel-marriage-numbered-tip-graphics"
         }
       ]
     },
@@ -3515,6 +3874,97 @@
       ]
     },
     {
+      "technique_key": "narrative-cost-comparison-with-lived-evidence",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TYVA6sEhm"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "放弃传统婚礼容易被理解为单纯态度，需要展示资源约束和真实用户问题。"
+      ],
+      "treatment_examples": [
+        "从组织能力、完美主义、一次性日期风险、身边婚礼花销和份子钱回收依次说明成本，再用夫妻两人的不同经验互相补充。"
+      ],
+      "parameter_variants": [
+        {
+          "comparison_axes": [
+            "time",
+            "energy",
+            "budget",
+            "single_day_risk",
+            "gift_money"
+          ],
+          "multiple_host_perspectives": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-cost-comparison-user-evidence",
+          "guardrails": [
+            "婚礼金额和份子钱样本是个人询问结果，不推广为普遍统计。",
+            "不能贬低选择传统婚礼的人。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 81.815,
+          "end_sec": 230.697,
+          "observation_id": "obs-travel-marriage-cost-comparison-user-evidence"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-couple-rule-example-and-repair",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TYVA6sEhm"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "谁做攻略听谁的、不要排满行程和管理拍照状态等规则需要具体场景才能执行。"
+      ],
+      "treatment_examples": [
+        "每条规则后立刻给两人的真实反例、争论和修正，让抽象建议落到出门、拍摄和路线决定的可观察动作。"
+      ],
+      "parameter_variants": [
+        {
+          "pattern": [
+            "rule",
+            "counterexample",
+            "partner_response",
+            "repair"
+          ],
+          "dialogue_driven": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-role-rule-example-repair",
+          "guardrails": [
+            "不能把个体相处规则包装为唯一正确答案。",
+            "反例要保留双方语境与解决方式。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 1003.035,
+          "end_sec": 1251.05,
+          "observation_id": "obs-travel-marriage-role-rule-example-repair"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-crisis-caption-black-card-relief",
       "category": "subtitle",
       "source_support": 1,
@@ -3550,6 +4000,49 @@
           "start_sec": 1518,
           "end_sec": 1581,
           "observation_id": "obs-ticket-crisis-relief-card"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-definition-before-recommendations",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TYVA6sEhm"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "观众对旅行结婚、目的地婚礼和度假的理解不同，直接推荐地点会失去比较标准。"
+      ],
+      "treatment_examples": [
+        "先排除目的地婚礼和单纯酒店度假，把目标定义为用婚礼预算完成较长旅行与自己的仪式感，再提出预算、出片、新手友好和季节四项标准。"
+      ],
+      "parameter_variants": [
+        {
+          "excluded_concepts": [
+            "destination_wedding",
+            "hotel_only_vacation"
+          ],
+          "criteria_count": 4,
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-definition-before-destination-list",
+          "guardrails": [
+            "定义是本片的操作范围，不是行业统一定义。",
+            "后续推荐必须逐项回应已公布的标准。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 230.697,
+          "end_sec": 322.823,
+          "observation_id": "obs-travel-marriage-definition-before-destination-list"
         }
       ]
     },
@@ -3594,43 +4087,87 @@
       ]
     },
     {
-      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "technique_key": "narrative-explicit-roadmap-for-practical-retrospective",
       "category": "narrative",
       "source_support": 1,
       "source_ids": [
-        "bilibili-BV1a7Tj6nEe9"
+        "bilibili-BV1TYVA6sEhm"
       ],
-      "average_confidence": 0.96,
+      "average_confidence": 0.97,
       "trigger_examples": [
-        "完成热门路线后需要判断它是否真的值得，而不是让 montage 自行得出结论。"
+        "复盘同时包含价值选择、目的地、物品和关系建议，容易变成无层级聊天。"
       ],
       "treatment_examples": [
-        "先由嘉宾说明固定 BGM 与海外传播语境，再让参与者用红绿牌和口头理由评价；最后追问抛开流量后本地人想展示什么。"
+        "主持人把内容明确拆成为什么旅行结婚、目的地选择、必备好物和相处法则四部分，让后续长桌谈有可预期结构。"
       ],
       "parameter_variants": [
         {
-          "evaluation_method": "red_green_cards",
-          "reason_required": true,
-          "next_route_question": true,
-          "source_id": "bilibili-BV1a7Tj6nEe9"
+          "chapter_count": 4,
+          "roadmap_spoken": true,
+          "roadmap_visualized": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
         }
       ],
       "guardrail_variants": [
         {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "observation_id": "obs-chongqing-explicit-route-evaluation",
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-explicit-four-part-roadmap",
           "guardrails": [
-            "反馈样本只是片中参与者观点。",
-            "评价结果不替代安全与适配判断。"
+            "章节标题要对应真实内容，不用空泛标签制造结构感。",
+            "赞助声明与内容路线同时出现时必须清楚区分。"
           ]
         }
       ],
       "evidence_ranges": [
         {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "start_sec": 584.7,
-          "end_sec": 756.1,
-          "observation_id": "obs-chongqing-explicit-route-evaluation"
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 46.0,
+          "end_sec": 81.815,
+          "observation_id": "obs-travel-marriage-explicit-four-part-roadmap"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-external-fiction-clip-to-personal-thesis",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TYVA6sEhm"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "从实用建议转向婚姻价值回答时，需要一个能具体呈现完美婚礼与长期未来矛盾的情绪载体。"
+      ],
+      "treatment_examples": [
+        "主持人先回顾两人从犯错到默契的变化，再引用《老友记》中婚礼积蓄与未来生活的对话，随后回到镜头前总结共同经历、包容和理解才是旅行结婚内核。"
+      ],
+      "parameter_variants": [
+        {
+          "bridge": [
+            "personal_growth",
+            "fictional_example",
+            "host_synthesis"
+          ],
+          "bilingual_subtitles": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-fiction-clip-personal-thesis",
+          "guardrails": [
+            "外部影视片段的版权、台词准确性和剧情语境需要独立核验。",
+            "引用必须回到本片人物的明确总结，不能让外部作品代替主题回答。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 1362.328,
+          "end_sec": 1554.987,
+          "observation_id": "obs-travel-marriage-fiction-clip-personal-thesis"
         }
       ]
     },
@@ -3888,6 +4425,54 @@
       ]
     },
     {
+      "technique_key": "narrative-objection-acknowledge-cost-solution",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TYVA6sEhm"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "不办传统婚礼可能触及父母的重视感、参与感和社交需要，不能只说服观众本人。"
+      ],
+      "treatment_examples": [
+        "先承认父母担心孩子不被重视和错过重要时刻，再摆筹备成本与旅行方案，最后提供答谢宴作为保留父母社交需求的替代路径。"
+      ],
+      "parameter_variants": [
+        {
+          "sequence": [
+            "acknowledge",
+            "cost_and_plan",
+            "fallback_solution"
+          ],
+          "stakeholders": [
+            "couple",
+            "parents",
+            "family_friends"
+          ],
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-parent-objection-sequence",
+          "guardrails": [
+            "家庭意见和地方习俗差异很大，方案必须按实际家庭协商。",
+            "不能把父母异议简化为金钱或面子问题。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 1251.05,
+          "end_sec": 1362.328,
+          "observation_id": "obs-travel-marriage-parent-objection-sequence"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-place-detail-to-city-system",
       "category": "narrative",
       "source_support": 1,
@@ -3930,6 +4515,51 @@
           "start_sec": 269.07,
           "end_sec": 456.16,
           "observation_id": "obs-newyork-place-detail-explainer-chain"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-practical-item-demonstration-with-memory-proof",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TYVA6sEhm"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "头纱、一次性用品、三脚架、手表、扇子和手机的清单容易变成口播罗列。"
+      ],
+      "treatment_examples": [
+        "主持人在桌前直接演示形态、固定方式和失败模式，并插入挪威、意大利等旅行画面说明这些物品曾如何解决真实问题。"
+      ],
+      "parameter_variants": [
+        {
+          "proof_types": [
+            "live_demo",
+            "failure_example",
+            "travel_memory",
+            "workflow_tip"
+          ],
+          "numbered_items": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-item-demonstration-memory-proof",
+          "guardrails": [
+            "卫生、皮肤和设备建议不替代专业医疗或安全意见。",
+            "品牌与型号只在有明确画面和口播时记录。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 555.989,
+          "end_sec": 892.792,
+          "observation_id": "obs-travel-marriage-item-demonstration-memory-proof"
         }
       ]
     },
@@ -4257,6 +4887,47 @@
           "start_sec": 1502.5,
           "end_sec": 1609.3,
           "observation_id": "obs-chongqing-animal-community-microstory"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-sponsor-demonstration-with-host-friction",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1TYVA6sEhm"
+      ],
+      "average_confidence": 0.91,
+      "trigger_examples": [
+        "护肤赞助位于实用物品章节，需要保持与旅行场景和人物关系的连续性。"
+      ],
+      "treatment_examples": [
+        "先用不同气候下的皮肤状态和意大利忘带产品的经历说明使用情境，再以双人护肤习惯的互相吐槽恢复节目语气，随后转入旅行冲突章节。"
+      ],
+      "parameter_variants": [
+        {
+          "disclosure_visible": true,
+          "problem_demo": true,
+          "host_banter": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-sponsor-demo-host-friction",
+          "guardrails": [
+            "功效和适用肤质属于商业与个人体验陈述，需要独立核验。",
+            "赞助内容必须保持明确披露，不伪装成无商业关系建议。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 892.792,
+          "end_sec": 1003.035,
+          "observation_id": "obs-travel-marriage-sponsor-demo-host-friction"
         }
       ]
     },
@@ -5055,6 +5726,36 @@
       },
       "rule": "先用短标题和旅程回顾完成承诺，再让风险口播、道具设定和真实反应成立；快切集中在移动与物流，不把整段开场做成均匀高速 montage。",
       "source_id": "bilibili-BV1TNZUB4EF6"
+    },
+    {
+      "total_reviewed_sec": 81.815,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 15.0,
+          "function": "直接抛出把几十万元用于一天婚礼还是长线旅行的二选一问题，并用正面主持人口播保证题意清楚。"
+        },
+        {
+          "start_sec": 15.0,
+          "end_sec": 46.0,
+          "function": "插入求婚、领证、北极圈、南极和头纱旅行画面，先证明两年多的实践经历，再承诺做一次复盘。"
+        },
+        {
+          "start_sec": 46.0,
+          "end_sec": 81.815,
+          "function": "回到双人桌谈，公布为什么旅行结婚、目的地、必备物品和相处法则四个章节，并标明赞助关系。"
+        }
+      ],
+      "metrics": {
+        "opening_event_count": 1,
+        "reviewed_shot_count": 39,
+        "opening_15_sec_shot_count": 9,
+        "opening_15_sec_average_shot_sec": 1.977,
+        "main_question_sec": 0.0,
+        "four_part_structure_sec": 46.0
+      },
+      "rule": "经验复盘型视频先用一个可讨论的资源选择题建立冲突，再以真实旅行片段证明发言资格，最后公开章节结构；开场的快慢变化服务于问题、证据和路线三步，不追求全程高速剪切。",
+      "source_id": "bilibili-BV1TYVA6sEhm"
     },
     {
       "total_reviewed_sec": 200.1,
