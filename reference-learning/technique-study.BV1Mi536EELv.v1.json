@@ -1,0 +1,652 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV1Mi536EELv-v1",
+  "generated_at": "2026-08-07T06:10:00Z",
+  "source": {
+    "source_id": "bilibili-BV1Mi536EELv",
+    "url": "https://www.bilibili.com/video/BV1Mi536EELv/",
+    "title": "欧洲最混乱的老城和顶级富豪岛，差距能有多大？",
+    "duration_sec": 1911.211
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 2553380,
+    "full_analysis_utf8_bytes": 2610930,
+    "proxy_video_full_decode_exit_code": 0,
+    "proxy_audio_full_decode_exit_code": 0,
+    "video_duration_sec": 1911.211,
+    "shot_count": 649,
+    "event_count": 24,
+    "audio_segment_count": 422,
+    "transcript_segment_count": 1000,
+    "transcript_word_count": 6044,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_language_probability": 1.0,
+    "asr_reported_duration_sec": 1911.211,
+    "transcript_end_sec": 1910.6,
+    "transcript_coverage_ratio": 0.99968,
+    "transcript_tail_gap_sec": 0.611,
+    "tail_validation": {
+      "last_credible_dialogue": "咱都用不了",
+      "last_credible_dialogue_end_sec": 1910.6,
+      "review_range_sec": [1840.0, 1911.211],
+      "no_vad_crosscheck_range_sec": [1866.211, 1911.211],
+      "result": "关闭 VAD 的 small / zh 尾检重现了结尾关于卡布里蓝、光线、旅行和时间的旁白，并在约 1910.6 秒重现最后一句；其后 0.611 秒没有新增可信对白。"
+    },
+    "audio_class_ratios": {
+      "speech": 0.7579,
+      "ambient_likely": 0.1907,
+      "music_likely": 0.0322,
+      "silence": 0.0194
+    },
+    "shot_duration_median_sec": 2.235,
+    "shot_duration_p75_sec": 3.336,
+    "event_review_contact_sheet_count": 24,
+    "manual_overview_contact_sheet_count": 6,
+    "manual_dense_detail_sheet_count": 3,
+    "manual_selected_event_sheet_count": 21,
+    "manual_review_ranges": [
+      [0.0, 95.062],
+      [159.326, 413.413],
+      [541.908, 870.67],
+      [870.67, 1327.993],
+      [1327.993, 1771.303],
+      [1771.303, 1911.211]
+    ],
+    "manual_review_focus": [
+      "opening",
+      "narrative_turns",
+      "emotional_peak",
+      "scenic",
+      "humor",
+      "subtitle_layers",
+      "music_rhythm",
+      "suspected_effects",
+      "ending"
+    ]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 95.062,
+    "phases": [
+      {
+        "start_sec": 0.0,
+        "end_sec": 16.53,
+        "function": "先展示卡布里街景、酒店接送想象和车辆镜头，把富豪岛体验与卡布里蓝做成可见的结果预告。"
+      },
+      {
+        "start_sec": 16.53,
+        "end_sec": 55.0,
+        "function": "明确提出那不勒斯混乱老城与卡布里富豪岛相隔很近却气质相反，并承诺从吃、住、行、人和城市感受逐项比较。"
+      },
+      {
+        "start_sec": 55.0,
+        "end_sec": 95.062,
+        "function": "公布寻找卡布里蓝的赞助任务和天气不确定性，再回到机场与抵达过程，让商业目标成为全片可失败、可修正的叙事任务。"
+      }
+    ],
+    "metrics": {
+      "opening_event_count": 1,
+      "opening_15_sec_shot_count": 4,
+      "opening_15_sec_average_shot_sec": 3.921,
+      "main_comparison_sec": 16.53,
+      "sponsor_mission_sec": 55.0
+    },
+    "rule": "对照型旅行视频先短暂展示高价值结果，再说清两个地点的对立命题和比较维度，最后给出贯穿全片且允许失败的具体任务；开场不需要全程高速剪切。"
+  },
+  "narrative_model": {
+    "premise": "影片把那不勒斯与卡布里组织成模块化城市对照，同时用寻找卡布里蓝和蓝洞开放状态作为推进线：低价酒店、街巷生活、足球身份、奢华交通与酒店、历史人物、餐饮价格和自然景观依次比较，最终把商业颜色任务转化为关于地方、时间和财富的个人理解。",
+    "beats": [
+      "预告富豪岛体验并提出两地反差与卡布里蓝任务",
+      "抵达天气不佳的那不勒斯，建立蓝洞可能失败的风险",
+      "以破碎街道、找钥匙、投币电梯和 300 元房间打开低价酒店盲盒",
+      "用早餐超预期完成第一次体验后评价",
+      "列出直升机、快艇与豪华酒店价格，转入卡布里的老钱历史",
+      "展示豪华酒店空间和物品，再收到蓝洞关闭消息",
+      "回到那不勒斯街巷，从摩托、汽油味、歌剧和纵向空间获得混乱之外的生活感",
+      "由马拉多纳壁画、足球旗帜和居民反应连接南方城市身份",
+      "转入卡布里服装、酒店、历史人物、奢侈品街和海景，并多次寻找蓝色",
+      "把萨伏依蓝纠正为非卡布里蓝，用警察局蓝色完成一次自嘲失败",
+      "经历蓝洞再次关闭，并用高价悬崖餐厅与低价那不勒斯披萨完成餐饮对照",
+      "Day 3 直奔港口，通过等待、换船和买票兑现最后一次机会",
+      "压低身体进入蓝洞，让蓝光景观与人物反应形成全片高潮",
+      "由船夫童年免费游泳的记忆重新解释昂贵短暂的游客体验",
+      "从颜色任务回到自然、阳光、时间、财富与头衔退色，承认无法给出固定色号"
+    ],
+    "rule": "强对照旅行片应让两地在住宿、交通、饮食、人物、历史和感官经验上成对出现，同时保留一个会受现实阻碍的具体任务；最后的价值结论必须由比较和失败过程推导，而不是只靠美景抬高。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "先由主持人说明当前地点、价格、历史或寻找目标",
+      "用宽景建立城市、海岸、港口或洞穴地理",
+      "保留人物、船只、车辆、街道动作或现场反应提供尺度",
+      "用细节、字幕或引用素材补足价格与历史语境",
+      "回到人物给出明确评价或修正先前判断"
+    ],
+    "observed_ranges": [
+      [541.908, 870.67],
+      [942.675, 1132.498],
+      [1327.993, 1419.919],
+      [1419.919, 1709.341],
+      [1771.303, 1901.0]
+    ],
+    "rule": "城市和自然宽景要与人物尺度、交通动作、寻找任务或评价相连；蓝洞高潮同时保留入口风险、洞内光线和离洞后的反应，不能只留下无上下文的蓝色画面。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.0322,
+    "uses": [
+      "城市街巷、海岸、船行、蓝洞和车辆展示段提供空间连续性，但地点、价格和判断仍由对白与字幕承担。",
+      "蓝洞入口到洞内景观的音频保留现场对白与环境感，人物指令和反应保持可辨。",
+      "结尾在城市、海岸、产品和花絮画面上持续完成主题旁白，最后可信对白覆盖到 1910.6 秒。"
+    ],
+    "rule": "配乐或环境声不能覆盖任务状态、入口安全指令、人物反应和主题结论；本次证据不支持声明曲名、BPM、具体 ducking 数值、独立音效或逐拍同步。"
+  },
+  "subtitle_model": {
+    "base_style": "底部浅色简体中文字幕配深色描边或底色，覆盖主持人口播、现场对话、历史引用和产品段。",
+    "emphasis_patterns": [
+      "用 Part 标题、Day 3 卡和地点文字标记章节与时间重置",
+      "用房价、船票、交通与餐饮价格字幕固定比较尺度",
+      "竖屏视频、历史照片、名人肖像和旧广告画面保留独立边框或来源语境",
+      "寻找蓝色时用短标签和色彩词强化纠正与笑点",
+      "赞助与产品镜头保持可识别，不伪装成无商业关系的城市观察",
+      "credits 与拍摄花絮放在结尾，不替代持续的主题旁白"
+    ],
+    "rule": "长旅行对照用稳定底部字幕承载对白，用稀疏的 Part、Day、价格、地点、引用和赞助层分别承担结构与证据；未执行 OCR，不声明字幕逐字完全正确。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "先建立廉价酒店、服装气质、天气失败、找蓝或入洞拍摄的真实目标",
+      "保留投币电梯、酒店盲盒、警察局蓝、人物肖像联想、船长催促或拍摄失控等意外",
+      "让同伴、当地人或主持人的即时反应完成笑点",
+      "字幕或肖像插图只做一次强调，不叠加多层效果",
+      "迅速回到城市评价、任务进度或主题解释"
+    ],
+    "observed_ranges": [
+      [226.56, 413.413],
+      [870.67, 1132.498],
+      [1327.993, 1529.762],
+      [1648.781, 1771.303],
+      [1901.0, 1911.211]
+    ],
+    "rule": "旅行对照中的笑点来自预算与现实、精致想象与笨拙过程、宏大任务与临场失败之间的落差；必须保留触发、双方反应和后续评价，不能把当地人或伴侣剪成单向嘲弄。",
+    "playback_rate_note": "联系表显示短镜头、移动镜头、插入素材和硬切，但正常速度拍摄足以解释这些画面；未确认 speed ramp、素材变速或具体倍率。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-naples-capri-opening-contrast-mission",
+      "technique_key": "opening-place-thesis-to-concrete-mission",
+      "start_sec": 0.0,
+      "end_sec": 95.062,
+      "category": "opening_montage",
+      "trigger": "两个地点距离很近但社会想象相反，且赞助颜色任务需要自然进入旅行主线。",
+      "treatment": "先用卡布里酒店、街景和产品结果预告吸引注意，再明确那不勒斯与卡布里的吃住行人对照，最后把寻找卡布里蓝和蓝洞天气风险设为可验证任务。",
+      "confidence": 0.98,
+      "parameters": {
+        "phases": ["result_preview", "contrast_thesis", "comparison_axes", "concrete_mission"],
+        "opening_event_count": 1,
+        "uniform_fast_cut": false
+      },
+      "evidence": {
+        "event_id": "event-001",
+        "full_transcript": true,
+        "manual_event_review": true
+      },
+      "guardrails": [
+        "开场承诺的比较维度和颜色任务必须在正文兑现。",
+        "赞助关系要保持明确，不能把商业命题伪装成纯自然发现。"
+      ]
+    },
+    {
+      "observation_id": "obs-naples-capri-parallel-comparison-modules",
+      "technique_key": "narrative-parallel-destination-comparison-modules",
+      "start_sec": 159.326,
+      "end_sec": 1327.993,
+      "category": "narrative",
+      "trigger": "老城与富豪岛的反差若只靠标签和美景，会缺少可比较的体验依据。",
+      "treatment": "依次让住宿、交通、街巷、服装、历史、商业和饮食在两地成对出现，每个模块都保留现场过程和体验后评价。",
+      "confidence": 0.97,
+      "parameters": {
+        "comparison_axes": ["hotel", "transport", "street_life", "people", "history", "food", "visual_identity"],
+        "alternates_locations": true
+      },
+      "evidence": {
+        "events": ["event-003", "event-004", "event-005", "event-006", "event-007", "event-008", "event-009", "event-010", "event-011", "event-012", "event-013", "event-014", "event-015", "event-016"],
+        "manual_overview_review": true,
+        "full_transcript": true
+      },
+      "guardrails": [
+        "比较尺度必须来自片中明确价格、体验或画面，不能把标签当结论。",
+        "不把单次旅行经验推广为两地所有居民或游客的普遍事实。"
+      ]
+    },
+    {
+      "observation_id": "obs-naples-cheap-hotel-blind-box-evaluation",
+      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "start_sec": 159.326,
+      "end_sec": 413.413,
+      "category": "narrative",
+      "trigger": "廉价酒店很容易只被当作猎奇素材，需要让观众看到完整入住过程和实际体验。",
+      "treatment": "保留破碎街道、昏暗院子、找钥匙、投币电梯和开门前担忧，再展示 300 元房间、卫生间和早餐，最后给出没有想象中差且早餐超预期的评价。",
+      "confidence": 0.98,
+      "parameters": {
+        "sequence": ["expectation", "arrival_friction", "room_reveal", "breakfast", "evaluation"],
+        "price_context_visible": true
+      },
+      "evidence": {
+        "events": ["event-003", "event-004", "event-005"],
+        "manual_event_review": true,
+        "transcript_range_verified": true
+      },
+      "guardrails": [
+        "卫生、安全和价格结论只适用于片中这次体验。",
+        "不只保留破败细节而删除正向早餐与房间评价。"
+      ]
+    },
+    {
+      "observation_id": "obs-naples-capri-hotel-price-callback",
+      "technique_key": "narrative-price-callback-delayed-scenic-payoff",
+      "start_sec": 159.326,
+      "end_sec": 541.908,
+      "category": "narrative",
+      "trigger": "同房型价格差异很大，需要延迟展示高价端到底购买了什么体验。",
+      "treatment": "先公布相近房型可能相差约四十倍，并完整体验那不勒斯低价酒店；之后通过直升机或快艇价格、酒店历史、早餐、空间和物品展示回收高价端。",
+      "confidence": 0.94,
+      "parameters": {
+        "low_price_reveal_first": true,
+        "high_price_payoff_delayed": true,
+        "comparison_includes_process": true
+      },
+      "evidence": {
+        "events": ["event-003", "event-004", "event-005", "event-006", "event-007"],
+        "price_subtitles_reviewed": true,
+        "manual_contact_sheets": true
+      },
+      "guardrails": [
+        "价格、房型和交通报价按拍摄时片中陈述记录，需另行核验。",
+        "高价不自动等于更好，必须保留体验后评价。"
+      ]
+    },
+    {
+      "observation_id": "obs-naples-street-detail-city-system",
+      "technique_key": "narrative-place-detail-to-city-system",
+      "start_sec": 541.908,
+      "end_sec": 870.67,
+      "category": "narrative",
+      "trigger": "那不勒斯的脏乱标签需要被具体街巷经验和城市身份补充。",
+      "treatment": "从摩托、狭窄街道、汽油味、歌剧、纵向空间和居民互动出发，再连接马拉多纳壁画、足球历史与南方身份，让混乱同时呈现生活气和认同。",
+      "confidence": 0.96,
+      "parameters": {
+        "sensory_details": ["motorcycles", "narrow_alleys", "fuel_smell", "opera", "vertical_space"],
+        "identity_bridge": "football"
+      },
+      "evidence": {
+        "events": ["event-008", "event-009", "event-010", "event-011"],
+        "manual_event_review": true,
+        "full_transcript": true
+      },
+      "guardrails": [
+        "出租车、黑手党和群体性格只按现场陈述归因，不外推为事实。",
+        "不能用足球热情抵消真实的安全或环境风险。"
+      ]
+    },
+    {
+      "observation_id": "obs-naples-capri-present-to-history-layer",
+      "technique_key": "narrative-present-experience-to-historical-layer",
+      "start_sec": 683.316,
+      "end_sec": 1056.322,
+      "category": "narrative",
+      "trigger": "两地的当代观感需要历史和人物层，才能避免停留在消费价格对照。",
+      "treatment": "那不勒斯从街头足球符号进入马拉多纳与南方身份；卡布里从酒店、街道和海景进入帝王、作家、革命者与名流活动的历史引用，再回到现场景观。",
+      "confidence": 0.93,
+      "parameters": {
+        "bridge": ["present_detail", "archival_or_portrait_insert", "historical_context", "return_to_place"]
+      },
+      "evidence": {
+        "events": ["event-010", "event-011", "event-012", "event-013"],
+        "historical_inserts_visible": true,
+        "manual_contact_sheets": true
+      },
+      "guardrails": [
+        "历史人物、地点关系和数字需要独立核验。",
+        "引用素材不能代替主持人的现场观察与明确归因。"
+      ]
+    },
+    {
+      "observation_id": "obs-capri-blue-error-correction-chain",
+      "technique_key": "narrative-error-discovery-and-explicit-correction",
+      "start_sec": 782.615,
+      "end_sec": 1132.498,
+      "category": "narrative",
+      "trigger": "赞助任务要求寻找卡布里蓝，但现场出现的多种蓝色容易被过早认定。",
+      "treatment": "先把城市与足球相关的蓝色纠正为萨伏依蓝，再比较有光和无光的海色，并保留警察局蓝色的自嘲误判，使寻找过程持续开放。",
+      "confidence": 0.97,
+      "parameters": {
+        "sequence": ["candidate_color", "explicit_correction", "new_candidate", "comic_false_positive"],
+        "mission_remains_open": true
+      },
+      "evidence": {
+        "events": ["event-011", "event-012", "event-013", "event-014"],
+        "transcript_range_verified": true,
+        "manual_event_review": true
+      },
+      "guardrails": [
+        "颜色名称按片中解释记录，不当作色彩学或历史定论。",
+        "纠正必须保留原判断和修正理由，不能只留下最终答案。"
+      ]
+    },
+    {
+      "observation_id": "obs-capri-blue-search-awkward-humor",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 870.67,
+      "end_sec": 1132.498,
+      "category": "humor",
+      "trigger": "老钱造型和寻找卡布里蓝的任务容易显得刻意，需要用现场不顺和互相吐槽恢复真实感。",
+      "treatment": "保留两人换装、互评、找蓝过度投入、警察局蓝色和天气焦虑的完整来回，让笑点落在任务与现实的错位上，再返回寻找进度。",
+      "confidence": 0.95,
+      "parameters": {
+        "setup_reaction_resolution": true,
+        "both_hosts_retain_agency": true,
+        "single_graphic_accents": true
+      },
+      "evidence": {
+        "events": ["event-012", "event-013", "event-014"],
+        "manual_event_review": true,
+        "full_transcript": true
+      },
+      "guardrails": [
+        "不能只保留一方出丑而删除另一方回应。",
+        "当地机构、居民和伴侣不得被剪成单向嘲弄对象。"
+      ]
+    },
+    {
+      "observation_id": "obs-blue-grotto-failure-adaptation-payoff",
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "start_sec": 541.908,
+      "end_sec": 1709.341,
+      "category": "narrative",
+      "trigger": "蓝洞开放依赖天气，商业任务与旅行高潮都可能无法完成。",
+      "treatment": "明确记录连续关闭和剩余机会，在失败日转向城市、餐饮与找蓝支线；第三天直奔港口、等待、换船、买票和压低身体入洞，最终用蓝光景观与人物反应兑现。",
+      "confidence": 0.99,
+      "parameters": {
+        "failure_count": 2,
+        "adaptations": ["city_exploration", "food_comparison", "harbor_check", "boat_transfer"],
+        "payoff": "blue_grotto_entry"
+      },
+      "evidence": {
+        "events": ["event-008", "event-014", "event-015", "event-016", "event-017", "event-018", "event-019", "event-020", "event-021"],
+        "manual_dense_blue_cave_sheet": true,
+        "full_transcript": true
+      },
+      "guardrails": [
+        "只学习成片保留的失败、转向与兑现链，不能推断作者删除了哪些素材。",
+        "天气与开放规则需要按实际日期向运营方核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-blue-grotto-multiday-reset-carryover",
+      "technique_key": "narrative-multiday-reset-with-carryover",
+      "start_sec": 541.908,
+      "end_sec": 1419.919,
+      "category": "narrative",
+      "trigger": "连续多天等待同一景点开放，容易让失败重复或让观众忘记剩余机会。",
+      "treatment": "每次天气与开放状态变化都重报任务进度，第三天用 Day 3 卡、退房和最后机会重置时间，同时保留前两天失败造成的紧迫感。",
+      "confidence": 0.97,
+      "parameters": {
+        "day_card_visible": true,
+        "carryover_goal": "blue_grotto",
+        "final_attempt_explicit": true
+      },
+      "evidence": {
+        "events": ["event-008", "event-014", "event-015", "event-016", "event-017"],
+        "manual_event_review": true,
+        "transcript_range_verified": true
+      },
+      "guardrails": [
+        "时间卡必须与真实拍摄日和任务状态一致。",
+        "不要用重复失败压缩掉每次应对策略的差异。"
+      ]
+    },
+    {
+      "observation_id": "obs-naples-capri-food-evaluation-pair",
+      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "start_sec": 1056.322,
+      "end_sec": 1327.993,
+      "category": "narrative",
+      "trigger": "高价富豪岛餐厅与低价那不勒斯披萨需要在真实进食后比较，而不能只展示账单。",
+      "treatment": "先保留悬崖餐厅的环境、菜品、价格和体验，再回那不勒斯记录排队、有限菜单、制作与试吃，最后分别给出清楚评价。",
+      "confidence": 0.96,
+      "parameters": {
+        "comparison_axes": ["price", "setting", "preparation", "taste", "value"],
+        "evaluation_after_tasting": true
+      },
+      "evidence": {
+        "events": ["event-014", "event-015", "event-016"],
+        "manual_event_review": true,
+        "full_transcript": true
+      },
+      "guardrails": [
+        "价格、菜品与口味均按片中单次体验记录。",
+        "不能因价格差异预设价值结论，必须保留两边实际评价。"
+      ]
+    },
+    {
+      "observation_id": "obs-blue-grotto-entry-human-reaction-geography",
+      "technique_key": "scenic-human-reaction-to-landmark-geography",
+      "start_sec": 1419.919,
+      "end_sec": 1709.341,
+      "category": "scenic",
+      "trigger": "蓝洞是抽象颜色任务的视觉高潮，需要同时证明进入难度、空间与人物体验。",
+      "treatment": "从海上等待和换小船开始，保留船夫压低身体、洞口黑暗、蓝光水面、洞内船只和人物出洞后的惊讶反应，使地理奇观与身体体验连在一起。",
+      "confidence": 0.98,
+      "parameters": {
+        "sequence": ["approach", "body_instruction", "dark_entrance", "blue_reveal", "human_reaction"],
+        "human_scale_visible": true
+      },
+      "evidence": {
+        "events": ["event-018", "event-019", "event-020", "event-021"],
+        "manual_dense_blue_cave_sheet": true,
+        "manual_event_review": true
+      },
+      "guardrails": [
+        "入口安全动作与船夫指令不能为纯景观节奏而删除。",
+        "不从联系表推断相机速度、变速或拍摄设备。"
+      ]
+    },
+    {
+      "observation_id": "obs-capri-local-boatman-reframes-luxury",
+      "technique_key": "narrative-small-local-encounter-validates-place",
+      "start_sec": 1327.993,
+      "end_sec": 1771.303,
+      "category": "narrative",
+      "trigger": "富豪岛和昂贵短暂景点的主题需要当地人的日常视角，避免只剩游客消费想象。",
+      "treatment": "先保留船长聊天、换船、等待和入洞互动，再用当地船夫童年把蓝洞当免费泳池的记忆，重新解释游客眼中的奢华与本地生活的关系。",
+      "confidence": 0.95,
+      "parameters": {
+        "encounter_role": "boatman",
+        "reframe": ["tourist_price", "brief_visit", "local_childhood_memory"]
+      },
+      "evidence": {
+        "events": ["event-017", "event-018", "event-019", "event-020", "event-021", "event-022"],
+        "full_transcript": true,
+        "manual_event_review": true
+      },
+      "guardrails": [
+        "船夫个人记忆不能代表所有当地人。",
+        "与名人、票价和童年有关的陈述需要明确归因并独立核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-blue-grotto-price-to-local-memory-payoff",
+      "technique_key": "narrative-price-callback-delayed-scenic-payoff",
+      "start_sec": 1529.762,
+      "end_sec": 1771.303,
+      "category": "narrative",
+      "trigger": "蓝洞票价、等待和极短停留容易让高潮只剩值不值的消费判断。",
+      "treatment": "先记录买票、排队和入洞时间压力，再用洞内光线和人物反应完成景观回报，最后以船夫童年免费游泳的记忆把价格问题转为人与地方的长期关系。",
+      "confidence": 0.94,
+      "parameters": {
+        "price_context_first": true,
+        "scenic_payoff": true,
+        "human_reframe_after_payoff": true
+      },
+      "evidence": {
+        "events": ["event-019", "event-020", "event-021", "event-022"],
+        "manual_dense_blue_cave_sheet": true,
+        "transcript_range_verified": true
+      },
+      "guardrails": [
+        "票价、时长与开放条件按片中体验记录，不能作为长期固定信息。",
+        "本地记忆用于扩展主题，不用于否定游客成本感受。"
+      ]
+    },
+    {
+      "observation_id": "obs-capri-sponsor-mission-to-time-thesis",
+      "technique_key": "narrative-theme-bridge-between-chapters",
+      "start_sec": 1709.341,
+      "end_sec": 1901.0,
+      "category": "narrative",
+      "trigger": "寻找产品颜色的商业任务完成后，需要回到标题中的城市差距并形成非广告式主题回答。",
+      "treatment": "从船夫、车夫和自然景观进入财富与头衔退色的判断，再回看车辆在不同光线中的蓝，承认无法提供固定色号，把答案转为旅行让时间慢下来的感受。",
+      "confidence": 0.97,
+      "parameters": {
+        "bridge": ["local_people", "nature", "wealth_reframe", "product_color", "time_thesis"],
+        "fixed_color_answer_rejected": true
+      },
+      "evidence": {
+        "events": ["event-022", "event-023", "event-024"],
+        "manual_tail_review": true,
+        "full_transcript": true
+      },
+      "guardrails": [
+        "主题升华必须由前文人物、景观和失败过程支持。",
+        "产品颜色与自然景观的关系是片中表达，不作为可量化色彩结论。"
+      ]
+    },
+    {
+      "observation_id": "obs-capri-ending-verbal-closure-outtakes",
+      "technique_key": "narrative-end-of-journey-montage-verbal-closure",
+      "start_sec": 1771.303,
+      "end_sec": 1911.211,
+      "category": "narrative",
+      "trigger": "颜色任务和两城对照需要明确结论，同时保留产品镜头、credits 与拍摄过程余韵。",
+      "treatment": "先由主持人总结人与自然、财富和颜色，再在城市、海岸、车辆和花絮画面上持续完成旁白，最后以无法固定定义但能让时间慢下来的蓝收束。",
+      "confidence": 0.98,
+      "parameters": {
+        "verbal_closure": true,
+        "product_and_outtake_montage": true,
+        "last_credible_dialogue_sec": 1910.6
+      },
+      "evidence": {
+        "events": ["event-023", "event-024"],
+        "manual_tail_sheet": true,
+        "tail_asr_crosscheck": true
+      },
+      "guardrails": [
+        "片尾画面不能替代明确的主题回答。",
+        "花絮中的残句保留其拍摄语境，不当作新增事实结论。"
+      ]
+    },
+    {
+      "observation_id": "obs-naples-capri-subtitle-evidence-layers",
+      "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
+      "start_sec": 0.0,
+      "end_sec": 1911.211,
+      "category": "subtitle",
+      "trigger": "双城旅行同时包含现场对白、章节、日期、价格、历史引用、竖屏素材、赞助和 credits，需要稳定的信息层级。",
+      "treatment": "普通对白持续使用底部字幕；Part、Day、地点、价格和颜色标签稀疏出现；竖屏引用、历史照片、人物肖像与赞助产品保留独立视觉边界。",
+      "confidence": 0.96,
+      "parameters": {
+        "base_position": "bottom_center",
+        "base_lines": [1, 2],
+        "sparse_emphasis": true,
+        "part_and_day_cards": true,
+        "ocr_used": false
+      },
+      "evidence": {
+        "event_contact_sheet_count": 24,
+        "manual_selected_event_sheet_count": 21,
+        "manual_overview_sheet_count": 6
+      },
+      "guardrails": [
+        "未执行 OCR，不声明字幕逐字完整或完全正确。",
+        "价格、引用、赞助和主字幕不能相互遮挡。"
+      ]
+    },
+    {
+      "observation_id": "obs-naples-capri-inline-source-cards",
+      "technique_key": "graphic-inline-reference-card-over-live-scene",
+      "start_sec": 293.427,
+      "end_sec": 1885.0,
+      "category": "graphic",
+      "trigger": "城市历史、竖屏视频、人物身份、价格和产品颜色需要证据层，但全屏长停留会打断旅行现场。",
+      "treatment": "在现场与口播之间短暂插入竖屏视频、历史照片、人物肖像、价格字幕、Part/Day 卡和产品画面，随后快速回到人物或地点继续验证。",
+      "confidence": 0.92,
+      "parameters": {
+        "reference_types": ["vertical_video", "archive_photo", "portrait", "price", "part_card", "day_card", "product_frame"],
+        "returns_to_live_scene": true
+      },
+      "evidence": {
+        "events": ["event-005", "event-008", "event-010", "event-013", "event-014", "event-015", "event-016", "event-017", "event-018", "event-023", "event-024"],
+        "manual_contact_sheets": true
+      },
+      "guardrails": [
+        "外部素材、历史图片和人物肖像的来源与授权需要独立核验。",
+        "图卡只压缩已解释的信息，不新增未经口播支持的事实。"
+      ]
+    },
+    {
+      "observation_id": "obs-blue-grotto-music-dialogue-protection",
+      "technique_key": "music-scenic-block-dialogue-protection",
+      "start_sec": 1529.762,
+      "end_sec": 1911.211,
+      "category": "music_rhythm",
+      "trigger": "蓝洞高潮与结尾蒙太奇需要情绪连续性，同时入口指令、人物反应和主题旁白必须保持清楚。",
+      "treatment": "入洞前保留票价、拍摄准备和压低身体的对白，洞内保留人物反应；结尾在景观、车辆和花絮上持续旁白，直到 1910.6 秒才结束可信语言信息。",
+      "confidence": 0.86,
+      "parameters": {
+        "dialogue_protected": true,
+        "scenic_and_product_tail": true,
+        "music_title_known": false,
+        "bpm_known": false
+      },
+      "evidence": {
+        "events": ["event-019", "event-020", "event-021", "event-022", "event-023", "event-024"],
+        "audio_tail_crosscheck": true,
+        "manual_tail_review": true
+      },
+      "guardrails": [
+        "不声明曲名、BPM、逐拍剪辑、独立音效或具体 ducking 数值。",
+        "音乐与环境声分类只作宏观证据，不能替代人工声学分轨。"
+      ]
+    }
+  ],
+  "context_packet": {
+    "command": "pack-reference-context",
+    "maximum_characters": 180000,
+    "serialized_characters": 86698,
+    "serialized_utf8_bytes": 100528,
+    "comparison": "strictly_less_than",
+    "responses_request": {
+      "complete_envelope_fields": ["model", "instructions", "input", "tools", "text"],
+      "serialized_characters": 103199,
+      "serialized_utf8_bytes": 117083,
+      "maximum_utf8_bytes": 200000,
+      "comparison": "strictly_less_than",
+      "body_sha256": "e8024b51df858bdea4c5c7223a146ba5c9de9b083bd9954afe22304da6252be0",
+      "body_binding": "exact_file_utf8_bytes",
+      "manual_evidence_included": true,
+      "json_schema_included": true
+    }
+  },
+  "limitations": [
+    "本 study 只基于已经剪完的参考成片学习正向保留模式；没有原始素材与成片映射，不能推断作者真实删片偏好。",
+    "人工抽帧支持硬切、插入素材、Part/Day/价格图层、字幕、产品镜头和 credits，但不足以确认 speed ramp、具体播放倍率、复杂转场机制或素材变速。",
+    "没有分轨工程、曲库记录或逐帧音画标记，不声明独立音效、曲名、BPM、ducking 数值或逐拍因果。",
+    "未执行 OCR，字幕样式和层级来自人工画面复核，不声明逐字完整或完全正确。",
+    "酒店、交通、餐饮和门票价格，蓝洞开放规则，城市安全、黑手党、历史人物、群体特征和产品颜色均属于片中陈述或引用，需要独立核验。",
+    "ASR 对意大利地名、人物名、品牌名和少量现场对白存在误识别；正式语义结论只采用时间窗口、上下文和人工画面共同支持的部分。",
+    "关闭 VAD 的尾段复核确认最后可信对白到 1910.6 秒，剩余 0.611 秒没有新增可信对白。",
+    "外部竖屏视频、历史照片、人物肖像、产品画面和引用素材的来源、授权与事实语境不由本次技术学习验证。",
+    "完整 Responses body 只通过严格 UTF-8 字节门禁和最小结构校验，没有调用外部模型；本 study 由本地完整分析、ASR 与人工复核证据形成。"
+  ]
+}

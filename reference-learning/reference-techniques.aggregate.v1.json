@@ -1,14 +1,15 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-b5e4e89523ab",
-  "generated_at": "2026-08-07T02:17:26.451297+00:00",
-  "source_count": 9,
+  "profile_id": "aggregated-reference-techniques-v1-efa0a06025b1",
+  "generated_at": "2026-08-07T06:07:32.511182+00:00",
+  "source_count": 10,
   "source_ids": [
     "bilibili-BV15XMC6KETm",
     "bilibili-BV19sm2BBEDd",
     "bilibili-BV1C3546DEC6",
     "bilibili-BV1CrHwzUEJa",
     "bilibili-BV1ETNMzEEWQ",
+    "bilibili-BV1Mi536EELv",
     "bilibili-BV1TNZUB4EF6",
     "bilibili-BV1TYVA6sEhm",
     "bilibili-BV1a7Tj6nEe9",
@@ -85,22 +86,25 @@
     {
       "technique_key": "graphic-inline-reference-card-over-live-scene",
       "category": "graphic",
-      "source_support": 4,
+      "source_support": 5,
       "source_ids": [
         "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.965,
+      "average_confidence": 0.956,
       "trigger_examples": [
         "远处动物难以仅凭现场低清画面辨认，需要短暂提供语义背景。",
+        "城市历史、竖屏视频、人物身份、价格和产品颜色需要证据层，但全屏长停留会打断旅行现场。",
         "皇冠展品需要一条可见背景信息连接人物观察与现实事件。",
         "口头列举四个目的地标准后，观众需要一个可回看的比较框架。",
         "摄影师走红照片需要和现实巷道、光线与构图位置建立可验证映射。"
       ],
       "treatment_examples": [
         "在仍可看见底层草地的情况下叠加竖向白底图文卡，读完即撤，再回到动物近景。",
+        "在现场与口播之间短暂插入竖屏视频、历史照片、人物肖像、价格字幕、Part/Day 卡和产品画面，随后快速回到人物或地点继续验证。",
         "在皇冠近景之间插入带来源标识的竖屏新闻素材，短暂解释卢浮宫失窃事件，随后直接回到展品和现场游览。",
         "在桌谈之间插入四色和便签式四因素图卡，把预算适配、出片、新手友好和出行月份固定为后续讨论的参照。",
         "短暂展示社交平台照片和手机页面，再切到同一地点的楼道、菜市场与俯视关系，让人物指出光线将进入的位置。"
@@ -110,6 +114,19 @@
           "overlay_type": "vertical_reference_card",
           "background_remains_visible": true,
           "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "reference_types": [
+            "vertical_video",
+            "archive_photo",
+            "portrait",
+            "price",
+            "part_card",
+            "day_card",
+            "product_frame"
+          ],
+          "returns_to_live_scene": true,
+          "source_id": "bilibili-BV1Mi536EELv"
         },
         {
           "insert_format": "vertical_news_clip",
@@ -137,6 +154,14 @@
           "guardrails": [
             "信息卡只解释当前对象，不扩展成未经核验的旅行建议。",
             "卡片读完即撤，不长期遮挡现场画面和基础字幕。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-naples-capri-inline-source-cards",
+          "guardrails": [
+            "外部素材、历史图片和人物肖像的来源与授权需要独立核验。",
+            "图卡只压缩已解释的信息，不新增未经口播支持的事实。"
           ]
         },
         {
@@ -170,6 +195,12 @@
           "start_sec": 3703,
           "end_sec": 3706,
           "observation_id": "obs-animal-reference-card"
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 293.427,
+          "end_sec": 1885.0,
+          "observation_id": "obs-naples-capri-inline-source-cards"
         },
         {
           "source_id": "bilibili-BV1TNZUB4EF6",
@@ -411,25 +442,27 @@
     {
       "technique_key": "humor-preserve-real-awkward-process",
       "category": "humor",
-      "source_support": 9,
+      "source_support": 10,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9544,
+      "average_confidence": 0.954,
       "trigger_examples": [
         "主讲人自称不懂足球，但仍要记录世界杯现场。",
         "山上点饮料时突然想不起‘吸管’的英文，只能通过反复描述和等待解决。",
         "支付和加热沟通连续失败，人物只能重复尝试。",
         "列车员检查时票务页面打不开，主角无法独立解释，必须向同车旅客求助。",
         "人物到收费窗口后误解功能和工作人员指向，需要在陌生语言环境中找到正确位置。",
+        "老钱造型和寻找卡布里蓝的任务容易显得刻意，需要用现场不顺和互相吐槽恢复真实感。",
         "独自旅行请路人拍照时同时要交接手机和保管购物袋，产生真实递物误会。",
         "旅行结婚的相处建议如果只给结论，会缺少冲突为何发生和如何修复的可信度。",
         "主持人要复刻机车短视频动作，但对手势、腿部和转身顺序不熟。",
@@ -441,6 +474,7 @@
         "保留足够长的真实失败过程和停顿，用少量双语字幕、失败短句与反差配乐放大尴尬，不提前跳到结果。",
         "保留查票、网络失败、双语沟通、旅客代为解释、分别问名字和事后复盘的完整过程，只用翻译字幕和轻量强调帮助观众跟上。",
         "保留走到窗口、提出买票、看不懂回应、发现正确位置在后面、再次办理及继续上楼的完整过程，而不是只截取一句口音笑点。",
+        "保留两人换装、互评、找蓝过度投入、警察局蓝色和天气焦虑的完整来回，让笑点落在任务与现实的错位上，再返回寻找进度。",
         "保留提出拍照请求、示范构图、交接手机、误把包递给另一人、人物意识到错误和致谢的完整过程，再进入游船集合。",
         "保留攻略分工、出门前如厕、睡眠与水肿、拍照角度、夸奖敷衍和发音纠正的完整来回，让尴尬过程自然落到状态管理、允许变数和包容错误。",
         "保留嘉宾逐步示范、人物夹腿转身、手势像鸡爪的纠正、互相扶持和重新尝试，再展示夜间移动结果。",
@@ -481,6 +515,12 @@
             "complete_action"
           ],
           "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "setup_reaction_resolution": true,
+          "both_hosts_retain_agency": true,
+          "single_graphic_accents": true,
+          "source_id": "bilibili-BV1Mi536EELv"
         },
         {
           "resolution_retained": true,
@@ -549,6 +589,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-capri-blue-search-awkward-humor",
+          "guardrails": [
+            "不能只保留一方出丑而删除另一方回应。",
+            "当地机构、居民和伴侣不得被剪成单向嘲弄对象。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "observation_id": "obs-stranger-photo-bag-mixup",
           "guardrails": [
@@ -611,6 +659,12 @@
           "start_sec": 2105.04,
           "end_sec": 2144.72,
           "observation_id": "obs-information-desk-awkward-process"
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 870.67,
+          "end_sec": 1132.498,
+          "observation_id": "obs-capri-blue-search-awkward-humor"
         },
         {
           "source_id": "bilibili-BV1TNZUB4EF6",
@@ -949,21 +1003,23 @@
     {
       "technique_key": "music-scenic-block-dialogue-protection",
       "category": "music_rhythm",
-      "source_support": 6,
+      "source_support": 7,
       "source_ids": [
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm"
       ],
-      "average_confidence": 0.8717,
+      "average_confidence": 0.87,
       "trigger_examples": [
         "长段山脊、湖景和雨中下降需要持续情绪，同时包含问路、呼吸、跌倒和风险说明。",
         "连续樱花、河流、当地人活动和无人机镜头需要形成一段完整沉浸体验。",
         "长段湖泊、草地和渡船画面需要连续情绪，同时夹有现场感叹和临时交流。",
         "长段地标接近与日落揭示需要持续情绪，同时包含人物感叹、涉水和赶光线说明。",
+        "蓝洞高潮与结尾蒙太奇需要情绪连续性，同时入口指令、人物反应和主题旁白必须保持清楚。",
         "游船长段需要把黄昏、铁塔、河岸和夜色连成整体，同时保留人物即时观察与城市说明。",
         "结尾需要从观众邀请平稳过渡到旅行回忆与 credits，同时保证最后一句话可辨。"
       ],
@@ -972,6 +1028,7 @@
         "使用连续低干扰音乐把不同景别连成一段，现场对白或人物交流出现时优先让位于原声。",
         "用低干扰音乐连接无对白风景块，在人物说话、买东西和真实交流时降低存在感或让位现场声。",
         "用多个音乐候选块连接步行和风景，在人物说明、涉水动作与现场反应出现时保持可懂度，再进入更长的纯景色区间。",
+        "入洞前保留票价、拍摄准备和压低身体的对白，洞内保留人物反应；结尾在景观、车辆和花絮上持续旁白，直到 1910.6 秒才结束可信语言信息。",
         "用持续音乐床连接无对白地标与移动镜头，在人物口播、历史说明和环境变化处保持语义可懂；画面可见 BGM credit，但不据此推断版权或逐拍关系。",
         "主持人完成邀请和再见后才完全交给旅行合影、海岸、沙丘、夕阳与 credits；尾段音频复核不支持在主持人对白之后加入新的叙事信息。"
       ],
@@ -1051,6 +1108,13 @@
           "source_id": "bilibili-BV1ETNMzEEWQ"
         },
         {
+          "dialogue_protected": true,
+          "scenic_and_product_tail": true,
+          "music_title_known": false,
+          "bpm_known": false,
+          "source_id": "bilibili-BV1Mi536EELv"
+        },
+        {
           "visible_bgm_credit_sec": 2511,
           "short_audio_review_ranges_sec": [
             [
@@ -1107,6 +1171,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-blue-grotto-music-dialogue-protection",
+          "guardrails": [
+            "不声明曲名、BPM、逐拍剪辑、独立音效或具体 ducking 数值。",
+            "音乐与环境声分类只作宏观证据，不能替代人工声学分轨。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "observation_id": "obs-cruise-music-dialogue-protection",
           "guardrails": [
@@ -1147,6 +1219,12 @@
           "start_sec": 550.24,
           "end_sec": 682.04,
           "observation_id": "obs-landmark-music-dialogue-protection"
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 1529.762,
+          "end_sec": 1911.211,
+          "observation_id": "obs-blue-grotto-music-dialogue-protection"
         },
         {
           "source_id": "bilibili-BV1TNZUB4EF6",
@@ -1286,20 +1364,23 @@
     {
       "technique_key": "narrative-end-of-journey-montage-verbal-closure",
       "category": "narrative",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1Mi536EELv",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9667,
+      "average_confidence": 0.97,
       "trigger_examples": [
         "多国旅行结尾既要完成真实返程，也要明确告诉观众这一系列已经结束。",
+        "颜色任务和两城对照需要明确结论，同时保留产品镜头、credits 与拍摄过程余韵。",
         "片名提出是否后悔，结尾必须给出明确回答并让多年旅行画面形成情绪回报。",
         "两小时以上东京合集需要完成实际返程，并用可信对白明确旅程结束。"
       ],
       "treatment_examples": [
         "保留清晨出发、机场、机上座位小摩擦、窗外地理、睡不着和回家进度，最后用一句旅行结束、感谢、‘下个旅程再见’和黑底结束卡闭合。",
+        "先由主持人总结人与自然、财富和颜色，再在城市、海岸、车辆和花絮画面上持续完成旁白，最后以无法固定定义但能让时间慢下来的蓝收束。",
         "在外部剧情片段后回到主持人总结共同经历、包容缺点和理解彼此，完成口头回答与观众邀请，再以多地旅行、合影、海岸和夕阳 credits 收束。",
         "用地铁换乘、餐食、步行和回顾镜头完成返程过程，再保留人工核验的最后五段对白，使结束、体验总结、下一篇章和价格回扣依次成立。"
       ],
@@ -1314,6 +1395,12 @@
           ],
           "final_card": "谢谢观看",
           "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "verbal_closure": true,
+          "product_and_outtake_montage": true,
+          "last_credible_dialogue_sec": 1910.6,
+          "source_id": "bilibili-BV1Mi536EELv"
         },
         {
           "verbal_answer_before_montage": true,
@@ -1347,6 +1434,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-capri-ending-verbal-closure-outtakes",
+          "guardrails": [
+            "片尾画面不能替代明确的主题回答。",
+            "花絮中的残句保留其拍摄语境，不当作新增事实结论。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TYVA6sEhm",
           "observation_id": "obs-travel-marriage-ending-verbal-closure-montage",
           "guardrails": [
@@ -1371,6 +1466,12 @@
           "observation_id": "obs-homecoming-montage-closure"
         },
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 1771.303,
+          "end_sec": 1911.211,
+          "observation_id": "obs-capri-ending-verbal-closure-outtakes"
+        },
+        {
           "source_id": "bilibili-BV1TYVA6sEhm",
           "start_sec": 1430.696,
           "end_sec": 1603.008,
@@ -1387,20 +1488,23 @@
     {
       "technique_key": "narrative-error-discovery-and-explicit-correction",
       "category": "narrative",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9467,
+      "average_confidence": 0.9525,
       "trigger_examples": [
         "人物听到疑似火车站站名后紧张下车，马上发现地点错误。",
+        "赞助任务要求寻找卡布里蓝，但现场出现的多种蓝色容易被过早认定。",
         "人物为防盗换用旧手机后发现镜头裂纹使自拍产生明显光痕。",
         "得到帮助后仍出现方向或交通判断错误，需要让观众理解错误如何被发现和修正。"
       ],
       "treatment_examples": [
         "保留误判前因、下车动作、车辆离开、错误地点线索、自我复盘、向路人展示地图问路及‘仍有时间’的缓解。",
+        "先把城市与足球相关的蓝色纠正为萨伏依蓝，再比较有光和无光的海色，并保留警察局蓝色的自嘲误判，使寻找过程持续开放。",
         "先展示异常自拍画面，再口头确认镜头问题，并通过改变持机与遮挡位置继续拍摄，让风险道具获得真实后果和临时修正。",
         "保留原判断、移动结果、地点不匹配、自我复盘和重新确认路线的过程，再恢复前往目标的行动。"
       ],
@@ -1415,6 +1519,16 @@
             "time_buffer_relief"
           ],
           "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "sequence": [
+            "candidate_color",
+            "explicit_correction",
+            "new_candidate",
+            "comic_false_positive"
+          ],
+          "mission_remains_open": true,
+          "source_id": "bilibili-BV1Mi536EELv"
         },
         {
           "error": "cracked_camera_lens",
@@ -1443,6 +1557,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-capri-blue-error-correction-chain",
+          "guardrails": [
+            "颜色名称按片中解释记录，不当作色彩学或历史定论。",
+            "纠正必须保留原判断和修正理由，不能只留下最终答案。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "observation_id": "obs-cracked-lens-explicit-correction",
           "guardrails": [
@@ -1467,6 +1589,12 @@
           "observation_id": "obs-wrong-stop-correction-chain"
         },
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 782.615,
+          "end_sec": 1132.498,
+          "observation_id": "obs-capri-blue-error-correction-chain"
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "start_sec": 2696.85,
           "end_sec": 2705.4,
@@ -1483,21 +1611,35 @@
     {
       "technique_key": "narrative-experience-followed-by-explicit-evaluation",
       "category": "narrative",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
+        "bilibili-BV1Mi536EELv",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.965,
+      "average_confidence": 0.97,
       "trigger_examples": [
+        "廉价酒店很容易只被当作猎奇素材，需要让观众看到完整入住过程和实际体验。",
         "云南、新疆、罗弗敦和新西兰的推荐若只靠美景，会缺少可执行条件。",
         "完成热门路线后需要判断它是否真的值得，而不是让 montage 自行得出结论。"
       ],
       "treatment_examples": [
+        "保留破碎街道、昏暗院子、找钥匙、投币电梯和开门前担忧，再展示 300 元房间、卫生间和早餐，最后给出没有想象中差且早餐超预期的评价。",
         "每个目的地由主持人先说温度、季节、自驾、日照或路线条件，插入亲历景观和人物画面，再回桌谈说明限制与适合人群。",
         "先由嘉宾说明固定 BGM 与海外传播语境，再让参与者用红绿牌和口头理由评价；最后追问抛开流量后本地人想展示什么。"
       ],
       "parameter_variants": [
+        {
+          "sequence": [
+            "expectation",
+            "arrival_friction",
+            "room_reveal",
+            "breakfast",
+            "evaluation"
+          ],
+          "price_context_visible": true,
+          "source_id": "bilibili-BV1Mi536EELv"
+        },
         {
           "destinations": [
             "云南",
@@ -1523,6 +1665,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-naples-cheap-hotel-blind-box-evaluation",
+          "guardrails": [
+            "卫生、安全和价格结论只适用于片中这次体验。",
+            "不只保留破败细节而删除正向早餐与房间评价。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TYVA6sEhm",
           "observation_id": "obs-travel-marriage-destination-evidence-evaluation",
           "guardrails": [
@@ -1541,6 +1691,12 @@
       ],
       "evidence_ranges": [
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 159.326,
+          "end_sec": 413.413,
+          "observation_id": "obs-naples-cheap-hotel-blind-box-evaluation"
+        },
+        {
           "source_id": "bilibili-BV1TYVA6sEhm",
           "start_sec": 322.823,
           "end_sec": 555.989,
@@ -1557,24 +1713,26 @@
     {
       "technique_key": "narrative-failure-adaptation-payoff",
       "category": "narrative",
-      "source_support": 8,
+      "source_support": 9,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.9562,
+      "average_confidence": 0.96,
       "trigger_examples": [
         "纽约暴雨打断原定户外计划，但人物已经准备替代选项。",
         "最后一天坐错车、买错票并选择没有明确路标的路线，原定轻松徒步失去确定性。",
         "夜间目的地花期已过，原计划的视觉目标失败。",
         "找车、通票、黄金列车和一分钟换乘连续出错，原定独行路线失去确定性。",
         "夜游、找晚餐、赶接驳和再拍星星连续失败，人物同时承受饥饿、疲惫和主观恐惧。",
+        "蓝洞开放依赖天气，商业任务与旅行高潮都可能无法完成。",
         "从德国到巴黎的移动连续出现晚点、站台不明、行李负担、巴士问路和同名地点误选。",
         "标题询问是否后悔，需要证明旅行中的错误与冲突怎样改变两人的关系。",
         "走红照片依赖阳光与蒸汽，但现场云层遮住光线。"
@@ -1585,6 +1743,7 @@
         "保留夜路、失望、自嘲和重新查花期的过程，明确修改第二天路线，最终用盛花地点兑现回报。",
         "让每次误解引出一次求助，再让香港旅客和中国夫妻分别解决票务与换乘问题，最后把偶遇转化为同行和次日行程调整。",
         "完整保留寻找餐厅、停止点餐、黑暗夜路、错过车辆、饿着回房和取消夜拍；随后明确展示提前睡觉、日出前重启、清晨地标与早餐回报。",
+        "明确记录连续关闭和剩余机会，在失败日转向城市、餐饮与找蓝支线；第三天直奔港口、等待、换船、买票和压低身体入洞，最终用蓝光景观与人物反应兑现。",
         "保留问题被发现、向人求助、重新确认、赶路、坐对巴士以及地图错误被纠正的过程，再以巴黎街景和继续前往酒店作为阶段回报。",
         "从攻略犯错、出门延误、照片不满意和旅行争吵讲到允许变数、包容错误、与父母协商，再总结两人如何在多次旅行中逐渐形成默契。",
         "保留判断光线、等待、被路人认出、发现阳光再次被遮和决定不能把鸡蛋放一个篮子的过程，随后转去下一个历史街区。"
@@ -1640,6 +1799,17 @@
             "breakfast"
           ],
           "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "failure_count": 2,
+          "adaptations": [
+            "city_exploration",
+            "food_comparison",
+            "harbor_check",
+            "boat_transfer"
+          ],
+          "payoff": "blue_grotto_entry",
+          "source_id": "bilibili-BV1Mi536EELv"
         },
         {
           "obstacles": [
@@ -1712,6 +1882,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-blue-grotto-failure-adaptation-payoff",
+          "guardrails": [
+            "只学习成片保留的失败、转向与兑现链，不能推断作者删除了哪些素材。",
+            "天气与开放规则需要按实际日期向运营方核验。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "observation_id": "obs-arrival-failure-adaptation-chain",
           "guardrails": [
@@ -1768,6 +1946,12 @@
           "observation_id": "obs-night-failure-dawn-payoff"
         },
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 541.908,
+          "end_sec": 1709.341,
+          "observation_id": "obs-blue-grotto-failure-adaptation-payoff"
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "start_sec": 71.12,
           "end_sec": 541.72,
@@ -1790,20 +1974,23 @@
     {
       "technique_key": "narrative-multiday-reset-with-carryover",
       "category": "narrative",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.93,
+      "average_confidence": 0.94,
       "trigger_examples": [
         "六天合集需要在超长时长中反复重置日期，又不能让每天像互不相关的短片。",
+        "连续多天等待同一景点开放，容易让失败重复或让观众忘记剩余机会。",
         "跨日重启既要让观众明确新一天，也要延续开场已经建立的设备安全限制。",
         "东京多日行程需要重置天气、起床状态和住宿地点，同时保留前一日未解决的问题。"
       ],
       "treatment_examples": [
         "每晚用总结和次日计划保留未完成目标，次日再以日序卡、起床状态和交通行动快速重启，让天气、同行夫妻与住宿选择跨日延续。",
+        "每次天气与开放状态变化都重报任务进度，第三天用 Day 3 卡、退房和最后机会重置时间，同时保留前两天失败造成的紧迫感。",
         "从起晚和赶预约开始第二天，人物在出门前把原内存卡收好并换新卡，再进入巴黎市区行动，让风险线随新日程继续。",
         "用雨天状态和当天目标启动新章，让行李、住宿选择、身体状态和次日计划跨事件延续；每次重置后迅速回到具体行动。"
       ],
@@ -1813,6 +2000,12 @@
           "uses_previous_day_plan": true,
           "manual_day_card_example_sec": 8953.76,
           "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "day_card_visible": true,
+          "carryover_goal": "blue_grotto",
+          "final_attempt_explicit": true,
+          "source_id": "bilibili-BV1Mi536EELv"
         },
         {
           "day_reset": true,
@@ -1842,6 +2035,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-blue-grotto-multiday-reset-carryover",
+          "guardrails": [
+            "时间卡必须与真实拍摄日和任务状态一致。",
+            "不要用重复失败压缩掉每次应对策略的差异。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "observation_id": "obs-day-two-risk-carryover-reset",
           "guardrails": [
@@ -1866,6 +2067,12 @@
           "observation_id": "obs-multiday-chapter-carryover"
         },
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 541.908,
+          "end_sec": 1419.919,
+          "observation_id": "obs-blue-grotto-multiday-reset-carryover"
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "start_sec": 868.12,
           "end_sec": 919.39,
@@ -1876,6 +2083,225 @@
           "start_sec": 1352,
           "end_sec": 3300,
           "observation_id": "obs-rainy-days-carryover"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-place-detail-to-city-system",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm",
+        "bilibili-BV1Mi536EELv"
+      ],
+      "average_confidence": 0.945,
+      "trigger_examples": [
+        "纽约物价与空间压力若只用数字说明会抽象。",
+        "那不勒斯的脏乱标签需要被具体街巷经验和城市身份补充。"
+      ],
+      "treatment_examples": [
+        "从百年熟食店的排队、手工切肉和价格进入街道逃生梯，再连接到住宅缺少阳台、中央公园景观和房价，让食物与建筑细节共同解释城市系统。",
+        "从摩托、狭窄街道、汽油味、歌剧、纵向空间和居民互动出发，再连接马拉多纳壁画、足球历史与南方身份，让混乱同时呈现生活气和认同。"
+      ],
+      "parameter_variants": [
+        {
+          "detail_chain": [
+            "deli",
+            "price",
+            "fire_escape",
+            "balcony",
+            "park_view",
+            "housing"
+          ],
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "sensory_details": [
+            "motorcycles",
+            "narrow_alleys",
+            "fuel_smell",
+            "opera",
+            "vertical_space"
+          ],
+          "identity_bridge": "football",
+          "source_id": "bilibili-BV1Mi536EELv"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-newyork-place-detail-explainer-chain",
+          "guardrails": [
+            "历史和价格数字需另行核实。",
+            "成片个案不能推广为全城普遍事实。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-naples-street-detail-city-system",
+          "guardrails": [
+            "出租车、黑手党和群体性格只按现场陈述归因，不外推为事实。",
+            "不能用足球热情抵消真实的安全或环境风险。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 269.07,
+          "end_sec": 456.16,
+          "observation_id": "obs-newyork-place-detail-explainer-chain"
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 541.908,
+          "end_sec": 870.67,
+          "observation_id": "obs-naples-street-detail-city-system"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-present-experience-to-historical-layer",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1Mi536EELv",
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "两地的当代观感需要历史和人物层，才能避免停留在消费价格对照。",
+        "防空洞火锅既是消费打卡点，也承载重庆战争历史和当代记忆。"
+      ],
+      "treatment_examples": [
+        "那不勒斯从街头足球符号进入马拉多纳与南方身份；卡布里从酒店、街道和海景进入帝王、作家、革命者与名流活动的历史引用，再回到现场景观。",
+        "先以入口、温度、麻将与火锅建立当下体验，再用防空洞结构、档案画面和历史旁白解释战时用途，最后回到墙面展陈和城市韧性。"
+      ],
+      "parameter_variants": [
+        {
+          "bridge": [
+            "present_detail",
+            "archival_or_portrait_insert",
+            "historical_context",
+            "return_to_place"
+          ],
+          "source_id": "bilibili-BV1Mi536EELv"
+        },
+        {
+          "layers": [
+            "food",
+            "temperature",
+            "childhood",
+            "wartime_shelter",
+            "city_resilience"
+          ],
+          "returns_to_present": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-naples-capri-present-to-history-layer",
+          "guardrails": [
+            "历史人物、地点关系和数字需要独立核验。",
+            "引用素材不能代替主持人的现场观察与明确归因。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-cave-hotpot-history-transition",
+          "guardrails": [
+            "战争史、人口和容量数字需用可靠来源核验。",
+            "消费体验不能淡化历史伤痛。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 683.316,
+          "end_sec": 1056.322,
+          "observation_id": "obs-naples-capri-present-to-history-layer"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 1609.3,
+          "end_sec": 1793.4,
+          "observation_id": "obs-chongqing-cave-hotpot-history-transition"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-price-callback-delayed-scenic-payoff",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1Mi536EELv"
+      ],
+      "average_confidence": 0.955,
+      "trigger_examples": [
+        "全程最贵酒店再次激活高物价预期，需要证明价格在这次叙事中的具体回报。",
+        "同房型价格差异很大，需要延迟展示高价端到底购买了什么体验。"
+      ],
+      "treatment_examples": [
+        "先完成房间与价格铺垫，把窗帘和阳台留到 room tour 末尾，再以人物走向窗边、拉帘、开门和坐下的连续动作揭示湖景。",
+        "先公布相近房型可能相差约四十倍，并完整体验那不勒斯低价酒店；之后通过直升机或快艇价格、酒店历史、早餐、空间和物品展示回收高价端。"
+      ],
+      "parameter_variants": [
+        {
+          "payoff": "lake_view",
+          "reveal_order": [
+            "price",
+            "room",
+            "curtain",
+            "balcony",
+            "human_pause"
+          ],
+          "music_likely_sec": [
+            5653,
+            5676.5
+          ],
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "low_price_reveal_first": true,
+          "high_price_payoff_delayed": true,
+          "comparison_includes_process": true,
+          "source_id": "bilibili-BV1Mi536EELv"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-hotel-price-delayed-lake-payoff",
+          "guardrails": [
+            "金额必须来自视频已陈述事实。",
+            "景色 payoff 不提前泄露，且保留人物尺度而非只留空镜。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-naples-capri-hotel-price-callback",
+          "guardrails": [
+            "价格、房型和交通报价按拍摄时片中陈述记录，需另行核验。",
+            "高价不自动等于更好，必须保留体验后评价。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 5400,
+          "end_sec": 5690,
+          "observation_id": "obs-hotel-price-delayed-lake-payoff"
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 159.326,
+          "end_sec": 541.908,
+          "observation_id": "obs-naples-capri-hotel-price-callback"
         }
       ]
     },
@@ -2027,6 +2453,146 @@
           "start_sec": 1793.4,
           "end_sec": 1844.6,
           "observation_id": "obs-chongqing-dual-view-ending-synthesis"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-small-local-encounter-validates-place",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1Mi536EELv",
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.945,
+      "trigger_examples": [
+        "富豪岛和昂贵短暂景点的主题需要当地人的日常视角，避免只剩游客消费想象。",
+        "步道段需要一个具体事件回报‘本地生活关系’而非只拍空景。"
+      ],
+      "treatment_examples": [
+        "先保留船长聊天、换船、等待和入洞互动，再用当地船夫童年把蓝洞当免费泳池的记忆，重新解释游客眼中的奢华与本地生活的关系。",
+        "保留人物担心大鹅会咬、询问名字和来历、得知生日，以及路过婆婆认识它的细节，再由主持人总结先当游客、再当本地人的玩法。"
+      ],
+      "parameter_variants": [
+        {
+          "encounter_role": "boatman",
+          "reframe": [
+            "tourist_price",
+            "brief_visit",
+            "local_childhood_memory"
+          ],
+          "source_id": "bilibili-BV1Mi536EELv"
+        },
+        {
+          "encounter": "community goose",
+          "neighbor_recognition": true,
+          "route_summary_follows": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-capri-local-boatman-reframes-luxury",
+          "guardrails": [
+            "船夫个人记忆不能代表所有当地人。",
+            "与名人、票价和童年有关的陈述需要明确归因并独立核验。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-animal-community-microstory",
+          "guardrails": [
+            "动物行为与安全判断以现场为准。",
+            "不补造社区关系。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 1327.993,
+          "end_sec": 1771.303,
+          "observation_id": "obs-capri-local-boatman-reframes-luxury"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 1502.5,
+          "end_sec": 1609.3,
+          "observation_id": "obs-chongqing-animal-community-microstory"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-theme-bridge-between-chapters",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm",
+        "bilibili-BV1Mi536EELv"
+      ],
+      "average_confidence": 0.955,
+      "trigger_examples": [
+        "从中央公园与电影回忆切到世界杯，若只做交通跳切会显得章节断裂。",
+        "寻找产品颜色的商业任务完成后，需要回到标题中的城市差距并形成非广告式主题回答。"
+      ],
+      "treatment_examples": [
+        "用纽约给房子、景观、时间和世界杯标价的旁白，把前文物价线与球赛票价连接，再进入球场人群。",
+        "从船夫、车夫和自然景观进入财富与头衔退色的判断，再回看车辆在不同光线中的蓝，承认无法提供固定色号，把答案转为旅行让时间慢下来的感受。"
+      ],
+      "parameter_variants": [
+        {
+          "bridge_topics": [
+            "housing",
+            "view",
+            "time",
+            "World Cup"
+          ],
+          "visual_transition": "hard_cut montage",
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "bridge": [
+            "local_people",
+            "nature",
+            "wealth_reframe",
+            "product_color",
+            "time_thesis"
+          ],
+          "fixed_color_answer_rejected": true,
+          "source_id": "bilibili-BV1Mi536EELv"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-money-theme-bridges-to-football",
+          "guardrails": [
+            "价格数字需要事实核验。",
+            "章节桥接不应重复前文完整说明。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-capri-sponsor-mission-to-time-thesis",
+          "guardrails": [
+            "主题升华必须由前文人物、景观和失败过程支持。",
+            "产品颜色与自然景观的关系是片中表达，不作为可量化色彩结论。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 1492.14,
+          "end_sec": 1511.34,
+          "observation_id": "obs-money-theme-bridges-to-football"
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 1709.341,
+          "end_sec": 1901.0,
+          "observation_id": "obs-capri-sponsor-mission-to-time-thesis"
         }
       ]
     },
@@ -2194,6 +2760,75 @@
       ]
     },
     {
+      "technique_key": "opening-place-thesis-to-concrete-mission",
+      "category": "opening_montage",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm",
+        "bilibili-BV1Mi536EELv"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "需要同时兑现纽约视觉承诺并解释为什么此刻来到这里。",
+        "两个地点距离很近但社会想象相反，且赞助颜色任务需要自然进入旅行主线。"
+      ],
+      "treatment_examples": [
+        "用自由女神、街道、地铁、摩天楼、夜景、中央公园和球迷人群承载城市旁白，再以低价世界杯门票和决赛目标结束抽象命题。",
+        "先用卡布里酒店、街景和产品结果预告吸引注意，再明确那不勒斯与卡布里的吃住行人对照，最后把寻找卡布里蓝和蓝洞天气风险设为可验证任务。"
+      ],
+      "parameter_variants": [
+        {
+          "montage_duration_sec": 62.56,
+          "mission": "World Cup final",
+          "has_person_scale": true,
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "phases": [
+            "result_preview",
+            "contrast_thesis",
+            "comparison_axes",
+            "concrete_mission"
+          ],
+          "opening_event_count": 1,
+          "uniform_fast_cut": false,
+          "source_id": "bilibili-BV1Mi536EELv"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-newyork-city-thesis-mission-montage",
+          "guardrails": [
+            "宏观旁白必须由可见城市信息支撑。",
+            "地标镜头应改变尺度、地点或人物状态。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-naples-capri-opening-contrast-mission",
+          "guardrails": [
+            "开场承诺的比较维度和颜色任务必须在正文兑现。",
+            "赞助关系要保持明确，不能把商业命题伪装成纯自然发现。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 22.06,
+          "end_sec": 84.62,
+          "observation_id": "obs-newyork-city-thesis-mission-montage"
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 0.0,
+          "end_sec": 95.062,
+          "observation_id": "obs-naples-capri-opening-contrast-mission"
+        }
+      ]
+    },
+    {
       "technique_key": "playback-rate-fast-forward-travel-compression-visual-estimate",
       "category": "playback_rate",
       "source_support": 3,
@@ -2290,22 +2925,25 @@
     {
       "technique_key": "scenic-human-reaction-to-landmark-geography",
       "category": "scenic",
-      "source_support": 4,
+      "source_support": 5,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
+        "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.95,
+      "average_confidence": 0.956,
       "trigger_examples": [
         "中央公园既承担城市房价说明，也需要提供旅行中的空间与情绪释放。",
+        "蓝洞是抽象颜色任务的视觉高潮，需要同时证明进入难度、空间与人物体验。",
         "塞纳河游船是巴黎一日行的主要视觉回报，需要兼顾地标、城市尺度和人物在场感。",
         "目的地讨论需要同时说明空间规模和两个人在其中的真实体验。",
         "本地路线需要展示热门景点之外的山城空间和日常使用方式。"
       ],
       "treatment_examples": [
         "先以俯瞰和地图逻辑说明公园位置，再用入口马车、人物步行、草坪活动、城市楼群与阿根廷旗帜交替建立尺度，最后回到两人的现场体验。",
+        "从海上等待和换小船开始，保留船夫压低身体、洞口黑暗、蓝光水面、洞内船只和人物出洞后的惊讶反应，使地理奇观与身体体验连在一起。",
         "从登船和人物仰望进入埃菲尔铁塔，交替人物反应、河面宽景、桥梁、两岸建筑、蓝调天空与夜间亮灯，再回到岸上人物。",
         "在雪山、海岸、湖泊和公路宽景中保留人物、车辆、自驾或拍摄动作，再回到主持人的季节与路线评价。",
         "跟随人物穿过楼梯、树荫、居民楼、儿童活动区、棋牌桌和坡道，交替广角环境与居民互动，解释步道如何承担无车生活空间。"
@@ -2322,6 +2960,17 @@
           ],
           "includes_people": true,
           "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "sequence": [
+            "approach",
+            "body_instruction",
+            "dark_entrance",
+            "blue_reveal",
+            "human_reaction"
+          ],
+          "human_scale_visible": true,
+          "source_id": "bilibili-BV1Mi536EELv"
         },
         {
           "viewpoint": "moving_boat",
@@ -2371,6 +3020,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-blue-grotto-entry-human-reaction-geography",
+          "guardrails": [
+            "入口安全动作与船夫指令不能为纯景观节奏而删除。",
+            "不从联系表推断相机速度、变速或拍摄设备。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "observation_id": "obs-cruise-human-to-landmark-geography",
           "guardrails": [
@@ -2401,6 +3058,12 @@
           "start_sec": 1025.5,
           "end_sec": 1180,
           "observation_id": "obs-central-park-human-scale-geography"
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 1419.919,
+          "end_sec": 1709.341,
+          "observation_id": "obs-blue-grotto-entry-human-reaction-geography"
         },
         {
           "source_id": "bilibili-BV1TNZUB4EF6",
@@ -2591,20 +3254,23 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
       "category": "subtitle",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
+        "bilibili-BV1Mi536EELv",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.93,
+      "average_confidence": 0.9375,
       "trigger_examples": [
         "全片横跨城市说明、双人对谈、英语引用、产品内容和球场现场，需要稳定的信息层级。",
+        "双城旅行同时包含现场对白、章节、日期、价格、历史引用、竖屏素材、赞助和 credits，需要稳定的信息层级。",
         "长桌谈、旅行旧素材、图卡、赞助和外部影视片段共存，需要稳定而分层的信息系统。",
         "全片包含方言、英语、多人对话、照片、社交页面、历史档案和栏目图形，需要清楚区分证据层。"
       ],
       "treatment_examples": [
         "以底部居中浅色描边对白字幕为默认层，地点手写标题、FRIENDS 标识和 New York/纽约主标题只在对应章节短暂出现。",
+        "普通对白持续使用底部字幕；Part、Day、地点、价格和颜色标签稀疏出现；竖屏引用、历史照片、人物肖像与赞助产品保留独立视觉边界。",
         "普通对白持续使用底部居中浅色字幕；章节与编号采用小型标签，图卡独立呈现结构，赞助保留标识，外部片段用中英双语层，片尾只保留 credits。",
         "以底部居中浅色描边字幕为默认层；竖屏社交素材、实体相册、黑白档案、地点标题和‘来不来’栏目图形只在对应证据节点出现。"
       ],
@@ -2618,6 +3284,17 @@
             "chapter title"
           ],
           "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "base_position": "bottom_center",
+          "base_lines": [
+            1,
+            2
+          ],
+          "sparse_emphasis": true,
+          "part_and_day_cards": true,
+          "ocr_used": false,
+          "source_id": "bilibili-BV1Mi536EELv"
         },
         {
           "base_position": "bottom_center",
@@ -2651,6 +3328,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-naples-capri-subtitle-evidence-layers",
+          "guardrails": [
+            "未执行 OCR，不声明字幕逐字完整或完全正确。",
+            "价格、引用、赞助和主字幕不能相互遮挡。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TYVA6sEhm",
           "observation_id": "obs-travel-marriage-base-subtitle-layering",
           "guardrails": [
@@ -2673,6 +3358,12 @@
           "start_sec": 0,
           "end_sec": 1901.01,
           "observation_id": "obs-base-subtitle-hierarchy"
+        },
+        {
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 0.0,
+          "end_sec": 1911.211,
+          "observation_id": "obs-naples-capri-subtitle-evidence-layers"
         },
         {
           "source_id": "bilibili-BV1TYVA6sEhm",
@@ -4473,48 +5164,50 @@
       ]
     },
     {
-      "technique_key": "narrative-place-detail-to-city-system",
+      "technique_key": "narrative-parallel-destination-comparison-modules",
       "category": "narrative",
       "source_support": 1,
       "source_ids": [
-        "bilibili-BV15XMC6KETm"
+        "bilibili-BV1Mi536EELv"
       ],
-      "average_confidence": 0.93,
+      "average_confidence": 0.97,
       "trigger_examples": [
-        "纽约物价与空间压力若只用数字说明会抽象。"
+        "老城与富豪岛的反差若只靠标签和美景，会缺少可比较的体验依据。"
       ],
       "treatment_examples": [
-        "从百年熟食店的排队、手工切肉和价格进入街道逃生梯，再连接到住宅缺少阳台、中央公园景观和房价，让食物与建筑细节共同解释城市系统。"
+        "依次让住宿、交通、街巷、服装、历史、商业和饮食在两地成对出现，每个模块都保留现场过程和体验后评价。"
       ],
       "parameter_variants": [
         {
-          "detail_chain": [
-            "deli",
-            "price",
-            "fire_escape",
-            "balcony",
-            "park_view",
-            "housing"
+          "comparison_axes": [
+            "hotel",
+            "transport",
+            "street_life",
+            "people",
+            "history",
+            "food",
+            "visual_identity"
           ],
-          "source_id": "bilibili-BV15XMC6KETm"
+          "alternates_locations": true,
+          "source_id": "bilibili-BV1Mi536EELv"
         }
       ],
       "guardrail_variants": [
         {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "observation_id": "obs-newyork-place-detail-explainer-chain",
+          "source_id": "bilibili-BV1Mi536EELv",
+          "observation_id": "obs-naples-capri-parallel-comparison-modules",
           "guardrails": [
-            "历史和价格数字需另行核实。",
-            "成片个案不能推广为全城普遍事实。"
+            "比较尺度必须来自片中明确价格、体验或画面，不能把标签当结论。",
+            "不把单次旅行经验推广为两地所有居民或游客的普遍事实。"
           ]
         }
       ],
       "evidence_ranges": [
         {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "start_sec": 269.07,
-          "end_sec": 456.16,
-          "observation_id": "obs-newyork-place-detail-explainer-chain"
+          "source_id": "bilibili-BV1Mi536EELv",
+          "start_sec": 159.326,
+          "end_sec": 1327.993,
+          "observation_id": "obs-naples-capri-parallel-comparison-modules"
         }
       ]
     },
@@ -4560,102 +5253,6 @@
           "start_sec": 555.989,
           "end_sec": 892.792,
           "observation_id": "obs-travel-marriage-item-demonstration-memory-proof"
-        }
-      ]
-    },
-    {
-      "technique_key": "narrative-present-experience-to-historical-layer",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1a7Tj6nEe9"
-      ],
-      "average_confidence": 0.97,
-      "trigger_examples": [
-        "防空洞火锅既是消费打卡点，也承载重庆战争历史和当代记忆。"
-      ],
-      "treatment_examples": [
-        "先以入口、温度、麻将与火锅建立当下体验，再用防空洞结构、档案画面和历史旁白解释战时用途，最后回到墙面展陈和城市韧性。"
-      ],
-      "parameter_variants": [
-        {
-          "layers": [
-            "food",
-            "temperature",
-            "childhood",
-            "wartime_shelter",
-            "city_resilience"
-          ],
-          "returns_to_present": true,
-          "source_id": "bilibili-BV1a7Tj6nEe9"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "observation_id": "obs-chongqing-cave-hotpot-history-transition",
-          "guardrails": [
-            "战争史、人口和容量数字需用可靠来源核验。",
-            "消费体验不能淡化历史伤痛。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "start_sec": 1609.3,
-          "end_sec": 1793.4,
-          "observation_id": "obs-chongqing-cave-hotpot-history-transition"
-        }
-      ]
-    },
-    {
-      "technique_key": "narrative-price-callback-delayed-scenic-payoff",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV19sm2BBEDd"
-      ],
-      "average_confidence": 0.97,
-      "trigger_examples": [
-        "全程最贵酒店再次激活高物价预期，需要证明价格在这次叙事中的具体回报。"
-      ],
-      "treatment_examples": [
-        "先完成房间与价格铺垫，把窗帘和阳台留到 room tour 末尾，再以人物走向窗边、拉帘、开门和坐下的连续动作揭示湖景。"
-      ],
-      "parameter_variants": [
-        {
-          "payoff": "lake_view",
-          "reveal_order": [
-            "price",
-            "room",
-            "curtain",
-            "balcony",
-            "human_pause"
-          ],
-          "music_likely_sec": [
-            5653,
-            5676.5
-          ],
-          "source_id": "bilibili-BV19sm2BBEDd"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV19sm2BBEDd",
-          "observation_id": "obs-hotel-price-delayed-lake-payoff",
-          "guardrails": [
-            "金额必须来自视频已陈述事实。",
-            "景色 payoff 不提前泄露，且保留人物尺度而非只留空镜。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV19sm2BBEDd",
-          "start_sec": 5400,
-          "end_sec": 5690,
-          "observation_id": "obs-hotel-price-delayed-lake-payoff"
         }
       ]
     },
@@ -4850,47 +5447,6 @@
       ]
     },
     {
-      "technique_key": "narrative-small-local-encounter-validates-place",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1a7Tj6nEe9"
-      ],
-      "average_confidence": 0.94,
-      "trigger_examples": [
-        "步道段需要一个具体事件回报‘本地生活关系’而非只拍空景。"
-      ],
-      "treatment_examples": [
-        "保留人物担心大鹅会咬、询问名字和来历、得知生日，以及路过婆婆认识它的细节，再由主持人总结先当游客、再当本地人的玩法。"
-      ],
-      "parameter_variants": [
-        {
-          "encounter": "community goose",
-          "neighbor_recognition": true,
-          "route_summary_follows": true,
-          "source_id": "bilibili-BV1a7Tj6nEe9"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "observation_id": "obs-chongqing-animal-community-microstory",
-          "guardrails": [
-            "动物行为与安全判断以现场为准。",
-            "不补造社区关系。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "start_sec": 1502.5,
-          "end_sec": 1609.3,
-          "observation_id": "obs-chongqing-animal-community-microstory"
-        }
-      ]
-    },
-    {
       "technique_key": "narrative-sponsor-demonstration-with-host-friction",
       "category": "narrative",
       "source_support": 1,
@@ -4928,51 +5484,6 @@
           "start_sec": 892.792,
           "end_sec": 1003.035,
           "observation_id": "obs-travel-marriage-sponsor-demo-host-friction"
-        }
-      ]
-    },
-    {
-      "technique_key": "narrative-theme-bridge-between-chapters",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV15XMC6KETm"
-      ],
-      "average_confidence": 0.94,
-      "trigger_examples": [
-        "从中央公园与电影回忆切到世界杯，若只做交通跳切会显得章节断裂。"
-      ],
-      "treatment_examples": [
-        "用纽约给房子、景观、时间和世界杯标价的旁白，把前文物价线与球赛票价连接，再进入球场人群。"
-      ],
-      "parameter_variants": [
-        {
-          "bridge_topics": [
-            "housing",
-            "view",
-            "time",
-            "World Cup"
-          ],
-          "visual_transition": "hard_cut montage",
-          "source_id": "bilibili-BV15XMC6KETm"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "observation_id": "obs-money-theme-bridges-to-football",
-          "guardrails": [
-            "价格数字需要事实核验。",
-            "章节桥接不应重复前文完整说明。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "start_sec": 1492.14,
-          "end_sec": 1511.34,
-          "observation_id": "obs-money-theme-bridges-to-football"
         }
       ]
     },
@@ -5017,47 +5528,6 @@
           "start_sec": 0,
           "end_sec": 88,
           "observation_id": "obs-chongqing-opening-viral-local-question"
-        }
-      ]
-    },
-    {
-      "technique_key": "opening-place-thesis-to-concrete-mission",
-      "category": "opening_montage",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV15XMC6KETm"
-      ],
-      "average_confidence": 0.98,
-      "trigger_examples": [
-        "需要同时兑现纽约视觉承诺并解释为什么此刻来到这里。"
-      ],
-      "treatment_examples": [
-        "用自由女神、街道、地铁、摩天楼、夜景、中央公园和球迷人群承载城市旁白，再以低价世界杯门票和决赛目标结束抽象命题。"
-      ],
-      "parameter_variants": [
-        {
-          "montage_duration_sec": 62.56,
-          "mission": "World Cup final",
-          "has_person_scale": true,
-          "source_id": "bilibili-BV15XMC6KETm"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "observation_id": "obs-newyork-city-thesis-mission-montage",
-          "guardrails": [
-            "宏观旁白必须由可见城市信息支撑。",
-            "地标镜头应改变尺度、地点或人物状态。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "start_sec": 22.06,
-          "end_sec": 84.62,
-          "observation_id": "obs-newyork-city-thesis-mission-montage"
         }
       ]
     },
@@ -5689,6 +6159,35 @@
       },
       "rule": "目的地钩子只占最前面的短段；随后让完整人物设定、疲惫限制和计划成立，再把较密剪辑集中到次日出发与交通推进，避免把长篇开场误做成全程快切。",
       "source_id": "bilibili-BV1ETNMzEEWQ"
+    },
+    {
+      "total_reviewed_sec": 95.062,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 16.53,
+          "function": "先展示卡布里街景、酒店接送想象和车辆镜头，把富豪岛体验与卡布里蓝做成可见的结果预告。"
+        },
+        {
+          "start_sec": 16.53,
+          "end_sec": 55.0,
+          "function": "明确提出那不勒斯混乱老城与卡布里富豪岛相隔很近却气质相反，并承诺从吃、住、行、人和城市感受逐项比较。"
+        },
+        {
+          "start_sec": 55.0,
+          "end_sec": 95.062,
+          "function": "公布寻找卡布里蓝的赞助任务和天气不确定性，再回到机场与抵达过程，让商业目标成为全片可失败、可修正的叙事任务。"
+        }
+      ],
+      "metrics": {
+        "opening_event_count": 1,
+        "opening_15_sec_shot_count": 4,
+        "opening_15_sec_average_shot_sec": 3.921,
+        "main_comparison_sec": 16.53,
+        "sponsor_mission_sec": 55.0
+      },
+      "rule": "对照型旅行视频先短暂展示高价值结果，再说清两个地点的对立命题和比较维度，最后给出贯穿全片且允许失败的具体任务；开场不需要全程高速剪切。",
+      "source_id": "bilibili-BV1Mi536EELv"
     },
     {
       "total_reviewed_sec": 120,
