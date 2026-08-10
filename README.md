@@ -173,7 +173,7 @@ Context packet 必须严格小于 180,000 字符。`--request` 文件必须已�
   --output reference-learning\director-profile.aggregate.json
 ```
 
-十二份正式 Technique Study 聚合为可追踪技巧档案时，必须显式指定来源支持门槛：
+十三份正式 Technique Study 聚合为可追踪技巧档案时，必须显式指定来源支持门槛：
 
 ```powershell
 .\.venv-analysis\Scripts\vlog-director.exe aggregate-techniques `
@@ -190,11 +190,12 @@ Context packet 必须严格小于 180,000 字符。`--request` 文件必须已�
     reference-learning\technique-study.BV1Mi536EELv.v1.json `
     reference-learning\technique-study.BV11Ao7BYEyv.v1.json `
     reference-learning\technique-study.BV1LS3r6gE7k.v1.json `
+    reference-learning\technique-study.BV1xTdwBQEna.v1.json `
   --minimum-source-support 2 `
   --output reference-learning\reference-techniques.aggregate.v1.json
 ```
 
-正式产物包含 12 个独立来源、42 条稳定模式和 57 条来源特定模式。聚合时保留每条模式的来源、观察编号、时间证据和 guardrails；不能把参考片绝对时间或自由格式参数直接套到目标素材。
+正式产物包含 13 个独立来源、44 条稳定模式和 62 条来源特定模式。聚合时保留每条模式的来源、观察编号、时间证据和 guardrails；不能把参考片绝对时间或自由格式参数直接套到目标素材。
 
 Git 只保存 JSON 分析与规则。代理视频、模型缓存、逐帧图片和完整字幕保留在本地。
 

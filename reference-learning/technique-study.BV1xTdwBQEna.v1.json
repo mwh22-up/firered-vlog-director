@@ -1,0 +1,483 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV1xTdwBQEna-v1",
+  "generated_at": "2026-08-10T14:45:00Z",
+  "source": {
+    "source_id": "bilibili-BV1xTdwBQEna",
+    "url": "https://www.bilibili.com/video/BV1xTdwBQEna/",
+    "title": "老婆说，我们云南人就是无敌的！",
+    "duration_sec": 1852.22
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 2718414,
+    "full_analysis_utf8_bytes": 2781076,
+    "proxy_dual_stream_full_decode_exit_code": 0,
+    "video_duration_sec": 1852.22,
+    "shot_count": 674,
+    "event_count": 22,
+    "audio_segment_count": 318,
+    "transcript_segment_count": 1259,
+    "transcript_word_count": 6399,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_language_probability": 1.0,
+    "asr_reported_duration_sec": 1852.224,
+    "vad_transcript_end_sec": 1848.56,
+    "vad_transcript_coverage_ratio": 0.998024,
+    "vad_transcript_tail_gap_sec": 3.66,
+    "tail_visual_crosscheck": {
+      "review_range_sec": [1800.0, 1852.22],
+      "last_trusted_dialogue_sec": 1848.56,
+      "result": "最后可信旁白为‘日子往前’，随后约 3.66 秒是行车、花草与节目结束标题，未发现新增对白。"
+    },
+    "audio_class_ratios": {
+      "speech": 0.8501,
+      "ambient_likely": 0.1255,
+      "music_likely": 0.0089,
+      "silence": 0.0157
+    },
+    "shot_duration_median_sec": 2.269,
+    "shot_duration_p75_sec": 3.27,
+    "event_review_contact_sheet_count": 22,
+    "manual_contact_sheet_count": 10,
+    "manual_review_ranges": [
+      [0.0, 180.0],
+      [180.0, 660.0],
+      [660.0, 1140.0],
+      [1140.0, 1560.0],
+      [1560.0, 1852.22]
+    ],
+    "manual_review_focus": [
+      "opening_kunming_thesis_and_personal_entry",
+      "mushroom_expertise_risk_and_tasting",
+      "flower_auction_market_and_partner_surprise",
+      "southwest_associated_university_history",
+      "independent_bookstore_poems_and_homecoming",
+      "subtitle_archive_and_graphic_layers",
+      "local_humor_and_relationship_reactions",
+      "city_vitality_ending"
+    ]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 120.0,
+    "phases": [
+      {
+        "start_sec": 0.0,
+        "end_sec": 15.0,
+        "function": "夫妻在昆明街头直接确认地点与伴侣的昆明血缘，用人物关系进入城市。"
+      },
+      {
+        "start_sec": 15.0,
+        "end_sec": 60.0,
+        "function": "以菌子、诗歌、阳光与人物反应解释云南‘癫’的节目语气，并提出昆明从中转城市到生活城市的变化。"
+      },
+      {
+        "start_sec": 60.0,
+        "end_sec": 120.0,
+        "function": "用春城景色、当地粉丝送包子、四年前回忆和本地朋友约见，把抽象城市命题落到可验证人物与路线。"
+      }
+    ],
+    "metrics": {
+      "opening_0_to_15_shots": 10,
+      "opening_0_to_15_median_shot_sec": 1.652,
+      "opening_15_to_60_shots": 31,
+      "opening_15_to_60_median_shot_sec": 1.802,
+      "opening_60_to_120_shots": 20,
+      "opening_60_to_120_median_shot_sec": 2.052,
+      "reviewed_0_to_120_shot_count": 59
+    },
+    "rule": "城市观察片先用人物关系和一个可记忆的地方性概念建立入口，再以多个具体例证说明命题，最后引入当地人物与既有记忆作为验证路线；快切集中在概念预告，人物见面和任务说明必须减速。"
+  },
+  "narrative_model": {
+    "premise": "影片以伴侣的昆明血缘和云南‘癫’为个人入口，通过菌子知识与品尝、斗南鲜花产业、西南联大战时历史、独立书店儿童诗和返乡创作者，逐层把网络猎奇词重新定义为昆明人从土地与日子中生长出的松弛、韧性和生命力。",
+    "beats": [
+      "夫妻血缘、城市低估与云南癫的开场命题",
+      "本地朋友、四年前回忆和粉丝偶遇确认人物入口",
+      "由父子专家辨认菌子并解释季节、风险和烹饪",
+      "品尝野生菌火锅与实验菌，并公开来不来评价和返场承诺",
+      "从烤太阳与植物王国转入斗南鲜花拍卖",
+      "展示拍卖、质检、物流、普通花市与伴侣惊喜的完整产业链",
+      "以花的日常价值桥接战时昆明与西南联大",
+      "用现址、旧照片、地图、文字引用和本地朋友对话重建历史空间",
+      "从联大种子转入独立书店、儿童诗和本地创作者",
+      "把返乡、歌舞、饮食、公园与日常人物收束为昆明生命力"
+    ],
+    "rule": "地方文化片不应只累计奇观；每个章节先由当地人物或可见流程建立事实语境，再保留主持人的体验与评价，最后把食物、产业、历史和当代创作连接到同一城市命题。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "先用人物进入街道、市场、校园或书店建立尺度",
+      "以宽景说明植物、拍卖大厅、花市或校园空间",
+      "用菌子、鲜花、屏幕、旧照片、书页和手写诗提供信息细节",
+      "保留当地人物工作、讲解、购买或阅读的动作",
+      "回到主持人与伴侣的反应或城市总结"
+    ],
+    "observed_ranges": [
+      [0.0, 148.148],
+      [180.0, 660.0],
+      [660.0, 1140.0],
+      [1140.0, 1560.0],
+      [1560.0, 1852.22]
+    ],
+    "rule": "昆明的景观价值由自然色彩、生产空间、历史建筑和人物日常共同构成；鲜花、树木、校园与书店镜头只有回答地方生活、产业或历史时才保留为叙事景观。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.0089,
+    "evidence_status": "machine_audio_classification_only",
+    "visual_candidates": [
+      "开场昆明概念与春城景色",
+      "菌子和鲜花生产过程 montage",
+      "西南联大档案与校园转场",
+      "儿童诗、歌舞、公园和片尾城市收束"
+    ],
+    "rule": "机器声学分类只能标记可能的音乐区间；当前没有人工听音证据，不声明曲名、BPM、ducking、逐拍剪切或音乐导致的情绪因果。"
+  },
+  "subtitle_model": {
+    "base_style": "底部居中浅色中文字幕配深色描边，覆盖夫妻口播、专家讲解、市场访问和多人互动。",
+    "emphasis_patterns": [
+      "昆明和节目标题用独立大字完成地点与主题承诺",
+      "菌子名称、风险说明、价格、拍卖字段和鲜花品种使用短时信息层",
+      "西南联大地图、旧照片、引文和时间点与现场画面清楚区分",
+      "儿童手写诗以可读原物为主体，旁白只补充情绪和语境",
+      "来不来评价、笑点关键词和片尾主题使用稀疏强调后恢复基础字幕"
+    ],
+    "rule": "知识密集的地方文化片以稳定对白字幕承载因果，物种、交易、历史和诗歌证据另用可追踪图层；未执行 OCR，不能声明任何字幕、手写诗或档案文字逐字完全正确。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "先建立真实地方词汇、知识或关系语境",
+      "保留主持人的误解、伴侣纠正或当地人的直接回答",
+      "让专家、孩子、物件或现场流程完成落点",
+      "只用一处短字幕、标点或图形加强",
+      "回到体验、风险或城市信息继续推进"
+    ],
+    "observed_ranges": [
+      [60.0, 180.0],
+      [180.0, 660.0],
+      [720.0, 1140.0],
+      [1320.0, 1430.663],
+      [1560.0, 1761.226]
+    ],
+    "rule": "笑点来自米线与米粉、菌子与蘑菇的地方纠正、孩子比成人专业、拍卖误解、夫妻对花的不同兴趣、店员松弛作息和本地人直接表达；知识风险与当地人物尊严必须优先于猎奇。",
+    "playback_rate_note": "市场、道路和档案 montage 的短镜头可由正常速度拍摄及硬切解释；人工帧证据未确认 speed ramp、素材变速或具体倍率。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-kunming-opening-phased-city-thesis",
+      "technique_key": "opening-phased-hook-not-uniform-fast-cut",
+      "start_sec": 0.0,
+      "end_sec": 120.0,
+      "category": "opening_montage",
+      "trigger": "昆明作为常见中转城市，需要同时建立私人关系、城市反差和本期调查方向。",
+      "treatment": "先由夫妻血缘进入昆明，再用菌子、诗歌、阳光和人物例证解释‘癫’，最后减速到粉丝偶遇、四年前回忆和本地朋友路线。",
+      "confidence": 0.99,
+      "parameters": {"phases": ["personal_entry", "city_reframe", "concrete_examples", "local_route"], "uniform_fast_cut": false},
+      "evidence": {"events": ["event-001", "event-002"], "manual_opening_dense_sheet": true, "shot_metrics_verified": true},
+      "guardrails": ["地方概念必须由后文多类证据解释。", "不能把全片做成统一高速的猎奇 montage。"]
+    },
+    {
+      "observation_id": "obs-kunming-underrated-city-local-tests",
+      "technique_key": "opening-underrated-city-thesis-to-local-tests",
+      "start_sec": 0.0,
+      "end_sec": 180.0,
+      "category": "opening_montage",
+      "trigger": "‘从不好玩到好有生活’是抽象口碑判断，需要公开验证路径。",
+      "treatment": "把昆明的食物、诗歌、春城生活和本地人物设为后文测试项，并用伴侣血缘、当地朋友和四年前亲历限制外来者视角。",
+      "confidence": 0.98,
+      "parameters": {"test_domains": ["food", "flower_industry", "history", "bookstore_culture"], "local_people_required": true},
+      "evidence": {"events": ["event-001", "event-002", "event-003"], "full_transcript": true},
+      "guardrails": ["个人体验不能代表全部昆明人。", "网络口碑和地方称谓需保留来源与语境。"]
+    },
+    {
+      "observation_id": "obs-kunming-title-delivers-place-promise",
+      "technique_key": "subtitle-location-title-delivers-promise",
+      "start_sec": 15.0,
+      "end_sec": 77.01,
+      "category": "subtitle",
+      "trigger": "开场多个云南例证需要迅速确认本期真正讨论的是昆明。",
+      "treatment": "在菌子与城市画面间显示高对比昆明大标题和节目标题，随后回到人物口播与底部字幕。",
+      "confidence": 0.98,
+      "parameters": {"location": "Kunming", "title_role": "place_and_theme_promise", "returns_to_dialogue": true},
+      "evidence": {"event_id": "event-001", "manual_opening_sheet": true, "ocr_performed": false},
+      "guardrails": ["地点标题必须与实际画面一致。", "未执行 OCR，标题文字仍需人工核对。"]
+    },
+    {
+      "observation_id": "obs-kunming-partner-origin-personal-entry",
+      "technique_key": "narrative-partner-origin-personal-entry",
+      "start_sec": 0.0,
+      "end_sec": 180.0,
+      "category": "narrative",
+      "trigger": "外地主持人讲地方文化需要说明自己与地点的关系及知识边界。",
+      "treatment": "公开伴侣有四分之一昆明血缘、主持人此前不知道、两人四年前来过但未拍 vlog，再引入认识多年的本地朋友。",
+      "confidence": 0.97,
+      "parameters": {"partner_family_link": true, "prior_visit": true, "local_friend": true},
+      "evidence": {"events": ["event-001", "event-002", "event-003"], "transcript_and_frames": true},
+      "guardrails": ["家庭来源和旧旅行经历需由当事人确认。", "血缘关系不等同于完整地方知识。"]
+    },
+    {
+      "observation_id": "obs-kunming-mushroom-experts-before-tasting",
+      "technique_key": "narrative-guide-expertise-before-action",
+      "start_sec": 180.0,
+      "end_sec": 423.89,
+      "category": "narrative",
+      "trigger": "野生菌品尝涉及专业辨认和现实风险，不能直接进入娱乐反应。",
+      "treatment": "先在市场由长期研究菌类的父亲与孩子辨认品种、解释季节和分类，再进入烹饪、计时、留样和品尝。",
+      "confidence": 0.98,
+      "parameters": {"experts_before_tasting": true, "child_knowledge_visible": true, "risk_context_visible": true},
+      "evidence": {"events": ["event-003", "event-004", "event-005"], "manual_review": true},
+      "guardrails": ["专家身份、物种名称和安全建议需要独立核验。", "儿童专业表现不能被剪成成人无知的单向嘲弄。"]
+    },
+    {
+      "observation_id": "obs-kunming-mushroom-context-before-action",
+      "technique_key": "graphic-context-proof-before-action",
+      "start_sec": 180.0,
+      "end_sec": 480.0,
+      "category": "graphic",
+      "trigger": "菌类差异、季节与中毒风险仅凭外观无法可靠理解。",
+      "treatment": "在市场与餐桌现场叠加菌名、拉丁学名、季节、计时器、留样和风险说明，随后回到专家动作与实际烹饪。",
+      "confidence": 0.91,
+      "parameters": {"fact_layers": ["species_label", "season", "timer", "sample_retention", "risk_caption"], "returns_to_live_action": true},
+      "evidence": {"events": ["event-003", "event-004", "event-005", "event-006"], "manual_frames": true},
+      "guardrails": ["物种、毒性和烹饪安全信息必须独立核验。", "图形说明不能替代专业医疗和食品安全建议。"]
+    },
+    {
+      "observation_id": "obs-kunming-risk-explanation-before-tasting",
+      "technique_key": "narrative-risk-explanation-before-tasting",
+      "start_sec": 312.846,
+      "end_sec": 660.0,
+      "category": "narrative",
+      "trigger": "野生菌中毒常被当作网络笑料，需要先保留现实风险与操作约束。",
+      "treatment": "展示计时、不发筷子、留样、未知物种和烹饪温度讨论，再进入火锅与实验菌品尝、孩子志向和来不来评价。",
+      "confidence": 0.97,
+      "parameters": {"safety_before_humor": true, "tasting_after_timer": true, "evaluation_after_experience": true},
+      "evidence": {"events": ["event-005", "event-006", "event-007", "event-008"], "full_transcript": true},
+      "guardrails": ["不能把中毒、未知菌类或实验样品娱乐化。", "成片流程不构成观众可复制的食用建议。"]
+    },
+    {
+      "observation_id": "obs-kunming-child-knowledge-future-promise",
+      "technique_key": "narrative-local-knowledge-child-future-promise",
+      "start_sec": 237.204,
+      "end_sec": 630.697,
+      "category": "narrative",
+      "trigger": "孩子的菌类知识若只作为反差笑点，会损失长期学习与未来志向。",
+      "treatment": "保留孩子现场辨认、随父亲进山、查书请教科学家和想当研究员的完整链路，再以未来命名新菌和点赞返场形成前向承诺。",
+      "confidence": 0.98,
+      "parameters": {"knowledge_demonstration": true, "learning_history": true, "future_goal": true, "return_hook": true},
+      "evidence": {"events": ["event-004", "event-007", "event-008"], "manual_review": true},
+      "guardrails": ["儿童隐私、志向和家庭信息需获得适当授权。", "返场和命名约定不能当作已经兑现的事实。"]
+    },
+    {
+      "observation_id": "obs-kunming-repeated-experience-evaluation",
+      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "start_sec": 180.0,
+      "end_sec": 1535.0,
+      "category": "narrative",
+      "trigger": "菌子、花市和历史校园内容差异很大，需要统一观众判断方式。",
+      "treatment": "每章先完成真实讲解和体验，再由夫妻分别给出来不来评价；花市允许兴趣分歧，联大则让历史内容本身形成答案。",
+      "confidence": 0.97,
+      "parameters": {"evaluation_label": "come_or_skip", "chapters_evaluated": 3, "disagreement_retained": true},
+      "evidence": {"events": ["event-008", "event-013", "event-018"], "full_transcript": true},
+      "guardrails": ["评价必须发生在充分体验之后。", "个人来不来结论不能冒充普遍旅行建议。"]
+    },
+    {
+      "observation_id": "obs-kunming-repeatable-local-experience-modules",
+      "technique_key": "narrative-repeatable-experience-module",
+      "start_sec": 180.0,
+      "end_sec": 1761.226,
+      "category": "narrative",
+      "trigger": "食物、产业、历史和书店章节需要可重复但不僵硬的结构。",
+      "treatment": "各章重复当地人物或现场流程、知识语境、主持人体验、分歧或反应、明确评价，再用‘癫’和生命力桥接下一章。",
+      "confidence": 0.96,
+      "parameters": {"module_steps": ["local_source", "context", "experience", "reaction", "evaluation", "theme_bridge"], "chapter_count": 4},
+      "evidence": {"events": ["event-003", "event-009", "event-014", "event-019"], "full_video_review": true},
+      "guardrails": ["重复模板不能抹平食品风险、产业规则和历史语境差异。", "每章必须引入新的地点、人物或系统信息。"]
+    },
+    {
+      "observation_id": "obs-kunming-flower-market-economic-system",
+      "technique_key": "narrative-economic-system-through-market-process",
+      "start_sec": 720.0,
+      "end_sec": 1070.203,
+      "category": "narrative",
+      "trigger": "鲜花自由若只展示低价花束，会忽略昆明花业的生产与定价系统。",
+      "treatment": "从拍卖误解进入交易席、倒计时、价格字段、质检、物流和高峰规模，再到普通花市选购与实际花束价格。",
+      "confidence": 0.96,
+      "parameters": {"process_steps": ["auction", "price_decision", "quality_check", "logistics", "retail_purchase"], "consumer_payoff": true},
+      "evidence": {"events": ["event-009", "event-010", "event-011", "event-012", "event-013"], "manual_review": true},
+      "guardrails": ["交易量、价格、市场排名和行业影响需要独立核验。", "单日价格不能代表长期市场水平。"]
+    },
+    {
+      "observation_id": "obs-kunming-flower-production-wide-detail-use",
+      "technique_key": "scenic-production-chain-wide-detail-human-use",
+      "start_sec": 660.0,
+      "end_sec": 1135.434,
+      "category": "scenic",
+      "trigger": "鲜花市场的美景需要同时说明规模、劳动与普通人的使用。",
+      "treatment": "以阳光、花海和大厅宽景建立规模，切到交易屏、质检、花车和花束细节，再保留经纪人、工作人员、游客与伴侣选花反应。",
+      "confidence": 0.97,
+      "parameters": {"sequence": ["natural_light", "market_wide", "process_detail", "worker_action", "consumer_reaction"]},
+      "evidence": {"events": ["event-009", "event-010", "event-011", "event-012", "event-013"], "manual_overview_sheets": true},
+      "guardrails": ["美景 montage 不能删掉劳动和价格语境。", "拍摄不得妨碍交易、工作人员或游客隐私。"]
+    },
+    {
+      "observation_id": "obs-kunming-scenic-human-place-reaction",
+      "technique_key": "scenic-human-reaction-to-landmark-geography",
+      "start_sec": 660.0,
+      "end_sec": 1683.682,
+      "category": "scenic",
+      "trigger": "花市、校园和书店只有放入人物尺度，才能从地标转成生活空间。",
+      "treatment": "先给鲜花大厅、校园建筑、旧教室和书店宽景，再保留伴侣选花、当地朋友讲解、学生与读者活动和主持人阅读反应。",
+      "confidence": 0.96,
+      "parameters": {"human_scale_visible": true, "wide_detail_reaction": true, "place_types": ["market", "campus", "bookstore"]},
+      "evidence": {"events": ["event-009", "event-014", "event-019", "event-020"], "manual_review": true},
+      "guardrails": ["人物反应不能替代地点历史和运营事实。", "不同地点的镜头不能被剪成同一空间。"]
+    },
+    {
+      "observation_id": "obs-kunming-present-flowers-to-war-history",
+      "technique_key": "narrative-present-experience-to-historical-layer",
+      "start_sec": 1070.203,
+      "end_sec": 1535.0,
+      "category": "narrative",
+      "trigger": "昆明当下的鲜花与松弛生活需要历史纵深，避免只成为消费景观。",
+      "treatment": "从普通人买菜也带花的文字记忆进入 1938 年西南联大，结合现址、教室、旧照片、地图和本地朋友讲解战时迁徙与教育。",
+      "confidence": 0.96,
+      "parameters": {"present_anchor": "everyday_flowers", "historical_layer": "Southwest_Associated_University", "returns_to_current_city": true},
+      "evidence": {"events": ["event-014", "event-015", "event-016", "event-017", "event-018"], "manual_archive_review": true},
+      "guardrails": ["历史年份、人物、引文和迁徙路线必须独立核验。", "档案素材来源与授权需要确认。"]
+    },
+    {
+      "observation_id": "obs-kunming-archive-card-over-campus",
+      "technique_key": "graphic-inline-reference-card-over-live-scene",
+      "start_sec": 1140.0,
+      "end_sec": 1507.339,
+      "category": "graphic",
+      "trigger": "现今校园无法单独呈现战时迁徙、旧建筑和文字记录。",
+      "treatment": "在校园与教室现场旁短暂插入旧照片、地图、文字引用和路线图，读完即回到当前建筑与人物讲解。",
+      "confidence": 0.94,
+      "parameters": {"reference_types": ["archive_photo", "map", "quotation", "migration_route"], "returns_to_live_scene": true},
+      "evidence": {"events": ["event-015", "event-016", "event-017", "event-018"], "manual_frames": true},
+      "guardrails": ["档案来源、引文和授权必须独立核验。", "旧画面不能冒充当前校园状态。"]
+    },
+    {
+      "observation_id": "obs-kunming-physical-archive-time-series",
+      "technique_key": "graphic-physical-archive-time-series",
+      "start_sec": 1190.0,
+      "end_sec": 1570.869,
+      "category": "graphic",
+      "trigger": "西南联大的八年与其后文化影响需要可见的时间序列。",
+      "treatment": "用迁徙地图、战时旧照、茅草与铁皮教室、人物资料、现址展陈和当代书店依次连接过去与现在。",
+      "confidence": 0.93,
+      "parameters": {"archive_sequence": ["migration", "wartime_campus", "teachers_students", "present_site", "current_bookstore"]},
+      "evidence": {"events": ["event-015", "event-016", "event-017", "event-019"], "manual_review": true},
+      "guardrails": ["时间顺序和人物身份需要独立核验。", "不同来源档案必须保留必要出处。"]
+    },
+    {
+      "observation_id": "obs-kunming-history-to-current-creative-ecosystem",
+      "technique_key": "narrative-historical-institution-to-current-creative-ecosystem",
+      "start_sec": 1140.0,
+      "end_sec": 1761.226,
+      "category": "narrative",
+      "trigger": "历史校园若在参观结束后断开，会成为孤立知识段。",
+      "treatment": "从联大师生、文学与开放旁听的影响转入独立书店、本土书籍、儿童诗、松弛店员和返乡创作者，提出历史种子仍在当代昆明生长。",
+      "confidence": 0.95,
+      "parameters": {"historical_seed": "education_and_literature", "current_outputs": ["independent_bookstore", "children_poetry", "local_creators"]},
+      "evidence": {"events": ["event-018", "event-019", "event-020", "event-021"], "transcript_and_frames": true},
+      "guardrails": ["历史影响属于成片提出的解释，不是已证明的单一因果。", "书店与创作者观点不能代表全部昆明文化生态。"]
+    },
+    {
+      "observation_id": "obs-kunming-children-poems-human-story",
+      "technique_key": "narrative-object-builds-longitudinal-human-story",
+      "start_sec": 1560.0,
+      "end_sec": 1683.682,
+      "category": "narrative",
+      "trigger": "城市松弛与温柔若只由主持人概括会缺少具体对象。",
+      "treatment": "让读者信、儿童手写诗和本土书籍成为叙事锚点，保留主持人逐页阅读、情绪变化和对母子关系的理解。",
+      "confidence": 0.97,
+      "parameters": {"anchor_objects": ["reader_letters", "children_poems", "local_books"], "reaction_after_reading": true},
+      "evidence": {"events": ["event-019", "event-020"], "manual_bookstore_sheet": true},
+      "guardrails": ["儿童作品、姓名和家庭信息需保护隐私并核对授权。", "未执行 OCR，诗句逐字准确性仍需人工复核。"]
+    },
+    {
+      "observation_id": "obs-kunming-local-encounters-validate-place",
+      "technique_key": "narrative-small-local-encounter-validates-place",
+      "start_sec": 60.0,
+      "end_sec": 1761.226,
+      "category": "narrative",
+      "trigger": "‘昆明松弛又有生命力’需要由不同普通人物反复验证。",
+      "treatment": "保留送包子的粉丝、菌类父子、鲜花从业者、本地朋友、校园访客、书店员工和返乡创作者的短交流，让城市判断来自多点人物。",
+      "confidence": 0.96,
+      "parameters": {"encounter_types": ["fan", "expert_family", "market_workers", "local_friend", "bookstore_creators"], "single_encounter_not_overgeneralized": true},
+      "evidence": {"events": ["event-002", "event-004", "event-010", "event-016", "event-021"], "full_video_review": true},
+      "guardrails": ["任何单个人物都不能代表全部昆明人。", "偶遇人物的隐私、授权和观点语境需要保留。"]
+    },
+    {
+      "observation_id": "obs-kunming-real-awkward-local-humor",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 60.0,
+      "end_sec": 1761.226,
+      "category": "humor",
+      "trigger": "地方文化知识密度高，需要真实关系反应释放节奏而不贬低当地人。",
+      "treatment": "保留米线与米粉、菌子与蘑菇纠正、孩子专业回答、拍卖误解、夫妻花市分歧、校园问答和书店松弛作息的完整来回。",
+      "confidence": 0.98,
+      "parameters": {"setup_reaction_resolution": true, "local_person_has_final_word": true, "single_accent_emphasis": true},
+      "evidence": {"events": ["event-002", "event-004", "event-009", "event-013", "event-017", "event-021"], "manual_review": true},
+      "guardrails": ["不把方言、知识差异、儿童或店员剪成单向笑料。", "食品安全和历史事实优先于笑点节奏。"]
+    },
+    {
+      "observation_id": "obs-kunming-live-life-to-vitality-theme",
+      "technique_key": "narrative-live-event-to-universal-theme",
+      "start_sec": 1683.682,
+      "end_sec": 1848.56,
+      "category": "narrative",
+      "trigger": "网络语境中的‘癫’容易停留在猎奇标签，需要在结尾完成价值重定义。",
+      "treatment": "从返乡创作者、饮食、歌舞、老人、花木、公园与街巷日常提炼出松弛、恋家和生龙活虎，把‘癫’总结为从土地与日子中长出的生命力。",
+      "confidence": 0.97,
+      "parameters": {"live_examples_before_thesis": true, "theme": "grounded_vitality", "ending_dialogue_sec": 1848.56},
+      "evidence": {"events": ["event-021", "event-022"], "manual_tail_and_overview_sheets": true, "full_transcript": true},
+      "guardrails": ["价值总结不能抹平城市内部差异。", "地方标签必须在多类人物和生活证据之后使用。"]
+    },
+    {
+      "observation_id": "obs-kunming-dialogue-subtitle-sparse-evidence",
+      "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
+      "start_sec": 0.0,
+      "end_sec": 1852.22,
+      "category": "subtitle",
+      "trigger": "全片包含专家知识、市场数字、历史引用和多人互动，需要稳定基础字幕与独立证据层。",
+      "treatment": "以底部字幕持续承载对白，只在地点标题、菌名、拍卖信息、地图、引文、诗歌和来不来评价处使用稀疏高层图形。",
+      "confidence": 0.98,
+      "parameters": {"base_position": "bottom_center", "sparse_layers": ["location", "species", "market_data", "archive", "poem", "evaluation"]},
+      "evidence": {"manual_contact_sheets": 10, "subtitle_layers_visually_verified": true, "ocr_performed": false},
+      "guardrails": ["未执行 OCR，所有文字准确性仍需人工听校和查证。", "信息图层不能遮挡人物脸部、实物细节或基础字幕。"]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 79328,
+    "serialized_utf8_bytes": 94296,
+    "maximum_characters": 180000,
+    "character_comparison": "strictly_less_than",
+    "final_responses_request": {
+      "serialized_characters": 69888,
+      "serialized_utf8_bytes": 86192,
+      "maximum_utf8_bytes": 200000,
+      "byte_comparison": "strictly_less_than",
+      "body_sha256": "4e2ecc9d0117719ac6494af0beac8ad7bcecb8e21cbf123b5f559b24062e961c",
+      "contains_model": true,
+      "contains_instructions": true,
+      "contains_input": true,
+      "contains_tools": true,
+      "contains_text_json_schema": true,
+      "validation_scope": "exact UTF-8 byte gate and minimum Responses structure; no external model call was made"
+    }
+  },
+  "limitations": [
+    "参考成片只提供正向保留模式；没有原始素材、成片与 EDL 映射，不能推断作者真实删片偏好。",
+    "人工帧证据未确认 speed ramp、具体播放倍率、复杂转场机制或独立音效；市场和道路短镜头不能单独证明变速。",
+    "音乐分类来自机器声学启发式，当前没有人工听音证据，不声明曲名、BPM、ducking 数值、逐拍剪切或音乐因果。",
+    "未执行 OCR，不能声明中文字幕、菌名、交易屏、历史引文、地图、手写诗或价格逐字完全正确。",
+    "ASR 最后可信旁白到 1848.56 秒；片尾约 3.66 秒经密集抽帧确认为行车、花草和节目结束标题，没有执行独立无 VAD 音频复核。",
+    "菌类物种、毒性、烹饪安全、实验样品、市场排名、鲜花交易量与价格、历史年份、人物、引文和迁徙路线均需独立核验。",
+    "旧照片、地图、文字引用、儿童诗、读者信、人物肖像和产品画面的来源、隐私与授权需要独立核验。",
+    "伴侣血缘、本地朋友、从业者、店员和创作者的个体经验不能代表全部昆明人；本 Study 不构成食品、旅行、历史或消费建议。"
+  ]
+}

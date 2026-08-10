@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-0bff22e1ae1e",
-  "generated_at": "2026-08-10T14:10:28.884186+00:00",
-  "source_count": 12,
+  "profile_id": "aggregated-reference-techniques-v1-ac1cba13f7c1",
+  "generated_at": "2026-08-10T14:42:32.980155+00:00",
+  "source_count": 13,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
     "bilibili-BV15XMC6KETm",
@@ -15,26 +15,30 @@
     "bilibili-BV1TNZUB4EF6",
     "bilibili-BV1TYVA6sEhm",
     "bilibili-BV1a7Tj6nEe9",
-    "bilibili-BV1aDHQejEAP"
+    "bilibili-BV1aDHQejEAP",
+    "bilibili-BV1xTdwBQEna"
   ],
   "minimum_source_support": 2,
   "stable_patterns": [
     {
       "technique_key": "graphic-context-proof-before-action",
       "category": "graphic",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
-        "bilibili-BV1CrHwzUEJa"
+        "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9,
+      "average_confidence": 0.9033,
       "trigger_examples": [
         "泰拳训练若直接进入娱乐对打，会缺少运动文化和风险尺度。",
-        "临时遇到旅伴并决定赶去买冰淇淋，需要快速解释信息来源。"
+        "临时遇到旅伴并决定赶去买冰淇淋，需要快速解释信息来源。",
+        "菌类差异、季节与中毒风险仅凭外观无法可靠理解。"
       ],
       "treatment_examples": [
         "在基础训练前用拳馆、历史、职业人数和签证等事实字幕建立语境，再回到教练示范。",
-        "在真实会面画面上短暂叠加聊天截图和一句解释，读完即撤掉，随后直接进入购买行动。"
+        "在真实会面画面上短暂叠加聊天截图和一句解释，读完即撤掉，随后直接进入购买行动。",
+        "在市场与餐桌现场叠加菌名、拉丁学名、季节、计时器、留样和风险说明，随后回到专家动作与实际烹饪。"
       ],
       "parameter_variants": [
         {
@@ -46,6 +50,17 @@
           "overlay_type": "chat_screenshot",
           "estimated_duration_sec": 3.0,
           "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "fact_layers": [
+            "species_label",
+            "season",
+            "timer",
+            "sample_retention",
+            "risk_caption"
+          ],
+          "returns_to_live_action": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -64,6 +79,14 @@
             "截图必须裁掉无关个人信息。",
             "截图不遮挡人物脸部和基础字幕。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-mushroom-context-before-action",
+          "guardrails": [
+            "物种、毒性和烹饪安全信息必须独立核验。",
+            "图形说明不能替代专业医疗和食品安全建议。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -78,6 +101,12 @@
           "start_sec": 1286,
           "end_sec": 1291,
           "observation_id": "obs-chat-screenshot-action-context"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 180.0,
+          "end_sec": 480.0,
+          "observation_id": "obs-kunming-mushroom-context-before-action"
         }
       ]
     },
@@ -150,23 +179,25 @@
     {
       "technique_key": "graphic-inline-reference-card-over-live-scene",
       "category": "graphic",
-      "source_support": 6,
+      "source_support": 7,
       "source_ids": [
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
-        "bilibili-BV1a7Tj6nEe9"
+        "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9533,
+      "average_confidence": 0.9514,
       "trigger_examples": [
         "远处动物难以仅凭现场低清画面辨认，需要短暂提供语义背景。",
         "口述招牌错误和补救时，观众需要看到沟通证据与成品的关系。",
         "城市历史、竖屏视频、人物身份、价格和产品颜色需要证据层，但全屏长停留会打断旅行现场。",
         "皇冠展品需要一条可见背景信息连接人物观察与现实事件。",
         "口头列举四个目的地标准后，观众需要一个可回看的比较框架。",
-        "摄影师走红照片需要和现实巷道、光线与构图位置建立可验证映射。"
+        "摄影师走红照片需要和现实巷道、光线与构图位置建立可验证映射。",
+        "现今校园无法单独呈现战时迁徙、旧建筑和文字记录。"
       ],
       "treatment_examples": [
         "在仍可看见底层草地的情况下叠加竖向白底图文卡，读完即撤，再回到动物近景。",
@@ -174,7 +205,8 @@
         "在现场与口播之间短暂插入竖屏视频、历史照片、人物肖像、价格字幕、Part/Day 卡和产品画面，随后快速回到人物或地点继续验证。",
         "在皇冠近景之间插入带来源标识的竖屏新闻素材，短暂解释卢浮宫失窃事件，随后直接回到展品和现场游览。",
         "在桌谈之间插入四色和便签式四因素图卡，把预算适配、出片、新手友好和出行月份固定为后续讨论的参照。",
-        "短暂展示社交平台照片和手机页面，再切到同一地点的楼道、菜市场与俯视关系，让人物指出光线将进入的位置。"
+        "短暂展示社交平台照片和手机页面，再切到同一地点的楼道、菜市场与俯视关系，让人物指出光线将进入的位置。",
+        "在校园与教室现场旁短暂插入旧照片、地图、文字引用和路线图，读完即回到当前建筑与人物讲解。"
       ],
       "parameter_variants": [
         {
@@ -221,6 +253,16 @@
           "returns_to_live_scene": true,
           "composition_match": true,
           "source_id": "bilibili-BV1a7Tj6nEe9"
+        },
+        {
+          "reference_types": [
+            "archive_photo",
+            "map",
+            "quotation",
+            "migration_route"
+          ],
+          "returns_to_live_scene": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -271,6 +313,14 @@
             "引用图片须具备使用权和来源。",
             "不能用后期画面伪装为当时光线。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-archive-card-over-campus",
+          "guardrails": [
+            "档案来源、引文和授权必须独立核验。",
+            "旧画面不能冒充当前校园状态。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -309,6 +359,12 @@
           "start_sec": 756.1,
           "end_sec": 885.8,
           "observation_id": "obs-chongqing-reference-image-to-real-place"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 1140.0,
+          "end_sec": 1507.339,
+          "observation_id": "obs-kunming-archive-card-over-campus"
         }
       ]
     },
@@ -379,19 +435,22 @@
     {
       "technique_key": "graphic-physical-archive-time-series",
       "category": "graphic",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV1LS3r6gE7k",
-        "bilibili-BV1a7Tj6nEe9"
+        "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.98,
+      "average_confidence": 0.9633,
       "trigger_examples": [
         "五年创作史需要比口头总结更具体的时间证据。",
-        "共同记忆和街区变化需要比口述更具体的时间证据。"
+        "共同记忆和街区变化需要比口述更具体的时间证据。",
+        "西南联大的八年与其后文化影响需要可见的时间序列。"
       ],
       "treatment_examples": [
         "依次展示第一块鹿米仓牌、手绘牌、不断生长的照片墙和 2021 至 2025 年份画面，把版本变化与团队记忆排列成时间序列。",
-        "让人物翻看实体相册并指认 2019、2021 等同地点照片，穿插当前街巷，形成过去与现在的可见对照。"
+        "让人物翻看实体相册并指认 2019、2021 等同地点照片，穿插当前街巷，形成过去与现在的可见对照。",
+        "用迁徙地图、战时旧照、茅草与铁皮教室、人物资料、现址展陈和当代书店依次连接过去与现在。"
       ],
       "parameter_variants": [
         {
@@ -409,6 +468,16 @@
           "same_location_comparison": true,
           "years_visible": true,
           "source_id": "bilibili-BV1a7Tj6nEe9"
+        },
+        {
+          "archive_sequence": [
+            "migration",
+            "wartime_campus",
+            "teachers_students",
+            "present_site",
+            "current_bookstore"
+          ],
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -427,6 +496,14 @@
             "照片版权和肖像权需确认。",
             "年份必须能从相册或当事人证词核实。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-physical-archive-time-series",
+          "guardrails": [
+            "时间顺序和人物身份需要独立核验。",
+            "不同来源档案必须保留必要出处。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -441,6 +518,12 @@
           "start_sec": 1031.7,
           "end_sec": 1181,
           "observation_id": "obs-chongqing-album-time-series-evidence"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 1190.0,
+          "end_sec": 1570.869,
+          "observation_id": "obs-kunming-physical-archive-time-series"
         }
       ]
     },
@@ -801,7 +884,7 @@
     {
       "technique_key": "humor-preserve-real-awkward-process",
       "category": "humor",
-      "source_support": 12,
+      "source_support": 13,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
@@ -814,9 +897,10 @@
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9",
-        "bilibili-BV1aDHQejEAP"
+        "bilibili-BV1aDHQejEAP",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9583,
+      "average_confidence": 0.96,
       "trigger_examples": [
         "普通成年人跟不上专业泰拳训练，真实落差比预制笑话更有可信度。",
         "主讲人自称不懂足球，但仍要记录世界杯现场。",
@@ -829,7 +913,8 @@
         "独自旅行请路人拍照时同时要交接手机和保管购物袋，产生真实递物误会。",
         "旅行结婚的相处建议如果只给结论，会缺少冲突为何发生和如何修复的可信度。",
         "主持人要复刻机车短视频动作，但对手势、腿部和转身顺序不熟。",
-        "长时间问路同时存在语言障碍、地图理解和追加问题，快速跳到答案会失去真实关系变化。"
+        "长时间问路同时存在语言障碍、地图理解和追加问题，快速跳到答案会失去真实关系变化。",
+        "地方文化知识密度高，需要真实关系反应释放节奏而不贬低当地人。"
       ],
       "treatment_examples": [
         "保留动作失败、怕疼、自嘲、同伴起哄、对打和碰撞后的连续反应，再回到训练结果。",
@@ -843,7 +928,8 @@
         "保留提出拍照请求、示范构图、交接手机、误把包递给另一人、人物意识到错误和致谢的完整过程，再进入游船集合。",
         "保留攻略分工、出门前如厕、睡眠与水肿、拍照角度、夸奖敷衍和发音纠正的完整来回，让尴尬过程自然落到状态管理、允许变数和包容错误。",
         "保留嘉宾逐步示范、人物夹腿转身、手势像鸡爪的纠正、互相扶持和重新尝试，再展示夜间移动结果。",
-        "保留首次开口、双方理解失败、展示地图、尝试回答、追加问题、等待和暂时分开的全过程，让尴尬由真实停顿累积。"
+        "保留首次开口、双方理解失败、展示地图、尝试回答、追加问题、等待和暂时分开的全过程，让尴尬由真实停顿累积。",
+        "保留米线与米粉、菌子与蘑菇纠正、孩子专业回答、拍卖误解、夫妻花市分歧、校园问答和书店松弛作息的完整来回。"
       ],
       "parameter_variants": [
         {
@@ -922,6 +1008,12 @@
           "resolution_deferred": true,
           "playback_rate": null,
           "source_id": "bilibili-BV1aDHQejEAP"
+        },
+        {
+          "setup_reaction_resolution": true,
+          "local_person_has_final_word": true,
+          "single_accent_emphasis": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -1019,6 +1111,14 @@
             "笑点落在主角的沟通困难，不嘲弄学生、口音或能力。",
             "外语内容必须人工核对，不能直接采用不确定 ASR。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-real-awkward-local-humor",
+          "guardrails": [
+            "不把方言、知识差异、儿童或店员剪成单向笑料。",
+            "食品安全和历史事实优先于笑点节奏。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -1093,6 +1193,12 @@
           "start_sec": 7140,
           "end_sec": 7583.633,
           "observation_id": "obs-schoolboy-directions-awkward-process"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 60.0,
+          "end_sec": 1761.226,
+          "observation_id": "obs-kunming-real-awkward-local-humor"
         }
       ]
     },
@@ -2084,25 +2190,28 @@
     {
       "technique_key": "narrative-experience-followed-by-explicit-evaluation",
       "category": "narrative",
-      "source_support": 4,
+      "source_support": 5,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TYVA6sEhm",
-        "bilibili-BV1a7Tj6nEe9"
+        "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9675,
+      "average_confidence": 0.968,
       "trigger_examples": [
         "观众需要知道短期体验与职业训练之间的差距。",
         "廉价酒店很容易只被当作猎奇素材，需要让观众看到完整入住过程和实际体验。",
         "云南、新疆、罗弗敦和新西兰的推荐若只靠美景，会缺少可执行条件。",
-        "完成热门路线后需要判断它是否真的值得，而不是让 montage 自行得出结论。"
+        "完成热门路线后需要判断它是否真的值得，而不是让 montage 自行得出结论。",
+        "菌子、花市和历史校园内容差异很大，需要统一观众判断方式。"
       ],
       "treatment_examples": [
         "完成基础动作、对打和意外后，由主持人与教练明确评价初学者能得到什么、职业风险是什么。",
         "保留破碎街道、昏暗院子、找钥匙、投币电梯和开门前担忧，再展示 300 元房间、卫生间和早餐，最后给出没有想象中差且早餐超预期的评价。",
         "每个目的地由主持人先说温度、季节、自驾、日照或路线条件，插入亲历景观和人物画面，再回桌谈说明限制与适合人群。",
-        "先由嘉宾说明固定 BGM 与海外传播语境，再让参与者用红绿牌和口头理由评价；最后追问抛开流量后本地人想展示什么。"
+        "先由嘉宾说明固定 BGM 与海外传播语境，再让参与者用红绿牌和口头理由评价；最后追问抛开流量后本地人想展示什么。",
+        "每章先完成真实讲解和体验，再由夫妻分别给出来不来评价；花市允许兴趣分歧，联大则让历史内容本身形成答案。"
       ],
       "parameter_variants": [
         {
@@ -2142,6 +2251,12 @@
           "reason_required": true,
           "next_route_question": true,
           "source_id": "bilibili-BV1a7Tj6nEe9"
+        },
+        {
+          "evaluation_label": "come_or_skip",
+          "chapters_evaluated": 3,
+          "disagreement_retained": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -2176,6 +2291,14 @@
             "反馈样本只是片中参与者观点。",
             "评价结果不替代安全与适配判断。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-repeated-experience-evaluation",
+          "guardrails": [
+            "评价必须发生在充分体验之后。",
+            "个人来不来结论不能冒充普遍旅行建议。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -2202,6 +2325,12 @@
           "start_sec": 584.7,
           "end_sec": 756.1,
           "observation_id": "obs-chongqing-explicit-route-evaluation"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 180.0,
+          "end_sec": 1535.0,
+          "observation_id": "obs-kunming-repeated-experience-evaluation"
         }
       ]
     },
@@ -2490,6 +2619,141 @@
       ]
     },
     {
+      "technique_key": "narrative-guide-expertise-before-action",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV1xTdwBQEna"
+      ],
+      "average_confidence": 0.975,
+      "trigger_examples": [
+        "观众需要理解教练为什么值得信任，才能判断后续训练难度和风险。",
+        "野生菌品尝涉及专业辨认和现实风险，不能直接进入娱乐反应。"
+      ],
+      "treatment_examples": [
+        "先介绍拳馆、泰拳女王的家庭和冠军背景，再进入动作示范与主持人练习。",
+        "先在市场由长期研究菌类的父亲与孩子辨认品种、解释季节和分类，再进入烹饪、计时、留样和品尝。"
+      ],
+      "parameter_variants": [
+        {
+          "expert_profile_before_practice": true,
+          "profile_evidence_types": [
+            "family_history",
+            "championship",
+            "gym_context"
+          ],
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "experts_before_tasting": true,
+          "child_knowledge_visible": true,
+          "risk_context_visible": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-expert-before-muay-action",
+          "guardrails": [
+            "冠军数量和家庭信息需要独立核验。",
+            "人物背景只说明专业语境，不制造个人崇拜。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-mushroom-experts-before-tasting",
+          "guardrails": [
+            "专家身份、物种名称和安全建议需要独立核验。",
+            "儿童专业表现不能被剪成成人无知的单向嘲弄。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 60.294,
+          "end_sec": 286.453,
+          "observation_id": "obs-bangkok-expert-before-muay-action"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 180.0,
+          "end_sec": 423.89,
+          "observation_id": "obs-kunming-mushroom-experts-before-tasting"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-live-event-to-universal-theme",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm",
+        "bilibili-BV1xTdwBQEna"
+      ],
+      "average_confidence": 0.965,
+      "trigger_examples": [
+        "比赛现场已经提供进球、观众和冲突素材，需要回答非球迷为什么仍然在意。",
+        "网络语境中的‘癫’容易停留在猎奇标签，需要在结尾完成价值重定义。"
+      ],
+      "treatment_examples": [
+        "先保留突然进球和人群反应，再从足球是微缩战争的比喻进入规则、文明底线和不同人共同观看同一事件的旁白，画面继续展示比赛、球迷与公共观看空间。",
+        "从返乡创作者、饮食、歌舞、老人、花木、公园与街巷日常提炼出松弛、恋家和生龙活虎，把‘癫’总结为从土地与日子中长出的生命力。"
+      ],
+      "parameter_variants": [
+        {
+          "theme": [
+            "conflict",
+            "rules",
+            "civilization",
+            "shared_attention"
+          ],
+          "returns_to_live_images": true,
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "live_examples_before_thesis": true,
+          "theme": "grounded_vitality",
+          "ending_dialogue_sec": 1848.56,
+          "source_id": "bilibili-BV1xTdwBQEna"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-football-conflict-rules-theme-rise",
+          "guardrails": [
+            "战争与球队背景属于敏感事实，必须核验后使用。",
+            "主题升华应建立在真实事件之后，不提前替现场下结论。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-live-life-to-vitality-theme",
+          "guardrails": [
+            "价值总结不能抹平城市内部差异。",
+            "地方标签必须在多类人物和生活证据之后使用。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 1708.11,
+          "end_sec": 1777.24,
+          "observation_id": "obs-football-conflict-rules-theme-rise"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 1683.682,
+          "end_sec": 1848.56,
+          "observation_id": "obs-kunming-live-life-to-vitality-theme"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-multiday-reset-with-carryover",
       "category": "narrative",
       "source_support": 4,
@@ -2607,19 +2871,22 @@
     {
       "technique_key": "narrative-object-builds-longitudinal-human-story",
       "category": "narrative",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV1LS3r6gE7k",
-        "bilibili-BV1a7Tj6nEe9"
+        "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.985,
+      "average_confidence": 0.98,
       "trigger_examples": [
         "工作室从 1.0 到 3.0 的变化需要一个可触摸的叙事锚点。",
-        "山城巷如果只讲建筑历史仍缺少本地人与游客长期关系。"
+        "山城巷如果只讲建筑历史仍缺少本地人与游客长期关系。",
+        "城市松弛与温柔若只由主持人概括会缺少具体对象。"
       ],
       "treatment_examples": [
         "从五年前的第一块招牌进入手绘牌和照片墙，让主持人用这些持续保留的物件回望节目、团队与观众共同经历。",
-        "从摄影师偶遇老夫妻、重现走红照片进入实体相册、游客留言和多年同角度照片，让相册成为人物关系与地点变化的时间轴。"
+        "从摄影师偶遇老夫妻、重现走红照片进入实体相册、游客留言和多年同角度照片，让相册成为人物关系与地点变化的时间轴。",
+        "让读者信、儿童手写诗和本土书籍成为叙事锚点，保留主持人逐页阅读、情绪变化和对母子关系的理解。"
       ],
       "parameter_variants": [
         {
@@ -2637,6 +2904,15 @@
             "visitors"
           ],
           "source_id": "bilibili-BV1a7Tj6nEe9"
+        },
+        {
+          "anchor_objects": [
+            "reader_letters",
+            "children_poems",
+            "local_books"
+          ],
+          "reaction_after_reading": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -2655,6 +2931,14 @@
             "尊重被摄者意愿与隐私。",
             "照片年份和关系只按可见证据或本人陈述描述。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-children-poems-human-story",
+          "guardrails": [
+            "儿童作品、姓名和家庭信息需保护隐私并核对授权。",
+            "未执行 OCR，诗句逐字准确性仍需人工复核。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -2669,6 +2953,12 @@
           "start_sec": 963.4,
           "end_sec": 1181,
           "observation_id": "obs-chongqing-photo-story-human-relationship"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 1560.0,
+          "end_sec": 1683.682,
+          "observation_id": "obs-kunming-children-poems-human-story"
         }
       ]
     },
@@ -2776,22 +3066,25 @@
     {
       "technique_key": "narrative-present-experience-to-historical-layer",
       "category": "narrative",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV1Mi536EELv",
-        "bilibili-BV1a7Tj6nEe9"
+        "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9433,
+      "average_confidence": 0.9475,
       "trigger_examples": [
         "私人收藏与旧物市场容易变成无序猎奇。",
         "两地的当代观感需要历史和人物层，才能避免停留在消费价格对照。",
-        "防空洞火锅既是消费打卡点，也承载重庆战争历史和当代记忆。"
+        "防空洞火锅既是消费打卡点，也承载重庆战争历史和当代记忆。",
+        "昆明当下的鲜花与松弛生活需要历史纵深，避免只成为消费景观。"
       ],
       "treatment_examples": [
         "从房东祖父、钟表和相机进入市场旧物与改造，再用二战物资转运、电影道具和二手文化解释城市历史层。",
         "那不勒斯从街头足球符号进入马拉多纳与南方身份；卡布里从酒店、街道和海景进入帝王、作家、革命者与名流活动的历史引用，再回到现场景观。",
-        "先以入口、温度、麻将与火锅建立当下体验，再用防空洞结构、档案画面和历史旁白解释战时用途，最后回到墙面展陈和城市韧性。"
+        "先以入口、温度、麻将与火锅建立当下体验，再用防空洞结构、档案画面和历史旁白解释战时用途，最后回到墙面展陈和城市韧性。",
+        "从普通人买菜也带花的文字记忆进入 1938 年西南联大，结合现址、教室、旧照片、地图和本地朋友讲解战时迁徙与教育。"
       ],
       "parameter_variants": [
         {
@@ -2824,6 +3117,12 @@
           ],
           "returns_to_present": true,
           "source_id": "bilibili-BV1a7Tj6nEe9"
+        },
+        {
+          "present_anchor": "everyday_flowers",
+          "historical_layer": "Southwest_Associated_University",
+          "returns_to_current_city": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -2850,6 +3149,14 @@
             "战争史、人口和容量数字需用可靠来源核验。",
             "消费体验不能淡化历史伤痛。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-present-flowers-to-war-history",
+          "guardrails": [
+            "历史年份、人物、引文和迁徙路线必须独立核验。",
+            "档案素材来源与授权需要确认。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -2870,6 +3177,12 @@
           "start_sec": 1609.3,
           "end_sec": 1793.4,
           "observation_id": "obs-chongqing-cave-hotpot-history-transition"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 1070.203,
+          "end_sec": 1535.0,
+          "observation_id": "obs-kunming-present-flowers-to-war-history"
         }
       ]
     },
@@ -3187,19 +3500,22 @@
     {
       "technique_key": "narrative-repeatable-experience-module",
       "category": "narrative",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
-        "bilibili-BV1a7Tj6nEe9"
+        "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.97,
+      "average_confidence": 0.9667,
       "trigger_examples": [
         "三项体验内容差异巨大，需要统一观众预期。",
-        "外国游客路线需要说明它为何能在短视频中反复复制。"
+        "外国游客路线需要说明它为何能在短视频中反复复制。",
+        "食物、产业、历史和书店章节需要可重复但不僵硬的结构。"
       ],
       "treatment_examples": [
         "每项任务重复使用寻找专家、建立知识、亲身尝试、保留风险或失败、评价并结算的模块。",
-        "依次保留发现大量外国游客、嘉宾解释取景逻辑、机车动作教学、实拍夜景、回看成片和参与者红绿牌评价，形成设置—拍摄—结果—反馈闭环。"
+        "依次保留发现大量外国游客、嘉宾解释取景逻辑、机车动作教学、实拍夜景、回看成片和参与者红绿牌评价，形成设置—拍摄—结果—反馈闭环。",
+        "各章重复当地人物或现场流程、知识语境、主持人体验、分歧或反应、明确评价，再用‘癫’和生命力桥接下一章。"
       ],
       "parameter_variants": [
         {
@@ -3224,6 +3540,18 @@
           ],
           "has_explicit_feedback": true,
           "source_id": "bilibili-BV1a7Tj6nEe9"
+        },
+        {
+          "module_steps": [
+            "local_source",
+            "context",
+            "experience",
+            "reaction",
+            "evaluation",
+            "theme_bridge"
+          ],
+          "chapter_count": 4,
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -3242,6 +3570,14 @@
             "体验模块不能承诺所有人得到相同结果。",
             "拍摄动作和交通安全优先。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-repeatable-local-experience-modules",
+          "guardrails": [
+            "重复模板不能抹平食品风险、产业规则和历史语境差异。",
+            "每章必须引入新的地点、人物或系统信息。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -3256,28 +3592,37 @@
           "start_sec": 398.3,
           "end_sec": 672.6,
           "observation_id": "obs-chongqing-viral-route-modular-sequence"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 180.0,
+          "end_sec": 1761.226,
+          "observation_id": "obs-kunming-repeatable-local-experience-modules"
         }
       ]
     },
     {
       "technique_key": "narrative-small-local-encounter-validates-place",
       "category": "narrative",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV1Mi536EELv",
-        "bilibili-BV1a7Tj6nEe9"
+        "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9533,
+      "average_confidence": 0.955,
       "trigger_examples": [
         "民宿如果只展示装修，会缺少为什么值得停留的答案。",
         "富豪岛和昂贵短暂景点的主题需要当地人的日常视角，避免只剩游客消费想象。",
-        "步道段需要一个具体事件回报‘本地生活关系’而非只拍空景。"
+        "步道段需要一个具体事件回报‘本地生活关系’而非只拍空景。",
+        "‘昆明松弛又有生命力’需要由不同普通人物反复验证。"
       ],
       "treatment_examples": [
         "保留房东、清晨布施、自种咖啡、家族照片和私人收藏，让当地人的行动与记忆回答空间价值。",
         "先保留船长聊天、换船、等待和入洞互动，再用当地船夫童年把蓝洞当免费泳池的记忆，重新解释游客眼中的奢华与本地生活的关系。",
-        "保留人物担心大鹅会咬、询问名字和来历、得知生日，以及路过婆婆认识它的细节，再由主持人总结先当游客、再当本地人的玩法。"
+        "保留人物担心大鹅会咬、询问名字和来历、得知生日，以及路过婆婆认识它的细节，再由主持人总结先当游客、再当本地人的玩法。",
+        "保留送包子的粉丝、菌类父子、鲜花从业者、本地朋友、校园访客、书店员工和返乡创作者的短交流，让城市判断来自多点人物。"
       ],
       "parameter_variants": [
         {
@@ -3304,6 +3649,17 @@
           "neighbor_recognition": true,
           "route_summary_follows": true,
           "source_id": "bilibili-BV1a7Tj6nEe9"
+        },
+        {
+          "encounter_types": [
+            "fan",
+            "expert_family",
+            "market_workers",
+            "local_friend",
+            "bookstore_creators"
+          ],
+          "single_encounter_not_overgeneralized": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -3330,6 +3686,14 @@
             "动物行为与安全判断以现场为准。",
             "不补造社区关系。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-local-encounters-validate-place",
+          "guardrails": [
+            "任何单个人物都不能代表全部昆明人。",
+            "偶遇人物的隐私、授权和观点语境需要保留。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -3350,6 +3714,12 @@
           "start_sec": 1502.5,
           "end_sec": 1609.3,
           "observation_id": "obs-chongqing-animal-community-microstory"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 60.0,
+          "end_sec": 1761.226,
+          "observation_id": "obs-kunming-local-encounters-validate-place"
         }
       ]
     },
@@ -3515,7 +3885,7 @@
     {
       "technique_key": "opening-phased-hook-not-uniform-fast-cut",
       "category": "opening_montage",
-      "source_support": 8,
+      "source_support": 9,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV1C3546DEC6",
@@ -3524,9 +3894,10 @@
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
-        "bilibili-BV1aDHQejEAP"
+        "bilibili-BV1aDHQejEAP",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.975,
+      "average_confidence": 0.9767,
       "trigger_examples": [
         "开场同时需要刺激、地点、路线和商业联动信息。",
         "长篇旅行需要同时交代目的地承诺、人物动机和行动起点。",
@@ -3535,7 +3906,8 @@
         "工作室 Room Tour 容易成为静态空间罗列，需要先证明改造规模，再进入可理解的动线。",
         "巴黎一日独行片需要迅速交代欧洲行最后一站，同时让设备安全焦虑和出发动作成立。",
         "主题涉及高成本且容易引发立场争论，需要快速说明问题、亲历资格和本片覆盖范围。",
-        "超长东京独行片需要同时兑现地点、快速启动跨境移动并保留人物真实反应。"
+        "超长东京独行片需要同时兑现地点、快速启动跨境移动并保留人物真实反应。",
+        "昆明作为常见中转城市，需要同时建立私人关系、城市反差和本期调查方向。"
       ],
       "treatment_examples": [
         "用人物风险预告、地点重定义、任务清单三阶段推进，快切后回到可理解的主持人口播和任务卡。",
@@ -3545,7 +3917,8 @@
         "用成本问题、旧新空间闪回和施工结果快速建立变化，显示 Room Tour 标题后减速为开门、一层和三层结构说明。",
         "先用 8.88 秒地标标题兑现地点，再以早餐旁白回顾前序旅程；酒店口播阶段明显减速建立风险和手机道具，最后把较密剪辑集中到收拾、列车与换乘。",
         "先由主持人提出一天婚礼与长线旅行的选择题，再插入求婚、领证、极地和头纱旅行证据，最后回到桌谈公布四章结构和赞助。",
-        "先用 16.433 秒地点与标题建立承诺，再把 0.25 秒中位镜长的超密短切集中在机场物流；安检和进食处减速，随后以登机、飞行和抵达重新推进。"
+        "先用 16.433 秒地点与标题建立承诺，再把 0.25 秒中位镜长的超密短切集中在机场物流；安检和进食处减速，随后以登机、飞行和抵达重新推进。",
+        "先由夫妻血缘进入昆明，再用菌子、诗歌、阳光和人物例证解释‘癫’，最后减速到粉丝偶遇、四年前回忆和本地朋友路线。"
       ],
       "parameter_variants": [
         {
@@ -3609,6 +3982,16 @@
           "fastest_phase_median_shot_sec": 0.25,
           "reaction_phase_median_shot_sec": 3.667,
           "source_id": "bilibili-BV1aDHQejEAP"
+        },
+        {
+          "phases": [
+            "personal_entry",
+            "city_reframe",
+            "concrete_examples",
+            "local_route"
+          ],
+          "uniform_fast_cut": false,
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -3675,6 +4058,14 @@
             "超密短切只用于明确物流与地理推进。",
             "人物反应、安检和进食过程需要保持可读。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-opening-phased-city-thesis",
+          "guardrails": [
+            "地方概念必须由后文多类证据解释。",
+            "不能把全片做成统一高速的猎奇 montage。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -3725,6 +4116,12 @@
           "start_sec": 0,
           "end_sec": 120.133,
           "observation_id": "obs-opening-five-phase-tokyo-hook"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 0.0,
+          "end_sec": 120.0,
+          "observation_id": "obs-kunming-opening-phased-city-thesis"
         }
       ]
     },
@@ -3917,23 +4314,25 @@
     {
       "technique_key": "scenic-human-reaction-to-landmark-geography",
       "category": "scenic",
-      "source_support": 6,
+      "source_support": 7,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
-        "bilibili-BV1a7Tj6nEe9"
+        "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9533,
+      "average_confidence": 0.9543,
       "trigger_examples": [
         "连续高强度训练后需要恢复节奏，同时交代下一段本地生活。",
         "中央公园既承担城市房价说明，也需要提供旅行中的空间与情绪释放。",
         "蓝洞是抽象颜色任务的视觉高潮，需要同时证明进入难度、空间与人物体验。",
         "塞纳河游船是巴黎一日行的主要视觉回报，需要兼顾地标、城市尺度和人物在场感。",
         "目的地讨论需要同时说明空间规模和两个人在其中的真实体验。",
-        "本地路线需要展示热门景点之外的山城空间和日常使用方式。"
+        "本地路线需要展示热门景点之外的山城空间和日常使用方式。",
+        "花市、校园和书店只有放入人物尺度，才能从地标转成生活空间。"
       ],
       "treatment_examples": [
         "从难找的小巷和狗进入百年木屋，以自然光、庭院、房间和主持人发现反应建立空间，再承诺清晨体验。",
@@ -3941,7 +4340,8 @@
         "从海上等待和换小船开始，保留船夫压低身体、洞口黑暗、蓝光水面、洞内船只和人物出洞后的惊讶反应，使地理奇观与身体体验连在一起。",
         "从登船和人物仰望进入埃菲尔铁塔，交替人物反应、河面宽景、桥梁、两岸建筑、蓝调天空与夜间亮灯，再回到岸上人物。",
         "在雪山、海岸、湖泊和公路宽景中保留人物、车辆、自驾或拍摄动作，再回到主持人的季节与路线评价。",
-        "跟随人物穿过楼梯、树荫、居民楼、儿童活动区、棋牌桌和坡道，交替广角环境与居民互动，解释步道如何承担无车生活空间。"
+        "跟随人物穿过楼梯、树荫、居民楼、儿童活动区、棋牌桌和坡道，交替广角环境与居民互动，解释步道如何承担无车生活空间。",
+        "先给鲜花大厅、校园建筑、旧教室和书店宽景，再保留伴侣选花、当地朋友讲解、学生与读者活动和主持人阅读反应。"
       ],
       "parameter_variants": [
         {
@@ -4009,6 +4409,16 @@
           ],
           "tourist_density": "low",
           "source_id": "bilibili-BV1a7Tj6nEe9"
+        },
+        {
+          "human_scale_visible": true,
+          "wide_detail_reaction": true,
+          "place_types": [
+            "market",
+            "campus",
+            "bookstore"
+          ],
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -4059,6 +4469,14 @@
             "社区不是供凝视的布景。",
             "拍摄居民和儿童需遵守同意与隐私要求。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-scenic-human-place-reaction",
+          "guardrails": [
+            "人物反应不能替代地点历史和运营事实。",
+            "不同地点的镜头不能被剪成同一空间。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -4097,6 +4515,12 @@
           "start_sec": 1247,
           "end_sec": 1502.5,
           "observation_id": "obs-chongqing-community-walk-human-scale"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 660.0,
+          "end_sec": 1683.682,
+          "observation_id": "obs-kunming-scenic-human-place-reaction"
         }
       ]
     },
@@ -4269,23 +4693,25 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
       "category": "subtitle",
-      "source_support": 6,
+      "source_support": 7,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TYVA6sEhm",
-        "bilibili-BV1a7Tj6nEe9"
+        "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9483,
+      "average_confidence": 0.9529,
       "trigger_examples": [
         "全片包含密集中文口播、外语教学、动作噪声和多次章节转换。",
         "全片横跨城市说明、双人对谈、英语引用、产品内容和球场现场，需要稳定的信息层级。",
         "全片连续口播和多人互动需要稳定可读，同时空间与年份信息需要更高层级提示。",
         "双城旅行同时包含现场对白、章节、日期、价格、历史引用、竖屏素材、赞助和 credits，需要稳定的信息层级。",
         "长桌谈、旅行旧素材、图卡、赞助和外部影视片段共存，需要稳定而分层的信息系统。",
-        "全片包含方言、英语、多人对话、照片、社交页面、历史档案和栏目图形，需要清楚区分证据层。"
+        "全片包含方言、英语、多人对话、照片、社交页面、历史档案和栏目图形，需要清楚区分证据层。",
+        "全片包含专家知识、市场数字、历史引用和多人互动，需要稳定基础字幕与独立证据层。"
       ],
       "treatment_examples": [
         "保持底部居中对白字幕，只在 Mission、章节、战术关键词、地点、结果和 Easter Egg 使用独立稀疏标题层。",
@@ -4293,7 +4719,8 @@
         "用底部居中字幕承载对白，只在 Room Tour 标题、区域名、设备、年份和照片回顾处增加稀疏图形层。",
         "普通对白持续使用底部字幕；Part、Day、地点、价格和颜色标签稀疏出现；竖屏引用、历史照片、人物肖像与赞助产品保留独立视觉边界。",
         "普通对白持续使用底部居中浅色字幕；章节与编号采用小型标签，图卡独立呈现结构，赞助保留标识，外部片段用中英双语层，片尾只保留 credits。",
-        "以底部居中浅色描边字幕为默认层；竖屏社交素材、实体相册、黑白档案、地点标题和‘来不来’栏目图形只在对应证据节点出现。"
+        "以底部居中浅色描边字幕为默认层；竖屏社交素材、实体相册、黑白档案、地点标题和‘来不来’栏目图形只在对应证据节点出现。",
+        "以底部字幕持续承载对白，只在地点标题、菌名、拍卖信息、地图、引文、诗歌和来不来评价处使用稀疏高层图形。"
       ],
       "parameter_variants": [
         {
@@ -4353,6 +4780,18 @@
             "show_title"
           ],
           "source_id": "bilibili-BV1a7Tj6nEe9"
+        },
+        {
+          "base_position": "bottom_center",
+          "sparse_layers": [
+            "location",
+            "species",
+            "market_data",
+            "archive",
+            "poem",
+            "evaluation"
+          ],
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -4403,6 +4842,14 @@
             "未使用 OCR，不能声称逐字字幕准确。",
             "引用画面和字幕不能遮挡人物脸部或关键历史信息。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-dialogue-subtitle-sparse-evidence",
+          "guardrails": [
+            "未执行 OCR，所有文字准确性仍需人工听校和查证。",
+            "信息图层不能遮挡人物脸部、实物细节或基础字幕。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -4441,6 +4888,12 @@
           "start_sec": 0,
           "end_sec": 1848.448,
           "observation_id": "obs-chongqing-subtitle-evidence-hierarchy"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 0.0,
+          "end_sec": 1852.22,
+          "observation_id": "obs-kunming-dialogue-subtitle-sparse-evidence"
         }
       ]
     },
@@ -4583,19 +5036,22 @@
     {
       "technique_key": "subtitle-location-title-delivers-promise",
       "category": "subtitle",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
-        "bilibili-BV1TNZUB4EF6"
+        "bilibili-BV1TNZUB4EF6",
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.99,
+      "average_confidence": 0.9867,
       "trigger_examples": [
         "开场城市 montage 需要快速确认具体地点并建立视觉语气。",
-        "开场需要在人物解释前确认国家、城市、独行主题和视觉期待。"
+        "开场需要在人物解释前确认国家、城市、独行主题和视觉期待。",
+        "开场多个云南例证需要迅速确认本期真正讨论的是昆明。"
       ],
       "treatment_examples": [
         "在自由女神与人物同框画面左下放黄色英文手写地点标题，下面配较小中文说明；随后恢复普通对白字幕。",
-        "在人物与巴黎夜景、教堂和落日地标上依次放置法国、巴黎、一个人旅行与 travel vlog 标题，随后干净切回早餐叙事。"
+        "在人物与巴黎夜景、教堂和落日地标上依次放置法国、巴黎、一个人旅行与 travel vlog 标题，随后干净切回早餐叙事。",
+        "在菌子与城市画面间显示高对比昆明大标题和节目标题，随后回到人物口播与底部字幕。"
       ],
       "parameter_variants": [
         {
@@ -4615,6 +5071,12 @@
           ],
           "transition_out": "hard_cut",
           "source_id": "bilibili-BV1TNZUB4EF6"
+        },
+        {
+          "location": "Kunming",
+          "title_role": "place_and_theme_promise",
+          "returns_to_dialogue": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
@@ -4633,6 +5095,14 @@
             "标题只放开场一次，不反复遮挡后续地标。",
             "文字必须与实际地点和成片内容一致。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-title-delivers-place-promise",
+          "guardrails": [
+            "地点标题必须与实际画面一致。",
+            "未执行 OCR，标题文字仍需人工核对。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -4647,6 +5117,12 @@
           "start_sec": 0,
           "end_sec": 8.88,
           "observation_id": "obs-paris-title-landmark-promise"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 15.0,
+          "end_sec": 77.01,
+          "observation_id": "obs-kunming-title-delivers-place-promise"
         }
       ]
     },
@@ -5910,6 +6386,52 @@
       ]
     },
     {
+      "technique_key": "narrative-economic-system-through-market-process",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1xTdwBQEna"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "鲜花自由若只展示低价花束，会忽略昆明花业的生产与定价系统。"
+      ],
+      "treatment_examples": [
+        "从拍卖误解进入交易席、倒计时、价格字段、质检、物流和高峰规模，再到普通花市选购与实际花束价格。"
+      ],
+      "parameter_variants": [
+        {
+          "process_steps": [
+            "auction",
+            "price_decision",
+            "quality_check",
+            "logistics",
+            "retail_purchase"
+          ],
+          "consumer_payoff": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-flower-market-economic-system",
+          "guardrails": [
+            "交易量、价格、市场排名和行业影响需要独立核验。",
+            "单日价格不能代表长期市场水平。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 720.0,
+          "end_sec": 1070.203,
+          "observation_id": "obs-kunming-flower-market-economic-system"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-encounter-callback-closes-journey",
       "category": "narrative",
       "source_support": 1,
@@ -6122,50 +6644,6 @@
       ]
     },
     {
-      "technique_key": "narrative-guide-expertise-before-action",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV11Ao7BYEyv"
-      ],
-      "average_confidence": 0.97,
-      "trigger_examples": [
-        "观众需要理解教练为什么值得信任，才能判断后续训练难度和风险。"
-      ],
-      "treatment_examples": [
-        "先介绍拳馆、泰拳女王的家庭和冠军背景，再进入动作示范与主持人练习。"
-      ],
-      "parameter_variants": [
-        {
-          "expert_profile_before_practice": true,
-          "profile_evidence_types": [
-            "family_history",
-            "championship",
-            "gym_context"
-          ],
-          "source_id": "bilibili-BV11Ao7BYEyv"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV11Ao7BYEyv",
-          "observation_id": "obs-bangkok-expert-before-muay-action",
-          "guardrails": [
-            "冠军数量和家庭信息需要独立核验。",
-            "人物背景只说明专业语境，不制造个人崇拜。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV11Ao7BYEyv",
-          "start_sec": 60.294,
-          "end_sec": 286.453,
-          "observation_id": "obs-bangkok-expert-before-muay-action"
-        }
-      ]
-    },
-    {
       "technique_key": "narrative-guide-expertise-before-itinerary",
       "category": "narrative",
       "source_support": 1,
@@ -6289,6 +6767,50 @@
       ]
     },
     {
+      "technique_key": "narrative-historical-institution-to-current-creative-ecosystem",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1xTdwBQEna"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "历史校园若在参观结束后断开，会成为孤立知识段。"
+      ],
+      "treatment_examples": [
+        "从联大师生、文学与开放旁听的影响转入独立书店、本土书籍、儿童诗、松弛店员和返乡创作者，提出历史种子仍在当代昆明生长。"
+      ],
+      "parameter_variants": [
+        {
+          "historical_seed": "education_and_literature",
+          "current_outputs": [
+            "independent_bookstore",
+            "children_poetry",
+            "local_creators"
+          ],
+          "source_id": "bilibili-BV1xTdwBQEna"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-history-to-current-creative-ecosystem",
+          "guardrails": [
+            "历史影响属于成片提出的解释，不是已证明的单一因果。",
+            "书店与创作者观点不能代表全部昆明文化生态。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 1140.0,
+          "end_sec": 1761.226,
+          "observation_id": "obs-kunming-history-to-current-creative-ecosystem"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-imperfect-detail-to-authenticity-thesis",
       "category": "narrative",
       "source_support": 1,
@@ -6329,47 +6851,44 @@
       ]
     },
     {
-      "technique_key": "narrative-live-event-to-universal-theme",
+      "technique_key": "narrative-local-knowledge-child-future-promise",
       "category": "narrative",
       "source_support": 1,
       "source_ids": [
-        "bilibili-BV15XMC6KETm"
+        "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.96,
+      "average_confidence": 0.98,
       "trigger_examples": [
-        "比赛现场已经提供进球、观众和冲突素材，需要回答非球迷为什么仍然在意。"
+        "孩子的菌类知识若只作为反差笑点，会损失长期学习与未来志向。"
       ],
       "treatment_examples": [
-        "先保留突然进球和人群反应，再从足球是微缩战争的比喻进入规则、文明底线和不同人共同观看同一事件的旁白，画面继续展示比赛、球迷与公共观看空间。"
+        "保留孩子现场辨认、随父亲进山、查书请教科学家和想当研究员的完整链路，再以未来命名新菌和点赞返场形成前向承诺。"
       ],
       "parameter_variants": [
         {
-          "theme": [
-            "conflict",
-            "rules",
-            "civilization",
-            "shared_attention"
-          ],
-          "returns_to_live_images": true,
-          "source_id": "bilibili-BV15XMC6KETm"
+          "knowledge_demonstration": true,
+          "learning_history": true,
+          "future_goal": true,
+          "return_hook": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
         }
       ],
       "guardrail_variants": [
         {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "observation_id": "obs-football-conflict-rules-theme-rise",
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-child-knowledge-future-promise",
           "guardrails": [
-            "战争与球队背景属于敏感事实，必须核验后使用。",
-            "主题升华应建立在真实事件之后，不提前替现场下结论。"
+            "儿童隐私、志向和家庭信息需获得适当授权。",
+            "返场和命名约定不能当作已经兑现的事实。"
           ]
         }
       ],
       "evidence_ranges": [
         {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "start_sec": 1708.11,
-          "end_sec": 1777.24,
-          "observation_id": "obs-football-conflict-rules-theme-rise"
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 237.204,
+          "end_sec": 630.697,
+          "observation_id": "obs-kunming-child-knowledge-future-promise"
         }
       ]
     },
@@ -6510,6 +7029,47 @@
       ]
     },
     {
+      "technique_key": "narrative-partner-origin-personal-entry",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1xTdwBQEna"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "外地主持人讲地方文化需要说明自己与地点的关系及知识边界。"
+      ],
+      "treatment_examples": [
+        "公开伴侣有四分之一昆明血缘、主持人此前不知道、两人四年前来过但未拍 vlog，再引入认识多年的本地朋友。"
+      ],
+      "parameter_variants": [
+        {
+          "partner_family_link": true,
+          "prior_visit": true,
+          "local_friend": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-partner-origin-personal-entry",
+          "guardrails": [
+            "家庭来源和旧旅行经历需由当事人确认。",
+            "血缘关系不等同于完整地方知识。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 0.0,
+          "end_sec": 180.0,
+          "observation_id": "obs-kunming-partner-origin-personal-entry"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-practical-item-demonstration-with-memory-proof",
       "category": "narrative",
       "source_support": 1,
@@ -6551,6 +7111,47 @@
           "start_sec": 555.989,
           "end_sec": 892.792,
           "observation_id": "obs-travel-marriage-item-demonstration-memory-proof"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-risk-explanation-before-tasting",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1xTdwBQEna"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "野生菌中毒常被当作网络笑料，需要先保留现实风险与操作约束。"
+      ],
+      "treatment_examples": [
+        "展示计时、不发筷子、留样、未知物种和烹饪温度讨论，再进入火锅与实验菌品尝、孩子志向和来不来评价。"
+      ],
+      "parameter_variants": [
+        {
+          "safety_before_humor": true,
+          "tasting_after_timer": true,
+          "evaluation_after_experience": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-risk-explanation-before-tasting",
+          "guardrails": [
+            "不能把中毒、未知菌类或实验样品娱乐化。",
+            "成片流程不构成观众可复制的食用建议。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 312.846,
+          "end_sec": 660.0,
+          "observation_id": "obs-kunming-risk-explanation-before-tasting"
         }
       ]
     },
@@ -6780,6 +7381,51 @@
           "start_sec": 0,
           "end_sec": 22.06,
           "observation_id": "obs-newyork-opening-private-memory-anchor"
+        }
+      ]
+    },
+    {
+      "technique_key": "opening-underrated-city-thesis-to-local-tests",
+      "category": "opening_montage",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1xTdwBQEna"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "‘从不好玩到好有生活’是抽象口碑判断，需要公开验证路径。"
+      ],
+      "treatment_examples": [
+        "把昆明的食物、诗歌、春城生活和本地人物设为后文测试项，并用伴侣血缘、当地朋友和四年前亲历限制外来者视角。"
+      ],
+      "parameter_variants": [
+        {
+          "test_domains": [
+            "food",
+            "flower_industry",
+            "history",
+            "bookstore_culture"
+          ],
+          "local_people_required": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-underrated-city-local-tests",
+          "guardrails": [
+            "个人体验不能代表全部昆明人。",
+            "网络口碑和地方称谓需保留来源与语境。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 0.0,
+          "end_sec": 180.0,
+          "observation_id": "obs-kunming-underrated-city-local-tests"
         }
       ]
     },
@@ -7089,6 +7735,51 @@
           "start_sec": 8030,
           "end_sec": 8400,
           "observation_id": "obs-pop-culture-memory-to-current-city"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-production-chain-wide-detail-human-use",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1xTdwBQEna"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "鲜花市场的美景需要同时说明规模、劳动与普通人的使用。"
+      ],
+      "treatment_examples": [
+        "以阳光、花海和大厅宽景建立规模，切到交易屏、质检、花车和花束细节，再保留经纪人、工作人员、游客与伴侣选花反应。"
+      ],
+      "parameter_variants": [
+        {
+          "sequence": [
+            "natural_light",
+            "market_wide",
+            "process_detail",
+            "worker_action",
+            "consumer_reaction"
+          ],
+          "source_id": "bilibili-BV1xTdwBQEna"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-flower-production-wide-detail-use",
+          "guardrails": [
+            "美景 montage 不能删掉劳动和价格语境。",
+            "拍摄不得妨碍交易、工作人员或游客隐私。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 660.0,
+          "end_sec": 1135.434,
+          "observation_id": "obs-kunming-flower-production-wide-detail-use"
         }
       ]
     },
@@ -7609,6 +8300,37 @@
       },
       "rule": "长篇开场按地点承诺、物流提速、真实反应减速、交通推进和抵达重启分相位；最高密度只服务明确移动，不把整段误做成统一快剪。",
       "source_id": "bilibili-BV1aDHQejEAP"
+    },
+    {
+      "total_reviewed_sec": 120.0,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 15.0,
+          "function": "夫妻在昆明街头直接确认地点与伴侣的昆明血缘，用人物关系进入城市。"
+        },
+        {
+          "start_sec": 15.0,
+          "end_sec": 60.0,
+          "function": "以菌子、诗歌、阳光与人物反应解释云南‘癫’的节目语气，并提出昆明从中转城市到生活城市的变化。"
+        },
+        {
+          "start_sec": 60.0,
+          "end_sec": 120.0,
+          "function": "用春城景色、当地粉丝送包子、四年前回忆和本地朋友约见，把抽象城市命题落到可验证人物与路线。"
+        }
+      ],
+      "metrics": {
+        "opening_0_to_15_shots": 10,
+        "opening_0_to_15_median_shot_sec": 1.652,
+        "opening_15_to_60_shots": 31,
+        "opening_15_to_60_median_shot_sec": 1.802,
+        "opening_60_to_120_shots": 20,
+        "opening_60_to_120_median_shot_sec": 2.052,
+        "reviewed_0_to_120_shot_count": 59
+      },
+      "rule": "城市观察片先用人物关系和一个可记忆的地方性概念建立入口，再以多个具体例证说明命题，最后引入当地人物与既有记忆作为验证路线；快切集中在概念预告，人物见面和任务说明必须减速。",
+      "source_id": "bilibili-BV1xTdwBQEna"
     }
   ],
   "model_context_policy": {
