@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-fe1d5185aa05",
-  "generated_at": "2026-08-10T12:54:07.260255+00:00",
-  "source_count": 11,
+  "profile_id": "aggregated-reference-techniques-v1-0bff22e1ae1e",
+  "generated_at": "2026-08-10T14:10:28.884186+00:00",
+  "source_count": 12,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
     "bilibili-BV15XMC6KETm",
@@ -10,6 +10,7 @@
     "bilibili-BV1C3546DEC6",
     "bilibili-BV1CrHwzUEJa",
     "bilibili-BV1ETNMzEEWQ",
+    "bilibili-BV1LS3r6gE7k",
     "bilibili-BV1Mi536EELv",
     "bilibili-BV1TNZUB4EF6",
     "bilibili-BV1TYVA6sEhm",
@@ -149,17 +150,19 @@
     {
       "technique_key": "graphic-inline-reference-card-over-live-scene",
       "category": "graphic",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
         "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.956,
+      "average_confidence": 0.9533,
       "trigger_examples": [
         "远处动物难以仅凭现场低清画面辨认，需要短暂提供语义背景。",
+        "口述招牌错误和补救时，观众需要看到沟通证据与成品的关系。",
         "城市历史、竖屏视频、人物身份、价格和产品颜色需要证据层，但全屏长停留会打断旅行现场。",
         "皇冠展品需要一条可见背景信息连接人物观察与现实事件。",
         "口头列举四个目的地标准后，观众需要一个可回看的比较框架。",
@@ -167,6 +170,7 @@
       ],
       "treatment_examples": [
         "在仍可看见底层草地的情况下叠加竖向白底图文卡，读完即撤，再回到动物近景。",
+        "在仍可辨认拍摄区和招牌的画面旁短暂插入聊天截图、草图和双反相机细节，读完即回到现场。",
         "在现场与口播之间短暂插入竖屏视频、历史照片、人物肖像、价格字幕、Part/Day 卡和产品画面，随后快速回到人物或地点继续验证。",
         "在皇冠近景之间插入带来源标识的竖屏新闻素材，短暂解释卢浮宫失窃事件，随后直接回到展品和现场游览。",
         "在桌谈之间插入四色和便签式四因素图卡，把预算适配、出片、新手友好和出行月份固定为后续讨论的参照。",
@@ -177,6 +181,15 @@
           "overlay_type": "vertical_reference_card",
           "background_remains_visible": true,
           "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "reference_types": [
+            "chat_screenshot",
+            "design_sketch",
+            "finished_sign"
+          ],
+          "returns_to_live_scene": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
         },
         {
           "reference_types": [
@@ -220,6 +233,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-chat-reference-over-live-sign",
+          "guardrails": [
+            "聊天截图必须裁掉无关个人信息并具备使用权。",
+            "图卡不能遮挡基础字幕或冒充独立事实核验。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "observation_id": "obs-naples-capri-inline-source-cards",
           "guardrails": [
@@ -258,6 +279,12 @@
           "start_sec": 3703,
           "end_sec": 3706,
           "observation_id": "obs-animal-reference-card"
+        },
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 910.0,
+          "end_sec": 970.0,
+          "observation_id": "obs-lumi-chat-reference-over-live-sign"
         },
         {
           "source_id": "bilibili-BV1Mi536EELv",
@@ -346,6 +373,211 @@
           "start_sec": 555.989,
           "end_sec": 1362.328,
           "observation_id": "obs-travel-marriage-numbered-tip-graphics"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-physical-archive-time-series",
+      "category": "graphic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1LS3r6gE7k",
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "五年创作史需要比口头总结更具体的时间证据。",
+        "共同记忆和街区变化需要比口述更具体的时间证据。"
+      ],
+      "treatment_examples": [
+        "依次展示第一块鹿米仓牌、手绘牌、不断生长的照片墙和 2021 至 2025 年份画面，把版本变化与团队记忆排列成时间序列。",
+        "让人物翻看实体相册并指认 2019、2021 等同地点照片，穿插当前街巷，形成过去与现在的可见对照。"
+      ],
+      "parameter_variants": [
+        {
+          "archive_types": [
+            "old_sign",
+            "handpainted_signs",
+            "photo_wall",
+            "year_cards"
+          ],
+          "chronological_progression": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        },
+        {
+          "archive_type": "physical_album",
+          "same_location_comparison": true,
+          "years_visible": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-physical-archive-time-series",
+          "guardrails": [
+            "年份、人物和物件来源需要独立核验。",
+            "档案画面不能被剪成未发生的时间顺序。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-album-time-series-evidence",
+          "guardrails": [
+            "照片版权和肖像权需确认。",
+            "年份必须能从相册或当事人证词核实。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 1008.474,
+          "end_sec": 1150.0,
+          "observation_id": "obs-lumi-physical-archive-time-series"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 1031.7,
+          "end_sec": 1181,
+          "observation_id": "obs-chongqing-album-time-series-evidence"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-place-title-before-main-body-reset",
+      "category": "graphic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm",
+        "bilibili-BV1LS3r6gE7k"
+      ],
+      "average_confidence": 0.985,
+      "trigger_examples": [
+        "城市命题与任务设定完成后，需要一个清楚的章节边界进入正片。",
+        "改造 montage 结束后需要明确从预告进入正式空间导览。"
+      ],
+      "treatment_examples": [
+        "在纽约天际线与水面上叠加白色 New York/纽约主标题，随后硬切室内双人对谈和比赛倒计时。",
+        "在暖色成品空间上显示鹿米仓 3.0 Room Tour 大标题，随后硬切开门邀请和一层介绍。"
+      ],
+      "parameter_variants": [
+        {
+          "title_language": [
+            "English",
+            "Chinese"
+          ],
+          "transition_out": "hard_cut",
+          "complex_vfx": false,
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "title_role": "main_body_reset",
+          "returns_to_live_tour": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-newyork-main-title-reset",
+          "guardrails": [
+            "主标题只出现一次。",
+            "章节切换后立即提供新信息。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-roomtour-title-reset",
+          "guardrails": [
+            "标题必须与实际空间和版本一致。",
+            "标题停留不能挤压开门动作和首个空间解释。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 82.78,
+          "end_sec": 97.1,
+          "observation_id": "obs-newyork-main-title-reset"
+        },
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 22.0,
+          "end_sec": 40.0,
+          "observation_id": "obs-lumi-roomtour-title-reset"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-reference-frame-to-live-location-match",
+      "category": "graphic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1LS3r6gE7k",
+        "bilibili-BV1aDHQejEAP"
+      ],
+      "average_confidence": 0.965,
+      "trigger_examples": [
+        "三层错落结构仅靠现场手持画面不易理解。",
+        "动画记忆是前往现实地点的动机，观众需要先知道参照对象，再理解现场对应关系。"
+      ],
+      "treatment_examples": [
+        "把旧状态、设计模型和完工现场按相近空间关系排列，再由主持人进入同一区域说明楼层与功能。",
+        "先以全屏动画参照建立车站和楼梯记忆，再切入人物到达的现实楼梯、出口和周边环境；不把参照画面伪装成实时镜头。"
+      ],
+      "parameter_variants": [
+        {
+          "reference_types": [
+            "before_frame",
+            "design_model",
+            "finished_live_space"
+          ],
+          "spatial_match": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        },
+        {
+          "reference_presentation": "full_frame",
+          "reference_range_sec": [
+            6868,
+            6892
+          ],
+          "live_location_follows": true,
+          "inline_overlay": false,
+          "source_id": "bilibili-BV1aDHQejEAP"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-reference-model-to-live-space",
+          "guardrails": [
+            "模型、旧画面和完工现场必须清楚区分。",
+            "不能把设计效果图冒充真实完工证据。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "observation_id": "obs-animation-reference-to-live-location",
+          "guardrails": [
+            "参照画面和实景必须保持清晰来源边界，目标素材只使用有权使用的参照。",
+            "不能从构图相似推断官方关系、授权状态或创作因果。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 0.0,
+          "end_sec": 111.044,
+          "observation_id": "obs-lumi-reference-model-to-live-space"
+        },
+        {
+          "source_id": "bilibili-BV1aDHQejEAP",
+          "start_sec": 6868,
+          "end_sec": 6905,
+          "observation_id": "obs-animation-reference-to-live-location"
         }
       ]
     },
@@ -569,7 +801,7 @@
     {
       "technique_key": "humor-preserve-real-awkward-process",
       "category": "humor",
-      "source_support": 11,
+      "source_support": 12,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
@@ -577,13 +809,14 @@
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9564,
+      "average_confidence": 0.9583,
       "trigger_examples": [
         "普通成年人跟不上专业泰拳训练，真实落差比预制笑话更有可信度。",
         "主讲人自称不懂足球，但仍要记录世界杯现场。",
@@ -591,6 +824,7 @@
         "支付和加热沟通连续失败，人物只能重复尝试。",
         "列车员检查时票务页面打不开，主角无法独立解释，必须向同车旅客求助。",
         "人物到收费窗口后误解功能和工作人员指向，需要在陌生语言环境中找到正确位置。",
+        "空间导览连续解释容易单调，真实同事和伴侣互动提供人物节奏。",
         "老钱造型和寻找卡布里蓝的任务容易显得刻意，需要用现场不顺和互相吐槽恢复真实感。",
         "独自旅行请路人拍照时同时要交接手机和保管购物袋，产生真实递物误会。",
         "旅行结婚的相处建议如果只给结论，会缺少冲突为何发生和如何修复的可信度。",
@@ -604,6 +838,7 @@
         "保留足够长的真实失败过程和停顿，用少量双语字幕、失败短句与反差配乐放大尴尬，不提前跳到结果。",
         "保留查票、网络失败、双语沟通、旅客代为解释、分别问名字和事后复盘的完整过程，只用翻译字幕和轻量强调帮助观众跟上。",
         "保留走到窗口、提出买票、看不懂回应、发现正确位置在后面、再次办理及继续上楼的完整过程，而不是只截取一句口音笑点。",
+        "保留员工羞于承认爱好、猫等待流水、烧烤拍摄吐槽、垃圾桶猜价、秘密基地饮料被喝和直男房间争论的完整问答与反应。",
         "保留两人换装、互评、找蓝过度投入、警察局蓝色和天气焦虑的完整来回，让笑点落在任务与现实的错位上，再返回寻找进度。",
         "保留提出拍照请求、示范构图、交接手机、误把包递给另一人、人物意识到错误和致谢的完整过程，再进入游船集合。",
         "保留攻略分工、出门前如厕、睡眠与水肿、拍照角度、夸奖敷衍和发音纠正的完整来回，让尴尬过程自然落到状态管理、允许变数和包容错误。",
@@ -650,6 +885,12 @@
             "complete_action"
           ],
           "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "setup_reaction_resolution": true,
+          "real_relationship_context": true,
+          "single_accent_emphasis": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
         },
         {
           "setup_reaction_resolution": true,
@@ -732,6 +973,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-office-awkward-process-humor",
+          "guardrails": [
+            "不把员工、伴侣或个人爱好剪成单向嘲弄。",
+            "笑点不能删掉安全提醒、空间功能或对方完整回应。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "observation_id": "obs-capri-blue-search-awkward-humor",
           "guardrails": [
@@ -808,6 +1057,12 @@
           "start_sec": 2105.04,
           "end_sec": 2144.72,
           "observation_id": "obs-information-desk-awkward-process"
+        },
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 321.455,
+          "end_sec": 760.96,
+          "observation_id": "obs-lumi-office-awkward-process-humor"
         },
         {
           "source_id": "bilibili-BV1Mi536EELv",
@@ -1513,18 +1768,20 @@
     {
       "technique_key": "narrative-end-of-journey-montage-verbal-closure",
       "category": "narrative",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.968,
+      "average_confidence": 0.9683,
       "trigger_examples": [
         "第三项任务结束后需要同时关闭旅行、联动和奖励承诺。",
         "多国旅行结尾既要完成真实返程，也要明确告诉观众这一系列已经结束。",
+        "五年创作旅程需要在片尾同时完成视觉回顾和明确告别。",
         "颜色任务和两城对照需要明确结论，同时保留产品镜头、credits 与拍摄过程余韵。",
         "片名提出是否后悔，结尾必须给出明确回答并让多年旅行画面形成情绪回报。",
         "两小时以上东京合集需要完成实际返程，并用可信对白明确旅程结束。"
@@ -1532,6 +1789,7 @@
       "treatment_examples": [
         "主持人把曼谷港口、游戏地图和三项任务合并为顺利撤离结论，再用按摩灯光画面兑现开场奖励。",
         "保留清晨出发、机场、机上座位小摩擦、窗外地理、睡不着和回家进度，最后用一句旅行结束、感谢、‘下个旅程再见’和黑底结束卡闭合。",
+        "用照片墙、历年人物画面、键盘与当前工作室交叉回顾，保留主持人完整总结、观众提问、下期再见和拜拜。",
         "先由主持人总结人与自然、财富和颜色，再在城市、海岸、车辆和花絮画面上持续完成旁白，最后以无法固定定义但能让时间慢下来的蓝收束。",
         "在外部剧情片段后回到主持人总结共同经历、包容缺点和理解彼此，完成口头回答与观众邀请，再以多地旅行、合影、海岸和夕阳 credits 收束。",
         "用地铁换乘、餐食、步行和回顾镜头完成返程过程，再保留人工核验的最后五段对白，使结束、体验总结、下一篇章和价格回扣依次成立。"
@@ -1553,6 +1811,12 @@
           ],
           "final_card": "谢谢观看",
           "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "archive_montage": true,
+          "verbal_closure": true,
+          "last_dialogue_sec": 1185.32,
+          "source_id": "bilibili-BV1LS3r6gE7k"
         },
         {
           "verbal_closure": true,
@@ -1600,6 +1864,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-creative-journey-montage-closure",
+          "guardrails": [
+            "档案 montage 不能制造未发生的因果或人物关系。",
+            "必须保留明确告别，不以音乐或结束卡替代口头收束。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "observation_id": "obs-capri-ending-verbal-closure-outtakes",
           "guardrails": [
@@ -1638,6 +1910,12 @@
           "observation_id": "obs-homecoming-montage-closure"
         },
         {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 1101.2,
+          "end_sec": 1185.32,
+          "observation_id": "obs-lumi-creative-journey-montage-closure"
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "start_sec": 1771.303,
           "end_sec": 1911.211,
@@ -1660,22 +1938,25 @@
     {
       "technique_key": "narrative-error-discovery-and-explicit-correction",
       "category": "narrative",
-      "source_support": 4,
+      "source_support": 5,
       "source_ids": [
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9525,
+      "average_confidence": 0.96,
       "trigger_examples": [
         "人物听到疑似火车站站名后紧张下车，马上发现地点错误。",
+        "拍摄棚招牌的英文误写若只展示成品会失去真实设计过程。",
         "赞助任务要求寻找卡布里蓝，但现场出现的多种蓝色容易被过早认定。",
         "人物为防盗换用旧手机后发现镜头裂纹使自拍产生明显光痕。",
         "得到帮助后仍出现方向或交通判断错误，需要让观众理解错误如何被发现和修正。"
       ],
       "treatment_examples": [
         "保留误判前因、下车动作、车辆离开、错误地点线索、自我复盘、向路人展示地图问路及‘仍有时间’的缓解。",
+        "明确承认把 camera on the move 写错，展示发现错误后的沟通，再说明设计师用双反相机图形把错误转成视觉细节。",
         "先把城市与足球相关的蓝色纠正为萨伏依蓝，再比较有光和无光的海色，并保留警察局蓝色的自嘲误判，使寻找过程持续开放。",
         "先展示异常自拍画面，再口头确认镜头问题，并通过改变持机与遮挡位置继续拍摄，让风险道具获得真实后果和临时修正。",
         "保留原判断、移动结果、地点不匹配、自我复盘和重新确认路线的过程，再恢复前往目标的行动。"
@@ -1691,6 +1972,12 @@
             "time_buffer_relief"
           ],
           "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "error_admitted": true,
+          "correction_process_visible": true,
+          "final_design_visible": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
         },
         {
           "sequence": [
@@ -1729,6 +2016,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-sign-error-explicit-correction",
+          "guardrails": [
+            "必须保留错误和补救的真实顺序。",
+            "不能把偶然错误包装成预先设计。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "observation_id": "obs-capri-blue-error-correction-chain",
           "guardrails": [
@@ -1759,6 +2054,12 @@
           "start_sec": 2372.76,
           "end_sec": 2452.72,
           "observation_id": "obs-wrong-stop-correction-chain"
+        },
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 900.0,
+          "end_sec": 970.0,
+          "observation_id": "obs-lumi-sign-error-explicit-correction"
         },
         {
           "source_id": "bilibili-BV1Mi536EELv",
@@ -2304,6 +2605,74 @@
       ]
     },
     {
+      "technique_key": "narrative-object-builds-longitudinal-human-story",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1LS3r6gE7k",
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.985,
+      "trigger_examples": [
+        "工作室从 1.0 到 3.0 的变化需要一个可触摸的叙事锚点。",
+        "山城巷如果只讲建筑历史仍缺少本地人与游客长期关系。"
+      ],
+      "treatment_examples": [
+        "从五年前的第一块招牌进入手绘牌和照片墙，让主持人用这些持续保留的物件回望节目、团队与观众共同经历。",
+        "从摄影师偶遇老夫妻、重现走红照片进入实体相册、游客留言和多年同角度照片，让相册成为人物关系与地点变化的时间轴。"
+      ],
+      "parameter_variants": [
+        {
+          "anchor_object": "first_lumi_sign",
+          "time_span_years": 5,
+          "archive_growth_visible": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        },
+        {
+          "story_object": "physical photo album",
+          "time_span_years": true,
+          "participants": [
+            "photographer",
+            "elderly couple",
+            "visitors"
+          ],
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-old-sign-longitudinal-story",
+          "guardrails": [
+            "物件经历与年份必须由可靠档案或当事人口播支持。",
+            "不能把品牌成长叙事替代具体人物和作品。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-photo-story-human-relationship",
+          "guardrails": [
+            "尊重被摄者意愿与隐私。",
+            "照片年份和关系只按可见证据或本人陈述描述。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 1008.474,
+          "end_sec": 1149.0,
+          "observation_id": "obs-lumi-old-sign-longitudinal-story"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 963.4,
+          "end_sec": 1181,
+          "observation_id": "obs-chongqing-photo-story-human-relationship"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-place-detail-to-city-system",
       "category": "narrative",
       "source_support": 3,
@@ -2578,21 +2947,87 @@
       ]
     },
     {
+      "technique_key": "narrative-private-memory-location-callback",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm",
+        "bilibili-BV1LS3r6gE7k"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "开场提到的第一部共同电影需要在纽约行程中获得具体地点和时间回报。",
+        "个人剪辑室的窗景需要从装饰信息变成选址理由。"
+      ],
+      "treatment_examples": [
+        "在《Begin Again》相关取景地重新讲述七年前约会和看片细节，穿插电影中船上录歌的画面，再以‘第七年做到电影里的情景’完成关系回环。",
+        "先让人物坐到桌前看见大树，再回忆第一次傍晚看房时树影洒在墙上的安静感，解释为什么租下这个空间。"
+      ],
+      "parameter_variants": [
+        {
+          "callback_to_opening": true,
+          "elapsed_relationship_years": 7,
+          "reference_insert": "film scene",
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "present_view": "large_tree",
+          "past_memory": "sunset_tree_shadow",
+          "location_choice_explained": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-begin-again-memory-callback",
+          "guardrails": [
+            "外部电影片段必须具备使用权。",
+            "私人回忆只按人物表达描述，不补造事实。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-tree-memory-location-callback",
+          "guardrails": [
+            "私人记忆必须由当事人口播支持。",
+            "不把单次美好光线承诺成空间始终如此。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 1296.8,
+          "end_sec": 1445.97,
+          "observation_id": "obs-begin-again-memory-callback"
+        },
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 760.96,
+          "end_sec": 815.0,
+          "observation_id": "obs-lumi-tree-memory-location-callback"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-reflection-summary-forward-hook",
       "category": "narrative",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
         "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1CrHwzUEJa",
+        "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.966,
+      "average_confidence": 0.9683,
       "trigger_examples": [
         "比赛结束后需要把球赛情绪重新放回纽约城市尺度，并说明记录本身的意义。",
         "六天旅行和最后四小时徒步需要在离开前沉淀成可复用的人物认知。",
         "第一天经历包含大量偶遇和情绪反差，需要在结束前把事件沉淀为人物认知。",
+        "Room Tour 结束需要回答新空间与过去五年、未来创作的关系。",
         "巴黎仅有一天的行程需要把紧绷、消费、三万步、设备和环境感受沉淀成明确结论。",
         "两条路线看似差异很大，需要明确回答开场提出的同一城市问题。"
       ],
@@ -2600,6 +3035,7 @@
         "以时代广场和夜间街道承载赛后旁白，从城市不因一场决赛改变转到稳定镜头、旋转视角和‘为什么记录’，最后落在纽约留在人物镜头里。",
         "在酒店保留完整口播，总结已完成与遗憾、错误路线和‘及时回头’，再用剪辑把数小时痛苦压缩成几分钟的自觉比喻连接观众与下一段旅程。",
         "回酒店保留完整正面口播，依次总结瑞士风景、当地人的松弛、偶遇旅伴和披萨体验，再用明日计划、致谢黑卡和下集风景预告收尾。",
+        "在旧招牌和照片墙前总结不完美但真实的创作观，再用新工作室、新键盘和‘每次敲击都是新的开始’转向未来，最后邀请观众分享自己的五年。",
         "回酒店保留较长正面口播，总结未遇失窃、全程警惕、交通与气味感受、餐费和疲惫；进食后补充三万步、鞋损与房间气味，最后明确下一站圣米歇尔山并道别。",
         "用火锅、轻轨、社区步道、居民和城市宽景交替承载旁白，指出科幻重庆与接地气重庆都是同一城市的生命力；随后回到栏目感谢、城市推荐和再见。"
       ],
@@ -2628,6 +3064,12 @@
           "reflection_topics": 4,
           "has_next_episode_preview": true,
           "source_id": "bilibili-BV1CrHwzUEJa"
+        },
+        {
+          "past_summary": true,
+          "future_hook": true,
+          "audience_prompt": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
         },
         {
           "reflection_topics": [
@@ -2679,6 +3121,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-five-year-reflection-forward-hook",
+          "guardrails": [
+            "未来承诺不能被当作已经实现的结果。",
+            "赞助回扣需与编辑总结清楚区分并保留披露。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "observation_id": "obs-hotel-reflection-next-stop-hook",
           "guardrails": [
@@ -2713,6 +3163,12 @@
           "start_sec": 2091,
           "end_sec": 2159.44,
           "observation_id": "obs-day-reflection-next-episode-hook"
+        },
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 1008.474,
+          "end_sec": 1185.32,
+          "observation_id": "obs-lumi-five-year-reflection-forward-hook"
         },
         {
           "source_id": "bilibili-BV1TNZUB4EF6",
@@ -2898,6 +3354,70 @@
       ]
     },
     {
+      "technique_key": "narrative-sponsor-demonstration-with-host-friction",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1LS3r6gE7k",
+        "bilibili-BV1TYVA6sEhm"
+      ],
+      "average_confidence": 0.935,
+      "trigger_examples": [
+        "键盘赞助若脱离 Room Tour 会中断空间导览。",
+        "护肤赞助位于实用物品章节，需要保持与旅行场景和人物关系的连续性。"
+      ],
+      "treatment_examples": [
+        "从真实员工工位和五年未变的键鼠组合进入新键盘，让员工现场打字、评价手感、演示快捷键，并保留主持人对员工爱好和回答的即兴反应。",
+        "先用不同气候下的皮肤状态和意大利忘带产品的经历说明使用情境，再以双人护肤习惯的互相吐槽恢复节目语气，随后转入旅行冲突章节。"
+      ],
+      "parameter_variants": [
+        {
+          "real_workstation": true,
+          "coworker_demonstration": true,
+          "host_friction_retained": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        },
+        {
+          "disclosure_visible": true,
+          "problem_demo": true,
+          "host_banter": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-sponsor-workflow-host-friction",
+          "guardrails": [
+            "产品功能与体验结论需要独立核验和清楚披露。",
+            "不能让赞助演示伪装成全体员工的客观测试。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-sponsor-demo-host-friction",
+          "guardrails": [
+            "功效和适用肤质属于商业与个人体验陈述，需要独立核验。",
+            "赞助内容必须保持明确披露，不伪装成无商业关系建议。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 240.0,
+          "end_sec": 360.0,
+          "observation_id": "obs-lumi-sponsor-workflow-host-friction"
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 892.792,
+          "end_sec": 1003.035,
+          "observation_id": "obs-travel-marriage-sponsor-demo-host-friction"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-theme-bridge-between-chapters",
       "category": "narrative",
       "source_support": 3,
@@ -2995,22 +3515,24 @@
     {
       "technique_key": "opening-phased-hook-not-uniform-fast-cut",
       "category": "opening_montage",
-      "source_support": 7,
+      "source_support": 8,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9729,
+      "average_confidence": 0.975,
       "trigger_examples": [
         "开场同时需要刺激、地点、路线和商业联动信息。",
         "长篇旅行需要同时交代目的地承诺、人物动机和行动起点。",
         "长途独行VLOG需要同时兑现目的地视觉、交代人物动机并快速进入移动。",
         "长篇旅行终章需要同时兑现地标承诺、交代人物疲惫限制并启动真实行动。",
+        "工作室 Room Tour 容易成为静态空间罗列，需要先证明改造规模，再进入可理解的动线。",
         "巴黎一日独行片需要迅速交代欧洲行最后一站，同时让设备安全焦虑和出发动作成立。",
         "主题涉及高成本且容易引发立场争论，需要快速说明问题、亲历资格和本片覆盖范围。",
         "超长东京独行片需要同时兑现地点、快速启动跨境移动并保留人物真实反应。"
@@ -3020,6 +3542,7 @@
         "先用12秒景色标题预告，再以完整口播设定目标，随后用时间跳切和约2秒一镜的交通蒙太奇提速。",
         "先用十秒六镜风景标题预告，再保留完整口播设定和凌晨准备，最后把0.76至1.28秒中位镜长的快剪集中在告别与交通推进。",
         "先用 11.52 秒地标、日落和标题预览，再保留完整口播说明最后一站与班次选择；次日重启后才把较密镜头集中到离店和交通推进。",
+        "用成本问题、旧新空间闪回和施工结果快速建立变化，显示 Room Tour 标题后减速为开门、一层和三层结构说明。",
         "先用 8.88 秒地标标题兑现地点，再以早餐旁白回顾前序旅程；酒店口播阶段明显减速建立风险和手机道具，最后把较密剪辑集中到收拾、列车与换乘。",
         "先由主持人提出一天婚礼与长线旅行的选择题，再插入求婚、领证、极地和头纱旅行证据，最后回到桌谈公布四章结构和赞助。",
         "先用 16.433 秒地点与标题建立承诺，再把 0.25 秒中位镜长的超密短切集中在机场物流；安检和进食处减速，随后以登机、飞行和抵达重新推进。"
@@ -3052,6 +3575,16 @@
           "destination_preview_sec": 11.52,
           "fastest_cut_block": "departure_and_transit",
           "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "phases": [
+            "cost_question",
+            "before_after_proof",
+            "title_reset",
+            "guided_entry"
+          ],
+          "uniform_fast_cut": false,
+          "source_id": "bilibili-BV1LS3r6gE7k"
         },
         {
           "phase_count": 4,
@@ -3112,6 +3645,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-roomtour-opening-phases",
+          "guardrails": [
+            "开场展示的空间和成本命题必须在正文得到解释。",
+            "不能用全程高速 montage 替代功能和人物语义。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "observation_id": "obs-paris-opening-four-phase-hook",
           "guardrails": [
@@ -3160,6 +3701,12 @@
           "start_sec": 0,
           "end_sec": 120,
           "observation_id": "obs-opening-landmark-promise-to-departure"
+        },
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 0.0,
+          "end_sec": 60.0,
+          "observation_id": "obs-lumi-roomtour-opening-phases"
         },
         {
           "source_id": "bilibili-BV1TNZUB4EF6",
@@ -3722,18 +4269,20 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
       "category": "subtitle",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
+        "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.942,
+      "average_confidence": 0.9483,
       "trigger_examples": [
         "全片包含密集中文口播、外语教学、动作噪声和多次章节转换。",
         "全片横跨城市说明、双人对谈、英语引用、产品内容和球场现场，需要稳定的信息层级。",
+        "全片连续口播和多人互动需要稳定可读，同时空间与年份信息需要更高层级提示。",
         "双城旅行同时包含现场对白、章节、日期、价格、历史引用、竖屏素材、赞助和 credits，需要稳定的信息层级。",
         "长桌谈、旅行旧素材、图卡、赞助和外部影视片段共存，需要稳定而分层的信息系统。",
         "全片包含方言、英语、多人对话、照片、社交页面、历史档案和栏目图形，需要清楚区分证据层。"
@@ -3741,6 +4290,7 @@
       "treatment_examples": [
         "保持底部居中对白字幕，只在 Mission、章节、战术关键词、地点、结果和 Easter Egg 使用独立稀疏标题层。",
         "以底部居中浅色描边对白字幕为默认层，地点手写标题、FRIENDS 标识和 New York/纽约主标题只在对应章节短暂出现。",
+        "用底部居中字幕承载对白，只在 Room Tour 标题、区域名、设备、年份和照片回顾处增加稀疏图形层。",
         "普通对白持续使用底部字幕；Part、Day、地点、价格和颜色标签稀疏出现；竖屏引用、历史照片、人物肖像与赞助产品保留独立视觉边界。",
         "普通对白持续使用底部居中浅色字幕；章节与编号采用小型标签，图卡独立呈现结构，赞助保留标识，外部片段用中英双语层，片尾只保留 credits。",
         "以底部居中浅色描边字幕为默认层；竖屏社交素材、实体相册、黑白档案、地点标题和‘来不来’栏目图形只在对应证据节点出现。"
@@ -3761,6 +4311,16 @@
             "chapter title"
           ],
           "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "base_position": "bottom_center",
+          "sparse_layers": [
+            "main_title",
+            "area_label",
+            "equipment_label",
+            "year_card"
+          ],
+          "source_id": "bilibili-BV1LS3r6gE7k"
         },
         {
           "base_position": "bottom_center",
@@ -3813,6 +4373,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-base-subtitles-sparse-area-labels",
+          "guardrails": [
+            "未执行 OCR，文字准确性仍需人工听校。",
+            "区域标签和产品图层不能遮挡人物脸部或基础字幕。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "observation_id": "obs-naples-capri-subtitle-evidence-layers",
           "guardrails": [
@@ -3849,6 +4417,12 @@
           "start_sec": 0,
           "end_sec": 1901.01,
           "observation_id": "obs-base-subtitle-hierarchy"
+        },
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 0.0,
+          "end_sec": 1190.53,
+          "observation_id": "obs-lumi-base-subtitles-sparse-area-labels"
         },
         {
           "source_id": "bilibili-BV1Mi536EELv",
@@ -4498,136 +5072,6 @@
       ]
     },
     {
-      "technique_key": "graphic-physical-archive-time-series",
-      "category": "graphic",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1a7Tj6nEe9"
-      ],
-      "average_confidence": 0.98,
-      "trigger_examples": [
-        "共同记忆和街区变化需要比口述更具体的时间证据。"
-      ],
-      "treatment_examples": [
-        "让人物翻看实体相册并指认 2019、2021 等同地点照片，穿插当前街巷，形成过去与现在的可见对照。"
-      ],
-      "parameter_variants": [
-        {
-          "archive_type": "physical_album",
-          "same_location_comparison": true,
-          "years_visible": true,
-          "source_id": "bilibili-BV1a7Tj6nEe9"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "observation_id": "obs-chongqing-album-time-series-evidence",
-          "guardrails": [
-            "照片版权和肖像权需确认。",
-            "年份必须能从相册或当事人证词核实。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "start_sec": 1031.7,
-          "end_sec": 1181,
-          "observation_id": "obs-chongqing-album-time-series-evidence"
-        }
-      ]
-    },
-    {
-      "technique_key": "graphic-place-title-before-main-body-reset",
-      "category": "graphic",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV15XMC6KETm"
-      ],
-      "average_confidence": 0.99,
-      "trigger_examples": [
-        "城市命题与任务设定完成后，需要一个清楚的章节边界进入正片。"
-      ],
-      "treatment_examples": [
-        "在纽约天际线与水面上叠加白色 New York/纽约主标题，随后硬切室内双人对谈和比赛倒计时。"
-      ],
-      "parameter_variants": [
-        {
-          "title_language": [
-            "English",
-            "Chinese"
-          ],
-          "transition_out": "hard_cut",
-          "complex_vfx": false,
-          "source_id": "bilibili-BV15XMC6KETm"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "observation_id": "obs-newyork-main-title-reset",
-          "guardrails": [
-            "主标题只出现一次。",
-            "章节切换后立即提供新信息。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "start_sec": 82.78,
-          "end_sec": 97.1,
-          "observation_id": "obs-newyork-main-title-reset"
-        }
-      ]
-    },
-    {
-      "technique_key": "graphic-reference-frame-to-live-location-match",
-      "category": "graphic",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1aDHQejEAP"
-      ],
-      "average_confidence": 0.97,
-      "trigger_examples": [
-        "动画记忆是前往现实地点的动机，观众需要先知道参照对象，再理解现场对应关系。"
-      ],
-      "treatment_examples": [
-        "先以全屏动画参照建立车站和楼梯记忆，再切入人物到达的现实楼梯、出口和周边环境；不把参照画面伪装成实时镜头。"
-      ],
-      "parameter_variants": [
-        {
-          "reference_presentation": "full_frame",
-          "reference_range_sec": [
-            6868,
-            6892
-          ],
-          "live_location_follows": true,
-          "inline_overlay": false,
-          "source_id": "bilibili-BV1aDHQejEAP"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1aDHQejEAP",
-          "observation_id": "obs-animation-reference-to-live-location",
-          "guardrails": [
-            "参照画面和实景必须保持清晰来源边界，目标素材只使用有权使用的参照。",
-            "不能从构图相似推断官方关系、授权状态或创作因果。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1aDHQejEAP",
-          "start_sec": 6868,
-          "end_sec": 6905,
-          "observation_id": "obs-animation-reference-to-live-location"
-        }
-      ]
-    },
-    {
       "technique_key": "graphic-risk-mode-color-wash-reset",
       "category": "graphic",
       "source_support": 1,
@@ -4917,6 +5361,47 @@
           "start_sec": 6970,
           "end_sec": 6985,
           "observation_id": "obs-scenic-pose-interrupted"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-price-guess-partner-reveal",
+      "category": "humor",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1LS3r6gE7k"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "设计师家具价格是抽象信息，需要通过人物关系获得落点。"
+      ],
+      "treatment_examples": [
+        "让伴侣连续猜测造型垃圾桶价格，主持人逐步否定并最终揭示购买的是仿款，使物件信息、消费态度和关系笑点同时成立。"
+      ],
+      "parameter_variants": [
+        {
+          "guess_rounds_retained": true,
+          "final_reveal": "replica",
+          "object_remains_visible": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-price-guess-partner-reveal",
+          "guardrails": [
+            "价格、设计师身份和商品属性需要独立核验。",
+            "不能通过删句让伴侣显得无知或误导真实消费。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 480.0,
+          "end_sec": 556.256,
+          "observation_id": "obs-lumi-price-guess-partner-reveal"
         }
       ]
     },
@@ -5253,6 +5738,50 @@
       ]
     },
     {
+      "technique_key": "narrative-coworker-use-validates-space-design",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1LS3r6gE7k"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "设计者对空间的自我评价不足以证明工作室是否好用。"
+      ],
+      "treatment_examples": [
+        "让员工工位、咖啡、调色室、猫、安静键盘、傍晚露台和烧烤实际使用补充主持人的设计说明。"
+      ],
+      "parameter_variants": [
+        {
+          "validation_sources": [
+            "coworkers",
+            "cat",
+            "daily_workflow",
+            "after_work_use"
+          ],
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-coworker-use-validates-design",
+          "guardrails": [
+            "员工反应不能被剪成代表所有使用者的统一结论。",
+            "赞助产品体验和空间评价需要清楚区分。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 111.044,
+          "end_sec": 462.963,
+          "observation_id": "obs-lumi-coworker-use-validates-design"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-crisis-caption-black-card-relief",
       "category": "subtitle",
       "source_support": 1,
@@ -5331,6 +5860,52 @@
           "start_sec": 230.697,
           "end_sec": 322.823,
           "observation_id": "obs-travel-marriage-definition-before-destination-list"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-design-constraint-to-function-payoff",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1LS3r6gE7k"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "多功能空间的设计理由只有在约束和使用结果同时出现时才有信息价值。"
+      ],
+      "treatment_examples": [
+        "先说明面积、层高、采光、遮光、温度和楼梯限制，再展示下沉沙发、淋浴、帘幕、秘密基地、树景工位和拍摄棚如何应对。"
+      ],
+      "parameter_variants": [
+        {
+          "constraint_types": [
+            "area",
+            "height",
+            "light",
+            "privacy",
+            "temperature"
+          ],
+          "shows_realized_solution": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-design-constraint-function-payoff",
+          "guardrails": [
+            "解决方案只说明当前空间，不推广为通用装修建议。",
+            "没有使用证据的设计意图应降低结论强度。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 60.0,
+          "end_sec": 851.017,
+          "observation_id": "obs-lumi-design-constraint-function-payoff"
         }
       ]
     },
@@ -5506,6 +6081,47 @@
       ]
     },
     {
+      "technique_key": "narrative-floor-by-floor-functional-tour",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1LS3r6gE7k"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "三层空间、多个露台和混合功能容易让观众失去方位。"
+      ],
+      "treatment_examples": [
+        "沿一层到三层的真实上楼动线依次展示休息、工位、调色、露台、观影、秘密基地、剪辑室和拍摄棚，每区先命名再演示用途。"
+      ],
+      "parameter_variants": [
+        {
+          "floor_count": 3,
+          "route_order_preserved": true,
+          "function_before_detail": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-floor-by-floor-functional-tour",
+          "guardrails": [
+            "空间顺序不能因节奏压缩而造成方位误导。",
+            "每个区域必须提供新功能、人物或历史信息。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 34.0,
+          "end_sec": 1008.474,
+          "observation_id": "obs-lumi-floor-by-floor-functional-tour"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-guide-expertise-before-action",
       "category": "narrative",
       "source_support": 1,
@@ -5673,6 +6289,46 @@
       ]
     },
     {
+      "technique_key": "narrative-imperfect-detail-to-authenticity-thesis",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1LS3r6gE7k"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "招牌拼写错误和不统一手绘牌可以被视为瑕疵，也可以成为创作主题证据。"
+      ],
+      "treatment_examples": [
+        "先完整讲述误写招牌被补救，再在旧牌和照片墙前把不完美、不刻意、不复刻的细节概括为鹿米仓作品的真实特征。"
+      ],
+      "parameter_variants": [
+        {
+          "concrete_imperfection_first": true,
+          "theme_statement_after_evidence": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-imperfect-detail-authenticity-thesis",
+          "guardrails": [
+            "主题总结不能洗白会伤害观众或事实准确性的错误。",
+            "必须先有具体物件和过程证据，再进行价值升华。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 930.0,
+          "end_sec": 1101.2,
+          "observation_id": "obs-lumi-imperfect-detail-authenticity-thesis"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-live-event-to-universal-theme",
       "category": "narrative",
       "source_support": 1,
@@ -5754,51 +6410,6 @@
           "start_sec": 1999.32,
           "end_sec": 2099.12,
           "observation_id": "obs-daylight-revisit-reframes-night"
-        }
-      ]
-    },
-    {
-      "technique_key": "narrative-object-builds-longitudinal-human-story",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1a7Tj6nEe9"
-      ],
-      "average_confidence": 0.99,
-      "trigger_examples": [
-        "山城巷如果只讲建筑历史仍缺少本地人与游客长期关系。"
-      ],
-      "treatment_examples": [
-        "从摄影师偶遇老夫妻、重现走红照片进入实体相册、游客留言和多年同角度照片，让相册成为人物关系与地点变化的时间轴。"
-      ],
-      "parameter_variants": [
-        {
-          "story_object": "physical photo album",
-          "time_span_years": true,
-          "participants": [
-            "photographer",
-            "elderly couple",
-            "visitors"
-          ],
-          "source_id": "bilibili-BV1a7Tj6nEe9"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "observation_id": "obs-chongqing-photo-story-human-relationship",
-          "guardrails": [
-            "尊重被摄者意愿与隐私。",
-            "照片年份和关系只按可见证据或本人陈述描述。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "start_sec": 963.4,
-          "end_sec": 1181,
-          "observation_id": "obs-chongqing-photo-story-human-relationship"
         }
       ]
     },
@@ -5944,47 +6555,6 @@
       ]
     },
     {
-      "technique_key": "narrative-private-memory-location-callback",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV15XMC6KETm"
-      ],
-      "average_confidence": 0.98,
-      "trigger_examples": [
-        "开场提到的第一部共同电影需要在纽约行程中获得具体地点和时间回报。"
-      ],
-      "treatment_examples": [
-        "在《Begin Again》相关取景地重新讲述七年前约会和看片细节，穿插电影中船上录歌的画面，再以‘第七年做到电影里的情景’完成关系回环。"
-      ],
-      "parameter_variants": [
-        {
-          "callback_to_opening": true,
-          "elapsed_relationship_years": 7,
-          "reference_insert": "film scene",
-          "source_id": "bilibili-BV15XMC6KETm"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "observation_id": "obs-begin-again-memory-callback",
-          "guardrails": [
-            "外部电影片段必须具备使用权。",
-            "私人回忆只按人物表达描述，不补造事实。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "start_sec": 1296.8,
-          "end_sec": 1445.97,
-          "observation_id": "obs-begin-again-memory-callback"
-        }
-      ]
-    },
-    {
       "technique_key": "narrative-risk-prop-callback-chain",
       "category": "narrative",
       "source_support": 1,
@@ -6088,47 +6658,6 @@
       ]
     },
     {
-      "technique_key": "narrative-sponsor-demonstration-with-host-friction",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1TYVA6sEhm"
-      ],
-      "average_confidence": 0.91,
-      "trigger_examples": [
-        "护肤赞助位于实用物品章节，需要保持与旅行场景和人物关系的连续性。"
-      ],
-      "treatment_examples": [
-        "先用不同气候下的皮肤状态和意大利忘带产品的经历说明使用情境，再以双人护肤习惯的互相吐槽恢复节目语气，随后转入旅行冲突章节。"
-      ],
-      "parameter_variants": [
-        {
-          "disclosure_visible": true,
-          "problem_demo": true,
-          "host_banter": true,
-          "source_id": "bilibili-BV1TYVA6sEhm"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1TYVA6sEhm",
-          "observation_id": "obs-travel-marriage-sponsor-demo-host-friction",
-          "guardrails": [
-            "功效和适用肤质属于商业与个人体验陈述，需要独立核验。",
-            "赞助内容必须保持明确披露，不伪装成无商业关系建议。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1TYVA6sEhm",
-          "start_sec": 892.792,
-          "end_sec": 1003.035,
-          "observation_id": "obs-travel-marriage-sponsor-demo-host-friction"
-        }
-      ]
-    },
-    {
       "technique_key": "opening-contrast-thesis-with-concrete-question",
       "category": "opening_montage",
       "source_support": 1,
@@ -6169,6 +6698,47 @@
           "start_sec": 0,
           "end_sec": 88,
           "observation_id": "obs-chongqing-opening-viral-local-question"
+        }
+      ]
+    },
+    {
+      "technique_key": "opening-cost-question-before-room-tour",
+      "category": "opening_montage",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1LS3r6gE7k"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "观众需要一个超越‘看看房间’的判断问题。"
+      ],
+      "treatment_examples": [
+        "开场直接提出花 100 万打造工作室是梦想还是翻车，再用旧空间、施工、外观和成品镜头提供初步证据。"
+      ],
+      "parameter_variants": [
+        {
+          "question_first": true,
+          "before_after_evidence": true,
+          "question_answered_across_video": true,
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-cost-question-roomtour-hook",
+          "guardrails": [
+            "金额和装修事实需要独立核验。",
+            "不能仅靠成品美景预先宣布答案。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 0.0,
+          "end_sec": 34.0,
+          "observation_id": "obs-lumi-cost-question-roomtour-hook"
         }
       ]
     },
@@ -6343,6 +6913,51 @@
           "start_sec": 989,
           "end_sec": 1060,
           "observation_id": "obs-elevated-city-day-to-night"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-functional-space-wide-detail-human-use",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1LS3r6gE7k"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "室内美感若只拍空房会像房产展示，缺少工作室的真实尺度。"
+      ],
+      "treatment_examples": [
+        "每个主要区域先给宽景和动线，再拍家具、设备、植物或窗景细节，最后保留员工、伴侣、猫或主持人的实际使用。"
+      ],
+      "parameter_variants": [
+        {
+          "sequence": [
+            "wide",
+            "functional_detail",
+            "human_use",
+            "reaction"
+          ],
+          "empty_room_only": false,
+          "source_id": "bilibili-BV1LS3r6gE7k"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "observation_id": "obs-lumi-functional-space-wide-detail-use",
+          "guardrails": [
+            "人物使用必须来自真实现场，不能摆拍成未经发生的工作流程。",
+            "宽景和细节需要维持同一空间关系。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1LS3r6gE7k",
+          "start_sec": 34.0,
+          "end_sec": 851.017,
+          "observation_id": "obs-lumi-functional-space-wide-detail-use"
         }
       ]
     },
@@ -6787,6 +7402,38 @@
       },
       "rule": "目的地钩子只占最前面的短段；随后让完整人物设定、疲惫限制和计划成立，再把较密剪辑集中到次日出发与交通推进，避免把长篇开场误做成全程快切。",
       "source_id": "bilibili-BV1ETNMzEEWQ"
+    },
+    {
+      "total_reviewed_sec": 60.0,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 12.0,
+          "function": "用‘花100万装工作室’的结果问题和人物正面口播建立成本悬念，同时快速闪回旧空间与新空间。"
+        },
+        {
+          "start_sec": 12.0,
+          "end_sec": 34.0,
+          "function": "以设计、施工、外观和暖色完成空间画面证明，随后显示鹿米仓 3.0 Room Tour 标题。"
+        },
+        {
+          "start_sec": 34.0,
+          "end_sec": 60.0,
+          "function": "从开门邀请进入一层，说明三层错落结构和功能分区，让结果钩子转成可跟随的现场动线。"
+        }
+      ],
+      "metrics": {
+        "opening_0_to_12_shots": 7,
+        "opening_0_to_12_median_shot_sec": 2.035,
+        "opening_12_to_34_shots": 14,
+        "opening_12_to_34_median_shot_sec": 1.568,
+        "opening_34_to_60_shots": 6,
+        "opening_34_to_60_median_shot_sec": 3.92,
+        "opening_15_sec_shot_count": 10,
+        "reviewed_0_to_60_shot_count": 25
+      },
+      "rule": "空间改造型视频先用成本问题和改造前后建立结果承诺，再用标题完成重置，进入正文后明显减速并沿真实动线解释功能；快切只承担证明变化，不替代完整 Room Tour。",
+      "source_id": "bilibili-BV1LS3r6gE7k"
     },
     {
       "total_reviewed_sec": 95.062,
