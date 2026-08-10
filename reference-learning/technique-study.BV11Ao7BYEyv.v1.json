@@ -1,0 +1,472 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV11Ao7BYEyv-v1",
+  "generated_at": "2026-08-10T12:50:00Z",
+  "source": {
+    "source_id": "bilibili-BV11Ao7BYEyv",
+    "url": "https://www.bilibili.com/video/BV11Ao7BYEyv/",
+    "title": "泰拳女王给我当陪练，是种怎样的体验!?",
+    "duration_sec": 2213.227
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 2436753,
+    "full_analysis_utf8_bytes": 2492405,
+    "proxy_dual_stream_full_decode_exit_code": 0,
+    "video_duration_sec": 2213.227,
+    "shot_count": 787,
+    "event_count": 31,
+    "audio_segment_count": 571,
+    "transcript_segment_count": 1017,
+    "transcript_word_count": 5124,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_language_probability": 1.0,
+    "asr_reported_duration_sec": 2213.227,
+    "vad_transcript_end_sec": 2183.97,
+    "vad_transcript_coverage_ratio": 0.986781,
+    "vad_transcript_tail_gap_sec": 29.257,
+    "no_vad_tail_crosscheck": {
+      "review_range_sec": [2100.0, 2213.227],
+      "speech_like_end_sec": 2212.86,
+      "coverage_ratio": 0.999834,
+      "tail_gap_sec": 0.367,
+      "text_reliable": false,
+      "result": "关闭 VAD 的独立尾检在拳馆 Easter Egg 中检测到短对话式语音直到片尾前约 0.37 秒；文字置信度偏低，只用于覆盖核验，不并入正式逐字稿。"
+    },
+    "audio_class_ratios": {
+      "speech": 0.6556,
+      "ambient_likely": 0.2666,
+      "music_likely": 0.0307,
+      "silence": 0.0472
+    },
+    "shot_duration_median_sec": 2.269,
+    "shot_duration_p75_sec": 3.503,
+    "event_review_contact_sheet_count": 24,
+    "manual_contact_sheet_count": 8,
+    "manual_review_ranges": [
+      [0.0, 80.0],
+      [280.0, 780.0],
+      [780.0, 1255.0],
+      [1255.0, 1840.0],
+      [1820.0, 2115.0],
+      [2080.0, 2213.227]
+    ],
+    "manual_review_focus": [
+      "opening",
+      "mission_structure",
+      "muay_thai_training_and_injury",
+      "tactical_training_and_gameplay_insets",
+      "local_homestay_and_historical_objects",
+      "modified_boat_payoff",
+      "subtitle_and_graphic_layers",
+      "suspected_effects",
+      "ending_and_easter_egg"
+    ]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 60.294,
+    "phases": [
+      {
+        "start_sec": 0.0,
+        "end_sec": 13.0,
+        "function": "从泰拳女王、训练反应和高刺激片段冷开场，先给人物与风险承诺。"
+      },
+      {
+        "start_sec": 13.0,
+        "end_sec": 28.0,
+        "function": "交代曼谷港口位置，把普通旅行重新定义为字面意义的特种兵旅行。"
+      },
+      {
+        "start_sec": 28.0,
+        "end_sec": 60.294,
+        "function": "用 Mission 1、2、3 卡片依次承诺泰拳、四对四战术训练和高速改装船，并把按摩派对设为结算奖励。"
+      }
+    ],
+    "metrics": {
+      "opening_event_count": 1,
+      "reviewed_shot_count": 34,
+      "opening_15_sec_shot_count": 11,
+      "opening_15_sec_average_shot_sec": 1.526,
+      "mission_count": 3,
+      "reward_promised": true
+    },
+    "rule": "高概念体验片先给人物和风险预告，再把地点主题压缩成有限任务清单，并公开结算奖励；快速镜头只负责建立承诺，正文必须逐项兑现。"
+  },
+  "narrative_model": {
+    "premise": "影片把曼谷体验包装成一次游戏式撤离任务：主持人依次寻找泰拳冠军、前军人教练和改装船技师，中途以民宿、布施、私人收藏与旧物市场提供恢复段和城市历史层，最终用高速船、游戏画面与按摩派对完成结算。",
+    "beats": [
+      "冷开场公布三项任务和奖励",
+      "介绍泰拳女王的家庭与冠军背景",
+      "从基础动作、组合练习进入对打",
+      "保留主持人笨拙反应、碰撞受伤和职业风险反思",
+      "用 Part 2 卡切入装备、CQB 和四对四演练",
+      "从高强度对抗转入隐蔽民宿和清晨布施",
+      "通过房东家族、咖啡、私人收藏和旧物市场展开曼谷历史层",
+      "把旧发动机与改装文化接到第三项高速船任务",
+      "以港口、游戏地图、按摩派对和拳馆花絮完成任务结算"
+    ],
+    "rule": "任务型体验片的每一章都应完成专家资格、学习过程、亲自尝试、失败或风险、结果评价；恢复段也要提供人物、空间或历史信息，不能只是缓冲填充。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "先由人物进入拳馆、战术场、百年民宿、旧物市场或船厂",
+      "用宽景说明空间和人物尺度",
+      "以器械、旧物、发动机、河道等细节回答地点功能",
+      "保留主持人或当地人的动作与反应",
+      "回到口播解释地点和主任务的关系"
+    ],
+    "observed_ranges": [
+      [1255.02, 1444.81],
+      [1444.81, 1666.632],
+      [1666.632, 1840.0],
+      [1820.519, 2087.719]
+    ],
+    "rule": "本片的景观价值主要来自人物进入真实空间后的发现：自然光、百年木屋、河道、旧物和船厂细节必须服务地点理解或任务推进，而不是脱离叙事的空镜堆叠。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.0307,
+    "evidence_status": "machine_audio_classification_only",
+    "visual_candidates": [
+      "开场任务预告",
+      "章节卡和装备揭示",
+      "百年民宿自然光与环境恢复段",
+      "高速船、游戏画面和按摩灯光结算"
+    ],
+    "rule": "机器声学分类只能标记可能的音乐区间；当前没有人工听音证据，不声明曲名、BPM、ducking、逐拍剪切或音乐导致的情绪因果。"
+  },
+  "subtitle_model": {
+    "base_style": "底部居中浅色中文字幕配深色描边，覆盖主持人口播、教练说明、多人互动和外语交流。",
+    "emphasis_patterns": [
+      "Mission 1、2、3 使用独立任务卡，不与普通对白字幕混为一层",
+      "英文或泰语教学保留中文解释，让动作、口令和反应可追踪",
+      "战术关键词、章节名、WARGAME 结果和改装船地点使用稀疏标题层",
+      "笑点只短暂强调关键词或反应，随后恢复基础字幕",
+      "Easter Egg 和 credits 与正文结算保持视觉区隔"
+    ],
+    "rule": "动作密集段用稳定底部字幕保留口令与因果，任务、章节、结果和花絮另用短时图层；未执行 OCR，不能声明字幕逐字完全正确。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "先建立真实训练目标或安全规则",
+      "保留主持人身体跟不上、怕疼、误解口令或队伍配合失败的完整过程",
+      "让教练、伴侣或队友的即时反应确认落点",
+      "用一处短字幕或表情强调，不叠加多层效果",
+      "回到继续训练、处理受伤或评价体验"
+    ],
+    "observed_ranges": [
+      [360.0, 676.109],
+      [1020.0, 1255.02],
+      [1500.0, 1666.632],
+      [1860.0, 1943.074],
+      [2149.314, 2213.227]
+    ],
+    "rule": "笑点来自成年人进入专业训练后的真实落差、同伴来回和失败恢复；危险动作、受伤和当地人物不能只被剪成单向嘲弄。",
+    "playback_rate_note": "短镜头、运动模糊和高速船画面可由正常速度拍摄及硬切解释；人工帧证据未确认 speed ramp、素材变速或具体倍率。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-bangkok-mission-opening-place-thesis",
+      "technique_key": "opening-place-thesis-to-concrete-mission",
+      "start_sec": 0.0,
+      "end_sec": 60.294,
+      "category": "opening_montage",
+      "trigger": "地点本身较宽泛，需要把曼谷港口与本期体验快速收敛为可验证路线。",
+      "treatment": "先给泰拳女王和高刺激反应，再交代曼谷港口，把旅程定义为特种兵旅行并公布三项任务与按摩奖励。",
+      "confidence": 0.99,
+      "parameters": {"mission_count": 3, "reward_promised": true, "opening_15_sec_shot_count": 11},
+      "evidence": {"event_id": "event-001", "manual_opening_sheet": true, "full_transcript": true},
+      "guardrails": ["开场承诺的任务和奖励必须在正文兑现。", "游戏化措辞不能掩盖真实项目的安全风险。"]
+    },
+    {
+      "observation_id": "obs-bangkok-mission-opening-phases",
+      "technique_key": "opening-phased-hook-not-uniform-fast-cut",
+      "start_sec": 0.0,
+      "end_sec": 60.294,
+      "category": "opening_montage",
+      "trigger": "开场同时需要刺激、地点、路线和商业联动信息。",
+      "treatment": "用人物风险预告、地点重定义、任务清单三阶段推进，快切后回到可理解的主持人口播和任务卡。",
+      "confidence": 0.98,
+      "parameters": {"phases": ["risk_preview", "place_reframe", "mission_roadmap"], "uniform_fast_cut": false},
+      "evidence": {"event_id": "event-001", "opening_dense_review": true},
+      "guardrails": ["不能用持续高速剪切替代任务解释。", "联动或赞助语境需要清楚披露。"]
+    },
+    {
+      "observation_id": "obs-bangkok-mission-checklist-reward",
+      "technique_key": "graphic-mission-checklist-progress-reward",
+      "start_sec": 28.0,
+      "end_sec": 60.294,
+      "category": "graphic",
+      "trigger": "三类体验跨度很大，观众需要记住顺序和完成条件。",
+      "treatment": "用 Mission 1、2、3 卡片分别绑定泰拳、战术训练和改装船，并在开场同步显示按摩派对奖励。",
+      "confidence": 0.99,
+      "parameters": {"mission_count": 3, "card_role": "roadmap_and_progress", "reward_card": true},
+      "evidence": {"manual_opening_sheet": true, "cards_visually_verified": true},
+      "guardrails": ["卡片顺序必须与正文一致。", "任务卡不应遮挡关键动作或安全说明。"]
+    },
+    {
+      "observation_id": "obs-bangkok-expert-before-muay-action",
+      "technique_key": "narrative-guide-expertise-before-action",
+      "start_sec": 60.294,
+      "end_sec": 286.453,
+      "category": "narrative",
+      "trigger": "观众需要理解教练为什么值得信任，才能判断后续训练难度和风险。",
+      "treatment": "先介绍拳馆、泰拳女王的家庭和冠军背景，再进入动作示范与主持人练习。",
+      "confidence": 0.97,
+      "parameters": {"expert_profile_before_practice": true, "profile_evidence_types": ["family_history", "championship", "gym_context"]},
+      "evidence": {"events": ["event-002", "event-003", "event-004"], "manual_event_review": true},
+      "guardrails": ["冠军数量和家庭信息需要独立核验。", "人物背景只说明专业语境，不制造个人崇拜。"]
+    },
+    {
+      "observation_id": "obs-bangkok-muay-context-proof",
+      "technique_key": "graphic-context-proof-before-action",
+      "start_sec": 250.0,
+      "end_sec": 320.0,
+      "category": "graphic",
+      "trigger": "泰拳训练若直接进入娱乐对打，会缺少运动文化和风险尺度。",
+      "treatment": "在基础训练前用拳馆、历史、职业人数和签证等事实字幕建立语境，再回到教练示范。",
+      "confidence": 0.9,
+      "parameters": {"context_before_action": true, "fact_layer": "inline_caption"},
+      "evidence": {"events": ["event-004", "event-005"], "transcript_range_verified": true},
+      "guardrails": ["人口、拳馆和签证数字必须独立核验。", "事实字幕不能替代动作安全说明。"]
+    },
+    {
+      "observation_id": "obs-bangkok-bilingual-training-instructions",
+      "technique_key": "subtitle-bilingual-action-instruction",
+      "start_sec": 120.0,
+      "end_sec": 676.109,
+      "category": "subtitle",
+      "trigger": "教练和主持人使用多语言交流，动作口令需要与身体示范同时可理解。",
+      "treatment": "保留英文或泰语短句与中文解释，底部字幕跟随拳、腿、防守和对打口令，不让翻译遮挡动作。",
+      "confidence": 0.95,
+      "parameters": {"base_position": "bottom_center", "instruction_bound_to_action": true},
+      "evidence": {"events": ["event-003", "event-005", "event-008"], "manual_contact_sheets": true},
+      "guardrails": ["翻译准确性仍需人工听校。", "字幕不得遮挡手脚接触点和受伤位置。"]
+    },
+    {
+      "observation_id": "obs-bangkok-expert-demo-practice-reflection",
+      "technique_key": "narrative-expert-demonstration-practice-reflection-loop",
+      "start_sec": 286.453,
+      "end_sec": 1255.02,
+      "category": "narrative",
+      "trigger": "专业项目既要有知识密度，也要让普通观众感到参与过程。",
+      "treatment": "泰拳和战术章节都按专家示范、主持人练习、实战失败或受伤、结果反思组织，避免只展示成功动作。",
+      "confidence": 0.98,
+      "parameters": {"loop_steps": ["expert_demo", "host_practice", "live_test", "failure_or_risk", "reflection"], "chapter_count": 2},
+      "evidence": {"events": ["event-005", "event-008", "event-010", "event-014", "event-016"], "manual_dense_review": true},
+      "guardrails": ["不能为了戏剧性删掉安全规则和受伤处理。", "示范不等于观众可自行复制。"]
+    },
+    {
+      "observation_id": "obs-bangkok-muay-awkward-process",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 360.0,
+      "end_sec": 676.109,
+      "category": "humor",
+      "trigger": "普通成年人跟不上专业泰拳训练，真实落差比预制笑话更有可信度。",
+      "treatment": "保留动作失败、怕疼、自嘲、同伴起哄、对打和碰撞后的连续反应，再回到训练结果。",
+      "confidence": 0.98,
+      "parameters": {"setup_reaction_resolution": true, "single_reaction_emphasis": true},
+      "evidence": {"events": ["event-006", "event-007", "event-008", "event-009"], "manual_muay_sheet": true},
+      "guardrails": ["不把教练或受伤者剪成单向笑料。", "真实受伤优先于笑点节奏。"]
+    },
+    {
+      "observation_id": "obs-bangkok-injury-reflection-payoff",
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "start_sec": 660.0,
+      "end_sec": 783.92,
+      "category": "narrative",
+      "trigger": "对打碰撞导致出血，原计划的娱乐体验出现真实风险。",
+      "treatment": "先保留意外、检查和教练解释，再把两小时训练上升为对职业拳手危险与辛苦的理解，最后完成第一项任务。",
+      "confidence": 0.98,
+      "parameters": {"failure_visible": true, "safety_check_visible": true, "reflection_before_completion": true},
+      "evidence": {"events": ["event-009", "event-010"], "transcript_and_frames": true},
+      "guardrails": ["受伤处置不能被任务完成卡提前截断。", "不夸大伤情，也不把风险娱乐化。"]
+    },
+    {
+      "observation_id": "obs-bangkok-muay-evaluation-after-experience",
+      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "start_sec": 286.453,
+      "end_sec": 783.92,
+      "category": "narrative",
+      "trigger": "观众需要知道短期体验与职业训练之间的差距。",
+      "treatment": "完成基础动作、对打和意外后，由主持人与教练明确评价初学者能得到什么、职业风险是什么。",
+      "confidence": 0.96,
+      "parameters": {"practice_before_evaluation": true, "expert_and_host_evaluation": true},
+      "evidence": {"events": ["event-005", "event-008", "event-010"], "full_transcript": true},
+      "guardrails": ["一次体验不能代表完整训练体系。", "结论需保留教练语境。"]
+    },
+    {
+      "observation_id": "obs-bangkok-repeatable-mission-modules",
+      "technique_key": "narrative-repeatable-experience-module",
+      "start_sec": 60.294,
+      "end_sec": 2087.719,
+      "category": "narrative",
+      "trigger": "三项体验内容差异巨大，需要统一观众预期。",
+      "treatment": "每项任务重复使用寻找专家、建立知识、亲身尝试、保留风险或失败、评价并结算的模块。",
+      "confidence": 0.97,
+      "parameters": {"module_steps": ["find_expert", "context", "attempt", "risk_or_failure", "evaluation", "completion"], "mission_count": 3},
+      "evidence": {"events": ["event-002", "event-011", "event-027", "event-029"], "full_video_review": true},
+      "guardrails": ["重复结构不能把不同项目的风险和文化差异压平。", "每章必须有新的专家、场景或结果信息。"]
+    },
+    {
+      "observation_id": "obs-bangkok-part-two-chapter-card",
+      "technique_key": "graphic-numbered-chaptered-explainer",
+      "start_sec": 764.13,
+      "end_sec": 903.403,
+      "category": "graphic",
+      "trigger": "泰拳任务结束后需要清楚重置到战术训练。",
+      "treatment": "使用 Part 2 章节卡、任务标签、装备细节和颗粒说明建立新规则，再进入教官示范。",
+      "confidence": 0.96,
+      "parameters": {"chapter_card": true, "equipment_labels": true, "returns_to_live_action": true},
+      "evidence": {"events": ["event-011", "event-012"], "manual_tactical_sheet": true},
+      "guardrails": ["装备标签必须与实际画面一致。", "图形不能让仿真训练看起来像真实交火。"]
+    },
+    {
+      "observation_id": "obs-bangkok-gameplay-inset-action-analogy",
+      "technique_key": "graphic-gameplay-inset-validates-action-analogy",
+      "start_sec": 1122.622,
+      "end_sec": 1255.02,
+      "category": "graphic",
+      "trigger": "真人 CQB 对抗与游戏联动需要建立可见对应，而不是只靠口播命名。",
+      "treatment": "在真人掩体行动与受击反应旁短暂插入游戏式 inset、WARGAME 卡和结果画面，随后回到真实参与者。",
+      "confidence": 0.94,
+      "parameters": {"inset_role": "analogy_not_replacement", "live_action_remains_primary": true},
+      "evidence": {"event_id": "event-016", "manual_event_review": true},
+      "guardrails": ["游戏画面不得冒充真实训练证据。", "联动内容与真实安全后果必须区分。"]
+    },
+    {
+      "observation_id": "obs-bangkok-game-frame-chapter-bridge",
+      "technique_key": "narrative-theme-bridge-between-chapters",
+      "start_sec": 764.13,
+      "end_sec": 1255.02,
+      "category": "narrative",
+      "trigger": "拳馆、战术场和后续港口在地理与活动上分散。",
+      "treatment": "持续使用三角洲任务、装备、撤离和结算语言，把不同体验维持在同一游戏式旅程框架内。",
+      "confidence": 0.95,
+      "parameters": {"bridge_device": "mission_vocabulary", "chapter_reset_visible": true},
+      "evidence": {"events": ["event-011", "event-016"], "transcript_and_graphics": true},
+      "guardrails": ["主题桥不能替代地点和人物的真实解释。", "商业联动不得伪装成独立历史结论。"]
+    },
+    {
+      "observation_id": "obs-bangkok-homestay-human-scale-scenic",
+      "technique_key": "scenic-human-reaction-to-landmark-geography",
+      "start_sec": 1255.02,
+      "end_sec": 1444.81,
+      "category": "scenic",
+      "trigger": "连续高强度训练后需要恢复节奏，同时交代下一段本地生活。",
+      "treatment": "从难找的小巷和狗进入百年木屋，以自然光、庭院、房间和主持人发现反应建立空间，再承诺清晨体验。",
+      "confidence": 0.94,
+      "parameters": {"human_scale_visible": true, "wide_detail_reaction": true, "recovery_block": true},
+      "evidence": {"events": ["event-018", "event-019", "event-020"], "manual_local_sheet": true},
+      "guardrails": ["恢复段仍需提供地点或人物信息。", "不从单帧推断房屋历史真实性。"]
+    },
+    {
+      "observation_id": "obs-bangkok-local-host-validates-place",
+      "technique_key": "narrative-small-local-encounter-validates-place",
+      "start_sec": 1378.11,
+      "end_sec": 1666.632,
+      "category": "narrative",
+      "trigger": "民宿如果只展示装修，会缺少为什么值得停留的答案。",
+      "treatment": "保留房东、清晨布施、自种咖啡、家族照片和私人收藏，让当地人的行动与记忆回答空间价值。",
+      "confidence": 0.97,
+      "parameters": {"local_host_agency": true, "encounter_outputs": ["ritual", "food", "family_memory", "collection"]},
+      "evidence": {"events": ["event-020", "event-021", "event-022", "event-023"], "manual_contact_sheets": true},
+      "guardrails": ["宗教仪式和家族叙述需保留主人语境。", "不把当地人物当作异国装饰。"]
+    },
+    {
+      "observation_id": "obs-bangkok-present-to-objects-history",
+      "technique_key": "narrative-present-experience-to-historical-layer",
+      "start_sec": 1560.0,
+      "end_sec": 1840.0,
+      "category": "narrative",
+      "trigger": "私人收藏与旧物市场容易变成无序猎奇。",
+      "treatment": "从房东祖父、钟表和相机进入市场旧物与改造，再用二战物资转运、电影道具和二手文化解释城市历史层。",
+      "confidence": 0.93,
+      "parameters": {"bridge_objects": ["family_photos", "clocks", "camera", "furniture", "engine_parts"], "present_to_history": true},
+      "evidence": {"events": ["event-023", "event-024", "event-025"], "transcript_and_frames": true},
+      "guardrails": ["战争史、年代和物件来源需要独立核验。", "不能根据外观替物件断代。"]
+    },
+    {
+      "observation_id": "obs-bangkok-engine-detail-port-system",
+      "technique_key": "narrative-place-detail-to-city-system",
+      "start_sec": 1820.519,
+      "end_sec": 2087.719,
+      "category": "narrative",
+      "trigger": "高速船若只展示速度，会缺少曼谷港口和改装文化的地点意义。",
+      "treatment": "从旧发动机改装、技师和船厂细节进入河面试乘，再把港口的交通、交易和游戏地图设定连接起来。",
+      "confidence": 0.95,
+      "parameters": {"detail_to_system_steps": ["engine", "craftsperson", "workshop", "river_action", "port_context"]},
+      "evidence": {"events": ["event-026", "event-027", "event-028", "event-029"], "manual_boat_sheet": true},
+      "guardrails": ["速度、发动机规格和港口历史需独立核验。", "游戏设定不能作为现实城市安全结论。"]
+    },
+    {
+      "observation_id": "obs-bangkok-base-subtitle-sparse-title",
+      "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
+      "start_sec": 0.0,
+      "end_sec": 2213.227,
+      "category": "subtitle",
+      "trigger": "全片包含密集中文口播、外语教学、动作噪声和多次章节转换。",
+      "treatment": "保持底部居中对白字幕，只在 Mission、章节、战术关键词、地点、结果和 Easter Egg 使用独立稀疏标题层。",
+      "confidence": 0.96,
+      "parameters": {"base_position": "bottom_center", "title_layer": "sparse", "ocr_verified": false},
+      "evidence": {"manual_full_video_contact_sheets": true, "event_sheet_count": 24},
+      "guardrails": ["文字准确性仍需人工听校。", "动作和人脸区域优先避免被标题遮挡。"]
+    },
+    {
+      "observation_id": "obs-bangkok-mission-verbal-closure",
+      "technique_key": "narrative-end-of-journey-montage-verbal-closure",
+      "start_sec": 2040.0,
+      "end_sec": 2149.314,
+      "category": "narrative",
+      "trigger": "第三项任务结束后需要同时关闭旅行、联动和奖励承诺。",
+      "treatment": "主持人把曼谷港口、游戏地图和三项任务合并为顺利撤离结论，再用按摩灯光画面兑现开场奖励。",
+      "confidence": 0.96,
+      "parameters": {"mission_count_closed": 3, "opening_reward_paid_off": true, "verbal_closure": true},
+      "evidence": {"events": ["event-029", "event-030"], "full_transcript": true, "manual_tail_sheet": true},
+      "guardrails": ["结尾必须明确哪些是现实体验、哪些是游戏联动。", "奖励段不能覆盖任务结果和安全反思。"]
+    },
+    {
+      "observation_id": "obs-bangkok-post-closure-easter-egg",
+      "technique_key": "graphic-easter-egg-after-mission-closure",
+      "start_sec": 2149.314,
+      "end_sec": 2213.227,
+      "category": "graphic",
+      "trigger": "正文已经结算，但拳馆仍有轻松人物反应可作为余韵。",
+      "treatment": "在明确结束后使用 Easter Egg 标识回到拳馆花絮，保留短对话、喝水和笑声式反应，不重新开启新任务。",
+      "confidence": 0.93,
+      "parameters": {"after_main_closure": true, "new_story_opened": false, "tail_speech_text_verified": false},
+      "evidence": {"event_id": "event-031", "manual_tail_dense_review": true, "no_vad_tail_crosscheck": true},
+      "guardrails": ["花絮必须与正文状态清楚区隔。", "低置信尾部 ASR 不能作为逐字字幕依据。"]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 87693,
+    "serialized_utf8_bytes": 99297,
+    "maximum_characters": 180000,
+    "character_comparison": "strictly_less_than",
+    "final_responses_request": {
+      "serialized_characters": 81152,
+      "serialized_utf8_bytes": 93598,
+      "maximum_utf8_bytes": 200000,
+      "byte_comparison": "strictly_less_than",
+      "body_sha256": "74a48254c4d3f7cf664a8ce7586a5722ab80986db83d359ccf5753dc09370ecc",
+      "contains_model": true,
+      "contains_instructions": true,
+      "contains_input": true,
+      "contains_tools": true,
+      "contains_text_json_schema": true,
+      "validation_scope": "exact UTF-8 byte gate and minimum Responses structure; no external model call was made"
+    }
+  },
+  "limitations": [
+    "参考成片只提供正向保留模式；没有原始素材、成片与 EDL 映射，不能推断作者真实删片偏好。",
+    "人工帧证据未确认 speed ramp、具体播放倍率、复杂转场机制或独立音效；短镜头和运动模糊不能单独证明变速。",
+    "音乐分类来自机器声学启发式，当前没有人工听音证据，不声明曲名、BPM、ducking 数值、逐拍剪切或音乐因果。",
+    "未执行 OCR，不能声明中文字幕、英文教学字幕、任务卡或历史数字逐字完全正确。",
+    "关闭 VAD 的尾检确认花絮语音接近片尾，但文字置信度偏低，不能作为正式逐字稿修订。",
+    "泰拳冠军数量、拳馆与从业人数、签证、CQB 定义、船速、发动机规格、港口历史和物件年代需要独立核验。",
+    "游戏联动、任务卡和结算语言属于明确的节目包装语境，不能直接迁移为没有联动关系项目的事实框架。",
+    "泰拳、仿真战术训练和高速船均涉及现实安全风险；本 Study 只记录剪辑结构，不构成训练或旅行安全建议。"
+  ]
+}

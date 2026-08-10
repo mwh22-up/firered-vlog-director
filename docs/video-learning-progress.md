@@ -1,15 +1,15 @@
 # 参考视频 Technique Learning 计划进度
 
-更新时间：2026-08-07
+更新时间：2026-08-10
 执行分支：`feature/director-learning-loop`
 
 ## 总体进度
 
 - 计划视频：11 支
-- 已完成正式学习：10 支
+- 已完成正式学习：11 支
 - 已开始但未完成：0 支
-- 未开始正式学习：1 支
-- 完成率：10/11（90.91%）
+- 未开始正式学习：0 支
+- 完成率：11/11（100%）
 
 前六支 Study 的完成状态按各条目完成时的证据与门禁成立。2026-08-01 以前的条目只保留了“实际请求字符数”，不能追溯声明已经验证 UTF-8 body 字节数；自完整请求字节门禁落地后，任何新增或重新生成的 Study 必须同时具备完整视频分析、可用 ASR/语义证据、人工重点区间复核、context packet 严格 `<180,000` 字符、包含实际 instructions/input/tools 等字段的最终请求 body 严格 `<200,000` UTF-8 字节及 body SHA-256，以及已提交的正式 `technique-study.<BV>.v1.json`。等于任一上限也必须阻断；仅下载代理视频、提取开场或生成预分析素材不算完成。
 
@@ -127,31 +127,37 @@
 - 证据限制：参考成片只支持正向保留模式；没有原始素材映射，不能推断作者真实删片偏好。未确认 speed ramp、具体倍率、复杂转场机制、独立音效、曲名、BPM、ducking 数值或逐拍因果；价格、蓝洞规则、城市安全、历史人物、群体特征和产品颜色需独立核验。
 - 门禁结果：正式 Study 运行时与 Schema、JSON/UTF-8 无 BOM、中文、时间边界、本地绝对路径与敏感信息扫描通过；十来源聚合为 32 条稳定模式和 55 条单来源模式，显式 `minimum_source_support=2`。
 
-### 11. BV11Ao7BYEyv — 未开始
+### 11. BV11Ao7BYEyv — 已完成
 
 - 标题：[泰拳女王给我当陪练，是种怎样的体验!?](https://www.bilibili.com/video/BV11Ao7BYEyv/)
-- 时长：约 2,214 秒。
-- 当前状态：未下载媒体、未执行完整分析或 ASR、未生成人工复核与正式 technique study，不计入正式聚合来源。
+- 时长：2,213.227 秒（约 36 分 53 秒）。
+- 已完成：匿名低清代理下载、视频与音频双流完整解码、small / zh 全片 ASR、完整镜头/事件/音频与语义分析、关闭 VAD 尾部复核、人工重点区间抽帧复核、受限 context、完整 Responses body 门禁和正式 technique study。
+- 正式产物：`reference-learning/technique-study.BV11Ao7BYEyv.v1.json`
+- 证据规模：787 个镜头、31 个事件、571 个音频段、1,017 个转写片段、5,124 个词、21 条 technique observations；人工复核包含 24 张事件联系表和 8 张全片概览、分段密集与尾部联系表。
+- ASR 覆盖：正式 VAD 转写到 2,183.97 秒，为媒体时长的 98.6781%；关闭 VAD 的 2,100–2,213.227 秒独立尾检在拳馆 Easter Egg 中检测到短对话式语音直到 2,212.86 秒，覆盖率 99.9834%，距片尾约 0.367 秒。尾检文字置信度偏低，只用于覆盖核验，不并入正式逐字稿。
+- 人工复核：检查三任务式开场、泰拳女王与基础训练、主持人笨拙反应、对打受伤与职业风险反思、CQB 和四对四演练、战术 inset 与游戏结果卡、百年民宿与清晨布施、私人收藏与旧物市场、改装船和高速体验、按摩结算与拳馆 Easter Egg；未执行 OCR，不声明字幕逐字完全正确。
+- 模型上下文：87,693 字符、99,297 UTF-8 字节，严格 `<180,000` 字符；包含 model、instructions、input、tools、text JSON Schema 和人工证据的最终 Responses body 为 81,152 字符、93,598 UTF-8 字节，严格 `<200,000`，body SHA-256 为 `74a48254c4d3f7cf664a8ce7586a5722ab80986db83d359ccf5753dc09370ecc`。
+- 证据限制：参考成片只支持正向保留模式；没有原始素材映射，不能推断作者真实删片偏好。未确认 speed ramp、具体倍率、复杂转场机制、独立音效、曲名、BPM、ducking 数值或逐拍因果；游戏联动、训练安全、泰拳数字、港口历史、船速、发动机和物件年代需独立核验。
 
 ## 已沉淀的跨视频结果
 
-当前十支已完成视频可聚合出：
+当前十一支已完成视频可聚合出：
 
-- 完整来源数：10
-- 稳定模式：32 条（显式 `minimum_source_support=2`）
-- 单来源模式：55 条
+- 完整来源数：11
+- 稳定模式：36 条（显式 `minimum_source_support=2`）
+- 单来源模式：56 条
 - 正式聚合产物：`reference-learning/reference-techniques.aggregate.v1.json`
 - 聚合命令：`vlog-director aggregate-techniques`
 - 当前限制：`BV19sm2BBEDd` 的重叠首日不生成新增 observation。单来源模式不能计为稳定跨来源模式，开场预分析或未完成视频也不得进入正式聚合；参考成片只能提供正向保留模式，不能推断作者真实删片偏好。
 
-正式聚合已经接入 `direct-timeline --technique-profile`。当前只有 `humor-preserve-real-awkward-process` 具备白名单执行器：它需要目标镜头、事件或 optional moment 的显式 `fun_score >= 0.55`，并且只有当该证据让边缘镜头跨过选片阈值且最终通过预算拟合时才写入 `applied_patterns`。它不能重排本来已入选的镜头，用户反馈优先级为 `remove/avoid > lock > protect/dependency > cut_first/score`。`narrative-failure-adaptation-payoff` 在真实目标语义标注入口完成前降级为 guidance；正式档案共 1 条 executable pattern、86 条 guidance patterns，其中 55 条为单来源 guidance。没有目标证据时不得改变 EDL。
+正式聚合已经接入 `direct-timeline --technique-profile`。当前只有 `humor-preserve-real-awkward-process` 具备白名单执行器：它需要目标镜头、事件或 optional moment 的显式 `fun_score >= 0.55`，并且只有当该证据让边缘镜头跨过选片阈值且最终通过预算拟合时才写入 `applied_patterns`。它不能重排本来已入选的镜头，用户反馈优先级为 `remove/avoid > lock > protect/dependency > cut_first/score`。`narrative-failure-adaptation-payoff` 在真实目标语义标注入口完成前降级为 guidance；正式档案共 1 条 executable pattern、91 条 guidance patterns，其中 56 条为单来源 guidance。没有目标证据时不得改变 EDL。
 
 ## 完成状态
 
-1. 十支参考视频均已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、上下文字符门禁和新增来源的完整请求 UTF-8 字节门禁。
-2. 十来源聚合已复核独立来源支持数；后续新增参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
-3. 十来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
-4. 当前十来源 Aggregate 门禁：45 项参考学习专项 unittest、307 项 director 全量 unittest、十 Study 与 Aggregate Schema/运行时校验、CLI 聚合 smoke、UTF-8 无 BOM、敏感信息/changed-media 扫描及 `git diff --check` 均通过。
+1. 十一支参考视频均已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、上下文字符门禁和新增来源的完整请求 UTF-8 字节门禁。
+2. 十一来源聚合已复核独立来源支持数；后续新增参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
+3. 十一来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
+4. 当前十一来源 Aggregate 门禁：45 项参考学习专项 unittest、307 项 director 全量 unittest、十一 Study 与 Aggregate Schema/运行时校验、CLI 聚合 smoke、UTF-8 无 BOM、敏感信息/changed-media 扫描及 `git diff --check` 均通过。
 5. CI 在干净 Python 环境显式安装 `test` extra；自动化 Schema 测试覆盖所有正式 reference JSON、moments fixture 与 protection policy，当前本地全量基线为 307 项 unittest。
 6. 模型请求门禁已改为校验完整 Responses JSON body 的 UTF-8 字节数：程序内 transport 只消费已经校验的紧凑 body bytes，CLI 则校验待发送文件的原始字节并返回 SHA-256；中文多字节边界、完整 envelope、Responses 最小结构、重复字段与递归凭据字段拒绝、transport 零调用、不可压缩 packet、UTF-8 BOM 和本地 HTTP 413 网关均有回归覆盖。该门禁不替代不同 tool type 的上游 API Schema 校验；仅检查 context 字符数也不能作为已通过外层请求门禁的依据，历史字符记录不追溯标记为字节验证。
 7. CI 的 `test` extra 固定便携 FFmpeg 版本，并以 `lavfi` 临时生成 FFV1/PCM 音视频，实际通过基础增强 renderer 的 `loudnorm`、H.264/AAC 编码，再完整解码验证视频流和音频流；测试不依赖真实素材、系统预装 FFmpeg 或已提交媒体，CI job 设有 10 分钟硬超时。

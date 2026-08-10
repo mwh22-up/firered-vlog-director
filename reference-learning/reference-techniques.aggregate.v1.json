@@ -1,9 +1,10 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-efa0a06025b1",
-  "generated_at": "2026-08-07T06:07:32.511182+00:00",
-  "source_count": 10,
+  "profile_id": "aggregated-reference-techniques-v1-fe1d5185aa05",
+  "generated_at": "2026-08-10T12:54:07.260255+00:00",
+  "source_count": 11,
   "source_ids": [
+    "bilibili-BV11Ao7BYEyv",
     "bilibili-BV15XMC6KETm",
     "bilibili-BV19sm2BBEDd",
     "bilibili-BV1C3546DEC6",
@@ -17,6 +18,68 @@
   ],
   "minimum_source_support": 2,
   "stable_patterns": [
+    {
+      "technique_key": "graphic-context-proof-before-action",
+      "category": "graphic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV1CrHwzUEJa"
+      ],
+      "average_confidence": 0.9,
+      "trigger_examples": [
+        "泰拳训练若直接进入娱乐对打，会缺少运动文化和风险尺度。",
+        "临时遇到旅伴并决定赶去买冰淇淋，需要快速解释信息来源。"
+      ],
+      "treatment_examples": [
+        "在基础训练前用拳馆、历史、职业人数和签证等事实字幕建立语境，再回到教练示范。",
+        "在真实会面画面上短暂叠加聊天截图和一句解释，读完即撤掉，随后直接进入购买行动。"
+      ],
+      "parameter_variants": [
+        {
+          "context_before_action": true,
+          "fact_layer": "inline_caption",
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "overlay_type": "chat_screenshot",
+          "estimated_duration_sec": 3.0,
+          "source_id": "bilibili-BV1CrHwzUEJa"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-muay-context-proof",
+          "guardrails": [
+            "人口、拳馆和签证数字必须独立核验。",
+            "事实字幕不能替代动作安全说明。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "observation_id": "obs-chat-screenshot-action-context",
+          "guardrails": [
+            "截图必须裁掉无关个人信息。",
+            "截图不遮挡人物脸部和基础字幕。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 250.0,
+          "end_sec": 320.0,
+          "observation_id": "obs-bangkok-muay-context-proof"
+        },
+        {
+          "source_id": "bilibili-BV1CrHwzUEJa",
+          "start_sec": 1286,
+          "end_sec": 1291,
+          "observation_id": "obs-chat-screenshot-action-context"
+        }
+      ]
+    },
     {
       "technique_key": "graphic-credits-self-deprecating-one-person-team",
       "category": "graphic",
@@ -219,6 +282,70 @@
           "start_sec": 756.1,
           "end_sec": 885.8,
           "observation_id": "obs-chongqing-reference-image-to-real-place"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-numbered-chaptered-explainer",
+      "category": "graphic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV1TYVA6sEhm"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "泰拳任务结束后需要清楚重置到战术训练。",
+        "连续的物品清单和关系建议需要让观众知道当前条目与章节位置。"
+      ],
+      "treatment_examples": [
+        "使用 Part 2 章节卡、任务标签、装备细节和颗粒说明建立新规则，再进入教官示范。",
+        "用小型编号标签、便签图形和章节切换标识头纱、三脚架、手机等物品，并在父母沟通段用 No.1、No.2 视觉标签固定步骤。"
+      ],
+      "parameter_variants": [
+        {
+          "chapter_card": true,
+          "equipment_labels": true,
+          "returns_to_live_action": true,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "label_scale": "small",
+          "persistent_fullscreen_overlay": false,
+          "supports_spoken_order": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-part-two-chapter-card",
+          "guardrails": [
+            "装备标签必须与实际画面一致。",
+            "图形不能让仿真训练看起来像真实交火。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-numbered-tip-graphics",
+          "guardrails": [
+            "编号必须与口播顺序一致。",
+            "标签不遮挡示范动作、产品或人物表情。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 764.13,
+          "end_sec": 903.403,
+          "observation_id": "obs-bangkok-part-two-chapter-card"
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 555.989,
+          "end_sec": 1362.328,
+          "observation_id": "obs-travel-marriage-numbered-tip-graphics"
         }
       ]
     },
@@ -442,8 +569,9 @@
     {
       "technique_key": "humor-preserve-real-awkward-process",
       "category": "humor",
-      "source_support": 10,
+      "source_support": 11,
       "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1C3546DEC6",
@@ -455,8 +583,9 @@
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.954,
+      "average_confidence": 0.9564,
       "trigger_examples": [
+        "普通成年人跟不上专业泰拳训练，真实落差比预制笑话更有可信度。",
         "主讲人自称不懂足球，但仍要记录世界杯现场。",
         "山上点饮料时突然想不起‘吸管’的英文，只能通过反复描述和等待解决。",
         "支付和加热沟通连续失败，人物只能重复尝试。",
@@ -469,6 +598,7 @@
         "长时间问路同时存在语言障碍、地图理解和追加问题，快速跳到答案会失去真实关系变化。"
       ],
       "treatment_examples": [
+        "保留动作失败、怕疼、自嘲、同伴起哄、对打和碰撞后的连续反应，再回到训练结果。",
         "保留比分预测、模仿电视台开场、球员与球队关系说错或卡顿、旅伴纠正和人物自嘲，让非专业视角成为真实观看体验。",
         "保留提出需求、卡词、店员理解、继续等待、拿到饮料和人物事后偷笑的完整过程，以字幕和短配乐帮助观众跟上，不提前跳到结果。",
         "保留足够长的真实失败过程和停顿，用少量双语字幕、失败短句与反差配乐放大尴尬，不提前跳到结果。",
@@ -481,6 +611,11 @@
         "保留首次开口、双方理解失败、展示地图、尝试回答、追加问题、等待和暂时分开的全过程，让尴尬由真实停顿累积。"
       ],
       "parameter_variants": [
+        {
+          "setup_reaction_resolution": true,
+          "single_reaction_emphasis": true,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
         {
           "expert_claim": false,
           "corrections_retained": true,
@@ -549,6 +684,14 @@
         }
       ],
       "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-muay-awkward-process",
+          "guardrails": [
+            "不把教练或受伤者剪成单向笑料。",
+            "真实受伤优先于笑点节奏。"
+          ]
+        },
         {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-nonexpert-live-commentary-humor",
@@ -630,6 +773,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 360.0,
+          "end_sec": 676.109,
+          "observation_id": "obs-bangkok-muay-awkward-process"
+        },
         {
           "source_id": "bilibili-BV15XMC6KETm",
           "start_sec": 1583.44,
@@ -1364,27 +1513,36 @@
     {
       "technique_key": "narrative-end-of-journey-montage-verbal-closure",
       "category": "narrative",
-      "source_support": 4,
+      "source_support": 5,
       "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
         "bilibili-BV1ETNMzEEWQ",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.97,
+      "average_confidence": 0.968,
       "trigger_examples": [
+        "第三项任务结束后需要同时关闭旅行、联动和奖励承诺。",
         "多国旅行结尾既要完成真实返程，也要明确告诉观众这一系列已经结束。",
         "颜色任务和两城对照需要明确结论，同时保留产品镜头、credits 与拍摄过程余韵。",
         "片名提出是否后悔，结尾必须给出明确回答并让多年旅行画面形成情绪回报。",
         "两小时以上东京合集需要完成实际返程，并用可信对白明确旅程结束。"
       ],
       "treatment_examples": [
+        "主持人把曼谷港口、游戏地图和三项任务合并为顺利撤离结论，再用按摩灯光画面兑现开场奖励。",
         "保留清晨出发、机场、机上座位小摩擦、窗外地理、睡不着和回家进度，最后用一句旅行结束、感谢、‘下个旅程再见’和黑底结束卡闭合。",
         "先由主持人总结人与自然、财富和颜色，再在城市、海岸、车辆和花絮画面上持续完成旁白，最后以无法固定定义但能让时间慢下来的蓝收束。",
         "在外部剧情片段后回到主持人总结共同经历、包容缺点和理解彼此，完成口头回答与观众邀请，再以多地旅行、合影、海岸和夕阳 credits 收束。",
         "用地铁换乘、餐食、步行和回顾镜头完成返程过程，再保留人工核验的最后五段对白，使结束、体验总结、下一篇章和价格回扣依次成立。"
       ],
       "parameter_variants": [
+        {
+          "mission_count_closed": 3,
+          "opening_reward_paid_off": true,
+          "verbal_closure": true,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
         {
           "closure_steps": [
             "airport_departure",
@@ -1426,6 +1584,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-mission-verbal-closure",
+          "guardrails": [
+            "结尾必须明确哪些是现实体验、哪些是游戏联动。",
+            "奖励段不能覆盖任务结果和安全反思。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1ETNMzEEWQ",
           "observation_id": "obs-homecoming-montage-closure",
           "guardrails": [
@@ -1459,6 +1625,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 2040.0,
+          "end_sec": 2149.314,
+          "observation_id": "obs-bangkok-mission-verbal-closure"
+        },
         {
           "source_id": "bilibili-BV1ETNMzEEWQ",
           "start_sec": 2854.2,
@@ -1611,24 +1783,32 @@
     {
       "technique_key": "narrative-experience-followed-by-explicit-evaluation",
       "category": "narrative",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.97,
+      "average_confidence": 0.9675,
       "trigger_examples": [
+        "观众需要知道短期体验与职业训练之间的差距。",
         "廉价酒店很容易只被当作猎奇素材，需要让观众看到完整入住过程和实际体验。",
         "云南、新疆、罗弗敦和新西兰的推荐若只靠美景，会缺少可执行条件。",
         "完成热门路线后需要判断它是否真的值得，而不是让 montage 自行得出结论。"
       ],
       "treatment_examples": [
+        "完成基础动作、对打和意外后，由主持人与教练明确评价初学者能得到什么、职业风险是什么。",
         "保留破碎街道、昏暗院子、找钥匙、投币电梯和开门前担忧，再展示 300 元房间、卫生间和早餐，最后给出没有想象中差且早餐超预期的评价。",
         "每个目的地由主持人先说温度、季节、自驾、日照或路线条件，插入亲历景观和人物画面，再回桌谈说明限制与适合人群。",
         "先由嘉宾说明固定 BGM 与海外传播语境，再让参与者用红绿牌和口头理由评价；最后追问抛开流量后本地人想展示什么。"
       ],
       "parameter_variants": [
+        {
+          "practice_before_evaluation": true,
+          "expert_and_host_evaluation": true,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
         {
           "sequence": [
             "expectation",
@@ -1665,6 +1845,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-muay-evaluation-after-experience",
+          "guardrails": [
+            "一次体验不能代表完整训练体系。",
+            "结论需保留教练语境。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "observation_id": "obs-naples-cheap-hotel-blind-box-evaluation",
           "guardrails": [
@@ -1691,6 +1879,12 @@
       ],
       "evidence_ranges": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 286.453,
+          "end_sec": 783.92,
+          "observation_id": "obs-bangkok-muay-evaluation-after-experience"
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "start_sec": 159.326,
           "end_sec": 413.413,
@@ -1713,8 +1907,9 @@
     {
       "technique_key": "narrative-failure-adaptation-payoff",
       "category": "narrative",
-      "source_support": 9,
+      "source_support": 10,
       "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1C3546DEC6",
@@ -1725,8 +1920,9 @@
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.96,
+      "average_confidence": 0.962,
       "trigger_examples": [
+        "对打碰撞导致出血，原计划的娱乐体验出现真实风险。",
         "纽约暴雨打断原定户外计划，但人物已经准备替代选项。",
         "最后一天坐错车、买错票并选择没有明确路标的路线，原定轻松徒步失去确定性。",
         "夜间目的地花期已过，原计划的视觉目标失败。",
@@ -1738,6 +1934,7 @@
         "走红照片依赖阳光与蒸汽，但现场云层遮住光线。"
       ],
       "treatment_examples": [
+        "先保留意外、检查和教练解释，再把两小时训练上升为对职业拳手危险与辛苦的理解，最后完成第一项任务。",
         "先展示雨势和备选博物馆，再通过双人玩笑引出此前没去过的《老友记》体验馆；保留临时决定、进入展馆和不知道门后内容的悬念，直到橘色沙发揭示。",
         "保留求助、地图、继续上山、缺水、语言尴尬、暴露山脊、摔倒、下雨和返程，把错误逐级升级，再以湖景、下山和晚间反思完成结果。",
         "保留夜路、失望、自嘲和重新查花期的过程，明确修改第二天路线，最终用盛花地点兑现回报。",
@@ -1749,6 +1946,12 @@
         "保留判断光线、等待、被路人认出、发现阳光再次被遮和决定不能把鸡蛋放一个篮子的过程，随后转去下一个历史街区。"
       ],
       "parameter_variants": [
+        {
+          "failure_visible": true,
+          "safety_check_visible": true,
+          "reflection_before_completion": true,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
         {
           "obstacle": "heavy_rain",
           "adaptation": "Friends experience",
@@ -1843,6 +2046,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-injury-reflection-payoff",
+          "guardrails": [
+            "受伤处置不能被任务完成卡提前截断。",
+            "不夸大伤情，也不把风险娱乐化。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-newyork-rain-plan-adaptation",
           "guardrails": [
@@ -1915,6 +2126,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 660.0,
+          "end_sec": 783.92,
+          "observation_id": "obs-bangkok-injury-reflection-payoff"
+        },
         {
           "source_id": "bilibili-BV15XMC6KETm",
           "start_sec": 590.09,
@@ -2089,21 +2306,34 @@
     {
       "technique_key": "narrative-place-detail-to-city-system",
       "category": "narrative",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1Mi536EELv"
       ],
-      "average_confidence": 0.945,
+      "average_confidence": 0.9467,
       "trigger_examples": [
+        "高速船若只展示速度，会缺少曼谷港口和改装文化的地点意义。",
         "纽约物价与空间压力若只用数字说明会抽象。",
         "那不勒斯的脏乱标签需要被具体街巷经验和城市身份补充。"
       ],
       "treatment_examples": [
+        "从旧发动机改装、技师和船厂细节进入河面试乘，再把港口的交通、交易和游戏地图设定连接起来。",
         "从百年熟食店的排队、手工切肉和价格进入街道逃生梯，再连接到住宅缺少阳台、中央公园景观和房价，让食物与建筑细节共同解释城市系统。",
         "从摩托、狭窄街道、汽油味、歌剧、纵向空间和居民互动出发，再连接马拉多纳壁画、足球历史与南方身份，让混乱同时呈现生活气和认同。"
       ],
       "parameter_variants": [
+        {
+          "detail_to_system_steps": [
+            "engine",
+            "craftsperson",
+            "workshop",
+            "river_action",
+            "port_context"
+          ],
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
         {
           "detail_chain": [
             "deli",
@@ -2129,6 +2359,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-engine-detail-port-system",
+          "guardrails": [
+            "速度、发动机规格和港口历史需独立核验。",
+            "游戏设定不能作为现实城市安全结论。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-newyork-place-detail-explainer-chain",
           "guardrails": [
@@ -2147,6 +2385,12 @@
       ],
       "evidence_ranges": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 1820.519,
+          "end_sec": 2087.719,
+          "observation_id": "obs-bangkok-engine-detail-port-system"
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "start_sec": 269.07,
           "end_sec": 456.16,
@@ -2163,21 +2407,35 @@
     {
       "technique_key": "narrative-present-experience-to-historical-layer",
       "category": "narrative",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.95,
+      "average_confidence": 0.9433,
       "trigger_examples": [
+        "私人收藏与旧物市场容易变成无序猎奇。",
         "两地的当代观感需要历史和人物层，才能避免停留在消费价格对照。",
         "防空洞火锅既是消费打卡点，也承载重庆战争历史和当代记忆。"
       ],
       "treatment_examples": [
+        "从房东祖父、钟表和相机进入市场旧物与改造，再用二战物资转运、电影道具和二手文化解释城市历史层。",
         "那不勒斯从街头足球符号进入马拉多纳与南方身份；卡布里从酒店、街道和海景进入帝王、作家、革命者与名流活动的历史引用，再回到现场景观。",
         "先以入口、温度、麻将与火锅建立当下体验，再用防空洞结构、档案画面和历史旁白解释战时用途，最后回到墙面展陈和城市韧性。"
       ],
       "parameter_variants": [
+        {
+          "bridge_objects": [
+            "family_photos",
+            "clocks",
+            "camera",
+            "furniture",
+            "engine_parts"
+          ],
+          "present_to_history": true,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
         {
           "bridge": [
             "present_detail",
@@ -2201,6 +2459,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-present-to-objects-history",
+          "guardrails": [
+            "战争史、年代和物件来源需要独立核验。",
+            "不能根据外观替物件断代。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "observation_id": "obs-naples-capri-present-to-history-layer",
           "guardrails": [
@@ -2218,6 +2484,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 1560.0,
+          "end_sec": 1840.0,
+          "observation_id": "obs-bangkok-present-to-objects-history"
+        },
         {
           "source_id": "bilibili-BV1Mi536EELv",
           "start_sec": 683.316,
@@ -2457,23 +2729,111 @@
       ]
     },
     {
-      "technique_key": "narrative-small-local-encounter-validates-place",
+      "technique_key": "narrative-repeatable-experience-module",
       "category": "narrative",
       "source_support": 2,
       "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "三项体验内容差异巨大，需要统一观众预期。",
+        "外国游客路线需要说明它为何能在短视频中反复复制。"
+      ],
+      "treatment_examples": [
+        "每项任务重复使用寻找专家、建立知识、亲身尝试、保留风险或失败、评价并结算的模块。",
+        "依次保留发现大量外国游客、嘉宾解释取景逻辑、机车动作教学、实拍夜景、回看成片和参与者红绿牌评价，形成设置—拍摄—结果—反馈闭环。"
+      ],
+      "parameter_variants": [
+        {
+          "module_steps": [
+            "find_expert",
+            "context",
+            "attempt",
+            "risk_or_failure",
+            "evaluation",
+            "completion"
+          ],
+          "mission_count": 3,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "stages": [
+            "social_context",
+            "instruction",
+            "capture",
+            "result",
+            "evaluation"
+          ],
+          "has_explicit_feedback": true,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-repeatable-mission-modules",
+          "guardrails": [
+            "重复结构不能把不同项目的风险和文化差异压平。",
+            "每章必须有新的专家、场景或结果信息。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-viral-route-modular-sequence",
+          "guardrails": [
+            "体验模块不能承诺所有人得到相同结果。",
+            "拍摄动作和交通安全优先。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 60.294,
+          "end_sec": 2087.719,
+          "observation_id": "obs-bangkok-repeatable-mission-modules"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 398.3,
+          "end_sec": 672.6,
+          "observation_id": "obs-chongqing-viral-route-modular-sequence"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-small-local-encounter-validates-place",
+      "category": "narrative",
+      "source_support": 3,
+      "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.945,
+      "average_confidence": 0.9533,
       "trigger_examples": [
+        "民宿如果只展示装修，会缺少为什么值得停留的答案。",
         "富豪岛和昂贵短暂景点的主题需要当地人的日常视角，避免只剩游客消费想象。",
         "步道段需要一个具体事件回报‘本地生活关系’而非只拍空景。"
       ],
       "treatment_examples": [
+        "保留房东、清晨布施、自种咖啡、家族照片和私人收藏，让当地人的行动与记忆回答空间价值。",
         "先保留船长聊天、换船、等待和入洞互动，再用当地船夫童年把蓝洞当免费泳池的记忆，重新解释游客眼中的奢华与本地生活的关系。",
         "保留人物担心大鹅会咬、询问名字和来历、得知生日，以及路过婆婆认识它的细节，再由主持人总结先当游客、再当本地人的玩法。"
       ],
       "parameter_variants": [
+        {
+          "local_host_agency": true,
+          "encounter_outputs": [
+            "ritual",
+            "food",
+            "family_memory",
+            "collection"
+          ],
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
         {
           "encounter_role": "boatman",
           "reframe": [
@@ -2491,6 +2851,14 @@
         }
       ],
       "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-local-host-validates-place",
+          "guardrails": [
+            "宗教仪式和家族叙述需保留主人语境。",
+            "不把当地人物当作异国装饰。"
+          ]
+        },
         {
           "source_id": "bilibili-BV1Mi536EELv",
           "observation_id": "obs-capri-local-boatman-reframes-luxury",
@@ -2510,6 +2878,12 @@
       ],
       "evidence_ranges": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 1378.11,
+          "end_sec": 1666.632,
+          "observation_id": "obs-bangkok-local-host-validates-place"
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "start_sec": 1327.993,
           "end_sec": 1771.303,
@@ -2526,21 +2900,29 @@
     {
       "technique_key": "narrative-theme-bridge-between-chapters",
       "category": "narrative",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1Mi536EELv"
       ],
-      "average_confidence": 0.955,
+      "average_confidence": 0.9533,
       "trigger_examples": [
+        "拳馆、战术场和后续港口在地理与活动上分散。",
         "从中央公园与电影回忆切到世界杯，若只做交通跳切会显得章节断裂。",
         "寻找产品颜色的商业任务完成后，需要回到标题中的城市差距并形成非广告式主题回答。"
       ],
       "treatment_examples": [
+        "持续使用三角洲任务、装备、撤离和结算语言，把不同体验维持在同一游戏式旅程框架内。",
         "用纽约给房子、景观、时间和世界杯标价的旁白，把前文物价线与球赛票价连接，再进入球场人群。",
         "从船夫、车夫和自然景观进入财富与头衔退色的判断，再回看车辆在不同光线中的蓝，承认无法提供固定色号，把答案转为旅行让时间慢下来的感受。"
       ],
       "parameter_variants": [
+        {
+          "bridge_device": "mission_vocabulary",
+          "chapter_reset_visible": true,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
         {
           "bridge_topics": [
             "housing",
@@ -2565,6 +2947,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-game-frame-chapter-bridge",
+          "guardrails": [
+            "主题桥不能替代地点和人物的真实解释。",
+            "商业联动不得伪装成独立历史结论。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-money-theme-bridges-to-football",
           "guardrails": [
@@ -2583,6 +2973,12 @@
       ],
       "evidence_ranges": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 764.13,
+          "end_sec": 1255.02,
+          "observation_id": "obs-bangkok-game-frame-chapter-bridge"
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "start_sec": 1492.14,
           "end_sec": 1511.34,
@@ -2599,8 +2995,9 @@
     {
       "technique_key": "opening-phased-hook-not-uniform-fast-cut",
       "category": "opening_montage",
-      "source_support": 6,
+      "source_support": 7,
       "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
@@ -2608,8 +3005,9 @@
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9717,
+      "average_confidence": 0.9729,
       "trigger_examples": [
+        "开场同时需要刺激、地点、路线和商业联动信息。",
         "长篇旅行需要同时交代目的地承诺、人物动机和行动起点。",
         "长途独行VLOG需要同时兑现目的地视觉、交代人物动机并快速进入移动。",
         "长篇旅行终章需要同时兑现地标承诺、交代人物疲惫限制并启动真实行动。",
@@ -2618,6 +3016,7 @@
         "超长东京独行片需要同时兑现地点、快速启动跨境移动并保留人物真实反应。"
       ],
       "treatment_examples": [
+        "用人物风险预告、地点重定义、任务清单三阶段推进，快切后回到可理解的主持人口播和任务卡。",
         "先用12秒景色标题预告，再以完整口播设定目标，随后用时间跳切和约2秒一镜的交通蒙太奇提速。",
         "先用十秒六镜风景标题预告，再保留完整口播设定和凌晨准备，最后把0.76至1.28秒中位镜长的快剪集中在告别与交通推进。",
         "先用 11.52 秒地标、日落和标题预览，再保留完整口播说明最后一站与班次选择；次日重启后才把较密镜头集中到离店和交通推进。",
@@ -2626,6 +3025,15 @@
         "先用 16.433 秒地点与标题建立承诺，再把 0.25 秒中位镜长的超密短切集中在机场物流；安检和进食处减速，随后以登机、飞行和抵达重新推进。"
       ],
       "parameter_variants": [
+        {
+          "phases": [
+            "risk_preview",
+            "place_reframe",
+            "mission_roadmap"
+          ],
+          "uniform_fast_cut": false,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
         {
           "phase_count": 4,
           "travel_montage_median_shot_sec": 2.1,
@@ -2671,6 +3079,14 @@
         }
       ],
       "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-mission-opening-phases",
+          "guardrails": [
+            "不能用持续高速剪切替代任务解释。",
+            "联动或赞助语境需要清楚披露。"
+          ]
+        },
         {
           "source_id": "bilibili-BV1C3546DEC6",
           "observation_id": "obs-opening-four-phase-hook",
@@ -2722,6 +3138,12 @@
       ],
       "evidence_ranges": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 0.0,
+          "end_sec": 60.294,
+          "observation_id": "obs-bangkok-mission-opening-phases"
+        },
+        {
           "source_id": "bilibili-BV1C3546DEC6",
           "start_sec": 0,
           "end_sec": 120,
@@ -2762,21 +3184,30 @@
     {
       "technique_key": "opening-place-thesis-to-concrete-mission",
       "category": "opening_montage",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1Mi536EELv"
       ],
-      "average_confidence": 0.98,
+      "average_confidence": 0.9833,
       "trigger_examples": [
+        "地点本身较宽泛，需要把曼谷港口与本期体验快速收敛为可验证路线。",
         "需要同时兑现纽约视觉承诺并解释为什么此刻来到这里。",
         "两个地点距离很近但社会想象相反，且赞助颜色任务需要自然进入旅行主线。"
       ],
       "treatment_examples": [
+        "先给泰拳女王和高刺激反应，再交代曼谷港口，把旅程定义为特种兵旅行并公布三项任务与按摩奖励。",
         "用自由女神、街道、地铁、摩天楼、夜景、中央公园和球迷人群承载城市旁白，再以低价世界杯门票和决赛目标结束抽象命题。",
         "先用卡布里酒店、街景和产品结果预告吸引注意，再明确那不勒斯与卡布里的吃住行人对照，最后把寻找卡布里蓝和蓝洞天气风险设为可验证任务。"
       ],
       "parameter_variants": [
+        {
+          "mission_count": 3,
+          "reward_promised": true,
+          "opening_15_sec_shot_count": 11,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
         {
           "montage_duration_sec": 62.56,
           "mission": "World Cup final",
@@ -2797,6 +3228,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-mission-opening-place-thesis",
+          "guardrails": [
+            "开场承诺的任务和奖励必须在正文兑现。",
+            "游戏化措辞不能掩盖真实项目的安全风险。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-newyork-city-thesis-mission-montage",
           "guardrails": [
@@ -2814,6 +3253,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 0.0,
+          "end_sec": 60.294,
+          "observation_id": "obs-bangkok-mission-opening-place-thesis"
+        },
         {
           "source_id": "bilibili-BV15XMC6KETm",
           "start_sec": 22.06,
@@ -2925,16 +3370,18 @@
     {
       "technique_key": "scenic-human-reaction-to-landmark-geography",
       "category": "scenic",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.956,
+      "average_confidence": 0.9533,
       "trigger_examples": [
+        "连续高强度训练后需要恢复节奏，同时交代下一段本地生活。",
         "中央公园既承担城市房价说明，也需要提供旅行中的空间与情绪释放。",
         "蓝洞是抽象颜色任务的视觉高潮，需要同时证明进入难度、空间与人物体验。",
         "塞纳河游船是巴黎一日行的主要视觉回报，需要兼顾地标、城市尺度和人物在场感。",
@@ -2942,6 +3389,7 @@
         "本地路线需要展示热门景点之外的山城空间和日常使用方式。"
       ],
       "treatment_examples": [
+        "从难找的小巷和狗进入百年木屋，以自然光、庭院、房间和主持人发现反应建立空间，再承诺清晨体验。",
         "先以俯瞰和地图逻辑说明公园位置，再用入口马车、人物步行、草坪活动、城市楼群与阿根廷旗帜交替建立尺度，最后回到两人的现场体验。",
         "从海上等待和换小船开始，保留船夫压低身体、洞口黑暗、蓝光水面、洞内船只和人物出洞后的惊讶反应，使地理奇观与身体体验连在一起。",
         "从登船和人物仰望进入埃菲尔铁塔，交替人物反应、河面宽景、桥梁、两岸建筑、蓝调天空与夜间亮灯，再回到岸上人物。",
@@ -2949,6 +3397,12 @@
         "跟随人物穿过楼梯、树荫、居民楼、儿童活动区、棋牌桌和坡道，交替广角环境与居民互动，解释步道如何承担无车生活空间。"
       ],
       "parameter_variants": [
+        {
+          "human_scale_visible": true,
+          "wide_detail_reaction": true,
+          "recovery_block": true,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
         {
           "sequence": [
             "aerial_context",
@@ -3012,6 +3466,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-homestay-human-scale-scenic",
+          "guardrails": [
+            "恢复段仍需提供地点或人物信息。",
+            "不从单帧推断房屋历史真实性。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-central-park-human-scale-geography",
           "guardrails": [
@@ -3053,6 +3515,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 1255.02,
+          "end_sec": 1444.81,
+          "observation_id": "obs-bangkok-homestay-human-scale-scenic"
+        },
         {
           "source_id": "bilibili-BV15XMC6KETm",
           "start_sec": 1025.5,
@@ -3254,27 +3722,36 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
       "category": "subtitle",
-      "source_support": 4,
+      "source_support": 5,
       "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.9375,
+      "average_confidence": 0.942,
       "trigger_examples": [
+        "全片包含密集中文口播、外语教学、动作噪声和多次章节转换。",
         "全片横跨城市说明、双人对谈、英语引用、产品内容和球场现场，需要稳定的信息层级。",
         "双城旅行同时包含现场对白、章节、日期、价格、历史引用、竖屏素材、赞助和 credits，需要稳定的信息层级。",
         "长桌谈、旅行旧素材、图卡、赞助和外部影视片段共存，需要稳定而分层的信息系统。",
         "全片包含方言、英语、多人对话、照片、社交页面、历史档案和栏目图形，需要清楚区分证据层。"
       ],
       "treatment_examples": [
+        "保持底部居中对白字幕，只在 Mission、章节、战术关键词、地点、结果和 Easter Egg 使用独立稀疏标题层。",
         "以底部居中浅色描边对白字幕为默认层，地点手写标题、FRIENDS 标识和 New York/纽约主标题只在对应章节短暂出现。",
         "普通对白持续使用底部字幕；Part、Day、地点、价格和颜色标签稀疏出现；竖屏引用、历史照片、人物肖像与赞助产品保留独立视觉边界。",
         "普通对白持续使用底部居中浅色字幕；章节与编号采用小型标签，图卡独立呈现结构，赞助保留标识，外部片段用中英双语层，片尾只保留 credits。",
         "以底部居中浅色描边字幕为默认层；竖屏社交素材、实体相册、黑白档案、地点标题和‘来不来’栏目图形只在对应证据节点出现。"
       ],
       "parameter_variants": [
+        {
+          "base_position": "bottom_center",
+          "title_layer": "sparse",
+          "ocr_verified": false,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
         {
           "base_position": "bottom_center",
           "base_lines": "one_or_two",
@@ -3320,6 +3797,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-base-subtitle-sparse-title",
+          "guardrails": [
+            "文字准确性仍需人工听校。",
+            "动作和人脸区域优先避免被标题遮挡。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-base-subtitle-hierarchy",
           "guardrails": [
@@ -3354,6 +3839,12 @@
       ],
       "evidence_ranges": [
         {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 0.0,
+          "end_sec": 2213.227,
+          "observation_id": "obs-bangkok-base-subtitle-sparse-title"
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "start_sec": 0,
           "end_sec": 1901.01,
@@ -3376,6 +3867,71 @@
           "start_sec": 0,
           "end_sec": 1848.448,
           "observation_id": "obs-chongqing-subtitle-evidence-hierarchy"
+        }
+      ]
+    },
+    {
+      "technique_key": "subtitle-bilingual-action-instruction",
+      "category": "subtitle",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV19sm2BBEDd"
+      ],
+      "average_confidence": 0.945,
+      "trigger_examples": [
+        "教练和主持人使用多语言交流，动作口令需要与身体示范同时可理解。",
+        "滑翔伞准备包含外语安全指令，且理解内容与同步动作同样重要。"
+      ],
+      "treatment_examples": [
+        "保留英文或泰语短句与中文解释，底部字幕跟随拳、腿、防守和对打口令，不让翻译遮挡动作。",
+        "按指令与回应成对排布双语字幕，短括号元标签只标现场听感，不遮挡扣具、手势和起飞动作。"
+      ],
+      "parameter_variants": [
+        {
+          "base_position": "bottom_center",
+          "instruction_bound_to_action": true,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "languages": [
+            "source_language",
+            "Chinese"
+          ],
+          "meta_caption": "《ASMR》",
+          "source_id": "bilibili-BV19sm2BBEDd"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-bilingual-training-instructions",
+          "guardrails": [
+            "翻译准确性仍需人工听校。",
+            "字幕不得遮挡手脚接触点和受伤位置。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-paragliding-bilingual-instruction",
+          "guardrails": [
+            "安全指令优先完整准确，ASR 不确定词必须人工降置信。",
+            "双语字幕不遮挡动作关键区域。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 120.0,
+          "end_sec": 676.109,
+          "observation_id": "obs-bangkok-bilingual-training-instructions"
+        },
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 8000.76,
+          "end_sec": 8072.96,
+          "observation_id": "obs-paragliding-bilingual-instruction"
         }
       ]
     },
@@ -3655,46 +4211,6 @@
       ]
     },
     {
-      "technique_key": "graphic-context-proof-before-action",
-      "category": "graphic",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1CrHwzUEJa"
-      ],
-      "average_confidence": 0.9,
-      "trigger_examples": [
-        "临时遇到旅伴并决定赶去买冰淇淋，需要快速解释信息来源。"
-      ],
-      "treatment_examples": [
-        "在真实会面画面上短暂叠加聊天截图和一句解释，读完即撤掉，随后直接进入购买行动。"
-      ],
-      "parameter_variants": [
-        {
-          "overlay_type": "chat_screenshot",
-          "estimated_duration_sec": 3.0,
-          "source_id": "bilibili-BV1CrHwzUEJa"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1CrHwzUEJa",
-          "observation_id": "obs-chat-screenshot-action-context",
-          "guardrails": [
-            "截图必须裁掉无关个人信息。",
-            "截图不遮挡人物脸部和基础字幕。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1CrHwzUEJa",
-          "start_sec": 1286,
-          "end_sec": 1291,
-          "observation_id": "obs-chat-screenshot-action-context"
-        }
-      ]
-    },
-    {
       "technique_key": "graphic-credits-over-scenic-ending",
       "category": "graphic",
       "source_support": 1,
@@ -3732,6 +4248,87 @@
           "start_sec": 1578.6,
           "end_sec": 1603.008,
           "observation_id": "obs-travel-marriage-scenic-credits-after-goodbye"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-easter-egg-after-mission-closure",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV11Ao7BYEyv"
+      ],
+      "average_confidence": 0.93,
+      "trigger_examples": [
+        "正文已经结算，但拳馆仍有轻松人物反应可作为余韵。"
+      ],
+      "treatment_examples": [
+        "在明确结束后使用 Easter Egg 标识回到拳馆花絮，保留短对话、喝水和笑声式反应，不重新开启新任务。"
+      ],
+      "parameter_variants": [
+        {
+          "after_main_closure": true,
+          "new_story_opened": false,
+          "tail_speech_text_verified": false,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-post-closure-easter-egg",
+          "guardrails": [
+            "花絮必须与正文状态清楚区隔。",
+            "低置信尾部 ASR 不能作为逐字字幕依据。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 2149.314,
+          "end_sec": 2213.227,
+          "observation_id": "obs-bangkok-post-closure-easter-egg"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-gameplay-inset-validates-action-analogy",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV11Ao7BYEyv"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "真人 CQB 对抗与游戏联动需要建立可见对应，而不是只靠口播命名。"
+      ],
+      "treatment_examples": [
+        "在真人掩体行动与受击反应旁短暂插入游戏式 inset、WARGAME 卡和结果画面，随后回到真实参与者。"
+      ],
+      "parameter_variants": [
+        {
+          "inset_role": "analogy_not_replacement",
+          "live_action_remains_primary": true,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-gameplay-inset-action-analogy",
+          "guardrails": [
+            "游戏画面不得冒充真实训练证据。",
+            "联动内容与真实安全后果必须区分。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 1122.622,
+          "end_sec": 1255.02,
+          "observation_id": "obs-bangkok-gameplay-inset-action-analogy"
         }
       ]
     },
@@ -3818,6 +4415,47 @@
       ]
     },
     {
+      "technique_key": "graphic-mission-checklist-progress-reward",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV11Ao7BYEyv"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "三类体验跨度很大，观众需要记住顺序和完成条件。"
+      ],
+      "treatment_examples": [
+        "用 Mission 1、2、3 卡片分别绑定泰拳、战术训练和改装船，并在开场同步显示按摩派对奖励。"
+      ],
+      "parameter_variants": [
+        {
+          "mission_count": 3,
+          "card_role": "roadmap_and_progress",
+          "reward_card": true,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-mission-checklist-reward",
+          "guardrails": [
+            "卡片顺序必须与正文一致。",
+            "任务卡不应遮挡关键动作或安全说明。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 28.0,
+          "end_sec": 60.294,
+          "observation_id": "obs-bangkok-mission-checklist-reward"
+        }
+      ]
+    },
+    {
       "technique_key": "graphic-next-episode-crt-teaser",
       "category": "graphic",
       "source_support": 1,
@@ -3856,47 +4494,6 @@
           "start_sec": 2976.78,
           "end_sec": 2986.32,
           "observation_id": "obs-next-episode-crt-teaser"
-        }
-      ]
-    },
-    {
-      "technique_key": "graphic-numbered-chaptered-explainer",
-      "category": "graphic",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1TYVA6sEhm"
-      ],
-      "average_confidence": 0.94,
-      "trigger_examples": [
-        "连续的物品清单和关系建议需要让观众知道当前条目与章节位置。"
-      ],
-      "treatment_examples": [
-        "用小型编号标签、便签图形和章节切换标识头纱、三脚架、手机等物品，并在父母沟通段用 No.1、No.2 视觉标签固定步骤。"
-      ],
-      "parameter_variants": [
-        {
-          "label_scale": "small",
-          "persistent_fullscreen_overlay": false,
-          "supports_spoken_order": true,
-          "source_id": "bilibili-BV1TYVA6sEhm"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1TYVA6sEhm",
-          "observation_id": "obs-travel-marriage-numbered-tip-graphics",
-          "guardrails": [
-            "编号必须与口播顺序一致。",
-            "标签不遮挡示范动作、产品或人物表情。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1TYVA6sEhm",
-          "start_sec": 555.989,
-          "end_sec": 1362.328,
-          "observation_id": "obs-travel-marriage-numbered-tip-graphics"
         }
       ]
     },
@@ -4778,6 +5375,52 @@
       ]
     },
     {
+      "technique_key": "narrative-expert-demonstration-practice-reflection-loop",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV11Ao7BYEyv"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "专业项目既要有知识密度，也要让普通观众感到参与过程。"
+      ],
+      "treatment_examples": [
+        "泰拳和战术章节都按专家示范、主持人练习、实战失败或受伤、结果反思组织，避免只展示成功动作。"
+      ],
+      "parameter_variants": [
+        {
+          "loop_steps": [
+            "expert_demo",
+            "host_practice",
+            "live_test",
+            "failure_or_risk",
+            "reflection"
+          ],
+          "chapter_count": 2,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-expert-demo-practice-reflection",
+          "guardrails": [
+            "不能为了戏剧性删掉安全规则和受伤处理。",
+            "示范不等于观众可自行复制。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 286.453,
+          "end_sec": 1255.02,
+          "observation_id": "obs-bangkok-expert-demo-practice-reflection"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-explicit-roadmap-for-practical-retrospective",
       "category": "narrative",
       "source_support": 1,
@@ -4859,6 +5502,50 @@
           "start_sec": 1362.328,
           "end_sec": 1554.987,
           "observation_id": "obs-travel-marriage-fiction-clip-personal-thesis"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-guide-expertise-before-action",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV11Ao7BYEyv"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "观众需要理解教练为什么值得信任，才能判断后续训练难度和风险。"
+      ],
+      "treatment_examples": [
+        "先介绍拳馆、泰拳女王的家庭和冠军背景，再进入动作示范与主持人练习。"
+      ],
+      "parameter_variants": [
+        {
+          "expert_profile_before_practice": true,
+          "profile_evidence_types": [
+            "family_history",
+            "championship",
+            "gym_context"
+          ],
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-expert-before-muay-action",
+          "guardrails": [
+            "冠军数量和家庭信息需要独立核验。",
+            "人物背景只说明专业语境，不制造个人崇拜。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 60.294,
+          "end_sec": 286.453,
+          "observation_id": "obs-bangkok-expert-before-muay-action"
         }
       ]
     },
@@ -5294,52 +5981,6 @@
           "start_sec": 1296.8,
           "end_sec": 1445.97,
           "observation_id": "obs-begin-again-memory-callback"
-        }
-      ]
-    },
-    {
-      "technique_key": "narrative-repeatable-experience-module",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1a7Tj6nEe9"
-      ],
-      "average_confidence": 0.97,
-      "trigger_examples": [
-        "外国游客路线需要说明它为何能在短视频中反复复制。"
-      ],
-      "treatment_examples": [
-        "依次保留发现大量外国游客、嘉宾解释取景逻辑、机车动作教学、实拍夜景、回看成片和参与者红绿牌评价，形成设置—拍摄—结果—反馈闭环。"
-      ],
-      "parameter_variants": [
-        {
-          "stages": [
-            "social_context",
-            "instruction",
-            "capture",
-            "result",
-            "evaluation"
-          ],
-          "has_explicit_feedback": true,
-          "source_id": "bilibili-BV1a7Tj6nEe9"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "observation_id": "obs-chongqing-viral-route-modular-sequence",
-          "guardrails": [
-            "体验模块不能承诺所有人得到相同结果。",
-            "拍摄动作和交通安全优先。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "start_sec": 398.3,
-          "end_sec": 672.6,
-          "observation_id": "obs-chongqing-viral-route-modular-sequence"
         }
       ]
     },
@@ -5922,52 +6563,39 @@
           "observation_id": "obs-rainbow-arc-city-release"
         }
       ]
-    },
-    {
-      "technique_key": "subtitle-bilingual-action-instruction",
-      "category": "subtitle",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV19sm2BBEDd"
-      ],
-      "average_confidence": 0.94,
-      "trigger_examples": [
-        "滑翔伞准备包含外语安全指令，且理解内容与同步动作同样重要。"
-      ],
-      "treatment_examples": [
-        "按指令与回应成对排布双语字幕，短括号元标签只标现场听感，不遮挡扣具、手势和起飞动作。"
-      ],
-      "parameter_variants": [
-        {
-          "languages": [
-            "source_language",
-            "Chinese"
-          ],
-          "meta_caption": "《ASMR》",
-          "source_id": "bilibili-BV19sm2BBEDd"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV19sm2BBEDd",
-          "observation_id": "obs-paragliding-bilingual-instruction",
-          "guardrails": [
-            "安全指令优先完整准确，ASR 不确定词必须人工降置信。",
-            "双语字幕不遮挡动作关键区域。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV19sm2BBEDd",
-          "start_sec": 8000.76,
-          "end_sec": 8072.96,
-          "observation_id": "obs-paragliding-bilingual-instruction"
-        }
-      ]
     }
   ],
   "opening_recipes": [
+    {
+      "total_reviewed_sec": 60.294,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 13.0,
+          "function": "从泰拳女王、训练反应和高刺激片段冷开场，先给人物与风险承诺。"
+        },
+        {
+          "start_sec": 13.0,
+          "end_sec": 28.0,
+          "function": "交代曼谷港口位置，把普通旅行重新定义为字面意义的特种兵旅行。"
+        },
+        {
+          "start_sec": 28.0,
+          "end_sec": 60.294,
+          "function": "用 Mission 1、2、3 卡片依次承诺泰拳、四对四战术训练和高速改装船，并把按摩派对设为结算奖励。"
+        }
+      ],
+      "metrics": {
+        "opening_event_count": 1,
+        "reviewed_shot_count": 34,
+        "opening_15_sec_shot_count": 11,
+        "opening_15_sec_average_shot_sec": 1.526,
+        "mission_count": 3,
+        "reward_promised": true
+      },
+      "rule": "高概念体验片先给人物和风险预告，再把地点主题压缩成有限任务清单，并公开结算奖励；快速镜头只负责建立承诺，正文必须逐项兑现。",
+      "source_id": "bilibili-BV11Ao7BYEyv"
+    },
     {
       "total_reviewed_sec": 100,
       "phases": [
