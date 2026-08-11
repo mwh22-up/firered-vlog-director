@@ -11,7 +11,7 @@
 - 目标原片的镜头、事件、对白和声音分析；
 - `concise`（趣味优先）、`balanced`（美景与趣味平衡）、`immersive`（美景优先）三套会改变选片的候选时间线；
 - 参考片档案对镜头角色、节奏和事件链的可追踪评分影响；
-- 十五来源 Technique Aggregate，以及仅凭目标证据触发的白名单执行规则；
+- 十六来源 Technique Aggregate，以及仅凭目标证据触发的白名单执行规则；
 - 新旧时间线差异门禁，禁止换版本号后原样复制旧 EDL；
 - 候选推荐与人工批准分离，批准后使用 SHA-256 防止 EDL 被静默修改；
 - 渲染后逐切点黑帧、静音、音频爆点和前后帧审查清单；
@@ -173,7 +173,7 @@ Context packet 必须严格小于 180,000 字符。`--request` 文件必须已�
   --output reference-learning\director-profile.aggregate.json
 ```
 
-十五份正式 Technique Study 聚合为可追踪技巧档案时，必须显式指定来源支持门槛：
+十六份正式 Technique Study 聚合为可追踪技巧档案时，必须显式指定来源支持门槛：
 
 ```powershell
 .\.venv-analysis\Scripts\vlog-director.exe aggregate-techniques `
@@ -193,11 +193,12 @@ Context packet 必须严格小于 180,000 字符。`--request` 文件必须已�
     reference-learning\technique-study.BV1xTdwBQEna.v1.json `
     reference-learning\technique-study.BV146BFBzEfE.v1.json `
     reference-learning\technique-study.BV1MgywB8E9m.v1.json `
+    reference-learning\technique-study.BV1JfxYzGE8t.v1.json `
   --minimum-source-support 2 `
   --output reference-learning\reference-techniques.aggregate.v1.json
 ```
 
-正式产物包含 15 个独立来源、44 条稳定模式和 64 条来源特定模式。聚合时保留每条模式的来源、观察编号、时间证据和 guardrails；不能把参考片绝对时间或自由格式参数直接套到目标素材。
+正式产物包含 16 个独立来源、44 条稳定模式和 65 条来源特定模式。聚合时保留每条模式的来源、观察编号、时间证据和 guardrails；不能把参考片绝对时间或自由格式参数直接套到目标素材。
 
 Git 只保存 JSON 分析与规则。代理视频、模型缓存、逐帧图片和完整字幕保留在本地。
 
@@ -225,7 +226,7 @@ Git 只保存 JSON 分析与规则。代理视频、模型缓存、逐帧图片�
 
 输出目录 `work/director/v2-proposal/` 包含三套候选 EDL、推荐方案、评分报告、目标语义视图与切点清单。状态是 `review_required`，不是完成。
 
-`direct-project.ps1` 默认加载 `reference-techniques.aggregate.v1.json`。当前只有一个稳定模式具备自动执行器：`humor-preserve-real-awkward-process` 仅在目标镜头、事件或 optional moment 存在显式 `fun_score >= 0.55`、该证据让边缘镜头跨过选片阈值且最终通过预算拟合时，小幅提高真实尴尬过程的保留权重。它不会重排本来已入选的镜头，也不会覆盖用户 `remove/avoid` 或对已保护区间重复报功。`narrative-failure-adaptation-payoff` 在目标分析器具备真实语义标注前只作为 guidance。正式十五来源档案因此包含 1 条 executable pattern 和 107 条 guidance patterns；没有对应目标证据时 EDL 必须保持不变。
+`direct-project.ps1` 默认加载 `reference-techniques.aggregate.v1.json`。当前只有一个稳定模式具备自动执行器：`humor-preserve-real-awkward-process` 仅在目标镜头、事件或 optional moment 存在显式 `fun_score >= 0.55`、该证据让边缘镜头跨过选片阈值且最终通过预算拟合时，小幅提高真实尴尬过程的保留权重。它不会重排本来已入选的镜头，也不会覆盖用户 `remove/avoid` 或对已保护区间重复报功。`narrative-failure-adaptation-payoff` 在目标分析器具备真实语义标注前只作为 guidance。正式十六来源档案因此包含 1 条 executable pattern 和 108 条 guidance patterns；没有对应目标证据时 EDL 必须保持不变。
 
 `director_report.json` 分开记录 `eligible_patterns`、真正改变候选的 `applied_patterns` 和 `guidance_patterns`；每条 applied trace 都包含目标证据及受影响区间。仅加载技巧档案不算已应用。
 
@@ -272,7 +273,7 @@ vlog-director plan-music --plan edit_plan.v2.json --profile director-profile.agg
 
 固定优先级为：**显式用户反馈 > 目标原片证据 > 多参考片共同模式 > 单一参考片模式**。参考成片只能提供正向保留模式；没有原片、成片与 EDL 映射时，不推断真实删片偏好。
 
-镜头角色先验档案为 `reference-learning/director-profile.aggregate.v5.json`。它修正了“11 支视频的人工总结只算 1 份证据”的问题，按独立参考视频 ID 去重统计支持度。十五支正式 Study 的技巧档案为 `reference-learning/reference-techniques.aggregate.v1.json`；两个档案职责不同，导演流程会同时加载。
+镜头角色先验档案为 `reference-learning/director-profile.aggregate.v5.json`。它修正了“11 支视频的人工总结只算 1 份证据”的问题，按独立参考视频 ID 去重统计支持度。十六支正式 Study 的技巧档案为 `reference-learning/reference-techniques.aggregate.v1.json`；两个档案职责不同，导演流程会同时加载。
 
 如需让下一版吸收人工修改，复制 `reference-learning/feedback.example.json`，填写镜头决定后运行：
 

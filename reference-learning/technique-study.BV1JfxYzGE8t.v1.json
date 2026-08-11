@@ -1,0 +1,544 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV1JfxYzGE8t-v1",
+  "generated_at": "2026-08-11T09:05:00Z",
+  "source": {
+    "source_id": "bilibili-BV1JfxYzGE8t",
+    "url": "https://www.bilibili.com/video/BV1JfxYzGE8t/",
+    "title": "用一场动漫巡礼，告别假期！",
+    "duration_sec": 1428.096
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 2053224,
+    "full_analysis_utf8_bytes": 2101552,
+    "proxy_dual_stream_full_decode_exit_code": 0,
+    "video_duration_sec": 1428.096,
+    "shot_count": 635,
+    "event_count": 16,
+    "audio_segment_count": 315,
+    "transcript_segment_count": 798,
+    "transcript_word_count": 4589,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_language_probability": 1.0,
+    "asr_reported_duration_sec": 1428.096,
+    "vad_transcript_end_sec": 1391.88,
+    "tail_no_vad_transcript_end_sec": 1426.58,
+    "trusted_dialogue_end_sec": 1391.9,
+    "trusted_dialogue_coverage_ratio": 0.974654,
+    "trusted_dialogue_tail_gap_sec": 36.196,
+    "trusted_dialogue_tail_text": "我们每个人走的这段路的远方，都是不一样长的。",
+    "tail_visual_crosscheck": {
+      "review_range_sec": [1394.126, 1428.096],
+      "last_trusted_dialogue_sec": 1391.9,
+      "result": "1394 秒后事件联系表显示白色手写字、人物迎风、夕阳海景和 credits 收束。关闭 VAD 尾检在 1414.02-1426.58 秒只产生 no_speech=0.959 的低可信重复句，按配乐/尾字/ASR 不确定性处理，不并入可信对白。"
+    },
+    "audio_class_ratios": {
+      "speech": 0.7822,
+      "ambient_likely": 0.1821,
+      "music_likely": 0.0137,
+      "silence": 0.0224
+    },
+    "shot_duration_median_sec": 1.902,
+    "shot_duration_p75_sec": 2.703,
+    "event_review_contact_sheet_count": 16,
+    "manual_contact_sheet_count": 8,
+    "manual_review_ranges": [
+      [0.0, 74.1],
+      [150.4, 256.0],
+      [317.9, 523.4],
+      [678.0, 781.3],
+      [872.5, 957.3],
+      [957.3, 1168.5],
+      [1168.5, 1394.1],
+      [1394.1, 1428.096]
+    ],
+    "manual_review_focus": [
+      "opening_suzume_costume_location_title",
+      "anime_pilgrimage_route_and_yufuin_context",
+      "gundam_real_landmark_and_animation_layers",
+      "dazaifu_tenmangu_study_luck_humor",
+      "yatai_food_night_color_layer",
+      "hotarubi_forest_shrine_and_one_piece_surprise",
+      "tidal_road_sunset_emotional_peak",
+      "tail_handwritten_text_and_credits"
+    ]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 74.1,
+    "phases": [
+      {
+        "start_sec": 0.0,
+        "end_sec": 18.0,
+        "function": "用角色装扮和废弃扇形机车库直接兑现动漫巡礼入口，让观众先知道这是一次从作品地点出发的旅行。"
+      },
+      {
+        "start_sec": 18.0,
+        "end_sec": 52.0,
+        "function": "切到九州标题、夏天风景和动漫对夏天记忆的旁白，把单个取景地扩展为“告别假期”的情绪命题。"
+      },
+      {
+        "start_sec": 52.0,
+        "end_sec": 74.1,
+        "function": "以铃芽之旅的白色门作为路线启动点，把作品记忆、现实地点和本片旅程结构合在一起。"
+      }
+    ],
+    "metrics": {
+      "opening_0_to_15_shots": 10,
+      "opening_0_to_15_average_shot_sec": 1.528,
+      "reviewed_0_to_74_shot_count": 53
+    },
+    "rule": "动漫巡礼片开场要先兑现作品入口，再把作品中的夏天转化为现实旅行命题；快切服务地点、角色和情绪承诺，不应只堆作品名。"
+  },
+  "narrative_model": {
+    "premise": "影片用九州动漫巡礼串联《铃芽之旅》废弃机车库、由布院小镇、高达实物、太宰府天满宫、屋台美食、《萤火之森》神社、《海贼王》熊本雕像、退潮海路和夕阳尾声，最终把二次元取景地转为成年后告别假期、接受每个人路程不同的主题。",
+    "beats": [
+      "以 cosplay 和铃芽之旅门景建立动漫巡礼入口",
+      "把暑假记忆、九州风景和作品偏爱的夏天并置，形成告别假期命题",
+      "用由布院模式和动漫 IP 讨论乡村活力，再回到小镇路线与产品画面色彩",
+      "以福冈高达和动画画面/实物细节兑现大型作品记忆",
+      "转入太宰府天满宫，用学业、菅原道真、风铃、铜牛和梅枝饼形成知识与笑点段",
+      "用中洲屋台和夜拍颜色给城市饮食与摄影体验一段轻松缓冲",
+      "进入《萤火之森》神社，让森林、石灯、天气和作品情绪降低节奏",
+      "用隐藏 One Piece 行程给伴侣惊喜，再以角色雕像、县政府和熊本路线扩展巡礼规模",
+      "通过退潮海路和夕阳，把作品中的路转化为每个人现实中能走多远的主题收束",
+      "尾部以手写字、迎风人物、夕阳和 credits 结束，让假期告别停在情绪余韵"
+    ],
+    "rule": "巡礼片不能只做作品地点打卡；每个作品点应先有现实地点和人物反应，再用图层或片段补充作品关系，最后回到本次旅程的成年情绪主题。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "用作品地标、城市标题、神社/森林/海路/夕阳宽景确认空间",
+      "切入门、树荫、模型细节、风铃、铜牛、屋台瓶罐、石灯、角色雕像和退潮路等细节",
+      "保留主持人、伴侣和现场行动中的惊喜、吐槽、问答或停顿",
+      "以地图、作品图卡、标题、品牌或字幕层补充作品/路线关系",
+      "回到现实感受和下一站路线，避免巡礼镜头脱离人物旅程"
+    ],
+    "observed_ranges": [
+      [0.0, 256.0],
+      [317.9, 523.4],
+      [523.4, 678.0],
+      [781.3, 957.3],
+      [957.3, 1168.5],
+      [1168.5, 1428.096]
+    ],
+    "rule": "动漫巡礼的美景价值来自作品记忆、现实地理和人物关系的叠加；纯景观应尽快连接到作品、路线或当下感受。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.0137,
+    "evidence_status": "machine_audio_classification_and_manual_visual_review_only",
+    "visual_candidates": [
+      "开场夏天记忆与九州标题",
+      "Gundam 和作品资料画面段",
+      "森林神社与海边渡轮",
+      "退潮路、夕阳和尾部手写字"
+    ],
+    "rule": "本片应以旁白和现场对白解释作品/地点关系，音乐只能作为可能的情绪底层；当前没有独立听音或工程时间线证据，不声明曲名、BPM、ducking 数值、逐拍剪辑或音乐因果。"
+  },
+  "subtitle_model": {
+    "base_style": "全片以底部居中中文字幕承载旁白和人物对白；动漫作品、九州地点、产品/品牌、地图、引用、手写尾字和 credits 以独立图层补充。",
+    "emphasis_patterns": [
+      "开场用地点标题和作品入口帮助观众定位九州巡礼",
+      "由布院、高达、太宰府、屋台、森林神社和熊本段用作品/路线图卡解释打卡关系",
+      "Gundam 与 One Piece 段将现实地标和作品图层并置，强化兑现感",
+      "产品/品牌画面只作为拍摄工具和色彩说明，不替代旅行主线",
+      "尾部用手写字和 credits 承接告别假期主题"
+    ],
+    "rule": "巡礼片字幕要区分基础对白、作品说明、路线地图和情绪尾字；未执行 OCR，不能声明字幕、图卡、作品名、地图、引用或 credits 逐字完全准确。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "先建立作品、地点或现场规则",
+      "保留伴侣惊喜、主持人误读、二次元知识吐槽或现场试错",
+      "让高达动起来、铜牛摸聪明、One Piece 角色关系、退潮路等现场元素提供落点",
+      "笑点后回到作品记忆、路线判断或成年告别主题"
+    ],
+    "observed_ranges": [
+      [74.1, 150.4],
+      [317.9, 523.4],
+      [598.3, 678.0],
+      [957.3, 1168.5],
+      [1168.5, 1394.1]
+    ],
+    "rule": "巡礼片笑点应来自作品知识差、现场规则和关系互动，而不是嘲笑粉丝或地方；完整来回比单句包袱更能保护人物温度。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-anime-opening-costume-place-thesis",
+      "technique_key": "opening-place-thesis-to-concrete-mission",
+      "start_sec": 0.0,
+      "end_sec": 74.1,
+      "category": "opening_montage",
+      "trigger": "动漫巡礼题材需要快速让观众知道作品入口、现实地点和本片情绪主题。",
+      "treatment": "以角色装扮、废弃扇形机车库、九州标题、夏天风景和铃芽之旅白色门串联，先兑现巡礼，再提出成年后告别假期的命题。",
+      "confidence": 0.97,
+      "parameters": {
+        "costume_anchor_visible": true,
+        "place_title": "九州",
+        "mission_before_route": true,
+        "opening_0_to_15_average_shot_sec": 1.528
+      },
+      "evidence": {
+        "event_id": "event-001",
+        "manual_review": "opening_suzume_costume_location_title",
+        "shot_metrics_verified": true
+      },
+      "guardrails": [
+        "作品、地点和角色装扮不能替代后文实际路线体验。",
+        "动漫作品版权、画面来源和取景地关系需要独立核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-pilgrimage-real-place-before-reference",
+      "technique_key": "narrative-present-experience-to-historical-layer",
+      "start_sec": 74.1,
+      "end_sec": 256.0,
+      "category": "narrative",
+      "trigger": "作品取景地如果只放截图，会变成资料拼贴；观众需要先看到现实地点。",
+      "treatment": "先走进铃芽之旅灵感地、废弃铁路车库、由布院小镇和现实商业街，再用作品图卡、地图或口播解释取景关系与小镇更新。",
+      "confidence": 0.96,
+      "parameters": {
+        "live_place_before_reference_card": true,
+        "route_context": ["Suzume", "Yufuin", "town_revival"],
+        "reference_layer_sparse": true
+      },
+      "evidence": {
+        "events": ["event-002", "event-003"],
+        "manual_review": "anime_pilgrimage_route_and_yufuin_context"
+      },
+      "guardrails": [
+        "作品灵感地、IP 关系和小镇更新结论必须独立核验。",
+        "参考图卡不能遮挡现实地点和人物反应。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-town-revival-to-route-judgment",
+      "technique_key": "narrative-place-detail-to-city-system",
+      "start_sec": 150.4,
+      "end_sec": 317.9,
+      "category": "narrative",
+      "trigger": "由布院不只是打卡点，影片需要解释乡村、小镇、温泉、年轻人和 IP 之间的关系。",
+      "treatment": "把由布院模式、乡村活力、动漫色卡、温泉小镇和现场座椅温度笑点放在同一段，让路线判断既有地方经济语境又有人物体验。",
+      "confidence": 0.92,
+      "parameters": {
+        "place_system_links": ["anime_ip", "town_revival", "onsen", "tourism_route"],
+        "evaluation_after_walk": true
+      },
+      "evidence": {
+        "events": ["event-003", "event-004"],
+        "full_transcript": true
+      },
+      "guardrails": [
+        "地方经济、年轻人流动和旅游模式表述需要独立数据核验。",
+        "温泉、交通和开放信息不能直接作为旅行建议。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-landmark-scale-with-host-reaction",
+      "technique_key": "scenic-human-reaction-to-landmark-geography",
+      "start_sec": 317.9,
+      "end_sec": 523.4,
+      "category": "scenic",
+      "trigger": "大型高达实物容易只变成景观奇观，需要人物尺度和作品兑现感。",
+      "treatment": "用主持人与高达同框、身体部位细节、整点小动作、长焦细节、动画画面和吐槽反应，把现实体量、作品记忆和拍摄工具结合。",
+      "confidence": 0.97,
+      "parameters": {
+        "wide_detail_reaction_sequence": true,
+        "anime_reference_layer_visible": true,
+        "host_scale_visible": true
+      },
+      "evidence": {
+        "events": ["event-005", "event-006"],
+        "manual_review": "gundam_real_landmark_and_animation_layers"
+      },
+      "guardrails": [
+        "不声明复杂转场、speed ramp 或独立音效。",
+        "作品片段、模型权益、产品参数和拍摄设备能力需独立核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-context-card-over-live-scene",
+      "technique_key": "graphic-inline-reference-card-over-live-scene",
+      "start_sec": 74.1,
+      "end_sec": 1168.5,
+      "category": "graphic",
+      "trigger": "巡礼路线跨越多部作品，现场画面无法单独解释作品、地图和角色关系。",
+      "treatment": "在现实场景旁短暂加入作品图卡、地图、标题、动画片段或角色标识，再回到主持人和地点行动，保持资料层服务现场。",
+      "confidence": 0.94,
+      "parameters": {
+        "reference_layers": ["anime_card", "map", "title", "character_logo", "brand_or_device_layer"],
+        "returns_to_live_action": true,
+        "ocr_performed": false
+      },
+      "evidence": {
+        "events": ["event-003", "event-006", "event-011", "event-012"],
+        "manual_review": "subtitle_archive_layers"
+      },
+      "guardrails": [
+        "未执行 OCR，图卡、地图、作品名和字幕需另行核对。",
+        "资料画面和作品片段的版权、来源和授权需独立核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-local-ritual-humor",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 523.4,
+      "end_sec": 678.0,
+      "category": "humor",
+      "trigger": "太宰府天满宫段知识密度高，需要用真实仪式和伴侣反应释放节奏。",
+      "treatment": "保留风铃、文学之神、学生带课本、摸铜牛变聪明、梅枝饼和“不读书有用吗”等问答，让笑点从现场规则和人物关系产生。",
+      "confidence": 0.98,
+      "parameters": {
+        "setup_reaction_resolution": true,
+        "local_ritual_context_preserved": true,
+        "mockery_avoided": true
+      },
+      "evidence": {
+        "events": ["event-007", "event-008"],
+        "manual_review": "dazaifu_tenmangu_study_luck_humor"
+      },
+      "guardrails": [
+        "宗教、学业祈愿和民俗语境不能被剪成单向笑料。",
+        "人物、神社历史和仪式含义需要独立核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-food-night-buffer",
+      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "start_sec": 678.0,
+      "end_sec": 781.3,
+      "category": "narrative",
+      "trigger": "连续巡礼点之后需要生活化缓冲，同时保持九州旅行质感。",
+      "treatment": "进入中洲屋台，保留饮食、街头美食文化解释、人物同桌反应和夜拍色彩评价，让美食段成为路线节奏调整而非脱线插曲。",
+      "confidence": 0.94,
+      "parameters": {
+        "food_after_route_density": true,
+        "night_color_review": true,
+        "evaluation_after_eating": true
+      },
+      "evidence": {
+        "event_id": "event-009",
+        "manual_review": "yatai_food_night_color_layer"
+      },
+      "guardrails": [
+        "屋台起源、食物名称、价格和产品夜拍能力需独立核验。",
+        "饮食段应回到旅行路线，不应削弱巡礼主线。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-forest-slowdown-before-surprise",
+      "technique_key": "narrative-theme-bridge-between-chapters",
+      "start_sec": 781.3,
+      "end_sec": 957.3,
+      "category": "narrative",
+      "trigger": "从城市美食跳到森林神社和 One Piece 惊喜跨度大，需要主题桥接。",
+      "treatment": "先用《萤火之森》地点、森林石灯、天气吐槽和无意见走过来的现实感降低节奏，再以隐藏行程切入 One Piece 惊喜。",
+      "confidence": 0.95,
+      "parameters": {
+        "slow_scenic_bridge": true,
+        "hidden_surprise_after_bridge": true,
+        "chapter_bridge": ["food", "forest", "one_piece"]
+      },
+      "evidence": {
+        "events": ["event-010", "event-011"],
+        "manual_review": "hotarubi_forest_shrine_and_one_piece_surprise"
+      },
+      "guardrails": [
+        "作品取景关系、石灯数量和路线信息需要独立核验。",
+        "神社和森林段应保留安静节奏，不要过度包装成笑点。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-character-statue-surprise-payoff",
+      "technique_key": "narrative-object-builds-longitudinal-human-story",
+      "start_sec": 957.3,
+      "end_sec": 1168.5,
+      "category": "narrative",
+      "trigger": "One Piece 巡礼若只拍雕像，会缺少人物关系和粉丝情绪。",
+      "treatment": "把隐藏行程、伴侣惊喜、角色雕像、角色关系吐槽、县政府和路线移动串起来，让雕像既是作品物件，也是给粉丝伴侣的情绪礼物。",
+      "confidence": 0.95,
+      "parameters": {
+        "surprise_for_companion": true,
+        "object_anchor": "character_statues",
+        "relationship_payoff": true
+      },
+      "evidence": {
+        "events": ["event-012", "event-013"],
+        "manual_review": "one_piece_surprise_and_route"
+      },
+      "guardrails": [
+        "角色、地点、雕像项目和版权来源需独立核验。",
+        "粉丝关系不能被剪成只有知识优越感的吐槽。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-tidal-road-theme-metaphor",
+      "technique_key": "narrative-live-event-to-universal-theme",
+      "start_sec": 1168.5,
+      "end_sec": 1394.1,
+      "category": "narrative",
+      "trigger": "尾部需要把动漫巡礼从地点清单提升为“告别假期”的成年主题。",
+      "treatment": "用退潮才出现的海路、火烧云、人物走向终点和旁白，把作品中的路转化为每个人现实中能走多远、尽力就好的主题。",
+      "confidence": 0.96,
+      "parameters": {
+        "live_event_before_theme": true,
+        "metaphor": "tidal_road_as_life_route",
+        "trusted_dialogue_end_sec": 1391.9
+      },
+      "evidence": {
+        "events": ["event-014", "event-015"],
+        "manual_review": "tidal_road_sunset_emotional_peak"
+      },
+      "guardrails": [
+        "潮汐、地点和道路开放条件需要独立核验。",
+        "人生主题是成片表达，不构成地点事实或旅行安全建议。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-tail-visual-credits-without-new-dialogue",
+      "technique_key": "narrative-end-of-journey-montage-verbal-closure",
+      "start_sec": 1394.1,
+      "end_sec": 1428.096,
+      "category": "narrative",
+      "trigger": "主对白结束后仍需要给观众读取主题和 credits 的余韵。",
+      "treatment": "在可信对白结束后保留白色手写字、人物迎风、夕阳海景和 credits，不再加入新的高密度信息，让前一段关于路程和尽力的旁白自然沉淀。",
+      "confidence": 0.94,
+      "parameters": {
+        "last_trusted_dialogue_sec": 1391.9,
+        "tail_gap_sec": 36.196,
+        "tail_no_vad_low_confidence_not_merged": true
+      },
+      "evidence": {
+        "event_id": "event-016",
+        "tail_crosscheck": true,
+        "manual_review": "tail_handwritten_text_and_credits"
+      },
+      "guardrails": [
+        "未执行 OCR，手写字和 credits 不声明逐字准确。",
+        "关闭 VAD 尾检的高 no_speech 重复句不应并入可信对白。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-subtitle-route-reference-layering",
+      "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
+      "start_sec": 0.0,
+      "end_sec": 1428.096,
+      "category": "subtitle",
+      "trigger": "动漫巡礼包含作品名、地点名、路线、人物关系、产品信息和主题旁白，需要清晰分层。",
+      "treatment": "底部字幕稳定承载对白；作品/地图/地点/产品/尾字用短时图层补充，视觉上让现实地点和作品记忆并行而不互相遮挡。",
+      "confidence": 0.97,
+      "parameters": {
+        "base_position": "bottom_center",
+        "sparse_layers": ["location", "anime_reference", "map", "product", "handwritten_tail", "credits"],
+        "ocr_performed": false
+      },
+      "evidence": {
+        "manual_contact_sheet_count": 8,
+        "subtitle_layers_visually_verified": true
+      },
+      "guardrails": [
+        "未执行 OCR，字幕、作品名、地图、手写字和 credits 需人工或外部核对。",
+        "图层不能遮挡角色装扮、地标、人物反应和基础字幕。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-sponsor-camera-as-route-proof",
+      "technique_key": "narrative-sponsor-demonstration-with-host-friction",
+      "start_sec": 150.4,
+      "end_sec": 781.3,
+      "category": "narrative",
+      "trigger": "拍摄设备和品牌画面若独立展示，会破坏巡礼主线。",
+      "treatment": "把手机/相机色彩、长焦、夜拍和动漫色卡放在由布院、高达细节和屋台夜景中验证，让产品只作为捕捉巡礼细节和夏日颜色的工具。",
+      "confidence": 0.88,
+      "parameters": {
+        "product_role": ["route_capture_tool", "color_style_device", "detail_zoom"],
+        "brand_claims_need_verification": true
+      },
+      "evidence": {
+        "events": ["event-003", "event-006", "event-009"],
+        "manual_review": "product_and_brand_layers"
+      },
+      "guardrails": [
+        "产品型号、参数、合作关系和拍摄能力需要独立核验。",
+        "品牌说明不能覆盖巡礼地点、作品和人物体验。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-music-dialogue-protection",
+      "technique_key": "music-scenic-block-dialogue-protection",
+      "start_sec": 0.0,
+      "end_sec": 1428.096,
+      "category": "music_rhythm",
+      "trigger": "作品说明和尾部旁白承载核心语义，配乐或氛围声不能压过对白。",
+      "treatment": "机器音频分类显示 speech 占比约 78.22%，人工画面复核显示巡礼、图卡、景观和尾部主题都围绕旁白推进；只把音乐视作可能情绪底层。",
+      "confidence": 0.7,
+      "parameters": {
+        "speech_ratio": 0.7822,
+        "music_likely_ratio": 0.0137,
+        "evidence_status": "machine_audio_classification_only"
+      },
+      "evidence": {
+        "audio_segment_count": 315,
+        "manual_review": "music_rhythm_visual_only"
+      },
+      "guardrails": [
+        "没有独立人工听音和工程时间线证据，不声明曲名、BPM、ducking、逐拍剪辑或音乐因果。",
+        "机器 music_likely 只是启发式分类，不等同确认配乐段落。"
+      ]
+    },
+    {
+      "observation_id": "obs-anime-source-footage-guarded-reference",
+      "technique_key": "graphic-archive-footage-context-before-present-action",
+      "start_sec": 317.9,
+      "end_sec": 1168.5,
+      "category": "graphic",
+      "trigger": "Gundam、萤火之森和 One Piece 等作品关系需要资料画面辅助，但版权和来源风险高。",
+      "treatment": "只在现实地点已经建立后短暂插入动画/作品参考层，再回到主持人、雕像、神社或路线行动，让资料画面解释关系而不取代实拍。",
+      "confidence": 0.9,
+      "parameters": {
+        "reference_after_live_anchor": true,
+        "short_reference_insert": true,
+        "rights_need_verification": true
+      },
+      "evidence": {
+        "events": ["event-006", "event-011", "event-012"],
+        "manual_review": "anime_source_and_archive_layers"
+      },
+      "guardrails": [
+        "动画片段、海报、logo 和角色图层的版权、引用范围和来源必须独立核验。",
+        "资料画面不应替代现实地标和人物行动。"
+      ]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 78727,
+    "serialized_utf8_bytes": 89667,
+    "maximum_characters": 180000,
+    "character_comparison": "strictly_less_than",
+    "final_responses_request": {
+      "serialized_characters": 66458,
+      "serialized_utf8_bytes": 77428,
+      "maximum_utf8_bytes": 200000,
+      "byte_comparison": "strictly_less_than",
+      "body_sha256": "ec7a097f4a5e7004c8ee30eff9596a2b73e3010be1886554234658c0eb908ca1",
+      "contains_model": true,
+      "contains_instructions": true,
+      "contains_input": true,
+      "contains_tools": true,
+      "contains_text_json_schema": true,
+      "validation_scope": "exact UTF-8 byte gate and minimum Responses structure; no external model call was made"
+    }
+  },
+  "limitations": [
+    "参考成片只提供正向保留模式；没有原始素材、成片和 EDL 映射，不能推断作者真实删片偏好。",
+    "人工帧证据未确认 speed ramp、具体播放倍率、复杂转场机制或独立音效；巡礼移动、作品片段和短镜头不能单独证明变速或复杂转场。",
+    "音乐判断只来自机器音频分类和视觉节奏复核；当前没有独立人工听音或工程时间线证据，不声明曲名、BPM、ducking 数值、逐拍剪辑或音乐因果。",
+    "未执行 OCR，不能声明中文字幕、地点标题、地图、作品名、产品参数、手写尾字、引用图层或 credits 逐字完全准确。",
+    "ASR 主报告到 1391.88 秒；关闭 VAD 尾检在 1414.02-1426.58 秒只产生高 no_speech 的低可信重复句，按配乐/尾字/ASR 不确定性处理，不并入可信对白。",
+    "铃芽之旅、Gundam、萤火之森、One Piece 等作品片段、海报、角色、logo、地图和取景关系的版权、来源、授权和事实关系需独立核验。",
+    "由布院模式、太宰府天满宫、菅原道真、风铃、铜牛、屋台起源、熊本雕像项目、潮汐海路、开放时间、交通和产品能力均需独立核验。",
+    "主持人和伴侣的个人体验不能代表全部九州、动漫粉丝、旅行者或地方居民；本 study 不构成旅行、版权、产品、历史、宗教或消费建议。"
+  ]
+}
