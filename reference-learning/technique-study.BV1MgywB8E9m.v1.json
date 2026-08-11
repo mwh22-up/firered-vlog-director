@@ -1,0 +1,523 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV1MgywB8E9m-v1",
+  "generated_at": "2026-08-11T04:10:00Z",
+  "source": {
+    "source_id": "bilibili-BV1MgywB8E9m",
+    "url": "https://www.bilibili.com/video/BV1MgywB8E9m/",
+    "title": "我穿越回了100年前的德国！",
+    "duration_sec": 1436.821
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 1981725,
+    "full_analysis_utf8_bytes": 2024233,
+    "proxy_dual_stream_full_decode_exit_code": 0,
+    "video_duration_sec": 1436.821,
+    "shot_count": 488,
+    "event_count": 14,
+    "audio_segment_count": 333,
+    "transcript_segment_count": 844,
+    "transcript_word_count": 4705,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_language_probability": 1.0,
+    "asr_reported_duration_sec": 1436.821,
+    "vad_transcript_end_sec": 1436.35,
+    "tail_no_vad_transcript_end_sec": 1436.35,
+    "trusted_dialogue_end_sec": 1436.35,
+    "trusted_dialogue_coverage_ratio": 0.999672,
+    "trusted_dialogue_tail_gap_sec": 0.471,
+    "trusted_dialogue_tail_text": "讨厌，姐夫。",
+    "tail_visual_crosscheck": {
+      "review_range_sec": [1329.328, 1436.821],
+      "last_trusted_dialogue_sec": 1436.35,
+      "result": "最后事件联系表显示山顶合影、绿底引用/图卡、雨中街景器材字幕和黑底尾字；ASR 到 1436.35 秒，距媒体尾部约 0.47 秒，未发现新增可可信对白空间。"
+    },
+    "audio_class_ratios": {
+      "speech": 0.8143,
+      "ambient_likely": 0.1256,
+      "music_likely": 0.0334,
+      "silence": 0.0268
+    },
+    "shot_duration_median_sec": 2.252,
+    "shot_duration_p75_sec": 3.436,
+    "event_review_contact_sheet_count": 14,
+    "manual_contact_sheet_count": 7,
+    "manual_review_ranges": [
+      [0.0, 98.165],
+      [177.778, 294.928],
+      [408.508, 519.0],
+      [519.0, 631.064],
+      [741.641, 851.684],
+      [970.903, 1059.158],
+      [1170.67, 1236.302],
+      [1329.328, 1436.821]
+    ],
+    "manual_review_focus": [
+      "opening_leica_wetzlar_camera_thesis",
+      "museum_archive_and_camera_history",
+      "camera_controls_monochrome_graphic_layers",
+      "goethe_wetzlar_town_turn",
+      "rainy_cinematic_lens_test",
+      "heidelberg_old_town_university_closure_and_local_help",
+      "bridge_copper_monkey_humor",
+      "hillside_scenic_emotional_peak",
+      "subtitle_graphic_tail_layers"
+    ]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 98.165,
+    "phases": [
+      {
+        "start_sec": 0.0,
+        "end_sec": 28.0,
+        "function": "先用 Leica 原型机、世界第一张 Leica 照片和 100 年前便携摄影问题建立历史悬念，把“穿越回 100 年前”落到相机技术革新的具体入口。"
+      },
+      {
+        "start_sec": 28.0,
+        "end_sec": 74.0,
+        "function": "把主持人的参观任务、Leica 总部档案管理和观众“来不来”互动并置，明确本片不是单纯德国风景，而是围绕相机、城市和摄影观看方式的体验判断。"
+      },
+      {
+        "start_sec": 74.0,
+        "end_sec": 98.165,
+        "function": "进入 Leica 博物馆外观，以建筑像相机、取景器形态和现场偶遇创作者作为第一处现实验证，快速把历史命题转到可见场景。"
+      }
+    ],
+    "metrics": {
+      "opening_0_to_15_shots": 6,
+      "opening_0_to_15_average_shot_sec": 2.736,
+      "reviewed_0_to_98_shot_count": 79
+    },
+    "rule": "技术史题材开场可以先抛一个器物悬念，但必须在 1 分钟内给出地点、人物任务和可验证展陈入口，让观众知道后文会从体验中回答价值问题。"
+  },
+  "narrative_model": {
+    "premise": "影片从 Leica 总部和 Wetzlar 小镇出发，先追溯便携摄影的技术史，再把新相机功能、歌德文学地标、雨天小镇、Heidelberg 老城、大学关闭的偶发阻碍、当地人帮助、桥与山顶景观和夫妻尾声连接成一次围绕“观看方式”的德国短旅。",
+    "beats": [
+      "用 Leica 差点发售的相机和 100 年前第一张照片建立技术史悬念",
+      "通过博物馆建筑、档案库、原型机和 Oscar Barnack 故事解释便携摄影的来处",
+      "保留主持人上手相机、拨轮声音、曝光和滤镜等细节，让器物价值从身体操作中出现",
+      "以黑白模式和德国阴雨街景构成产品实测段，视觉风格服务于小镇气质",
+      "转入 Wetzlar 与歌德《少年维特的烦恼》，让相机之旅扩展为文学城市漫游",
+      "用雨天镜头和 cinematic lens 测试把旅行天气限制转换成审美题材",
+      "抵达 Heidelberg 后先遇到学生监狱/大学周日关门，再保留当地人追上提醒的偶发事件",
+      "通过铜猴、桥、山路和 Hölderlin 诗歌线索，把老城观光逐步推向观看者也成为风景的结尾",
+      "片尾用戒指笑点和黑底文字把夫妻关系轻轻落下，避免只用景观结束"
+    ],
+    "rule": "器物型旅行片不应只展示产品或风景；每个段落要先给技术/历史语境，再给主持人真实操作和关系反应，最后回到地点是否值得体验的判断。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "用总部建筑、博物馆外观、老城屋顶或桥梁先给空间坐标",
+      "切入相机、档案抽屉、拨轮、滤镜、建筑门洞、铜猴、树叶、山路等可触摸细节",
+      "保留主持人和伴侣的操作、吐槽、互相评价或现场问路反应",
+      "用少量图卡、底部字幕或引用层补足历史、文学、产品和地点语境",
+      "回到人物评价或下一段任务，避免风景镜头独立成为无上下文素材"
+    ],
+    "observed_ranges": [
+      [0.0, 177.778],
+      [408.508, 741.641],
+      [741.641, 970.903],
+      [970.903, 1236.302],
+      [1236.302, 1436.821]
+    ],
+    "rule": "德国小镇和老城景观被保留的关键不是单独好看，而是能承载相机测试、文学记忆、偶发互动或夫妻关系；空镜应尽快与人和物重新连接。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.0334,
+    "evidence_status": "machine_audio_classification_and_manual_visual_review_only",
+    "visual_candidates": [
+      "开场 Leica 历史悬念和总部外观",
+      "黑白模式与雨中街景测试",
+      "Wetzlar 与 Heidelberg 老城美景",
+      "山顶和片尾关系收束"
+    ],
+    "rule": "本片听感应以对白、旁白和现场声音为主；机器分类只提示少量 music_likely 段，当前没有独立听音和工程时间线证据，因此不声明曲名、BPM、ducking 数值、逐拍剪辑或音乐导致的情绪因果。"
+  },
+  "subtitle_model": {
+    "base_style": "全片以底部居中中文字幕承载主持人、伴侣、外部创作者和现场人物对白；部分段落叠加地点、产品、历史、引用、品牌和尾字图层。",
+    "emphasis_patterns": [
+      "开场用地点/主题字幕交代 Leica 总部、Wetzlar 和相机历史任务",
+      "博物馆、档案库和原型机段用底部字幕辅助高密度技术解释",
+      "相机操作段把参数、滤镜或画面模式与实拍画面并置",
+      "歌德、Hölderlin 和 Heidelberg 段用引用或地点图层补充文学语境",
+      "片尾黑底尾字与关系对白共同完成轻量收束"
+    ],
+    "rule": "知识密集旅行片应让基础对白字幕稳定，历史/产品/文学信息另用短图层稀疏补充；未执行 OCR，不能声明字幕、图卡、引用或 credits 逐字完全准确。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "先建立真实地点、产品或历史语境",
+      "保留主持人和伴侣的误读、吐槽、惊讶或互相拆台",
+      "让现场偶发人物、关闭场馆、铜猴传说或戒指话题提供自然落点",
+      "笑点之后回到相机体验、城市路线或关系收束，不让段落变成独立段子"
+    ],
+    "observed_ranges": [
+      [98.165, 177.778],
+      [294.928, 519.0],
+      [851.684, 1059.158],
+      [1059.158, 1170.67],
+      [1329.328, 1436.821]
+    ],
+    "rule": "本片笑点主要来自真实操作、旅行阻碍、夫妻反应和当地善意；保留完整来回比单句包袱更重要，且不能让调侃压过技术史、文学地标或当地人物。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-leica-opening-object-to-place-thesis",
+      "technique_key": "opening-place-thesis-to-concrete-mission",
+      "start_sec": 0.0,
+      "end_sec": 98.165,
+      "category": "opening_montage",
+      "trigger": "影片标题和开场都围绕 100 年前的德国与 Leica，相机技术史需要迅速从抽象时间概念落到现实地点和任务。",
+      "treatment": "先讲差点发售的 Leica 相机、第一张 Leica 照片和 1914 年便携摄影，再进入总部档案管理、Wetzlar 小镇和博物馆外观，把技术史悬念转换成实地参观任务。",
+      "confidence": 0.97,
+      "parameters": {
+        "question_before_route": true,
+        "object_anchor": "Leica camera",
+        "place_anchor": "Wetzlar and Leica museum",
+        "opening_0_to_15_average_shot_sec": 2.736
+      },
+      "evidence": {
+        "events": ["event-001", "event-002"],
+        "manual_review": "opening_leica_wetzlar_camera_thesis",
+        "shot_metrics_verified": true
+      },
+      "guardrails": [
+        "器物历史和地点事实需要独立核验，study 只学习成片叙事结构。",
+        "开场问题不能代替后文实地体验和操作证据。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-archive-before-product-use",
+      "technique_key": "narrative-archive-context-before-present-use",
+      "start_sec": 98.165,
+      "end_sec": 294.928,
+      "category": "narrative",
+      "trigger": "新相机若直接进入开箱或参数，会削弱 Leica 与 100 年摄影史的关系。",
+      "treatment": "在具体上手前，先保留博物馆建筑、创作者偶遇、互动展陈、档案库、Oscar Barnack 和 35mm 胶片来历，让产品体验拥有历史纵深。",
+      "confidence": 0.96,
+      "parameters": {
+        "archive_before_operation": true,
+        "human_encounter_retained": true,
+        "history_to_product_bridge": true
+      },
+      "evidence": {
+        "events": ["event-002", "event-003"],
+        "manual_review": "museum_archive_and_camera_history"
+      },
+      "guardrails": [
+        "历史人物、年份和技术细节必须另行查证。",
+        "外部创作者出镜不能推断授权状态或真实合作关系。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-operation-sensory-proof",
+      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "start_sec": 294.928,
+      "end_sec": 519.0,
+      "category": "narrative",
+      "trigger": "相机段如果只说功能，会变成广告式介绍；观众需要看到主持人是否真的能用、是否喜欢。",
+      "treatment": "保留换镜头偏好、金色版本反应、拨轮声音、曝光/滤镜切换、黑白模式评价和街景样张，让评价跟在实际操作和视觉结果之后。",
+      "confidence": 0.97,
+      "parameters": {
+        "hands_on_before_judgment": true,
+        "audible_control_claim_limited": true,
+        "visual_mode_demo": "monochrome"
+      },
+      "evidence": {
+        "events": ["event-004", "event-005"],
+        "manual_review": "camera_controls_monochrome_graphic_layers"
+      },
+      "guardrails": [
+        "不声明独立音效设计；拨轮声音只作为画面内操作和 ASR 语境支持。",
+        "产品功能、型号、价格和发售状态需要独立核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-weather-to-style-test",
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "start_sec": 408.508,
+      "end_sec": 741.641,
+      "category": "narrative",
+      "trigger": "德国阴雨天气会削弱旅行画面，但也能测试黑白和宽银幕镜片是否适配小镇气质。",
+      "treatment": "把天气不好转化为黑白模式、雨中街巷、歌德小镇和 cinematic lens 的风格测试，主持人不回避限制，而是把限制变成观看方式的一部分。",
+      "confidence": 0.9,
+      "parameters": {
+        "weather_constraint_visible": true,
+        "style_test_after_constraint": true,
+        "payoff_type": "rainy_town_visual_fit"
+      },
+      "evidence": {
+        "events": ["event-005", "event-006", "event-007"],
+        "manual_review": "goethe_wetzlar_town_turn_and_rainy_lens"
+      },
+      "guardrails": [
+        "不声明 speed ramp、播放倍率或复杂转场。",
+        "镜片规格、产品名称和画幅效果需要独立技术核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-literary-place-bridge",
+      "technique_key": "narrative-present-experience-to-historical-layer",
+      "start_sec": 519.0,
+      "end_sec": 851.684,
+      "category": "narrative",
+      "trigger": "Wetzlar 若只作为 Leica 小镇会过窄，影片需要让地点拥有摄影以外的文化层。",
+      "treatment": "用歌德、《少年维特的烦恼》、黄色燕尾服、半木结构房子和雨中小路，把相机朝圣扩展为文学小镇漫游，再自然过渡到 Heidelberg。",
+      "confidence": 0.94,
+      "parameters": {
+        "present_walk_before_literary_context": true,
+        "culture_layer": "Goethe and Wetzlar",
+        "route_bridge_to_heidelberg": true
+      },
+      "evidence": {
+        "events": ["event-006", "event-007", "event-008"],
+        "manual_review": "goethe_wetzlar_town_turn"
+      },
+      "guardrails": [
+        "文学作品、人物关系和地标归属需要独立核验。",
+        "文化层不能替代现场体验本身。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-route-review-come-or-not",
+      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "start_sec": 741.641,
+      "end_sec": 851.684,
+      "category": "narrative",
+      "trigger": "观众需要知道 Wetzlar 是否值得专程去，而不只知道这里好看。",
+      "treatment": "在小镇游览后给出上午 Leica 博物馆、下午小镇闲逛和朝圣者适配度的路线评价，并继续使用“你来不来”的观众判断入口。",
+      "confidence": 0.95,
+      "parameters": {
+        "route_after_experience": true,
+        "audience_decision_prompt": "come_or_not",
+        "dedicated_trip_vs_day_route": true
+      },
+      "evidence": {
+        "event_id": "event-008",
+        "full_transcript": true
+      },
+      "guardrails": [
+        "路线建议是成片观点，不构成普遍旅行建议。",
+        "开放时间、交通和门票信息需要独立核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-closed-site-local-help",
+      "technique_key": "narrative-failure-adaptation-payoff",
+      "start_sec": 851.684,
+      "end_sec": 1059.158,
+      "category": "narrative",
+      "trigger": "Heidelberg 学生监狱和大学周日关闭会打断原计划，但这是旅行真实性和人物善意的机会。",
+      "treatment": "保留关门、走远后当地小哥追上提醒、改看其他城市空间和继续前进的过程，让失败不被跳过，而成为老城段的人情和路线转折。",
+      "confidence": 0.96,
+      "parameters": {
+        "blocked_plan_visible": true,
+        "local_help_retained": true,
+        "adaptation_continues_route": true
+      },
+      "evidence": {
+        "events": ["event-009", "event-010"],
+        "manual_review": "heidelberg_university_closure_and_local_help"
+      },
+      "guardrails": [
+        "不推断原计划删片偏好；只能学习成片保留失败过程的正向模式。",
+        "场馆开放信息需要独立核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-scenic-human-reaction",
+      "technique_key": "scenic-human-reaction-to-landmark-geography",
+      "start_sec": 970.903,
+      "end_sec": 1329.328,
+      "category": "scenic",
+      "trigger": "Heidelberg 老城、桥、铜猴和山顶美景容易变成通用空镜，需要人物行为提供尺度和关系。",
+      "treatment": "在街景、桥、铜猴、落叶山路和山顶全景之间保留主持人与伴侣自拍、摸铜猴、爬山喘息、腿够不到地、看到光落在桥上的反应。",
+      "confidence": 0.97,
+      "parameters": {
+        "wide_detail_reaction_sequence": true,
+        "human_scale_visible": true,
+        "landmarks": ["old_town", "bridge", "copper_monkey", "hillside_view"]
+      },
+      "evidence": {
+        "events": ["event-010", "event-011", "event-012", "event-013"],
+        "manual_review": "bridge_copper_monkey_and_hillside_peak"
+      },
+      "guardrails": [
+        "地标传说和文学引用需要独立核验。",
+        "景观镜头应服务路线和人物反应，不应被剪成无地点语境的通用素材。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-couple-philosophy-tail",
+      "technique_key": "narrative-end-of-journey-montage-verbal-closure",
+      "start_sec": 1329.328,
+      "end_sec": 1436.821,
+      "category": "narrative",
+      "trigger": "短旅结尾需要从 Heidelberg 风景收束到片中人物关系，否则会停在景观展示。",
+      "treatment": "用“我们在拍风景，我们也是风景”、来不来判断、戒指/有夫之妇玩笑和黑底尾字收束，把观看城市的主题落回夫妻关系和观众互动。",
+      "confidence": 0.96,
+      "parameters": {
+        "verbal_closure_after_scenic_peak": true,
+        "relationship_tag": "couple_ring_joke",
+        "last_trusted_dialogue_sec": 1436.35
+      },
+      "evidence": {
+        "event_id": "event-014",
+        "tail_crosscheck": true,
+        "manual_review": "tail_dialogue_and_visual_coverage"
+      },
+      "guardrails": [
+        "尾部黑底文字未 OCR，不声明逐字准确。",
+        "关系笑点应保持轻量收束，不替代地点价值判断。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-subtitle-base-with-sparse-proof-layers",
+      "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
+      "start_sec": 0.0,
+      "end_sec": 1436.821,
+      "category": "subtitle",
+      "trigger": "全片包含技术史、产品操作、文学地标、路线判断和夫妻对话，信息密度高。",
+      "treatment": "用稳定底部字幕承载对白和旁白；地点、产品参数、历史/文学引用、品牌赞助和片尾尾字则用短时图卡或独立文字层补充。",
+      "confidence": 0.97,
+      "parameters": {
+        "base_position": "bottom_center",
+        "sparse_layers": ["location", "product", "history", "literary_quote", "brand", "tail_card"],
+        "ocr_performed": false
+      },
+      "evidence": {
+        "manual_contact_sheet_count": 7,
+        "subtitle_layers_visually_verified": true
+      },
+      "guardrails": [
+        "未执行 OCR，字幕、参数图层、引用和尾字均不能声明逐字完全准确。",
+        "图层不能遮挡相机操作、人物表情或地点细节。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-graphic-object-context",
+      "technique_key": "graphic-context-proof-before-action",
+      "start_sec": 0.0,
+      "end_sec": 519.0,
+      "category": "graphic",
+      "trigger": "相机技术史和新机功能需要视觉证据，否则旁白解释会过密。",
+      "treatment": "把博物馆建筑形态、档案库、原型机、相机屏幕参数、滤镜和黑白画面与旁白并置，使观众看到信息来源或操作结果。",
+      "confidence": 0.93,
+      "parameters": {
+        "object_closeups_before_claim": true,
+        "screen_parameter_layer_visible": true,
+        "returns_to_live_action": true,
+        "ocr_performed": false
+      },
+      "evidence": {
+        "events": ["event-001", "event-003", "event-005"],
+        "manual_review": "archive_product_and_parameter_layers"
+      },
+      "guardrails": [
+        "参数和展陈文字未 OCR，必须另行核对。",
+        "图形证据不等于产品性能验证。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-real-awkward-travel-humor",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 98.165,
+      "end_sec": 1436.821,
+      "category": "humor",
+      "trigger": "技术史和老城文化内容偏知识密集，需要真实关系反应释放节奏。",
+      "treatment": "保留遇见 YouTuber、金色相机惊讶、关门后被当地人追上提醒、铜猴摸财运、爬山腿够不到地、戒指丢了等完整来回，让笑点从现场过程产生。",
+      "confidence": 0.98,
+      "parameters": {
+        "setup_reaction_resolution": true,
+        "relationship_humor": true,
+        "local_help_not_mocked": true
+      },
+      "evidence": {
+        "events": ["event-002", "event-004", "event-010", "event-011", "event-012", "event-014"],
+        "manual_review": "humor_events"
+      },
+      "guardrails": [
+        "不把外语、当地人、文学地标或历史知识差异剪成单向笑料。",
+        "产品和地点信息仍优先于段子密度。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-music-dialogue-protection",
+      "technique_key": "music-scenic-block-dialogue-protection",
+      "start_sec": 0.0,
+      "end_sec": 1436.821,
+      "category": "music_rhythm",
+      "trigger": "影片以知识旁白、现场对话和关系反应推进，音乐不应压过信息源。",
+      "treatment": "机器音频分类显示 speech 占比约 81.43%，人工画面复核也显示景观、图卡和产品段仍围绕旁白推进；只把音乐视为可能的氛围底层，不把它作为剪辑因果证据。",
+      "confidence": 0.7,
+      "parameters": {
+        "speech_ratio": 0.8143,
+        "music_likely_ratio": 0.0334,
+        "evidence_status": "machine_audio_classification_only"
+      },
+      "evidence": {
+        "audio_segment_count": 333,
+        "manual_review": "music_rhythm_visual_only"
+      },
+      "guardrails": [
+        "没有独立人工听音和工程时间线证据，不声明曲名、BPM、ducking、逐拍剪辑或音乐因果。",
+        "机器 music_likely 只是启发式分类，不等同确认配乐段落。"
+      ]
+    },
+    {
+      "observation_id": "obs-leica-brand-sponsor-integrated-route",
+      "technique_key": "narrative-sponsor-demonstration-with-host-friction",
+      "start_sec": 0.0,
+      "end_sec": 1436.821,
+      "category": "narrative",
+      "trigger": "相机和品牌露出贯穿全片，若脱离路线会显得像硬广。",
+      "treatment": "让 Leica 和被测试相机始终作为进入 Wetzlar、黑白雨景、宽银幕老城和观看者哲学的工具；主持人保留真实偏好、困惑和评价，使赞助/产品信息与旅行体验互相解释。",
+      "confidence": 0.9,
+      "parameters": {
+        "product_role": ["historical_anchor", "travel_tool", "visual_style_device"],
+        "host_friction_visible": true,
+        "brand_claims_need_verification": true
+      },
+      "evidence": {
+        "events": ["event-001", "event-004", "event-005", "event-007", "event-014"],
+        "manual_review": "brand_product_route_integration"
+      },
+      "guardrails": [
+        "产品功能、合作关系、型号、发售信息和品牌表述需要独立核验。",
+        "产品演示必须服务地点叙事，不能覆盖人物与城市体验。"
+      ]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 86219,
+    "serialized_utf8_bytes": 97291,
+    "maximum_characters": 180000,
+    "character_comparison": "strictly_less_than",
+    "final_responses_request": {
+      "serialized_characters": 72053,
+      "serialized_utf8_bytes": 83151,
+      "maximum_utf8_bytes": 200000,
+      "byte_comparison": "strictly_less_than",
+      "body_sha256": "bf21b3113755bca869ee52631dc6d21cf733bb2222e2686c24369aaf9b51560e",
+      "contains_model": true,
+      "contains_instructions": true,
+      "contains_input": true,
+      "contains_tools": true,
+      "contains_text_json_schema": true,
+      "validation_scope": "exact UTF-8 byte gate and minimum Responses structure; no external model call was made"
+    }
+  },
+  "limitations": [
+    "参考成片只提供正向保留模式；没有原始素材、成片和 EDL 映射，不能推断作者真实删片偏好。",
+    "人工帧证据未确认 speed ramp、具体播放倍率、复杂转场机制或独立音效；道路、雨景、街头和短镜头不能单独证明变速或复杂转场。",
+    "音乐判断只来自机器音频分类和视觉节奏复核；当前没有独立人工听音或工程时间线证据，不声明曲名、BPM、ducking 数值、逐拍剪辑或音乐因果。",
+    "未执行 OCR，不能声明中文字幕、产品参数图层、地点标题、历史/文学引用、品牌图层或尾字逐字完全准确。",
+    "ASR 到 1436.35 秒，距媒体尾部约 0.47 秒；尾部抽帧复核未发现新增可信对白空间。",
+    "Leica 历史、Oscar Barnack、35mm 胶片、第一张 Leica 照片、Wetzlar/Heidelberg 地标、歌德和 Hölderlin 文学引用、开放时间、路线建议、铜猴传说、产品功能和发售信息均需独立核验。",
+    "出镜创作者、当地路人、品牌画面、博物馆展陈、旧照片、引用文字和产品画面的来源、隐私、授权和商业关系需要独立核验。",
+    "主持人和伴侣的个人体验不能代表全部德国小镇、相机用户或旅行者；本 study 不构成产品、旅行、历史、文学或消费建议。"
+  ]
+}
