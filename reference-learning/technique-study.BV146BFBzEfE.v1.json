@@ -1,0 +1,700 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV146BFBzEfE-v1",
+  "generated_at": "2026-08-11T02:20:00Z",
+  "source": {
+    "source_id": "bilibili-BV146BFBzEfE",
+    "url": "https://www.bilibili.com/video/BV146BFBzEfE/",
+    "title": "当热度褪去，山西还值得去吗？",
+    "duration_sec": 1907.47
+  },
+  "analysis_evidence": {
+    "full_analysis_characters": 2958383,
+    "full_analysis_utf8_bytes": 3029565,
+    "proxy_dual_stream_full_decode_exit_code": 0,
+    "video_duration_sec": 1907.47,
+    "shot_count": 684,
+    "event_count": 22,
+    "audio_segment_count": 302,
+    "transcript_segment_count": 1282,
+    "transcript_word_count": 7184,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_language_probability": 1.0,
+    "asr_reported_duration_sec": 1907.456,
+    "vad_transcript_end_sec": 1905.42,
+    "tail_no_vad_transcript_end_sec": 1905.46,
+    "trusted_dialogue_end_sec": 1905.46,
+    "trusted_dialogue_coverage_ratio": 0.998946,
+    "trusted_dialogue_tail_gap_sec": 2.01,
+    "trusted_dialogue_tail_text": "未来早已到来，而改变，就是未来。",
+    "tail_visual_crosscheck": {
+      "review_range_sec": [1847.0, 1907.47],
+      "last_trusted_dialogue_sec": 1905.46,
+      "result": "主 ASR 与关闭 VAD 的尾部复核均只检测到约 1905.46 秒；尾部抽帧显示矿井对话、城市/车/古建/云冈石窟、字幕与 credits 收束，最后约 2.01 秒没有新增可信对白。"
+    },
+    "audio_class_ratios": {
+      "speech": 0.8655,
+      "ambient_likely": 0.1151,
+      "music_likely": 0.0076,
+      "silence": 0.0118
+    },
+    "shot_duration_median_sec": 2.202,
+    "shot_duration_p75_sec": 3.103,
+    "event_review_contact_sheet_count": 22,
+    "manual_contact_sheet_count": 9,
+    "manual_review_ranges": [
+      [0.0, 80.0],
+      [75.0, 235.0],
+      [544.0, 724.0],
+      [961.0, 1145.0],
+      [1145.0, 1300.0],
+      [1482.0, 1641.0],
+      [1641.0, 1854.5],
+      [1751.0, 1907.47],
+      [1847.0, 1907.47]
+    ],
+    "manual_review_focus": [
+      "opening_datong_thesis_and_future_payoffs",
+      "food_humor_and_price_layers",
+      "yungang_scenic_route_and_guide",
+      "wood_pagoda_history_damage_emotion",
+      "underground_coal_turn",
+      "miner_labor_memory_emotional_peak",
+      "city_cultural_transition",
+      "subtitle_archive_brand_and_credit_layers",
+      "tail_dialogue_and_visual_coverage"
+    ]
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 120.0,
+    "phases": [
+      {
+        "start_sec": 0.0,
+        "end_sec": 28.0,
+        "function": "先用云冈石窟、古建、车、刀削面、矿井和城市航拍快速展示本片承诺，并以‘大同’地点标题确认目的地。"
+      },
+      {
+        "start_sec": 28.0,
+        "end_sec": 75.84,
+        "function": "把黑神话热度、煤老板等旧标签和‘当热度褪去还值不值得去’问题并列，明确本片不是景点清单，而是城市再判断。"
+      },
+      {
+        "start_sec": 75.84,
+        "end_sec": 120.0,
+        "function": "进入第一章‘食在大同’，用刀削面店、真实吃法、价格与夫妻反应，把宏大城市命题落到可体验的第一站。"
+      }
+    ],
+    "metrics": {
+      "opening_0_to_15_shots": 6,
+      "opening_0_to_15_average_shot_sec": 2.675,
+      "opening_0_to_80_shots": 52,
+      "opening_0_to_80_average_shot_sec": 1.56,
+      "reviewed_0_to_120_shot_count": 68
+    },
+    "rule": "目的地文化片可以先用后文高价值场景做预告，但必须迅速落到一个明确城市问题，并在第一章用可体验的食物、人物反应和价格信息兑现入口。"
+  },
+  "narrative_model": {
+    "premise": "影片从黑神话带来的山西热度和大同旧标签出发，依次用面食、悬空寺、云冈石窟、文创、应县木塔、地下煤矿和城市转型，回答大同不只是短期热度目的地，而是正在用历史文明和工业记忆寻找未来定位的城市。",
+    "beats": [
+      "开场提出大同旧印象、文明遗存和本次疗愈/验证任务",
+      "以刀削面、黄米糕、羊杂粉和本地吃法建立生活入口",
+      "从食物价格与午睡习惯扩展到地方气候、生产和生活节奏",
+      "借黑神话热度进入悬空寺，但保留拥挤、票价和不来评价",
+      "用云冈石窟早到攻略、讲解和佛像细节建立真正文化核心",
+      "从佛小伴、华严寺、善化寺等文创与古建说明年轻化游览方式",
+      "用应县木塔的美、倾斜和人为改造损伤制造历史情绪峰值",
+      "以充电和地下故事转入煤矿，进入工业记忆与劳动者语境",
+      "从矿井讲解、老矿工叙述和工人痕迹转到能源枯竭和城市转型",
+      "用古城更新、文创、汽车品牌变化和文明引文收束为未来命题"
+    ],
+    "rule": "地方目的地评估不能只按景点热度排序；每个章节都要先给真实体验和事实语境，再给主持人评价，最后把生活、遗产、劳动和产业转型连接回同一城市命题。"
+  },
+  "scenic_model": {
+    "preferred_sequence": [
+      "以航拍或宽景确认大同、云冈、木塔、矿区或古城的空间尺度",
+      "切到建筑构件、佛像、食物、煤层、墙面文字和文创商品等细节",
+      "保留主持人、伴侣、讲解员、矿工或商家的动作与反应",
+      "用短字幕或资料图层补充价格、历史、路线和概念",
+      "回到人物评价或城市主题，避免景观孤立成素材展示"
+    ],
+    "observed_ranges": [
+      [0.0, 75.84],
+      [334.8, 544.7],
+      [544.7, 780.4],
+      [961.7, 1145.0],
+      [1145.0, 1907.47]
+    ],
+    "rule": "大同的景观价值来自古建、石窟、矿井和城市更新之间的互证；景观镜头只有同时承载路线、人物、历史或劳动信息时，才进入正式叙事。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.0076,
+    "evidence_status": "machine_audio_classification_and_manual_visual_review_only",
+    "visual_candidates": [
+      "开场地点与价值预告",
+      "云冈石窟和木塔的景观段",
+      "煤矿沉重转折段",
+      "片尾城市更新、汽车与未来主题收束"
+    ],
+    "rule": "本片听感应保持对白和讲解优先，景观与沉重段可由配乐或环境声托底；当前没有独立听音与工程时间线证据，不声明曲名、BPM、ducking 数值、逐拍剪切或音乐导致的情绪因果。"
+  },
+  "subtitle_model": {
+    "base_style": "底部居中浅色中文字幕配深色描边，持续覆盖主持人、伴侣、讲解员、矿工和商家的对白。",
+    "emphasis_patterns": [
+      "开场地点标题和章节标题用更大字号确认大同与‘食在大同’等段落承诺",
+      "价格、门票、讲解费、路线和来不来评价用短时信息层帮助观众判断",
+      "木塔、云冈、煤矿和城市更新段以短资料卡、历史文字、引文或采访式画面补充语境",
+      "煤矿段保留墙面字迹、标识和老照片/雕塑等物理痕迹作为历史证据",
+      "片尾用字幕、credits 和品牌/城市画面共同完成未来主题收束"
+    ],
+    "rule": "知识密集的旅行片以稳定对白字幕承载因果，价格、历史、路线、引文和资料证据另用稀疏图层；未执行 OCR，不能声明字幕、资料卡、墙面文字或 credits 逐字完全正确。"
+  },
+  "humor_model": {
+    "event_chain": [
+      "先建立真实地方生活、景点规则或历史知识语境",
+      "保留主持人和伴侣的误解、吐槽、害怕或不一致评价",
+      "让本地吃法、讲解员、矿工、文创商品或现场规则给出落点",
+      "用少量字幕、表情或短图形强调后立刻回到体验或知识推进",
+      "沉重主题段减少调侃，转为劳动、历史或城市更新的情绪落点"
+    ],
+    "observed_ranges": [
+      [75.84, 229.5],
+      [334.8, 544.7],
+      [719.2, 891.6],
+      [1080.1, 1145.0],
+      [1183.0, 1416.6]
+    ],
+    "rule": "笑点主要来自面食吃法、夫妻互怼、李白题字、景区拥挤、黑神话误认、佛小伴打卡、木塔风水和矿洞动物/设备解释；地方知识、文物保护和矿工尊严优先于玩梗。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-datong-opening-city-thesis-preview",
+      "technique_key": "opening-phased-hook-not-uniform-fast-cut",
+      "start_sec": 0.0,
+      "end_sec": 120.0,
+      "category": "opening_montage",
+      "trigger": "大同既有黑神话热度又有煤老板、刀削面等旧标签，需要先展示目的地价值再提出判断问题。",
+      "treatment": "开场用云冈、古建、车、食物、矿井和城市航拍快速预告，随后以‘当热度褪去还值得去吗’转成城市验证任务，再减速进入面食第一章。",
+      "confidence": 0.98,
+      "parameters": {
+        "phases": ["future_payoff_preview", "city_thesis", "first_chapter_entry"],
+        "uniform_fast_cut": false,
+        "opening_0_to_80_average_shot_sec": 1.56
+      },
+      "evidence": {
+        "events": ["event-001", "event-002"],
+        "manual_review": "opening",
+        "shot_metrics_verified": true
+      },
+      "guardrails": [
+        "预告镜头必须在后文兑现，不能只做空洞高光 montage。",
+        "旧标签和热度判断需要保留成片语境，不能当作客观城市结论。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-opening-place-thesis-mission",
+      "technique_key": "opening-place-thesis-to-concrete-mission",
+      "start_sec": 0.0,
+      "end_sec": 75.843,
+      "category": "opening_montage",
+      "trigger": "目的地片需要让观众知道本期不是单纯打卡，而是在回答一个清晰问题。",
+      "treatment": "先确认大同地点，再把中华文明、黑神话热度、煤矿旧印象和本次精神疗愈之旅并置，形成‘真实大同是什么样’的任务。",
+      "confidence": 0.97,
+      "parameters": {
+        "place_title": "大同",
+        "question_before_itinerary": true,
+        "mission_domains": ["food", "heritage", "culture", "coal_industry", "city_transition"]
+      },
+      "evidence": {
+        "event_id": "event-001",
+        "manual_review": "opening"
+      },
+      "guardrails": [
+        "问题式开场不能替代后文实际体验。",
+        "城市标签和历史称谓需独立核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-title-delivers-place-promise",
+      "technique_key": "subtitle-location-title-delivers-promise",
+      "start_sec": 0.0,
+      "end_sec": 75.843,
+      "category": "subtitle",
+      "trigger": "开场高光包含多个地点和主题，需要快速确认本片主场。",
+      "treatment": "在城市航拍/俯拍上叠加醒目的‘大同’地点标题，并在后续用章节标题进入‘食在大同’等结构。",
+      "confidence": 0.96,
+      "parameters": {
+        "location_title_visible": true,
+        "chapter_title_after_thesis": true,
+        "ocr_performed": false
+      },
+      "evidence": {
+        "event_id": "event-001",
+        "manual_review": "opening"
+      },
+      "guardrails": [
+        "未执行 OCR，地点标题和章节标题的逐字准确性仍需人工核对。",
+        "地点标题应服务导航，不应遮挡核心景观。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-food-experience-evaluation",
+      "technique_key": "narrative-experience-followed-by-explicit-evaluation",
+      "start_sec": 75.843,
+      "end_sec": 334.837,
+      "category": "narrative",
+      "trigger": "大同面食和物价是观众能直接决策的旅行信息，需要体验后再评价。",
+      "treatment": "先展示刀削面、黄米糕、羊杂粉、本地吃法和店内人流，再给价格、饱腹感、夫妻反应和后续来不来判断。",
+      "confidence": 0.97,
+      "parameters": {
+        "evaluation_after_eating": true,
+        "price_layer_visible": true,
+        "local_method_before_judgment": true
+      },
+      "evidence": {
+        "events": ["event-002", "event-003", "event-004"],
+        "manual_review": "food_humor"
+      },
+      "guardrails": [
+        "单店价格和口味不能代表全部大同餐饮。",
+        "本地吃法和俗语需要独立核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-repeatable-chapter-module",
+      "technique_key": "narrative-repeatable-experience-module",
+      "start_sec": 75.843,
+      "end_sec": 1907.47,
+      "category": "narrative",
+      "trigger": "面食、古建、文创、木塔和煤矿跨度很大，需要重复但不僵硬的章节结构。",
+      "treatment": "每章基本遵循地点/问题、现场体验、知识或讲解、夫妻反应、价格/攻略、来不来评价或主题桥接，再进入下一层城市命题。",
+      "confidence": 0.96,
+      "parameters": {
+        "module_steps": ["place_or_question", "live_experience", "context_or_guide", "reaction", "evaluation_or_bridge"],
+        "chapter_count": 6
+      },
+      "evidence": {
+        "events": ["event-002", "event-006", "event-010", "event-013", "event-019", "event-022"],
+        "full_video_review": true
+      },
+      "guardrails": [
+        "重复结构不能抹平古建保护、煤矿劳动和商业赞助的语境差异。",
+        "每章都应有新的地点、人物或系统信息。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-guide-expertise-before-site-judgment",
+      "technique_key": "narrative-guide-expertise-before-action",
+      "start_sec": 544.7,
+      "end_sec": 780.4,
+      "category": "narrative",
+      "trigger": "云冈石窟和煤矿都涉及专业知识，外来主持人不能只凭个人感受评价。",
+      "treatment": "云冈段先给早到路线和讲解员历史脉络，煤矿段让讲解员与老矿工解释设备、风险和工作记忆，再由主持人评价体验。",
+      "confidence": 0.96,
+      "parameters": {
+        "guide_before_evaluation": true,
+        "site_types": ["heritage", "coal_mine"],
+        "host_judgment_after_context": true
+      },
+      "evidence": {
+        "events": ["event-007", "event-008", "event-016", "event-017"],
+        "manual_review": "scenic_yungang_and_coal"
+      },
+      "guardrails": [
+        "讲解内容、历史数字和矿业知识需要独立核验。",
+        "主持人评价不能覆盖专业人员的安全与保护语境。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-scenic-human-landmark",
+      "technique_key": "scenic-human-reaction-to-landmark-geography",
+      "start_sec": 334.837,
+      "end_sec": 1145.0,
+      "category": "scenic",
+      "trigger": "悬空寺、云冈石窟、华严寺、善华寺和应县木塔的景观尺度需要人物反应建立观众尺度。",
+      "treatment": "在古建宽景、佛像近景和塔体仰拍之间保留主持人与伴侣的害怕、惊叹、吐槽和讲解聆听，让景观与体验互相解释。",
+      "confidence": 0.97,
+      "parameters": {
+        "wide_detail_reaction_sequence": true,
+        "landmarks": ["悬空寺", "云冈石窟", "华严寺", "善华寺", "应县木塔"]
+      },
+      "evidence": {
+        "events": ["event-005", "event-007", "event-010", "event-012"],
+        "manual_review": "scenic_yungang_and_wood_pagoda"
+      },
+      "guardrails": [
+        "人物反应不能替代文保事实。",
+        "景观镜头不得被剪成无地点语境的通用空镜。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-landmark-exterior-detail",
+      "technique_key": "scenic-landmark-exterior-to-interior-detail",
+      "start_sec": 334.837,
+      "end_sec": 1080.1,
+      "category": "scenic",
+      "trigger": "古建和石窟的价值来自整体结构与细部工艺，单一远景不足以说明。",
+      "treatment": "从悬空寺外观、云冈洞窟、木塔全貌切入，再进入栈道、佛像面部、斗拱、题字和塔身倾斜等可见细节。",
+      "confidence": 0.95,
+      "parameters": {
+        "exterior_to_detail": true,
+        "detail_types": ["栈道", "佛像", "斗拱", "题字", "倾斜"]
+      },
+      "evidence": {
+        "events": ["event-005", "event-007", "event-008", "event-012"],
+        "manual_review": "history_wood_pagoda"
+      },
+      "guardrails": [
+        "细节解释需要导览或资料支持。",
+        "低清代理只能支持构图和信息层判断，不能做文物细节鉴定。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-inline-reference-card",
+      "technique_key": "graphic-inline-reference-card-over-live-scene",
+      "start_sec": 544.7,
+      "end_sec": 1854.5,
+      "category": "graphic",
+      "trigger": "云冈、木塔、煤矿和城市更新涉及历史、价格、路线和工业信息，现场画面无法全部解释。",
+      "treatment": "在实景旁插入短资料卡、价格信息、路线提示、历史说明、采访式画面和引文，再回到当前地点或人物反应。",
+      "confidence": 0.93,
+      "parameters": {
+        "reference_types": ["price", "route", "history", "interview", "quotation"],
+        "returns_to_live_scene": true,
+        "ocr_performed": false
+      },
+      "evidence": {
+        "events": ["event-007", "event-012", "event-017", "event-021"],
+        "manual_review": "subtitle_archive_layers"
+      },
+      "guardrails": [
+        "未执行 OCR，资料卡和引文不能声明逐字准确。",
+        "历史和产业信息必须独立核验来源。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-physical-archive-time-series",
+      "technique_key": "graphic-physical-archive-time-series",
+      "start_sec": 961.7,
+      "end_sec": 1751.7,
+      "category": "graphic",
+      "trigger": "应县木塔的百年损伤和大同煤炭时代转型都需要时间线证据。",
+      "treatment": "用木塔历史数字、梁思成测绘语境、矿井设备、墙面字迹、老矿工口述、矿区旧痕迹和城市航拍连接过去与现在。",
+      "confidence": 0.93,
+      "parameters": {
+        "archive_sequence": ["wood_pagoda_damage", "mine_equipment", "worker_marks", "old_miner_memory", "city_renewal"],
+        "physical_trace_visible": true
+      },
+      "evidence": {
+        "events": ["event-012", "event-017", "event-018", "event-020", "event-021"],
+        "manual_review": "history_and_coal"
+      },
+      "guardrails": [
+        "年份、人物、炮火、倾斜角度、矿产数字和城市政策需独立核验。",
+        "物理痕迹不能被解读为未经证实的单一因果。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-present-experience-to-history",
+      "technique_key": "narrative-present-experience-to-historical-layer",
+      "start_sec": 75.843,
+      "end_sec": 1751.7,
+      "category": "narrative",
+      "trigger": "面食、古建和煤矿若只作为当下体验，会失去大同历史层次。",
+      "treatment": "从吃面、登古建、看石窟、站在木塔前和下到矿井的当下行动，逐步解释农耕/游牧融合、北魏、梁思成、煤炭工业和城市复兴。",
+      "confidence": 0.96,
+      "parameters": {
+        "present_anchor_before_history": true,
+        "history_layers": ["food_origin", "Northern_Wei", "wood_pagoda_damage", "coal_industry", "city_renewal"]
+      },
+      "evidence": {
+        "events": ["event-003", "event-008", "event-012", "event-016", "event-021"],
+        "full_transcript": true
+      },
+      "guardrails": [
+        "历史层只能作为成片解释框架，不能替代外部史料核验。",
+        "现地体验不能简化复杂族群、宗教和工业史。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-place-detail-to-city-system",
+      "technique_key": "narrative-place-detail-to-city-system",
+      "start_sec": 75.843,
+      "end_sec": 1907.47,
+      "category": "narrative",
+      "trigger": "观众的问题是城市是否值得去，单个景点好坏不足以回答。",
+      "treatment": "把刀削面价格、景区票价、文创商业、木塔保护、煤矿工作面、煤炭减产和城市更新连成系统，最后给出文化与能源转型的城市判断。",
+      "confidence": 0.95,
+      "parameters": {
+        "system_links": ["food_price", "ticket_and_route", "culture_product", "heritage_protection", "coal_labor", "energy_transition"],
+        "city_level_answer": true
+      },
+      "evidence": {
+        "events": ["event-003", "event-010", "event-013", "event-019", "event-020", "event-022"],
+        "full_video_review": true
+      },
+      "guardrails": [
+        "城市级判断是成片观点，不构成普遍旅行或政策结论。",
+        "价格、产能、转型数据和品牌信息需要独立核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-cultural-product-modernizes-heritage",
+      "technique_key": "narrative-object-builds-longitudinal-human-story",
+      "start_sec": 719.2,
+      "end_sec": 891.6,
+      "category": "narrative",
+      "trigger": "古建和佛像容易停留在观光距离，需要说明年轻人如何继续接触传统文化。",
+      "treatment": "用佛小伴娃娃、合伙人回乡、华严寺和善华寺原型打卡，把传统造像转成当代文创和年轻人的古建巡礼方式。",
+      "confidence": 0.94,
+      "parameters": {
+        "anchor_object": "佛小伴文创",
+        "origin_place_match": true,
+        "human_story_visible": true
+      },
+      "evidence": {
+        "events": ["event-009", "event-010"],
+        "manual_review": "city_transition"
+      },
+      "guardrails": [
+        "文创商业价值、人物背景和销售状态需独立核验。",
+        "文创不能替代对文物本体和宗教语境的尊重。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-real-awkward-local-humor",
+      "technique_key": "humor-preserve-real-awkward-process",
+      "start_sec": 75.843,
+      "end_sec": 1416.6,
+      "category": "humor",
+      "trigger": "知识密集地方片需要真实关系反应释放节奏，但不能伤害地方人物和文物语境。",
+      "treatment": "保留不要咬断面、佛祖来了要晕碳、李白多一点、来不来分歧、风水大师拆墙、佛道双修和矿洞动物/设备问答等完整来回。",
+      "confidence": 0.98,
+      "parameters": {
+        "setup_reaction_resolution": true,
+        "local_context_preserved": true,
+        "single_accent_not_overused": true
+      },
+      "evidence": {
+        "events": ["event-002", "event-005", "event-006", "event-012", "event-013", "event-016"],
+        "manual_review": "food_humor"
+      },
+      "guardrails": [
+        "不把方言、年龄、职业、信仰或知识差异剪成单向笑料。",
+        "文保、食品和矿井安全信息优先于笑点。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-subtitle-base-sparse-layers",
+      "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
+      "start_sec": 0.0,
+      "end_sec": 1907.47,
+      "category": "subtitle",
+      "trigger": "全片对白、讲解、价格、路线、历史和品牌信息密集，需要稳定基础字幕和稀疏信息层分工。",
+      "treatment": "对白始终用底部基础字幕承载；地点、章节、价格、门票、历史资料、来不来评价、城市引文和片尾 credits 使用短时独立图层。",
+      "confidence": 0.98,
+      "parameters": {
+        "base_position": "bottom_center",
+        "sparse_layers": ["location", "chapter", "price", "route", "archive", "quote", "credits"],
+        "ocr_performed": false
+      },
+      "evidence": {
+        "manual_contact_sheet_count": 9,
+        "subtitle_layers_visually_verified": true
+      },
+      "guardrails": [
+        "未执行 OCR，所有字幕和资料文字仍需人工听校与查证。",
+        "信息图层不能遮挡文物细节、人物表情或基础字幕。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-music-dialogue-protection",
+      "technique_key": "music-scenic-block-dialogue-protection",
+      "start_sec": 0.0,
+      "end_sec": 1907.47,
+      "category": "music_rhythm",
+      "trigger": "本片以讲解和人物判断为核心，景观和沉重段不能压过对白。",
+      "treatment": "机器音频分段显示 speech 占比约 86.55%，人工画面复核也显示景观、资料和品牌段仍围绕旁白推进；沉重煤矿段镜头放慢但对白保持主要信息源。",
+      "confidence": 0.72,
+      "parameters": {
+        "speech_ratio": 0.8655,
+        "music_likely_ratio": 0.0076,
+        "evidence_status": "machine_audio_classification_only"
+      },
+      "evidence": {
+        "audio_segment_count": 302,
+        "manual_review": "music_rhythm_visual_only"
+      },
+      "guardrails": [
+        "没有人工听音和工程时间线证据，不声明曲名、BPM、ducking 数值或逐拍因果。",
+        "机器 music_likely 只是启发式分类，不等同于确认配乐段落。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-theme-bridge-between-chapters",
+      "technique_key": "narrative-theme-bridge-between-chapters",
+      "start_sec": 229.5,
+      "end_sec": 1854.5,
+      "category": "narrative",
+      "trigger": "从面食到石窟、木塔和煤矿跨度大，需要每次转场都有主题桥而不是硬换地点。",
+      "treatment": "用文明和谷物桥接面食，用黑神话桥接古建，用云冈作为文化原点桥接文创，用充电/地下故事桥接煤矿，用煤炭枯竭桥接城市复兴。",
+      "confidence": 0.96,
+      "parameters": {
+        "bridges": ["food_to_civilization", "game_to_heritage", "heritage_to_culture_product", "car_to_underground", "coal_to_renewal"]
+      },
+      "evidence": {
+        "events": ["event-003", "event-005", "event-009", "event-014", "event-020", "event-021"],
+        "full_transcript": true
+      },
+      "guardrails": [
+        "桥接语不能制造未经证实的历史因果。",
+        "商业产品桥接必须服务地点叙事，而非覆盖城市主题。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-sponsor-friction-city-transition",
+      "technique_key": "narrative-sponsor-demonstration-with-host-friction",
+      "start_sec": 0.0,
+      "end_sec": 1907.47,
+      "category": "narrative",
+      "trigger": "汽车品牌露出需要与旅行路线和城市转型主题绑定，避免变成孤立硬广。",
+      "treatment": "车辆先作为山西自驾和充电续航的旅行工具出现，片尾再与传统能源、智能电动转型和大同城市革新形成类比。",
+      "confidence": 0.9,
+      "parameters": {
+        "product_role": ["travel_tool", "theme_analogy"],
+        "host_friction": ["charging_question", "range_discussion"],
+        "brand_claims_need_verification": true
+      },
+      "evidence": {
+        "events": ["event-001", "event-014", "event-022"],
+        "manual_review": "tail_brand_future"
+      },
+      "guardrails": [
+        "产品功能、续航、车型和品牌转型表述需独立核验。",
+        "品牌类比不能替代城市转型事实。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-coal-memory-to-renewal",
+      "technique_key": "narrative-industrial-memory-to-city-renewal",
+      "start_sec": 1145.0,
+      "end_sec": 1854.5,
+      "category": "narrative",
+      "trigger": "大同的煤炭标签既沉重又关键，不能只作为奇观或怀旧素材。",
+      "treatment": "先下到矿井体验设备、风险、动物监测和老矿工口述，再承认无法真实体会矿工艰辛，转到能源枯竭、空气改善、文化赌注和城市更新。",
+      "confidence": 0.97,
+      "parameters": {
+        "industrial_memory_before_renewal": true,
+        "worker_respect_statement": true,
+        "transition_theme": "coal_to_culture"
+      },
+      "evidence": {
+        "events": ["event-015", "event-017", "event-019", "event-020", "event-021"],
+        "manual_review": "coal_emotion_peak"
+      },
+      "guardrails": [
+        "矿工收入、职业病、产能、能源比例和城市治理需独立核验。",
+        "景区体验不能代表真实地下劳动强度。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-end-montage-verbal-closure",
+      "technique_key": "narrative-end-of-journey-montage-verbal-closure",
+      "start_sec": 1751.7,
+      "end_sec": 1907.47,
+      "category": "narrative",
+      "trigger": "全片从热度问题进入历史、煤炭和文化转型，需要片尾把章节证据收回同一价值判断。",
+      "treatment": "用城市航拍、文创、矿井人物、古建、车、云冈石窟、字幕和 credits，配合‘给岁月以文明’与‘改变就是未来’旁白完成城市未来收束。",
+      "confidence": 0.96,
+      "parameters": {
+        "closure_elements": ["city", "culture_product", "mine", "heritage", "car", "credits"],
+        "last_trusted_dialogue_sec": 1905.46
+      },
+      "evidence": {
+        "events": ["event-021", "event-022"],
+        "tail_crosscheck": true
+      },
+      "guardrails": [
+        "结尾金句是成片主题总结，不证明城市转型已经完成。",
+        "片尾品牌、人物、资料和 credits 文字需独立核验。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-live-event-to-universal-theme",
+      "technique_key": "narrative-live-event-to-universal-theme",
+      "start_sec": 1482.8,
+      "end_sec": 1907.47,
+      "category": "narrative",
+      "trigger": "煤矿体验和古城更新如果停留在单点参观，无法回答‘热度褪去还值不值’。",
+      "treatment": "把矿工劳动记忆、能源枯竭、文化复兴、城市更新和汽车电动化转型并置，提炼为文明需要在变化中重新找到位置。",
+      "confidence": 0.95,
+      "parameters": {
+        "live_events_before_theme": true,
+        "theme": "civilization_and_change",
+        "ending_dialogue_sec": 1905.46
+      },
+      "evidence": {
+        "events": ["event-018", "event-019", "event-020", "event-021", "event-022"],
+        "manual_review": "city_transition_and_tail"
+      },
+      "guardrails": [
+        "价值总结不能抹平矿工劳动、城市治理和旅游商业之间的复杂性。",
+        "不要把品牌转型与城市转型剪成未经证明的直接因果。"
+      ]
+    },
+    {
+      "observation_id": "obs-datong-graphics-context-before-action",
+      "technique_key": "graphic-context-proof-before-action",
+      "start_sec": 75.843,
+      "end_sec": 1641.0,
+      "category": "graphic",
+      "trigger": "面食价格、门票、石窟数字、木塔损伤和煤矿安全等信息密度高，需要在行动前后给观众判断依据。",
+      "treatment": "用短图层呈现价格、门票、讲解费、文保数字、木塔倾斜、矿井深度、设备和安全标识，再回到现场人物动作或反应。",
+      "confidence": 0.92,
+      "parameters": {
+        "fact_layers": ["price", "ticket", "heritage_number", "tilt", "mine_depth", "safety_sign"],
+        "returns_to_live_action": true,
+        "ocr_performed": false
+      },
+      "evidence": {
+        "events": ["event-003", "event-007", "event-012", "event-015", "event-018"],
+        "manual_review": "subtitle_and_archive_layers"
+      },
+      "guardrails": [
+        "未执行 OCR，数字和文字必须另行核对。",
+        "图形说明不能替代景区、文保、矿业和食品安全的权威信息。"
+      ]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 87170,
+    "serialized_utf8_bytes": 103874,
+    "maximum_characters": 180000,
+    "character_comparison": "strictly_less_than",
+    "final_responses_request": {
+      "serialized_characters": 83058,
+      "serialized_utf8_bytes": 99820,
+      "maximum_utf8_bytes": 200000,
+      "byte_comparison": "strictly_less_than",
+      "body_sha256": "c556c7764eb8283f817c0f585fab79d7c8c04259087043db9aaf31da1c1918c2",
+      "contains_model": true,
+      "contains_instructions": true,
+      "contains_input": true,
+      "contains_tools": true,
+      "contains_text_json_schema": true,
+      "validation_scope": "exact UTF-8 byte gate and minimum Responses structure; no external model call was made"
+    }
+  },
+  "limitations": [
+    "参考成片只提供正向保留模式；没有原始素材、成片与 EDL 映射，不能推断作者真实删片偏好。",
+    "人工帧证据未确认 speed ramp、具体播放倍率、复杂转场机制或独立音效；道路、车和景点短镜头不能单独证明变速。",
+    "音乐分类来自机器声学启发式和视觉节奏复核，当前没有独立人工听音证据，不声明曲名、BPM、ducking 数值、逐拍剪切或音乐因果。",
+    "未执行 OCR，不能声明中文字幕、章节标题、价格、门票、路线、历史引文、资料卡、墙面字迹、采访字幕或 credits 逐字完全正确。",
+    "ASR 主报告到 1905.42 秒，关闭 VAD 的尾部复核到 1905.46 秒；最后约 2.01 秒经尾部抽帧复核没有新增可信对白。",
+    "面食种类、价格、景区门票、云冈数字、木塔年份与倾斜、梁思成相关表述、煤矿深度、矿工收入、职业病、煤炭产能、能源比例、城市治理和文创销售数据均需独立核验。",
+    "旧照片、采访画面、文字引用、文创商品、矿工肖像、品牌汽车画面和城市资料的来源、隐私与授权需要独立核验。",
+    "主持人、伴侣、讲解员、矿工、商家和文创从业者的个体经验不能代表全部大同或山西；本 Study 不构成食品、旅行、历史、能源、文保、汽车或消费建议。"
+  ]
+}

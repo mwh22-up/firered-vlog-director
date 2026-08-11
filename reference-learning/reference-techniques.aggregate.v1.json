@@ -1,10 +1,11 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-ac1cba13f7c1",
-  "generated_at": "2026-08-10T14:42:32.980155+00:00",
-  "source_count": 13,
+  "profile_id": "aggregated-reference-techniques-v1-ace08ffaa380",
+  "generated_at": "2026-08-11T02:20:00.248013+00:00",
+  "source_count": 14,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
+    "bilibili-BV146BFBzEfE",
     "bilibili-BV15XMC6KETm",
     "bilibili-BV19sm2BBEDd",
     "bilibili-BV1C3546DEC6",
@@ -23,20 +24,23 @@
     {
       "technique_key": "graphic-context-proof-before-action",
       "category": "graphic",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9033,
+      "average_confidence": 0.9075,
       "trigger_examples": [
         "泰拳训练若直接进入娱乐对打，会缺少运动文化和风险尺度。",
+        "面食价格、门票、石窟数字、木塔损伤和煤矿安全等信息密度高，需要在行动前后给观众判断依据。",
         "临时遇到旅伴并决定赶去买冰淇淋，需要快速解释信息来源。",
         "菌类差异、季节与中毒风险仅凭外观无法可靠理解。"
       ],
       "treatment_examples": [
         "在基础训练前用拳馆、历史、职业人数和签证等事实字幕建立语境，再回到教练示范。",
+        "用短图层呈现价格、门票、讲解费、文保数字、木塔倾斜、矿井深度、设备和安全标识，再回到现场人物动作或反应。",
         "在真实会面画面上短暂叠加聊天截图和一句解释，读完即撤掉，随后直接进入购买行动。",
         "在市场与餐桌现场叠加菌名、拉丁学名、季节、计时器、留样和风险说明，随后回到专家动作与实际烹饪。"
       ],
@@ -45,6 +49,19 @@
           "context_before_action": true,
           "fact_layer": "inline_caption",
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "fact_layers": [
+            "price",
+            "ticket",
+            "heritage_number",
+            "tilt",
+            "mine_depth",
+            "safety_sign"
+          ],
+          "returns_to_live_action": true,
+          "ocr_performed": false,
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "overlay_type": "chat_screenshot",
@@ -73,6 +90,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-graphics-context-before-action",
+          "guardrails": [
+            "未执行 OCR，数字和文字必须另行核对。",
+            "图形说明不能替代景区、文保、矿业和食品安全的权威信息。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1CrHwzUEJa",
           "observation_id": "obs-chat-screenshot-action-context",
           "guardrails": [
@@ -95,6 +120,12 @@
           "start_sec": 250.0,
           "end_sec": 320.0,
           "observation_id": "obs-bangkok-muay-context-proof"
+        },
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 75.843,
+          "end_sec": 1641.0,
+          "observation_id": "obs-datong-graphics-context-before-action"
         },
         {
           "source_id": "bilibili-BV1CrHwzUEJa",
@@ -179,8 +210,9 @@
     {
       "technique_key": "graphic-inline-reference-card-over-live-scene",
       "category": "graphic",
-      "source_support": 7,
+      "source_support": 8,
       "source_ids": [
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1Mi536EELv",
@@ -189,8 +221,9 @@
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9514,
+      "average_confidence": 0.9487,
       "trigger_examples": [
+        "云冈、木塔、煤矿和城市更新涉及历史、价格、路线和工业信息，现场画面无法全部解释。",
         "远处动物难以仅凭现场低清画面辨认，需要短暂提供语义背景。",
         "口述招牌错误和补救时，观众需要看到沟通证据与成品的关系。",
         "城市历史、竖屏视频、人物身份、价格和产品颜色需要证据层，但全屏长停留会打断旅行现场。",
@@ -200,6 +233,7 @@
         "现今校园无法单独呈现战时迁徙、旧建筑和文字记录。"
       ],
       "treatment_examples": [
+        "在实景旁插入短资料卡、价格信息、路线提示、历史说明、采访式画面和引文，再回到当前地点或人物反应。",
         "在仍可看见底层草地的情况下叠加竖向白底图文卡，读完即撤，再回到动物近景。",
         "在仍可辨认拍摄区和招牌的画面旁短暂插入聊天截图、草图和双反相机细节，读完即回到现场。",
         "在现场与口播之间短暂插入竖屏视频、历史照片、人物肖像、价格字幕、Part/Day 卡和产品画面，随后快速回到人物或地点继续验证。",
@@ -209,6 +243,18 @@
         "在校园与教室现场旁短暂插入旧照片、地图、文字引用和路线图，读完即回到当前建筑与人物讲解。"
       ],
       "parameter_variants": [
+        {
+          "reference_types": [
+            "price",
+            "route",
+            "history",
+            "interview",
+            "quotation"
+          ],
+          "returns_to_live_scene": true,
+          "ocr_performed": false,
+          "source_id": "bilibili-BV146BFBzEfE"
+        },
         {
           "overlay_type": "vertical_reference_card",
           "background_remains_visible": true,
@@ -267,6 +313,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-inline-reference-card",
+          "guardrails": [
+            "未执行 OCR，资料卡和引文不能声明逐字准确。",
+            "历史和产业信息必须独立核验来源。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV19sm2BBEDd",
           "observation_id": "obs-animal-reference-card",
           "guardrails": [
@@ -324,6 +378,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 544.7,
+          "end_sec": 1854.5,
+          "observation_id": "obs-datong-inline-reference-card"
+        },
         {
           "source_id": "bilibili-BV19sm2BBEDd",
           "start_sec": 3703,
@@ -435,24 +495,38 @@
     {
       "technique_key": "graphic-physical-archive-time-series",
       "category": "graphic",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9633,
+      "average_confidence": 0.955,
       "trigger_examples": [
+        "应县木塔的百年损伤和大同煤炭时代转型都需要时间线证据。",
         "五年创作史需要比口头总结更具体的时间证据。",
         "共同记忆和街区变化需要比口述更具体的时间证据。",
         "西南联大的八年与其后文化影响需要可见的时间序列。"
       ],
       "treatment_examples": [
+        "用木塔历史数字、梁思成测绘语境、矿井设备、墙面字迹、老矿工口述、矿区旧痕迹和城市航拍连接过去与现在。",
         "依次展示第一块鹿米仓牌、手绘牌、不断生长的照片墙和 2021 至 2025 年份画面，把版本变化与团队记忆排列成时间序列。",
         "让人物翻看实体相册并指认 2019、2021 等同地点照片，穿插当前街巷，形成过去与现在的可见对照。",
         "用迁徙地图、战时旧照、茅草与铁皮教室、人物资料、现址展陈和当代书店依次连接过去与现在。"
       ],
       "parameter_variants": [
+        {
+          "archive_sequence": [
+            "wood_pagoda_damage",
+            "mine_equipment",
+            "worker_marks",
+            "old_miner_memory",
+            "city_renewal"
+          ],
+          "physical_trace_visible": true,
+          "source_id": "bilibili-BV146BFBzEfE"
+        },
         {
           "archive_types": [
             "old_sign",
@@ -482,6 +556,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-physical-archive-time-series",
+          "guardrails": [
+            "年份、人物、炮火、倾斜角度、矿产数字和城市政策需独立核验。",
+            "物理痕迹不能被解读为未经证实的单一因果。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1LS3r6gE7k",
           "observation_id": "obs-lumi-physical-archive-time-series",
           "guardrails": [
@@ -507,6 +589,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 961.7,
+          "end_sec": 1751.7,
+          "observation_id": "obs-datong-physical-archive-time-series"
+        },
         {
           "source_id": "bilibili-BV1LS3r6gE7k",
           "start_sec": 1008.474,
@@ -884,9 +972,10 @@
     {
       "technique_key": "humor-preserve-real-awkward-process",
       "category": "humor",
-      "source_support": 13,
+      "source_support": 14,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1C3546DEC6",
@@ -900,9 +989,10 @@
         "bilibili-BV1aDHQejEAP",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.96,
+      "average_confidence": 0.9614,
       "trigger_examples": [
         "普通成年人跟不上专业泰拳训练，真实落差比预制笑话更有可信度。",
+        "知识密集地方片需要真实关系反应释放节奏，但不能伤害地方人物和文物语境。",
         "主讲人自称不懂足球，但仍要记录世界杯现场。",
         "山上点饮料时突然想不起‘吸管’的英文，只能通过反复描述和等待解决。",
         "支付和加热沟通连续失败，人物只能重复尝试。",
@@ -918,6 +1008,7 @@
       ],
       "treatment_examples": [
         "保留动作失败、怕疼、自嘲、同伴起哄、对打和碰撞后的连续反应，再回到训练结果。",
+        "保留不要咬断面、佛祖来了要晕碳、李白多一点、来不来分歧、风水大师拆墙、佛道双修和矿洞动物/设备问答等完整来回。",
         "保留比分预测、模仿电视台开场、球员与球队关系说错或卡顿、旅伴纠正和人物自嘲，让非专业视角成为真实观看体验。",
         "保留提出需求、卡词、店员理解、继续等待、拿到饮料和人物事后偷笑的完整过程，以字幕和短配乐帮助观众跟上，不提前跳到结果。",
         "保留足够长的真实失败过程和停顿，用少量双语字幕、失败短句与反差配乐放大尴尬，不提前跳到结果。",
@@ -936,6 +1027,12 @@
           "setup_reaction_resolution": true,
           "single_reaction_emphasis": true,
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "setup_reaction_resolution": true,
+          "local_context_preserved": true,
+          "single_accent_not_overused": true,
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "expert_claim": false,
@@ -1023,6 +1120,14 @@
           "guardrails": [
             "不把教练或受伤者剪成单向笑料。",
             "真实受伤优先于笑点节奏。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-real-awkward-local-humor",
+          "guardrails": [
+            "不把方言、年龄、职业、信仰或知识差异剪成单向笑料。",
+            "文保、食品和矿井安全信息优先于笑点。"
           ]
         },
         {
@@ -1127,6 +1232,12 @@
           "start_sec": 360.0,
           "end_sec": 676.109,
           "observation_id": "obs-bangkok-muay-awkward-process"
+        },
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 75.843,
+          "end_sec": 1416.6,
+          "observation_id": "obs-datong-real-awkward-local-humor"
         },
         {
           "source_id": "bilibili-BV15XMC6KETm",
@@ -1513,8 +1624,9 @@
     {
       "technique_key": "music-scenic-block-dialogue-protection",
       "category": "music_rhythm",
-      "source_support": 7,
+      "source_support": 8,
       "source_ids": [
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
@@ -1523,8 +1635,9 @@
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm"
       ],
-      "average_confidence": 0.87,
+      "average_confidence": 0.8512,
       "trigger_examples": [
+        "本片以讲解和人物判断为核心，景观和沉重段不能压过对白。",
         "长段山脊、湖景和雨中下降需要持续情绪，同时包含问路、呼吸、跌倒和风险说明。",
         "连续樱花、河流、当地人活动和无人机镜头需要形成一段完整沉浸体验。",
         "长段湖泊、草地和渡船画面需要连续情绪，同时夹有现场感叹和临时交流。",
@@ -1534,6 +1647,7 @@
         "结尾需要从观众邀请平稳过渡到旅行回忆与 credits，同时保证最后一句话可辨。"
       ],
       "treatment_examples": [
+        "机器音频分段显示 speech 占比约 86.55%，人工画面复核也显示景观、资料和品牌段仍围绕旁白推进；沉重煤矿段镜头放慢但对白保持主要信息源。",
         "用多个连续 music_likely 块连接无对白的移动和风景，在问路、人物状态与湿滑路面说明处保留现场声；12706 秒以可见 BGM credit 标明雨中段音乐。",
         "使用连续低干扰音乐把不同景别连成一段，现场对白或人物交流出现时优先让位于原声。",
         "用低干扰音乐连接无对白风景块，在人物说话、买东西和真实交流时降低存在感或让位现场声。",
@@ -1543,6 +1657,12 @@
         "主持人完成邀请和再见后才完全交给旅行合影、海岸、沙丘、夕阳与 credits；尾段音频复核不支持在主持人对白之后加入新的叙事信息。"
       ],
       "parameter_variants": [
+        {
+          "speech_ratio": 0.8655,
+          "music_likely_ratio": 0.0076,
+          "evidence_status": "machine_audio_classification_only",
+          "source_id": "bilibili-BV146BFBzEfE"
+        },
         {
           "music_likely_segments_sec": [
             [
@@ -1650,6 +1770,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-music-dialogue-protection",
+          "guardrails": [
+            "没有人工听音和工程时间线证据，不声明曲名、BPM、ducking 数值或逐拍因果。",
+            "机器 music_likely 只是启发式分类，不等同于确认配乐段落。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV19sm2BBEDd",
           "observation_id": "obs-hike-music-dialogue-protection",
           "guardrails": [
@@ -1706,6 +1834,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 0.0,
+          "end_sec": 1907.47,
+          "observation_id": "obs-datong-music-dialogue-protection"
+        },
         {
           "source_id": "bilibili-BV19sm2BBEDd",
           "start_sec": 12095,
@@ -1874,18 +2008,20 @@
     {
       "technique_key": "narrative-end-of-journey-montage-verbal-closure",
       "category": "narrative",
-      "source_support": 6,
+      "source_support": 7,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV1ETNMzEEWQ",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9683,
+      "average_confidence": 0.9671,
       "trigger_examples": [
         "第三项任务结束后需要同时关闭旅行、联动和奖励承诺。",
+        "全片从热度问题进入历史、煤炭和文化转型，需要片尾把章节证据收回同一价值判断。",
         "多国旅行结尾既要完成真实返程，也要明确告诉观众这一系列已经结束。",
         "五年创作旅程需要在片尾同时完成视觉回顾和明确告别。",
         "颜色任务和两城对照需要明确结论，同时保留产品镜头、credits 与拍摄过程余韵。",
@@ -1894,6 +2030,7 @@
       ],
       "treatment_examples": [
         "主持人把曼谷港口、游戏地图和三项任务合并为顺利撤离结论，再用按摩灯光画面兑现开场奖励。",
+        "用城市航拍、文创、矿井人物、古建、车、云冈石窟、字幕和 credits，配合‘给岁月以文明’与‘改变就是未来’旁白完成城市未来收束。",
         "保留清晨出发、机场、机上座位小摩擦、窗外地理、睡不着和回家进度，最后用一句旅行结束、感谢、‘下个旅程再见’和黑底结束卡闭合。",
         "用照片墙、历年人物画面、键盘与当前工作室交叉回顾，保留主持人完整总结、观众提问、下期再见和拜拜。",
         "先由主持人总结人与自然、财富和颜色，再在城市、海岸、车辆和花絮画面上持续完成旁白，最后以无法固定定义但能让时间慢下来的蓝收束。",
@@ -1906,6 +2043,18 @@
           "opening_reward_paid_off": true,
           "verbal_closure": true,
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "closure_elements": [
+            "city",
+            "culture_product",
+            "mine",
+            "heritage",
+            "car",
+            "credits"
+          ],
+          "last_trusted_dialogue_sec": 1905.46,
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "closure_steps": [
@@ -1962,6 +2111,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-end-montage-verbal-closure",
+          "guardrails": [
+            "结尾金句是成片主题总结，不证明城市转型已经完成。",
+            "片尾品牌、人物、资料和 credits 文字需独立核验。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1ETNMzEEWQ",
           "observation_id": "obs-homecoming-montage-closure",
           "guardrails": [
@@ -2008,6 +2165,12 @@
           "start_sec": 2040.0,
           "end_sec": 2149.314,
           "observation_id": "obs-bangkok-mission-verbal-closure"
+        },
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 1751.7,
+          "end_sec": 1907.47,
+          "observation_id": "obs-datong-end-montage-verbal-closure"
         },
         {
           "source_id": "bilibili-BV1ETNMzEEWQ",
@@ -2190,17 +2353,19 @@
     {
       "technique_key": "narrative-experience-followed-by-explicit-evaluation",
       "category": "narrative",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.968,
+      "average_confidence": 0.9683,
       "trigger_examples": [
         "观众需要知道短期体验与职业训练之间的差距。",
+        "大同面食和物价是观众能直接决策的旅行信息，需要体验后再评价。",
         "廉价酒店很容易只被当作猎奇素材，需要让观众看到完整入住过程和实际体验。",
         "云南、新疆、罗弗敦和新西兰的推荐若只靠美景，会缺少可执行条件。",
         "完成热门路线后需要判断它是否真的值得，而不是让 montage 自行得出结论。",
@@ -2208,6 +2373,7 @@
       ],
       "treatment_examples": [
         "完成基础动作、对打和意外后，由主持人与教练明确评价初学者能得到什么、职业风险是什么。",
+        "先展示刀削面、黄米糕、羊杂粉、本地吃法和店内人流，再给价格、饱腹感、夫妻反应和后续来不来判断。",
         "保留破碎街道、昏暗院子、找钥匙、投币电梯和开门前担忧，再展示 300 元房间、卫生间和早餐，最后给出没有想象中差且早餐超预期的评价。",
         "每个目的地由主持人先说温度、季节、自驾、日照或路线条件，插入亲历景观和人物画面，再回桌谈说明限制与适合人群。",
         "先由嘉宾说明固定 BGM 与海外传播语境，再让参与者用红绿牌和口头理由评价；最后追问抛开流量后本地人想展示什么。",
@@ -2218,6 +2384,12 @@
           "practice_before_evaluation": true,
           "expert_and_host_evaluation": true,
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "evaluation_after_eating": true,
+          "price_layer_visible": true,
+          "local_method_before_judgment": true,
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "sequence": [
@@ -2269,6 +2441,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-food-experience-evaluation",
+          "guardrails": [
+            "单店价格和口味不能代表全部大同餐饮。",
+            "本地吃法和俗语需要独立核验。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "observation_id": "obs-naples-cheap-hotel-blind-box-evaluation",
           "guardrails": [
@@ -2307,6 +2487,12 @@
           "start_sec": 286.453,
           "end_sec": 783.92,
           "observation_id": "obs-bangkok-muay-evaluation-after-experience"
+        },
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 75.843,
+          "end_sec": 334.837,
+          "observation_id": "obs-datong-food-experience-evaluation"
         },
         {
           "source_id": "bilibili-BV1Mi536EELv",
@@ -2621,18 +2807,21 @@
     {
       "technique_key": "narrative-guide-expertise-before-action",
       "category": "narrative",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.975,
+      "average_confidence": 0.97,
       "trigger_examples": [
         "观众需要理解教练为什么值得信任，才能判断后续训练难度和风险。",
+        "云冈石窟和煤矿都涉及专业知识，外来主持人不能只凭个人感受评价。",
         "野生菌品尝涉及专业辨认和现实风险，不能直接进入娱乐反应。"
       ],
       "treatment_examples": [
         "先介绍拳馆、泰拳女王的家庭和冠军背景，再进入动作示范与主持人练习。",
+        "云冈段先给早到路线和讲解员历史脉络，煤矿段让讲解员与老矿工解释设备、风险和工作记忆，再由主持人评价体验。",
         "先在市场由长期研究菌类的父亲与孩子辨认品种、解释季节和分类，再进入烹饪、计时、留样和品尝。"
       ],
       "parameter_variants": [
@@ -2644,6 +2833,15 @@
             "gym_context"
           ],
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "guide_before_evaluation": true,
+          "site_types": [
+            "heritage",
+            "coal_mine"
+          ],
+          "host_judgment_after_context": true,
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "experts_before_tasting": true,
@@ -2659,6 +2857,14 @@
           "guardrails": [
             "冠军数量和家庭信息需要独立核验。",
             "人物背景只说明专业语境，不制造个人崇拜。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-guide-expertise-before-site-judgment",
+          "guardrails": [
+            "讲解内容、历史数字和矿业知识需要独立核验。",
+            "主持人评价不能覆盖专业人员的安全与保护语境。"
           ]
         },
         {
@@ -2678,6 +2884,12 @@
           "observation_id": "obs-bangkok-expert-before-muay-action"
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 544.7,
+          "end_sec": 780.4,
+          "observation_id": "obs-datong-guide-expertise-before-site-judgment"
+        },
+        {
           "source_id": "bilibili-BV1xTdwBQEna",
           "start_sec": 180.0,
           "end_sec": 423.89,
@@ -2688,21 +2900,30 @@
     {
       "technique_key": "narrative-live-event-to-universal-theme",
       "category": "narrative",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.965,
+      "average_confidence": 0.96,
       "trigger_examples": [
+        "煤矿体验和古城更新如果停留在单点参观，无法回答‘热度褪去还值不值’。",
         "比赛现场已经提供进球、观众和冲突素材，需要回答非球迷为什么仍然在意。",
         "网络语境中的‘癫’容易停留在猎奇标签，需要在结尾完成价值重定义。"
       ],
       "treatment_examples": [
+        "把矿工劳动记忆、能源枯竭、文化复兴、城市更新和汽车电动化转型并置，提炼为文明需要在变化中重新找到位置。",
         "先保留突然进球和人群反应，再从足球是微缩战争的比喻进入规则、文明底线和不同人共同观看同一事件的旁白，画面继续展示比赛、球迷与公共观看空间。",
         "从返乡创作者、饮食、歌舞、老人、花木、公园与街巷日常提炼出松弛、恋家和生龙活虎，把‘癫’总结为从土地与日子中长出的生命力。"
       ],
       "parameter_variants": [
+        {
+          "live_events_before_theme": true,
+          "theme": "civilization_and_change",
+          "ending_dialogue_sec": 1905.46,
+          "source_id": "bilibili-BV146BFBzEfE"
+        },
         {
           "theme": [
             "conflict",
@@ -2722,6 +2943,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-live-event-to-universal-theme",
+          "guardrails": [
+            "价值总结不能抹平矿工劳动、城市治理和旅游商业之间的复杂性。",
+            "不要把品牌转型与城市转型剪成未经证明的直接因果。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-football-conflict-rules-theme-rise",
           "guardrails": [
@@ -2739,6 +2968,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 1482.8,
+          "end_sec": 1907.47,
+          "observation_id": "obs-datong-live-event-to-universal-theme"
+        },
         {
           "source_id": "bilibili-BV15XMC6KETm",
           "start_sec": 1708.11,
@@ -2871,24 +3106,33 @@
     {
       "technique_key": "narrative-object-builds-longitudinal-human-story",
       "category": "narrative",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.98,
+      "average_confidence": 0.97,
       "trigger_examples": [
+        "古建和佛像容易停留在观光距离，需要说明年轻人如何继续接触传统文化。",
         "工作室从 1.0 到 3.0 的变化需要一个可触摸的叙事锚点。",
         "山城巷如果只讲建筑历史仍缺少本地人与游客长期关系。",
         "城市松弛与温柔若只由主持人概括会缺少具体对象。"
       ],
       "treatment_examples": [
+        "用佛小伴娃娃、合伙人回乡、华严寺和善华寺原型打卡，把传统造像转成当代文创和年轻人的古建巡礼方式。",
         "从五年前的第一块招牌进入手绘牌和照片墙，让主持人用这些持续保留的物件回望节目、团队与观众共同经历。",
         "从摄影师偶遇老夫妻、重现走红照片进入实体相册、游客留言和多年同角度照片，让相册成为人物关系与地点变化的时间轴。",
         "让读者信、儿童手写诗和本土书籍成为叙事锚点，保留主持人逐页阅读、情绪变化和对母子关系的理解。"
       ],
       "parameter_variants": [
+        {
+          "anchor_object": "佛小伴文创",
+          "origin_place_match": true,
+          "human_story_visible": true,
+          "source_id": "bilibili-BV146BFBzEfE"
+        },
         {
           "anchor_object": "first_lumi_sign",
           "time_span_years": 5,
@@ -2917,6 +3161,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-cultural-product-modernizes-heritage",
+          "guardrails": [
+            "文创商业价值、人物背景和销售状态需独立核验。",
+            "文创不能替代对文物本体和宗教语境的尊重。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1LS3r6gE7k",
           "observation_id": "obs-lumi-old-sign-longitudinal-story",
           "guardrails": [
@@ -2943,6 +3195,12 @@
       ],
       "evidence_ranges": [
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 719.2,
+          "end_sec": 891.6,
+          "observation_id": "obs-datong-cultural-product-modernizes-heritage"
+        },
+        {
           "source_id": "bilibili-BV1LS3r6gE7k",
           "start_sec": 1008.474,
           "end_sec": 1149.0,
@@ -2965,20 +3223,23 @@
     {
       "technique_key": "narrative-place-detail-to-city-system",
       "category": "narrative",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1Mi536EELv"
       ],
-      "average_confidence": 0.9467,
+      "average_confidence": 0.9475,
       "trigger_examples": [
         "高速船若只展示速度，会缺少曼谷港口和改装文化的地点意义。",
+        "观众的问题是城市是否值得去，单个景点好坏不足以回答。",
         "纽约物价与空间压力若只用数字说明会抽象。",
         "那不勒斯的脏乱标签需要被具体街巷经验和城市身份补充。"
       ],
       "treatment_examples": [
         "从旧发动机改装、技师和船厂细节进入河面试乘，再把港口的交通、交易和游戏地图设定连接起来。",
+        "把刀削面价格、景区票价、文创商业、木塔保护、煤矿工作面、煤炭减产和城市更新连成系统，最后给出文化与能源转型的城市判断。",
         "从百年熟食店的排队、手工切肉和价格进入街道逃生梯，再连接到住宅缺少阳台、中央公园景观和房价，让食物与建筑细节共同解释城市系统。",
         "从摩托、狭窄街道、汽油味、歌剧、纵向空间和居民互动出发，再连接马拉多纳壁画、足球历史与南方身份，让混乱同时呈现生活气和认同。"
       ],
@@ -2992,6 +3253,18 @@
             "port_context"
           ],
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "system_links": [
+            "food_price",
+            "ticket_and_route",
+            "culture_product",
+            "heritage_protection",
+            "coal_labor",
+            "energy_transition"
+          ],
+          "city_level_answer": true,
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "detail_chain": [
@@ -3026,6 +3299,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-place-detail-to-city-system",
+          "guardrails": [
+            "城市级判断是成片观点，不构成普遍旅行或政策结论。",
+            "价格、产能、转型数据和品牌信息需要独立核验。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-newyork-place-detail-explainer-chain",
           "guardrails": [
@@ -3050,6 +3331,12 @@
           "observation_id": "obs-bangkok-engine-detail-port-system"
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 75.843,
+          "end_sec": 1907.47,
+          "observation_id": "obs-datong-place-detail-to-city-system"
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "start_sec": 269.07,
           "end_sec": 456.16,
@@ -3066,22 +3353,25 @@
     {
       "technique_key": "narrative-present-experience-to-historical-layer",
       "category": "narrative",
-      "source_support": 4,
+      "source_support": 5,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9475,
+      "average_confidence": 0.95,
       "trigger_examples": [
         "私人收藏与旧物市场容易变成无序猎奇。",
+        "面食、古建和煤矿若只作为当下体验，会失去大同历史层次。",
         "两地的当代观感需要历史和人物层，才能避免停留在消费价格对照。",
         "防空洞火锅既是消费打卡点，也承载重庆战争历史和当代记忆。",
         "昆明当下的鲜花与松弛生活需要历史纵深，避免只成为消费景观。"
       ],
       "treatment_examples": [
         "从房东祖父、钟表和相机进入市场旧物与改造，再用二战物资转运、电影道具和二手文化解释城市历史层。",
+        "从吃面、登古建、看石窟、站在木塔前和下到矿井的当下行动，逐步解释农耕/游牧融合、北魏、梁思成、煤炭工业和城市复兴。",
         "那不勒斯从街头足球符号进入马拉多纳与南方身份；卡布里从酒店、街道和海景进入帝王、作家、革命者与名流活动的历史引用，再回到现场景观。",
         "先以入口、温度、麻将与火锅建立当下体验，再用防空洞结构、档案画面和历史旁白解释战时用途，最后回到墙面展陈和城市韧性。",
         "从普通人买菜也带花的文字记忆进入 1938 年西南联大，结合现址、教室、旧照片、地图和本地朋友讲解战时迁徙与教育。"
@@ -3097,6 +3387,17 @@
           ],
           "present_to_history": true,
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "present_anchor_before_history": true,
+          "history_layers": [
+            "food_origin",
+            "Northern_Wei",
+            "wood_pagoda_damage",
+            "coal_industry",
+            "city_renewal"
+          ],
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "bridge": [
@@ -3135,6 +3436,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-present-experience-to-history",
+          "guardrails": [
+            "历史层只能作为成片解释框架，不能替代外部史料核验。",
+            "现地体验不能简化复杂族群、宗教和工业史。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "observation_id": "obs-naples-capri-present-to-history-layer",
           "guardrails": [
@@ -3165,6 +3474,12 @@
           "start_sec": 1560.0,
           "end_sec": 1840.0,
           "observation_id": "obs-bangkok-present-to-objects-history"
+        },
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 75.843,
+          "end_sec": 1751.7,
+          "observation_id": "obs-datong-present-experience-to-history"
         },
         {
           "source_id": "bilibili-BV1Mi536EELv",
@@ -3500,20 +3815,23 @@
     {
       "technique_key": "narrative-repeatable-experience-module",
       "category": "narrative",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9667,
+      "average_confidence": 0.965,
       "trigger_examples": [
         "三项体验内容差异巨大，需要统一观众预期。",
+        "面食、古建、文创、木塔和煤矿跨度很大，需要重复但不僵硬的章节结构。",
         "外国游客路线需要说明它为何能在短视频中反复复制。",
         "食物、产业、历史和书店章节需要可重复但不僵硬的结构。"
       ],
       "treatment_examples": [
         "每项任务重复使用寻找专家、建立知识、亲身尝试、保留风险或失败、评价并结算的模块。",
+        "每章基本遵循地点/问题、现场体验、知识或讲解、夫妻反应、价格/攻略、来不来评价或主题桥接，再进入下一层城市命题。",
         "依次保留发现大量外国游客、嘉宾解释取景逻辑、机车动作教学、实拍夜景、回看成片和参与者红绿牌评价，形成设置—拍摄—结果—反馈闭环。",
         "各章重复当地人物或现场流程、知识语境、主持人体验、分歧或反应、明确评价，再用‘癫’和生命力桥接下一章。"
       ],
@@ -3529,6 +3847,17 @@
           ],
           "mission_count": 3,
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "module_steps": [
+            "place_or_question",
+            "live_experience",
+            "context_or_guide",
+            "reaction",
+            "evaluation_or_bridge"
+          ],
+          "chapter_count": 6,
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "stages": [
@@ -3564,6 +3893,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-repeatable-chapter-module",
+          "guardrails": [
+            "重复结构不能抹平古建保护、煤矿劳动和商业赞助的语境差异。",
+            "每章都应有新的地点、人物或系统信息。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1a7Tj6nEe9",
           "observation_id": "obs-chongqing-viral-route-modular-sequence",
           "guardrails": [
@@ -3586,6 +3923,12 @@
           "start_sec": 60.294,
           "end_sec": 2087.719,
           "observation_id": "obs-bangkok-repeatable-mission-modules"
+        },
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 75.843,
+          "end_sec": 1907.47,
+          "observation_id": "obs-datong-repeatable-chapter-module"
         },
         {
           "source_id": "bilibili-BV1a7Tj6nEe9",
@@ -3726,21 +4069,36 @@
     {
       "technique_key": "narrative-sponsor-demonstration-with-host-friction",
       "category": "narrative",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1TYVA6sEhm"
       ],
-      "average_confidence": 0.935,
+      "average_confidence": 0.9233,
       "trigger_examples": [
+        "汽车品牌露出需要与旅行路线和城市转型主题绑定，避免变成孤立硬广。",
         "键盘赞助若脱离 Room Tour 会中断空间导览。",
         "护肤赞助位于实用物品章节，需要保持与旅行场景和人物关系的连续性。"
       ],
       "treatment_examples": [
+        "车辆先作为山西自驾和充电续航的旅行工具出现，片尾再与传统能源、智能电动转型和大同城市革新形成类比。",
         "从真实员工工位和五年未变的键鼠组合进入新键盘，让员工现场打字、评价手感、演示快捷键，并保留主持人对员工爱好和回答的即兴反应。",
         "先用不同气候下的皮肤状态和意大利忘带产品的经历说明使用情境，再以双人护肤习惯的互相吐槽恢复节目语气，随后转入旅行冲突章节。"
       ],
       "parameter_variants": [
+        {
+          "product_role": [
+            "travel_tool",
+            "theme_analogy"
+          ],
+          "host_friction": [
+            "charging_question",
+            "range_discussion"
+          ],
+          "brand_claims_need_verification": true,
+          "source_id": "bilibili-BV146BFBzEfE"
+        },
         {
           "real_workstation": true,
           "coworker_demonstration": true,
@@ -3755,6 +4113,14 @@
         }
       ],
       "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-sponsor-friction-city-transition",
+          "guardrails": [
+            "产品功能、续航、车型和品牌转型表述需独立核验。",
+            "品牌类比不能替代城市转型事实。"
+          ]
+        },
         {
           "source_id": "bilibili-BV1LS3r6gE7k",
           "observation_id": "obs-lumi-sponsor-workflow-host-friction",
@@ -3774,6 +4140,12 @@
       ],
       "evidence_ranges": [
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 0.0,
+          "end_sec": 1907.47,
+          "observation_id": "obs-datong-sponsor-friction-city-transition"
+        },
+        {
           "source_id": "bilibili-BV1LS3r6gE7k",
           "start_sec": 240.0,
           "end_sec": 360.0,
@@ -3790,20 +4162,23 @@
     {
       "technique_key": "narrative-theme-bridge-between-chapters",
       "category": "narrative",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1Mi536EELv"
       ],
-      "average_confidence": 0.9533,
+      "average_confidence": 0.955,
       "trigger_examples": [
         "拳馆、战术场和后续港口在地理与活动上分散。",
+        "从面食到石窟、木塔和煤矿跨度大，需要每次转场都有主题桥而不是硬换地点。",
         "从中央公园与电影回忆切到世界杯，若只做交通跳切会显得章节断裂。",
         "寻找产品颜色的商业任务完成后，需要回到标题中的城市差距并形成非广告式主题回答。"
       ],
       "treatment_examples": [
         "持续使用三角洲任务、装备、撤离和结算语言，把不同体验维持在同一游戏式旅程框架内。",
+        "用文明和谷物桥接面食，用黑神话桥接古建，用云冈作为文化原点桥接文创，用充电/地下故事桥接煤矿，用煤炭枯竭桥接城市复兴。",
         "用纽约给房子、景观、时间和世界杯标价的旁白，把前文物价线与球赛票价连接，再进入球场人群。",
         "从船夫、车夫和自然景观进入财富与头衔退色的判断，再回看车辆在不同光线中的蓝，承认无法提供固定色号，把答案转为旅行让时间慢下来的感受。"
       ],
@@ -3812,6 +4187,16 @@
           "bridge_device": "mission_vocabulary",
           "chapter_reset_visible": true,
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "bridges": [
+            "food_to_civilization",
+            "game_to_heritage",
+            "heritage_to_culture_product",
+            "car_to_underground",
+            "coal_to_renewal"
+          ],
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "bridge_topics": [
@@ -3845,6 +4230,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-theme-bridge-between-chapters",
+          "guardrails": [
+            "桥接语不能制造未经证实的历史因果。",
+            "商业产品桥接必须服务地点叙事，而非覆盖城市主题。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-money-theme-bridges-to-football",
           "guardrails": [
@@ -3869,6 +4262,12 @@
           "observation_id": "obs-bangkok-game-frame-chapter-bridge"
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 229.5,
+          "end_sec": 1854.5,
+          "observation_id": "obs-datong-theme-bridge-between-chapters"
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "start_sec": 1492.14,
           "end_sec": 1511.34,
@@ -3885,9 +4284,10 @@
     {
       "technique_key": "opening-phased-hook-not-uniform-fast-cut",
       "category": "opening_montage",
-      "source_support": 9,
+      "source_support": 10,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
@@ -3897,9 +4297,10 @@
         "bilibili-BV1aDHQejEAP",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9767,
+      "average_confidence": 0.977,
       "trigger_examples": [
         "开场同时需要刺激、地点、路线和商业联动信息。",
+        "大同既有黑神话热度又有煤老板、刀削面等旧标签，需要先展示目的地价值再提出判断问题。",
         "长篇旅行需要同时交代目的地承诺、人物动机和行动起点。",
         "长途独行VLOG需要同时兑现目的地视觉、交代人物动机并快速进入移动。",
         "长篇旅行终章需要同时兑现地标承诺、交代人物疲惫限制并启动真实行动。",
@@ -3911,6 +4312,7 @@
       ],
       "treatment_examples": [
         "用人物风险预告、地点重定义、任务清单三阶段推进，快切后回到可理解的主持人口播和任务卡。",
+        "开场用云冈、古建、车、食物、矿井和城市航拍快速预告，随后以‘当热度褪去还值得去吗’转成城市验证任务，再减速进入面食第一章。",
         "先用12秒景色标题预告，再以完整口播设定目标，随后用时间跳切和约2秒一镜的交通蒙太奇提速。",
         "先用十秒六镜风景标题预告，再保留完整口播设定和凌晨准备，最后把0.76至1.28秒中位镜长的快剪集中在告别与交通推进。",
         "先用 11.52 秒地标、日落和标题预览，再保留完整口播说明最后一站与班次选择；次日重启后才把较密镜头集中到离店和交通推进。",
@@ -3929,6 +4331,16 @@
           ],
           "uniform_fast_cut": false,
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "phases": [
+            "future_payoff_preview",
+            "city_thesis",
+            "first_chapter_entry"
+          ],
+          "uniform_fast_cut": false,
+          "opening_0_to_80_average_shot_sec": 1.56,
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "phase_count": 4,
@@ -4004,6 +4416,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-opening-city-thesis-preview",
+          "guardrails": [
+            "预告镜头必须在后文兑现，不能只做空洞高光 montage。",
+            "旧标签和热度判断需要保留成片语境，不能当作客观城市结论。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1C3546DEC6",
           "observation_id": "obs-opening-four-phase-hook",
           "guardrails": [
@@ -4076,6 +4496,12 @@
           "observation_id": "obs-bangkok-mission-opening-phases"
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 0.0,
+          "end_sec": 120.0,
+          "observation_id": "obs-datong-opening-city-thesis-preview"
+        },
+        {
           "source_id": "bilibili-BV1C3546DEC6",
           "start_sec": 0,
           "end_sec": 120,
@@ -4128,20 +4554,23 @@
     {
       "technique_key": "opening-place-thesis-to-concrete-mission",
       "category": "opening_montage",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1Mi536EELv"
       ],
-      "average_confidence": 0.9833,
+      "average_confidence": 0.98,
       "trigger_examples": [
         "地点本身较宽泛，需要把曼谷港口与本期体验快速收敛为可验证路线。",
+        "目的地片需要让观众知道本期不是单纯打卡，而是在回答一个清晰问题。",
         "需要同时兑现纽约视觉承诺并解释为什么此刻来到这里。",
         "两个地点距离很近但社会想象相反，且赞助颜色任务需要自然进入旅行主线。"
       ],
       "treatment_examples": [
         "先给泰拳女王和高刺激反应，再交代曼谷港口，把旅程定义为特种兵旅行并公布三项任务与按摩奖励。",
+        "先确认大同地点，再把中华文明、黑神话热度、煤矿旧印象和本次精神疗愈之旅并置，形成‘真实大同是什么样’的任务。",
         "用自由女神、街道、地铁、摩天楼、夜景、中央公园和球迷人群承载城市旁白，再以低价世界杯门票和决赛目标结束抽象命题。",
         "先用卡布里酒店、街景和产品结果预告吸引注意，再明确那不勒斯与卡布里的吃住行人对照，最后把寻找卡布里蓝和蓝洞天气风险设为可验证任务。"
       ],
@@ -4151,6 +4580,18 @@
           "reward_promised": true,
           "opening_15_sec_shot_count": 11,
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "place_title": "大同",
+          "question_before_itinerary": true,
+          "mission_domains": [
+            "food",
+            "heritage",
+            "culture",
+            "coal_industry",
+            "city_transition"
+          ],
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "montage_duration_sec": 62.56,
@@ -4180,6 +4621,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-opening-place-thesis-mission",
+          "guardrails": [
+            "问题式开场不能替代后文实际体验。",
+            "城市标签和历史称谓需独立核验。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-newyork-city-thesis-mission-montage",
           "guardrails": [
@@ -4202,6 +4651,12 @@
           "start_sec": 0.0,
           "end_sec": 60.294,
           "observation_id": "obs-bangkok-mission-opening-place-thesis"
+        },
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 0.0,
+          "end_sec": 75.843,
+          "observation_id": "obs-datong-opening-place-thesis-mission"
         },
         {
           "source_id": "bilibili-BV15XMC6KETm",
@@ -4314,9 +4769,10 @@
     {
       "technique_key": "scenic-human-reaction-to-landmark-geography",
       "category": "scenic",
-      "source_support": 7,
+      "source_support": 8,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
@@ -4324,9 +4780,10 @@
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9543,
+      "average_confidence": 0.9562,
       "trigger_examples": [
         "连续高强度训练后需要恢复节奏，同时交代下一段本地生活。",
+        "悬空寺、云冈石窟、华严寺、善华寺和应县木塔的景观尺度需要人物反应建立观众尺度。",
         "中央公园既承担城市房价说明，也需要提供旅行中的空间与情绪释放。",
         "蓝洞是抽象颜色任务的视觉高潮，需要同时证明进入难度、空间与人物体验。",
         "塞纳河游船是巴黎一日行的主要视觉回报，需要兼顾地标、城市尺度和人物在场感。",
@@ -4336,6 +4793,7 @@
       ],
       "treatment_examples": [
         "从难找的小巷和狗进入百年木屋，以自然光、庭院、房间和主持人发现反应建立空间，再承诺清晨体验。",
+        "在古建宽景、佛像近景和塔体仰拍之间保留主持人与伴侣的害怕、惊叹、吐槽和讲解聆听，让景观与体验互相解释。",
         "先以俯瞰和地图逻辑说明公园位置，再用入口马车、人物步行、草坪活动、城市楼群与阿根廷旗帜交替建立尺度，最后回到两人的现场体验。",
         "从海上等待和换小船开始，保留船夫压低身体、洞口黑暗、蓝光水面、洞内船只和人物出洞后的惊讶反应，使地理奇观与身体体验连在一起。",
         "从登船和人物仰望进入埃菲尔铁塔，交替人物反应、河面宽景、桥梁、两岸建筑、蓝调天空与夜间亮灯，再回到岸上人物。",
@@ -4349,6 +4807,17 @@
           "wide_detail_reaction": true,
           "recovery_block": true,
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "wide_detail_reaction_sequence": true,
+          "landmarks": [
+            "悬空寺",
+            "云冈石窟",
+            "华严寺",
+            "善华寺",
+            "应县木塔"
+          ],
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "sequence": [
@@ -4431,6 +4900,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-scenic-human-landmark",
+          "guardrails": [
+            "人物反应不能替代文保事实。",
+            "景观镜头不得被剪成无地点语境的通用空镜。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-central-park-human-scale-geography",
           "guardrails": [
@@ -4485,6 +4962,12 @@
           "start_sec": 1255.02,
           "end_sec": 1444.81,
           "observation_id": "obs-bangkok-homestay-human-scale-scenic"
+        },
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 334.837,
+          "end_sec": 1145.0,
+          "observation_id": "obs-datong-scenic-human-landmark"
         },
         {
           "source_id": "bilibili-BV15XMC6KETm",
@@ -4617,21 +5100,35 @@
     {
       "technique_key": "scenic-landmark-exterior-to-interior-detail",
       "category": "scenic",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1a7Tj6nEe9"
       ],
-      "average_confidence": 0.965,
+      "average_confidence": 0.96,
       "trigger_examples": [
+        "古建和石窟的价值来自整体结构与细部工艺，单一远景不足以说明。",
         "卢浮宫段需要同时交代抵达空间、代表展品、文化密度和人物在场感。",
         "魁星楼、天桥和电梯的楼层关系很难靠单个宽景理解。"
       ],
       "treatment_examples": [
+        "从悬空寺外观、云冈洞窟、木塔全貌切入，再进入栈道、佛像面部、斗拱、题字和塔身倾斜等可见细节。",
         "先用街景、庭院、拱廊和金字塔建立外部地理，再进入油画、天花板、蒙娜丽莎、皇冠与雕塑中庭；人群和人物反应穿插其间，避免连续壁纸化展品。",
         "让人物从高处、广场、天桥、电梯和江边方向连续移动，用楼层数字、俯视和脚步动作解释同一地点的垂直关系，再连接索道等公共交通。"
       ],
       "parameter_variants": [
+        {
+          "exterior_to_detail": true,
+          "detail_types": [
+            "栈道",
+            "佛像",
+            "斗拱",
+            "题字",
+            "倾斜"
+          ],
+          "source_id": "bilibili-BV146BFBzEfE"
+        },
         {
           "sequence": [
             "street",
@@ -4659,6 +5156,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-landmark-exterior-detail",
+          "guardrails": [
+            "细节解释需要导览或资料支持。",
+            "低清代理只能支持构图和信息层判断，不能做文物细节鉴定。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "observation_id": "obs-louvre-exterior-to-cultural-detail",
           "guardrails": [
@@ -4677,6 +5182,12 @@
       ],
       "evidence_ranges": [
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 334.837,
+          "end_sec": 1080.1,
+          "observation_id": "obs-datong-landmark-exterior-detail"
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "start_sec": 1015,
           "end_sec": 1497.92,
@@ -4693,9 +5204,10 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-title-layer",
       "category": "subtitle",
-      "source_support": 7,
+      "source_support": 8,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1Mi536EELv",
@@ -4703,9 +5215,10 @@
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9529,
+      "average_confidence": 0.9563,
       "trigger_examples": [
         "全片包含密集中文口播、外语教学、动作噪声和多次章节转换。",
+        "全片对白、讲解、价格、路线、历史和品牌信息密集，需要稳定基础字幕和稀疏信息层分工。",
         "全片横跨城市说明、双人对谈、英语引用、产品内容和球场现场，需要稳定的信息层级。",
         "全片连续口播和多人互动需要稳定可读，同时空间与年份信息需要更高层级提示。",
         "双城旅行同时包含现场对白、章节、日期、价格、历史引用、竖屏素材、赞助和 credits，需要稳定的信息层级。",
@@ -4715,6 +5228,7 @@
       ],
       "treatment_examples": [
         "保持底部居中对白字幕，只在 Mission、章节、战术关键词、地点、结果和 Easter Egg 使用独立稀疏标题层。",
+        "对白始终用底部基础字幕承载；地点、章节、价格、门票、历史资料、来不来评价、城市引文和片尾 credits 使用短时独立图层。",
         "以底部居中浅色描边对白字幕为默认层，地点手写标题、FRIENDS 标识和 New York/纽约主标题只在对应章节短暂出现。",
         "用底部居中字幕承载对白，只在 Room Tour 标题、区域名、设备、年份和照片回顾处增加稀疏图形层。",
         "普通对白持续使用底部字幕；Part、Day、地点、价格和颜色标签稀疏出现；竖屏引用、历史照片、人物肖像与赞助产品保留独立视觉边界。",
@@ -4728,6 +5242,20 @@
           "title_layer": "sparse",
           "ocr_verified": false,
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "base_position": "bottom_center",
+          "sparse_layers": [
+            "location",
+            "chapter",
+            "price",
+            "route",
+            "archive",
+            "quote",
+            "credits"
+          ],
+          "ocr_performed": false,
+          "source_id": "bilibili-BV146BFBzEfE"
         },
         {
           "base_position": "bottom_center",
@@ -4804,6 +5332,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-subtitle-base-sparse-layers",
+          "guardrails": [
+            "未执行 OCR，所有字幕和资料文字仍需人工听校与查证。",
+            "信息图层不能遮挡文物细节、人物表情或基础字幕。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-base-subtitle-hierarchy",
           "guardrails": [
@@ -4858,6 +5394,12 @@
           "start_sec": 0.0,
           "end_sec": 2213.227,
           "observation_id": "obs-bangkok-base-subtitle-sparse-title"
+        },
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 0.0,
+          "end_sec": 1907.47,
+          "observation_id": "obs-datong-subtitle-base-sparse-layers"
         },
         {
           "source_id": "bilibili-BV15XMC6KETm",
@@ -5036,24 +5578,33 @@
     {
       "technique_key": "subtitle-location-title-delivers-promise",
       "category": "subtitle",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
+        "bilibili-BV146BFBzEfE",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9867,
+      "average_confidence": 0.98,
       "trigger_examples": [
+        "开场高光包含多个地点和主题，需要快速确认本片主场。",
         "开场城市 montage 需要快速确认具体地点并建立视觉语气。",
         "开场需要在人物解释前确认国家、城市、独行主题和视觉期待。",
         "开场多个云南例证需要迅速确认本期真正讨论的是昆明。"
       ],
       "treatment_examples": [
+        "在城市航拍/俯拍上叠加醒目的‘大同’地点标题，并在后续用章节标题进入‘食在大同’等结构。",
         "在自由女神与人物同框画面左下放黄色英文手写地点标题，下面配较小中文说明；随后恢复普通对白字幕。",
         "在人物与巴黎夜景、教堂和落日地标上依次放置法国、巴黎、一个人旅行与 travel vlog 标题，随后干净切回早餐叙事。",
         "在菌子与城市画面间显示高对比昆明大标题和节目标题，随后回到人物口播与底部字幕。"
       ],
       "parameter_variants": [
+        {
+          "location_title_visible": true,
+          "chapter_title_after_thesis": true,
+          "ocr_performed": false,
+          "source_id": "bilibili-BV146BFBzEfE"
+        },
         {
           "title_color": "yellow",
           "title_style": "handwritten",
@@ -5081,6 +5632,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-title-delivers-place-promise",
+          "guardrails": [
+            "未执行 OCR，地点标题和章节标题的逐字准确性仍需人工核对。",
+            "地点标题应服务导航，不应遮挡核心景观。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-newyork-handwritten-location-title",
           "guardrails": [
@@ -5106,6 +5665,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 0.0,
+          "end_sec": 75.843,
+          "observation_id": "obs-datong-title-delivers-place-promise"
+        },
         {
           "source_id": "bilibili-BV15XMC6KETm",
           "start_sec": 23.86,
@@ -6851,6 +7416,47 @@
       ]
     },
     {
+      "technique_key": "narrative-industrial-memory-to-city-renewal",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV146BFBzEfE"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "大同的煤炭标签既沉重又关键，不能只作为奇观或怀旧素材。"
+      ],
+      "treatment_examples": [
+        "先下到矿井体验设备、风险、动物监测和老矿工口述，再承认无法真实体会矿工艰辛，转到能源枯竭、空气改善、文化赌注和城市更新。"
+      ],
+      "parameter_variants": [
+        {
+          "industrial_memory_before_renewal": true,
+          "worker_respect_statement": true,
+          "transition_theme": "coal_to_culture",
+          "source_id": "bilibili-BV146BFBzEfE"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "observation_id": "obs-datong-coal-memory-to-renewal",
+          "guardrails": [
+            "矿工收入、职业病、产能、能源比例和城市治理需独立核验。",
+            "景区体验不能代表真实地下劳动强度。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV146BFBzEfE",
+          "start_sec": 1145.0,
+          "end_sec": 1854.5,
+          "observation_id": "obs-datong-coal-memory-to-renewal"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-local-knowledge-child-future-promise",
       "category": "narrative",
       "source_support": 1,
@@ -7901,6 +8507,35 @@
       },
       "rule": "高概念体验片先给人物和风险预告，再把地点主题压缩成有限任务清单，并公开结算奖励；快速镜头只负责建立承诺，正文必须逐项兑现。",
       "source_id": "bilibili-BV11Ao7BYEyv"
+    },
+    {
+      "total_reviewed_sec": 120.0,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 28.0,
+          "function": "先用云冈石窟、古建、车、刀削面、矿井和城市航拍快速展示本片承诺，并以‘大同’地点标题确认目的地。"
+        },
+        {
+          "start_sec": 28.0,
+          "end_sec": 75.84,
+          "function": "把黑神话热度、煤老板等旧标签和‘当热度褪去还值不值得去’问题并列，明确本片不是景点清单，而是城市再判断。"
+        },
+        {
+          "start_sec": 75.84,
+          "end_sec": 120.0,
+          "function": "进入第一章‘食在大同’，用刀削面店、真实吃法、价格与夫妻反应，把宏大城市命题落到可体验的第一站。"
+        }
+      ],
+      "metrics": {
+        "opening_0_to_15_shots": 6,
+        "opening_0_to_15_average_shot_sec": 2.675,
+        "opening_0_to_80_shots": 52,
+        "opening_0_to_80_average_shot_sec": 1.56,
+        "reviewed_0_to_120_shot_count": 68
+      },
+      "rule": "目的地文化片可以先用后文高价值场景做预告，但必须迅速落到一个明确城市问题，并在第一章用可体验的食物、人物反应和价格信息兑现入口。",
+      "source_id": "bilibili-BV146BFBzEfE"
     },
     {
       "total_reviewed_sec": 100,
