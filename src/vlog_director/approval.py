@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from copy import deepcopy
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -118,6 +119,91 @@ def _confined_new_file(project: Path, path: Path, root: Path, label: str) -> Pat
 
 def _project_relative(project: Path, path: Path) -> str:
     return path.resolve().relative_to(project.resolve()).as_posix()
+
+
+def _canonical_object_sha256(document: dict[str, Any]) -> str:
+    payload = json.dumps(
+        document,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
+
+
+def _source_matches(left: str, right: str) -> bool:
+    left_path = Path(left)
+    right_path = Path(right)
+    return bool(
+        {left.casefold(), left_path.name.casefold(), left_path.stem.casefold()}
+        & {right.casefold(), right_path.name.casefold(), right_path.stem.casefold()}
+    )
+
+
+def _segment_output_duration(segment: dict[str, Any]) -> float:
+    return (
+        float(segment["out_sec"]) - float(segment["in_sec"])
+    ) / float(segment.get("playback_rate", 1.0))
+
+
+def _expected_rate_candidate(
+    base_candidate: dict[str, Any],
+    proposal: dict[str, Any],
+    *,
+    proposal_sha256: str,
+    selected_rate: float,
+) -> dict[str, Any]:
+    if selected_rate not in {1.25, 1.5, 2.0}:
+        raise ValueError("selected playback rate is outside the controlled candidate set")
+    ranges = proposal.get("affected_ranges")
+    if not isinstance(ranges, list) or len(ranges) != 1:
+        raise ValueError("playback-rate proposal must contain exactly one affected range")
+    affected = ranges[0]
+    source = str(affected.get("source", ""))
+    start = float(affected["start_sec"])
+    end = float(affected["end_sec"])
+    output = deepcopy(base_candidate)
+    matches: list[tuple[int, int]] = []
+    for chapter_index, chapter in enumerate(output.get("chapters", [])):
+        for segment_index, segment in enumerate(chapter.get("segments", [])):
+            if (
+                _source_matches(str(segment.get("source", "")), source)
+                and float(segment["in_sec"]) <= start + 1e-6
+                and float(segment["out_sec"]) >= end - 1e-6
+            ):
+                matches.append((chapter_index, segment_index))
+    if len(matches) != 1:
+        raise ValueError("selected proposal does not map to exactly one base segment")
+    chapter_index, segment_index = matches[0]
+    original = output["chapters"][chapter_index]["segments"][segment_index]
+    replacement: list[dict[str, Any]] = []
+    if float(original["in_sec"]) < start - 1e-6:
+        replacement.append({**deepcopy(original), "out_sec": start})
+    replacement.append(
+        {
+            **deepcopy(original),
+            "in_sec": start,
+            "out_sec": end,
+            "playback_rate": selected_rate,
+            "playback_rate_audio_strategy": "atempo",
+            "playback_rate_proposal_sha256": proposal_sha256,
+        }
+    )
+    if end < float(original["out_sec"]) - 1e-6:
+        replacement.append({**deepcopy(original), "in_sec": end})
+    output["chapters"][chapter_index]["segments"][
+        segment_index : segment_index + 1
+    ] = replacement
+    total_duration = 0.0
+    for chapter in output.get("chapters", []):
+        duration = sum(
+            _segment_output_duration(segment)
+            for segment in chapter.get("segments", [])
+        )
+        chapter["target_duration_sec"] = round(duration, 6)
+        total_duration += duration
+    output["brief"]["target_duration_sec"] = round(total_duration, 6)
+    return output
 
 
 def approve_previewed_timeline(
@@ -277,19 +363,187 @@ def approve_previewed_timeline(
     ):
         raise ValueError("selected candidate cut QA bindings do not match preview evidence")
 
+    approved_candidate = candidate
+    rate_approval: dict[str, Any] | None = None
+    review_contract = review_pack.get("contract_version")
+    if review_contract == "directed-candidate-review-pack-v2":
+        if selection.get("contract_version") != "directed-preview-selection-v2":
+            raise ValueError("playback-rate review pack requires a v2 preview selection")
+        report_binding = review_pack["director_report"]
+        director_report_file = _confined_file(
+            project,
+            project / report_binding["path"],
+            proposal_root,
+            "director report",
+        )
+        if _file_sha256(director_report_file) != report_binding["sha256"]:
+            raise ValueError("director report changed after review-pack creation")
+        director_report = _load_object(director_report_file, "director report")
+        if (
+            director_report.get("project_id") != project_id
+            or int(director_report.get("plan_version", 0)) != version
+        ):
+            raise ValueError("director report project or version binding does not match")
+        report_proposals = (
+            director_report.get("technique_application", {})
+            .get("candidate_applications", {})
+            .get(selection["selected_label"], {})
+            .get("preview_required_patterns", [])
+        )
+        report_by_sha = {
+            _canonical_object_sha256(item): item
+            for item in report_proposals
+            if isinstance(item, dict)
+        }
+        packed_proposals = selected_entry.get("playback_rate_proposals", [])
+        packed_by_sha = {
+            str(item.get("proposal_sha256")): item
+            for item in packed_proposals
+            if isinstance(item, dict)
+        }
+        decisions = selection.get("playback_rate_decisions", [])
+        decision_by_sha = {
+            str(item.get("proposal_sha256")): item
+            for item in decisions
+            if isinstance(item, dict)
+        }
+        if (
+            len(decision_by_sha) != len(decisions)
+            or set(decision_by_sha) != set(packed_by_sha)
+            or set(packed_by_sha) != set(report_by_sha)
+        ):
+            raise ValueError("playback-rate decisions must cover the exact proposal set")
+        for proposal_sha, packed in packed_by_sha.items():
+            if (
+                packed.get("proposal") != report_by_sha[proposal_sha]
+                or _canonical_object_sha256(packed["proposal"]) != proposal_sha
+            ):
+                raise ValueError("playback-rate proposal content or SHA binding changed")
+        selected_rates = [
+            (proposal_sha, decision)
+            for proposal_sha, decision in decision_by_sha.items()
+            if decision.get("decision") == "selected"
+        ]
+        if len(selected_rates) > 1:
+            raise ValueError("only one playback-rate proposal may be selected per revision")
+        if selected_rates:
+            proposal_sha, decision = selected_rates[0]
+            packed = packed_by_sha[proposal_sha]
+            matching_rates = [
+                row
+                for row in packed["rate_candidates"]
+                if float(row.get("playback_rate", 0))
+                == float(decision["selected_rate"])
+            ]
+            if len(matching_rates) != 1:
+                raise ValueError("selected playback-rate candidate is not unique")
+            rate_entry = matching_rates[0]
+            expected_decision = {
+                "derived_candidate_sha256": rate_entry["derived_candidate"]["sha256"],
+                "preview_media_sha256": rate_entry["preview_media"]["sha256"],
+                "realized_timeline_sha256": rate_entry["realized_timeline"]["sha256"],
+                "cut_qa_sha256": rate_entry["cut_qa"]["sha256"],
+            }
+            if any(decision.get(key) != value for key, value in expected_decision.items()):
+                raise ValueError("selected playback-rate evidence bindings do not match")
+            derived_binding = rate_entry["derived_candidate"]
+            derived_file = _confined_file(
+                project,
+                project / derived_binding["path"],
+                proposal_root / "rate-candidates" / candidate_sha / proposal_sha,
+                "derived rate candidate",
+            )
+            if _file_sha256(derived_file) != derived_binding["sha256"]:
+                raise ValueError("derived rate candidate changed after preview")
+            derived_candidate = _load_object(derived_file, "derived rate candidate")
+            expected_candidate = _expected_rate_candidate(
+                candidate,
+                packed["proposal"],
+                proposal_sha256=proposal_sha,
+                selected_rate=float(decision["selected_rate"]),
+            )
+            if derived_candidate != expected_candidate:
+                raise ValueError("derived rate candidate is not the deterministic proposal result")
+            rate_evidence_files: dict[str, Path] = {}
+            derived_sha = derived_binding["sha256"]
+            for key in ("preview_media", "realized_timeline", "cut_qa"):
+                binding = rate_entry[key]
+                path = _confined_file(
+                    project,
+                    project / binding["path"],
+                    proposal_root / "previews" / derived_sha,
+                    f"playback-rate {key.replace('_', ' ')}",
+                )
+                if _file_sha256(path) != binding["sha256"]:
+                    raise ValueError(
+                        f"playback-rate {key.replace('_', ' ')} changed after review"
+                    )
+                rate_evidence_files[key] = path
+            rate_timeline = _load_object(
+                rate_evidence_files["realized_timeline"],
+                "playback-rate realized timeline",
+            )
+            if (
+                rate_timeline.get("contract_version")
+                != "render-candidate-preview-v1"
+                or rate_timeline.get("candidate_sha256") != derived_sha
+                or rate_timeline.get("plan_sha256") != derived_sha
+                or rate_timeline.get("output_identity", {}).get("sha256")
+                != rate_entry["preview_media"]["sha256"]
+                or rate_timeline.get("av_sync", {}).get("status") != "passed"
+                or rate_timeline.get("non_release_marker")
+                != {"applied": True, "text": "NON-RELEASE CANDIDATE"}
+            ):
+                raise ValueError("selected playback-rate timeline evidence is invalid")
+            rate_cut = _load_object(
+                rate_evidence_files["cut_qa"], "playback-rate cut QA"
+            )
+            _validate_schema(rate_cut, "directed-cut-qa.schema.json", "playback-rate cut QA")
+            if (
+                rate_cut.get("plan_sha256") != derived_sha
+                or rate_cut.get("realized_timeline_sha256")
+                != rate_entry["realized_timeline"]["sha256"]
+                or rate_cut.get("base_media", {}).get("sha256")
+                != rate_entry["preview_media"]["sha256"]
+            ):
+                raise ValueError("selected playback-rate cut QA bindings do not match")
+            approved_candidate = derived_candidate
+            rate_approval = {
+                "decision": "selected",
+                "proposal_sha256": proposal_sha,
+                "selected_rate": decision["selected_rate"],
+                "derived_candidate": rate_entry["derived_candidate"],
+                "preview_media": rate_entry["preview_media"],
+                "realized_timeline": rate_entry["realized_timeline"],
+                "cut_qa": rate_entry["cut_qa"],
+                "ffmpeg_identity": rate_entry["ffmpeg_identity"],
+                "av_sync": rate_entry["av_sync"],
+            }
+        else:
+            rate_approval = {
+                "decision": "rejected_all",
+                "proposal_sha256s": sorted(decision_by_sha),
+            }
+    elif selection.get("contract_version") != "directed-preview-selection-v1":
+        raise ValueError("v1 candidate review pack requires a v1 preview selection")
+
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
-        json.dumps(candidate, ensure_ascii=False, indent=2) + "\n",
+        json.dumps(approved_candidate, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
     approval_receipt = {
         "schema_version": "1.0",
-        "approval_contract_version": "previewed-timeline-approval-v1",
+        "approval_contract_version": (
+            "previewed-timeline-approval-v2"
+            if review_contract == "directed-candidate-review-pack-v2"
+            else "previewed-timeline-approval-v1"
+        ),
         "status": "approved",
         "project_id": project_id,
         "plan_version": version,
         "parent_version": parent_version,
-        "plan_sha256": plan_sha256(candidate),
+        "plan_sha256": plan_sha256(approved_candidate),
         "candidate_sha256": candidate_sha,
         "approved_by": approved_by.strip(),
         "approved_at": datetime.now(timezone.utc).isoformat(),
@@ -307,6 +561,9 @@ def approve_previewed_timeline(
             key: selected_entry[key] for key in ("preview_media", "realized_timeline", "cut_qa")
         },
     }
+    if rate_approval is not None:
+        approval_receipt["director_report"] = review_pack["director_report"]
+        approval_receipt["playback_rate_decision"] = rate_approval
     receipt.parent.mkdir(parents=True, exist_ok=True)
     receipt.write_text(
         json.dumps(approval_receipt, ensure_ascii=False, indent=2) + "\n",

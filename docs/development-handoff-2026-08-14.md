@@ -33,6 +33,7 @@
   - `playback-rate-fast-forward-travel-compression-visual-estimate`: preview-only 候选。
 - 三阶段开场要求未来回报、人物反应、行动推进三类低对白高质量镜头同时存在，否则 fail-closed。
 - 旅行压缩要求连续镜头不少于 8 秒、`speech_ratio <= 0.1`、`visual.motion >= 0.085`，只输出 `preview_required_patterns`，不自动写入倍率。
+- 旅行压缩 proposal 现有稳定 `proposal_id` 和结构化 evidence；locked/protected、user lock 或关键对白区间 fail closed。
 
 ### Pipeline
 
@@ -41,16 +42,18 @@
 - 可生成真实 cut QA、候选 review pack 和渲染时间线测量。
 - 最终审批绑定候选、realized timeline、cut QA 和基础媒体 SHA；任一输入变化都会使批准失效。
 - 发布渲染仍要求正式审批，候选预览不能直接成为发布文件。
+- Pipeline 已能为每个合格 proposal 生成带水印的 1.25x、1.5x、2.0x 完整时间线候选，执行 `setpts` + `atempo`，记录实际时长、FFmpeg identity 与 A/V sync。
+- v2 人工审批可选择至多一个 proposal/rate 或拒绝全部，并绑定 proposal、derived plan、preview、realized timeline、cut QA 及其 SHA；拒绝全部不会修改基础计划。
 
 ## 3. 最近验证结果
 
-- Director 目标测试: 21 OK。
-- Director 全量: 314 tests；311 OK、1 skipped；另 2 个跨仓库测试首次因 Director `.venv` 缺少 PyYAML 报导入错误，使用含 PyYAML 的正确环境重跑 2 OK。
-- Pipeline: 合并远端 guard、ingest 选源和真实 cut boundary 改造后 `39 passed`。
+- Director 变速、审批和跨仓库目标测试：38 OK。
+- Director 全量：318 tests，`OK (skipped=3)`。
+- Pipeline 全量：`49 passed`，包含带水印候选和 2.0x 后实际时长、A/V sync 的真实 FFmpeg 短媒体集成。
 - Ruff、compileall、`git diff --check`、敏感信息扫描通过。
 - preview-only 契约检查通过：变速候选的 `playback_rate` 保持 `null`，edit plan segment 不包含未受支持的倍率字段。
 
-不要把环境依赖错误描述成代码测试失败，也不要声称当前已经能渲染变速效果。当前只完成了变速候选识别与人工选择前置契约。
+不要把环境依赖错误描述成代码测试失败，也不要把受控候选倍率描述为参考学习得到的真实精确倍率。当前能渲染和审批变速候选，但仍必须由人工比较并选择或全部拒绝。
 
 ## 4. 新电脑环境恢复
 
@@ -86,18 +89,18 @@ cd ..\firered-vlog-pipeline
 
 ## 5. 下一阶段开发顺序
 
-### P0: 把变速 proposal 接入真实候选预览
+### P0: 把变速 proposal 接入真实候选预览（已实现，待生产项目人工使用）
 
 目标是消费 Director 的 `preview_required_patterns`，生成可比较但不可发布的变速预览，而不是自动决定倍率。
 
 实现要求：
 
-- Pipeline 读取 proposal 的素材区间和证据。
-- 仅对低对白、连续移动区间生成少量受控倍率候选，例如 1.25x、1.5x、2.0x；这些倍率是待人工比较的候选，不是参考片推断结果。
-- 视频使用 `setpts`，音频必须显式选择静音、环境声重铺或受支持的 `atempo` 链，不得破坏对白。
-- 所有预览带不可发布水印，并记录 proposal SHA、倍率、输出 SHA、实际时长和 FFmpeg identity。
-- 人工选择结果绑定预览 SHA；没有选择时不得把倍率写入发布 edit plan。
-- 增加真实媒体集成测试、时长测量、音画同步检查和审批失效测试。
+- 已实现 Pipeline 读取 proposal 素材区间与结构化证据。
+- 已实现只对低对白、连续移动区间生成固定 1.25x、1.5x、2.0x 人工比较候选；倍率不是参考片推断结果。
+- 已实现视频 `setpts`、音频显式 `atempo`、实际时长和音画同步 fail-closed 测量。
+- 已实现不可发布水印及 proposal SHA、倍率、输出 SHA、realized timeline、cut QA、FFmpeg identity 绑定。
+- 已实现人工选择一个 proposal/rate 或拒绝全部；未选择时不把倍率写入发布 edit plan。
+- 已增加真实短媒体集成、字幕映射、cut boundary、时长和审批失效测试。
 
 ### P0: 时间跳跃卡
 

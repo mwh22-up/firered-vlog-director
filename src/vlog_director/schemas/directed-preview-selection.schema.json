@@ -6,7 +6,9 @@
   "required": ["schema_version", "contract_version", "status", "project_id", "plan_version", "review_pack_sha256", "selected_label", "selected_candidate_sha256", "preview_media_sha256", "realized_timeline_sha256", "cut_qa_sha256", "checks", "selected_by", "selected_at", "attestation"],
   "properties": {
     "schema_version": { "const": "1.0" },
-    "contract_version": { "const": "directed-preview-selection-v1" },
+    "contract_version": {
+      "enum": ["directed-preview-selection-v1", "directed-preview-selection-v2"]
+    },
     "status": { "const": "approved" },
     "project_id": { "type": "string", "minLength": 1 },
     "plan_version": { "type": "integer", "minimum": 2 },
@@ -31,8 +33,46 @@
     "selected_by": { "type": "string", "minLength": 1 },
     "selected_at": { "type": "string", "format": "date-time" },
     "notes": { "type": "string", "maxLength": 2000 },
-    "attestation": { "const": "I watched the selected non-release preview and approve this timeline for source rendering." }
+    "attestation": { "const": "I watched the selected non-release preview and approve this timeline for source rendering." },
+    "playback_rate_decisions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": ["proposal_sha256", "decision"],
+            "properties": {
+              "proposal_sha256": { "$ref": "#/$defs/sha256" },
+              "decision": { "const": "rejected" }
+            },
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "required": ["proposal_sha256", "decision", "selected_rate", "derived_candidate_sha256", "preview_media_sha256", "realized_timeline_sha256", "cut_qa_sha256"],
+            "properties": {
+              "proposal_sha256": { "$ref": "#/$defs/sha256" },
+              "decision": { "const": "selected" },
+              "selected_rate": { "enum": [1.25, 1.5, 2.0] },
+              "derived_candidate_sha256": { "$ref": "#/$defs/sha256" },
+              "preview_media_sha256": { "$ref": "#/$defs/sha256" },
+              "realized_timeline_sha256": { "$ref": "#/$defs/sha256" },
+              "cut_qa_sha256": { "$ref": "#/$defs/sha256" }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
   },
+  "allOf": [
+    {
+      "if": { "properties": { "contract_version": { "const": "directed-preview-selection-v2" } } },
+      "then": { "required": ["playback_rate_decisions"] },
+      "else": { "not": { "required": ["playback_rate_decisions"] } }
+    }
+  ],
   "$defs": {
     "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
   },

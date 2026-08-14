@@ -6,10 +6,18 @@
   "required": ["schema_version", "contract_version", "status", "project_id", "plan_version", "candidates", "created_at", "note"],
   "properties": {
     "schema_version": { "const": "1.0" },
-    "contract_version": { "const": "directed-candidate-review-pack-v1" },
+    "contract_version": {
+      "enum": ["directed-candidate-review-pack-v1", "directed-candidate-review-pack-v2"]
+    },
     "status": { "const": "review_required" },
     "project_id": { "type": "string", "minLength": 1 },
     "plan_version": { "type": "integer", "minimum": 2 },
+    "director_report": {
+      "allOf": [
+        { "$ref": "#/$defs/binding" },
+        { "type": "object", "required": ["size_bytes"], "properties": { "size_bytes": { "type": "integer", "minimum": 1 } } }
+      ]
+    },
     "candidates": {
       "type": "array",
       "minItems": 2,
@@ -43,6 +51,10 @@
               "text": { "const": "NON-RELEASE CANDIDATE" }
             },
             "additionalProperties": false
+          },
+          "playback_rate_proposals": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/playbackRateProposal" }
           }
         },
         "additionalProperties": false
@@ -51,6 +63,19 @@
     "created_at": { "type": "string", "format": "date-time" },
     "note": { "type": "string", "minLength": 1 }
   },
+  "allOf": [
+    {
+      "if": { "properties": { "contract_version": { "const": "directed-candidate-review-pack-v2" } } },
+      "then": {
+        "required": ["director_report"],
+        "properties": { "candidates": { "items": { "required": ["playback_rate_proposals"] } } }
+      },
+      "else": {
+        "not": { "required": ["director_report"] },
+        "properties": { "candidates": { "items": { "not": { "required": ["playback_rate_proposals"] } } } }
+      }
+    }
+  ],
   "$defs": {
     "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
     "binding": {
@@ -60,6 +85,116 @@
         "path": { "type": "string", "pattern": "^work/director/v[0-9]+-proposal/[A-Za-z0-9][A-Za-z0-9._/-]*$" },
         "sha256": { "$ref": "#/$defs/sha256" },
         "size_bytes": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "nonReleaseMarker": {
+      "type": "object",
+      "required": ["applied", "text"],
+      "properties": { "applied": { "const": true }, "text": { "const": "NON-RELEASE CANDIDATE" } },
+      "additionalProperties": false
+    },
+    "ffmpegIdentity": {
+      "type": "object",
+      "required": ["path", "sha256", "version_line"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "version_line": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "avSync": {
+      "type": "object",
+      "required": ["video_duration_sec", "audio_duration_sec", "delta_sec", "tolerance_sec", "status"],
+      "properties": {
+        "video_duration_sec": { "type": "number", "exclusiveMinimum": 0 },
+        "audio_duration_sec": { "type": "number", "exclusiveMinimum": 0 },
+        "delta_sec": { "type": "number", "minimum": 0 },
+        "tolerance_sec": { "const": 0.12 },
+        "status": { "const": "passed" }
+      },
+      "additionalProperties": false
+    },
+    "playbackRateProposalDocument": {
+      "type": "object",
+      "required": ["proposal_id", "technique_key", "category", "executor", "execution_mode", "status", "source_support", "average_confidence", "target_evidence", "evidence", "affected_ranges", "parameters"],
+      "properties": {
+        "proposal_id": { "type": "string", "pattern": "^playback-rate-[0-9a-f]{16}$" },
+        "technique_key": { "const": "playback-rate-fast-forward-travel-compression-visual-estimate" },
+        "category": { "const": "playback_rate" },
+        "executor": { "type": "string", "minLength": 1 },
+        "execution_mode": { "const": "preview_only" },
+        "status": { "const": "human_rate_selection_required" },
+        "source_support": { "type": "integer", "minimum": 2 },
+        "average_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "target_evidence": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "evidence": {
+          "type": "object",
+          "required": ["shot_id", "role", "duration_sec", "speech_ratio", "motion", "protected_overlap", "user_lock_overlap", "contains_key_dialogue"],
+          "properties": {
+            "shot_id": { "type": "string", "minLength": 1 },
+            "role": { "enum": ["action", "transition"] },
+            "duration_sec": { "type": "number", "minimum": 8 },
+            "speech_ratio": { "type": "number", "minimum": 0, "maximum": 0.1 },
+            "motion": { "type": "number", "minimum": 0.085 },
+            "protected_overlap": { "const": false },
+            "user_lock_overlap": { "const": false },
+            "contains_key_dialogue": { "const": false }
+          },
+          "additionalProperties": false
+        },
+        "affected_ranges": {
+          "type": "array", "minItems": 1, "maxItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["source", "start_sec", "end_sec", "effect"],
+            "properties": {
+              "source": { "type": "string", "minLength": 1 },
+              "start_sec": { "type": "number", "minimum": 0 },
+              "end_sec": { "type": "number", "exclusiveMinimum": 0 },
+              "effect": { "const": "travel_compression_preview_without_rate" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "parameters": {
+          "type": "object",
+          "required": ["playback_rate", "rate_source"],
+          "properties": { "playback_rate": { "type": "null" }, "rate_source": { "const": "human_preview_selection" } },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "playbackRateCandidate": {
+      "type": "object",
+      "required": ["playback_rate", "audio_strategy", "derived_candidate", "preview_media", "realized_timeline", "cut_qa", "expected_duration_sec", "actual_timeline_duration_sec", "ffmpeg_identity", "av_sync", "boundary_count", "flagged_boundary_count", "non_release_marker"],
+      "properties": {
+        "playback_rate": { "enum": [1.25, 1.5, 2.0] },
+        "audio_strategy": { "const": "atempo" },
+        "derived_candidate": { "$ref": "#/$defs/binding" },
+        "preview_media": { "allOf": [{ "$ref": "#/$defs/binding" }, { "type": "object", "required": ["size_bytes"], "properties": { "size_bytes": { "type": "integer", "minimum": 1 } } }] },
+        "realized_timeline": { "$ref": "#/$defs/binding" },
+        "cut_qa": { "$ref": "#/$defs/binding" },
+        "expected_duration_sec": { "type": "number", "exclusiveMinimum": 0 },
+        "actual_timeline_duration_sec": { "type": "number", "exclusiveMinimum": 0 },
+        "ffmpeg_identity": { "$ref": "#/$defs/ffmpegIdentity" },
+        "av_sync": { "$ref": "#/$defs/avSync" },
+        "boundary_count": { "type": "integer", "minimum": 0 },
+        "flagged_boundary_count": { "type": "integer", "minimum": 0 },
+        "non_release_marker": { "$ref": "#/$defs/nonReleaseMarker" }
+      },
+      "additionalProperties": false
+    },
+    "playbackRateProposal": {
+      "type": "object",
+      "required": ["proposal_id", "proposal_sha256", "proposal", "rate_candidates"],
+      "properties": {
+        "proposal_id": { "type": "string", "pattern": "^playback-rate-[0-9a-f]{16}$" },
+        "proposal_sha256": { "$ref": "#/$defs/sha256" },
+        "proposal": { "$ref": "#/$defs/playbackRateProposalDocument" },
+        "rate_candidates": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/playbackRateCandidate" } }
       },
       "additionalProperties": false
     }

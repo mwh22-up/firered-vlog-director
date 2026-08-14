@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from copy import deepcopy
 from dataclasses import dataclass
@@ -883,6 +884,7 @@ def _travel_compression_preview_proposals(
     analyses_by_source: dict[str, dict[str, Any]],
     rule: dict[str, Any],
     *,
+    moments_document: dict[str, Any] | None = None,
     feedback_document: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     if not rule.get("active"):
@@ -914,11 +916,36 @@ def _travel_compression_preview_proposals(
                 start_sec=start,
                 end_sec=end,
             )
-            if feedback["excluded"]:
+            protected_ranges = _moment_ranges(
+                moments_document or {"moments": [], "groups": []},
+                source,
+                start,
+                end,
+                feedback_document,
+            )
+            if feedback["excluded"] or feedback["mandatory"] or protected_ranges:
                 continue
             shot_id = str(shot.get("shot_id", "unknown"))
+            proposal_identity = json.dumps(
+                {
+                    "technique_key": str(rule["technique_key"]),
+                    "source": source,
+                    "shot_id": shot_id,
+                    "start_sec": round(start, 3),
+                    "end_sec": round(end, 3),
+                    "speech_ratio": round(speech_ratio, 6),
+                    "motion": round(motion, 6),
+                },
+                ensure_ascii=False,
+                sort_keys=True,
+                separators=(",", ":"),
+            ).encode("utf-8")
             proposals.append(
                 {
+                    "proposal_id": (
+                        "playback-rate-"
+                        + hashlib.sha256(proposal_identity).hexdigest()[:16]
+                    ),
                     "technique_key": str(rule["technique_key"]),
                     "category": str(rule["category"]),
                     "executor": str(rule["executor"]),
@@ -932,6 +959,16 @@ def _travel_compression_preview_proposals(
                         f"shot:{shot_id}:speech_ratio={speech_ratio:.4f}",
                         f"shot:{shot_id}:visual.motion={motion:.5f}",
                     ],
+                    "evidence": {
+                        "shot_id": shot_id,
+                        "role": role,
+                        "duration_sec": round(duration, 6),
+                        "speech_ratio": round(speech_ratio, 6),
+                        "motion": round(motion, 6),
+                        "protected_overlap": False,
+                        "user_lock_overlap": False,
+                        "contains_key_dialogue": False,
+                    },
                     "affected_ranges": [
                         {
                             "source": source,
@@ -1052,6 +1089,7 @@ def build_candidate(
         parent_plan.get("chapters", []),
         analyses_by_source,
         rules.get("travel_compression_preview", {}),
+        moments_document=moments_document,
         feedback_document=feedback_document,
     )
     total_duration = sum(float(chapter["target_duration_sec"]) for chapter in chapters)
@@ -1314,6 +1352,8 @@ def direct_timeline(
     )
     return {
         "schema_version": "1.0",
+        "project_id": parent_plan.get("project_id"),
+        "plan_version": version,
         "status": "review_required" if winner else "blocked",
         "profile_id": profile.get("profile_id"),
         "technique_profile_id": technique_policy.get("profile_id"),

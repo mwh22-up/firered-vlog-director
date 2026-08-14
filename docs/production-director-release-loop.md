@@ -14,6 +14,8 @@
 - 分析目标素材并生成多套候选 EDL，保留镜头评分、参考技巧和目标证据 trace。
 - 用户的 lock、remove、avoid 和显式反馈优先于参考片经验。
 - 候选时间线必须先渲染为带水印的 proxy 预览并独立人工选择，不能把推荐结果直接当作最终剪辑。
+- 旅行压缩只会提出无精确倍率的 preview-only proposal；Pipeline 固定生成 1.25x、1.5x、2.0x
+  完整时间线候选供人工比较，不会自动选择倍率或直接进入发布计划。
 - `directed-base-contract` 绑定 approved edit plan、approval receipt、realized timeline、基础媒体 SHA、生产仓库与提交、FFmpeg identity。
 - 基础剪辑仍由外部 `firered-vlog-pipeline` 执行；本仓库负责交接合同和后续门禁。
 
@@ -128,6 +130,31 @@ work/director/v2-proposal/selection.json
 旧 `approve-timeline` 仅为兼容入口；正式生产应使用绑定预览证据的新入口。候选、review pack、
 selection 或任一预览证据的 SHA 变化都会阻止批准。
 
+### 变速候选预览与审批
+
+当 `director_report.json` 包含合格的 playback-rate proposal 时，将它显式传给 Pipeline：
+
+```powershell
+.\scripts\render-candidate-previews.ps1 `
+  -ProjectPath <project> `
+  -DirectorReport <project>\work\director\v2-proposal\candidates\director_report.json `
+  -Candidates @(
+    'balanced=<project>\work\director\v2-proposal\candidates\candidate.balanced.json',
+    'immersive=<project>\work\director\v2-proposal\candidates\candidate.immersive.json'
+  )
+```
+
+变速只适用于 `speech_ratio <= 0.1`、持续至少 8 秒、有足够 motion 证据，并且不含关键对白、
+protected overlap 或 user lock 的单一素材区间。每个倍率候选都是带
+`NON-RELEASE CANDIDATE` 水印的完整时间线预览，并绑定 proposal、derived candidate、预览媒体、
+realized timeline、cut QA、FFmpeg identity 和 A/V sync。
+
+人工选择使用 v2 `selection.json`，必须对选中 candidate 的每个 proposal 作出决定：至多选择一个
+已预览倍率，其余写为 `rejected`；也可以拒绝全部。拒绝全部时正式 edit plan 保持基础 candidate
+不变。选择倍率后，批准入口会确定性复算 derived candidate；proposal、Director report、预览媒体、
+timeline、cut QA 或任一 SHA 变化都会使批准失效。参考学习只支持“可能适合旅行压缩”的模式，
+不支持推断作者的真实精确倍率。
+
 基础剪辑完成后，人工复核记录必须符合 `schemas/directed-base-human-review.schema.json`，并绑定当前 edit plan、realized timeline、基础媒体和 cut QA 的 SHA。四项检查都真实完成后才可写为 `approved`。随后执行：
 
 ```powershell
@@ -182,8 +209,8 @@ GitHub Actions 覆盖：
 
 本地最近一次完整验证结果：
 
-- `Ran 312 tests`
-- `OK (skipped=1)`
+- `Ran 318 tests`
+- `OK (skipped=3)`；变速真实 FFmpeg 短媒体集成由 Pipeline 全量测试执行并通过；
 - Ruff 通过；
 - `compileall` 通过；
 - 正式/runtime Schema 字节一致；

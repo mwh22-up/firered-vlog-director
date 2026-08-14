@@ -1126,6 +1126,23 @@ class DirectorEngineTests(unittest.TestCase):
         self.assertEqual(proposals[0]["execution_mode"], "preview_only")
         self.assertEqual(proposals[0]["status"], "human_rate_selection_required")
         self.assertIsNone(proposals[0]["parameters"]["playback_rate"])
+        self.assertRegex(
+            proposals[0]["proposal_id"],
+            r"^playback-rate-[0-9a-f]{16}$",
+        )
+        self.assertEqual(
+            proposals[0]["evidence"],
+            {
+                "shot_id": "continuous-travel",
+                "role": "transition",
+                "duration_sec": 12.0,
+                "speech_ratio": 0.0,
+                "motion": 0.11,
+                "protected_overlap": False,
+                "user_lock_overlap": False,
+                "contains_key_dialogue": False,
+            },
+        )
         self.assertTrue(
             all(
                 "playback_rate" not in segment_row
@@ -1155,6 +1172,43 @@ class DirectorEngineTests(unittest.TestCase):
         )
         self.assertEqual(
             blocked_report["technique_application"]["preview_required_patterns"],
+            [],
+        )
+
+        analysis["shots"][0]["speech_ratio"] = 0.0
+        protected = {
+            "schema_version": "1.0",
+            "moments": [
+                {
+                    "id": "key-dialogue",
+                    "source": "raw/A001.MP4",
+                    "start_sec": 2.0,
+                    "end_sec": 4.0,
+                    "keep_level": "locked",
+                }
+            ],
+            "groups": [],
+        }
+        _, protected_report = build_candidate(
+            plan,
+            {"raw/A001.MP4": analysis},
+            PROFILE,
+            protected,
+            version=2,
+            variant="balanced",
+            created_at="2026-07-30T01:00:00+08:00",
+            target_duration_sec=12.0,
+            technique_policy=build_technique_policy(
+                technique_aggregate(
+                    (
+                        "playback-rate-fast-forward-travel-compression-visual-estimate",
+                        "playback_rate",
+                    ),
+                )
+            ),
+        )
+        self.assertEqual(
+            protected_report["technique_application"]["preview_required_patterns"],
             [],
         )
 

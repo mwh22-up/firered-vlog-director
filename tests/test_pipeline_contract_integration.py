@@ -8,16 +8,124 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from vlog_director.approval import approve_previewed_timeline, plan_sha256
+from vlog_director.approval import (
+    _expected_rate_candidate,
+    approve_previewed_timeline,
+    plan_sha256,
+)
 from vlog_director.production_contract import bind_directed_base
 
 
 WORKSPACE = Path(__file__).resolve().parents[2]
-PIPELINE_ROOT = WORKSPACE / "firered-vlog-pipeline"
+PIPELINE_ROOT = next(
+    (
+        candidate
+        for candidate in (
+            WORKSPACE / "firered-vlog-pipeline",
+            WORKSPACE / "vlog-pipeline",
+        )
+        if candidate.is_dir()
+    ),
+    WORKSPACE / "firered-vlog-pipeline",
+)
 
 
 @unittest.skipUnless(PIPELINE_ROOT.is_dir(), "sibling firered-vlog-pipeline is unavailable")
 class PipelineContractIntegrationTests(unittest.TestCase):
+    def test_playback_rate_derivation_and_review_schema_match_across_repositories(
+        self,
+    ) -> None:
+        sys.path.insert(0, str(PIPELINE_ROOT))
+        try:
+            from app.playback_rate import build_rate_candidate, canonical_sha256
+
+            plan = {
+                "project_id": "synthetic",
+                "version": 2,
+                "brief": {"target_duration_sec": 12.0},
+                "chapters": [
+                    {
+                        "target_duration_sec": 12.0,
+                        "segments": [
+                            {
+                                "source": "raw/A.mp4",
+                                "in_sec": 0.0,
+                                "out_sec": 12.0,
+                                "story_role": "transition",
+                                "reason": "travel",
+                            }
+                        ],
+                    }
+                ],
+            }
+            proposal = {
+                "proposal_id": "playback-rate-0123456789abcdef",
+                "technique_key": "playback-rate-fast-forward-travel-compression-visual-estimate",
+                "category": "playback_rate",
+                "executor": "propose_travel_compression_preview",
+                "execution_mode": "preview_only",
+                "status": "human_rate_selection_required",
+                "source_support": 2,
+                "average_confidence": 0.8,
+                "target_evidence": ["shot:travel:visual.motion=0.11000"],
+                "evidence": {
+                    "shot_id": "travel",
+                    "role": "transition",
+                    "duration_sec": 8.0,
+                    "speech_ratio": 0.0,
+                    "motion": 0.11,
+                    "protected_overlap": False,
+                    "user_lock_overlap": False,
+                    "contains_key_dialogue": False,
+                },
+                "affected_ranges": [
+                    {
+                        "source": "raw/A.mp4",
+                        "start_sec": 2.0,
+                        "end_sec": 10.0,
+                        "effect": "travel_compression_preview_without_rate",
+                    }
+                ],
+                "parameters": {
+                    "playback_rate": None,
+                    "rate_source": "human_preview_selection",
+                },
+            }
+            proposal_sha = canonical_sha256(proposal)
+            pipeline_plan = build_rate_candidate(
+                plan,
+                proposal,
+                proposal_sha=proposal_sha,
+                playback_rate=1.5,
+            )
+            director_plan = _expected_rate_candidate(
+                plan,
+                proposal,
+                proposal_sha256=proposal_sha,
+                selected_rate=1.5,
+            )
+            self.assertEqual(pipeline_plan, director_plan)
+
+            pipeline_schema = json.loads(
+                (
+                    PIPELINE_ROOT
+                    / "schemas"
+                    / "directed-candidate-review-pack.schema.json"
+                ).read_text(encoding="utf-8")
+            )
+            director_schema = json.loads(
+                (
+                    Path(__file__).parents[1]
+                    / "schemas"
+                    / "directed-candidate-review-pack.schema.json"
+                ).read_text(encoding="utf-8")
+            )
+            pipeline_schema.pop("$id", None)
+            director_schema.pop("$id", None)
+            self.assertEqual(pipeline_schema, director_schema)
+        finally:
+            sys.path.remove(str(PIPELINE_ROOT))
+
     def test_pipeline_review_pack_drives_preview_bound_director_approval(self) -> None:
         sys.path.insert(0, str(PIPELINE_ROOT))
         try:
