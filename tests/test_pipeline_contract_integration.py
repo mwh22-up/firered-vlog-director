@@ -114,8 +114,8 @@ class PipelineContractIntegrationTests(unittest.TestCase):
                     patch("app.render_ffmpeg.run_ffmpeg", side_effect=fake_run),
                     patch("app.render_ffmpeg._watermark_font", return_value=media),
                     patch(
-                        "app.render_ffmpeg.probe_video",
-                        return_value={"duration_sec": 1.0},
+                        "app.render_ffmpeg.probe_duration",
+                        return_value=1.0,
                     ),
                     patch("app.cut_qa.resolve_media_program", return_value=Path("ffmpeg")),
                 ):
@@ -279,13 +279,29 @@ class PipelineContractIntegrationTests(unittest.TestCase):
                         "app.render_ffmpeg.resolve_media_program",
                         side_effect=lambda name: Path(name),
                     ),
+                    patch(
+                        "app.render_ffmpeg.guard_render_plan",
+                        return_value=(
+                            plan,
+                            {
+                                "status": "passed",
+                                "report_path": str(qa / "protection.v2.json"),
+                            },
+                            hashlib.sha256(plan_path.read_bytes()).hexdigest(),
+                        ),
+                    ),
+                    patch("app.render_ffmpeg.require_guarded_plan_unchanged"),
                     patch("app.render_ffmpeg.run_ffmpeg", side_effect=fake_run),
                     patch(
-                        "app.render_ffmpeg.probe_video",
-                        return_value={"duration_sec": 1.0},
+                        "app.render_ffmpeg.probe_duration",
+                        return_value=1.0,
                     ),
                 ):
-                    render_report = render_plan(project, plan_path)
+                    render_report = render_plan(
+                        project,
+                        plan_path,
+                        director_python=Path("director-python"),
+                    )
 
                 base_media = project / "output" / "directed.v2.mp4"
                 timeline_path = qa / "render.v2.json"

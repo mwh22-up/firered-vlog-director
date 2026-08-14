@@ -8,7 +8,7 @@
 - Pipeline: `https://github.com/mwh22-up/firered-vlog-pipeline.git`
 - Branch: `feature/director-learning-loop`
 - Director 功能提交: `38df3dcb1236a5e9855b798c61e3f8311f469fa8`
-- Pipeline 功能提交: `7849f23c4d8e4a5b4501d0adcbc271932cf7cd34`
+- Pipeline 功能提交: `78388ccb50930f276811cf2503fca25a95f85670`
 - 参考视频学习完成提交: `14eb3a20aa6ada5402e93c99fb035a0547dd5fbf`
 
 交接文件本身位于 Director 的后续独立提交。新电脑拉取分支后，应以远端分支最新 HEAD 为准，并确认上述功能提交都在历史中。
@@ -46,7 +46,7 @@
 
 - Director 目标测试: 21 OK。
 - Director 全量: 314 tests；311 OK、1 skipped；另 2 个跨仓库测试首次因 Director `.venv` 缺少 PyYAML 报导入错误，使用含 PyYAML 的正确环境重跑 2 OK。
-- Pipeline: `24 passed`。
+- Pipeline: 合并远端 guard、ingest 选源和真实 cut boundary 改造后 `39 passed`。
 - Ruff、compileall、`git diff --check`、敏感信息扫描通过。
 - preview-only 契约检查通过：变速候选的 `playback_rate` 保持 `null`，edit plan segment 不包含未受支持的倍率字段。
 
@@ -128,7 +128,7 @@ cd ..\firered-vlog-pipeline
 ```text
 请继续开发我的 vlog 导演系统。先阅读工作区 AGENTS.md，以及 firered-vlog-director/docs/development-handoff-2026-08-14.md，然后审计两个同级仓库：firered-vlog-director 和 firered-vlog-pipeline。
 
-两个仓库都应位于 feature/director-learning-loop。先确认 git status、tracking、远端 SHA，并确认 Director 历史包含 38df3dcb1236a5e9855b798c61e3f8311f469fa8，Pipeline 历史包含 7849f23c4d8e4a5b4501d0adcbc271932cf7cd34。不要回滚或覆盖已有改造。
+两个仓库都应位于 feature/director-learning-loop。先确认 git status、tracking、远端 SHA，并确认 Director 历史包含 38df3dcb1236a5e9855b798c61e3f8311f469fa8，Pipeline 历史包含 78388ccb50930f276811cf2503fca25a95f85670。不要回滚或覆盖已有改造。
 
 本轮从交接文档的 P0“把变速 proposal 接入真实候选预览”开始，直接完成实现、测试和双仓库契约接入，不要只写方案。必须遵守以下边界：
 1. Director 的 playback-rate pattern 当前只是 preview_required_patterns，参考学习没有提供可信精确倍率。
