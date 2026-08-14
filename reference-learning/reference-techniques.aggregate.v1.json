@@ -1,13 +1,14 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-b6345630c186",
-  "generated_at": "2026-08-11T09:05:32.480551+00:00",
-  "source_count": 16,
+  "profile_id": "aggregated-reference-techniques-v1-0d3d4f775782",
+  "generated_at": "2026-08-14T13:52:34.002175+00:00",
+  "source_count": 17,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
     "bilibili-BV146BFBzEfE",
     "bilibili-BV15XMC6KETm",
     "bilibili-BV19sm2BBEDd",
+    "bilibili-BV1AYwQzzEbV",
     "bilibili-BV1C3546DEC6",
     "bilibili-BV1CrHwzUEJa",
     "bilibili-BV1ETNMzEEWQ",
@@ -23,6 +24,68 @@
   ],
   "minimum_source_support": 2,
   "stable_patterns": [
+    {
+      "technique_key": "graphic-archive-footage-context-before-present-action",
+      "category": "graphic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1AYwQzzEbV",
+        "bilibili-BV1JfxYzGE8t"
+      ],
+      "average_confidence": 0.93,
+      "trigger_examples": [
+        "刺杀地点的当下景观无法自行说明历史重量。",
+        "Gundam、萤火之森和 One Piece 等作品关系需要资料画面辅助，但版权和来源风险高。"
+      ],
+      "treatment_examples": [
+        "在现场地标、旧照片和新闻资料之间往返，再回到主持人的当下位置和开放问题。",
+        "只在现实地点已经建立后短暂插入动画/作品参考层，再回到主持人、雕像、神社或路线行动，让资料画面解释关系而不取代实拍。"
+      ],
+      "parameter_variants": [
+        {
+          "archive_role": "context_not_proof",
+          "source_id": "bilibili-BV1AYwQzzEbV"
+        },
+        {
+          "reference_after_live_anchor": true,
+          "short_reference_insert": true,
+          "rights_need_verification": true,
+          "source_id": "bilibili-BV1JfxYzGE8t"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "observation_id": "obs-texas-archive-before-interpretation",
+          "guardrails": [
+            "档案来源、事实和引用需独立核验。",
+            "资料画面不能被剪成已证明的单一因果。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1JfxYzGE8t",
+          "observation_id": "obs-anime-source-footage-guarded-reference",
+          "guardrails": [
+            "动画片段、海报、logo 和角色图层的版权、引用范围和来源必须独立核验。",
+            "资料画面不应替代现实地标和人物行动。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "start_sec": 496.296,
+          "end_sec": 705.939,
+          "observation_id": "obs-texas-archive-before-interpretation"
+        },
+        {
+          "source_id": "bilibili-BV1JfxYzGE8t",
+          "start_sec": 317.9,
+          "end_sec": 1168.5,
+          "observation_id": "obs-anime-source-footage-guarded-reference"
+        }
+      ]
+    },
     {
       "technique_key": "graphic-context-proof-before-action",
       "category": "graphic",
@@ -6450,47 +6513,6 @@
       ]
     },
     {
-      "technique_key": "graphic-archive-footage-context-before-present-action",
-      "category": "graphic",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1JfxYzGE8t"
-      ],
-      "average_confidence": 0.9,
-      "trigger_examples": [
-        "Gundam、萤火之森和 One Piece 等作品关系需要资料画面辅助，但版权和来源风险高。"
-      ],
-      "treatment_examples": [
-        "只在现实地点已经建立后短暂插入动画/作品参考层，再回到主持人、雕像、神社或路线行动，让资料画面解释关系而不取代实拍。"
-      ],
-      "parameter_variants": [
-        {
-          "reference_after_live_anchor": true,
-          "short_reference_insert": true,
-          "rights_need_verification": true,
-          "source_id": "bilibili-BV1JfxYzGE8t"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1JfxYzGE8t",
-          "observation_id": "obs-anime-source-footage-guarded-reference",
-          "guardrails": [
-            "动画片段、海报、logo 和角色图层的版权、引用范围和来源必须独立核验。",
-            "资料画面不应替代现实地标和人物行动。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1JfxYzGE8t",
-          "start_sec": 317.9,
-          "end_sec": 1168.5,
-          "observation_id": "obs-anime-source-footage-guarded-reference"
-        }
-      ]
-    },
-    {
       "technique_key": "graphic-credits-over-scenic-ending",
       "category": "graphic",
       "source_support": 1,
@@ -8082,6 +8104,44 @@
       ]
     },
     {
+      "technique_key": "narrative-history-question-to-wildlife-expedition",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1AYwQzzEbV"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "牛仔文化的浪漫化需要新的行动线来承接其历史代价。"
+      ],
+      "treatment_examples": [
+        "从牛仔小镇、铁路和野牛历史转入长途寻找野牛的任务，让抽象历史获得具体目的地。"
+      ],
+      "parameter_variants": [
+        {
+          "action_turn_visible": true,
+          "source_id": "bilibili-BV1AYwQzzEbV"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "observation_id": "obs-texas-history-to-wildlife-turn",
+          "guardrails": [
+            "铁路、野牛和原住民历史需要独立核验。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "start_sec": 1265.231,
+          "end_sec": 1510.943,
+          "observation_id": "obs-texas-history-to-wildlife-turn"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-imperfect-detail-to-authenticity-thesis",
       "category": "narrative",
       "source_support": 1,
@@ -8159,6 +8219,44 @@
           "start_sec": 1145.0,
           "end_sec": 1854.5,
           "observation_id": "obs-datong-coal-memory-to-renewal"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-lived-culture-after-abstract-thesis",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1AYwQzzEbV"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "政治与历史判断需要日常生活场景避免悬空。"
+      ],
+      "treatment_examples": [
+        "用橄榄球尾箱、家庭聚会、食物和球迷互动，把前段抽象的德州认同落到可观察的生活仪式。"
+      ],
+      "parameter_variants": [
+        {
+          "lived_culture_block": true,
+          "source_id": "bilibili-BV1AYwQzzEbV"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "observation_id": "obs-texas-lived-culture-after-thesis",
+          "guardrails": [
+            "日常场景不能代表所有当地人。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "start_sec": 705.939,
+          "end_sec": 959.092,
+          "observation_id": "obs-texas-lived-culture-after-thesis"
         }
       ]
     },
@@ -8382,6 +8480,44 @@
       ]
     },
     {
+      "technique_key": "narrative-personal-reunion-before-cultural-system",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1AYwQzzEbV"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "宽泛社会主题需要可感知的人物入口。"
+      ],
+      "treatment_examples": [
+        "先让十年未见的同学重逢、家庭和日常互动建立个人尺度，再进入枪店与城市文化讨论。"
+      ],
+      "parameter_variants": [
+        {
+          "personal_entry_before_system": true,
+          "source_id": "bilibili-BV1AYwQzzEbV"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "observation_id": "obs-texas-personal-friend-enters-system",
+          "guardrails": [
+            "朋友关系不能被概括为群体结论。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "start_sec": 150.918,
+          "end_sec": 264.064,
+          "observation_id": "obs-texas-personal-friend-enters-system"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-practical-item-demonstration-with-memory-proof",
       "category": "narrative",
       "source_support": 1,
@@ -8423,6 +8559,45 @@
           "start_sec": 555.989,
           "end_sec": 892.792,
           "observation_id": "obs-travel-marriage-item-demonstration-memory-proof"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-return-to-opening-value-question",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1AYwQzzEbV"
+      ],
+      "average_confidence": 0.93,
+      "trigger_examples": [
+        "多条枪支、牛仔和野牛线索需要可追溯的收束。"
+      ],
+      "treatment_examples": [
+        "先用野牛保护与地方历史完成最后事实层，再回到力量、文明和尺度的开放式结论。"
+      ],
+      "parameter_variants": [
+        {
+          "returns_to_opening_question": true,
+          "source_id": "bilibili-BV1AYwQzzEbV"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "observation_id": "obs-texas-return-to-scale-reflection",
+          "guardrails": [
+            "价值判断必须与已呈现证据区分。",
+            "结尾口播不能替代历史或政治事实核验。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "start_sec": 1995.093,
+          "end_sec": 2177.34,
+          "observation_id": "obs-texas-return-to-scale-reflection"
         }
       ]
     },
@@ -8530,6 +8705,45 @@
       ]
     },
     {
+      "technique_key": "narrative-safety-practice-before-sensitive-contrast",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1AYwQzzEbV"
+      ],
+      "average_confidence": 0.91,
+      "trigger_examples": [
+        "敏感物件的购买反差容易只留下刺激感。"
+      ],
+      "treatment_examples": [
+        "在超市枪店的货架反差前后保留清膛、安全操作和当地人解释，再将便利性接到历史语境。"
+      ],
+      "parameter_variants": [
+        {
+          "safety_context_visible": true,
+          "source_id": "bilibili-BV1AYwQzzEbV"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "observation_id": "obs-texas-safe-practice-before-retail-contrast",
+          "guardrails": [
+            "不把画面当成持枪或购买建议。",
+            "具体法律、价格和安全结论需独立核验。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "start_sec": 240.0,
+          "end_sec": 496.296,
+          "observation_id": "obs-texas-safe-practice-before-retail-contrast"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-self-aware-deadline-pivot",
       "category": "humor",
       "source_support": 1,
@@ -8567,6 +8781,45 @@
           "start_sec": 1461.39,
           "end_sec": 1492.14,
           "observation_id": "obs-task-pivot-self-aware-deadline"
+        }
+      ]
+    },
+    {
+      "technique_key": "opening-contested-place-to-present-question",
+      "category": "opening_montage",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1AYwQzzEbV"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "地点同时携带暴力历史与当下旅行反差。"
+      ],
+      "treatment_examples": [
+        "用肯尼迪刺杀地点、枪店和主持人反应三段画面提出德州力量文化问题。"
+      ],
+      "parameter_variants": [
+        {
+          "phase_count": 3,
+          "source_id": "bilibili-BV1AYwQzzEbV"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "observation_id": "obs-texas-opening-place-question",
+          "guardrails": [
+            "历史事件与枪支法规需独立核验。",
+            "开场不能把暴力风险娱乐化。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "start_sec": 0.0,
+          "end_sec": 76.143,
+          "observation_id": "obs-texas-opening-place-question"
         }
       ]
     },
@@ -8920,6 +9173,46 @@
       ]
     },
     {
+      "technique_key": "scenic-guide-search-reaction-before-explanation",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1AYwQzzEbV"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "保护区风景与动物难以只靠空镜建立意义。"
+      ],
+      "treatment_examples": [
+        "保留志愿者向导、寻找过程、动物细节与车内反应，再进入保护与历史说明。"
+      ],
+      "parameter_variants": [
+        {
+          "guide_agency": true,
+          "search_before_explanation": true,
+          "source_id": "bilibili-BV1AYwQzzEbV"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "observation_id": "obs-texas-guide-search-reaction",
+          "guardrails": [
+            "动物与保护区行为需遵循向导和现场规范。",
+            "不把寻找失败或动物打扰剪成笑料。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "start_sec": 1510.943,
+          "end_sec": 1803.235,
+          "observation_id": "obs-texas-guide-search-reaction"
+        }
+      ]
+    },
+    {
       "technique_key": "scenic-hardship-earned-lake-payoff",
       "category": "scenic",
       "source_support": 1,
@@ -9181,6 +9474,46 @@
           "observation_id": "obs-rainbow-arc-city-release"
         }
       ]
+    },
+    {
+      "technique_key": "subtitle-base-dialogue-with-sparse-context-layer",
+      "category": "subtitle",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1AYwQzzEbV"
+      ],
+      "average_confidence": 0.92,
+      "trigger_examples": [
+        "全片同时有中文口播、英文现场交流、地点名和资料性解释。"
+      ],
+      "treatment_examples": [
+        "保持稳定底部对白字幕，只在议题、地点、历史资料和器材说明使用稀疏独立层。"
+      ],
+      "parameter_variants": [
+        {
+          "base_position": "bottom_center",
+          "ocr_verified": false,
+          "source_id": "bilibili-BV1AYwQzzEbV"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "observation_id": "obs-texas-dialogue-base-sparse-context-layer",
+          "guardrails": [
+            "字幕逐字准确性仍需人工听校。",
+            "标题不得遮挡人脸、动物或关键现场行动。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "start_sec": 0.0,
+          "end_sec": 2177.34,
+          "observation_id": "obs-texas-dialogue-base-sparse-context-layer"
+        }
+      ]
     }
   ],
   "opening_recipes": [
@@ -9318,6 +9651,33 @@
       },
       "rule": "长篇开场先给目的地感官承诺，再用完整口播和具体道具建立人物风险；真正的动作压缩放在告别与交通段，并只用一次强视觉笑点。",
       "source_id": "bilibili-BV19sm2BBEDd"
+    },
+    {
+      "total_reviewed_sec": 76.143,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 18.0,
+          "function": "以肯尼迪刺杀地点和人群画面提出历史问题。"
+        },
+        {
+          "start_sec": 18.0,
+          "end_sec": 47.0,
+          "function": "把德州的枪支、牛仔与力量文化压缩成旅行的中心命题。"
+        },
+        {
+          "start_sec": 47.0,
+          "end_sec": 76.143,
+          "function": "用枪店、持枪人物和主持人反应承诺后文的实地验证。"
+        }
+      ],
+      "metrics": {
+        "opening_15_sec_shot_count": 8,
+        "opening_15_sec_average_shot_sec": 2.069,
+        "opening_event_count": 1
+      },
+      "rule": "议题型旅行片先用可见地点与高反差现场建立问题，再明确本期要通过哪些真实人物和地点继续验证；快切不能替代问题本身。",
+      "source_id": "bilibili-BV1AYwQzzEbV"
     },
     {
       "total_reviewed_sec": 120,

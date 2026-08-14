@@ -1,15 +1,15 @@
 # 参考视频 Technique Learning 计划进度
 
-更新时间：2026-08-11
+更新时间：2026-08-14
 执行分支：`feature/director-learning-loop`
 
 ## 总体进度
 
-- 计划视频：16 支
-- 已完成正式学习：16 支
+- 计划视频：26 支
+- 已完成正式学习：17 支
 - 已开始但未完成：0 支
-- 未开始正式学习：0 支
-- 完成率：16/16（100.00%）
+- 未开始正式学习：9 支
+- 完成率：17/26（65.38%）
 
 前六支 Study 的完成状态按各条目完成时的证据与门禁成立。2026-08-01 以前的条目只保留了“实际请求字符数”，不能追溯声明已经验证 UTF-8 body 字节数；自完整请求字节门禁落地后，任何新增或重新生成的 Study 必须同时具备完整视频分析、可用 ASR/语义证据、人工重点区间复核、context packet 严格 `<180,000` 字符、包含实际 instructions/input/tools 等字段的最终请求 body 严格 `<200,000` UTF-8 字节及 body SHA-256，以及已提交的正式 `technique-study.<BV>.v1.json`。等于任一上限也必须阻断；仅下载代理视频、提取开场或生成预分析素材不算完成。
 
@@ -204,13 +204,75 @@
 - 证据限制：参考成片只支持正向保留模式；没有原始素材映射，不能推断作者真实删片偏好。未确认 speed ramp、具体播放倍率、复杂转场、独立音效、曲名、BPM、ducking 或逐拍因果；作品片段、海报、角色、logo、地图、取景关系、地点开放、潮汐、产品能力和授权关系需独立核验。
 - 聚合结果：十六来源聚合为 44 条稳定模式和 65 条单来源模式，显式 `minimum_source_support=2`；新增来源支持 14 条既有稳定模式，并新增 1 条来源特定技巧 `graphic-archive-footage-context-before-present-action`。
 
+## 新增待学习来源（2026-08-14）
+
+下列来源由用户新增；只有在完成完整分析、ASR、人工复核、模型上下文与正式 Study 门禁后，才能改为“已完成”并计入 Aggregate。
+
+### 17. BV1AYwQzzEbV — 已完成
+
+- 标题：《美国超市就能买到枪？比买菜更简单！》
+- 地址：[BV1AYwQzzEbV](https://www.bilibili.com/video/BV1AYwQzzEbV/)
+- 时长：2,177.344 秒（约 36 分 17 秒）。
+- 已完成：匿名代理下载、HEVC/AAC 双流完整解码、`small/zh` 全片 ASR、完整镜头/事件/音频分析、24 张事件联系表与开场/历史转折/球场/野牛/结尾人工复核、受限 context、完整 Responses body 门禁和正式 technique study。
+- 正式产物：`reference-learning/technique-study.BV1AYwQzzEbV.v1.json`
+- 证据规模：721 个镜头、26 个事件、450 个音频段、1,129 个转写片段、6,569 个词、9 条 technique observations。
+- ASR 覆盖：最后可信对白到 2,175.67 秒“我们下期再见”，距媒体末尾约 1.67 秒，可信对白覆盖率 99.9232%。
+- 人工复核：确认开场地点问题、枪店与同伴反应、历史资料层、球场与牛仔文化、野牛向导/环境、底部字幕与结尾；未确认 speed ramp、精确倍率、复杂转场或独立音效。
+- 模型上下文：90,318 字符、105,024 UTF-8 字节，严格 `<180,000`；最终 Responses body 为 89,512 UTF-8 字节，严格 `<200,000`，body SHA-256 为 `308ebd3f9a4c413bb865e6ce8769d3c41a9b0f4770acc4b579a7c920a3227ef3`。
+- 证据限制：参考成片只支持正向保留模式；枪支、历史、政治、野牛与保护数据需独立核验，不能由本 Study 当作事实结论。
+
+### 18. BV1cuFezLEE2 — 未开始
+
+- 标题：待通过公开视频元数据确认。
+- 地址：[BV1cuFezLEE2](https://www.bilibili.com/video/BV1cuFezLEE2/)
+
+### 19. BV1PbebzdEWm — 未开始
+
+- 标题：待通过公开视频元数据确认。
+- 地址：[BV1PbebzdEWm](https://www.bilibili.com/video/BV1PbebzdEWm/)
+
+### 20. BV13p421y7iv — 未开始
+
+- 标题：待通过公开视频元数据确认。
+- 地址：[BV13p421y7iv](https://www.bilibili.com/video/BV13p421y7iv/)
+
+### 21. BV1UtsEzVEwF — 未开始
+
+- 标题：待通过公开视频元数据确认。
+- 地址：[BV1UtsEzVEwF](https://www.bilibili.com/video/BV1UtsEzVEwF/)
+
+### 22. BV1uC411E7jU — 未开始
+
+- 标题：待通过公开视频元数据确认。
+- 地址：[BV1uC411E7jU](https://www.bilibili.com/video/BV1uC411E7jU/)
+
+### 23. BV1zYSvBHE3U — 未开始
+
+- 标题：待通过公开视频元数据确认。
+- 地址：[BV1zYSvBHE3U](https://www.bilibili.com/video/BV1zYSvBHE3U/)
+
+### 24. BV1Gc411z7mu — 未开始
+
+- 标题：待通过公开视频元数据确认。
+- 地址：[BV1Gc411z7mu](https://www.bilibili.com/video/BV1Gc411z7mu/)
+
+### 25. BV1Sv421k7pS — 未开始
+
+- 标题：待通过公开视频元数据确认。
+- 地址：[BV1Sv421k7pS](https://www.bilibili.com/video/BV1Sv421k7pS/)
+
+### 26. BV1Gt1FBPEum — 未开始
+
+- 标题：待通过公开视频元数据确认。
+- 地址：[BV1Gt1FBPEum](https://www.bilibili.com/video/BV1Gt1FBPEum/)
+
 ## 已沉淀的跨视频结果
 
-当前十六支已完成视频可聚合出：
+当前十七支已完成视频可聚合出：
 
-- 完整来源数：16
-- 稳定模式：44 条（显式 `minimum_source_support=2`）
-- 单来源模式：65 条
+- 完整来源数：17
+- 稳定模式：45 条（显式 `minimum_source_support=2`）
+- 单来源模式：72 条
 - 正式聚合产物：`reference-learning/reference-techniques.aggregate.v1.json`
 - 聚合命令：`vlog-director aggregate-techniques`
 - 当前限制：`BV19sm2BBEDd` 的重叠首日不生成新增 observation。单来源模式不能计为稳定跨来源模式，开场预分析或未完成视频也不得进入正式聚合；参考成片只能提供正向保留模式，不能推断作者真实删片偏好。
@@ -219,9 +281,9 @@
 
 ## 完成状态
 
-1. 十六支参考视频均已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、上下文字符门禁和新增来源的完整请求 UTF-8 字节门禁。
-2. 十六来源聚合已复核独立来源支持数；后续新增或重生成参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
-3. 十六来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
+1. 十七支参考视频已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、上下文字符门禁和完整请求 UTF-8 字节门禁。
+2. 十七来源聚合已复核独立来源支持数；后续新增或重生成参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
+3. 十七来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
 4. 当前十六来源 Aggregate 门禁：34 项参考学习与 Schema 专项 unittest、307 项 director 全量 unittest（1 项按设计跳过）、十六 Study 与 Aggregate Schema/运行时校验、CLI 聚合 smoke、UTF-8 无 BOM、敏感信息/changed-media 扫描及 `git diff --check` 均通过。
 5. CI 在干净 Python 环境显式安装 `test` extra；自动化 Schema 测试覆盖所有正式 reference JSON、moments fixture 与 protection policy，当前本地全量基线为 307 项 unittest。
 6. 模型请求门禁已改为校验完整 Responses JSON body 的 UTF-8 字节数：程序内 transport 只消费已经校验的紧凑 body bytes，CLI 则校验待发送文件的原始字节并返回 SHA-256；中文多字节边界、完整 envelope、Responses 最小结构、重复字段与递归凭据字段拒绝、transport 零调用、不可压缩 packet、UTF-8 BOM 和本地 HTTP 413 网关均有回归覆盖。该门禁不替代不同 tool type 的上游 API Schema 校验；仅检查 context 字符数也不能作为已通过外层请求门禁的依据，历史字符记录不追溯标记为字节验证。

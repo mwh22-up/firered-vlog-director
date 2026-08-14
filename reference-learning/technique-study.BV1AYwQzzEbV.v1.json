@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV1AYwQzzEbV-v1",
+  "generated_at": "2026-08-14T14:00:00Z",
+  "source": {
+    "source_id": "bilibili-BV1AYwQzzEbV",
+    "url": "https://www.bilibili.com/video/BV1AYwQzzEbV/",
+    "title": "美国超市就能买到枪？比买菜更简单！",
+    "duration_sec": 2177.343667
+  },
+  "analysis_evidence": {
+    "proxy_dual_stream_full_decode_exit_code": 0,
+    "video_duration_sec": 2177.343667,
+    "shot_count": 721,
+    "event_count": 26,
+    "audio_segment_count": 450,
+    "transcript_segment_count": 1129,
+    "transcript_word_count": 6569,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_last_trusted_dialogue_end_sec": 2175.67,
+    "asr_dialogue_coverage_ratio": 0.999232,
+    "asr_tail_gap_sec": 1.673667,
+    "event_review_contact_sheet_count": 24,
+    "manual_review_ranges": [[0.0, 76.143], [150.918, 264.064], [496.296, 558.692], [1102.635, 1201.934], [1510.943, 1615.214], [2106.037, 2177.34]],
+    "manual_review_focus": ["opening", "historical-turn", "friend-reaction", "sports-and-cowboy-culture", "bison-guide-and-scenic-action", "subtitle-layer", "ending"],
+    "manual_effect_result": "未从人工画面证据确认 speed ramp、精确倍率、复杂转场机制或独立音效。"
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 76.143,
+    "phases": [
+      {"start_sec": 0.0, "end_sec": 18.0, "function": "以肯尼迪刺杀地点和人群画面提出历史问题。"},
+      {"start_sec": 18.0, "end_sec": 47.0, "function": "把德州的枪支、牛仔与力量文化压缩成旅行的中心命题。"},
+      {"start_sec": 47.0, "end_sec": 76.143, "function": "用枪店、持枪人物和主持人反应承诺后文的实地验证。"}
+    ],
+    "metrics": {"opening_15_sec_shot_count": 8, "opening_15_sec_average_shot_sec": 2.069, "opening_event_count": 1},
+    "rule": "议题型旅行片先用可见地点与高反差现场建立问题，再明确本期要通过哪些真实人物和地点继续验证；快切不能替代问题本身。"
+  },
+  "narrative_model": {
+    "premise": "影片从达拉斯枪店与肯尼迪刺杀地点出发，经由老同学、橄榄球尾箱、牛仔小镇和野牛保护区，把“力量文化如何形成、又应如何被节制”作为持续问题。",
+    "beats": ["枪店的日常化反差", "朋友重逢提供个人尺度", "肯尼迪地点与档案层把当下反差接到历史问题", "橄榄球和牛仔小镇展示生活化文化语境", "野牛、铁路与志愿者向导扩展到殖民和保护叙事", "结尾回到力量与尺度的价值反思"],
+    "rule": "社会议题旅行片应让个人关系、现场体验、资料语境和当地人物依次承担不同证据角色；结论必须回到本片已经呈现的行动与反思，不能只堆砌宏大判断。"
+  },
+  "scenic_model": {
+    "preferred_sequence": ["先由人进入枪店、球场、牛仔小镇或保护区", "再用宽景说明人和空间的尺度", "以招牌、器材、动物或环境细节回答地点功能", "保留同伴或向导的即时反应", "回到口播说明该地点如何推进主题"],
+    "observed_ranges": [[150.918, 264.064], [705.939, 855.855], [1102.635, 1201.934], [1510.943, 1803.235]],
+    "rule": "景观不单独承担美感填充，而要和人物任务、地方机制或情绪反应共同出现。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.0402,
+    "evidence_status": "machine_audio_classification_only",
+    "visual_candidates": ["开场问题建立", "球场与牛仔文化转场", "保护区寻找野牛", "结尾价值反思"],
+    "rule": "机器声学分类只能标记可能音乐区间；没有人工听音证据，不声明曲名、BPM、ducking、逐拍剪切或音乐因果。"
+  },
+  "subtitle_model": {
+    "base_style": "人工联系表可见底部居中的浅色中文字幕配深色描边；现场英文、中文口播与资料解释保持同一基础层。",
+    "emphasis_patterns": ["开场问题、地点名和历史资料使用短时标题或资料层", "现场反应和向导交流回到底部对白层", "产品或器材说明与事实、历史和观点层保持区隔"],
+    "rule": "议题与资料密度高时，普通对白、地点标题和事实资料必须分层，且不能遮挡关键人物、动物或行动；未执行 OCR，文字准确性仍需人工听校。"
+  },
+  "humor_model": {
+    "event_chain": ["先建立老同学十年重逢、枪店陌生感或野牛寻找任务", "保留主持人与同伴的真实误解、害怕和互相调侃", "让现场人物或环境反应落点", "再返回地点解释或下一项行动"],
+    "observed_ranges": [[150.918, 264.064], [325.425, 496.296], [705.939, 855.855], [1510.943, 1677.009]],
+    "rule": "笑点来自陌生环境中的真实关系和反应；涉及武器、政治、动物与历史伤痛时，不把风险或当地人物剪成单向笑料。"
+  },
+  "technique_observations": [
+    {"observation_id": "obs-texas-opening-place-question", "technique_key": "opening-contested-place-to-present-question", "start_sec": 0.0, "end_sec": 76.143, "category": "opening_montage", "trigger": "地点同时携带暴力历史与当下旅行反差。", "treatment": "用肯尼迪刺杀地点、枪店和主持人反应三段画面提出德州力量文化问题。", "confidence": 0.98, "parameters": {"phase_count": 3}, "evidence": {"event_id": "event-001", "manual_opening_sheet": true}, "guardrails": ["历史事件与枪支法规需独立核验。", "开场不能把暴力风险娱乐化。"]},
+    {"observation_id": "obs-texas-personal-friend-enters-system", "technique_key": "narrative-personal-reunion-before-cultural-system", "start_sec": 150.918, "end_sec": 264.064, "category": "narrative", "trigger": "宽泛社会主题需要可感知的人物入口。", "treatment": "先让十年未见的同学重逢、家庭和日常互动建立个人尺度，再进入枪店与城市文化讨论。", "confidence": 0.94, "parameters": {"personal_entry_before_system": true}, "evidence": {"event_id": "event-003", "manual_event_sheet": true}, "guardrails": ["朋友关系不能被概括为群体结论。"]},
+    {"observation_id": "obs-texas-safe-practice-before-retail-contrast", "technique_key": "narrative-safety-practice-before-sensitive-contrast", "start_sec": 240.0, "end_sec": 496.296, "category": "narrative", "trigger": "敏感物件的购买反差容易只留下刺激感。", "treatment": "在超市枪店的货架反差前后保留清膛、安全操作和当地人解释，再将便利性接到历史语境。", "confidence": 0.91, "parameters": {"safety_context_visible": true}, "evidence": {"events": ["event-004", "event-005", "event-006"], "full_transcript": true}, "guardrails": ["不把画面当成持枪或购买建议。", "具体法律、价格和安全结论需独立核验。"]},
+    {"observation_id": "obs-texas-archive-before-interpretation", "technique_key": "graphic-archive-footage-context-before-present-action", "start_sec": 496.296, "end_sec": 705.939, "category": "graphic", "trigger": "刺杀地点的当下景观无法自行说明历史重量。", "treatment": "在现场地标、旧照片和新闻资料之间往返，再回到主持人的当下位置和开放问题。", "confidence": 0.96, "parameters": {"archive_role": "context_not_proof"}, "evidence": {"events": ["event-007", "event-008", "event-009"], "manual_event_sheet": true}, "guardrails": ["档案来源、事实和引用需独立核验。", "资料画面不能被剪成已证明的单一因果。"]},
+    {"observation_id": "obs-texas-lived-culture-after-thesis", "technique_key": "narrative-lived-culture-after-abstract-thesis", "start_sec": 705.939, "end_sec": 959.092, "category": "narrative", "trigger": "政治与历史判断需要日常生活场景避免悬空。", "treatment": "用橄榄球尾箱、家庭聚会、食物和球迷互动，把前段抽象的德州认同落到可观察的生活仪式。", "confidence": 0.95, "parameters": {"lived_culture_block": true}, "evidence": {"events": ["event-010", "event-011", "event-012"], "manual_event_sheet": true}, "guardrails": ["日常场景不能代表所有当地人。"]},
+    {"observation_id": "obs-texas-history-to-wildlife-turn", "technique_key": "narrative-history-question-to-wildlife-expedition", "start_sec": 1265.231, "end_sec": 1510.943, "category": "narrative", "trigger": "牛仔文化的浪漫化需要新的行动线来承接其历史代价。", "treatment": "从牛仔小镇、铁路和野牛历史转入长途寻找野牛的任务，让抽象历史获得具体目的地。", "confidence": 0.94, "parameters": {"action_turn_visible": true}, "evidence": {"events": ["event-017", "event-018", "event-019"], "full_transcript": true}, "guardrails": ["铁路、野牛和原住民历史需要独立核验。"]},
+    {"observation_id": "obs-texas-guide-search-reaction", "technique_key": "scenic-guide-search-reaction-before-explanation", "start_sec": 1510.943, "end_sec": 1803.235, "category": "scenic", "trigger": "保护区风景与动物难以只靠空镜建立意义。", "treatment": "保留志愿者向导、寻找过程、动物细节与车内反应，再进入保护与历史说明。", "confidence": 0.95, "parameters": {"guide_agency": true, "search_before_explanation": true}, "evidence": {"events": ["event-020", "event-021", "event-022"], "manual_event_sheet": true}, "guardrails": ["动物与保护区行为需遵循向导和现场规范。", "不把寻找失败或动物打扰剪成笑料。"]},
+    {"observation_id": "obs-texas-return-to-scale-reflection", "technique_key": "narrative-return-to-opening-value-question", "start_sec": 1995.093, "end_sec": 2177.34, "category": "narrative", "trigger": "多条枪支、牛仔和野牛线索需要可追溯的收束。", "treatment": "先用野牛保护与地方历史完成最后事实层，再回到力量、文明和尺度的开放式结论。", "confidence": 0.93, "parameters": {"returns_to_opening_question": true}, "evidence": {"events": ["event-025", "event-026"], "manual_tail_sheet": true, "asr_tail_verified": true}, "guardrails": ["价值判断必须与已呈现证据区分。", "结尾口播不能替代历史或政治事实核验。"]},
+    {"observation_id": "obs-texas-dialogue-base-sparse-context-layer", "technique_key": "subtitle-base-dialogue-with-sparse-context-layer", "start_sec": 0.0, "end_sec": 2177.34, "category": "subtitle", "trigger": "全片同时有中文口播、英文现场交流、地点名和资料性解释。", "treatment": "保持稳定底部对白字幕，只在议题、地点、历史资料和器材说明使用稀疏独立层。", "confidence": 0.92, "parameters": {"base_position": "bottom_center", "ocr_verified": false}, "evidence": {"manual_contact_sheet_count": 6}, "guardrails": ["字幕逐字准确性仍需人工听校。", "标题不得遮挡人脸、动物或关键现场行动。"]}
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 90318,
+    "serialized_utf8_bytes": 105024,
+    "maximum_characters": 180000,
+    "character_comparison": "strictly_less_than",
+    "final_responses_request": {"serialized_characters": 74806, "serialized_utf8_bytes": 89512, "maximum_utf8_bytes": 200000, "byte_comparison": "strictly_less_than", "body_sha256": "308ebd3f9a4c413bb865e6ce8769d3c41a9b0f4770acc4b579a7c920a3227ef3", "contains_model": true, "contains_instructions": true, "contains_input": true, "contains_tools": true, "contains_text_json_schema": true, "validation_scope": "exact UTF-8 byte gate and minimum Responses structure; no external model call was made"}
+  },
+  "limitations": ["参考成片只提供正向保留模式；没有原始素材、成片与 EDL 映射，不能推断作者真实删片偏好。", "人工画面证据未确认 speed ramp、精确倍率、复杂转场或独立音效。", "未执行 OCR，不能声明字幕、资料卡或画面文字逐字正确。", "音乐结论仅来自机器声学分类，不能声明曲名、BPM、ducking 或逐拍因果。", "枪支法律、价格、肯尼迪事件、政治、牛仔、铁路、野牛与保护数据均需独立核验。", "本 Study 记录成片叙事结构，不构成武器、野生动物或旅行安全建议。"]
+}
