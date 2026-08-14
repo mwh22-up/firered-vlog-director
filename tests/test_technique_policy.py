@@ -17,10 +17,10 @@ class TechniquePolicyTests(unittest.TestCase):
 
         policy = build_technique_policy(aggregate)
 
-        self.assertEqual(policy["source_count"], 16)
+        self.assertEqual(policy["source_count"], 17)
         self.assertEqual(policy["minimum_source_support"], 2)
-        self.assertEqual(policy["stable_pattern_count"], 44)
-        self.assertEqual(policy["source_specific_pattern_count"], 65)
+        self.assertEqual(policy["stable_pattern_count"], 45)
+        self.assertEqual(policy["source_specific_pattern_count"], 72)
         self.assertEqual(
             {
                 row["technique_key"]
@@ -32,7 +32,7 @@ class TechniquePolicyTests(unittest.TestCase):
                 "playback-rate-fast-forward-travel-compression-visual-estimate",
             },
         )
-        self.assertEqual(len(policy["guidance_patterns"]), 106)
+        self.assertEqual(len(policy["guidance_patterns"]), 114)
         self.assertIn(
             "narrative-failure-adaptation-payoff",
             {row["technique_key"] for row in policy["guidance_patterns"]},
@@ -42,7 +42,7 @@ class TechniquePolicyTests(unittest.TestCase):
                 row["pattern_scope"] == "source_specific"
                 for row in policy["guidance_patterns"]
             ),
-            65,
+            72,
         )
         self.assertLessEqual(
             policy["rules"]["humor_awkward_process"]["weight_multiplier"],
