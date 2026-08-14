@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/directed-base-human-review.schema.json",
+  "title": "Directed base human review",
+  "type": "object",
+  "required": ["schema_version", "contract_version", "status", "project_id", "plan_version", "bindings", "checks", "reviewed_by", "reviewed_at", "attestation"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "contract_version": { "const": "directed-base-human-review-v1" },
+    "status": { "const": "approved" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "plan_version": { "type": "integer", "minimum": 2 },
+    "bindings": {
+      "type": "object",
+      "required": ["plan_sha256", "realized_timeline_sha256", "base_media_sha256", "cut_qa_sha256"],
+      "properties": {
+        "plan_sha256": { "$ref": "#/$defs/sha256" },
+        "realized_timeline_sha256": { "$ref": "#/$defs/sha256" },
+        "base_media_sha256": { "$ref": "#/$defs/sha256" },
+        "cut_qa_sha256": { "$ref": "#/$defs/sha256" }
+      },
+      "additionalProperties": false
+    },
+    "checks": {
+      "type": "object",
+      "required": ["visual_continuity", "speech_completeness", "audio_continuity", "story_coherence"],
+      "properties": {
+        "visual_continuity": { "const": "approved" },
+        "speech_completeness": { "const": "approved" },
+        "audio_continuity": { "const": "approved" },
+        "story_coherence": { "const": "approved" }
+      },
+      "additionalProperties": false
+    },
+    "reviewed_by": { "type": "string", "minLength": 1 },
+    "reviewed_at": { "type": "string", "format": "date-time" },
+    "notes": { "type": "string", "maxLength": 2000 },
+    "attestation": { "const": "I reviewed every rendered cut against the approved edit plan." }
+  },
+  "$defs": { "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" } },
+  "additionalProperties": false
+}

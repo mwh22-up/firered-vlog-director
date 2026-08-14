@@ -759,6 +759,196 @@ def _build_opening_hook(
     }
 
 
+def _opening_shot_score(shot: dict[str, Any]) -> float:
+    return (
+        float(shot.get("keep_score", 0.5)) * 0.5
+        + float(shot.get("quality_score", 0.5)) * 0.25
+        + float(shot.get("novelty_score", 0.5)) * 0.25
+    )
+
+
+def _build_phased_opening_hook(
+    chapters: list[dict[str, Any]],
+    analyses_by_source: dict[str, dict[str, Any]],
+    rule: dict[str, Any],
+    *,
+    feedback_document: dict[str, Any] | None = None,
+) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
+    if not rule.get("active"):
+        return None, []
+    phase_specs = (
+        ("future_payoff", {"payoff", "establishing"}, 1.4),
+        ("human_context", {"reaction"}, 2.4),
+        ("action_progression", {"action", "transition"}, 1.0),
+    )
+    source_order = [
+        source
+        for chapter in chapters
+        for source, _ in _chapter_sources(chapter)
+    ]
+    candidates: dict[str, list[tuple[float, str, dict[str, Any]]]] = {
+        phase: [] for phase, _, _ in phase_specs
+    }
+    for source in dict.fromkeys(source_order):
+        for shot in analyses_by_source[source].get("shots", []):
+            duration = float(shot["end_sec"]) - float(shot["start_sec"])
+            speech_ratio = float(shot.get("speech_ratio", 0.0))
+            score = _opening_shot_score(shot)
+            if (
+                duration < float(rule["minimum_shot_sec"])
+                or speech_ratio > float(rule["maximum_speech_ratio"])
+                or score < float(rule["minimum_shot_score"])
+            ):
+                continue
+            feedback = feedback_adjustment(
+                feedback_document,
+                source=source,
+                start_sec=float(shot["start_sec"]),
+                end_sec=float(shot["end_sec"]),
+            )
+            if feedback["excluded"]:
+                continue
+            role = str(shot.get("role", "ambient"))
+            for phase, roles, _ in phase_specs:
+                if role in roles:
+                    candidates[phase].append((score, source, shot))
+
+    selected: list[dict[str, Any]] = []
+    applications: list[dict[str, Any]] = []
+    used_shots: set[tuple[str, str]] = set()
+    for phase, _, maximum_duration in phase_specs:
+        available = sorted(candidates[phase], key=lambda row: row[0], reverse=True)
+        chosen = next(
+            (
+                row
+                for row in available
+                if (row[1], str(row[2].get("shot_id"))) not in used_shots
+            ),
+            None,
+        )
+        if chosen is None:
+            return None, []
+        score, source, shot = chosen
+        shot_id = str(shot.get("shot_id", "unknown"))
+        used_shots.add((source, shot_id))
+        start = float(shot["start_sec"])
+        duration = min(maximum_duration, float(shot["end_sec"]) - start)
+        end = start + duration
+        selected.append(
+            {
+                "source": source,
+                "in_sec": round(start, 3),
+                "out_sec": round(end, 3),
+                "story_role": "opening_preview",
+                "reason": (
+                    f"technique:{rule['technique_key']}:phase:{phase}:"
+                    f"target_shot:{shot_id}"
+                ),
+                "keep_original_audio": True,
+                "beat_snap": False,
+                "confidence": round(score, 3),
+            }
+        )
+        applications.append(
+            _technique_impact(
+                rule,
+                source=source,
+                start_sec=start,
+                end_sec=end,
+                target_evidence=[
+                    f"shot:{shot_id}:role={shot.get('role')}",
+                    f"shot:{shot_id}:speech_ratio={float(shot.get('speech_ratio', 0.0)):.4f}",
+                    f"opening_phase:{phase}",
+                ],
+                effect=f"opening_phase:{phase}",
+            )
+        )
+    elapsed = sum(
+        float(row["out_sec"]) - float(row["in_sec"])
+        for row in selected
+    )
+    return (
+        {
+            "id": "ch00",
+            "title": "Opening preview",
+            "target_duration_sec": round(elapsed, 3),
+            "segments": selected,
+        },
+        applications,
+    )
+
+
+def _travel_compression_preview_proposals(
+    chapters: list[dict[str, Any]],
+    analyses_by_source: dict[str, dict[str, Any]],
+    rule: dict[str, Any],
+    *,
+    feedback_document: dict[str, Any] | None = None,
+) -> list[dict[str, Any]]:
+    if not rule.get("active"):
+        return []
+    proposals: list[dict[str, Any]] = []
+    source_order = [
+        source
+        for chapter in chapters
+        for source, _ in _chapter_sources(chapter)
+    ]
+    for source in dict.fromkeys(source_order):
+        for shot in analyses_by_source[source].get("shots", []):
+            start = float(shot["start_sec"])
+            end = float(shot["end_sec"])
+            duration = end - start
+            speech_ratio = float(shot.get("speech_ratio", 0.0))
+            motion = float(shot.get("visual", {}).get("motion", 0.0))
+            role = str(shot.get("role", "ambient"))
+            if (
+                duration < float(rule["minimum_shot_sec"])
+                or speech_ratio > float(rule["maximum_speech_ratio"])
+                or motion < float(rule["minimum_motion"])
+                or role not in set(rule["allowed_roles"])
+            ):
+                continue
+            feedback = feedback_adjustment(
+                feedback_document,
+                source=source,
+                start_sec=start,
+                end_sec=end,
+            )
+            if feedback["excluded"]:
+                continue
+            shot_id = str(shot.get("shot_id", "unknown"))
+            proposals.append(
+                {
+                    "technique_key": str(rule["technique_key"]),
+                    "category": str(rule["category"]),
+                    "executor": str(rule["executor"]),
+                    "execution_mode": "preview_only",
+                    "status": "human_rate_selection_required",
+                    "source_support": int(rule["source_support"]),
+                    "average_confidence": float(rule["average_confidence"]),
+                    "target_evidence": [
+                        f"shot:{shot_id}:role={role}",
+                        f"shot:{shot_id}:duration_sec={duration:.3f}",
+                        f"shot:{shot_id}:speech_ratio={speech_ratio:.4f}",
+                        f"shot:{shot_id}:visual.motion={motion:.5f}",
+                    ],
+                    "affected_ranges": [
+                        {
+                            "source": source,
+                            "start_sec": round(start, 3),
+                            "end_sec": round(end, 3),
+                            "effect": "travel_compression_preview_without_rate",
+                        }
+                    ],
+                    "parameters": {
+                        "playback_rate": None,
+                        "rate_source": "human_preview_selection",
+                    },
+                }
+            )
+    return proposals[:5]
+
+
 def build_candidate(
     parent_plan: dict[str, Any],
     analyses_by_source: dict[str, dict[str, Any]],
@@ -842,13 +1032,28 @@ def build_candidate(
                 "segments": output_segments,
             }
         )
-    hook = _build_opening_hook(
+    rules = (technique_policy or {}).get("rules", {})
+    hook, hook_applications = _build_phased_opening_hook(
         parent_plan.get("chapters", []),
         analyses_by_source,
+        rules.get("opening_phased_hook", {}),
         feedback_document=feedback_document,
     )
+    if hook is None:
+        hook = _build_opening_hook(
+            parent_plan.get("chapters", []),
+            analyses_by_source,
+            feedback_document=feedback_document,
+        )
     if hook:
         chapters.insert(0, hook)
+    candidate_technique_applications.extend(hook_applications)
+    preview_proposals = _travel_compression_preview_proposals(
+        parent_plan.get("chapters", []),
+        analyses_by_source,
+        rules.get("travel_compression_preview", {}),
+        feedback_document=feedback_document,
+    )
     total_duration = sum(float(chapter["target_duration_sec"]) for chapter in chapters)
     plan = {
         "schema_version": parent_plan["schema_version"],
@@ -877,6 +1082,7 @@ def build_candidate(
             "applied_patterns": _merge_technique_applications(
                 candidate_technique_applications
             ),
+            "preview_required_patterns": preview_proposals,
             "guidance_pattern_keys": [
                 row["technique_key"]
                 for row in (technique_policy or {}).get("guidance_patterns", [])
@@ -1120,6 +1326,9 @@ def direct_timeline(
             ),
             "applied_patterns": deepcopy(
                 winner_application.get("applied_patterns", [])
+            ),
+            "preview_required_patterns": deepcopy(
+                winner_application.get("preview_required_patterns", [])
             ),
             "guidance_patterns": deepcopy(
                 technique_policy.get("guidance_patterns", [])

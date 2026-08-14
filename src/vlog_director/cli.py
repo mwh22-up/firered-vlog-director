@@ -365,6 +365,8 @@ def _build_parser() -> argparse.ArgumentParser:
     bind_directed_base.add_argument("--edit-plan", type=Path, required=True)
     bind_directed_base.add_argument("--approval", type=Path, required=True)
     bind_directed_base.add_argument("--realized-timeline", type=Path, required=True)
+    bind_directed_base.add_argument("--cut-qa", type=Path, required=True)
+    bind_directed_base.add_argument("--human-review", type=Path, required=True)
     bind_directed_base.add_argument("--base-video", type=Path, required=True)
     bind_directed_base.add_argument("--producer-repository", required=True)
     bind_directed_base.add_argument("--producer-commit", required=True)
@@ -553,6 +555,15 @@ def _build_parser() -> argparse.ArgumentParser:
     approve_timeline_parser.add_argument("--receipt", type=Path, required=True)
     approve_timeline_parser.add_argument("--approved-by", required=True)
 
+    approve_previewed = subparsers.add_parser("approve-previewed-timeline")
+    approve_previewed.add_argument("--project", type=Path, required=True)
+    approve_previewed.add_argument("--candidate", type=Path, required=True)
+    approve_previewed.add_argument("--review-pack", type=Path, required=True)
+    approve_previewed.add_argument("--selection", type=Path, required=True)
+    approve_previewed.add_argument("--output", type=Path, required=True)
+    approve_previewed.add_argument("--receipt", type=Path, required=True)
+    approve_previewed.add_argument("--approved-by", required=True)
+
     plan_music = subparsers.add_parser("plan-music")
     plan_music.add_argument("--plan", type=Path, required=True)
     plan_music.add_argument("--profile", type=Path, required=True)
@@ -668,6 +679,8 @@ def main() -> int:
             edit_plan_path=args.edit_plan,
             approval_path=args.approval,
             realized_timeline_path=args.realized_timeline,
+            cut_qa_path=args.cut_qa,
+            human_review_path=args.human_review,
             base_media_path=args.base_video,
             output_path=args.output,
             producer={
@@ -1845,6 +1858,20 @@ def main() -> int:
             args.candidate.resolve(),
             args.output.resolve(),
             args.receipt.resolve(),
+            approved_by=args.approved_by,
+        )
+        _write_result(result, None)
+        return 0
+    if args.command == "approve-previewed-timeline":
+        from .approval import approve_previewed_timeline
+
+        result = approve_previewed_timeline(
+            project=args.project,
+            candidate_path=args.candidate,
+            review_pack_path=args.review_pack,
+            selection_path=args.selection,
+            output_path=args.output,
+            receipt_path=args.receipt,
             approved_by=args.approved_by,
         )
         _write_result(result, None)

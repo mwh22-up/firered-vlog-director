@@ -7,7 +7,7 @@ from vlog_director.technique_policy import build_technique_policy
 
 
 class TechniquePolicyTests(unittest.TestCase):
-    def test_formal_aggregate_exposes_only_reachable_executable_rule(self) -> None:
+    def test_formal_aggregate_compiles_supported_rules_with_execution_modes(self) -> None:
         repository_root = Path(__file__).resolve().parents[1]
         aggregate = load_technique_aggregate(
             repository_root
@@ -28,9 +28,11 @@ class TechniquePolicyTests(unittest.TestCase):
             },
             {
                 "humor-preserve-real-awkward-process",
+                "opening-phased-hook-not-uniform-fast-cut",
+                "playback-rate-fast-forward-travel-compression-visual-estimate",
             },
         )
-        self.assertEqual(len(policy["guidance_patterns"]), 108)
+        self.assertEqual(len(policy["guidance_patterns"]), 106)
         self.assertIn(
             "narrative-failure-adaptation-payoff",
             {row["technique_key"] for row in policy["guidance_patterns"]},
@@ -46,9 +48,26 @@ class TechniquePolicyTests(unittest.TestCase):
             policy["rules"]["humor_awkward_process"]["weight_multiplier"],
             1.15,
         )
+        execution_modes = {
+            row["technique_key"]: row["execution_mode"]
+            for row in policy["eligible_patterns"]
+        }
         self.assertEqual(
-            policy["eligible_patterns"][0]["required_target_evidence"],
-            "explicit_fun_score>=0.55",
+            execution_modes["opening-phased-hook-not-uniform-fast-cut"],
+            "automatic_candidate",
+        )
+        self.assertEqual(
+            execution_modes[
+                "playback-rate-fast-forward-travel-compression-visual-estimate"
+            ],
+            "preview_only",
+        )
+        self.assertIsNone(
+            policy["rules"]["travel_compression_preview"]["playback_rate"]
+        )
+        self.assertTrue(
+            policy["rules"]["travel_compression_preview"]
+            ["requires_human_rate_selection"]
         )
         self.assertNotIn("applied_patterns", policy)
 
@@ -93,7 +112,10 @@ class TechniquePolicyTests(unittest.TestCase):
 
         policy = build_technique_policy(aggregate)
 
-        self.assertEqual(policy["eligible_patterns"], [])
+        self.assertNotIn(
+            "humor-preserve-real-awkward-process",
+            {row["technique_key"] for row in policy["eligible_patterns"]},
+        )
         self.assertEqual(
             [row["technique_key"] for row in policy["guidance_patterns"]],
             [key],
@@ -117,7 +139,10 @@ class TechniquePolicyTests(unittest.TestCase):
 
         policy = build_technique_policy(invalid_semantics)
 
-        self.assertEqual(policy["eligible_patterns"], [])
+        self.assertNotIn(
+            "humor-preserve-real-awkward-process",
+            {row["technique_key"] for row in policy["eligible_patterns"]},
+        )
         self.assertFalse(policy["rules"]["humor_awkward_process"]["active"])
         self.assertIn(
             "humor-preserve-real-awkward-process",

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/directed-candidate-review-pack.schema.json",
+  "title": "Directed candidate review pack",
+  "type": "object",
+  "required": ["schema_version", "contract_version", "status", "project_id", "plan_version", "candidates", "created_at", "note"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "contract_version": { "const": "directed-candidate-review-pack-v1" },
+    "status": { "const": "review_required" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "plan_version": { "type": "integer", "minimum": 2 },
+    "candidates": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["label", "candidate", "preview_media", "realized_timeline", "cut_qa", "actual_duration_sec", "segment_count", "boundary_count", "flagged_boundary_count", "non_release_marker"],
+        "properties": {
+          "label": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$" },
+          "candidate": { "$ref": "#/$defs/binding" },
+          "preview_media": {
+            "allOf": [
+              { "$ref": "#/$defs/binding" },
+              {
+                "type": "object",
+                "required": ["size_bytes"],
+                "properties": { "size_bytes": { "type": "integer", "minimum": 1 } }
+              }
+            ]
+          },
+          "realized_timeline": { "$ref": "#/$defs/binding" },
+          "cut_qa": { "$ref": "#/$defs/binding" },
+          "actual_duration_sec": { "type": "number", "exclusiveMinimum": 0 },
+          "segment_count": { "type": "integer", "minimum": 1 },
+          "boundary_count": { "type": "integer", "minimum": 0 },
+          "flagged_boundary_count": { "type": "integer", "minimum": 0 },
+          "non_release_marker": {
+            "type": "object",
+            "required": ["applied", "text"],
+            "properties": {
+              "applied": { "const": true },
+              "text": { "const": "NON-RELEASE CANDIDATE" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "note": { "type": "string", "minLength": 1 }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "binding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^work/director/v[0-9]+-proposal/[A-Za-z0-9][A-Za-z0-9._/-]*$" },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "size_bytes": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

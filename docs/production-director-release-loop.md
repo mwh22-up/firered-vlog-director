@@ -13,7 +13,7 @@
 
 - 分析目标素材并生成多套候选 EDL，保留镜头评分、参考技巧和目标证据 trace。
 - 用户的 lock、remove、avoid 和显式反馈优先于参考片经验。
-- 候选时间线必须独立人工批准，不能把推荐结果直接当作最终剪辑。
+- 候选时间线必须先渲染为带水印的 proxy 预览并独立人工选择，不能把推荐结果直接当作最终剪辑。
 - `directed-base-contract` 绑定 approved edit plan、approval receipt、realized timeline、基础媒体 SHA、生产仓库与提交、FFmpeg identity。
 - 基础剪辑仍由外部 `firered-vlog-pipeline` 执行；本仓库负责交接合同和后续门禁。
 
@@ -57,8 +57,12 @@
 ```text
 目标素材分析
   -> 候选导演时间线
-  -> 人工批准 edit plan
+  -> proxy-only 非发布候选预览 + 真实切点 QA
+  -> 多候选 review pack
+  -> 人工选择记录
+  -> approve-previewed-timeline
   -> 外部基础剪辑与 realized timeline
+  -> 逐切点机器 QA 与独立人工复核
   -> bind-directed-base
   -> 字幕 / 动效 / 音乐各自生产、QA 与人工审批
   -> render-enhancement
@@ -72,7 +76,8 @@
 ```text
 analyze-project / analyze-target
 direct-timeline
-approve-timeline
+firered-vlog-pipeline: render-candidate-previews.ps1
+approve-previewed-timeline
 bind-directed-base
 
 project-subtitles
@@ -96,6 +101,49 @@ approve-release
 ```
 
 耗时操作可以提交为 durable detached job。每个任务使用唯一目录、原子 job/status 写入、独立日志和不可覆盖的终态；排队任务可取消，旧 job 不能重放覆盖正式证据。
+
+候选预览批准必须使用以下目录和证据链：
+
+```text
+work/director/v2-proposal/candidates/candidate.<variant>.json
+work/director/v2-proposal/previews/<candidate-sha256>/
+work/director/v2-proposal/review-pack.json
+work/director/v2-proposal/selection.json
+```
+
+`selection.json` 必须符合 `schemas/directed-preview-selection.schema.json`，绑定 review pack、
+选中 candidate、preview media、realized timeline 和 cut QA 的 SHA，并逐项确认播放、画面连续性、
+对白完整性、音频连续性和故事连贯性。随后执行：
+
+```powershell
+.\scripts\approve-previewed-timeline.ps1 `
+  -ProjectPath <project> `
+  -Version 2 `
+  -Candidate <project>\work\director\v2-proposal\candidates\candidate.balanced.json `
+  -ReviewPack <project>\work\director\v2-proposal\review-pack.json `
+  -Selection <project>\work\director\v2-proposal\selection.json `
+  -ApprovedBy <operator>
+```
+
+旧 `approve-timeline` 仅为兼容入口；正式生产应使用绑定预览证据的新入口。候选、review pack、
+selection 或任一预览证据的 SHA 变化都会阻止批准。
+
+基础剪辑完成后，人工复核记录必须符合 `schemas/directed-base-human-review.schema.json`，并绑定当前 edit plan、realized timeline、基础媒体和 cut QA 的 SHA。四项检查都真实完成后才可写为 `approved`。随后执行：
+
+```powershell
+vlog-director bind-directed-base `
+  --project <project> `
+  --edit-plan <project>\work\plans\edit_plan.v2.json `
+  --approval <project>\work\qa\edit_plan.v2.approval.json `
+  --realized-timeline <project>\work\qa\render.v2.json `
+  --cut-qa <project>\work\qa\cut-review.v2\cut-review.json `
+  --human-review <project>\work\qa\directed-base-human-review.v2.json `
+  --base-video <project>\output\directed.v2.mp4 `
+  --producer-repository https://github.com/mwh22-up/firered-vlog-pipeline.git `
+  --producer-commit <40-character-commit-sha> `
+  --producer-contract render-directed-v2 `
+  --output <project>\work\qa\directed-base.v2.json
+```
 
 ## 机器结论边界
 
@@ -134,8 +182,8 @@ GitHub Actions 覆盖：
 
 本地最近一次完整验证结果：
 
-- `Ran 304 tests`
-- `OK (skipped=3)`
+- `Ran 312 tests`
+- `OK (skipped=1)`
 - Ruff 通过；
 - `compileall` 通过；
 - 正式/runtime Schema 字节一致；

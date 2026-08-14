@@ -1006,6 +1006,158 @@ class DirectorEngineTests(unittest.TestCase):
             )
         )
 
+    def test_phased_opening_pattern_changes_hook_and_reports_target_evidence(self) -> None:
+        sources = ["raw/A001.MP4", "raw/A002.MP4", "raw/A003.MP4"]
+        roles = ["payoff", "reaction", "action"]
+        plan = parent_plan()
+        plan["brief"]["keep_dialogue"] = False
+        plan["chapters"] = [
+            {
+                "id": f"ch{index + 1:02d}",
+                "title": f"Chapter {index + 1}",
+                "target_duration_sec": 4.0,
+                "segments": [segment(source, 0.0, 4.0)],
+            }
+            for index, source in enumerate(sources)
+        ]
+        analyses = {
+            source: {
+                "source": {"source_id": Path(source).stem, "aliases": [source]},
+                "media": {"duration_sec": 4.0},
+                "transcription": {"status": "disabled", "segments": []},
+                "shots": [
+                    {
+                        "shot_id": f"phase-{index + 1}",
+                        "start_sec": 0.0,
+                        "end_sec": 4.0,
+                        "role": roles[index],
+                        "speech_ratio": 0.0,
+                        "novelty_score": 0.9,
+                        "quality_score": 0.9,
+                        "keep_score": 0.9,
+                        "recommendation": "protect",
+                    }
+                ],
+                "events": [],
+            }
+            for index, source in enumerate(sources)
+        }
+        candidate, report = build_candidate(
+            plan,
+            analyses,
+            PROFILE,
+            MOMENTS,
+            version=2,
+            variant="balanced",
+            created_at="2026-07-30T01:00:00+08:00",
+            technique_policy=build_technique_policy(
+                technique_aggregate(
+                    ("opening-phased-hook-not-uniform-fast-cut", "opening_montage"),
+                )
+            ),
+        )
+
+        opening = candidate["chapters"][0]
+        self.assertEqual(opening["id"], "ch00")
+        self.assertEqual([row["source"] for row in opening["segments"]], sources)
+        self.assertEqual(
+            [round(row["out_sec"] - row["in_sec"], 1) for row in opening["segments"]],
+            [1.4, 2.4, 1.0],
+        )
+        self.assertTrue(
+            all(
+                "technique:opening-phased-hook" in row["reason"]
+                for row in opening["segments"]
+            )
+        )
+        applied = report["technique_application"]["applied_patterns"]
+        self.assertEqual(len(applied), 1)
+        self.assertEqual(applied[0]["affected_target_count"], 3)
+        self.assertIn("opening_phase:human_context", applied[0]["target_evidence"])
+
+    def test_visual_speed_estimate_creates_preview_only_proposal_without_rate(self) -> None:
+        plan = parent_plan()
+        plan["brief"]["keep_dialogue"] = False
+        plan["brief"]["target_duration_sec"] = 12.0
+        plan["chapters"][0]["target_duration_sec"] = 12.0
+        plan["chapters"][0]["segments"] = [segment("raw/A001.MP4", 0.0, 12.0)]
+        analysis = {
+            "source": target_analysis()["source"],
+            "media": {"duration_sec": 12.0},
+            "transcription": {"status": "disabled", "segments": []},
+            "shots": [
+                {
+                    "shot_id": "continuous-travel",
+                    "start_sec": 0.0,
+                    "end_sec": 12.0,
+                    "role": "transition",
+                    "speech_ratio": 0.0,
+                    "visual": {"motion": 0.11},
+                    "novelty_score": 0.7,
+                    "quality_score": 0.8,
+                    "keep_score": 0.75,
+                    "recommendation": "retain",
+                }
+            ],
+            "events": [],
+        }
+        candidate, report = build_candidate(
+            plan,
+            {"raw/A001.MP4": analysis},
+            PROFILE,
+            MOMENTS,
+            version=2,
+            variant="balanced",
+            created_at="2026-07-30T01:00:00+08:00",
+            target_duration_sec=12.0,
+            technique_policy=build_technique_policy(
+                technique_aggregate(
+                    (
+                        "playback-rate-fast-forward-travel-compression-visual-estimate",
+                        "playback_rate",
+                    ),
+                )
+            ),
+        )
+
+        self.assertEqual(report["technique_application"]["applied_patterns"], [])
+        proposals = report["technique_application"]["preview_required_patterns"]
+        self.assertEqual(len(proposals), 1)
+        self.assertEqual(proposals[0]["execution_mode"], "preview_only")
+        self.assertEqual(proposals[0]["status"], "human_rate_selection_required")
+        self.assertIsNone(proposals[0]["parameters"]["playback_rate"])
+        self.assertTrue(
+            all(
+                "playback_rate" not in segment_row
+                for chapter in candidate["chapters"]
+                for segment_row in chapter["segments"]
+            )
+        )
+
+        analysis["shots"][0]["speech_ratio"] = 0.2
+        _, blocked_report = build_candidate(
+            plan,
+            {"raw/A001.MP4": analysis},
+            PROFILE,
+            MOMENTS,
+            version=2,
+            variant="balanced",
+            created_at="2026-07-30T01:00:00+08:00",
+            target_duration_sec=12.0,
+            technique_policy=build_technique_policy(
+                technique_aggregate(
+                    (
+                        "playback-rate-fast-forward-travel-compression-visual-estimate",
+                        "playback_rate",
+                    ),
+                )
+            ),
+        )
+        self.assertEqual(
+            blocked_report["technique_application"]["preview_required_patterns"],
+            [],
+        )
+
     def test_outputs_are_written_as_reviewable_edl_artifacts(self) -> None:
         result = direct_timeline(
             parent_plan(),

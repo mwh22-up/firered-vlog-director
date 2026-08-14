@@ -34,6 +34,10 @@ class SchemaValidationTests(unittest.TestCase):
                 "director-profile.schema.json",
                 "director-feedback-facts.schema.json",
                 "directed-base-contract.schema.json",
+                "directed-base-human-review.schema.json",
+                "directed-candidate-review-pack.schema.json",
+                "directed-cut-qa.schema.json",
+                "directed-preview-selection.schema.json",
                 "effect-approval.schema.json",
                 "effect-human-review.schema.json",
                 "effect-plan.schema.json",
@@ -75,6 +79,10 @@ class SchemaValidationTests(unittest.TestCase):
                 if name in {
                     "enhancement-plan.schema.json",
                     "directed-base-contract.schema.json",
+                    "directed-base-human-review.schema.json",
+                    "directed-candidate-review-pack.schema.json",
+                    "directed-cut-qa.schema.json",
+                    "directed-preview-selection.schema.json",
                     "hyperframes-composition-manifest.schema.json",
                     "hyperframes-render-manifest.schema.json",
                     "release-visual-qa.schema.json",
@@ -301,7 +309,7 @@ class SchemaValidationTests(unittest.TestCase):
             )
             for path in directory.glob("*.json")
         )
-        self.assertEqual(len(json_paths), 79)
+        self.assertEqual(len(json_paths), 83)
         for path in json_paths:
             with self.subTest(path=path.relative_to(REPOSITORY_ROOT)):
                 load_json(path)

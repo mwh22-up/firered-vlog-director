@@ -75,11 +75,72 @@ class ProductionContractTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+        cut_qa_path = project / "work" / "qa" / "cut-review.v2.json"
+        cut_qa_path.write_text(
+            json.dumps(
+                {
+                    "schema_version": "1.0",
+                    "contract_version": "directed-cut-qa-v1",
+                    "status": "review_required",
+                    "project_id": "synthetic",
+                    "plan_version": 2,
+                    "plan_sha256": hashlib.sha256(plan_path.read_bytes()).hexdigest(),
+                    "realized_timeline_sha256": hashlib.sha256(
+                        timeline_path.read_bytes()
+                    ).hexdigest(),
+                    "base_media": {
+                        "name": media.name,
+                        "sha256": hashlib.sha256(media.read_bytes()).hexdigest(),
+                        "size_bytes": media.stat().st_size,
+                    },
+                    "boundary_count": 0,
+                    "flagged_boundary_count": 0,
+                    "boundaries": [],
+                    "created_at": "2026-08-14T00:00:00Z",
+                    "note": "Machine checks require human review.",
+                }
+            ),
+            encoding="utf-8",
+        )
+        human_review_path = project / "work" / "qa" / "directed-base-human-review.v2.json"
+        human_review_path.write_text(
+            json.dumps(
+                {
+                    "schema_version": "1.0",
+                    "contract_version": "directed-base-human-review-v1",
+                    "status": "approved",
+                    "project_id": "synthetic",
+                    "plan_version": 2,
+                    "bindings": {
+                        "plan_sha256": hashlib.sha256(plan_path.read_bytes()).hexdigest(),
+                        "realized_timeline_sha256": hashlib.sha256(
+                            timeline_path.read_bytes()
+                        ).hexdigest(),
+                        "base_media_sha256": hashlib.sha256(media.read_bytes()).hexdigest(),
+                        "cut_qa_sha256": hashlib.sha256(
+                            cut_qa_path.read_bytes()
+                        ).hexdigest(),
+                    },
+                    "checks": {
+                        "visual_continuity": "approved",
+                        "speech_completeness": "approved",
+                        "audio_continuity": "approved",
+                        "story_coherence": "approved",
+                    },
+                    "reviewed_by": "reviewer",
+                    "reviewed_at": "2026-08-14T00:10:00Z",
+                    "attestation": "I reviewed every rendered cut against the approved edit plan.",
+                }
+            ),
+            encoding="utf-8",
+        )
         return {
             "project": project,
             "plan": plan_path,
             "approval": approval_path,
             "timeline": timeline_path,
+            "cut_qa": cut_qa_path,
+            "human_review": human_review_path,
             "media": media,
             "output": project / "work" / "qa" / "directed-base.v2.json",
         }
@@ -109,6 +170,8 @@ class ProductionContractTests(unittest.TestCase):
                     edit_plan_path=fixture["plan"],
                     approval_path=fixture["approval"],
                     realized_timeline_path=fixture["timeline"],
+                    cut_qa_path=fixture["cut_qa"],
+                    human_review_path=fixture["human_review"],
                     base_media_path=fixture["media"],
                     output_path=fixture["output"],
                     producer={
@@ -133,9 +196,47 @@ class ProductionContractTests(unittest.TestCase):
                     edit_plan_path=fixture["plan"],
                     approval_path=fixture["approval"],
                     realized_timeline_path=fixture["timeline"],
+                    cut_qa_path=fixture["cut_qa"],
+                    human_review_path=fixture["human_review"],
                     base_media_path=fixture["media"],
                     output_path=fixture["output"],
                     producer={"repository": "repo", "commit_sha": "a" * 40, "contract": "v1"},
+                )
+
+    def test_contract_fails_when_human_review_binds_different_cut_qa(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = self._fixture(Path(directory))
+            review = json.loads(fixture["human_review"].read_text(encoding="utf-8"))
+            review["bindings"]["cut_qa_sha256"] = "0" * 64
+            fixture["human_review"].write_text(json.dumps(review), encoding="utf-8")
+            with (
+                patch("vlog_director.production_contract.find_ffmpeg", return_value="ffmpeg"),
+                patch(
+                    "vlog_director.production_contract.probe_media",
+                    return_value={
+                        "duration_sec": 1.0,
+                        "width": 160,
+                        "height": 90,
+                        "has_video": True,
+                        "has_audio": True,
+                    },
+                ),
+                self.assertRaisesRegex(ValueError, "human review bindings"),
+            ):
+                bind_directed_base(
+                    project=fixture["project"],
+                    edit_plan_path=fixture["plan"],
+                    approval_path=fixture["approval"],
+                    realized_timeline_path=fixture["timeline"],
+                    cut_qa_path=fixture["cut_qa"],
+                    human_review_path=fixture["human_review"],
+                    base_media_path=fixture["media"],
+                    output_path=fixture["output"],
+                    producer={
+                        "repository": "repo",
+                        "commit_sha": "a" * 40,
+                        "contract": "v1",
+                    },
                 )
 
 

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.vlog-pipeline/schemas/directed-cut-qa.schema.json",
+  "title": "Directed cut machine QA",
+  "type": "object",
+  "required": ["schema_version", "contract_version", "status", "project_id", "plan_version", "plan_sha256", "realized_timeline_sha256", "base_media", "boundary_count", "flagged_boundary_count", "boundaries", "created_at", "note"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "contract_version": { "const": "directed-cut-qa-v1" },
+    "status": { "const": "review_required" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "plan_version": { "type": "integer", "minimum": 2 },
+    "plan_sha256": { "$ref": "#/$defs/sha256" },
+    "realized_timeline_sha256": { "$ref": "#/$defs/sha256" },
+    "base_media": {
+      "type": "object",
+      "required": ["name", "sha256", "size_bytes"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "size_bytes": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "boundary_count": { "type": "integer", "minimum": 0 },
+    "flagged_boundary_count": { "type": "integer", "minimum": 0 },
+    "boundaries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "time_sec", "left_source", "right_source", "status", "audio_jump_score", "black_ranges", "silence_markers", "review_frames", "issues", "manual_checks"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^cut-[0-9]{4,}$" },
+          "time_sec": { "type": "number", "minimum": 0 },
+          "left_source": { "type": "string", "minLength": 1 },
+          "right_source": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["auto_passed", "review_required"] },
+          "audio_jump_score": { "type": "number", "minimum": 0 },
+          "black_ranges": { "type": "array" },
+          "silence_markers": { "type": "integer", "minimum": 0 },
+          "review_frames": { "type": "array", "items": { "type": "string" } },
+          "issues": { "type": "array", "items": { "type": "string" } },
+          "manual_checks": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "created_at": { "type": "string", "minLength": 1 },
+    "note": { "type": "string", "minLength": 1 }
+  },
+  "$defs": { "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" } },
+  "additionalProperties": false
+}

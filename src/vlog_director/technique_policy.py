@@ -6,13 +6,36 @@ from .technique_learning import validate_technique_aggregate
 
 
 HUMOR_AWKWARD_PROCESS = "humor-preserve-real-awkward-process"
+OPENING_PHASED_HOOK = "opening-phased-hook-not-uniform-fast-cut"
+TRAVEL_COMPRESSION_PREVIEW = (
+    "playback-rate-fast-forward-travel-compression-visual-estimate"
+)
 MINIMUM_EXECUTABLE_SOURCE_SUPPORT = 2
 
 EXECUTABLE_RULES = {
     HUMOR_AWKWARD_PROCESS: {
         "category": "humor",
         "executor": "retain_evidence_backed_fun_process",
+        "execution_mode": "automatic_candidate",
         "required_target_evidence": "explicit_fun_score>=0.55",
+    },
+    OPENING_PHASED_HOOK: {
+        "category": "opening_montage",
+        "executor": "build_evidence_backed_phased_opening",
+        "execution_mode": "automatic_candidate",
+        "required_target_evidence": (
+            "non_dialogue future_payoff+human_context+action_progression shots"
+        ),
+        "minimum_average_confidence": 0.8,
+    },
+    TRAVEL_COMPRESSION_PREVIEW: {
+        "category": "playback_rate",
+        "executor": "propose_travel_compression_preview",
+        "execution_mode": "preview_only",
+        "required_target_evidence": (
+            "continuous travel shot>=8s, speech_ratio<=0.1, visual.motion>=0.085"
+        ),
+        "minimum_average_confidence": 0.4,
     },
 }
 
@@ -30,6 +53,18 @@ def empty_technique_policy() -> dict[str, Any]:
                 "technique_key": HUMOR_AWKWARD_PROCESS,
                 "executor": EXECUTABLE_RULES[HUMOR_AWKWARD_PROCESS]["executor"],
             },
+            "opening_phased_hook": {
+                "active": False,
+                "technique_key": OPENING_PHASED_HOOK,
+                "executor": EXECUTABLE_RULES[OPENING_PHASED_HOOK]["executor"],
+                "execution_mode": "automatic_candidate",
+            },
+            "travel_compression_preview": {
+                "active": False,
+                "technique_key": TRAVEL_COMPRESSION_PREVIEW,
+                "executor": EXECUTABLE_RULES[TRAVEL_COMPRESSION_PREVIEW]["executor"],
+                "execution_mode": "preview_only",
+            },
         },
         "eligible_patterns": [],
         "guidance_patterns": [],
@@ -42,6 +77,7 @@ def _trace(
     *,
     pattern_scope: str,
     required_target_evidence: str | None = None,
+    execution_mode: str | None = None,
 ) -> dict[str, Any]:
     trace = {
         "technique_key": str(pattern["technique_key"]),
@@ -54,6 +90,8 @@ def _trace(
     }
     if required_target_evidence:
         trace["required_target_evidence"] = required_target_evidence
+    if execution_mode:
+        trace["execution_mode"] = execution_mode
     return trace
 
 
@@ -81,6 +119,8 @@ def build_technique_policy(
         if key in EXECUTABLE_RULES
         and int(pattern["source_support"]) >= MINIMUM_EXECUTABLE_SOURCE_SUPPORT
         and str(pattern["category"]) == str(EXECUTABLE_RULES[key]["category"])
+        and float(pattern["average_confidence"])
+        >= float(EXECUTABLE_RULES[key].get("minimum_average_confidence", 0.0))
     }
     eligible = [
         _trace(
@@ -88,6 +128,7 @@ def build_technique_policy(
             str(rule["executor"]),
             pattern_scope="stable",
             required_target_evidence=str(rule["required_target_evidence"]),
+            execution_mode=str(rule["execution_mode"]),
         )
         for key, rule in EXECUTABLE_RULES.items()
         if key in executable_patterns
@@ -114,6 +155,10 @@ def build_technique_policy(
     )
 
     humor_pattern = executable_patterns.get(HUMOR_AWKWARD_PROCESS)
+    opening_pattern = executable_patterns.get(OPENING_PHASED_HOOK)
+    travel_compression_pattern = executable_patterns.get(
+        TRAVEL_COMPRESSION_PREVIEW
+    )
     # Observation confidence describes evidence quality, not transfer strength.
     # Keep the allowlisted effect fixed and deliberately small.
     humor_multiplier = 1.1 if humor_pattern else 1.0
@@ -139,6 +184,51 @@ def build_technique_policy(
                 "average_confidence": (
                     float(humor_pattern["average_confidence"])
                     if humor_pattern
+                    else 0.0
+                ),
+            },
+            "opening_phased_hook": {
+                "active": opening_pattern is not None,
+                "technique_key": OPENING_PHASED_HOOK,
+                "category": "opening_montage",
+                "executor": EXECUTABLE_RULES[OPENING_PHASED_HOOK]["executor"],
+                "execution_mode": "automatic_candidate",
+                "minimum_phase_count": 3,
+                "maximum_phase_count": 5,
+                "minimum_shot_sec": 0.8,
+                "maximum_speech_ratio": 0.2,
+                "minimum_shot_score": 0.62,
+                "source_support": (
+                    int(opening_pattern["source_support"])
+                    if opening_pattern
+                    else 0
+                ),
+                "average_confidence": (
+                    float(opening_pattern["average_confidence"])
+                    if opening_pattern
+                    else 0.0
+                ),
+            },
+            "travel_compression_preview": {
+                "active": travel_compression_pattern is not None,
+                "technique_key": TRAVEL_COMPRESSION_PREVIEW,
+                "category": "playback_rate",
+                "executor": EXECUTABLE_RULES[TRAVEL_COMPRESSION_PREVIEW]["executor"],
+                "execution_mode": "preview_only",
+                "minimum_shot_sec": 8.0,
+                "maximum_speech_ratio": 0.1,
+                "minimum_motion": 0.085,
+                "allowed_roles": ["action", "transition"],
+                "playback_rate": None,
+                "requires_human_rate_selection": True,
+                "source_support": (
+                    int(travel_compression_pattern["source_support"])
+                    if travel_compression_pattern
+                    else 0
+                ),
+                "average_confidence": (
+                    float(travel_compression_pattern["average_confidence"])
+                    if travel_compression_pattern
                     else 0.0
                 ),
             },

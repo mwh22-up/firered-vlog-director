@@ -11,6 +11,8 @@
     "edit_plan",
     "approval",
     "realized_timeline",
+    "cut_qa",
+    "human_review",
     "base_media",
     "producer",
     "ffmpeg_identity"
@@ -22,6 +24,8 @@
     "project_id": { "type": "string", "minLength": 1 },
     "edit_plan": { "$ref": "#/$defs/binding" },
     "approval": { "$ref": "#/$defs/binding" },
+    "cut_qa": { "$ref": "#/$defs/binding" },
+    "human_review": { "$ref": "#/$defs/binding" },
     "realized_timeline": {
       "allOf": [
         { "$ref": "#/$defs/binding" },
