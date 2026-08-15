@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV13p421y7iv-v1",
+  "generated_at": "2026-08-15T08:00:00Z",
+  "source": {"source_id": "bilibili-BV13p421y7iv", "url": "https://www.bilibili.com/video/BV13p421y7iv/", "title": "妈妈：我一辈子都很辛苦，但从没委屈过…", "duration_sec": 669.4395},
+  "analysis_evidence": {
+    "proxy_dual_stream_full_decode_exit_code": 0,
+    "video_duration_sec": 669.4395,
+    "shot_count": 263,
+    "event_count": 8,
+    "audio_segment_count": 149,
+    "transcript_segment_count": 397,
+    "transcript_word_count": 2400,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_last_trusted_dialogue_end_sec": 664.79,
+    "asr_dialogue_coverage_ratio": 0.993055,
+    "asr_tail_gap_sec": 4.6495,
+    "event_review_contact_sheet_count": 8,
+    "manual_review_ranges": [[0.0, 173.4], [173.4, 348.8], [348.8, 524.8], [524.8, 669.4395]],
+    "manual_review_focus": ["opening-and-family-archive", "childhood-and-marriage-locations", "failed-revisit-and-route-adaptation", "flower-motif-gift-and-ending"],
+    "manual_effect_result": "未从人工画面证据确认 speed ramp、精确倍率、复杂转场机制、独立音效或逐拍剪切。"
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 61.7,
+    "phases": [
+      {"start_sec": 0.0, "end_sec": 14.0, "function": "用旧照片和一句‘成为妈妈前的她’建立私人问题，并给出重返十八岁的任务。"},
+      {"start_sec": 14.0, "end_sec": 40.0, "function": "以母亲爱花的日常照片和春天有限性建立贯穿物件与时间压力。"},
+      {"start_sec": 40.0, "end_sec": 61.7, "function": "说明旅行、特别礼物和健康背景，让后续行动具有现实动机。"}
+    ],
+    "metrics": {"opening_15_sec_shot_count": 9, "opening_15_sec_average_shot_sec": 1.702, "opening_event_count": 1},
+    "rule": "家庭人物片可用一个私密但普遍的问题开场，以可重复物件和当下行动承载情绪，不先给完整结论。"
+  },
+  "narrative_model": {
+    "premise": "儿子以母亲喜欢的花为记忆索引，陪她重访童年花房、与父亲初见的北海和养育孩子的胡同；当旧树、旧花与旧空间无法完整找回时，转而去昆明创造新的花与合影，最终把照片、地点、谈话和新体验解释为连接过去、现在与未来的方式。",
+    "beats": ["提出认识成为妈妈前的她", "中山公园花房连接外婆与童年", "北海连接恋爱和婚姻", "胡同与旧照片连接工作、学习和育儿", "旧地点关闭和花未开放造成计划落空", "由童年第一朵虞美人改线昆明", "母亲总结辛苦但未委屈", "照片礼物与记忆连接完成收束"],
+    "rule": "家庭回忆片以可触摸的地点、照片和物件逐段开启口述；当原记忆无法复现时，保留失败并创造新的共同经验，而非伪造怀旧画面。"
+  },
+  "scenic_model": {
+    "preferred_sequence": ["旧照片或口述提出地点", "母子步行进入现实空间", "花、建筑、胡同或旧物细节触发记忆", "保留母亲的即时讲述与儿子的追问", "用新合影或新地点形成当下回声"],
+    "observed_ranges": [[61.7, 233.8], [233.8, 459.1], [459.1, 594.3]],
+    "rule": "花景与城市景观必须服务人物记忆和关系推进；美景之后保留讲述、失败或新合影，避免把疾病与家庭经验包装成空泛治愈片。"
+  },
+  "music_model": {"music_likely_ratio": 0.0164, "evidence_status": "machine_audio_classification_only", "visual_candidates": ["旧照片开场", "公园与胡同重访", "昆明花海", "相册礼物和片尾"], "rule": "机器分类不支持曲名、BPM、ducking、逐拍剪切或情绪因果结论。"},
+  "subtitle_model": {
+    "base_style": "联系表可见底部居中浅色中文字幕配深色描边，旧照片、地点、花名、时间和品牌信息另有稀疏图形层。",
+    "emphasis_patterns": ["旧照片和家族关系用短说明定位", "地点、Day 1、电量与花语使用独立信息层", "片尾手写体标题和花朵图形回应主题"],
+    "rule": "家庭口述保持稳定对白层，地点、年份、疾病和产品信息分层处理；未执行 OCR，文字准确性仍需人工听校。"
+  },
+  "humor_model": {
+    "event_chain": ["先建立母子重访任务", "保留认路、旧照片、父母初见措辞和行程落空中的自然吐槽", "让母亲直接纠正或回应", "回到记忆与下一步行动"],
+    "observed_ranges": [[61.7, 233.8], [233.8, 459.1]],
+    "rule": "家庭笑点来自熟悉关系和措辞误会，只作为亲密感呼吸点；疾病、年龄和辛苦经历不得成为单向笑料。"
+  },
+  "technique_observations": [
+    {"observation_id": "obs-mother-opening-private-question", "technique_key": "opening-private-memory-before-place-thesis", "start_sec": 0.0, "end_sec": 61.7, "category": "opening_montage", "trigger": "观众只认识作为母亲的当下人物，不知道她此前的生命经验。", "treatment": "以旧照片提出‘成为妈妈前的她’这一问题，再用花、春天、旅行和特别礼物构成可执行任务。", "confidence": 0.98, "parameters": {"private_question_before_route": true}, "evidence": {"event_id": "event-001", "manual_contact_sheet": true}, "guardrails": ["健康信息必须获得当事人同意并保持原语境。", "开场不能用疾病制造与正文无关的悬念。"]},
+    {"observation_id": "obs-mother-flower-longitudinal-object", "technique_key": "narrative-object-builds-longitudinal-human-story", "start_sec": 0.0, "end_sec": 669.4395, "category": "narrative", "trigger": "几十年家庭经历缺少统一而具体的叙事线索。", "treatment": "让花从童年花房、恋爱地点、胡同梨花、儿子送的虞美人延伸到昆明新花海和相册礼物，串联人物身份变化。", "confidence": 0.99, "parameters": {"recurring_object": "flower", "life_stage_callbacks": true}, "evidence": {"events": ["event-001", "event-002", "event-004", "event-005", "event-006", "event-007", "event-008"], "manual_contact_sheets": true}, "guardrails": ["花语只能作为人物解释，不当作客观事实。", "物件回环不能替代当事人自己的声音。"]},
+    {"observation_id": "obs-mother-archive-location-dialogue", "technique_key": "narrative-private-memory-location-callback", "start_sec": 61.7, "end_sec": 459.1, "category": "narrative", "trigger": "旧照片缺少拍摄地点、人物关系和当时生活语境。", "treatment": "先展示照片，再由母子重返中山公园、北海和胡同，在现实空间中追问外婆、恋爱、工作与育儿经历。", "confidence": 0.98, "parameters": {"archive_before_revisit": true, "speaker_present": true}, "evidence": {"events": ["event-002", "event-003", "event-004", "event-005"], "full_transcript": true}, "guardrails": ["家庭照片、地址和第三方人物隐私需独立授权。", "回忆与历史事实要区分。"]},
+    {"observation_id": "obs-mother-physical-photo-time-series", "technique_key": "graphic-physical-archive-time-series", "start_sec": 0.0, "end_sec": 594.3, "category": "graphic", "trigger": "人物从女儿、妻子到母亲的时间跨度需要可见证据。", "treatment": "反复使用实体照片、相册、票据和手写拼贴，不只作装饰，而是在每个地点承接下一段口述与身份变化。", "confidence": 0.97, "parameters": {"physical_archive": true, "chronological_recurrence": true}, "evidence": {"events": ["event-001", "event-002", "event-003", "event-004", "event-005", "event-007"], "manual_contact_sheets": true}, "guardrails": ["不得伪造或错误标注照片年代。", "第三方肖像和家庭档案需处理授权。"]},
+    {"observation_id": "obs-mother-failed-revisit-new-memory", "technique_key": "narrative-failure-adaptation-payoff", "start_sec": 233.8, "end_sec": 524.8, "category": "narrative", "trigger": "寺院闭馆、梨花未开、旧树和旧花消失，使原定复刻无法完成。", "treatment": "保留落空与遗憾，明确从‘留住回忆’转向‘创造回忆’，再由儿子第一朵虞美人的线索改去昆明看花。", "confidence": 0.99, "parameters": {"failure_visible": true, "adaptation_changes_thesis": true}, "evidence": {"events": ["event-004", "event-005", "event-006"], "manual_contact_sheets": true}, "guardrails": ["不能用摆拍伪装原地点和旧物仍存在。", "旅行改线、健康和体力风险需真实说明。"]},
+    {"observation_id": "obs-mother-question-action-answer", "technique_key": "narrative-question-action-personal-answer", "start_sec": 0.0, "end_sec": 594.3, "category": "narrative", "trigger": "‘成为妈妈前的她’无法靠旁白替当事人回答。", "treatment": "让问题推动重访、看照片、散步和旅行，并以母亲‘很辛苦但没有委屈过’的原声作为个人答案。", "confidence": 0.99, "parameters": {"subject_answers_thesis": true}, "evidence": {"events": ["event-001", "event-002", "event-004", "event-007"], "full_transcript": true}, "guardrails": ["当事人的一句话不能概括所有母亲。", "不得通过删句改变其对辛苦和幸福的完整表达。"]},
+    {"observation_id": "obs-mother-sponsor-memory-proof", "technique_key": "narrative-practical-item-demonstration-with-memory-proof", "start_sec": 40.0, "end_sec": 669.4395, "category": "narrative", "trigger": "手机植入若脱离家庭任务，会破坏情绪可信度。", "treatment": "把续航、拍花、旧照片查看和新相册制作嵌入真实行程，使产品能力在记忆保存任务中被具体演示。", "confidence": 0.94, "parameters": {"product_function_tied_to_story_task": true}, "evidence": {"events": ["event-001", "event-002", "event-005", "event-006", "event-007", "event-008"], "manual_contact_sheets": true}, "guardrails": ["品牌关系和产品性能需明确披露与独立验证。", "不得让植入覆盖母亲的健康与家庭叙事。"]},
+    {"observation_id": "obs-mother-new-photo-payoff", "technique_key": "narrative-new-artifact-closes-memory-loop", "start_sec": 459.1, "end_sec": 669.4395, "category": "narrative", "trigger": "回看旧档案可能只停留在怀旧和失去。", "treatment": "在昆明共同拍摄新花与合影，再把新旧照片制作成实体礼物，使创造新连接成为可见结局。", "confidence": 0.98, "parameters": {"new_artifact_payoff": true}, "evidence": {"events": ["event-006", "event-007", "event-008"], "manual_contact_sheets": true}, "guardrails": ["礼物反应和家庭情绪不得通过虚假补拍制造。", "疾病相关结论不能由相册象征替代医学建议。"]},
+    {"observation_id": "obs-mother-dialogue-archive-context-layer", "technique_key": "subtitle-base-dialogue-with-sparse-context-layer", "start_sec": 0.0, "end_sec": 669.4395, "category": "subtitle", "trigger": "母子口述、旧照片、地点、花名、日期、产品状态和健康信息并存。", "treatment": "维持稳定底部对白字幕，仅在照片、地点、日期、花名、行程和产品状态需要时增加独立信息层。", "confidence": 0.92, "parameters": {"base_position": "bottom_center", "ocr_verified": false}, "evidence": {"manual_contact_sheet_count": 8}, "guardrails": ["医疗、地点、日期和花名仍需人工听校与事实核验。", "图形层不得遮挡旧照片人脸和手写内容。"]}
+  ],
+  "context_packet": {"packet_kind": "bounded_reference_context", "serialized_characters": 59408, "serialized_utf8_bytes": 65074, "maximum_characters": 180000, "character_comparison": "strictly_less_than", "final_responses_request": {"serialized_characters": 68990, "serialized_utf8_bytes": 74656, "maximum_utf8_bytes": 200000, "byte_comparison": "strictly_less_than", "body_sha256": "e8e5a9eeaaed35fee5e2817379de8da7022a3ae7dcc83a6e5b02b0d797d2c668", "contains_model": true, "contains_instructions": true, "contains_input": true, "contains_tools": true, "contains_text_json_schema": true, "validation_scope": "exact UTF-8 byte gate and minimum Responses structure; no external model call was made"}},
+  "limitations": ["参考成片只提供正向保留模式，不能推断作者真实删片偏好。", "人工画面未确认 speed ramp、精确倍率、复杂转场机制、独立音效或逐拍剪切。", "未执行 OCR，字幕、照片年代、地点、花名、产品和片尾文字仍需人工复核。", "音乐仅有机器分类，不声明曲名、BPM、ducking 或音乐因果。", "疾病、治疗、记忆机制、花语、家庭历史和产品性能需独立核验；本 Study 不构成医疗建议。", "家庭照片、住址、第三方肖像和健康信息需确认授权与隐私边界。"]
+}

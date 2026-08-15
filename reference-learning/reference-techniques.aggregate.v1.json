@@ -1,10 +1,11 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-247f04cacb53",
-  "generated_at": "2026-08-15T05:50:47.749776+00:00",
-  "source_count": 19,
+  "profile_id": "aggregated-reference-techniques-v1-08db551ff8b4",
+  "generated_at": "2026-08-15T06:03:23.469418+00:00",
+  "source_count": 20,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
+    "bilibili-BV13p421y7iv",
     "bilibili-BV146BFBzEfE",
     "bilibili-BV15XMC6KETm",
     "bilibili-BV19sm2BBEDd",
@@ -636,27 +637,35 @@
     {
       "technique_key": "graphic-physical-archive-time-series",
       "category": "graphic",
-      "source_support": 4,
+      "source_support": 5,
       "source_ids": [
+        "bilibili-BV13p421y7iv",
         "bilibili-BV146BFBzEfE",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.955,
+      "average_confidence": 0.958,
       "trigger_examples": [
+        "人物从女儿、妻子到母亲的时间跨度需要可见证据。",
         "应县木塔的百年损伤和大同煤炭时代转型都需要时间线证据。",
         "五年创作史需要比口头总结更具体的时间证据。",
         "共同记忆和街区变化需要比口述更具体的时间证据。",
         "西南联大的八年与其后文化影响需要可见的时间序列。"
       ],
       "treatment_examples": [
+        "反复使用实体照片、相册、票据和手写拼贴，不只作装饰，而是在每个地点承接下一段口述与身份变化。",
         "用木塔历史数字、梁思成测绘语境、矿井设备、墙面字迹、老矿工口述、矿区旧痕迹和城市航拍连接过去与现在。",
         "依次展示第一块鹿米仓牌、手绘牌、不断生长的照片墙和 2021 至 2025 年份画面，把版本变化与团队记忆排列成时间序列。",
         "让人物翻看实体相册并指认 2019、2021 等同地点照片，穿插当前街巷，形成过去与现在的可见对照。",
         "用迁徙地图、战时旧照、茅草与铁皮教室、人物资料、现址展陈和当代书店依次连接过去与现在。"
       ],
       "parameter_variants": [
+        {
+          "physical_archive": true,
+          "chronological_recurrence": true,
+          "source_id": "bilibili-BV13p421y7iv"
+        },
         {
           "archive_sequence": [
             "wood_pagoda_damage",
@@ -697,6 +706,14 @@
       ],
       "guardrail_variants": [
         {
+          "source_id": "bilibili-BV13p421y7iv",
+          "observation_id": "obs-mother-physical-photo-time-series",
+          "guardrails": [
+            "不得伪造或错误标注照片年代。",
+            "第三方肖像和家庭档案需处理授权。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV146BFBzEfE",
           "observation_id": "obs-datong-physical-archive-time-series",
           "guardrails": [
@@ -730,6 +747,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "start_sec": 0.0,
+          "end_sec": 594.3,
+          "observation_id": "obs-mother-physical-photo-time-series"
+        },
         {
           "source_id": "bilibili-BV146BFBzEfE",
           "start_sec": 961.7,
@@ -3035,9 +3058,10 @@
     {
       "technique_key": "narrative-failure-adaptation-payoff",
       "category": "narrative",
-      "source_support": 12,
+      "source_support": 13,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV13p421y7iv",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1C3546DEC6",
@@ -3050,9 +3074,10 @@
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1cuFezLEE2"
       ],
-      "average_confidence": 0.9633,
+      "average_confidence": 0.9654,
       "trigger_examples": [
         "对打碰撞导致出血，原计划的娱乐体验出现真实风险。",
+        "寺院闭馆、梨花未开、旧树和旧花消失，使原定复刻无法完成。",
         "纽约暴雨打断原定户外计划，但人物已经准备替代选项。",
         "最后一天坐错车、买错票并选择没有明确路标的路线，原定轻松徒步失去确定性。",
         "夜间目的地花期已过，原计划的视觉目标失败。",
@@ -3067,6 +3092,7 @@
       ],
       "treatment_examples": [
         "先保留意外、检查和教练解释，再把两小时训练上升为对职业拳手危险与辛苦的理解，最后完成第一项任务。",
+        "保留落空与遗憾，明确从‘留住回忆’转向‘创造回忆’，再由儿子第一朵虞美人的线索改去昆明看花。",
         "先展示雨势和备选博物馆，再通过双人玩笑引出此前没去过的《老友记》体验馆；保留临时决定、进入展馆和不知道门后内容的悬念，直到橘色沙发揭示。",
         "保留求助、地图、继续上山、缺水、语言尴尬、暴露山脊、摔倒、下雨和返程，把错误逐级升级，再以湖景、下山和晚间反思完成结果。",
         "保留夜路、失望、自嘲和重新查花期的过程，明确修改第二天路线，最终用盛花地点兑现回报。",
@@ -3085,6 +3111,11 @@
           "safety_check_visible": true,
           "reflection_before_completion": true,
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "failure_visible": true,
+          "adaptation_changes_thesis": true,
+          "source_id": "bilibili-BV13p421y7iv"
         },
         {
           "obstacle": "heavy_rain",
@@ -3199,6 +3230,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV13p421y7iv",
+          "observation_id": "obs-mother-failed-revisit-new-memory",
+          "guardrails": [
+            "不能用摆拍伪装原地点和旧物仍存在。",
+            "旅行改线、健康和体力风险需真实说明。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-newyork-rain-plan-adaptation",
           "guardrails": [
@@ -3292,6 +3331,12 @@
           "start_sec": 660.0,
           "end_sec": 783.92,
           "observation_id": "obs-bangkok-injury-reflection-payoff"
+        },
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "start_sec": 233.8,
+          "end_sec": 524.8,
+          "observation_id": "obs-mother-failed-revisit-new-memory"
         },
         {
           "source_id": "bilibili-BV15XMC6KETm",
@@ -3686,16 +3731,18 @@
     {
       "technique_key": "narrative-object-builds-longitudinal-human-story",
       "category": "narrative",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
+        "bilibili-BV13p421y7iv",
         "bilibili-BV146BFBzEfE",
         "bilibili-BV1JfxYzGE8t",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.966,
+      "average_confidence": 0.97,
       "trigger_examples": [
+        "几十年家庭经历缺少统一而具体的叙事线索。",
         "古建和佛像容易停留在观光距离，需要说明年轻人如何继续接触传统文化。",
         "One Piece 巡礼若只拍雕像，会缺少人物关系和粉丝情绪。",
         "工作室从 1.0 到 3.0 的变化需要一个可触摸的叙事锚点。",
@@ -3703,6 +3750,7 @@
         "城市松弛与温柔若只由主持人概括会缺少具体对象。"
       ],
       "treatment_examples": [
+        "让花从童年花房、恋爱地点、胡同梨花、儿子送的虞美人延伸到昆明新花海和相册礼物，串联人物身份变化。",
         "用佛小伴娃娃、合伙人回乡、华严寺和善华寺原型打卡，把传统造像转成当代文创和年轻人的古建巡礼方式。",
         "把隐藏行程、伴侣惊喜、角色雕像、角色关系吐槽、县政府和路线移动串起来，让雕像既是作品物件，也是给粉丝伴侣的情绪礼物。",
         "从五年前的第一块招牌进入手绘牌和照片墙，让主持人用这些持续保留的物件回望节目、团队与观众共同经历。",
@@ -3710,6 +3758,11 @@
         "让读者信、儿童手写诗和本土书籍成为叙事锚点，保留主持人逐页阅读、情绪变化和对母子关系的理解。"
       ],
       "parameter_variants": [
+        {
+          "recurring_object": "flower",
+          "life_stage_callbacks": true,
+          "source_id": "bilibili-BV13p421y7iv"
+        },
         {
           "anchor_object": "佛小伴文创",
           "origin_place_match": true,
@@ -3749,6 +3802,14 @@
         }
       ],
       "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "observation_id": "obs-mother-flower-longitudinal-object",
+          "guardrails": [
+            "花语只能作为人物解释，不当作客观事实。",
+            "物件回环不能替代当事人自己的声音。"
+          ]
+        },
         {
           "source_id": "bilibili-BV146BFBzEfE",
           "observation_id": "obs-datong-cultural-product-modernizes-heritage",
@@ -3791,6 +3852,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "start_sec": 0.0,
+          "end_sec": 669.4395,
+          "observation_id": "obs-mother-flower-longitudinal-object"
+        },
         {
           "source_id": "bilibili-BV146BFBzEfE",
           "start_sec": 719.2,
@@ -3977,6 +4044,72 @@
           "start_sec": 541.908,
           "end_sec": 870.67,
           "observation_id": "obs-naples-street-detail-city-system"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-practical-item-demonstration-with-memory-proof",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV13p421y7iv",
+        "bilibili-BV1TYVA6sEhm"
+      ],
+      "average_confidence": 0.95,
+      "trigger_examples": [
+        "手机植入若脱离家庭任务，会破坏情绪可信度。",
+        "头纱、一次性用品、三脚架、手表、扇子和手机的清单容易变成口播罗列。"
+      ],
+      "treatment_examples": [
+        "把续航、拍花、旧照片查看和新相册制作嵌入真实行程，使产品能力在记忆保存任务中被具体演示。",
+        "主持人在桌前直接演示形态、固定方式和失败模式，并插入挪威、意大利等旅行画面说明这些物品曾如何解决真实问题。"
+      ],
+      "parameter_variants": [
+        {
+          "product_function_tied_to_story_task": true,
+          "source_id": "bilibili-BV13p421y7iv"
+        },
+        {
+          "proof_types": [
+            "live_demo",
+            "failure_example",
+            "travel_memory",
+            "workflow_tip"
+          ],
+          "numbered_items": true,
+          "source_id": "bilibili-BV1TYVA6sEhm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "observation_id": "obs-mother-sponsor-memory-proof",
+          "guardrails": [
+            "品牌关系和产品性能需明确披露与独立验证。",
+            "不得让植入覆盖母亲的健康与家庭叙事。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "observation_id": "obs-travel-marriage-item-demonstration-memory-proof",
+          "guardrails": [
+            "卫生、皮肤和设备建议不替代专业医疗或安全意见。",
+            "品牌与型号只在有明确画面和口播时记录。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "start_sec": 40.0,
+          "end_sec": 669.4395,
+          "observation_id": "obs-mother-sponsor-memory-proof"
+        },
+        {
+          "source_id": "bilibili-BV1TYVA6sEhm",
+          "start_sec": 555.989,
+          "end_sec": 892.792,
+          "observation_id": "obs-travel-marriage-item-demonstration-memory-proof"
         }
       ]
     },
@@ -4257,21 +4390,29 @@
     {
       "technique_key": "narrative-private-memory-location-callback",
       "category": "narrative",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
+        "bilibili-BV13p421y7iv",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1LS3r6gE7k"
       ],
       "average_confidence": 0.98,
       "trigger_examples": [
+        "旧照片缺少拍摄地点、人物关系和当时生活语境。",
         "开场提到的第一部共同电影需要在纽约行程中获得具体地点和时间回报。",
         "个人剪辑室的窗景需要从装饰信息变成选址理由。"
       ],
       "treatment_examples": [
+        "先展示照片，再由母子重返中山公园、北海和胡同，在现实空间中追问外婆、恋爱、工作与育儿经历。",
         "在《Begin Again》相关取景地重新讲述七年前约会和看片细节，穿插电影中船上录歌的画面，再以‘第七年做到电影里的情景’完成关系回环。",
         "先让人物坐到桌前看见大树，再回忆第一次傍晚看房时树影洒在墙上的安静感，解释为什么租下这个空间。"
       ],
       "parameter_variants": [
+        {
+          "archive_before_revisit": true,
+          "speaker_present": true,
+          "source_id": "bilibili-BV13p421y7iv"
+        },
         {
           "callback_to_opening": true,
           "elapsed_relationship_years": 7,
@@ -4286,6 +4427,14 @@
         }
       ],
       "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "observation_id": "obs-mother-archive-location-dialogue",
+          "guardrails": [
+            "家庭照片、地址和第三方人物隐私需独立授权。",
+            "回忆与历史事实要区分。"
+          ]
+        },
         {
           "source_id": "bilibili-BV15XMC6KETm",
           "observation_id": "obs-begin-again-memory-callback",
@@ -4304,6 +4453,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "start_sec": 61.7,
+          "end_sec": 459.1,
+          "observation_id": "obs-mother-archive-location-dialogue"
+        },
         {
           "source_id": "bilibili-BV15XMC6KETm",
           "start_sec": 1296.8,
@@ -5546,6 +5701,68 @@
       ]
     },
     {
+      "technique_key": "opening-private-memory-before-place-thesis",
+      "category": "opening_montage",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV13p421y7iv",
+        "bilibili-BV15XMC6KETm"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "观众只认识作为母亲的当下人物，不知道她此前的生命经验。",
+        "纽约和世界杯题材尺度很大，需要先让双人关系成为观众的情感入口。"
+      ],
+      "treatment_examples": [
+        "以旧照片提出‘成为妈妈前的她’这一问题，再用花、春天、旅行和特别礼物构成可执行任务。",
+        "先保留两人在中央公园谈七年前第一次共同看电影的完整片段，再由‘纽约和纽约以外’转入城市命题。"
+      ],
+      "parameter_variants": [
+        {
+          "private_question_before_route": true,
+          "source_id": "bilibili-BV13p421y7iv"
+        },
+        {
+          "relationship_memory": "first_shared_movie",
+          "city_thesis_follows": true,
+          "reviewed_shots": 7,
+          "source_id": "bilibili-BV15XMC6KETm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "observation_id": "obs-mother-opening-private-question",
+          "guardrails": [
+            "健康信息必须获得当事人同意并保持原语境。",
+            "开场不能用疾病制造与正文无关的悬念。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-newyork-opening-private-memory-anchor",
+          "guardrails": [
+            "私人记忆必须在后文获得真实回扣。",
+            "不要为了快节奏剪碎完整关系语义。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "start_sec": 0.0,
+          "end_sec": 61.7,
+          "observation_id": "obs-mother-opening-private-question"
+        },
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 0,
+          "end_sec": 22.06,
+          "observation_id": "obs-newyork-opening-private-memory-anchor"
+        }
+      ]
+    },
+    {
       "technique_key": "playback-rate-fast-forward-travel-compression-visual-estimate",
       "category": "playback_rate",
       "source_support": 3,
@@ -6148,24 +6365,32 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-context-layer",
       "category": "subtitle",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
+        "bilibili-BV13p421y7iv",
         "bilibili-BV1AYwQzzEbV",
         "bilibili-BV1PbebzdEWm",
         "bilibili-BV1cuFezLEE2"
       ],
-      "average_confidence": 0.9233,
+      "average_confidence": 0.9225,
       "trigger_examples": [
+        "母子口述、旧照片、地点、花名、日期、产品状态和健康信息并存。",
         "全片同时有中文口播、英文现场交流、地点名和资料性解释。",
         "主持对谈、电影对白、作品名、年代和引用来源同时出现。",
         "全片包含普通话、方言、朝鲜语、食物名、历史资料和户外知识。"
       ],
       "treatment_examples": [
+        "维持稳定底部对白字幕，仅在照片、地点、日期、花名、行程和产品状态需要时增加独立信息层。",
         "保持稳定底部对白字幕，只在议题、地点、历史资料和器材说明使用稀疏独立层。",
         "保持稳定底部对白字幕，将作品、年份、引用来源和章节导航放入独立且稀疏的信息层。",
         "保持稳定底部对白字幕，只在地点、章节、食物、历史和安全警示使用稀疏独立层。"
       ],
       "parameter_variants": [
+        {
+          "base_position": "bottom_center",
+          "ocr_verified": false,
+          "source_id": "bilibili-BV13p421y7iv"
+        },
         {
           "base_position": "bottom_center",
           "ocr_verified": false,
@@ -6183,6 +6408,14 @@
         }
       ],
       "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "observation_id": "obs-mother-dialogue-archive-context-layer",
+          "guardrails": [
+            "医疗、地点、日期和花名仍需人工听校与事实核验。",
+            "图形层不得遮挡旧照片人脸和手写内容。"
+          ]
+        },
         {
           "source_id": "bilibili-BV1AYwQzzEbV",
           "observation_id": "obs-texas-dialogue-base-sparse-context-layer",
@@ -6209,6 +6442,12 @@
         }
       ],
       "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "start_sec": 0.0,
+          "end_sec": 669.4395,
+          "observation_id": "obs-mother-dialogue-archive-context-layer"
+        },
         {
           "source_id": "bilibili-BV1AYwQzzEbV",
           "start_sec": 0.0,
@@ -8780,6 +9019,45 @@
       ]
     },
     {
+      "technique_key": "narrative-new-artifact-closes-memory-loop",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV13p421y7iv"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "回看旧档案可能只停留在怀旧和失去。"
+      ],
+      "treatment_examples": [
+        "在昆明共同拍摄新花与合影，再把新旧照片制作成实体礼物，使创造新连接成为可见结局。"
+      ],
+      "parameter_variants": [
+        {
+          "new_artifact_payoff": true,
+          "source_id": "bilibili-BV13p421y7iv"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "observation_id": "obs-mother-new-photo-payoff",
+          "guardrails": [
+            "礼物反应和家庭情绪不得通过虚假补拍制造。",
+            "疾病相关结论不能由相册象征替代医学建议。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "start_sec": 459.1,
+          "end_sec": 669.4395,
+          "observation_id": "obs-mother-new-photo-payoff"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-objection-acknowledge-cost-solution",
       "category": "narrative",
       "source_support": 1,
@@ -8955,51 +9233,6 @@
       ]
     },
     {
-      "technique_key": "narrative-practical-item-demonstration-with-memory-proof",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1TYVA6sEhm"
-      ],
-      "average_confidence": 0.96,
-      "trigger_examples": [
-        "头纱、一次性用品、三脚架、手表、扇子和手机的清单容易变成口播罗列。"
-      ],
-      "treatment_examples": [
-        "主持人在桌前直接演示形态、固定方式和失败模式，并插入挪威、意大利等旅行画面说明这些物品曾如何解决真实问题。"
-      ],
-      "parameter_variants": [
-        {
-          "proof_types": [
-            "live_demo",
-            "failure_example",
-            "travel_memory",
-            "workflow_tip"
-          ],
-          "numbered_items": true,
-          "source_id": "bilibili-BV1TYVA6sEhm"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1TYVA6sEhm",
-          "observation_id": "obs-travel-marriage-item-demonstration-memory-proof",
-          "guardrails": [
-            "卫生、皮肤和设备建议不替代专业医疗或安全意见。",
-            "品牌与型号只在有明确画面和口播时记录。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1TYVA6sEhm",
-          "start_sec": 555.989,
-          "end_sec": 892.792,
-          "observation_id": "obs-travel-marriage-item-demonstration-memory-proof"
-        }
-      ]
-    },
-    {
       "technique_key": "narrative-public-archive-to-personal-home-thesis",
       "category": "narrative",
       "source_support": 1,
@@ -9035,6 +9268,45 @@
           "start_sec": 1191.624,
           "end_sec": 1693.625,
           "observation_id": "obs-beijing-city-archive-to-home-thesis"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-question-action-personal-answer",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV13p421y7iv"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "‘成为妈妈前的她’无法靠旁白替当事人回答。"
+      ],
+      "treatment_examples": [
+        "让问题推动重访、看照片、散步和旅行，并以母亲‘很辛苦但没有委屈过’的原声作为个人答案。"
+      ],
+      "parameter_variants": [
+        {
+          "subject_answers_thesis": true,
+          "source_id": "bilibili-BV13p421y7iv"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "observation_id": "obs-mother-question-action-answer",
+          "guardrails": [
+            "当事人的一句话不能概括所有母亲。",
+            "不得通过删句改变其对辛苦和幸福的完整表达。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV13p421y7iv",
+          "start_sec": 0.0,
+          "end_sec": 594.3,
+          "observation_id": "obs-mother-question-action-answer"
         }
       ]
     },
@@ -9459,47 +9731,6 @@
           "start_sec": 0.0,
           "end_sec": 34.0,
           "observation_id": "obs-lumi-cost-question-roomtour-hook"
-        }
-      ]
-    },
-    {
-      "technique_key": "opening-private-memory-before-place-thesis",
-      "category": "opening_montage",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV15XMC6KETm"
-      ],
-      "average_confidence": 0.98,
-      "trigger_examples": [
-        "纽约和世界杯题材尺度很大，需要先让双人关系成为观众的情感入口。"
-      ],
-      "treatment_examples": [
-        "先保留两人在中央公园谈七年前第一次共同看电影的完整片段，再由‘纽约和纽约以外’转入城市命题。"
-      ],
-      "parameter_variants": [
-        {
-          "relationship_memory": "first_shared_movie",
-          "city_thesis_follows": true,
-          "reviewed_shots": 7,
-          "source_id": "bilibili-BV15XMC6KETm"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "observation_id": "obs-newyork-opening-private-memory-anchor",
-          "guardrails": [
-            "私人记忆必须在后文获得真实回扣。",
-            "不要为了快节奏剪碎完整关系语义。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "start_sec": 0,
-          "end_sec": 22.06,
-          "observation_id": "obs-newyork-opening-private-memory-anchor"
         }
       ]
     },
@@ -10060,6 +10291,33 @@
       },
       "rule": "高概念体验片先给人物和风险预告，再把地点主题压缩成有限任务清单，并公开结算奖励；快速镜头只负责建立承诺，正文必须逐项兑现。",
       "source_id": "bilibili-BV11Ao7BYEyv"
+    },
+    {
+      "total_reviewed_sec": 61.7,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 14.0,
+          "function": "用旧照片和一句‘成为妈妈前的她’建立私人问题，并给出重返十八岁的任务。"
+        },
+        {
+          "start_sec": 14.0,
+          "end_sec": 40.0,
+          "function": "以母亲爱花的日常照片和春天有限性建立贯穿物件与时间压力。"
+        },
+        {
+          "start_sec": 40.0,
+          "end_sec": 61.7,
+          "function": "说明旅行、特别礼物和健康背景，让后续行动具有现实动机。"
+        }
+      ],
+      "metrics": {
+        "opening_15_sec_shot_count": 9,
+        "opening_15_sec_average_shot_sec": 1.702,
+        "opening_event_count": 1
+      },
+      "rule": "家庭人物片可用一个私密但普遍的问题开场，以可重复物件和当下行动承载情绪，不先给完整结论。",
+      "source_id": "bilibili-BV13p421y7iv"
     },
     {
       "total_reviewed_sec": 120.0,
