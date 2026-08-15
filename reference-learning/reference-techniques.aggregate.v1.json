@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-7e1f393e9b6c",
-  "generated_at": "2026-08-15T07:01:18.052218+00:00",
-  "source_count": 24,
+  "profile_id": "aggregated-reference-techniques-v1-34c2945d9e0a",
+  "generated_at": "2026-08-15T07:18:54.845038+00:00",
+  "source_count": 25,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
     "bilibili-BV13p421y7iv",
@@ -19,6 +19,7 @@
     "bilibili-BV1MgywB8E9m",
     "bilibili-BV1Mi536EELv",
     "bilibili-BV1PbebzdEWm",
+    "bilibili-BV1Sv421k7pS",
     "bilibili-BV1TNZUB4EF6",
     "bilibili-BV1TYVA6sEhm",
     "bilibili-BV1UtsEzVEwF",
@@ -1306,7 +1307,7 @@
     {
       "technique_key": "humor-preserve-real-awkward-process",
       "category": "humor",
-      "source_support": 18,
+      "source_support": 19,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV146BFBzEfE",
@@ -1319,6 +1320,7 @@
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1MgywB8E9m",
         "bilibili-BV1Mi536EELv",
+        "bilibili-BV1Sv421k7pS",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9",
@@ -1327,7 +1329,7 @@
         "bilibili-BV1uC411E7jU",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.965,
+      "average_confidence": 0.9653,
       "trigger_examples": [
         "普通成年人跟不上专业泰拳训练，真实落差比预制笑话更有可信度。",
         "知识密集地方片需要真实关系反应释放节奏，但不能伤害地方人物和文物语境。",
@@ -1340,6 +1342,7 @@
         "空间导览连续解释容易单调，真实同事和伴侣互动提供人物节奏。",
         "技术史和老城文化内容偏知识密集，需要真实关系反应释放节奏。",
         "老钱造型和寻找卡布里蓝的任务容易显得刻意，需要用现场不顺和互相吐槽恢复真实感。",
+        "固定四人对谈的有效信息不仅在当前发言者，也在其他人的表情、抢话和停顿。",
         "独自旅行请路人拍照时同时要交接手机和保管购物袋，产生真实递物误会。",
         "旅行结婚的相处建议如果只给结论，会缺少冲突为何发生和如何修复的可信度。",
         "主持人要复刻机车短视频动作，但对手势、腿部和转身顺序不熟。",
@@ -1360,6 +1363,7 @@
         "保留员工羞于承认爱好、猫等待流水、烧烤拍摄吐槽、垃圾桶猜价、秘密基地饮料被喝和直男房间争论的完整问答与反应。",
         "保留遇见 YouTuber、金色相机惊讶、关门后被当地人追上提醒、铜猴摸财运、爬山腿够不到地、戒指丢了等完整来回，让笑点从现场过程产生。",
         "保留两人换装、互评、找蓝过度投入、警察局蓝色和天气焦虑的完整来回，让笑点落在任务与现实的错位上，再返回寻找进度。",
+        "以稳定四人宽景保留提问、犹豫、抢答、解释和同伴反应的连续过程，少量切换只用于章节或游戏状态变化。",
         "保留提出拍照请求、示范构图、交接手机、误把包递给另一人、人物意识到错误和致谢的完整过程，再进入游船集合。",
         "保留攻略分工、出门前如厕、睡眠与水肿、拍照角度、夸奖敷衍和发音纠正的完整来回，让尴尬过程自然落到状态管理、允许变数和包容错误。",
         "保留嘉宾逐步示范、人物夹腿转身、手势像鸡爪的纠正、互相扶持和重新尝试，再展示夜间移动结果。",
@@ -1438,6 +1442,11 @@
           "both_hosts_retain_agency": true,
           "single_graphic_accents": true,
           "source_id": "bilibili-BV1Mi536EELv"
+        },
+        {
+          "dominant_composition": "four_person_wide",
+          "reaction_continuity": true,
+          "source_id": "bilibili-BV1Sv421k7pS"
         },
         {
           "resolution_retained": true,
@@ -1568,6 +1577,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "observation_id": "obs-couple-talk-wide-shot-natural-reactions",
+          "guardrails": [
+            "不能用错序反应制造冲突。",
+            "涉及隐私和关系边界的内容需当事人授权。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "observation_id": "obs-stranger-photo-bag-mixup",
           "guardrails": [
@@ -1690,6 +1707,12 @@
           "start_sec": 870.67,
           "end_sec": 1132.498,
           "observation_id": "obs-capri-blue-search-awkward-humor"
+        },
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "start_sec": 0.0,
+          "end_sec": 1370.666,
+          "observation_id": "obs-couple-talk-wide-shot-natural-reactions"
         },
         {
           "source_id": "bilibili-BV1TNZUB4EF6",
@@ -6955,21 +6978,23 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-context-layer",
       "category": "subtitle",
-      "source_support": 7,
+      "source_support": 8,
       "source_ids": [
         "bilibili-BV13p421y7iv",
         "bilibili-BV1AYwQzzEbV",
         "bilibili-BV1PbebzdEWm",
+        "bilibili-BV1Sv421k7pS",
         "bilibili-BV1UtsEzVEwF",
         "bilibili-BV1cuFezLEE2",
         "bilibili-BV1uC411E7jU",
         "bilibili-BV1zYSvBHE3U"
       ],
-      "average_confidence": 0.9214,
+      "average_confidence": 0.9238,
       "trigger_examples": [
         "母子口述、旧照片、地点、花名、日期、产品状态和健康信息并存。",
         "全片同时有中文口播、英文现场交流、地点名和资料性解释。",
         "主持对谈、电影对白、作品名、年代和引用来源同时出现。",
+        "固定机位长对谈需要持续可读对白，同时让观众知道当前问题和游戏状态。",
         "中英文地点、人名、历史、菜名、动物、感官章节和照片编号密集。",
         "全片包含普通话、方言、朝鲜语、食物名、历史资料和户外知识。",
         "价格、币种、Day、天气、项目、地点和动物名密集。",
@@ -6979,6 +7004,7 @@
         "维持稳定底部对白字幕，仅在照片、地点、日期、花名、行程和产品状态需要时增加独立信息层。",
         "保持稳定底部对白字幕，只在议题、地点、历史资料和器材说明使用稀疏独立层。",
         "保持稳定底部对白字幕，将作品、年份、引用来源和章节导航放入独立且稀疏的信息层。",
+        "保持底部对白字幕稳定，仅在问题切换、游戏题目和答案揭晓时增加稀疏标题或标签。",
         "保持稳定底部对白字幕，将地点、章节、历史来源、人物、菜名、物种和照片编号放入独立稀疏层。",
         "保持稳定底部对白字幕，只在地点、章节、食物、历史和安全警示使用稀疏独立层。",
         "维持底部对白层，将价格换算、Day、天气、地点、项目编号和动物知识放入独立稀疏层。",
@@ -6999,6 +7025,11 @@
           "base_position": "bottom_center",
           "ocr_verified": false,
           "source_id": "bilibili-BV1PbebzdEWm"
+        },
+        {
+          "base_layer": "bottom_dialogue",
+          "context_layer": "sparse_question_and_answer_labels",
+          "source_id": "bilibili-BV1Sv421k7pS"
         },
         {
           "base_position": "bottom_center",
@@ -7044,6 +7075,14 @@
           "guardrails": [
             "字幕、作品名、年代和出处仍需人工听校与事实核验。",
             "资料层不得遮挡原片关键字幕或人物表情。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "observation_id": "obs-couple-talk-subtitle-question-layer",
+          "guardrails": [
+            "未执行 OCR，正文和说话人仍需人工听校。",
+            "标题层不得遮挡面部、手势或底部对白字幕。"
           ]
         },
         {
@@ -7097,6 +7136,12 @@
           "start_sec": 0.0,
           "end_sec": 1739.882333,
           "observation_id": "obs-beijing-dialogue-reference-layers"
+        },
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "start_sec": 0.0,
+          "end_sec": 1370.666,
+          "observation_id": "obs-couple-talk-subtitle-question-layer"
         },
         {
           "source_id": "bilibili-BV1UtsEzVEwF",
@@ -8364,6 +8409,45 @@
           "start_sec": 6970,
           "end_sec": 6985,
           "observation_id": "obs-scenic-pose-interrupted"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-midpoint-couple-game-releases-discussion-density",
+      "category": "humor",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Sv421k7pS"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "前半持续问答累积较高语言密度，需要改变互动规则而不离开关系主题。"
+      ],
+      "treatment_examples": [
+        "在中段插入情侣默契猜词游戏，完整保留出题、猜测、偏差、揭晓和反应，再回到未来与共同生活议题。"
+      ],
+      "parameter_variants": [
+        {
+          "midpoint_mode_change": "couple_guessing_game",
+          "source_id": "bilibili-BV1Sv421k7pS"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "observation_id": "obs-couple-talk-midpoint-game-release",
+          "guardrails": [
+            "游戏答案不能通过错序或删改伪造。",
+            "不以羞辱猜错方作为唯一笑点。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "start_sec": 608.609,
+          "end_sec": 960.828,
+          "observation_id": "obs-couple-talk-midpoint-game-release"
         }
       ]
     },
@@ -9812,6 +9896,45 @@
       ]
     },
     {
+      "technique_key": "narrative-long-relationship-repeated-rediscovery",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Sv421k7pS"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "长关系讨论若只给维持技巧，会忽略人物变化和关系不确定性。"
+      ],
+      "treatment_examples": [
+        "从共同成长、倦怠与未来节点推进到‘反复重新认识和爱上’，最后保留‘冷暖自知、自己开心就好’的个人边界收束。"
+      ],
+      "parameter_variants": [
+        {
+          "close_with_personal_boundary": true,
+          "source_id": "bilibili-BV1Sv421k7pS"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "observation_id": "obs-couple-talk-rediscovery-close",
+          "guardrails": [
+            "不得把收束句解释为专业关系建议。",
+            "不得删掉对不同关系选择的尊重。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "start_sec": 1193.293,
+          "end_sec": 1370.666,
+          "observation_id": "obs-couple-talk-rediscovery-close"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-new-artifact-closes-memory-loop",
       "category": "narrative",
       "source_support": 1,
@@ -10222,6 +10345,45 @@
       ]
     },
     {
+      "technique_key": "narrative-question-ladder-from-light-to-deep",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Sv421k7pS"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "连续关系讨论容易因一开始过重或长期停留在同一情绪而疲劳。"
+      ],
+      "treatment_examples": [
+        "从初见、外貌和公开关系等低压力问题，逐步推进到手机、前任、争吵及爱与被爱，每次先保留具体故事再进入观点。"
+      ],
+      "parameter_variants": [
+        {
+          "question_weight": "light_to_deep",
+          "source_id": "bilibili-BV1Sv421k7pS"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "observation_id": "obs-couple-talk-light-to-deep-question-ladder",
+          "guardrails": [
+            "问题顺序不得歪曲实际回答语境。",
+            "敏感问题不应以逼问方式制造戏剧性。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "start_sec": 0.0,
+          "end_sec": 718.719,
+          "observation_id": "obs-couple-talk-light-to-deep-question-ladder"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-risk-explanation-before-tasting",
       "category": "narrative",
       "source_support": 1,
@@ -10522,6 +10684,45 @@
       ]
     },
     {
+      "technique_key": "narrative-shared-task-reveals-relationship-process",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Sv421k7pS"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "‘是否适合长期相处’需要能够显露分工、压力和修复方式的共同任务。"
+      ],
+      "treatment_examples": [
+        "用长途旅行和共同生活案例串联经济、家务、工作分配与冲突修复，保留过程和双方解释。"
+      ],
+      "parameter_variants": [
+        {
+          "shared_task": "long_trip_and_daily_life",
+          "source_id": "bilibili-BV1Sv421k7pS"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "observation_id": "obs-couple-talk-travel-pressure-test",
+          "guardrails": [
+            "旅行只是片中人物的个人经验，不能声明为普遍关系测试。",
+            "安全、财务和关系建议需另行核验。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "start_sec": 960.828,
+          "end_sec": 1193.293,
+          "observation_id": "obs-couple-talk-travel-pressure-test"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-shared-work-meal-validates-community",
       "category": "narrative",
       "source_support": 1,
@@ -10635,6 +10836,85 @@
           "start_sec": 627.193,
           "end_sec": 889.155,
           "observation_id": "obs-beijing-song-detail-to-emotional-argument"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-specific-example-before-relationship-advice",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Sv421k7pS"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "抽象关系建议缺少可理解的情境和证据。"
+      ],
+      "treatment_examples": [
+        "先保留初见、争吵、旅行、经济、家务或工作分配的具体经历，再允许人物总结自己的做法和变化。"
+      ],
+      "parameter_variants": [
+        {
+          "example_before_summary": true,
+          "source_id": "bilibili-BV1Sv421k7pS"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "observation_id": "obs-couple-talk-specific-before-advice",
+          "guardrails": [
+            "具体案例仍是个人经验，不能泛化。",
+            "涉及财务、家庭和工作信息时需保护隐私。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "start_sec": 182.249,
+          "end_sec": 1309.576,
+          "observation_id": "obs-couple-talk-specific-before-advice"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-two-couple-contrast-prevents-single-answer",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Sv421k7pS"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "单一情侣的关系经验容易被误解为普遍答案。"
+      ],
+      "treatment_examples": [
+        "让新情侣和已婚或长期情侣分别回答同一问题，保留相同点、分歧和互相追问，再由主持人明确个人经验边界。"
+      ],
+      "parameter_variants": [
+        {
+          "perspective_count": 2,
+          "preserve_disagreement": true,
+          "source_id": "bilibili-BV1Sv421k7pS"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "observation_id": "obs-couple-talk-two-pair-contrast",
+          "guardrails": [
+            "不得把任何一对的答案包装成关系规范。",
+            "剪辑不得隐藏关键限定条件。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Sv421k7pS",
+          "start_sec": 71.471,
+          "end_sec": 1309.576,
+          "observation_id": "obs-couple-talk-two-pair-contrast"
         }
       ]
     },
@@ -11630,6 +11910,33 @@
       },
       "rule": "文化视频论文可先用人物扮演制造可亲入口，再用真实地点和明确时间轴给出论题；不需要把开场统一剪成高速蒙太奇。",
       "source_id": "bilibili-BV1PbebzdEWm"
+    },
+    {
+      "total_reviewed_sec": 71.471,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 19.0,
+          "function": "固定四人宽景先交代春节轻松聊天和两对情侣的关系阶段差异。"
+        },
+        {
+          "start_sec": 19.0,
+          "end_sec": 45.0,
+          "function": "由新情侣明确向已婚或长期情侣提问，把闲聊转为经验对照。"
+        },
+        {
+          "start_sec": 45.0,
+          "end_sec": 71.471,
+          "function": "从初见与外貌等轻问题进入第一轮具体案例，让人物反应而非剪辑花活承担吸引力。"
+        }
+      ],
+      "metrics": {
+        "opening_15_sec_shot_count": 4,
+        "opening_15_sec_average_shot_sec": 4.112,
+        "opening_event_count": 1
+      },
+      "rule": "多人谈话开场先交代参与者关系与提问方向，再从低压力、可讲具体故事的问题进入，避免直接用抽象价值判断压住人物。",
+      "source_id": "bilibili-BV1Sv421k7pS"
     },
     {
       "total_reviewed_sec": 120,

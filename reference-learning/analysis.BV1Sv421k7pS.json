@@ -1,0 +1,5760 @@
+{
+  "schema_version": "1.0",
+  "source": {
+    "source_id": "bilibili-BV1Sv421k7pS",
+    "url": "https://www.bilibili.com/video/BV1Sv421k7pS/"
+  },
+  "generated_at": "2026-08-15T07:15:32.285619+00:00",
+  "configuration": {
+    "scene_threshold": 0.22,
+    "visual_fps": 2.0,
+    "audio_window_sec": 0.5,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "language": "zh"
+  },
+  "media": {
+    "duration_sec": 1370.67,
+    "size_bytes": 31604121,
+    "streams": [
+      {
+        "index": 0,
+        "codec_type": "video",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "index": 1,
+        "codec_type": "audio"
+      }
+    ],
+    "shot_count": 116,
+    "median_shot_duration_sec": 7.591,
+    "p75_shot_duration_sec": 13.414,
+    "shots_under_1_sec": 2,
+    "shots_over_5_sec": 85,
+    "silent_ratio": 0.0062,
+    "audio_kind_ratios": {
+      "ambient_likely": 0.1083,
+      "music_likely": 0.0259,
+      "silence": 0.0047,
+      "speech": 0.8613
+    },
+    "opening_15_sec": {
+      "shot_count": 4,
+      "average_shot_duration_sec": 4.112
+    }
+  },
+  "transcription": {
+    "status": "ready",
+    "provider": "faster-whisper",
+    "model": "small",
+    "language": "zh",
+    "language_probability": 1.0,
+    "duration_sec": 1370.667,
+    "segment_count": 987,
+    "word_count": 4424,
+    "segments": [],
+    "words": [],
+    "portable_redaction": "完整逐字稿仅保存在本地分析目录。"
+  },
+  "audio_segments": [
+    {
+      "start_sec": 0.0,
+      "end_sec": 42.0,
+      "kind": "speech",
+      "average_rms": 0.13343,
+      "peak": 0.952698
+    },
+    {
+      "start_sec": 42.0,
+      "end_sec": 43.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.130229,
+      "peak": 0.832397
+    },
+    {
+      "start_sec": 43.5,
+      "end_sec": 58.0,
+      "kind": "speech",
+      "average_rms": 0.120583,
+      "peak": 0.877747
+    },
+    {
+      "start_sec": 58.0,
+      "end_sec": 58.5,
+      "kind": "music_likely",
+      "average_rms": 0.13035,
+      "peak": 0.579102
+    },
+    {
+      "start_sec": 58.5,
+      "end_sec": 70.0,
+      "kind": "speech",
+      "average_rms": 0.08089,
+      "peak": 0.760315
+    },
+    {
+      "start_sec": 70.0,
+      "end_sec": 71.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.090313,
+      "peak": 0.683411
+    },
+    {
+      "start_sec": 71.0,
+      "end_sec": 78.5,
+      "kind": "speech",
+      "average_rms": 0.113766,
+      "peak": 0.768372
+    },
+    {
+      "start_sec": 78.5,
+      "end_sec": 79.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.14726,
+      "peak": 0.663452
+    },
+    {
+      "start_sec": 79.0,
+      "end_sec": 85.5,
+      "kind": "speech",
+      "average_rms": 0.116096,
+      "peak": 0.843384
+    },
+    {
+      "start_sec": 85.5,
+      "end_sec": 86.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.027367,
+      "peak": 0.141724
+    },
+    {
+      "start_sec": 86.5,
+      "end_sec": 92.0,
+      "kind": "speech",
+      "average_rms": 0.10104,
+      "peak": 0.763
+    },
+    {
+      "start_sec": 92.0,
+      "end_sec": 92.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.01604,
+      "peak": 0.105835
+    },
+    {
+      "start_sec": 92.5,
+      "end_sec": 103.0,
+      "kind": "speech",
+      "average_rms": 0.128033,
+      "peak": 0.960724
+    },
+    {
+      "start_sec": 103.0,
+      "end_sec": 103.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.025559,
+      "peak": 0.098999
+    },
+    {
+      "start_sec": 103.5,
+      "end_sec": 111.5,
+      "kind": "speech",
+      "average_rms": 0.155454,
+      "peak": 0.999969
+    },
+    {
+      "start_sec": 111.5,
+      "end_sec": 112.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.02802,
+      "peak": 0.117249
+    },
+    {
+      "start_sec": 112.0,
+      "end_sec": 113.5,
+      "kind": "speech",
+      "average_rms": 0.162942,
+      "peak": 0.925537
+    },
+    {
+      "start_sec": 113.5,
+      "end_sec": 114.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.099298,
+      "peak": 0.842041
+    },
+    {
+      "start_sec": 114.0,
+      "end_sec": 137.0,
+      "kind": "speech",
+      "average_rms": 0.138599,
+      "peak": 0.923248
+    },
+    {
+      "start_sec": 137.0,
+      "end_sec": 137.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.03736,
+      "peak": 0.12677
+    },
+    {
+      "start_sec": 137.5,
+      "end_sec": 141.5,
+      "kind": "speech",
+      "average_rms": 0.154243,
+      "peak": 0.900269
+    },
+    {
+      "start_sec": 141.5,
+      "end_sec": 142.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.068891,
+      "peak": 0.309296
+    },
+    {
+      "start_sec": 142.0,
+      "end_sec": 144.0,
+      "kind": "speech",
+      "average_rms": 0.113654,
+      "peak": 0.685028
+    },
+    {
+      "start_sec": 144.0,
+      "end_sec": 145.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.155234,
+      "peak": 0.716095
+    },
+    {
+      "start_sec": 145.0,
+      "end_sec": 148.5,
+      "kind": "speech",
+      "average_rms": 0.203533,
+      "peak": 0.976379
+    },
+    {
+      "start_sec": 148.5,
+      "end_sec": 149.0,
+      "kind": "music_likely",
+      "average_rms": 0.216086,
+      "peak": 0.868378
+    },
+    {
+      "start_sec": 149.0,
+      "end_sec": 163.0,
+      "kind": "speech",
+      "average_rms": 0.132089,
+      "peak": 0.957977
+    },
+    {
+      "start_sec": 163.0,
+      "end_sec": 163.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.056625,
+      "peak": 0.254303
+    },
+    {
+      "start_sec": 163.5,
+      "end_sec": 171.5,
+      "kind": "speech",
+      "average_rms": 0.144321,
+      "peak": 0.999969
+    },
+    {
+      "start_sec": 171.5,
+      "end_sec": 172.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.222639,
+      "peak": 0.87616
+    },
+    {
+      "start_sec": 172.5,
+      "end_sec": 178.5,
+      "kind": "speech",
+      "average_rms": 0.242292,
+      "peak": 0.914673
+    },
+    {
+      "start_sec": 178.5,
+      "end_sec": 179.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.210362,
+      "peak": 0.819855
+    },
+    {
+      "start_sec": 179.0,
+      "end_sec": 181.0,
+      "kind": "speech",
+      "average_rms": 0.174297,
+      "peak": 0.849152
+    },
+    {
+      "start_sec": 181.0,
+      "end_sec": 182.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.160185,
+      "peak": 0.803192
+    },
+    {
+      "start_sec": 182.0,
+      "end_sec": 190.5,
+      "kind": "speech",
+      "average_rms": 0.141457,
+      "peak": 0.919647
+    },
+    {
+      "start_sec": 190.5,
+      "end_sec": 191.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.145203,
+      "peak": 0.945648
+    },
+    {
+      "start_sec": 191.5,
+      "end_sec": 193.5,
+      "kind": "speech",
+      "average_rms": 0.101321,
+      "peak": 0.719208
+    },
+    {
+      "start_sec": 193.5,
+      "end_sec": 195.0,
+      "kind": "music_likely",
+      "average_rms": 0.103717,
+      "peak": 0.566223
+    },
+    {
+      "start_sec": 195.0,
+      "end_sec": 216.0,
+      "kind": "speech",
+      "average_rms": 0.126151,
+      "peak": 0.865448
+    },
+    {
+      "start_sec": 216.0,
+      "end_sec": 217.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.066574,
+      "peak": 0.34906
+    },
+    {
+      "start_sec": 217.0,
+      "end_sec": 282.5,
+      "kind": "speech",
+      "average_rms": 0.114064,
+      "peak": 0.976593
+    },
+    {
+      "start_sec": 282.5,
+      "end_sec": 283.0,
+      "kind": "silence",
+      "average_rms": 0.010137,
+      "peak": 0.057129
+    },
+    {
+      "start_sec": 283.0,
+      "end_sec": 283.5,
+      "kind": "music_likely",
+      "average_rms": 0.176178,
+      "peak": 0.633453
+    },
+    {
+      "start_sec": 283.5,
+      "end_sec": 285.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.049289,
+      "peak": 0.369629
+    },
+    {
+      "start_sec": 285.0,
+      "end_sec": 309.5,
+      "kind": "speech",
+      "average_rms": 0.140142,
+      "peak": 0.966431
+    },
+    {
+      "start_sec": 309.5,
+      "end_sec": 310.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.121294,
+      "peak": 0.763489
+    },
+    {
+      "start_sec": 310.5,
+      "end_sec": 370.5,
+      "kind": "speech",
+      "average_rms": 0.13926,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 370.5,
+      "end_sec": 372.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.175122,
+      "peak": 0.974518
+    },
+    {
+      "start_sec": 372.0,
+      "end_sec": 394.0,
+      "kind": "speech",
+      "average_rms": 0.116944,
+      "peak": 0.942383
+    },
+    {
+      "start_sec": 394.0,
+      "end_sec": 394.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.063367,
+      "peak": 0.601562
+    },
+    {
+      "start_sec": 394.5,
+      "end_sec": 402.0,
+      "kind": "speech",
+      "average_rms": 0.13706,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 402.0,
+      "end_sec": 403.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.188061,
+      "peak": 0.80835
+    },
+    {
+      "start_sec": 403.0,
+      "end_sec": 412.5,
+      "kind": "speech",
+      "average_rms": 0.134051,
+      "peak": 0.999969
+    },
+    {
+      "start_sec": 412.5,
+      "end_sec": 413.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.156976,
+      "peak": 0.628143
+    },
+    {
+      "start_sec": 413.0,
+      "end_sec": 418.0,
+      "kind": "speech",
+      "average_rms": 0.166655,
+      "peak": 0.824585
+    },
+    {
+      "start_sec": 418.0,
+      "end_sec": 418.5,
+      "kind": "music_likely",
+      "average_rms": 0.198571,
+      "peak": 0.340485
+    },
+    {
+      "start_sec": 418.5,
+      "end_sec": 433.0,
+      "kind": "speech",
+      "average_rms": 0.110217,
+      "peak": 0.880554
+    },
+    {
+      "start_sec": 433.0,
+      "end_sec": 433.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.105759,
+      "peak": 0.895233
+    },
+    {
+      "start_sec": 433.5,
+      "end_sec": 437.0,
+      "kind": "speech",
+      "average_rms": 0.114495,
+      "peak": 0.961853
+    },
+    {
+      "start_sec": 437.0,
+      "end_sec": 437.5,
+      "kind": "music_likely",
+      "average_rms": 0.176677,
+      "peak": 0.684601
+    },
+    {
+      "start_sec": 437.5,
+      "end_sec": 447.0,
+      "kind": "speech",
+      "average_rms": 0.123241,
+      "peak": 0.762878
+    },
+    {
+      "start_sec": 447.0,
+      "end_sec": 448.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.04675,
+      "peak": 0.370087
+    },
+    {
+      "start_sec": 448.5,
+      "end_sec": 480.0,
+      "kind": "speech",
+      "average_rms": 0.125266,
+      "peak": 0.996094
+    },
+    {
+      "start_sec": 480.0,
+      "end_sec": 482.0,
+      "kind": "music_likely",
+      "average_rms": 0.06802,
+      "peak": 0.604736
+    },
+    {
+      "start_sec": 482.0,
+      "end_sec": 483.5,
+      "kind": "silence",
+      "average_rms": 0.010799,
+      "peak": 0.165558
+    },
+    {
+      "start_sec": 483.5,
+      "end_sec": 484.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.032248,
+      "peak": 0.235291
+    },
+    {
+      "start_sec": 484.0,
+      "end_sec": 484.5,
+      "kind": "silence",
+      "average_rms": 0.010329,
+      "peak": 0.040436
+    },
+    {
+      "start_sec": 484.5,
+      "end_sec": 485.5,
+      "kind": "speech",
+      "average_rms": 0.054967,
+      "peak": 0.304688
+    },
+    {
+      "start_sec": 485.5,
+      "end_sec": 487.5,
+      "kind": "music_likely",
+      "average_rms": 0.102335,
+      "peak": 0.652649
+    },
+    {
+      "start_sec": 487.5,
+      "end_sec": 488.5,
+      "kind": "speech",
+      "average_rms": 0.069729,
+      "peak": 0.422058
+    },
+    {
+      "start_sec": 488.5,
+      "end_sec": 489.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.166349,
+      "peak": 0.87735
+    },
+    {
+      "start_sec": 489.0,
+      "end_sec": 499.0,
+      "kind": "speech",
+      "average_rms": 0.121202,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 499.0,
+      "end_sec": 499.5,
+      "kind": "silence",
+      "average_rms": 0.010836,
+      "peak": 0.158447
+    },
+    {
+      "start_sec": 499.5,
+      "end_sec": 500.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.071231,
+      "peak": 0.43985
+    },
+    {
+      "start_sec": 500.5,
+      "end_sec": 501.0,
+      "kind": "silence",
+      "average_rms": 0.011917,
+      "peak": 0.053101
+    },
+    {
+      "start_sec": 501.0,
+      "end_sec": 502.0,
+      "kind": "speech",
+      "average_rms": 0.038301,
+      "peak": 0.25946
+    },
+    {
+      "start_sec": 502.0,
+      "end_sec": 503.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.022187,
+      "peak": 0.182007
+    },
+    {
+      "start_sec": 503.5,
+      "end_sec": 504.0,
+      "kind": "silence",
+      "average_rms": 0.010005,
+      "peak": 0.04126
+    },
+    {
+      "start_sec": 504.0,
+      "end_sec": 504.5,
+      "kind": "music_likely",
+      "average_rms": 0.096538,
+      "peak": 0.486206
+    },
+    {
+      "start_sec": 504.5,
+      "end_sec": 511.5,
+      "kind": "speech",
+      "average_rms": 0.112099,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 511.5,
+      "end_sec": 512.0,
+      "kind": "music_likely",
+      "average_rms": 0.021996,
+      "peak": 0.164948
+    },
+    {
+      "start_sec": 512.0,
+      "end_sec": 517.5,
+      "kind": "speech",
+      "average_rms": 0.080022,
+      "peak": 0.944244
+    },
+    {
+      "start_sec": 517.5,
+      "end_sec": 518.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.024505,
+      "peak": 0.12677
+    },
+    {
+      "start_sec": 518.5,
+      "end_sec": 533.0,
+      "kind": "speech",
+      "average_rms": 0.111972,
+      "peak": 0.926086
+    },
+    {
+      "start_sec": 533.0,
+      "end_sec": 533.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.199194,
+      "peak": 0.961639
+    },
+    {
+      "start_sec": 533.5,
+      "end_sec": 538.0,
+      "kind": "speech",
+      "average_rms": 0.157759,
+      "peak": 0.89563
+    },
+    {
+      "start_sec": 538.0,
+      "end_sec": 540.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.043095,
+      "peak": 0.521393
+    },
+    {
+      "start_sec": 540.5,
+      "end_sec": 541.5,
+      "kind": "speech",
+      "average_rms": 0.055231,
+      "peak": 0.501221
+    },
+    {
+      "start_sec": 541.5,
+      "end_sec": 543.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.043303,
+      "peak": 0.281982
+    },
+    {
+      "start_sec": 543.0,
+      "end_sec": 546.0,
+      "kind": "speech",
+      "average_rms": 0.10073,
+      "peak": 0.901276
+    },
+    {
+      "start_sec": 546.0,
+      "end_sec": 546.5,
+      "kind": "music_likely",
+      "average_rms": 0.16905,
+      "peak": 0.564362
+    },
+    {
+      "start_sec": 546.5,
+      "end_sec": 547.5,
+      "kind": "speech",
+      "average_rms": 0.104063,
+      "peak": 0.680115
+    },
+    {
+      "start_sec": 547.5,
+      "end_sec": 548.0,
+      "kind": "music_likely",
+      "average_rms": 0.15886,
+      "peak": 0.633362
+    },
+    {
+      "start_sec": 548.0,
+      "end_sec": 549.5,
+      "kind": "speech",
+      "average_rms": 0.086865,
+      "peak": 0.607971
+    },
+    {
+      "start_sec": 549.5,
+      "end_sec": 550.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.098501,
+      "peak": 0.558228
+    },
+    {
+      "start_sec": 550.5,
+      "end_sec": 551.5,
+      "kind": "speech",
+      "average_rms": 0.110504,
+      "peak": 0.61261
+    },
+    {
+      "start_sec": 551.5,
+      "end_sec": 552.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.124939,
+      "peak": 0.649261
+    },
+    {
+      "start_sec": 552.0,
+      "end_sec": 554.5,
+      "kind": "speech",
+      "average_rms": 0.09829,
+      "peak": 0.767914
+    },
+    {
+      "start_sec": 554.5,
+      "end_sec": 555.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.097168,
+      "peak": 0.704681
+    },
+    {
+      "start_sec": 555.5,
+      "end_sec": 556.5,
+      "kind": "speech",
+      "average_rms": 0.088011,
+      "peak": 0.663483
+    },
+    {
+      "start_sec": 556.5,
+      "end_sec": 559.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.120262,
+      "peak": 0.870972
+    },
+    {
+      "start_sec": 559.5,
+      "end_sec": 573.5,
+      "kind": "speech",
+      "average_rms": 0.117255,
+      "peak": 0.923096
+    },
+    {
+      "start_sec": 573.5,
+      "end_sec": 575.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.143074,
+      "peak": 0.98349
+    },
+    {
+      "start_sec": 575.5,
+      "end_sec": 576.0,
+      "kind": "speech",
+      "average_rms": 0.141863,
+      "peak": 0.587219
+    },
+    {
+      "start_sec": 576.0,
+      "end_sec": 576.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.064632,
+      "peak": 0.452332
+    },
+    {
+      "start_sec": 576.5,
+      "end_sec": 580.5,
+      "kind": "speech",
+      "average_rms": 0.068183,
+      "peak": 0.746674
+    },
+    {
+      "start_sec": 580.5,
+      "end_sec": 581.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.014034,
+      "peak": 0.091461
+    },
+    {
+      "start_sec": 581.0,
+      "end_sec": 583.5,
+      "kind": "speech",
+      "average_rms": 0.137966,
+      "peak": 0.957916
+    },
+    {
+      "start_sec": 583.5,
+      "end_sec": 586.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.078437,
+      "peak": 0.852631
+    },
+    {
+      "start_sec": 586.0,
+      "end_sec": 591.0,
+      "kind": "speech",
+      "average_rms": 0.128948,
+      "peak": 0.999969
+    },
+    {
+      "start_sec": 591.0,
+      "end_sec": 594.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.050121,
+      "peak": 0.471283
+    },
+    {
+      "start_sec": 594.5,
+      "end_sec": 598.5,
+      "kind": "speech",
+      "average_rms": 0.10588,
+      "peak": 0.979401
+    },
+    {
+      "start_sec": 598.5,
+      "end_sec": 599.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.02987,
+      "peak": 0.242065
+    },
+    {
+      "start_sec": 599.0,
+      "end_sec": 603.5,
+      "kind": "speech",
+      "average_rms": 0.136882,
+      "peak": 0.979279
+    },
+    {
+      "start_sec": 603.5,
+      "end_sec": 607.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.025584,
+      "peak": 0.269318
+    },
+    {
+      "start_sec": 607.5,
+      "end_sec": 609.0,
+      "kind": "music_likely",
+      "average_rms": 0.023897,
+      "peak": 0.115753
+    },
+    {
+      "start_sec": 609.0,
+      "end_sec": 609.5,
+      "kind": "speech",
+      "average_rms": 0.123827,
+      "peak": 0.807343
+    },
+    {
+      "start_sec": 609.5,
+      "end_sec": 610.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.090455,
+      "peak": 0.474884
+    },
+    {
+      "start_sec": 610.0,
+      "end_sec": 614.0,
+      "kind": "speech",
+      "average_rms": 0.124481,
+      "peak": 0.827026
+    },
+    {
+      "start_sec": 614.0,
+      "end_sec": 615.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.021285,
+      "peak": 0.113586
+    },
+    {
+      "start_sec": 615.0,
+      "end_sec": 616.5,
+      "kind": "speech",
+      "average_rms": 0.106838,
+      "peak": 0.912292
+    },
+    {
+      "start_sec": 616.5,
+      "end_sec": 618.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.017446,
+      "peak": 0.083405
+    },
+    {
+      "start_sec": 618.0,
+      "end_sec": 621.0,
+      "kind": "speech",
+      "average_rms": 0.069362,
+      "peak": 0.708893
+    },
+    {
+      "start_sec": 621.0,
+      "end_sec": 621.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.016152,
+      "peak": 0.06897
+    },
+    {
+      "start_sec": 621.5,
+      "end_sec": 624.5,
+      "kind": "speech",
+      "average_rms": 0.139406,
+      "peak": 0.960693
+    },
+    {
+      "start_sec": 624.5,
+      "end_sec": 629.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.074431,
+      "peak": 0.824219
+    },
+    {
+      "start_sec": 629.5,
+      "end_sec": 648.0,
+      "kind": "speech",
+      "average_rms": 0.13475,
+      "peak": 0.977142
+    },
+    {
+      "start_sec": 648.0,
+      "end_sec": 649.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.078575,
+      "peak": 0.606354
+    },
+    {
+      "start_sec": 649.5,
+      "end_sec": 650.0,
+      "kind": "music_likely",
+      "average_rms": 0.195825,
+      "peak": 0.815613
+    },
+    {
+      "start_sec": 650.0,
+      "end_sec": 653.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.085529,
+      "peak": 0.966858
+    },
+    {
+      "start_sec": 653.5,
+      "end_sec": 656.0,
+      "kind": "speech",
+      "average_rms": 0.09498,
+      "peak": 0.865753
+    },
+    {
+      "start_sec": 656.0,
+      "end_sec": 662.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.075439,
+      "peak": 0.867188
+    },
+    {
+      "start_sec": 662.5,
+      "end_sec": 675.0,
+      "kind": "speech",
+      "average_rms": 0.154194,
+      "peak": 0.907745
+    },
+    {
+      "start_sec": 675.0,
+      "end_sec": 675.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.041732,
+      "peak": 0.347656
+    },
+    {
+      "start_sec": 675.5,
+      "end_sec": 676.5,
+      "kind": "speech",
+      "average_rms": 0.091737,
+      "peak": 0.59256
+    },
+    {
+      "start_sec": 676.5,
+      "end_sec": 678.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.114719,
+      "peak": 0.858734
+    },
+    {
+      "start_sec": 678.5,
+      "end_sec": 679.0,
+      "kind": "speech",
+      "average_rms": 0.036757,
+      "peak": 0.10614
+    },
+    {
+      "start_sec": 679.0,
+      "end_sec": 681.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.170038,
+      "peak": 0.973083
+    },
+    {
+      "start_sec": 681.0,
+      "end_sec": 689.5,
+      "kind": "speech",
+      "average_rms": 0.132388,
+      "peak": 0.987579
+    },
+    {
+      "start_sec": 689.5,
+      "end_sec": 691.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.10187,
+      "peak": 0.706879
+    },
+    {
+      "start_sec": 691.0,
+      "end_sec": 693.0,
+      "kind": "speech",
+      "average_rms": 0.068251,
+      "peak": 0.790649
+    },
+    {
+      "start_sec": 693.0,
+      "end_sec": 695.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.045337,
+      "peak": 0.834106
+    },
+    {
+      "start_sec": 695.0,
+      "end_sec": 696.0,
+      "kind": "speech",
+      "average_rms": 0.087476,
+      "peak": 0.544464
+    },
+    {
+      "start_sec": 696.0,
+      "end_sec": 697.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.128651,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 697.5,
+      "end_sec": 698.5,
+      "kind": "speech",
+      "average_rms": 0.136099,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 698.5,
+      "end_sec": 702.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.082293,
+      "peak": 0.694336
+    },
+    {
+      "start_sec": 702.0,
+      "end_sec": 704.0,
+      "kind": "speech",
+      "average_rms": 0.132616,
+      "peak": 0.688477
+    },
+    {
+      "start_sec": 704.0,
+      "end_sec": 704.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.085476,
+      "peak": 0.482086
+    },
+    {
+      "start_sec": 704.5,
+      "end_sec": 709.5,
+      "kind": "speech",
+      "average_rms": 0.122023,
+      "peak": 0.780396
+    },
+    {
+      "start_sec": 709.5,
+      "end_sec": 714.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.098252,
+      "peak": 0.966034
+    },
+    {
+      "start_sec": 714.5,
+      "end_sec": 717.5,
+      "kind": "speech",
+      "average_rms": 0.119172,
+      "peak": 0.754547
+    },
+    {
+      "start_sec": 717.5,
+      "end_sec": 718.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.112947,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 718.5,
+      "end_sec": 719.5,
+      "kind": "speech",
+      "average_rms": 0.116078,
+      "peak": 0.958649
+    },
+    {
+      "start_sec": 719.5,
+      "end_sec": 720.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.040066,
+      "peak": 0.302704
+    },
+    {
+      "start_sec": 720.0,
+      "end_sec": 721.0,
+      "kind": "speech",
+      "average_rms": 0.100925,
+      "peak": 0.644684
+    },
+    {
+      "start_sec": 721.0,
+      "end_sec": 721.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.095304,
+      "peak": 0.335114
+    },
+    {
+      "start_sec": 721.5,
+      "end_sec": 723.0,
+      "kind": "speech",
+      "average_rms": 0.159472,
+      "peak": 0.772369
+    },
+    {
+      "start_sec": 723.0,
+      "end_sec": 723.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.167555,
+      "peak": 0.913788
+    },
+    {
+      "start_sec": 723.5,
+      "end_sec": 725.0,
+      "kind": "speech",
+      "average_rms": 0.147679,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 725.0,
+      "end_sec": 726.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.079891,
+      "peak": 0.738495
+    },
+    {
+      "start_sec": 726.5,
+      "end_sec": 727.5,
+      "kind": "speech",
+      "average_rms": 0.113031,
+      "peak": 0.776062
+    },
+    {
+      "start_sec": 727.5,
+      "end_sec": 732.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.061326,
+      "peak": 0.932556
+    },
+    {
+      "start_sec": 732.0,
+      "end_sec": 733.0,
+      "kind": "speech",
+      "average_rms": 0.09489,
+      "peak": 0.617462
+    },
+    {
+      "start_sec": 733.0,
+      "end_sec": 733.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.027597,
+      "peak": 0.099213
+    },
+    {
+      "start_sec": 733.5,
+      "end_sec": 734.5,
+      "kind": "speech",
+      "average_rms": 0.111687,
+      "peak": 0.749847
+    },
+    {
+      "start_sec": 734.5,
+      "end_sec": 735.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.093913,
+      "peak": 0.545227
+    },
+    {
+      "start_sec": 735.0,
+      "end_sec": 741.0,
+      "kind": "speech",
+      "average_rms": 0.093924,
+      "peak": 0.82077
+    },
+    {
+      "start_sec": 741.0,
+      "end_sec": 742.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.064775,
+      "peak": 0.582977
+    },
+    {
+      "start_sec": 742.5,
+      "end_sec": 748.0,
+      "kind": "speech",
+      "average_rms": 0.09715,
+      "peak": 0.835938
+    },
+    {
+      "start_sec": 748.0,
+      "end_sec": 752.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.150269,
+      "peak": 0.952728
+    },
+    {
+      "start_sec": 752.5,
+      "end_sec": 763.0,
+      "kind": "speech",
+      "average_rms": 0.148927,
+      "peak": 0.916931
+    },
+    {
+      "start_sec": 763.0,
+      "end_sec": 763.5,
+      "kind": "music_likely",
+      "average_rms": 0.087593,
+      "peak": 0.448456
+    },
+    {
+      "start_sec": 763.5,
+      "end_sec": 766.5,
+      "kind": "speech",
+      "average_rms": 0.150255,
+      "peak": 0.919403
+    },
+    {
+      "start_sec": 766.5,
+      "end_sec": 767.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.205856,
+      "peak": 0.925507
+    },
+    {
+      "start_sec": 767.5,
+      "end_sec": 769.0,
+      "kind": "speech",
+      "average_rms": 0.104821,
+      "peak": 0.866608
+    },
+    {
+      "start_sec": 769.0,
+      "end_sec": 769.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.015783,
+      "peak": 0.066467
+    },
+    {
+      "start_sec": 769.5,
+      "end_sec": 770.5,
+      "kind": "speech",
+      "average_rms": 0.142765,
+      "peak": 0.737762
+    },
+    {
+      "start_sec": 770.5,
+      "end_sec": 775.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.153079,
+      "peak": 0.928528
+    },
+    {
+      "start_sec": 775.0,
+      "end_sec": 781.0,
+      "kind": "speech",
+      "average_rms": 0.128503,
+      "peak": 0.925751
+    },
+    {
+      "start_sec": 781.0,
+      "end_sec": 784.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.046655,
+      "peak": 0.655609
+    },
+    {
+      "start_sec": 784.5,
+      "end_sec": 786.0,
+      "kind": "speech",
+      "average_rms": 0.14548,
+      "peak": 0.828674
+    },
+    {
+      "start_sec": 786.0,
+      "end_sec": 786.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.078102,
+      "peak": 0.509521
+    },
+    {
+      "start_sec": 786.5,
+      "end_sec": 787.5,
+      "kind": "speech",
+      "average_rms": 0.118429,
+      "peak": 0.747681
+    },
+    {
+      "start_sec": 787.5,
+      "end_sec": 788.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.111713,
+      "peak": 0.582855
+    },
+    {
+      "start_sec": 788.0,
+      "end_sec": 792.0,
+      "kind": "speech",
+      "average_rms": 0.101452,
+      "peak": 0.706146
+    },
+    {
+      "start_sec": 792.0,
+      "end_sec": 794.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.133192,
+      "peak": 0.994171
+    },
+    {
+      "start_sec": 794.0,
+      "end_sec": 795.0,
+      "kind": "speech",
+      "average_rms": 0.092267,
+      "peak": 0.440338
+    },
+    {
+      "start_sec": 795.0,
+      "end_sec": 795.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.172019,
+      "peak": 0.842651
+    },
+    {
+      "start_sec": 795.5,
+      "end_sec": 796.5,
+      "kind": "speech",
+      "average_rms": 0.14388,
+      "peak": 0.686584
+    },
+    {
+      "start_sec": 796.5,
+      "end_sec": 797.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.145056,
+      "peak": 0.60199
+    },
+    {
+      "start_sec": 797.0,
+      "end_sec": 798.0,
+      "kind": "speech",
+      "average_rms": 0.122764,
+      "peak": 0.756622
+    },
+    {
+      "start_sec": 798.0,
+      "end_sec": 800.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.153019,
+      "peak": 0.903839
+    },
+    {
+      "start_sec": 800.0,
+      "end_sec": 800.5,
+      "kind": "silence",
+      "average_rms": 0.010373,
+      "peak": 0.088593
+    },
+    {
+      "start_sec": 800.5,
+      "end_sec": 806.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.108692,
+      "peak": 0.963257
+    },
+    {
+      "start_sec": 806.0,
+      "end_sec": 808.5,
+      "kind": "speech",
+      "average_rms": 0.144585,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 808.5,
+      "end_sec": 809.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.070725,
+      "peak": 0.233795
+    },
+    {
+      "start_sec": 809.0,
+      "end_sec": 810.5,
+      "kind": "speech",
+      "average_rms": 0.164679,
+      "peak": 0.787994
+    },
+    {
+      "start_sec": 810.5,
+      "end_sec": 812.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.121958,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 812.0,
+      "end_sec": 813.5,
+      "kind": "speech",
+      "average_rms": 0.180827,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 813.5,
+      "end_sec": 814.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.264885,
+      "peak": 0.825317
+    },
+    {
+      "start_sec": 814.5,
+      "end_sec": 816.0,
+      "kind": "speech",
+      "average_rms": 0.173816,
+      "peak": 0.929199
+    },
+    {
+      "start_sec": 816.0,
+      "end_sec": 818.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.046757,
+      "peak": 0.54361
+    },
+    {
+      "start_sec": 818.5,
+      "end_sec": 821.5,
+      "kind": "speech",
+      "average_rms": 0.103521,
+      "peak": 0.900665
+    },
+    {
+      "start_sec": 821.5,
+      "end_sec": 822.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.13752,
+      "peak": 0.850708
+    },
+    {
+      "start_sec": 822.5,
+      "end_sec": 829.0,
+      "kind": "speech",
+      "average_rms": 0.131482,
+      "peak": 0.925446
+    },
+    {
+      "start_sec": 829.0,
+      "end_sec": 832.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.127452,
+      "peak": 0.999969
+    },
+    {
+      "start_sec": 832.0,
+      "end_sec": 832.5,
+      "kind": "music_likely",
+      "average_rms": 0.013172,
+      "peak": 0.049988
+    },
+    {
+      "start_sec": 832.5,
+      "end_sec": 833.0,
+      "kind": "silence",
+      "average_rms": 0.007183,
+      "peak": 0.028778
+    },
+    {
+      "start_sec": 833.0,
+      "end_sec": 840.5,
+      "kind": "speech",
+      "average_rms": 0.121075,
+      "peak": 0.861511
+    },
+    {
+      "start_sec": 840.5,
+      "end_sec": 841.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.13355,
+      "peak": 0.742767
+    },
+    {
+      "start_sec": 841.0,
+      "end_sec": 874.5,
+      "kind": "speech",
+      "average_rms": 0.121822,
+      "peak": 0.857208
+    },
+    {
+      "start_sec": 874.5,
+      "end_sec": 875.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.071962,
+      "peak": 0.475311
+    },
+    {
+      "start_sec": 875.0,
+      "end_sec": 955.0,
+      "kind": "speech",
+      "average_rms": 0.126783,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 955.0,
+      "end_sec": 955.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.042578,
+      "peak": 0.459625
+    },
+    {
+      "start_sec": 955.5,
+      "end_sec": 960.0,
+      "kind": "speech",
+      "average_rms": 0.116604,
+      "peak": 0.742157
+    },
+    {
+      "start_sec": 960.0,
+      "end_sec": 960.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.060646,
+      "peak": 0.576904
+    },
+    {
+      "start_sec": 960.5,
+      "end_sec": 1045.5,
+      "kind": "speech",
+      "average_rms": 0.120388,
+      "peak": 1.0
+    },
+    {
+      "start_sec": 1045.5,
+      "end_sec": 1046.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.134256,
+      "peak": 0.700439
+    },
+    {
+      "start_sec": 1046.0,
+      "end_sec": 1058.0,
+      "kind": "speech",
+      "average_rms": 0.135516,
+      "peak": 0.808807
+    },
+    {
+      "start_sec": 1058.0,
+      "end_sec": 1058.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.085283,
+      "peak": 0.341705
+    },
+    {
+      "start_sec": 1058.5,
+      "end_sec": 1065.5,
+      "kind": "speech",
+      "average_rms": 0.102408,
+      "peak": 0.696045
+    },
+    {
+      "start_sec": 1065.5,
+      "end_sec": 1066.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.064206,
+      "peak": 0.418884
+    },
+    {
+      "start_sec": 1066.0,
+      "end_sec": 1269.5,
+      "kind": "speech",
+      "average_rms": 0.12185,
+      "peak": 0.945557
+    },
+    {
+      "start_sec": 1269.5,
+      "end_sec": 1270.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.064468,
+      "peak": 0.398682
+    },
+    {
+      "start_sec": 1270.0,
+      "end_sec": 1309.5,
+      "kind": "speech",
+      "average_rms": 0.13098,
+      "peak": 0.999969
+    },
+    {
+      "start_sec": 1309.5,
+      "end_sec": 1310.0,
+      "kind": "music_likely",
+      "average_rms": 0.070563,
+      "peak": 0.343506
+    },
+    {
+      "start_sec": 1310.0,
+      "end_sec": 1310.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.164834,
+      "peak": 0.579956
+    },
+    {
+      "start_sec": 1310.5,
+      "end_sec": 1313.0,
+      "kind": "music_likely",
+      "average_rms": 0.117203,
+      "peak": 0.515869
+    },
+    {
+      "start_sec": 1313.0,
+      "end_sec": 1314.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.100906,
+      "peak": 0.412537
+    },
+    {
+      "start_sec": 1314.0,
+      "end_sec": 1314.5,
+      "kind": "music_likely",
+      "average_rms": 0.101544,
+      "peak": 0.687531
+    },
+    {
+      "start_sec": 1314.5,
+      "end_sec": 1315.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.144244,
+      "peak": 0.728424
+    },
+    {
+      "start_sec": 1315.0,
+      "end_sec": 1318.5,
+      "kind": "music_likely",
+      "average_rms": 0.072312,
+      "peak": 0.487457
+    },
+    {
+      "start_sec": 1318.5,
+      "end_sec": 1321.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.143886,
+      "peak": 0.817078
+    },
+    {
+      "start_sec": 1321.0,
+      "end_sec": 1322.0,
+      "kind": "music_likely",
+      "average_rms": 0.11348,
+      "peak": 0.771484
+    },
+    {
+      "start_sec": 1322.0,
+      "end_sec": 1322.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.152677,
+      "peak": 0.739807
+    },
+    {
+      "start_sec": 1322.5,
+      "end_sec": 1323.0,
+      "kind": "music_likely",
+      "average_rms": 0.080511,
+      "peak": 0.333191
+    },
+    {
+      "start_sec": 1323.0,
+      "end_sec": 1324.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.087289,
+      "peak": 0.453217
+    },
+    {
+      "start_sec": 1324.0,
+      "end_sec": 1326.0,
+      "kind": "music_likely",
+      "average_rms": 0.121845,
+      "peak": 0.604767
+    },
+    {
+      "start_sec": 1326.0,
+      "end_sec": 1328.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.118779,
+      "peak": 0.714539
+    },
+    {
+      "start_sec": 1328.5,
+      "end_sec": 1330.0,
+      "kind": "music_likely",
+      "average_rms": 0.143245,
+      "peak": 0.884521
+    },
+    {
+      "start_sec": 1330.0,
+      "end_sec": 1330.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.072387,
+      "peak": 0.514404
+    },
+    {
+      "start_sec": 1330.5,
+      "end_sec": 1331.0,
+      "kind": "music_likely",
+      "average_rms": 0.113644,
+      "peak": 0.531921
+    },
+    {
+      "start_sec": 1331.0,
+      "end_sec": 1332.0,
+      "kind": "ambient_likely",
+      "average_rms": 0.099094,
+      "peak": 0.639099
+    },
+    {
+      "start_sec": 1332.0,
+      "end_sec": 1336.0,
+      "kind": "music_likely",
+      "average_rms": 0.126026,
+      "peak": 0.756989
+    },
+    {
+      "start_sec": 1336.0,
+      "end_sec": 1350.0,
+      "kind": "speech",
+      "average_rms": 0.117065,
+      "peak": 0.899261
+    },
+    {
+      "start_sec": 1350.0,
+      "end_sec": 1350.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.066638,
+      "peak": 0.488739
+    },
+    {
+      "start_sec": 1350.5,
+      "end_sec": 1363.0,
+      "kind": "speech",
+      "average_rms": 0.114316,
+      "peak": 0.833862
+    },
+    {
+      "start_sec": 1363.0,
+      "end_sec": 1363.5,
+      "kind": "ambient_likely",
+      "average_rms": 0.122265,
+      "peak": 0.6203
+    },
+    {
+      "start_sec": 1363.5,
+      "end_sec": 1364.0,
+      "kind": "music_likely",
+      "average_rms": 0.092688,
+      "peak": 0.399872
+    },
+    {
+      "start_sec": 1364.0,
+      "end_sec": 1364.5,
+      "kind": "silence",
+      "average_rms": 0.009816,
+      "peak": 0.041443
+    },
+    {
+      "start_sec": 1364.5,
+      "end_sec": 1370.0,
+      "kind": "music_likely",
+      "average_rms": 0.062931,
+      "peak": 0.351898
+    },
+    {
+      "start_sec": 1370.0,
+      "end_sec": 1371.0,
+      "kind": "silence",
+      "average_rms": 0.002351,
+      "peak": 0.02359
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "shot-0001",
+      "start_sec": 0.0,
+      "end_sec": 1.335,
+      "duration_sec": 1.335,
+      "role": "dialogue",
+      "speech_ratio": 0.8689,
+      "visual": {
+        "brightness": 0.50872,
+        "contrast": 0.18642,
+        "sharpness": 0.12325,
+        "motion": 0.00945,
+        "visual_hash": "fedfff9ff87f002f183918f901c117000706"
+      },
+      "audio": {
+        "rms": 0.136889,
+        "peak": 0.735626,
+        "spectral_centroid_hz": 1992.06,
+        "spectral_flatness": 0.15323,
+        "kind": "speech"
+      },
+      "novelty_score": 1.0,
+      "quality_score": 0.9573,
+      "keep_score": 0.9578,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0002",
+      "start_sec": 1.335,
+      "end_sec": 2.87,
+      "duration_sec": 1.535,
+      "role": "dialogue",
+      "speech_ratio": 0.7231,
+      "visual": {
+        "brightness": 0.50396,
+        "contrast": 0.20231,
+        "sharpness": 0.13487,
+        "motion": 0.06853,
+        "visual_hash": "ffdff87f0037103b381c39ec21e83f000733"
+      },
+      "audio": {
+        "rms": 0.087339,
+        "peak": 0.813293,
+        "spectral_centroid_hz": 1604.19,
+        "spectral_flatness": 0.217184,
+        "kind": "speech"
+      },
+      "novelty_score": 0.25,
+      "quality_score": 0.9995,
+      "keep_score": 0.9298,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0003",
+      "start_sec": 2.87,
+      "end_sec": 4.905,
+      "duration_sec": 2.035,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49974,
+        "contrast": 0.23707,
+        "sharpness": 0.1279,
+        "motion": 0.09277,
+        "visual_hash": "0ffe06fe14661552143e173e2f9aaf806f44"
+      },
+      "audio": {
+        "rms": 0.108188,
+        "peak": 0.655762,
+        "spectral_centroid_hz": 1199.28,
+        "spectral_flatness": 0.141895,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4028,
+      "quality_score": 0.9742,
+      "keep_score": 0.9534,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息"
+      ]
+    },
+    {
+      "shot_id": "shot-0004",
+      "start_sec": 4.905,
+      "end_sec": 16.45,
+      "duration_sec": 11.545,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.44335,
+        "contrast": 0.19725,
+        "sharpness": 0.11736,
+        "motion": 0.06552,
+        "visual_hash": "ffcffc7f483f0007b81878ac15e805e02774"
+      },
+      "audio": {
+        "rms": 0.141976,
+        "peak": 0.935211,
+        "spectral_centroid_hz": 1375.16,
+        "spectral_flatness": 0.272067,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 0.8809,
+      "keep_score": 0.9314,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0005",
+      "start_sec": 16.45,
+      "end_sec": 20.721,
+      "duration_sec": 4.271,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.51966,
+        "contrast": 0.25415,
+        "sharpness": 0.14228,
+        "motion": 0.09158,
+        "visual_hash": "0ffe04fe04460072149812be7fee7ffe6e00"
+      },
+      "audio": {
+        "rms": 0.160806,
+        "peak": 0.952698,
+        "spectral_centroid_hz": 1385.26,
+        "spectral_flatness": 0.247291,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4167,
+      "quality_score": 1.0,
+      "keep_score": 0.9784,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0006",
+      "start_sec": 20.721,
+      "end_sec": 23.357,
+      "duration_sec": 2.636,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.46153,
+        "contrast": 0.2306,
+        "sharpness": 0.1359,
+        "motion": 0.03512,
+        "visual_hash": "fff4ffc007001f083c003c903c7f3a7e0fdc"
+      },
+      "audio": {
+        "rms": 0.172924,
+        "peak": 0.758942,
+        "spectral_centroid_hz": 1183.52,
+        "spectral_flatness": 0.223772,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 1.0,
+      "keep_score": 0.9455,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0007",
+      "start_sec": 23.357,
+      "end_sec": 26.226,
+      "duration_sec": 2.869,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.29969,
+        "contrast": 0.19884,
+        "sharpness": 0.10465,
+        "motion": 0.10814,
+        "visual_hash": "ffffc07fc0c980018030107087f11ff19ffb"
+      },
+      "audio": {
+        "rms": 0.170156,
+        "peak": 0.642883,
+        "spectral_centroid_hz": 991.5,
+        "spectral_flatness": 0.179586,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4861,
+      "quality_score": 0.8896,
+      "keep_score": 0.9484,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息"
+      ]
+    },
+    {
+      "shot_id": "shot-0008",
+      "start_sec": 26.226,
+      "end_sec": 27.427,
+      "duration_sec": 1.201,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.31129,
+        "contrast": 0.21626,
+        "sharpness": 0.11464,
+        "motion": 0.01292,
+        "visual_hash": "9ff7808107e10ff107f00fec0f2c06cc87ef"
+      },
+      "audio": {
+        "rms": 0.117065,
+        "peak": 0.763184,
+        "spectral_centroid_hz": 1422.91,
+        "spectral_flatness": 0.343329,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 0.926,
+      "keep_score": 0.9084,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0009",
+      "start_sec": 27.427,
+      "end_sec": 33.6,
+      "duration_sec": 6.173,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.47472,
+        "contrast": 0.23637,
+        "sharpness": 0.14271,
+        "motion": 0.06103,
+        "visual_hash": "1fff0cff1cee05f2143a173e8c5e07044f40"
+      },
+      "audio": {
+        "rms": 0.110197,
+        "peak": 0.710205,
+        "spectral_centroid_hz": 1236.41,
+        "spectral_flatness": 0.253326,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3889,
+      "quality_score": 1.0,
+      "keep_score": 0.946,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0010",
+      "start_sec": 33.6,
+      "end_sec": 43.143,
+      "duration_sec": 9.543,
+      "role": "dialogue",
+      "speech_ratio": 0.8697,
+      "visual": {
+        "brightness": 0.46809,
+        "contrast": 0.19739,
+        "sharpness": 0.12387,
+        "motion": 0.0423,
+        "visual_hash": "ffcffcff483f0037301879a849ec07802f60"
+      },
+      "audio": {
+        "rms": 0.117284,
+        "peak": 0.832397,
+        "spectral_centroid_hz": 1325.85,
+        "spectral_flatness": 0.236942,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3333,
+      "quality_score": 0.9045,
+      "keep_score": 0.9022,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0011",
+      "start_sec": 43.143,
+      "end_sec": 43.644,
+      "duration_sec": 0.501,
+      "role": "action",
+      "speech_ratio": 0.3273,
+      "visual": {
+        "brightness": 0.4374,
+        "contrast": 0.22601,
+        "sharpness": 0.14122,
+        "motion": 0.4374,
+        "visual_hash": "fffeffc067001f087c003c913e50227a1ede"
+      },
+      "audio": {
+        "rms": 0.170812,
+        "peak": 0.501617,
+        "spectral_centroid_hz": 1010.08,
+        "spectral_flatness": 0.152617,
+        "kind": "speech"
+      },
+      "novelty_score": 0.5139,
+      "quality_score": 0.8875,
+      "keep_score": 0.8935,
+      "recommendation": "optional",
+      "reasons": [
+        "包含明显动作变化",
+        "提供新的视觉信息"
+      ]
+    },
+    {
+      "shot_id": "shot-0012",
+      "start_sec": 43.644,
+      "end_sec": 50.05,
+      "duration_sec": 6.406,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.4304,
+        "contrast": 0.23486,
+        "sharpness": 0.15314,
+        "motion": 0.03913,
+        "visual_hash": "fffeffc267011f887c003c901050229e3fde"
+      },
+      "audio": {
+        "rms": 0.126193,
+        "peak": 0.877747,
+        "spectral_centroid_hz": 1170.42,
+        "spectral_flatness": 0.230129,
+        "kind": "speech"
+      },
+      "novelty_score": 0.0972,
+      "quality_score": 1.0,
+      "keep_score": 0.8909,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0013",
+      "start_sec": 50.05,
+      "end_sec": 54.988,
+      "duration_sec": 4.938,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.46672,
+        "contrast": 0.21996,
+        "sharpness": 0.14891,
+        "motion": 0.0088,
+        "visual_hash": "ffdffcff687f1017b81839bc012005006f64"
+      },
+      "audio": {
+        "rms": 0.11219,
+        "peak": 0.822205,
+        "spectral_centroid_hz": 1181.46,
+        "spectral_flatness": 0.245676,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4167,
+      "quality_score": 1.0,
+      "keep_score": 0.9305,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0014",
+      "start_sec": 54.988,
+      "end_sec": 62.629,
+      "duration_sec": 7.641,
+      "role": "dialogue",
+      "speech_ratio": 0.9215,
+      "visual": {
+        "brightness": 0.4595,
+        "contrast": 0.24239,
+        "sharpness": 0.14378,
+        "motion": 0.0574,
+        "visual_hash": "1fff0eff0cef1df2067a163e0a800b006fc8"
+      },
+      "audio": {
+        "rms": 0.104097,
+        "peak": 0.760315,
+        "spectral_centroid_hz": 1178.9,
+        "spectral_flatness": 0.213369,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3472,
+      "quality_score": 1.0,
+      "keep_score": 0.9392,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0015",
+      "start_sec": 62.629,
+      "end_sec": 69.937,
+      "duration_sec": 7.308,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.46768,
+        "contrast": 0.21886,
+        "sharpness": 0.15148,
+        "motion": 0.01352,
+        "visual_hash": "ffdffcffe87f003fb01c38ac014005006f64"
+      },
+      "audio": {
+        "rms": 0.07151,
+        "peak": 0.625061,
+        "spectral_centroid_hz": 1059.85,
+        "spectral_flatness": 0.166434,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3611,
+      "quality_score": 1.0,
+      "keep_score": 0.913,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白"
+      ]
+    },
+    {
+      "shot_id": "shot-0016",
+      "start_sec": 69.937,
+      "end_sec": 71.471,
+      "duration_sec": 1.534,
+      "role": "reaction",
+      "speech_ratio": 0.0874,
+      "visual": {
+        "brightness": 0.03778,
+        "contrast": 0.15096,
+        "sharpness": 0.03258,
+        "motion": 0.1536,
+        "visual_hash": "ffffffffffffffffffffffffffffffffffff"
+      },
+      "audio": {
+        "rms": 0.069791,
+        "peak": 0.683411,
+        "spectral_centroid_hz": 1353.29,
+        "spectral_flatness": 0.238056,
+        "kind": "ambient_likely"
+      },
+      "novelty_score": 0.5,
+      "quality_score": 0.3878,
+      "keep_score": 0.5694,
+      "recommendation": "cut_first",
+      "reasons": [
+        "完整人物反应",
+        "提供新的视觉信息",
+        "画面清晰度较低"
+      ]
+    },
+    {
+      "shot_id": "shot-0017",
+      "start_sec": 71.471,
+      "end_sec": 80.981,
+      "duration_sec": 9.51,
+      "role": "dialogue",
+      "speech_ratio": 0.9159,
+      "visual": {
+        "brightness": 0.49117,
+        "contrast": 0.19831,
+        "sharpness": 0.13729,
+        "motion": 0.03904,
+        "visual_hash": "0fff7ffffc7f002f183119b91009070007bc"
+      },
+      "audio": {
+        "rms": 0.129069,
+        "peak": 0.843384,
+        "spectral_centroid_hz": 1370.35,
+        "spectral_flatness": 0.280449,
+        "kind": "speech"
+      },
+      "novelty_score": 0.5,
+      "quality_score": 0.945,
+      "keep_score": 0.9441,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0018",
+      "start_sec": 80.981,
+      "end_sec": 86.62,
+      "duration_sec": 5.639,
+      "role": "dialogue",
+      "speech_ratio": 0.7517,
+      "visual": {
+        "brightness": 0.45312,
+        "contrast": 0.22823,
+        "sharpness": 0.1433,
+        "motion": 0.04833,
+        "visual_hash": "3ffeffc24f010f001c003c913ef322f21ef6"
+      },
+      "audio": {
+        "rms": 0.081738,
+        "peak": 0.806427,
+        "spectral_centroid_hz": 1570.74,
+        "spectral_flatness": 0.363839,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 1.0,
+      "keep_score": 0.952,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0019",
+      "start_sec": 86.62,
+      "end_sec": 96.396,
+      "duration_sec": 9.776,
+      "role": "dialogue",
+      "speech_ratio": 0.9059,
+      "visual": {
+        "brightness": 0.49632,
+        "contrast": 0.19978,
+        "sharpness": 0.13398,
+        "motion": 0.01622,
+        "visual_hash": "0fff0fdffc7f002f183918b901f907c003ac"
+      },
+      "audio": {
+        "rms": 0.120708,
+        "peak": 0.960724,
+        "spectral_centroid_hz": 1542.5,
+        "spectral_flatness": 0.309687,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 0.9413,
+      "keep_score": 0.9249,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0020",
+      "start_sec": 96.396,
+      "end_sec": 107.941,
+      "duration_sec": 11.545,
+      "role": "dialogue",
+      "speech_ratio": 0.9134,
+      "visual": {
+        "brightness": 0.49272,
+        "contrast": 0.25058,
+        "sharpness": 0.13318,
+        "motion": 0.03911,
+        "visual_hash": "0ffe06fe06660cda065a127e0ede4fc86fc0"
+      },
+      "audio": {
+        "rms": 0.121698,
+        "peak": 0.904755,
+        "spectral_centroid_hz": 1677.28,
+        "spectral_flatness": 0.301145,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3889,
+      "quality_score": 0.9384,
+      "keep_score": 0.9251,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0021",
+      "start_sec": 107.941,
+      "end_sec": 137.504,
+      "duration_sec": 29.563,
+      "role": "dialogue",
+      "speech_ratio": 0.9248,
+      "visual": {
+        "brightness": 0.49992,
+        "contrast": 0.19714,
+        "sharpness": 0.13292,
+        "motion": 0.01953,
+        "visual_hash": "0fff0ffffc7f003f183919b901d9070007c8"
+      },
+      "audio": {
+        "rms": 0.138691,
+        "peak": 0.999969,
+        "spectral_centroid_hz": 1571.22,
+        "spectral_flatness": 0.324214,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3611,
+      "quality_score": 0.8799,
+      "keep_score": 0.8963,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0022",
+      "start_sec": 137.504,
+      "end_sec": 141.742,
+      "duration_sec": 4.238,
+      "role": "dialogue",
+      "speech_ratio": 0.9391,
+      "visual": {
+        "brightness": 0.50864,
+        "contrast": 0.23854,
+        "sharpness": 0.13227,
+        "motion": 0.06408,
+        "visual_hash": "0ffe06fe0ce61eca04ee15fe0ed84fd06c40"
+      },
+      "audio": {
+        "rms": 0.150343,
+        "peak": 0.900269,
+        "spectral_centroid_hz": 1442.52,
+        "spectral_flatness": 0.257752,
+        "kind": "speech"
+      },
+      "novelty_score": 0.375,
+      "quality_score": 0.9901,
+      "keep_score": 0.9514,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0023",
+      "start_sec": 141.742,
+      "end_sec": 152.753,
+      "duration_sec": 11.011,
+      "role": "dialogue",
+      "speech_ratio": 0.7695,
+      "visual": {
+        "brightness": 0.49846,
+        "contrast": 0.19485,
+        "sharpness": 0.12908,
+        "motion": 0.01884,
+        "visual_hash": "1fff1fdffc7f0037103919390b0907c007cc"
+      },
+      "audio": {
+        "rms": 0.155031,
+        "peak": 0.976379,
+        "spectral_centroid_hz": 1451.3,
+        "spectral_flatness": 0.248623,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4028,
+      "quality_score": 0.9235,
+      "keep_score": 0.9163,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0024",
+      "start_sec": 152.753,
+      "end_sec": 156.757,
+      "duration_sec": 4.004,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49691,
+        "contrast": 0.2485,
+        "sharpness": 0.13385,
+        "motion": 0.07927,
+        "visual_hash": "0ffe0cfe04f60dca04da147e0f7e0f686d88"
+      },
+      "audio": {
+        "rms": 0.143368,
+        "peak": 0.957977,
+        "spectral_centroid_hz": 1274.78,
+        "spectral_flatness": 0.234491,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3889,
+      "quality_score": 0.9958,
+      "keep_score": 0.9662,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0025",
+      "start_sec": 156.757,
+      "end_sec": 166.433,
+      "duration_sec": 9.676,
+      "role": "dialogue",
+      "speech_ratio": 0.9339,
+      "visual": {
+        "brightness": 0.5008,
+        "contrast": 0.19396,
+        "sharpness": 0.13339,
+        "motion": 0.02307,
+        "visual_hash": "1eff1f9ff87f003f183919b901d9078003ec"
+      },
+      "audio": {
+        "rms": 0.128547,
+        "peak": 0.999969,
+        "spectral_centroid_hz": 1463.24,
+        "spectral_flatness": 0.28889,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 0.9391,
+      "keep_score": 0.9321,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0026",
+      "start_sec": 166.433,
+      "end_sec": 169.803,
+      "duration_sec": 3.37,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.44017,
+        "contrast": 0.23598,
+        "sharpness": 0.14542,
+        "motion": 0.05434,
+        "visual_hash": "1ffeffc267401f007c003c913ed80ef80efc"
+      },
+      "audio": {
+        "rms": 0.130681,
+        "peak": 0.864838,
+        "spectral_centroid_hz": 1479.46,
+        "spectral_flatness": 0.324063,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 1.0,
+      "keep_score": 0.9579,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0027",
+      "start_sec": 169.803,
+      "end_sec": 175.409,
+      "duration_sec": 5.606,
+      "role": "dialogue",
+      "speech_ratio": 0.7324,
+      "visual": {
+        "brightness": 0.49924,
+        "contrast": 0.1968,
+        "sharpness": 0.12945,
+        "motion": 0.04023,
+        "visual_hash": "1fff1f9ffc7f003f181918d901d9078003ec"
+      },
+      "audio": {
+        "rms": 0.190228,
+        "peak": 0.878174,
+        "spectral_centroid_hz": 1493.97,
+        "spectral_flatness": 0.295293,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4028,
+      "quality_score": 0.9798,
+      "keep_score": 0.9401,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0028",
+      "start_sec": 175.409,
+      "end_sec": 179.112,
+      "duration_sec": 3.703,
+      "role": "dialogue",
+      "speech_ratio": 0.8509,
+      "visual": {
+        "brightness": 0.50073,
+        "contrast": 0.25096,
+        "sharpness": 0.12446,
+        "motion": 0.10112,
+        "visual_hash": "0fff077e12361262117a51f60fdecf881f80"
+      },
+      "audio": {
+        "rms": 0.274975,
+        "peak": 0.914673,
+        "spectral_centroid_hz": 1806.83,
+        "spectral_flatness": 0.323759,
+        "kind": "speech"
+      },
+      "novelty_score": 0.375,
+      "quality_score": 0.9617,
+      "keep_score": 0.9615,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0029",
+      "start_sec": 179.112,
+      "end_sec": 182.249,
+      "duration_sec": 3.137,
+      "role": "dialogue",
+      "speech_ratio": 0.6089,
+      "visual": {
+        "brightness": 0.50247,
+        "contrast": 0.23734,
+        "sharpness": 0.12886,
+        "motion": 0.08726,
+        "visual_hash": "0ffe06fe04f60cca036e133e4ffe8f180d88"
+      },
+      "audio": {
+        "rms": 0.153336,
+        "peak": 0.827057,
+        "spectral_centroid_hz": 1331.28,
+        "spectral_flatness": 0.246712,
+        "kind": "speech"
+      },
+      "novelty_score": 0.2222,
+      "quality_score": 0.9777,
+      "keep_score": 0.9258,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0030",
+      "start_sec": 182.249,
+      "end_sec": 205.372,
+      "duration_sec": 23.123,
+      "role": "dialogue",
+      "speech_ratio": 0.8914,
+      "visual": {
+        "brightness": 0.50258,
+        "contrast": 0.19396,
+        "sharpness": 0.13365,
+        "motion": 0.01373,
+        "visual_hash": "1fff1fdffc7f002f10311939015907c007ec"
+      },
+      "audio": {
+        "rms": 0.122239,
+        "peak": 0.945648,
+        "spectral_centroid_hz": 1402.17,
+        "spectral_flatness": 0.265882,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3889,
+      "quality_score": 0.8826,
+      "keep_score": 0.8966,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0031",
+      "start_sec": 205.372,
+      "end_sec": 207.908,
+      "duration_sec": 2.536,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.44466,
+        "contrast": 0.22974,
+        "sharpness": 0.14751,
+        "motion": 0.06086,
+        "visual_hash": "1ffeffc06f000f045c843c953cf12a730ed3"
+      },
+      "audio": {
+        "rms": 0.165185,
+        "peak": 0.791382,
+        "spectral_centroid_hz": 1281.59,
+        "spectral_flatness": 0.293621,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4722,
+      "quality_score": 1.0,
+      "keep_score": 0.965,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0032",
+      "start_sec": 207.908,
+      "end_sec": 217.084,
+      "duration_sec": 9.176,
+      "role": "dialogue",
+      "speech_ratio": 0.9085,
+      "visual": {
+        "brightness": 0.50307,
+        "contrast": 0.195,
+        "sharpness": 0.13652,
+        "motion": 0.02813,
+        "visual_hash": "0fff1fdffc7f0037183919bd01e907400784"
+      },
+      "audio": {
+        "rms": 0.12337,
+        "peak": 0.776367,
+        "spectral_centroid_hz": 1318.79,
+        "spectral_flatness": 0.279987,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 0.945,
+      "keep_score": 0.9253,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0033",
+      "start_sec": 217.084,
+      "end_sec": 224.157,
+      "duration_sec": 7.073,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49967,
+        "contrast": 0.246,
+        "sharpness": 0.13725,
+        "motion": 0.02911,
+        "visual_hash": "0ffe0ffe0e721ee6164e125e0fcc0fe046c0"
+      },
+      "audio": {
+        "rms": 0.117711,
+        "peak": 0.66983,
+        "spectral_centroid_hz": 1189.6,
+        "spectral_flatness": 0.242735,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3472,
+      "quality_score": 1.0,
+      "keep_score": 0.9205,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白"
+      ]
+    },
+    {
+      "shot_id": "shot-0034",
+      "start_sec": 224.157,
+      "end_sec": 234.201,
+      "duration_sec": 10.044,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50222,
+        "contrast": 0.19607,
+        "sharpness": 0.13579,
+        "motion": 0.02132,
+        "visual_hash": "0fff1fdffc7f00371839193d01ed0780038c"
+      },
+      "audio": {
+        "rms": 0.12388,
+        "peak": 0.744324,
+        "spectral_centroid_hz": 1286.6,
+        "spectral_flatness": 0.276404,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3472,
+      "quality_score": 0.945,
+      "keep_score": 0.9028,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0035",
+      "start_sec": 234.201,
+      "end_sec": 238.705,
+      "duration_sec": 4.504,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50013,
+        "contrast": 0.24353,
+        "sharpness": 0.13563,
+        "motion": 0.04316,
+        "visual_hash": "0ffe0ffe0e721eca124e125e0fce0fc247c0"
+      },
+      "audio": {
+        "rms": 0.099952,
+        "peak": 0.660797,
+        "spectral_centroid_hz": 1145.41,
+        "spectral_flatness": 0.246084,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3611,
+      "quality_score": 1.0,
+      "keep_score": 0.9296,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白"
+      ]
+    },
+    {
+      "shot_id": "shot-0036",
+      "start_sec": 238.705,
+      "end_sec": 257.624,
+      "duration_sec": 18.919,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50214,
+        "contrast": 0.19457,
+        "sharpness": 0.13338,
+        "motion": 0.01523,
+        "visual_hash": "0fff1fdffc7f00371839193d01e907c003c4"
+      },
+      "audio": {
+        "rms": 0.106065,
+        "peak": 0.899963,
+        "spectral_centroid_hz": 1205.66,
+        "spectral_flatness": 0.258503,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3472,
+      "quality_score": 0.8816,
+      "keep_score": 0.8872,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0037",
+      "start_sec": 257.624,
+      "end_sec": 263.897,
+      "duration_sec": 6.273,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49767,
+        "contrast": 0.25643,
+        "sharpness": 0.13276,
+        "motion": 0.01447,
+        "visual_hash": "0ffe07fe067606ca125e125e0ede0fec47c0"
+      },
+      "audio": {
+        "rms": 0.123177,
+        "peak": 0.976593,
+        "spectral_centroid_hz": 1276.24,
+        "spectral_flatness": 0.246506,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3611,
+      "quality_score": 0.9919,
+      "keep_score": 0.9285,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0038",
+      "start_sec": 263.897,
+      "end_sec": 268.468,
+      "duration_sec": 4.571,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50284,
+        "contrast": 0.19601,
+        "sharpness": 0.13156,
+        "motion": 0.0298,
+        "visual_hash": "1eff1f9ffc7f0037183918bd09e907c003c8"
+      },
+      "audio": {
+        "rms": 0.113524,
+        "peak": 0.874542,
+        "spectral_centroid_hz": 1253.61,
+        "spectral_flatness": 0.267617,
+        "kind": "speech"
+      },
+      "novelty_score": 0.375,
+      "quality_score": 0.9875,
+      "keep_score": 0.9321,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0039",
+      "start_sec": 268.468,
+      "end_sec": 274.474,
+      "duration_sec": 6.006,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.45379,
+        "contrast": 0.22898,
+        "sharpness": 0.14885,
+        "motion": 0.03266,
+        "visual_hash": "1ff6ffc0674007841c843c953c513a732edf"
+      },
+      "audio": {
+        "rms": 0.145591,
+        "peak": 0.770935,
+        "spectral_centroid_hz": 1310.85,
+        "spectral_flatness": 0.225221,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4722,
+      "quality_score": 1.0,
+      "keep_score": 0.9499,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0040",
+      "start_sec": 274.474,
+      "end_sec": 293.293,
+      "duration_sec": 18.819,
+      "role": "dialogue",
+      "speech_ratio": 0.8565,
+      "visual": {
+        "brightness": 0.5029,
+        "contrast": 0.19289,
+        "sharpness": 0.13382,
+        "motion": 0.01713,
+        "visual_hash": "0fff0ffffc7f00370039183d01fd07d003c8"
+      },
+      "audio": {
+        "rms": 0.131564,
+        "peak": 0.966431,
+        "spectral_centroid_hz": 1469.54,
+        "spectral_flatness": 0.286155,
+        "kind": "speech"
+      },
+      "novelty_score": 0.5,
+      "quality_score": 0.8832,
+      "keep_score": 0.9195,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0041",
+      "start_sec": 293.293,
+      "end_sec": 299.666,
+      "duration_sec": 6.373,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50515,
+        "contrast": 0.24346,
+        "sharpness": 0.13436,
+        "motion": 0.05778,
+        "visual_hash": "0ffe0ffe067614ca164e121e0f9e4ecac7c0"
+      },
+      "audio": {
+        "rms": 0.109877,
+        "peak": 0.843628,
+        "spectral_centroid_hz": 1302.29,
+        "spectral_flatness": 0.283413,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3472,
+      "quality_score": 0.9977,
+      "keep_score": 0.9428,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0042",
+      "start_sec": 299.666,
+      "end_sec": 305.005,
+      "duration_sec": 5.339,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49652,
+        "contrast": 0.19568,
+        "sharpness": 0.13364,
+        "motion": 0.03352,
+        "visual_hash": "0fff0ffffc7f002f1839193d050d07c003cc"
+      },
+      "audio": {
+        "rms": 0.144504,
+        "peak": 0.895782,
+        "spectral_centroid_hz": 1350.85,
+        "spectral_flatness": 0.192519,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3333,
+      "quality_score": 0.9951,
+      "keep_score": 0.93,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0043",
+      "start_sec": 305.005,
+      "end_sec": 309.51,
+      "duration_sec": 4.505,
+      "role": "dialogue",
+      "speech_ratio": 0.9978,
+      "visual": {
+        "brightness": 0.45644,
+        "contrast": 0.22885,
+        "sharpness": 0.14756,
+        "motion": 0.06673,
+        "visual_hash": "0ffeffc36e411e005c003c943cd13ad13ede"
+      },
+      "audio": {
+        "rms": 0.100602,
+        "peak": 0.678192,
+        "spectral_centroid_hz": 1207.54,
+        "spectral_flatness": 0.220586,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 1.0,
+      "keep_score": 0.9548,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息"
+      ]
+    },
+    {
+      "shot_id": "shot-0044",
+      "start_sec": 309.51,
+      "end_sec": 341.141,
+      "duration_sec": 31.631,
+      "role": "dialogue",
+      "speech_ratio": 0.9624,
+      "visual": {
+        "brightness": 0.50415,
+        "contrast": 0.19317,
+        "sharpness": 0.13393,
+        "motion": 0.01556,
+        "visual_hash": "0fff0ffffc7f0037183918bd094d078003f0"
+      },
+      "audio": {
+        "rms": 0.145759,
+        "peak": 1.0,
+        "spectral_centroid_hz": 1353.63,
+        "spectral_flatness": 0.242476,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 0.8836,
+      "keep_score": 0.908,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0045",
+      "start_sec": 341.141,
+      "end_sec": 348.782,
+      "duration_sec": 7.641,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.45078,
+        "contrast": 0.2312,
+        "sharpness": 0.15392,
+        "motion": 0.01907,
+        "visual_hash": "07feffc267011f045c843c853ed13ed12bcc"
+      },
+      "audio": {
+        "rms": 0.125506,
+        "peak": 0.960114,
+        "spectral_centroid_hz": 1544.17,
+        "spectral_flatness": 0.318656,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4583,
+      "quality_score": 1.0,
+      "keep_score": 0.95,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0046",
+      "start_sec": 348.782,
+      "end_sec": 354.254,
+      "duration_sec": 5.472,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50208,
+        "contrast": 0.19514,
+        "sharpness": 0.13552,
+        "motion": 0.03261,
+        "visual_hash": "07ff07dffc7f003718391d9d1d4b078003f0"
+      },
+      "audio": {
+        "rms": 0.113017,
+        "peak": 0.631683,
+        "spectral_centroid_hz": 1220.76,
+        "spectral_flatness": 0.270497,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 1.0,
+      "keep_score": 0.9354,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息"
+      ]
+    },
+    {
+      "shot_id": "shot-0047",
+      "start_sec": 354.254,
+      "end_sec": 360.427,
+      "duration_sec": 6.173,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50012,
+        "contrast": 0.25017,
+        "sharpness": 0.14213,
+        "motion": 0.0407,
+        "visual_hash": "07ff07ff06720ee6024e125f8ece8fc28ec0"
+      },
+      "audio": {
+        "rms": 0.141106,
+        "peak": 0.867401,
+        "spectral_centroid_hz": 1172.34,
+        "spectral_flatness": 0.228708,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3472,
+      "quality_score": 1.0,
+      "keep_score": 0.9362,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0048",
+      "start_sec": 360.427,
+      "end_sec": 372.206,
+      "duration_sec": 11.779,
+      "role": "dialogue",
+      "speech_ratio": 0.8828,
+      "visual": {
+        "brightness": 0.50333,
+        "contrast": 0.19442,
+        "sharpness": 0.13665,
+        "motion": 0.02602,
+        "visual_hash": "07ff07fffc7f00371839193d0d4d07c003f0"
+      },
+      "audio": {
+        "rms": 0.146028,
+        "peak": 0.974518,
+        "spectral_centroid_hz": 1327.95,
+        "spectral_flatness": 0.238783,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3194,
+      "quality_score": 0.945,
+      "keep_score": 0.9116,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0049",
+      "start_sec": 372.206,
+      "end_sec": 379.413,
+      "duration_sec": 7.207,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50236,
+        "contrast": 0.24877,
+        "sharpness": 0.13916,
+        "motion": 0.01507,
+        "visual_hash": "07fe07fe0e720ee6064e12de4f9c2e9c6cc0"
+      },
+      "audio": {
+        "rms": 0.135544,
+        "peak": 0.834534,
+        "spectral_centroid_hz": 1162.97,
+        "spectral_flatness": 0.209353,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3889,
+      "quality_score": 1.0,
+      "keep_score": 0.9293,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0050",
+      "start_sec": 379.413,
+      "end_sec": 384.518,
+      "duration_sec": 5.105,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49743,
+        "contrast": 0.20006,
+        "sharpness": 0.13232,
+        "motion": 0.04973,
+        "visual_hash": "07ff07fffc7f003f183919bd014d07c003f0"
+      },
+      "audio": {
+        "rms": 0.119303,
+        "peak": 0.848846,
+        "spectral_centroid_hz": 1129.35,
+        "spectral_flatness": 0.229544,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4028,
+      "quality_score": 0.9903,
+      "keep_score": 0.9467,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0051",
+      "start_sec": 384.518,
+      "end_sec": 392.059,
+      "duration_sec": 7.541,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50525,
+        "contrast": 0.24177,
+        "sharpness": 0.12651,
+        "motion": 0.02656,
+        "visual_hash": "0ffe0ffe067016e61646125f0f8c4edc6ec0"
+      },
+      "audio": {
+        "rms": 0.104182,
+        "peak": 0.673431,
+        "spectral_centroid_hz": 1013.88,
+        "spectral_flatness": 0.195284,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4028,
+      "quality_score": 0.9691,
+      "keep_score": 0.9196,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息"
+      ]
+    },
+    {
+      "shot_id": "shot-0052",
+      "start_sec": 392.059,
+      "end_sec": 400.334,
+      "duration_sec": 8.275,
+      "role": "dialogue",
+      "speech_ratio": 0.9033,
+      "visual": {
+        "brightness": 0.50326,
+        "contrast": 0.19316,
+        "sharpness": 0.11701,
+        "motion": 0.0141,
+        "visual_hash": "feffff9ff87f0037103918ad008d078003f0"
+      },
+      "audio": {
+        "rms": 0.113776,
+        "peak": 1.0,
+        "spectral_centroid_hz": 1518.37,
+        "spectral_flatness": 0.302264,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4583,
+      "quality_score": 0.8796,
+      "keep_score": 0.911,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0053",
+      "start_sec": 400.334,
+      "end_sec": 404.071,
+      "duration_sec": 3.737,
+      "role": "dialogue",
+      "speech_ratio": 0.7003,
+      "visual": {
+        "brightness": 0.45774,
+        "contrast": 0.22764,
+        "sharpness": 0.13183,
+        "motion": 0.09575,
+        "visual_hash": "fffeffc267411e807c803c911e7d02710ed0"
+      },
+      "audio": {
+        "rms": 0.169584,
+        "peak": 0.999969,
+        "spectral_centroid_hz": 1537.88,
+        "spectral_flatness": 0.254088,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 0.9885,
+      "keep_score": 0.9817,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0054",
+      "start_sec": 404.071,
+      "end_sec": 417.918,
+      "duration_sec": 13.847,
+      "role": "dialogue",
+      "speech_ratio": 0.9395,
+      "visual": {
+        "brightness": 0.51059,
+        "contrast": 0.19214,
+        "sharpness": 0.1197,
+        "motion": 0.01853,
+        "visual_hash": "fcffff9f787f002f18391cb90189078003f0"
+      },
+      "audio": {
+        "rms": 0.14542,
+        "peak": 0.856018,
+        "spectral_centroid_hz": 1319.57,
+        "spectral_flatness": 0.213986,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4167,
+      "quality_score": 0.8894,
+      "keep_score": 0.9017,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0055",
+      "start_sec": 417.918,
+      "end_sec": 418.385,
+      "duration_sec": 0.467,
+      "role": "transition",
+      "speech_ratio": 0.0,
+      "visual": {
+        "brightness": 0.0,
+        "contrast": 0.0,
+        "sharpness": 0.0,
+        "motion": 0.50989,
+        "visual_hash": "ffffffffffffffffffffffffffffffffffff"
+      },
+      "audio": {
+        "rms": 0.198571,
+        "peak": 0.340485,
+        "spectral_centroid_hz": 1038.23,
+        "spectral_flatness": 0.033638,
+        "kind": "music_likely"
+      },
+      "novelty_score": 0.5,
+      "quality_score": 0.1375,
+      "keep_score": 0.161,
+      "recommendation": "cut_first",
+      "reasons": [
+        "提供新的视觉信息",
+        "画面清晰度较低",
+        "曝光异常"
+      ]
+    },
+    {
+      "shot_id": "shot-0056",
+      "start_sec": 418.385,
+      "end_sec": 424.324,
+      "duration_sec": 5.939,
+      "role": "dialogue",
+      "speech_ratio": 0.9874,
+      "visual": {
+        "brightness": 0.50629,
+        "contrast": 0.19422,
+        "sharpness": 0.13273,
+        "motion": 0.04925,
+        "visual_hash": "0fff0ffffc7f003718391dad01cd078003b0"
+      },
+      "audio": {
+        "rms": 0.110486,
+        "peak": 0.795929,
+        "spectral_centroid_hz": 1092.37,
+        "spectral_flatness": 0.177423,
+        "kind": "speech"
+      },
+      "novelty_score": 0.5,
+      "quality_score": 0.9917,
+      "keep_score": 0.9618,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0057",
+      "start_sec": 424.324,
+      "end_sec": 432.232,
+      "duration_sec": 7.908,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.45079,
+        "contrast": 0.23161,
+        "sharpness": 0.15021,
+        "motion": 0.03852,
+        "visual_hash": "2ffeffc2670107045c843c853ed11efc0ee8"
+      },
+      "audio": {
+        "rms": 0.1078,
+        "peak": 0.880554,
+        "spectral_centroid_hz": 1332.7,
+        "spectral_flatness": 0.248596,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 1.0,
+      "keep_score": 0.9533,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0058",
+      "start_sec": 432.232,
+      "end_sec": 454.821,
+      "duration_sec": 22.589,
+      "role": "dialogue",
+      "speech_ratio": 0.8681,
+      "visual": {
+        "brightness": 0.50101,
+        "contrast": 0.19602,
+        "sharpness": 0.13175,
+        "motion": 0.00896,
+        "visual_hash": "0fff0ffffc7f0037183918bd11cd078003b0"
+      },
+      "audio": {
+        "rms": 0.1199,
+        "peak": 0.961853,
+        "spectral_centroid_hz": 1359.95,
+        "spectral_flatness": 0.250441,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 0.8757,
+      "keep_score": 0.9028,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0059",
+      "start_sec": 454.821,
+      "end_sec": 469.336,
+      "duration_sec": 14.515,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49291,
+        "contrast": 0.25076,
+        "sharpness": 0.13522,
+        "motion": 0.04667,
+        "visual_hash": "0ffe07f60e7e0cee007e02794fcd0fcc6c80"
+      },
+      "audio": {
+        "rms": 0.137068,
+        "peak": 0.905487,
+        "spectral_centroid_hz": 1346.22,
+        "spectral_flatness": 0.241019,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3194,
+      "quality_score": 0.945,
+      "keep_score": 0.9185,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0060",
+      "start_sec": 469.336,
+      "end_sec": 482.282,
+      "duration_sec": 12.946,
+      "role": "dialogue",
+      "speech_ratio": 0.8036,
+      "visual": {
+        "brightness": 0.42759,
+        "contrast": 0.19367,
+        "sharpness": 0.12052,
+        "motion": 0.03771,
+        "visual_hash": "0fff0ffffc7f0037183909bd014d07c003f0"
+      },
+      "audio": {
+        "rms": 0.096753,
+        "peak": 0.996094,
+        "spectral_centroid_hz": 1186.24,
+        "spectral_flatness": 0.227034,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3194,
+      "quality_score": 0.8923,
+      "keep_score": 0.9017,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0061",
+      "start_sec": 482.282,
+      "end_sec": 502.236,
+      "duration_sec": 19.954,
+      "role": "dialogue",
+      "speech_ratio": 0.5954,
+      "visual": {
+        "brightness": 0.53993,
+        "contrast": 0.20253,
+        "sharpness": 0.13082,
+        "motion": 0.03103,
+        "visual_hash": "fffeffdffc7f002f00391009130d130443a6"
+      },
+      "audio": {
+        "rms": 0.089237,
+        "peak": 1.0,
+        "spectral_centroid_hz": 1639.86,
+        "spectral_flatness": 0.277784,
+        "kind": "speech"
+      },
+      "novelty_score": 0.2361,
+      "quality_score": 0.8723,
+      "keep_score": 0.8734,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0062",
+      "start_sec": 502.236,
+      "end_sec": 507.374,
+      "duration_sec": 5.138,
+      "role": "dialogue",
+      "speech_ratio": 0.5418,
+      "visual": {
+        "brightness": 0.52097,
+        "contrast": 0.21451,
+        "sharpness": 0.13704,
+        "motion": 0.02986,
+        "visual_hash": "ffdfffff4877003b206c310c358423068393"
+      },
+      "audio": {
+        "rms": 0.085373,
+        "peak": 0.923859,
+        "spectral_centroid_hz": 1380.24,
+        "spectral_flatness": 0.269586,
+        "kind": "speech"
+      },
+      "novelty_score": 0.2361,
+      "quality_score": 1.0,
+      "keep_score": 0.903,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0063",
+      "start_sec": 507.374,
+      "end_sec": 512.079,
+      "duration_sec": 4.705,
+      "role": "dialogue",
+      "speech_ratio": 0.8493,
+      "visual": {
+        "brightness": 0.54147,
+        "contrast": 0.20481,
+        "sharpness": 0.13013,
+        "motion": 0.049,
+        "visual_hash": "fffeff9ffc7f0037003930591b0d13040306"
+      },
+      "audio": {
+        "rms": 0.092045,
+        "peak": 1.0,
+        "spectral_centroid_hz": 1741.86,
+        "spectral_flatness": 0.261242,
+        "kind": "speech"
+      },
+      "novelty_score": 0.25,
+      "quality_score": 0.9823,
+      "keep_score": 0.9238,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0064",
+      "start_sec": 512.079,
+      "end_sec": 525.826,
+      "duration_sec": 13.747,
+      "role": "dialogue",
+      "speech_ratio": 0.8479,
+      "visual": {
+        "brightness": 0.5849,
+        "contrast": 0.22784,
+        "sharpness": 0.1287,
+        "motion": 0.055,
+        "visual_hash": "fbfe79f679e675ca4fc60886418e120e0e02"
+      },
+      "audio": {
+        "rms": 0.101553,
+        "peak": 0.944244,
+        "spectral_centroid_hz": 1564.66,
+        "spectral_flatness": 0.28095,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 0.9221,
+      "keep_score": 0.9398,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0065",
+      "start_sec": 525.826,
+      "end_sec": 544.811,
+      "duration_sec": 18.985,
+      "role": "dialogue",
+      "speech_ratio": 0.7214,
+      "visual": {
+        "brightness": 0.53818,
+        "contrast": 0.19816,
+        "sharpness": 0.12998,
+        "motion": 0.03172,
+        "visual_hash": "ffdeffdeec7f082720393809330c33846106"
+      },
+      "audio": {
+        "rms": 0.099376,
+        "peak": 0.961639,
+        "spectral_centroid_hz": 1565.24,
+        "spectral_flatness": 0.300646,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4583,
+      "quality_score": 0.8692,
+      "keep_score": 0.9146,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0066",
+      "start_sec": 544.811,
+      "end_sec": 551.518,
+      "duration_sec": 6.707,
+      "role": "dialogue",
+      "speech_ratio": 0.5855,
+      "visual": {
+        "brightness": 0.57913,
+        "contrast": 0.22453,
+        "sharpness": 0.12784,
+        "motion": 0.09256,
+        "visual_hash": "7ffe79f279f27dc655c21882188a720a3a03"
+      },
+      "audio": {
+        "rms": 0.118072,
+        "peak": 0.901276,
+        "spectral_centroid_hz": 1470.82,
+        "spectral_flatness": 0.269218,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 0.974,
+      "keep_score": 0.9655,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0067",
+      "start_sec": 551.518,
+      "end_sec": 603.737,
+      "duration_sec": 52.219,
+      "role": "dialogue",
+      "speech_ratio": 0.6734,
+      "visual": {
+        "brightness": 0.53548,
+        "contrast": 0.20061,
+        "sharpness": 0.12727,
+        "motion": 0.03481,
+        "visual_hash": "fffeffdff47f002714791809180919843146"
+      },
+      "audio": {
+        "rms": 0.106259,
+        "peak": 0.999969,
+        "spectral_centroid_hz": 1668.67,
+        "spectral_flatness": 0.323255,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3889,
+      "quality_score": 0.8594,
+      "keep_score": 0.9024,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0068",
+      "start_sec": 603.737,
+      "end_sec": 608.609,
+      "duration_sec": 4.872,
+      "role": "establishing",
+      "speech_ratio": 0.0,
+      "visual": {
+        "brightness": 0.56974,
+        "contrast": 0.22518,
+        "sharpness": 0.1313,
+        "motion": 0.0483,
+        "visual_hash": "fffefffe7ce679e27dc61083108b000c0003"
+      },
+      "audio": {
+        "rms": 0.026139,
+        "peak": 0.269318,
+        "spectral_centroid_hz": 1113.48,
+        "spectral_flatness": 0.204133,
+        "kind": "ambient_likely"
+      },
+      "novelty_score": 0.3194,
+      "quality_score": 0.9865,
+      "keep_score": 0.7808,
+      "recommendation": "optional",
+      "reasons": [
+        "建立地点或场景关系"
+      ]
+    },
+    {
+      "shot_id": "shot-0069",
+      "start_sec": 608.609,
+      "end_sec": 648.182,
+      "duration_sec": 39.573,
+      "role": "dialogue",
+      "speech_ratio": 0.7116,
+      "visual": {
+        "brightness": 0.53772,
+        "contrast": 0.20004,
+        "sharpness": 0.12814,
+        "motion": 0.03164,
+        "visual_hash": "ffdeffdffc7f003700393025330d23840226"
+      },
+      "audio": {
+        "rms": 0.11085,
+        "peak": 0.977142,
+        "spectral_centroid_hz": 1623.79,
+        "spectral_flatness": 0.308124,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3611,
+      "quality_score": 0.8626,
+      "keep_score": 0.8957,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0070",
+      "start_sec": 648.182,
+      "end_sec": 683.517,
+      "duration_sec": 35.335,
+      "role": "dialogue",
+      "speech_ratio": 0.5167,
+      "visual": {
+        "brightness": 0.53146,
+        "contrast": 0.21579,
+        "sharpness": 0.12868,
+        "motion": 0.03398,
+        "visual_hash": "ffdeef9fe47f004f103932193e193c082c0c"
+      },
+      "audio": {
+        "rms": 0.115757,
+        "peak": 0.973083,
+        "spectral_centroid_hz": 1623.06,
+        "spectral_flatness": 0.301633,
+        "kind": "speech"
+      },
+      "novelty_score": 0.2361,
+      "quality_score": 0.8645,
+      "keep_score": 0.8609,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0071",
+      "start_sec": 683.517,
+      "end_sec": 690.457,
+      "duration_sec": 6.94,
+      "role": "dialogue",
+      "speech_ratio": 0.8304,
+      "visual": {
+        "brightness": 0.57369,
+        "contrast": 0.22541,
+        "sharpness": 0.13494,
+        "motion": 0.06785,
+        "visual_hash": "7ffe7fce7f8e4bf20b5889784018481c9824"
+      },
+      "audio": {
+        "rms": 0.145887,
+        "peak": 0.987579,
+        "spectral_centroid_hz": 1582.5,
+        "spectral_flatness": 0.305126,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 0.9998,
+      "keep_score": 0.9707,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0072",
+      "start_sec": 690.457,
+      "end_sec": 711.778,
+      "duration_sec": 21.321,
+      "role": "dialogue",
+      "speech_ratio": 0.4554,
+      "visual": {
+        "brightness": 0.52952,
+        "contrast": 0.21709,
+        "sharpness": 0.13216,
+        "motion": 0.05633,
+        "visual_hash": "fbfef3dffc7f1c6f08390a190a190009390c"
+      },
+      "audio": {
+        "rms": 0.099513,
+        "peak": 1.0,
+        "spectral_centroid_hz": 1543.21,
+        "spectral_flatness": 0.346003,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3472,
+      "quality_score": 0.8772,
+      "keep_score": 0.8896,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0073",
+      "start_sec": 711.778,
+      "end_sec": 718.719,
+      "duration_sec": 6.941,
+      "role": "dialogue",
+      "speech_ratio": 0.4695,
+      "visual": {
+        "brightness": 0.57451,
+        "contrast": 0.22731,
+        "sharpness": 0.13533,
+        "motion": 0.1005,
+        "visual_hash": "fffe73ce6fc6cbf28d08691e400c701c1c24"
+      },
+      "audio": {
+        "rms": 0.106081,
+        "peak": 1.0,
+        "spectral_centroid_hz": 1439.38,
+        "spectral_flatness": 0.313822,
+        "kind": "speech"
+      },
+      "novelty_score": 0.375,
+      "quality_score": 1.0,
+      "keep_score": 0.9578,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0074",
+      "start_sec": 718.719,
+      "end_sec": 767.835,
+      "duration_sec": 49.116,
+      "role": "dialogue",
+      "speech_ratio": 0.6364,
+      "visual": {
+        "brightness": 0.53272,
+        "contrast": 0.21506,
+        "sharpness": 0.12641,
+        "motion": 0.02712,
+        "visual_hash": "fffeffdfec7f084f103912191a193c080c04"
+      },
+      "audio": {
+        "rms": 0.117123,
+        "peak": 1.0,
+        "spectral_centroid_hz": 1468.47,
+        "spectral_flatness": 0.282054,
+        "kind": "speech"
+      },
+      "novelty_score": 0.375,
+      "quality_score": 0.8563,
+      "keep_score": 0.8951,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0075",
+      "start_sec": 767.835,
+      "end_sec": 772.539,
+      "duration_sec": 4.704,
+      "role": "dialogue",
+      "speech_ratio": 0.3965,
+      "visual": {
+        "brightness": 0.56342,
+        "contrast": 0.21779,
+        "sharpness": 0.12801,
+        "motion": 0.10422,
+        "visual_hash": "fffe77ce67ce71f21918913ec00c181c8c24"
+      },
+      "audio": {
+        "rms": 0.137156,
+        "peak": 0.928528,
+        "spectral_centroid_hz": 1555.72,
+        "spectral_flatness": 0.278632,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3333,
+      "quality_score": 0.9746,
+      "keep_score": 0.9311,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0076",
+      "start_sec": 772.539,
+      "end_sec": 816.683,
+      "duration_sec": 44.144,
+      "role": "dialogue",
+      "speech_ratio": 0.4413,
+      "visual": {
+        "brightness": 0.53035,
+        "contrast": 0.21345,
+        "sharpness": 0.12643,
+        "motion": 0.03145,
+        "visual_hash": "fffeff9ff67f106f00391a1918191c081c04"
+      },
+      "audio": {
+        "rms": 0.123213,
+        "peak": 1.0,
+        "spectral_centroid_hz": 1624.3,
+        "spectral_flatness": 0.332442,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3194,
+      "quality_score": 0.8563,
+      "keep_score": 0.8637,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0077",
+      "start_sec": 816.683,
+      "end_sec": 822.556,
+      "duration_sec": 5.873,
+      "role": "dialogue",
+      "speech_ratio": 0.4488,
+      "visual": {
+        "brightness": 0.56405,
+        "contrast": 0.22548,
+        "sharpness": 0.13487,
+        "motion": 0.08551,
+        "visual_hash": "fffe7bce79ce77f2053a013e000e081c3c24"
+      },
+      "audio": {
+        "rms": 0.088882,
+        "peak": 0.900665,
+        "spectral_centroid_hz": 1663.74,
+        "spectral_flatness": 0.369679,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3333,
+      "quality_score": 0.9995,
+      "keep_score": 0.9351,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0078",
+      "start_sec": 822.556,
+      "end_sec": 823.657,
+      "duration_sec": 1.101,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.53183,
+        "contrast": 0.21738,
+        "sharpness": 0.11141,
+        "motion": 0.12931,
+        "visual_hash": "fffee7feef9ec782c3ba803a800e801c8024"
+      },
+      "audio": {
+        "rms": 0.104335,
+        "peak": 0.641449,
+        "spectral_centroid_hz": 1334.16,
+        "spectral_flatness": 0.277943,
+        "kind": "speech"
+      },
+      "novelty_score": 0.2361,
+      "quality_score": 0.9142,
+      "keep_score": 0.9171,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白"
+      ]
+    },
+    {
+      "shot_id": "shot-0079",
+      "start_sec": 823.657,
+      "end_sec": 832.9,
+      "duration_sec": 9.243,
+      "role": "dialogue",
+      "speech_ratio": 0.5716,
+      "visual": {
+        "brightness": 0.43733,
+        "contrast": 0.20395,
+        "sharpness": 0.09349,
+        "motion": 0.10356,
+        "visual_hash": "1fff0ff70be727ea87ce851e800ec00ce40c"
+      },
+      "audio": {
+        "rms": 0.123152,
+        "peak": 0.999969,
+        "spectral_centroid_hz": 1469.75,
+        "spectral_flatness": 0.294737,
+        "kind": "speech"
+      },
+      "novelty_score": 0.2917,
+      "quality_score": 0.7941,
+      "keep_score": 0.8915,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0080",
+      "start_sec": 832.9,
+      "end_sec": 844.778,
+      "duration_sec": 11.878,
+      "role": "dialogue",
+      "speech_ratio": 0.9082,
+      "visual": {
+        "brightness": 0.49918,
+        "contrast": 0.1915,
+        "sharpness": 0.12007,
+        "motion": 0.03315,
+        "visual_hash": "fcdeff9ff87f001f1019182d03e907e003f0"
+      },
+      "audio": {
+        "rms": 0.119009,
+        "peak": 0.861511,
+        "spectral_centroid_hz": 1099.68,
+        "spectral_flatness": 0.184641,
+        "kind": "speech"
+      },
+      "novelty_score": 0.5833,
+      "quality_score": 0.8907,
+      "keep_score": 0.9397,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0081",
+      "start_sec": 844.778,
+      "end_sec": 849.917,
+      "duration_sec": 5.139,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.48516,
+        "contrast": 0.20696,
+        "sharpness": 0.12913,
+        "motion": 0.03803,
+        "visual_hash": "fffffc7f001b003c701673d44784078407cf"
+      },
+      "audio": {
+        "rms": 0.137426,
+        "peak": 0.857208,
+        "spectral_centroid_hz": 1520.55,
+        "spectral_flatness": 0.231688,
+        "kind": "speech"
+      },
+      "novelty_score": 0.375,
+      "quality_score": 0.9787,
+      "keep_score": 0.9325,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0082",
+      "start_sec": 849.917,
+      "end_sec": 860.093,
+      "duration_sec": 10.176,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.51877,
+        "contrast": 0.2401,
+        "sharpness": 0.1265,
+        "motion": 0.0434,
+        "visual_hash": "0ffe06fe067804e40046127d6b5d6f1d6f0f"
+      },
+      "audio": {
+        "rms": 0.10897,
+        "peak": 0.678802,
+        "spectral_centroid_hz": 1106.61,
+        "spectral_flatness": 0.194803,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3889,
+      "quality_score": 0.9141,
+      "keep_score": 0.9082,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白"
+      ]
+    },
+    {
+      "shot_id": "shot-0083",
+      "start_sec": 860.093,
+      "end_sec": 867.401,
+      "duration_sec": 7.308,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49074,
+        "contrast": 0.19007,
+        "sharpness": 0.12324,
+        "motion": 0.00914,
+        "visual_hash": "feffff9ffc7f002f1011381903dd07800390"
+      },
+      "audio": {
+        "rms": 0.140787,
+        "peak": 0.730164,
+        "spectral_centroid_hz": 1064.32,
+        "spectral_flatness": 0.195575,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 0.9572,
+      "keep_score": 0.9174,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0084",
+      "start_sec": 867.401,
+      "end_sec": 876.343,
+      "duration_sec": 8.942,
+      "role": "dialogue",
+      "speech_ratio": 0.9217,
+      "visual": {
+        "brightness": 0.50991,
+        "contrast": 0.23691,
+        "sharpness": 0.12959,
+        "motion": 0.02998,
+        "visual_hash": "0ffe07fe0e7216ee024e0248efc86fc8ef02"
+      },
+      "audio": {
+        "rms": 0.105879,
+        "peak": 0.756256,
+        "spectral_centroid_hz": 1022.11,
+        "spectral_flatness": 0.193607,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 0.9253,
+      "keep_score": 0.9189,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0085",
+      "start_sec": 876.343,
+      "end_sec": 907.741,
+      "duration_sec": 31.398,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49219,
+        "contrast": 0.18743,
+        "sharpness": 0.12123,
+        "motion": 0.01549,
+        "visual_hash": "feffff9ffc7f00371039182d0389078003d0"
+      },
+      "audio": {
+        "rms": 0.13245,
+        "peak": 1.0,
+        "spectral_centroid_hz": 1359.95,
+        "spectral_flatness": 0.271987,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4583,
+      "quality_score": 0.8374,
+      "keep_score": 0.8982,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0086",
+      "start_sec": 907.741,
+      "end_sec": 911.578,
+      "duration_sec": 3.837,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50821,
+        "contrast": 0.22736,
+        "sharpness": 0.12561,
+        "motion": 0.06068,
+        "visual_hash": "0ffe0efe04f614ea104e13cb6e4d6e0c6fc0"
+      },
+      "audio": {
+        "rms": 0.100421,
+        "peak": 0.614838,
+        "spectral_centroid_hz": 1358.22,
+        "spectral_flatness": 0.293458,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 0.9659,
+      "keep_score": 0.9401,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息"
+      ]
+    },
+    {
+      "shot_id": "shot-0087",
+      "start_sec": 911.578,
+      "end_sec": 924.791,
+      "duration_sec": 13.213,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49279,
+        "contrast": 0.18717,
+        "sharpness": 0.12074,
+        "motion": 0.01604,
+        "visual_hash": "feffffdffc7f00370011398d038d078003d0"
+      },
+      "audio": {
+        "rms": 0.12528,
+        "peak": 0.876404,
+        "spectral_centroid_hz": 1260.59,
+        "spectral_flatness": 0.240714,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4236,
+      "quality_score": 0.8931,
+      "keep_score": 0.9039,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0088",
+      "start_sec": 924.791,
+      "end_sec": 931.965,
+      "duration_sec": 7.174,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50821,
+        "contrast": 0.23887,
+        "sharpness": 0.13177,
+        "motion": 0.03197,
+        "visual_hash": "0ffe07fe067006e6104e134f6fcd6e0e6f08"
+      },
+      "audio": {
+        "rms": 0.124696,
+        "peak": 0.908661,
+        "spectral_centroid_hz": 1221.74,
+        "spectral_flatness": 0.206321,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4375,
+      "quality_score": 0.9883,
+      "keep_score": 0.9464,
+      "recommendation": "protect",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0089",
+      "start_sec": 931.965,
+      "end_sec": 960.828,
+      "duration_sec": 28.863,
+      "role": "dialogue",
+      "speech_ratio": 0.9487,
+      "visual": {
+        "brightness": 0.48248,
+        "contrast": 0.19456,
+        "sharpness": 0.12797,
+        "motion": 0.0158,
+        "visual_hash": "feffffdffc7f003f00111b09038d078003e0"
+      },
+      "audio": {
+        "rms": 0.123502,
+        "peak": 0.851898,
+        "spectral_centroid_hz": 1210.13,
+        "spectral_flatness": 0.249388,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 0.8619,
+      "keep_score": 0.8938,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0090",
+      "start_sec": 960.828,
+      "end_sec": 971.572,
+      "duration_sec": 10.744,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50346,
+        "contrast": 0.23026,
+        "sharpness": 0.12758,
+        "motion": 0.03356,
+        "visual_hash": "0fff0fff06720eee020e12df6e0b6e096c40"
+      },
+      "audio": {
+        "rms": 0.12622,
+        "peak": 0.886017,
+        "spectral_centroid_hz": 1373.13,
+        "spectral_flatness": 0.21891,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 0.918,
+      "keep_score": 0.9224,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0091",
+      "start_sec": 971.572,
+      "end_sec": 1010.978,
+      "duration_sec": 39.406,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49404,
+        "contrast": 0.18941,
+        "sharpness": 0.11883,
+        "motion": 0.01247,
+        "visual_hash": "feffff9ffc7f003f007138292309078003e0"
+      },
+      "audio": {
+        "rms": 0.124211,
+        "peak": 1.0,
+        "spectral_centroid_hz": 1344.48,
+        "spectral_flatness": 0.259005,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 0.8287,
+      "keep_score": 0.8914,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0092",
+      "start_sec": 1010.978,
+      "end_sec": 1015.349,
+      "duration_sec": 4.371,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.5048,
+        "contrast": 0.22902,
+        "sharpness": 0.12582,
+        "motion": 0.03856,
+        "visual_hash": "0ffe0ffe06660eea064e127e6ffa2c0a6e00"
+      },
+      "audio": {
+        "rms": 0.125092,
+        "peak": 0.713257,
+        "spectral_centroid_hz": 1300.38,
+        "spectral_flatness": 0.213457,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4861,
+      "quality_score": 0.9666,
+      "keep_score": 0.9418,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0093",
+      "start_sec": 1015.349,
+      "end_sec": 1018.685,
+      "duration_sec": 3.336,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.51208,
+        "contrast": 0.23085,
+        "sharpness": 0.1275,
+        "motion": 0.06489,
+        "visual_hash": "0ffe0efe0c780ce6064612ce6f9a2f8a6f44"
+      },
+      "audio": {
+        "rms": 0.107796,
+        "peak": 0.827759,
+        "spectral_centroid_hz": 1288.47,
+        "spectral_flatness": 0.239295,
+        "kind": "speech"
+      },
+      "novelty_score": 0.1528,
+      "quality_score": 0.9727,
+      "keep_score": 0.9026,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0094",
+      "start_sec": 1018.685,
+      "end_sec": 1042.376,
+      "duration_sec": 23.691,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49234,
+        "contrast": 0.19024,
+        "sharpness": 0.1181,
+        "motion": 0.00714,
+        "visual_hash": "feffffdffc7f00371019184d034d078003a0"
+      },
+      "audio": {
+        "rms": 0.110409,
+        "peak": 0.711609,
+        "spectral_centroid_hz": 1263.14,
+        "spectral_flatness": 0.255248,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 0.826,
+      "keep_score": 0.871,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0095",
+      "start_sec": 1042.376,
+      "end_sec": 1053.987,
+      "duration_sec": 11.611,
+      "role": "dialogue",
+      "speech_ratio": 0.9225,
+      "visual": {
+        "brightness": 0.5085,
+        "contrast": 0.22537,
+        "sharpness": 0.12868,
+        "motion": 0.02305,
+        "visual_hash": "0fff0ffe0672076e060e129e6b7e2c8a6d02"
+      },
+      "audio": {
+        "rms": 0.131831,
+        "peak": 0.808807,
+        "spectral_centroid_hz": 1468.21,
+        "spectral_flatness": 0.285936,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 0.922,
+      "keep_score": 0.9145,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0096",
+      "start_sec": 1053.987,
+      "end_sec": 1067.401,
+      "duration_sec": 13.414,
+      "role": "dialogue",
+      "speech_ratio": 0.8971,
+      "visual": {
+        "brightness": 0.49411,
+        "contrast": 0.19124,
+        "sharpness": 0.12019,
+        "motion": 0.02421,
+        "visual_hash": "feffffdffc7f083710391029130d07800388"
+      },
+      "audio": {
+        "rms": 0.11507,
+        "peak": 0.769592,
+        "spectral_centroid_hz": 1182.79,
+        "spectral_flatness": 0.245634,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4583,
+      "quality_score": 0.8911,
+      "keep_score": 0.9082,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0097",
+      "start_sec": 1067.401,
+      "end_sec": 1079.68,
+      "duration_sec": 12.279,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50971,
+        "contrast": 0.22379,
+        "sharpness": 0.12792,
+        "motion": 0.04656,
+        "visual_hash": "0ffe0fff06f217ea134e527e2c1e2c0e3500"
+      },
+      "audio": {
+        "rms": 0.122069,
+        "peak": 0.812164,
+        "spectral_centroid_hz": 1376.51,
+        "spectral_flatness": 0.275323,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4861,
+      "quality_score": 0.9193,
+      "keep_score": 0.9355,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0098",
+      "start_sec": 1079.68,
+      "end_sec": 1080.848,
+      "duration_sec": 1.168,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49451,
+        "contrast": 0.19189,
+        "sharpness": 0.1213,
+        "motion": 0.01745,
+        "visual_hash": "ffffffdffc7f083f00111009131903900798"
+      },
+      "audio": {
+        "rms": 0.110645,
+        "peak": 0.754883,
+        "spectral_centroid_hz": 2123.57,
+        "spectral_flatness": 0.409951,
+        "kind": "speech"
+      },
+      "novelty_score": 0.5,
+      "quality_score": 0.9502,
+      "keep_score": 0.9305,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0099",
+      "start_sec": 1080.848,
+      "end_sec": 1087.487,
+      "duration_sec": 6.639,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50664,
+        "contrast": 0.23015,
+        "sharpness": 0.12401,
+        "motion": 0.04504,
+        "visual_hash": "0fff0fff04fa05e6074e124a6e0e6c2c6722"
+      },
+      "audio": {
+        "rms": 0.099135,
+        "peak": 0.612335,
+        "spectral_centroid_hz": 1133.3,
+        "spectral_flatness": 0.237876,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4583,
+      "quality_score": 0.96,
+      "keep_score": 0.9328,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息"
+      ]
+    },
+    {
+      "shot_id": "shot-0100",
+      "start_sec": 1087.487,
+      "end_sec": 1093.126,
+      "duration_sec": 5.639,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49564,
+        "contrast": 0.19459,
+        "sharpness": 0.11977,
+        "motion": 0.0458,
+        "visual_hash": "ffffffdffc7f002f181118191311078007a0"
+      },
+      "audio": {
+        "rms": 0.095532,
+        "peak": 0.665558,
+        "spectral_centroid_hz": 1733.63,
+        "spectral_flatness": 0.342741,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 0.9446,
+      "keep_score": 0.9284,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息"
+      ]
+    },
+    {
+      "shot_id": "shot-0101",
+      "start_sec": 1093.126,
+      "end_sec": 1104.071,
+      "duration_sec": 10.945,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.5139,
+        "contrast": 0.22621,
+        "sharpness": 0.1272,
+        "motion": 0.04198,
+        "visual_hash": "0ffe0ffe0666166a126e126e6e1e6d846f02"
+      },
+      "audio": {
+        "rms": 0.107037,
+        "peak": 0.719971,
+        "spectral_centroid_hz": 1478.31,
+        "spectral_flatness": 0.308147,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4444,
+      "quality_score": 0.9166,
+      "keep_score": 0.9203,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0102",
+      "start_sec": 1104.071,
+      "end_sec": 1145.979,
+      "duration_sec": 41.908,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50566,
+        "contrast": 0.18987,
+        "sharpness": 0.1224,
+        "motion": 0.01058,
+        "visual_hash": "fedeff9ffc7f003f10391a991b09038003e0"
+      },
+      "audio": {
+        "rms": 0.123956,
+        "peak": 0.945557,
+        "spectral_centroid_hz": 1381.76,
+        "spectral_flatness": 0.265069,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4583,
+      "quality_score": 0.8417,
+      "keep_score": 0.8944,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0103",
+      "start_sec": 1145.979,
+      "end_sec": 1168.468,
+      "duration_sec": 22.489,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.51626,
+        "contrast": 0.22849,
+        "sharpness": 0.12189,
+        "motion": 0.0397,
+        "visual_hash": "0ffe0efe066e16f2025a127e6fbe6d407c00"
+      },
+      "audio": {
+        "rms": 0.134493,
+        "peak": 0.894806,
+        "spectral_centroid_hz": 1804.99,
+        "spectral_flatness": 0.340856,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4861,
+      "quality_score": 0.8398,
+      "keep_score": 0.9108,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0104",
+      "start_sec": 1168.468,
+      "end_sec": 1176.543,
+      "duration_sec": 8.075,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50708,
+        "contrast": 0.1927,
+        "sharpness": 0.12458,
+        "motion": 0.02849,
+        "visual_hash": "ffffffdffc7f002f183118190b59030001c8"
+      },
+      "audio": {
+        "rms": 0.107947,
+        "peak": 0.728638,
+        "spectral_centroid_hz": 1738.36,
+        "spectral_flatness": 0.322102,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4722,
+      "quality_score": 0.9071,
+      "keep_score": 0.9159,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0105",
+      "start_sec": 1176.543,
+      "end_sec": 1193.293,
+      "duration_sec": 16.75,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49623,
+        "contrast": 0.20234,
+        "sharpness": 0.12961,
+        "motion": 0.01569,
+        "visual_hash": "ffdffcff487f0037381835bc250c07800792"
+      },
+      "audio": {
+        "rms": 0.134116,
+        "peak": 0.842163,
+        "spectral_centroid_hz": 1278.39,
+        "spectral_flatness": 0.246982,
+        "kind": "speech"
+      },
+      "novelty_score": 0.2639,
+      "quality_score": 0.8679,
+      "keep_score": 0.8652,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0106",
+      "start_sec": 1193.293,
+      "end_sec": 1211.912,
+      "duration_sec": 18.619,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.51383,
+        "contrast": 0.22763,
+        "sharpness": 0.12468,
+        "motion": 0.03404,
+        "visual_hash": "0fff0ffe0cf615ea147e14de6e9a290a2c02"
+      },
+      "audio": {
+        "rms": 0.131274,
+        "peak": 0.895569,
+        "spectral_centroid_hz": 1369.37,
+        "spectral_flatness": 0.265135,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4097,
+      "quality_score": 0.85,
+      "keep_score": 0.8975,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0107",
+      "start_sec": 1211.912,
+      "end_sec": 1227.361,
+      "duration_sec": 15.449,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.497,
+        "contrast": 0.20295,
+        "sharpness": 0.12907,
+        "motion": 0.02278,
+        "visual_hash": "ffdffc7f787f003f38183bac250c03800790"
+      },
+      "audio": {
+        "rms": 0.132705,
+        "peak": 0.851868,
+        "spectral_centroid_hz": 1393.62,
+        "spectral_flatness": 0.272892,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4514,
+      "quality_score": 0.8659,
+      "keep_score": 0.9023,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0108",
+      "start_sec": 1227.361,
+      "end_sec": 1236.069,
+      "duration_sec": 8.708,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50339,
+        "contrast": 0.22644,
+        "sharpness": 0.12504,
+        "motion": 0.04922,
+        "visual_hash": "1fff07ff04e70cfa005e175e4e1a0c1e640e"
+      },
+      "audio": {
+        "rms": 0.111142,
+        "peak": 0.911774,
+        "spectral_centroid_hz": 1405.85,
+        "spectral_flatness": 0.293879,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4583,
+      "quality_score": 0.9088,
+      "keep_score": 0.9335,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0109",
+      "start_sec": 1236.069,
+      "end_sec": 1247.714,
+      "duration_sec": 11.645,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.49564,
+        "contrast": 0.20738,
+        "sharpness": 0.12629,
+        "motion": 0.02255,
+        "visual_hash": "ffdffcff687f003f7018310c258c27800792"
+      },
+      "audio": {
+        "rms": 0.099447,
+        "peak": 0.804749,
+        "spectral_centroid_hz": 1320.72,
+        "spectral_flatness": 0.283609,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 0.9133,
+      "keep_score": 0.9113,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0110",
+      "start_sec": 1247.714,
+      "end_sec": 1260.36,
+      "duration_sec": 12.646,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.5149,
+        "contrast": 0.22754,
+        "sharpness": 0.12569,
+        "motion": 0.02208,
+        "visual_hash": "1fff0fff04f30cea046e12fe4fbe0c1c4400"
+      },
+      "audio": {
+        "rms": 0.120843,
+        "peak": 0.880035,
+        "spectral_centroid_hz": 1309.29,
+        "spectral_flatness": 0.22785,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4306,
+      "quality_score": 0.9111,
+      "keep_score": 0.9141,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0111",
+      "start_sec": 1260.36,
+      "end_sec": 1265.299,
+      "duration_sec": 4.939,
+      "role": "dialogue",
+      "speech_ratio": 1.0,
+      "visual": {
+        "brightness": 0.50075,
+        "contrast": 0.20766,
+        "sharpness": 0.12804,
+        "motion": 0.03549,
+        "visual_hash": "ffdffc7f687f003f701871bc05840780078a"
+      },
+      "audio": {
+        "rms": 0.128735,
+        "peak": 0.876282,
+        "spectral_centroid_hz": 1387.4,
+        "spectral_flatness": 0.270464,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4167,
+      "quality_score": 0.9747,
+      "keep_score": 0.9385,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0112",
+      "start_sec": 1265.299,
+      "end_sec": 1269.603,
+      "duration_sec": 4.304,
+      "role": "dialogue",
+      "speech_ratio": 0.9645,
+      "visual": {
+        "brightness": 0.51152,
+        "contrast": 0.22848,
+        "sharpness": 0.12342,
+        "motion": 0.0693,
+        "visual_hash": "1fff0f7f0f770e6a064a024e0b0e6f0c6722"
+      },
+      "audio": {
+        "rms": 0.122168,
+        "peak": 0.769043,
+        "spectral_centroid_hz": 1514.57,
+        "spectral_flatness": 0.264091,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4028,
+      "quality_score": 0.9579,
+      "keep_score": 0.9421,
+      "recommendation": "retain",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0113",
+      "start_sec": 1269.603,
+      "end_sec": 1309.576,
+      "duration_sec": 39.973,
+      "role": "dialogue",
+      "speech_ratio": 0.9872,
+      "visual": {
+        "brightness": 0.4517,
+        "contrast": 0.24291,
+        "sharpness": 0.12099,
+        "motion": 0.02782,
+        "visual_hash": "ffdffcff487f00377038714c254c07800792"
+      },
+      "audio": {
+        "rms": 0.130224,
+        "peak": 0.999969,
+        "spectral_centroid_hz": 1373.74,
+        "spectral_flatness": 0.261685,
+        "kind": "speech"
+      },
+      "novelty_score": 0.3889,
+      "quality_score": 0.8366,
+      "keep_score": 0.8916,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0114",
+      "start_sec": 1309.576,
+      "end_sec": 1317.05,
+      "duration_sec": 7.474,
+      "role": "establishing",
+      "speech_ratio": 0.0,
+      "visual": {
+        "brightness": 0.51376,
+        "contrast": 0.19775,
+        "sharpness": 0.13304,
+        "motion": 0.0246,
+        "visual_hash": "ffdffc7f687f001f38143af2268617800784"
+      },
+      "audio": {
+        "rms": 0.100176,
+        "peak": 0.728424,
+        "spectral_centroid_hz": 1208.65,
+        "spectral_flatness": 0.19764,
+        "kind": "music_likely"
+      },
+      "novelty_score": 0.2014,
+      "quality_score": 0.9929,
+      "keep_score": 0.7727,
+      "recommendation": "optional",
+      "reasons": [
+        "建立地点或场景关系",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0115",
+      "start_sec": 1317.05,
+      "end_sec": 1326.093,
+      "duration_sec": 9.043,
+      "role": "establishing",
+      "speech_ratio": 0.0,
+      "visual": {
+        "brightness": 0.51232,
+        "contrast": 0.23204,
+        "sharpness": 0.13135,
+        "motion": 0.03573,
+        "visual_hash": "0fff07ff06770eea104e024e1fca35c6b680"
+      },
+      "audio": {
+        "rms": 0.11808,
+        "peak": 0.817078,
+        "spectral_centroid_hz": 1329.48,
+        "spectral_flatness": 0.217971,
+        "kind": "ambient_likely"
+      },
+      "novelty_score": 0.4097,
+      "quality_score": 0.9317,
+      "keep_score": 0.8006,
+      "recommendation": "optional",
+      "reasons": [
+        "建立地点或场景关系",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    },
+    {
+      "shot_id": "shot-0116",
+      "start_sec": 1326.093,
+      "end_sec": 1370.67,
+      "duration_sec": 44.577,
+      "role": "dialogue",
+      "speech_ratio": 0.5855,
+      "visual": {
+        "brightness": 0.44635,
+        "contrast": 0.17945,
+        "sharpness": 0.11565,
+        "motion": 0.02004,
+        "visual_hash": "ffdffc7f607f001f391838fc2ac0038087c8"
+      },
+      "audio": {
+        "rms": 0.106272,
+        "peak": 0.899261,
+        "spectral_centroid_hz": 1252.74,
+        "spectral_flatness": 0.213973,
+        "kind": "speech"
+      },
+      "novelty_score": 0.4167,
+      "quality_score": 0.8171,
+      "keep_score": 0.8764,
+      "recommendation": "optional",
+      "reasons": [
+        "包含可理解对白",
+        "提供新的视觉信息",
+        "包含声音或情绪峰值"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event_id": "event-001",
+      "start_sec": 0.0,
+      "end_sec": 71.471,
+      "duration_sec": 71.471,
+      "event_type": "conversation",
+      "shot_count": 16,
+      "role_counts": {
+        "action": 1,
+        "dialogue": 14,
+        "reaction": 1
+      },
+      "completeness_score": 1.0,
+      "priority_score": 0.9719,
+      "recommendation": "protect",
+      "key_shot_ids": [
+        "shot-0005",
+        "shot-0001",
+        "shot-0003",
+        "shot-0007",
+        "shot-0009",
+        "shot-0006"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0001",
+        "payoff_shot_id": "shot-0011",
+        "reaction_shot_id": "shot-0016"
+      }
+    },
+    {
+      "event_id": "event-002",
+      "start_sec": 71.471,
+      "end_sec": 182.249,
+      "duration_sec": 110.778,
+      "event_type": "conversation",
+      "shot_count": 13,
+      "role_counts": {
+        "dialogue": 13
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.7986,
+      "recommendation": "protect",
+      "key_shot_ids": [
+        "shot-0024",
+        "shot-0028",
+        "shot-0026",
+        "shot-0018",
+        "shot-0022",
+        "shot-0017"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0017",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0029"
+      }
+    },
+    {
+      "event_id": "event-003",
+      "start_sec": 182.249,
+      "end_sec": 293.293,
+      "duration_sec": 111.044,
+      "event_type": "conversation",
+      "shot_count": 11,
+      "role_counts": {
+        "dialogue": 11
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.7918,
+      "recommendation": "protect",
+      "key_shot_ids": [
+        "shot-0031",
+        "shot-0039",
+        "shot-0038",
+        "shot-0035",
+        "shot-0037",
+        "shot-0032"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0030",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0040"
+      }
+    },
+    {
+      "event_id": "event-004",
+      "start_sec": 293.293,
+      "end_sec": 404.071,
+      "duration_sec": 110.778,
+      "event_type": "conversation",
+      "shot_count": 13,
+      "role_counts": {
+        "dialogue": 13
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.7979,
+      "recommendation": "protect",
+      "key_shot_ids": [
+        "shot-0053",
+        "shot-0043",
+        "shot-0045",
+        "shot-0050",
+        "shot-0041",
+        "shot-0047"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0041",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0053"
+      }
+    },
+    {
+      "event_id": "event-005",
+      "start_sec": 404.071,
+      "end_sec": 525.826,
+      "duration_sec": 121.755,
+      "event_type": "conversation",
+      "shot_count": 11,
+      "role_counts": {
+        "dialogue": 10,
+        "transition": 1
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.7936,
+      "recommendation": "protect",
+      "key_shot_ids": [
+        "shot-0056",
+        "shot-0057",
+        "shot-0064",
+        "shot-0063",
+        "shot-0059"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0054",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0064"
+      }
+    },
+    {
+      "event_id": "event-006",
+      "start_sec": 525.826,
+      "end_sec": 608.609,
+      "duration_sec": 82.783,
+      "event_type": "conversation",
+      "shot_count": 4,
+      "role_counts": {
+        "dialogue": 3,
+        "establishing": 1
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.8026,
+      "recommendation": "protect",
+      "key_shot_ids": [
+        "shot-0066"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0065",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0067"
+      }
+    },
+    {
+      "event_id": "event-007",
+      "start_sec": 608.609,
+      "end_sec": 718.719,
+      "duration_sec": 110.11,
+      "event_type": "conversation",
+      "shot_count": 5,
+      "role_counts": {
+        "dialogue": 5
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.8018,
+      "recommendation": "protect",
+      "key_shot_ids": [
+        "shot-0071",
+        "shot-0073"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0069",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0073"
+      }
+    },
+    {
+      "event_id": "event-008",
+      "start_sec": 718.719,
+      "end_sec": 832.9,
+      "duration_sec": 114.181,
+      "event_type": "conversation",
+      "shot_count": 6,
+      "role_counts": {
+        "dialogue": 6
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.7815,
+      "recommendation": "protect",
+      "key_shot_ids": [
+        "shot-0077",
+        "shot-0075"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0074",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0079"
+      }
+    },
+    {
+      "event_id": "event-009",
+      "start_sec": 832.9,
+      "end_sec": 960.828,
+      "duration_sec": 127.928,
+      "event_type": "conversation",
+      "shot_count": 10,
+      "role_counts": {
+        "dialogue": 10
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.7873,
+      "recommendation": "protect",
+      "key_shot_ids": [
+        "shot-0088",
+        "shot-0086",
+        "shot-0080",
+        "shot-0081",
+        "shot-0084"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0080",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0089"
+      }
+    },
+    {
+      "event_id": "event-010",
+      "start_sec": 960.828,
+      "end_sec": 1079.68,
+      "duration_sec": 118.852,
+      "event_type": "conversation",
+      "shot_count": 8,
+      "role_counts": {
+        "dialogue": 8
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.7851,
+      "recommendation": "protect",
+      "key_shot_ids": [
+        "shot-0092",
+        "shot-0097",
+        "shot-0090"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0090",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0097"
+      }
+    },
+    {
+      "event_id": "event-011",
+      "start_sec": 1079.68,
+      "end_sec": 1193.293,
+      "duration_sec": 113.613,
+      "event_type": "conversation",
+      "shot_count": 8,
+      "role_counts": {
+        "dialogue": 8
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.7806,
+      "recommendation": "protect",
+      "key_shot_ids": [
+        "shot-0099",
+        "shot-0098",
+        "shot-0100",
+        "shot-0101"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0098",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0105"
+      }
+    },
+    {
+      "event_id": "event-012",
+      "start_sec": 1193.293,
+      "end_sec": 1309.576,
+      "duration_sec": 116.283,
+      "event_type": "conversation",
+      "shot_count": 8,
+      "role_counts": {
+        "dialogue": 8
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.7862,
+      "recommendation": "protect",
+      "key_shot_ids": [
+        "shot-0112",
+        "shot-0111",
+        "shot-0108"
+      ],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0106",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0113"
+      }
+    },
+    {
+      "event_id": "event-013",
+      "start_sec": 1309.576,
+      "end_sec": 1370.67,
+      "duration_sec": 61.094,
+      "event_type": "observational",
+      "shot_count": 3,
+      "role_counts": {
+        "dialogue": 1,
+        "establishing": 2
+      },
+      "completeness_score": 0.5,
+      "priority_score": 0.7447,
+      "recommendation": "retain",
+      "key_shot_ids": [],
+      "sequence_dependency": {
+        "setup_shot_id": "shot-0114",
+        "payoff_shot_id": null,
+        "reaction_shot_id": "shot-0116"
+      }
+    }
+  ],
+  "learning_summary": {
+    "retention_archetypes": [
+      {
+        "role": "action",
+        "shot_count": 1,
+        "retained_count": 0,
+        "retained_ratio": 0.0,
+        "average_duration_sec": 0.501,
+        "average_keep_score": 0.8935
+      },
+      {
+        "role": "dialogue",
+        "shot_count": 110,
+        "retained_count": 64,
+        "retained_ratio": 0.5818,
+        "average_duration_sec": 12.243,
+        "average_keep_score": 0.9231
+      },
+      {
+        "role": "establishing",
+        "shot_count": 3,
+        "retained_count": 0,
+        "retained_ratio": 0.0,
+        "average_duration_sec": 7.13,
+        "average_keep_score": 0.7847
+      },
+      {
+        "role": "reaction",
+        "shot_count": 1,
+        "retained_count": 0,
+        "retained_ratio": 0.0,
+        "average_duration_sec": 1.534,
+        "average_keep_score": 0.5694
+      },
+      {
+        "role": "transition",
+        "shot_count": 1,
+        "retained_count": 0,
+        "retained_ratio": 0.0,
+        "average_duration_sec": 0.467,
+        "average_keep_score": 0.161
+      }
+    ],
+    "cut_first_signals": [
+      {
+        "signal": "画面清晰度较低",
+        "shot_count": 2
+      },
+      {
+        "signal": "曝光异常",
+        "shot_count": 1
+      }
+    ],
+    "event_patterns": [
+      {
+        "event_type": "conversation",
+        "event_count": 12
+      },
+      {
+        "event_type": "observational",
+        "event_count": 1
+      }
+    ],
+    "evidence_limits": [
+      "参考片是已经剪完的成片，只能直接学习被保留镜头的正向模式。",
+      "cut_first 来自重复、模糊、曝光、无动作和无语义等弱信号，不代表原作者真实删除记录。",
+      "要监督学习真正的保留与删除偏好，需要同时提供原始素材和最终成片。"
+    ]
+  }
+}

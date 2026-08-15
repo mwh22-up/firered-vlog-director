@@ -6,10 +6,10 @@
 ## 总体进度
 
 - 计划视频：26 支
-- 已完成正式学习：24 支
+- 已完成正式学习：25 支
 - 已开始但未完成：0 支
-- 未开始正式学习：2 支
-- 完成率：24/26（92.31%）
+- 未开始正式学习：1 支
+- 完成率：25/26（96.15%）
 
 前六支 Study 的完成状态按各条目完成时的证据与门禁成立。2026-08-01 以前的条目只保留了“实际请求字符数”，不能追溯声明已经验证 UTF-8 body 字节数；自完整请求字节门禁落地后，任何新增或重新生成的 Study 必须同时具备完整视频分析、可用 ASR/语义证据、人工重点区间复核、context packet 严格 `<180,000` 字符、包含实际 instructions/input/tools 等字段的最终请求 body 严格 `<200,000` UTF-8 字节及 body SHA-256，以及已提交的正式 `technique-study.<BV>.v1.json`。等于任一上限也必须阻断；仅下载代理视频、提取开场或生成预分析素材不算完成。
 
@@ -312,10 +312,18 @@
 - 模型上下文：70,013 字符、75,767 UTF-8 字节，严格 `<180,000`；最终 Responses body 为 86,599 UTF-8 字节，严格 `<200,000`，body SHA-256 为 `2f2017bb224d4139e557ed612ed599f288c65ec04a2a4400b99ae10d1f8995c2`。
 - 证据限制：参考成片只支持正向保留模式；私人影像、音乐、人员、场地和关系表达需独立确认授权与语境。
 
-### 25. BV1Sv421k7pS — 未开始
+### 25. BV1Sv421k7pS — 已完成
 
-- 标题：待通过公开视频元数据确认。
+- 标题：《和女朋友一起向已婚UP主学习如何谈恋爱！》
 - 地址：[BV1Sv421k7pS](https://www.bilibili.com/video/BV1Sv421k7pS/)
+- 时长：1,370.666 秒（约 22 分 51 秒）。
+- 已完成：匿名代理下载、双流完整解码、`small/zh` 全片 ASR、完整镜头/事件/音频分析、13 张事件联系表人工复核、受限 context、完整 Responses body 门禁和正式 technique study。
+- 正式产物：`reference-learning/technique-study.BV1Sv421k7pS.v1.json`
+- 证据规模：116 个镜头、13 个事件、252 个音频段、987 个转写片段、4,424 个词、8 条 technique observations。
+- ASR 覆盖：最后可信结束语到 1,363.01 秒“拜拜”，距媒体末尾约 7.656 秒，可信对白覆盖率 99.4414%。
+- 人工复核：确认固定四人宽景与自然反应、由轻到重的问题梯度、两对情侣经验对照、中段默契游戏、旅行和共同生活案例、共同成长与个人经验边界收束，以及底部对白字幕和稀疏问题/答案标签；未确认 speed ramp、精确倍率、复杂转场、独立音效、曲名、BPM、ducking 或逐拍剪切。
+- 模型上下文：51,872 字符、62,814 UTF-8 字节，严格 `<180,000`；最终 Responses body 为 70,957 UTF-8 字节，严格 `<200,000`，body SHA-256 为 `7586d432f164bef2789ec11a484b738f812ed931e4abc412920e7f6de2e5524b`。
+- 证据限制：参考成片只支持正向保留模式；关系、婚姻、旅行、财务、家务和共同成长内容均为片中人物个人经验，不能泛化为普遍或专业建议。
 
 ### 26. BV1Gt1FBPEum — 未开始
 
@@ -324,11 +332,11 @@
 
 ## 已沉淀的跨视频结果
 
-当前二十四支已完成视频可聚合出：
+当前二十五支已完成视频可聚合出：
 
-- 完整来源数：24
+- 完整来源数：25
 - 稳定模式：57 条（显式 `minimum_source_support=2`）
-- 单来源模式：81 条
+- 单来源模式：87 条
 - 正式聚合产物：`reference-learning/reference-techniques.aggregate.v1.json`
 - 聚合命令：`vlog-director aggregate-techniques`
 - 当前限制：`BV19sm2BBEDd` 的重叠首日不生成新增 observation。单来源模式不能计为稳定跨来源模式，开场预分析或未完成视频也不得进入正式聚合；参考成片只能提供正向保留模式，不能推断作者真实删片偏好。
@@ -337,10 +345,10 @@
 
 ## 完成状态
 
-1. 二十四支参考视频已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、上下文字符门禁和完整请求 UTF-8 字节门禁。
-2. 二十四来源聚合已复核独立来源支持数；后续新增或重生成参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
-3. 二十四来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
-4. 当前二十四来源 Aggregate 门禁：24 项参考学习、Policy 与 Schema 专项 unittest、二十四 Study 与 Aggregate Schema/运行时校验、CLI 聚合 smoke、UTF-8 无 BOM、敏感信息/changed-media 扫描及 `git diff --check` 均通过。
+1. 二十五支参考视频已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、上下文字符门禁和完整请求 UTF-8 字节门禁。
+2. 二十五来源聚合已复核独立来源支持数；后续新增或重生成参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
+3. 二十五来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
+4. 当前二十五来源 Aggregate 门禁：24 项参考学习、Policy 与 Schema 专项 unittest、二十五 Study 与 Aggregate Schema/运行时校验、CLI 聚合 smoke、UTF-8 无 BOM、敏感信息/changed-media 扫描及 `git diff --check` 均通过。
 5. CI 在干净 Python 环境显式安装 `test` extra；自动化 Schema 测试覆盖所有正式 reference JSON、moments fixture 与 protection policy，当前本地全量基线为 318 项 unittest。
 6. 模型请求门禁已改为校验完整 Responses JSON body 的 UTF-8 字节数：程序内 transport 只消费已经校验的紧凑 body bytes，CLI 则校验待发送文件的原始字节并返回 SHA-256；中文多字节边界、完整 envelope、Responses 最小结构、重复字段与递归凭据字段拒绝、transport 零调用、不可压缩 packet、UTF-8 BOM 和本地 HTTP 413 网关均有回归覆盖。该门禁不替代不同 tool type 的上游 API Schema 校验；仅检查 context 字符数也不能作为已通过外层请求门禁的依据，历史字符记录不追溯标记为字节验证。
 7. CI 的 `test` extra 固定便携 FFmpeg 版本，并以 `lavfi` 临时生成 FFV1/PCM 音视频，实际通过基础增强 renderer 的 `loudnorm`、H.264/AAC 编码，再完整解码验证视频流和音频流；测试不依赖真实素材、系统预装 FFmpeg 或已提交媒体，CI job 设有 10 分钟硬超时。
