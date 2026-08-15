@@ -1,0 +1,226 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV1PbebzdEWm-v1",
+  "generated_at": "2026-08-15T07:00:00Z",
+  "source": {
+    "source_id": "bilibili-BV1PbebzdEWm",
+    "url": "https://www.bilibili.com/video/BV1PbebzdEWm/",
+    "title": "穿越300年逛北京！北京影像巡礼",
+    "duration_sec": 1739.882333
+  },
+  "analysis_evidence": {
+    "proxy_dual_stream_full_decode_exit_code": 0,
+    "video_duration_sec": 1739.882333,
+    "shot_count": 504,
+    "event_count": 18,
+    "audio_segment_count": 355,
+    "transcript_segment_count": 933,
+    "transcript_word_count": 4649,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_last_trusted_dialogue_end_sec": 1737.14,
+    "asr_dialogue_coverage_ratio": 0.998424,
+    "asr_tail_gap_sec": 2.742333,
+    "event_review_contact_sheet_count": 18,
+    "manual_review_ranges": [[0.0, 402.335], [402.335, 797.096], [797.096, 1191.624], [1191.624, 1582.314], [1582.314, 1739.882333]],
+    "manual_review_focus": ["opening-and-costume-reenactment", "film-and-song-archive", "location-and-reference-graphics", "chronological-cultural-argument", "city-thesis-and-ending"],
+    "manual_effect_result": "未从人工画面证据确认 speed ramp、精确倍率、复杂转场机制、独立音效或逐拍剪切。"
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 106.84,
+    "phases": [
+      {"start_sec": 0.0, "end_sec": 31.0, "function": "用清装角色扮演和现代口吻制造跨时代反差，先建立轻松人物关系。"},
+      {"start_sec": 31.0, "end_sec": 70.0, "function": "从景山俯瞰北京，说明故宫未能进入的现实限制和当前位置。"},
+      {"start_sec": 70.0, "end_sec": 106.84, "function": "把时间指针拨回 1759 年，明确以影像作品穿越三百年北京的主任务。"}
+    ],
+    "metrics": {"opening_15_sec_shot_count": 2, "opening_15_sec_average_shot_sec": 10.444, "opening_event_count": 1},
+    "rule": "文化视频论文可先用人物扮演制造可亲入口，再用真实地点和明确时间轴给出论题；不需要把开场统一剪成高速蒙太奇。"
+  },
+  "narrative_model": {
+    "premise": "影片以北京为家乡和影像史为线索，从清末题材、民国记忆、建国后儿童电影、九十年代电影与音乐一路走到当代创作去中心化，借作品、歌曲、地点与主持对谈回答北京如何被共同记忆和个人经验重新理解。",
+    "beats": ["景山与清装扮演建立穿越任务", "《还珠格格》和《末代皇帝》连接流行记忆与宫城", "《城南旧事》与《送别》转向离别和个体命运", "北海实景与《让我们荡起双桨》连接和平年代", "《霸王别姬》以幕后资料和创作细节进入宏大叙事", "九十年代贺岁片与北京音乐讨论普通生活的表达", "从文化中心去中心化转向家乡的复杂评价", "以年度城市巡礼约定收束"],
+    "rule": "长文化论述用年代、作品和地点组成清晰章节；每段先给可识别作品或场景，再补创作资料与主持观点，最后回到贯穿全片的城市问题。"
+  },
+  "scenic_model": {
+    "preferred_sequence": ["真实北京地点建立空间", "主持人行动或角色扮演提供人物尺度", "历史影像、电影片段或资料卡回答时间语境", "回到当代地点或对谈验证变化", "用城市日常和人物反应完成情绪落点"],
+    "observed_ranges": [[0.0, 402.335], [797.096, 1001.834], [1496.629, 1739.882333]],
+    "rule": "文化巡礼的景观不是独立明信片；地点宽景应与作品参考、人物使用和当代城市生活互相验证。"
+  },
+  "music_model": {
+    "music_likely_ratio": 0.0503,
+    "evidence_status": "machine_audio_classification_and-visible-work-discussion_only",
+    "visual_candidates": ["角色扮演开场", "电影和歌曲章节切换", "北海实景与作品对照", "北京日常和片尾"],
+    "rule": "影片大量讨论电影配乐和歌曲，但参考片中的曲目使用、BPM、ducking 与剪切因果仍需独立声学复核，不能由口播内容代替。"
+  },
+  "subtitle_model": {
+    "base_style": "联系表可见底部居中浅色对白字幕配深色描边；电影片段、资料来源、年代和章节另有稀疏信息层。",
+    "emphasis_patterns": ["底部对白层保持稳定", "作品片段与访谈来源保留边框、片名或出处语境", "年代和作品切换使用独立参考卡或车厢式图形章节", "结尾以城市剪影和片尾名单收束"],
+    "rule": "文化资料密集时把对白、引用来源和章节导航分层；未执行 OCR，文字、年代和出处仍需人工复核。"
+  },
+  "humor_model": {
+    "event_chain": ["先建立穿越或影视巡礼任务", "让主持人换装并暴露炎热、礼仪和现代设备的不适应", "保留同伴吐槽、即兴台词和真实笑场", "迅速回到作品与历史解释"],
+    "observed_ranges": [[0.0, 328.195], [797.096, 889.155], [1307.673, 1582.314]],
+    "rule": "知识型视频的笑点来自主持关系、角色扮演和真实卡顿；短暂释放信息密度后要回到论证，不能靠嘲弄历史人物或作品。"
+  },
+  "technique_observations": [
+    {
+      "observation_id": "obs-beijing-opening-reenactment-to-thesis",
+      "technique_key": "opening-place-thesis-to-concrete-mission",
+      "start_sec": 0.0,
+      "end_sec": 106.84,
+      "category": "opening_montage",
+      "trigger": "三百年北京影像史题目抽象且信息密度高。",
+      "treatment": "先以清装扮演和现代吐槽建立人物入口，再从景山真实地点说明现实限制，最后明确从 1759 年开始的影像巡礼任务。",
+      "confidence": 0.97,
+      "parameters": {"opening_phases": 3, "uniform_fast_cut": false},
+      "evidence": {"event_id": "event-001", "manual_contact_sheet": true},
+      "guardrails": ["角色扮演必须明确是表演，不冒充史实。", "开场提出的时间轴必须在正文兑现。"]
+    },
+    {
+      "observation_id": "obs-beijing-costume-reenactment-reaction",
+      "technique_key": "humor-fandom-reenactment-with-real-reaction",
+      "start_sec": 217.117,
+      "end_sec": 328.195,
+      "category": "humor",
+      "trigger": "连续影视史口播容易变成静态讲解。",
+      "treatment": "让主持人实际换装、走入宫墙环境并保留炎热、礼仪失误、现代设备和同伴吐槽，再把体验连接回作品取景。",
+      "confidence": 0.97,
+      "parameters": {"reenactment_before_explanation": true},
+      "evidence": {"event_id": "event-003", "manual_contact_sheet": true},
+      "guardrails": ["不把服饰表演当作历史复原结论。", "景区规则、服装和路人隐私需独立确认。"]
+    },
+    {
+      "observation_id": "obs-beijing-reference-to-location-match",
+      "technique_key": "graphic-reference-frame-to-live-location-match",
+      "start_sec": 0.0,
+      "end_sec": 1001.834,
+      "category": "graphic",
+      "trigger": "观众需要理解电影画面与当代北京地点的关系。",
+      "treatment": "在实景主持、电影片段、幕后影像和资料卡之间往返，使宫墙、北海白塔、船和庭院成为可验证的视觉锚点。",
+      "confidence": 0.96,
+      "parameters": {"reference_and_live_scene_alternation": true},
+      "evidence": {"events": ["event-001", "event-004", "event-009", "event-010"], "manual_contact_sheets": true},
+      "guardrails": ["电影片段、剧照和幕后资料的版权与来源需独立核验。", "相似画面不能自动证明真实取景关系。"]
+    },
+    {
+      "observation_id": "obs-beijing-archive-before-present-use",
+      "technique_key": "narrative-archive-context-before-present-use",
+      "start_sec": 328.195,
+      "end_sec": 627.193,
+      "category": "narrative",
+      "trigger": "故宫、自行车和老北京空间若只有当代画面，会失去作品与时代语境。",
+      "treatment": "先用电影片段、幕后资料和主持对谈解释创作与历史背景，再回到现实地点、器物或人物行动。",
+      "confidence": 0.95,
+      "parameters": {"archive_before_present": true},
+      "evidence": {"events": ["event-004", "event-005", "event-006"], "full_transcript": true},
+      "guardrails": ["作品叙事不能替代史料。", "历史人物、年份和制作细节需独立核验。"]
+    },
+    {
+      "observation_id": "obs-beijing-chronology-through-cultural-works",
+      "technique_key": "narrative-chronology-through-cultural-works",
+      "start_sec": 328.195,
+      "end_sec": 1496.629,
+      "category": "narrative",
+      "trigger": "跨越多个世纪和大量作品时，主题容易散成片单。",
+      "treatment": "按年代推进《末代皇帝》《城南旧事》《祖国的花朵》《霸王别姬》和九十年代贺岁片，每部作品都承担一个城市变化或共同记忆命题。",
+      "confidence": 0.98,
+      "parameters": {"chronological_spine": true, "work_as_argument_unit": true},
+      "evidence": {"events": ["event-004", "event-006", "event-009", "event-010", "event-011", "event-013", "event-015"], "full_transcript": true},
+      "guardrails": ["不要把作品列表当作完整城市史。", "外部作品、作者观点和历史语境需独立核验。"]
+    },
+    {
+      "observation_id": "obs-beijing-song-detail-to-emotional-argument",
+      "technique_key": "narrative-song-detail-to-emotional-argument",
+      "start_sec": 627.193,
+      "end_sec": 889.155,
+      "category": "narrative",
+      "trigger": "歌曲史和旋律来源容易成为脱离人物的知识点。",
+      "treatment": "从《送别》的来源与演唱气质讨论离别，再用红领巾、北海游船和白塔把《让我们荡起双桨》落回共同经验。",
+      "confidence": 0.94,
+      "parameters": {"fact_to_personal_interpretation_to_place": true},
+      "evidence": {"events": ["event-007", "event-008", "event-009"], "manual_contact_sheets": true},
+      "guardrails": ["歌曲来源、版本和作者关系需独立核验。", "不由口播推断参考片实际使用了完整曲目。"]
+    },
+    {
+      "observation_id": "obs-beijing-inline-source-card",
+      "technique_key": "graphic-inline-reference-card-over-live-scene",
+      "start_sec": 627.193,
+      "end_sec": 1191.624,
+      "category": "graphic",
+      "trigger": "连续引用电影、访谈、海报和音乐资料时，观众需要识别证据类型。",
+      "treatment": "在主持实景和对谈之间插入带边界与来源语境的电影片段、访谈画面、海报和车厢式参考卡。",
+      "confidence": 0.96,
+      "parameters": {"source_context_visible": true},
+      "evidence": {"events": ["event-007", "event-009", "event-010", "event-011", "event-012"], "manual_contact_sheets": true},
+      "guardrails": ["引用必须保留来源、授权和必要上下文。", "图卡不得伪造事实核验状态。"]
+    },
+    {
+      "observation_id": "obs-beijing-city-archive-to-home-thesis",
+      "technique_key": "narrative-public-archive-to-personal-home-thesis",
+      "start_sec": 1191.624,
+      "end_sec": 1693.625,
+      "category": "narrative",
+      "trigger": "大量经典作品回顾需要落到当代北京和主持人的立场。",
+      "treatment": "从九十年代创作活力和北京文化中心地位逐步转向去中心化、生存压力与网络调侃，最后明确北京既非天堂也非地狱，而是家乡。",
+      "confidence": 0.98,
+      "parameters": {"public_memory_to_personal_position": true},
+      "evidence": {"events": ["event-013", "event-014", "event-015", "event-016", "event-017"], "full_transcript": true},
+      "guardrails": ["个人感受不概括所有北京居民。", "城市教育、房价和文化产业观点需独立数据支持。"]
+    },
+    {
+      "observation_id": "obs-beijing-dialogue-reference-layers",
+      "technique_key": "subtitle-base-dialogue-with-sparse-context-layer",
+      "start_sec": 0.0,
+      "end_sec": 1739.882333,
+      "category": "subtitle",
+      "trigger": "主持对谈、电影对白、作品名、年代和引用来源同时出现。",
+      "treatment": "保持稳定底部对白字幕，将作品、年份、引用来源和章节导航放入独立且稀疏的信息层。",
+      "confidence": 0.93,
+      "parameters": {"base_position": "bottom_center", "ocr_verified": false},
+      "evidence": {"manual_contact_sheet_count": 18},
+      "guardrails": ["字幕、作品名、年代和出处仍需人工听校与事实核验。", "资料层不得遮挡原片关键字幕或人物表情。"]
+    },
+    {
+      "observation_id": "obs-beijing-meta-series-ending",
+      "technique_key": "narrative-series-promise-after-thesis-closure",
+      "start_sec": 1582.314,
+      "end_sec": 1739.882333,
+      "category": "narrative",
+      "trigger": "长篇城市论述需要既完成本集价值判断，又为系列保留延续性。",
+      "treatment": "先完成对家乡的复杂立场，再用北京日常蒙太奇、主持对谈和下一座城市的年度约定收束。",
+      "confidence": 0.97,
+      "parameters": {"thesis_before_next_episode": true},
+      "evidence": {"events": ["event-017", "event-018"], "manual_contact_sheets": true},
+      "guardrails": ["下一集承诺不能替代本集结论。", "片尾名单和城市影像需保留完整可读时间。"]
+    }
+  ],
+  "context_packet": {
+    "packet_kind": "bounded_reference_context",
+    "serialized_characters": 87173,
+    "serialized_utf8_bytes": 98277,
+    "maximum_characters": 180000,
+    "character_comparison": "strictly_less_than",
+    "final_responses_request": {
+      "serialized_characters": 99744,
+      "serialized_utf8_bytes": 110848,
+      "maximum_utf8_bytes": 200000,
+      "byte_comparison": "strictly_less_than",
+      "body_sha256": "d27ca94676bae7b9c3dd0738726c7150d00aaa1d88f0723d329e4cb286ab770a",
+      "contains_model": true,
+      "contains_instructions": true,
+      "contains_input": true,
+      "contains_tools": true,
+      "contains_text_json_schema": true,
+      "validation_scope": "exact UTF-8 byte gate and minimum Responses structure; no external model call was made"
+    }
+  },
+  "limitations": [
+    "参考成片只提供正向保留模式，不能推断作者真实删片偏好。",
+    "人工画面未确认 speed ramp、精确倍率、复杂转场机制、独立音效或逐拍剪切。",
+    "未执行 OCR，字幕、作品名、年份、引用来源和片尾名单仍需人工复核。",
+    "影片讨论的歌曲与配乐不等于参考片实际完整使用；不声明曲名使用、BPM、ducking 或音乐因果。",
+    "影视片段、音乐、海报、访谈与幕后资料的版权和来源需独立核验。",
+    "历史人物、作品制作、城市文化、教育和社会观点需独立事实核验。"
+  ]
+}

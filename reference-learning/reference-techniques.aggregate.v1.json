@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-43fe116e3d34",
-  "generated_at": "2026-08-15T05:30:07.585337+00:00",
-  "source_count": 18,
+  "profile_id": "aggregated-reference-techniques-v1-247f04cacb53",
+  "generated_at": "2026-08-15T05:50:47.749776+00:00",
+  "source_count": 19,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
     "bilibili-BV146BFBzEfE",
@@ -16,6 +16,7 @@
     "bilibili-BV1LS3r6gE7k",
     "bilibili-BV1MgywB8E9m",
     "bilibili-BV1Mi536EELv",
+    "bilibili-BV1PbebzdEWm",
     "bilibili-BV1TNZUB4EF6",
     "bilibili-BV1TYVA6sEhm",
     "bilibili-BV1a7Tj6nEe9",
@@ -300,25 +301,27 @@
     {
       "technique_key": "graphic-inline-reference-card-over-live-scene",
       "category": "graphic",
-      "source_support": 9,
+      "source_support": 10,
       "source_ids": [
         "bilibili-BV146BFBzEfE",
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1JfxYzGE8t",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1Mi536EELv",
+        "bilibili-BV1PbebzdEWm",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9478,
+      "average_confidence": 0.949,
       "trigger_examples": [
         "云冈、木塔、煤矿和城市更新涉及历史、价格、路线和工业信息，现场画面无法全部解释。",
         "远处动物难以仅凭现场低清画面辨认，需要短暂提供语义背景。",
         "巡礼路线跨越多部作品，现场画面无法单独解释作品、地图和角色关系。",
         "口述招牌错误和补救时，观众需要看到沟通证据与成品的关系。",
         "城市历史、竖屏视频、人物身份、价格和产品颜色需要证据层，但全屏长停留会打断旅行现场。",
+        "连续引用电影、访谈、海报和音乐资料时，观众需要识别证据类型。",
         "皇冠展品需要一条可见背景信息连接人物观察与现实事件。",
         "口头列举四个目的地标准后，观众需要一个可回看的比较框架。",
         "摄影师走红照片需要和现实巷道、光线与构图位置建立可验证映射。",
@@ -330,6 +333,7 @@
         "在现实场景旁短暂加入作品图卡、地图、标题、动画片段或角色标识，再回到主持人和地点行动，保持资料层服务现场。",
         "在仍可辨认拍摄区和招牌的画面旁短暂插入聊天截图、草图和双反相机细节，读完即回到现场。",
         "在现场与口播之间短暂插入竖屏视频、历史照片、人物肖像、价格字幕、Part/Day 卡和产品画面，随后快速回到人物或地点继续验证。",
+        "在主持实景和对谈之间插入带边界与来源语境的电影片段、访谈画面、海报和车厢式参考卡。",
         "在皇冠近景之间插入带来源标识的竖屏新闻素材，短暂解释卢浮宫失窃事件，随后直接回到展品和现场游览。",
         "在桌谈之间插入四色和便签式四因素图卡，把预算适配、出片、新手友好和出行月份固定为后续讨论的参照。",
         "短暂展示社交平台照片和手机页面，再切到同一地点的楼道、菜市场与俯视关系，让人物指出光线将进入的位置。",
@@ -386,6 +390,10 @@
           ],
           "returns_to_live_scene": true,
           "source_id": "bilibili-BV1Mi536EELv"
+        },
+        {
+          "source_context_visible": true,
+          "source_id": "bilibili-BV1PbebzdEWm"
         },
         {
           "insert_format": "vertical_news_clip",
@@ -458,6 +466,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "observation_id": "obs-beijing-inline-source-card",
+          "guardrails": [
+            "引用必须保留来源、授权和必要上下文。",
+            "图卡不得伪造事实核验状态。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1TNZUB4EF6",
           "observation_id": "obs-louvre-news-reference-insert",
           "guardrails": [
@@ -520,6 +536,12 @@
           "start_sec": 293.427,
           "end_sec": 1885.0,
           "observation_id": "obs-naples-capri-inline-source-cards"
+        },
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "start_sec": 627.193,
+          "end_sec": 1191.624,
+          "observation_id": "obs-beijing-inline-source-card"
         },
         {
           "source_id": "bilibili-BV1TNZUB4EF6",
@@ -803,18 +825,21 @@
     {
       "technique_key": "graphic-reference-frame-to-live-location-match",
       "category": "graphic",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV1LS3r6gE7k",
+        "bilibili-BV1PbebzdEWm",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.965,
+      "average_confidence": 0.9633,
       "trigger_examples": [
         "三层错落结构仅靠现场手持画面不易理解。",
+        "观众需要理解电影画面与当代北京地点的关系。",
         "动画记忆是前往现实地点的动机，观众需要先知道参照对象，再理解现场对应关系。"
       ],
       "treatment_examples": [
         "把旧状态、设计模型和完工现场按相近空间关系排列，再由主持人进入同一区域说明楼层与功能。",
+        "在实景主持、电影片段、幕后影像和资料卡之间往返，使宫墙、北海白塔、船和庭院成为可验证的视觉锚点。",
         "先以全屏动画参照建立车站和楼梯记忆，再切入人物到达的现实楼梯、出口和周边环境；不把参照画面伪装成实时镜头。"
       ],
       "parameter_variants": [
@@ -826,6 +851,10 @@
           ],
           "spatial_match": true,
           "source_id": "bilibili-BV1LS3r6gE7k"
+        },
+        {
+          "reference_and_live_scene_alternation": true,
+          "source_id": "bilibili-BV1PbebzdEWm"
         },
         {
           "reference_presentation": "full_frame",
@@ -848,6 +877,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "observation_id": "obs-beijing-reference-to-location-match",
+          "guardrails": [
+            "电影片段、剧照和幕后资料的版权与来源需独立核验。",
+            "相似画面不能自动证明真实取景关系。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1aDHQejEAP",
           "observation_id": "obs-animation-reference-to-live-location",
           "guardrails": [
@@ -864,10 +901,78 @@
           "observation_id": "obs-lumi-reference-model-to-live-space"
         },
         {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "start_sec": 0.0,
+          "end_sec": 1001.834,
+          "observation_id": "obs-beijing-reference-to-location-match"
+        },
+        {
           "source_id": "bilibili-BV1aDHQejEAP",
           "start_sec": 6868,
           "end_sec": 6905,
           "observation_id": "obs-animation-reference-to-live-location"
+        }
+      ]
+    },
+    {
+      "technique_key": "humor-fandom-reenactment-with-real-reaction",
+      "category": "humor",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm",
+        "bilibili-BV1PbebzdEWm"
+      ],
+      "average_confidence": 0.965,
+      "trigger_examples": [
+        "体验馆提供观众熟悉的场景、服装和台词，人物本身又有强烈情感投入。",
+        "连续影视史口播容易变成静态讲解。"
+      ],
+      "treatment_examples": [
+        "交替保留认场景、说原台词、穿角色服装、唱主题元素和旅伴即时吐槽，让笑点来自熟悉感与真实投入。",
+        "让主持人实际换装、走入宫墙环境并保留炎热、礼仪失误、现代设备和同伴吐槽，再把体验连接回作品取景。"
+      ],
+      "parameter_variants": [
+        {
+          "has_costume": true,
+          "has_quote": true,
+          "reaction_resolution_retained": true,
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "reenactment_before_explanation": true,
+          "source_id": "bilibili-BV1PbebzdEWm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-friends-playful-reenactment",
+          "guardrails": [
+            "引用素材与标识需要合法使用。",
+            "不了解原作的观众仍应能跟上人物情绪。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "observation_id": "obs-beijing-costume-reenactment-reaction",
+          "guardrails": [
+            "不把服饰表演当作历史复原结论。",
+            "景区规则、服装和路人隐私需独立确认。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 681.5,
+          "end_sec": 779.18,
+          "observation_id": "obs-friends-playful-reenactment"
+        },
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "start_sec": 217.117,
+          "end_sec": 328.195,
+          "observation_id": "obs-beijing-costume-reenactment-reaction"
         }
       ]
     },
@@ -2240,18 +2345,21 @@
     {
       "technique_key": "narrative-archive-context-before-present-use",
       "category": "narrative",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV1MgywB8E9m",
+        "bilibili-BV1PbebzdEWm",
         "bilibili-BV1cuFezLEE2"
       ],
-      "average_confidence": 0.945,
+      "average_confidence": 0.9467,
       "trigger_examples": [
         "新相机若直接进入开箱或参数，会削弱 Leica 与 100 年摄影史的关系。",
+        "故宫、自行车和老北京空间若只有当代画面，会失去作品与时代语境。",
         "当代村落与家庭拜访需要迁徙历史语境。"
       ],
       "treatment_examples": [
         "在具体上手前，先保留博物馆建筑、创作者偶遇、互动展陈、档案库、Oscar Barnack 和 35mm 胶片来历，让产品体验拥有历史纵深。",
+        "先用电影片段、幕后资料和主持对谈解释创作与历史背景，再回到现实地点、器物或人物行动。",
         "先用口述、资料与电影布景说明迁徙和落地，再进入真实村落、器物与居民生活。"
       ],
       "parameter_variants": [
@@ -2260,6 +2368,10 @@
           "human_encounter_retained": true,
           "history_to_product_bridge": true,
           "source_id": "bilibili-BV1MgywB8E9m"
+        },
+        {
+          "archive_before_present": true,
+          "source_id": "bilibili-BV1PbebzdEWm"
         },
         {
           "context_before_home_visit": true,
@@ -2273,6 +2385,14 @@
           "guardrails": [
             "历史人物、年份和技术细节必须另行查证。",
             "外部创作者出镜不能推断授权状态或真实合作关系。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "observation_id": "obs-beijing-archive-before-present-use",
+          "guardrails": [
+            "作品叙事不能替代史料。",
+            "历史人物、年份和制作细节需独立核验。"
           ]
         },
         {
@@ -2290,6 +2410,12 @@
           "start_sec": 98.165,
           "end_sec": 294.928,
           "observation_id": "obs-leica-archive-before-product-use"
+        },
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "start_sec": 328.195,
+          "end_sec": 627.193,
+          "observation_id": "obs-beijing-archive-before-present-use"
         },
         {
           "source_id": "bilibili-BV1cuFezLEE2",
@@ -5210,7 +5336,7 @@
     {
       "technique_key": "opening-place-thesis-to-concrete-mission",
       "category": "opening_montage",
-      "source_support": 7,
+      "source_support": 8,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV146BFBzEfE",
@@ -5218,9 +5344,10 @@
         "bilibili-BV1JfxYzGE8t",
         "bilibili-BV1MgywB8E9m",
         "bilibili-BV1Mi536EELv",
+        "bilibili-BV1PbebzdEWm",
         "bilibili-BV1cuFezLEE2"
       ],
-      "average_confidence": 0.9757,
+      "average_confidence": 0.975,
       "trigger_examples": [
         "地点本身较宽泛，需要把曼谷港口与本期体验快速收敛为可验证路线。",
         "目的地片需要让观众知道本期不是单纯打卡，而是在回答一个清晰问题。",
@@ -5228,6 +5355,7 @@
         "动漫巡礼题材需要快速让观众知道作品入口、现实地点和本片情绪主题。",
         "影片标题和开场都围绕 100 年前的德国与 Leica，相机技术史需要迅速从抽象时间概念落到现实地点和任务。",
         "两个地点距离很近但社会想象相反，且赞助颜色任务需要自然进入旅行主线。",
+        "三百年北京影像史题目抽象且信息密度高。",
         "观众可能只把延吉理解为单一雪景或美食目的地。"
       ],
       "treatment_examples": [
@@ -5237,6 +5365,7 @@
         "以角色装扮、废弃扇形机车库、九州标题、夏天风景和铃芽之旅白色门串联，先兑现巡礼，再提出成年后告别假期的命题。",
         "先讲差点发售的 Leica 相机、第一张 Leica 照片和 1914 年便携摄影，再进入总部档案管理、Wetzlar 小镇和博物馆外观，把技术史悬念转换成实地参观任务。",
         "先用卡布里酒店、街景和产品结果预告吸引注意，再明确那不勒斯与卡布里的吃住行人对照，最后把寻找卡布里蓝和蓝洞天气风险设为可验证任务。",
+        "先以清装扮演和现代吐槽建立人物入口，再从景山真实地点说明现实限制，最后明确从 1759 年开始的影像巡礼任务。",
         "用雪景、服饰、人物动作和口播并列承诺美食、文化与自然三条路线，再由同行人物进入正文。"
       ],
       "parameter_variants": [
@@ -5288,6 +5417,11 @@
           "opening_event_count": 1,
           "uniform_fast_cut": false,
           "source_id": "bilibili-BV1Mi536EELv"
+        },
+        {
+          "opening_phases": 3,
+          "uniform_fast_cut": false,
+          "source_id": "bilibili-BV1PbebzdEWm"
         },
         {
           "promise_count": 3,
@@ -5344,6 +5478,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "observation_id": "obs-beijing-opening-reenactment-to-thesis",
+          "guardrails": [
+            "角色扮演必须明确是表演，不冒充史实。",
+            "开场提出的时间轴必须在正文兑现。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1cuFezLEE2",
           "observation_id": "obs-yanji-opening-three-line-promise",
           "guardrails": [
@@ -5388,6 +5530,12 @@
           "start_sec": 0.0,
           "end_sec": 95.062,
           "observation_id": "obs-naples-capri-opening-contrast-mission"
+        },
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "start_sec": 0.0,
+          "end_sec": 106.84,
+          "observation_id": "obs-beijing-opening-reenactment-to-thesis"
         },
         {
           "source_id": "bilibili-BV1cuFezLEE2",
@@ -6000,18 +6148,21 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-context-layer",
       "category": "subtitle",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV1AYwQzzEbV",
+        "bilibili-BV1PbebzdEWm",
         "bilibili-BV1cuFezLEE2"
       ],
-      "average_confidence": 0.92,
+      "average_confidence": 0.9233,
       "trigger_examples": [
         "全片同时有中文口播、英文现场交流、地点名和资料性解释。",
+        "主持对谈、电影对白、作品名、年代和引用来源同时出现。",
         "全片包含普通话、方言、朝鲜语、食物名、历史资料和户外知识。"
       ],
       "treatment_examples": [
         "保持稳定底部对白字幕，只在议题、地点、历史资料和器材说明使用稀疏独立层。",
+        "保持稳定底部对白字幕，将作品、年份、引用来源和章节导航放入独立且稀疏的信息层。",
         "保持稳定底部对白字幕，只在地点、章节、食物、历史和安全警示使用稀疏独立层。"
       ],
       "parameter_variants": [
@@ -6019,6 +6170,11 @@
           "base_position": "bottom_center",
           "ocr_verified": false,
           "source_id": "bilibili-BV1AYwQzzEbV"
+        },
+        {
+          "base_position": "bottom_center",
+          "ocr_verified": false,
+          "source_id": "bilibili-BV1PbebzdEWm"
         },
         {
           "base_position": "bottom_center",
@@ -6036,6 +6192,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "observation_id": "obs-beijing-dialogue-reference-layers",
+          "guardrails": [
+            "字幕、作品名、年代和出处仍需人工听校与事实核验。",
+            "资料层不得遮挡原片关键字幕或人物表情。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1cuFezLEE2",
           "observation_id": "obs-yanji-dialogue-context-layer",
           "guardrails": [
@@ -6050,6 +6214,12 @@
           "start_sec": 0.0,
           "end_sec": 2177.34,
           "observation_id": "obs-texas-dialogue-base-sparse-context-layer"
+        },
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "start_sec": 0.0,
+          "end_sec": 1739.882333,
+          "observation_id": "obs-beijing-dialogue-reference-layers"
         },
         {
           "source_id": "bilibili-BV1cuFezLEE2",
@@ -7201,47 +7371,6 @@
       ]
     },
     {
-      "technique_key": "humor-fandom-reenactment-with-real-reaction",
-      "category": "humor",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV15XMC6KETm"
-      ],
-      "average_confidence": 0.96,
-      "trigger_examples": [
-        "体验馆提供观众熟悉的场景、服装和台词，人物本身又有强烈情感投入。"
-      ],
-      "treatment_examples": [
-        "交替保留认场景、说原台词、穿角色服装、唱主题元素和旅伴即时吐槽，让笑点来自熟悉感与真实投入。"
-      ],
-      "parameter_variants": [
-        {
-          "has_costume": true,
-          "has_quote": true,
-          "reaction_resolution_retained": true,
-          "source_id": "bilibili-BV15XMC6KETm"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "observation_id": "obs-friends-playful-reenactment",
-          "guardrails": [
-            "引用素材与标识需要合法使用。",
-            "不了解原作的观众仍应能跟上人物情绪。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "start_sec": 681.5,
-          "end_sec": 779.18,
-          "observation_id": "obs-friends-playful-reenactment"
-        }
-      ]
-    },
-    {
       "technique_key": "humor-goal-conflict-self-sabotage-reversal",
       "category": "humor",
       "source_support": 1,
@@ -7561,6 +7690,46 @@
           "start_sec": 2568,
           "end_sec": 2613,
           "observation_id": "obs-visual-callback-snack"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-chronology-through-cultural-works",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1PbebzdEWm"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "跨越多个世纪和大量作品时，主题容易散成片单。"
+      ],
+      "treatment_examples": [
+        "按年代推进《末代皇帝》《城南旧事》《祖国的花朵》《霸王别姬》和九十年代贺岁片，每部作品都承担一个城市变化或共同记忆命题。"
+      ],
+      "parameter_variants": [
+        {
+          "chronological_spine": true,
+          "work_as_argument_unit": true,
+          "source_id": "bilibili-BV1PbebzdEWm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "observation_id": "obs-beijing-chronology-through-cultural-works",
+          "guardrails": [
+            "不要把作品列表当作完整城市史。",
+            "外部作品、作者观点和历史语境需独立核验。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "start_sec": 328.195,
+          "end_sec": 1496.629,
+          "observation_id": "obs-beijing-chronology-through-cultural-works"
         }
       ]
     },
@@ -8831,6 +9000,45 @@
       ]
     },
     {
+      "technique_key": "narrative-public-archive-to-personal-home-thesis",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1PbebzdEWm"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "大量经典作品回顾需要落到当代北京和主持人的立场。"
+      ],
+      "treatment_examples": [
+        "从九十年代创作活力和北京文化中心地位逐步转向去中心化、生存压力与网络调侃，最后明确北京既非天堂也非地狱，而是家乡。"
+      ],
+      "parameter_variants": [
+        {
+          "public_memory_to_personal_position": true,
+          "source_id": "bilibili-BV1PbebzdEWm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "observation_id": "obs-beijing-city-archive-to-home-thesis",
+          "guardrails": [
+            "个人感受不概括所有北京居民。",
+            "城市教育、房价和文化产业观点需独立数据支持。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "start_sec": 1191.624,
+          "end_sec": 1693.625,
+          "observation_id": "obs-beijing-city-archive-to-home-thesis"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-return-to-opening-value-question",
       "category": "narrative",
       "source_support": 1,
@@ -9049,6 +9257,84 @@
           "start_sec": 1461.39,
           "end_sec": 1492.14,
           "observation_id": "obs-task-pivot-self-aware-deadline"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-series-promise-after-thesis-closure",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1PbebzdEWm"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "长篇城市论述需要既完成本集价值判断，又为系列保留延续性。"
+      ],
+      "treatment_examples": [
+        "先完成对家乡的复杂立场，再用北京日常蒙太奇、主持对谈和下一座城市的年度约定收束。"
+      ],
+      "parameter_variants": [
+        {
+          "thesis_before_next_episode": true,
+          "source_id": "bilibili-BV1PbebzdEWm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "observation_id": "obs-beijing-meta-series-ending",
+          "guardrails": [
+            "下一集承诺不能替代本集结论。",
+            "片尾名单和城市影像需保留完整可读时间。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "start_sec": 1582.314,
+          "end_sec": 1739.882333,
+          "observation_id": "obs-beijing-meta-series-ending"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-song-detail-to-emotional-argument",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1PbebzdEWm"
+      ],
+      "average_confidence": 0.94,
+      "trigger_examples": [
+        "歌曲史和旋律来源容易成为脱离人物的知识点。"
+      ],
+      "treatment_examples": [
+        "从《送别》的来源与演唱气质讨论离别，再用红领巾、北海游船和白塔把《让我们荡起双桨》落回共同经验。"
+      ],
+      "parameter_variants": [
+        {
+          "fact_to_personal_interpretation_to_place": true,
+          "source_id": "bilibili-BV1PbebzdEWm"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "observation_id": "obs-beijing-song-detail-to-emotional-argument",
+          "guardrails": [
+            "歌曲来源、版本和作者关系需独立核验。",
+            "不由口播推断参考片实际使用了完整曲目。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1PbebzdEWm",
+          "start_sec": 627.193,
+          "end_sec": 889.155,
+          "observation_id": "obs-beijing-song-detail-to-emotional-argument"
         }
       ]
     },
@@ -10137,6 +10423,33 @@
       },
       "rule": "对照型旅行视频先短暂展示高价值结果，再说清两个地点的对立命题和比较维度，最后给出贯穿全片且允许失败的具体任务；开场不需要全程高速剪切。",
       "source_id": "bilibili-BV1Mi536EELv"
+    },
+    {
+      "total_reviewed_sec": 106.84,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 31.0,
+          "function": "用清装角色扮演和现代口吻制造跨时代反差，先建立轻松人物关系。"
+        },
+        {
+          "start_sec": 31.0,
+          "end_sec": 70.0,
+          "function": "从景山俯瞰北京，说明故宫未能进入的现实限制和当前位置。"
+        },
+        {
+          "start_sec": 70.0,
+          "end_sec": 106.84,
+          "function": "把时间指针拨回 1759 年，明确以影像作品穿越三百年北京的主任务。"
+        }
+      ],
+      "metrics": {
+        "opening_15_sec_shot_count": 2,
+        "opening_15_sec_average_shot_sec": 10.444,
+        "opening_event_count": 1
+      },
+      "rule": "文化视频论文可先用人物扮演制造可亲入口，再用真实地点和明确时间轴给出论题；不需要把开场统一剪成高速蒙太奇。",
+      "source_id": "bilibili-BV1PbebzdEWm"
     },
     {
       "total_reviewed_sec": 120,
