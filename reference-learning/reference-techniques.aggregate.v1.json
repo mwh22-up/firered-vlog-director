@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-87cf6931d045",
-  "generated_at": "2026-08-15T06:49:22.914736+00:00",
-  "source_count": 23,
+  "profile_id": "aggregated-reference-techniques-v1-7e1f393e9b6c",
+  "generated_at": "2026-08-15T07:01:18.052218+00:00",
+  "source_count": 24,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
     "bilibili-BV13p421y7iv",
@@ -13,6 +13,7 @@
     "bilibili-BV1C3546DEC6",
     "bilibili-BV1CrHwzUEJa",
     "bilibili-BV1ETNMzEEWQ",
+    "bilibili-BV1Gc411z7mu",
     "bilibili-BV1JfxYzGE8t",
     "bilibili-BV1LS3r6gE7k",
     "bilibili-BV1MgywB8E9m",
@@ -7676,21 +7677,24 @@
     {
       "technique_key": "subtitle-time-card-compresses-waiting",
       "category": "subtitle",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV19sm2BBEDd",
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1Gc411z7mu",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9733,
+      "average_confidence": 0.9725,
       "trigger_examples": [
         "列车换乘等待包含睡觉和醒来，但不需要按现实时间完整展示。",
         "人物在出门拍星与休息之间犹豫，实际躺下等待不需要按现实时间完整展示。",
+        "数月准备与当天分钟级同步容易失去时间位置。",
         "等待过程本身没有新的叙事信息，但之后的城市天色变化需要明确时间跳跃。"
       ],
       "treatment_examples": [
         "从睡姿硬切到大哈欠，并用‘《一个小时后》’时间卡标明省略，再切窗外、自拍和车内设备恢复行动。",
         "在人物说‘怎么办’后插入独立的紫色‘LATER...’卡片，再回到床上说明最终取消夜拍。",
+        "用日期、距求婚天数/小时/分钟和短状态卡定位创作、彩排、抵达与全部就位。",
         "插入独立 LATER... 时间卡说明省略，再进入晴空塔与城市由日到夜的连续视觉回报。"
       ],
       "parameter_variants": [
@@ -7706,6 +7710,10 @@
           "transition": "hard_cut",
           "playback_rate": null,
           "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "multi_scale_countdown": true,
+          "source_id": "bilibili-BV1Gc411z7mu"
         },
         {
           "caption": "LATER...",
@@ -7732,6 +7740,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "observation_id": "obs-proposal-countdown-context-layer",
+          "guardrails": [
+            "时间卡不得伪造紧迫性。",
+            "字幕不得遮挡手机、走位和人物表情。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1aDHQejEAP",
           "observation_id": "obs-later-city-time-card",
           "guardrails": [
@@ -7752,6 +7768,12 @@
           "start_sec": 1527.32,
           "end_sec": 1528.24,
           "observation_id": "obs-later-rest-time-card"
+        },
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "start_sec": 71.9,
+          "end_sec": 746.2,
+          "observation_id": "obs-proposal-countdown-context-layer"
         },
         {
           "source_id": "bilibili-BV1aDHQejEAP",
@@ -7804,6 +7826,46 @@
           "start_sec": 8170,
           "end_sec": 8240,
           "observation_id": "obs-paragliding-360-reframe"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-community-chorus-memory-montage",
+      "category": "graphic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Gc411z7mu"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "告白需要证明关系不仅存在于两位主角的独白。"
+      ],
+      "treatment_examples": [
+        "把朋友合唱录音、共同生活短片、宠物与旅行片段统一进手写歌词 MV，在现场播放前形成群体见证。"
+      ],
+      "parameter_variants": [
+        {
+          "community_voices": true,
+          "memory_archive": true,
+          "source_id": "bilibili-BV1Gc411z7mu"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "observation_id": "obs-proposal-community-chorus-memory-montage",
+          "guardrails": [
+            "所有私人片段、歌词和参与者需授权。",
+            "朋友素材不能替代双方关系表达。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "start_sec": 746.2,
+          "end_sec": 1009.7,
+          "observation_id": "obs-proposal-community-chorus-memory-montage"
         }
       ]
     },
@@ -8798,6 +8860,45 @@
           "start_sec": 111.044,
           "end_sec": 462.963,
           "observation_id": "obs-lumi-coworker-use-validates-design"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-creative-iterations-before-live-payoff",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Gc411z7mu"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "原创歌若只在现场出现，难以体现挑战和投入。"
+      ],
+      "treatment_examples": [
+        "保留数月写词、三版 Demo、编曲讨论、实录、唱功问题、反复排练和朋友纠正，再等待现场演唱。"
+      ],
+      "parameter_variants": [
+        {
+          "iterations_visible": true,
+          "source_id": "bilibili-BV1Gc411z7mu"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "observation_id": "obs-proposal-creation-iterations-payoff",
+          "guardrails": [
+            "创作者和录音参与者署名授权需独立确认。",
+            "不由画面推断精确音乐参数。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "start_sec": 136.4,
+          "end_sec": 342.6,
+          "observation_id": "obs-proposal-creation-iterations-payoff"
         }
       ]
     },
@@ -9798,6 +9899,46 @@
       ]
     },
     {
+      "technique_key": "narrative-parallel-countdown-to-shared-event",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Gc411z7mu"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "求婚方准备与不知情伴侣的参观发生在同一时间。"
+      ],
+      "treatment_examples": [
+        "交叉剪辑天文馆假工作、场地布置、亲友集合、电话和实时距离倒计时，让两条线在入场时汇合。"
+      ],
+      "parameter_variants": [
+        {
+          "parallel_threads": 2,
+          "countdown_visible": true,
+          "source_id": "bilibili-BV1Gc411z7mu"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "observation_id": "obs-proposal-parallel-countdown",
+          "guardrails": [
+            "倒计时必须来自真实时间线。",
+            "不泄露无关人员实时位置或隐私。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "start_sec": 71.9,
+          "end_sec": 746.2,
+          "observation_id": "obs-proposal-parallel-countdown"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-parallel-destination-comparison-modules",
       "category": "narrative",
       "source_support": 1,
@@ -9887,6 +10028,45 @@
       ]
     },
     {
+      "technique_key": "narrative-performance-vow-answer-payoff",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Gc411z7mu"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "准备线需要由真实现场和明确同意完成。"
+      ],
+      "treatment_examples": [
+        "按入场、现场演唱、承认笨拙、四年回顾、告白、求婚问句、明确回答、戴戒指和亲友合影完整保留。"
+      ],
+      "parameter_variants": [
+        {
+          "explicit_answer_retained": true,
+          "source_id": "bilibili-BV1Gc411z7mu"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "observation_id": "obs-proposal-performance-vow-answer",
+          "guardrails": [
+            "明确回答与对方自主性不可删改。",
+            "情绪和亲友反应不得通过错序伪造。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "start_sec": 1009.7,
+          "end_sec": 1281.2,
+          "observation_id": "obs-proposal-performance-vow-answer"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-personal-reunion-before-cultural-system",
       "category": "narrative",
       "source_support": 1,
@@ -9921,6 +10101,45 @@
           "start_sec": 150.918,
           "end_sec": 264.064,
           "observation_id": "obs-texas-personal-friend-enters-system"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-post-event-debrief-restores-authenticity",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Gc411z7mu"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "精心制作的仪式容易显得过度完美。"
+      ],
+      "treatment_examples": [
+        "在求婚前后保留真唱/假唱、戒指尺寸、暴露风险、竞争对手玩笑、双方笑场和片尾花絮。"
+      ],
+      "parameter_variants": [
+        {
+          "debrief_after_payoff": true,
+          "source_id": "bilibili-BV1Gc411z7mu"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "observation_id": "obs-proposal-post-event-debrief",
+          "guardrails": [
+            "复盘不能削弱明确同意。",
+            "私人细节公开需双方确认。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "start_sec": 1058.9,
+          "end_sec": 1301.162167,
+          "observation_id": "obs-proposal-post-event-debrief"
         }
       ]
     },
@@ -10496,6 +10715,45 @@
           "start_sec": 0.0,
           "end_sec": 34.0,
           "observation_id": "obs-lumi-cost-question-roomtour-hook"
+        }
+      ]
+    },
+    {
+      "technique_key": "opening-result-cold-open-to-process-question",
+      "category": "opening_montage",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Gc411z7mu"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "标题已经透露求婚，继续隐藏结果会制造廉价悬念。"
+      ],
+      "treatment_examples": [
+        "先给问句与接受反应，再回到当天独白，把悬念转为写歌、保密和亲友协作如何完成。"
+      ],
+      "parameter_variants": [
+        {
+          "result_revealed_first": true,
+          "source_id": "bilibili-BV1Gc411z7mu"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "observation_id": "obs-proposal-result-cold-open-process-question",
+          "guardrails": [
+            "不得用冷开场歪曲对方完整意愿。",
+            "私人影像公开需双方同意。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Gc411z7mu",
+          "start_sec": 0.0,
+          "end_sec": 71.9,
+          "observation_id": "obs-proposal-result-cold-open-process-question"
         }
       ]
     },
@@ -11203,6 +11461,33 @@
       },
       "rule": "目的地钩子只占最前面的短段；随后让完整人物设定、疲惫限制和计划成立，再把较密剪辑集中到次日出发与交通推进，避免把长篇开场误做成全程快切。",
       "source_id": "bilibili-BV1ETNMzEEWQ"
+    },
+    {
+      "total_reviewed_sec": 71.9,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 8.0,
+          "function": "先给求婚问句与接受反应，明确结果和情绪承诺。"
+        },
+        {
+          "start_sec": 8.0,
+          "end_sec": 39.0,
+          "function": "回到当天独白，说明四年关系和为何不用擅长的视频而挑战写歌。"
+        },
+        {
+          "start_sec": 39.0,
+          "end_sec": 71.9,
+          "function": "交代对方职业、伪装工作、场地、亲友与母亲到场等计划约束。"
+        }
+      ],
+      "metrics": {
+        "opening_15_sec_shot_count": 5,
+        "opening_15_sec_average_shot_sec": 4.128,
+        "opening_event_count": 1
+      },
+      "rule": "已知结果的私人事件片可用极短结果冷开场消除‘是否成功’悬念，把主要悬念转为‘如何完成’和关系细节。",
+      "source_id": "bilibili-BV1Gc411z7mu"
     },
     {
       "total_reviewed_sec": 74.1,

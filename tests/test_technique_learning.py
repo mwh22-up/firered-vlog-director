@@ -338,7 +338,7 @@ class TechniqueLearningTests(unittest.TestCase):
                 minimum_source_support=2,
             )
 
-    def test_twenty_three_formal_studies_keep_the_learning_baseline(self) -> None:
+    def test_twenty_four_formal_studies_keep_the_learning_baseline(self) -> None:
         repository_root = Path(__file__).resolve().parents[1]
         study_paths = sorted(
             (repository_root / "reference-learning").glob(
@@ -356,9 +356,9 @@ class TechniqueLearningTests(unittest.TestCase):
             for observation in item["technique_observations"]
         }
 
-        self.assertEqual(len(studies), 23)
-        self.assertEqual(observation_count, 351)
-        self.assertEqual(len(unique_keys), 132)
+        self.assertEqual(len(studies), 24)
+        self.assertEqual(observation_count, 358)
+        self.assertEqual(len(unique_keys), 138)
 
         aggregate = aggregate_technique_studies(
             studies,
@@ -366,10 +366,10 @@ class TechniqueLearningTests(unittest.TestCase):
         )
         validate_technique_aggregate(aggregate)
 
-        self.assertEqual(aggregate["source_count"], 23)
+        self.assertEqual(aggregate["source_count"], 24)
         self.assertEqual(aggregate["minimum_source_support"], 2)
         self.assertEqual(len(aggregate["stable_patterns"]), 57)
-        self.assertEqual(len(aggregate["source_specific_patterns"]), 75)
+        self.assertEqual(len(aggregate["source_specific_patterns"]), 81)
         self.assertEqual(
             {
                 pattern["technique_key"]
@@ -403,7 +403,7 @@ class TechniqueLearningTests(unittest.TestCase):
                     )
                 )
 
-    def test_committed_aggregate_matches_the_twenty_three_formal_studies(self) -> None:
+    def test_committed_aggregate_matches_the_twenty_four_formal_studies(self) -> None:
         repository_root = Path(__file__).resolve().parents[1]
         reference_directory = repository_root / "reference-learning"
         studies = [
