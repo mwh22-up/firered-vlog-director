@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "study_id": "technique-study-bilibili-BV1cuFezLEE2-v1",
+  "generated_at": "2026-08-15T06:00:00Z",
+  "source": {"source_id": "bilibili-BV1cuFezLEE2", "url": "https://www.bilibili.com/video/BV1cuFezLEE2/", "title": "也没人跟我说延吉能这么玩啊！", "duration_sec": 2377.279667},
+  "analysis_evidence": {
+    "proxy_dual_stream_full_decode_exit_code": 0,
+    "video_duration_sec": 2377.279667,
+    "shot_count": 664,
+    "event_count": 27,
+    "audio_segment_count": 595,
+    "transcript_segment_count": 1242,
+    "transcript_word_count": 6649,
+    "asr_provider": "faster-whisper",
+    "asr_model": "small",
+    "asr_language": "zh",
+    "asr_last_trusted_dialogue_end_sec": 2373.78,
+    "asr_dialogue_coverage_ratio": 0.998528,
+    "asr_tail_gap_sec": 3.499667,
+    "event_review_contact_sheet_count": 24,
+    "manual_review_ranges": [[0.0, 111.0], [340.0, 433.0], [781.0, 960.0], [1264.0, 1480.0], [1656.0, 1769.0], [2018.0, 2377.28]],
+    "manual_review_focus": ["opening", "food-market", "film-set-and-migration-history", "local-host-and-family-meal", "winter-route", "humor-and-ending"],
+    "manual_effect_result": "未从人工画面证据确认 speed ramp、精确倍率、复杂转场机制或独立音效。"
+  },
+  "opening_recipe": {
+    "total_reviewed_sec": 111.0,
+    "phases": [
+      {"start_sec": 0.0, "end_sec": 31.0, "function": "以雪景、传统服饰和人物动作快速承诺边境城市的文化与冬季体验。"},
+      {"start_sec": 31.0, "end_sec": 76.0, "function": "明确延吉的美食、朝鲜族文化和自然路线三条主线。"},
+      {"start_sec": 76.0, "end_sec": 111.0, "function": "用寒冷反应、同行人物和出发口播进入正文。"}
+    ],
+    "metrics": {"opening_15_sec_shot_count": 6, "opening_15_sec_average_shot_sec": 2.58, "opening_event_count": 1},
+    "rule": "地方文化旅行片可先用人物动作和环境反差建立感官承诺，再给有限主线；开场快剪后必须回到人物关系与可执行路线。"
+  },
+  "narrative_model": {
+    "premise": "影片以老胡和本地朋友为入口，从市场美食、传统服饰、电影布景与家庭饭桌进入朝鲜族文化和迁徙记忆，最后在长白山计划受阻后改走冰河路线，用真实冬季行动完成地方体验。",
+    "beats": ["开场列出美食、文化和雪地清单", "市场试吃和打糕体验", "传统服饰与电影拍摄关系", "电影村布景连接迁徙历史", "本地家庭饭桌、语言与留守选择", "天气阻断长白山计划后转为本地私藏路线", "冰河徒步、失败笑点、冰瀑到达和价值收束"],
+    "rule": "文化旅行片让熟人、创作者和当地居民分别提供日常、作品与家庭尺度；计划受阻时保留改线原因、行动过程和结果，而不是只展示景点。"
+  },
+  "scenic_model": {
+    "preferred_sequence": ["人物进入市场、村落、家庭或林地", "宽景说明雪地与建筑尺度", "食物、器物、服饰或植物细节回答地点功能", "保留同行者动作和即时反应", "回到本地人的解释或下一步行动"],
+    "observed_ranges": [[340.0, 582.0], [781.0, 1104.0], [1104.0, 1590.0], [1656.0, 2233.0]],
+    "rule": "雪景和传统空间必须与人物进入、使用、讲述或遇到困难的过程共同出现，避免把地方文化剪成无人的明信片。"
+  },
+  "music_model": {"music_likely_ratio": 0.0198, "evidence_status": "machine_audio_classification_only", "visual_candidates": ["开场文化预告", "市场和服饰转场", "雪村与家庭饭桌", "冰河徒步和结尾"], "rule": "机器声学分类不支持曲名、BPM、ducking、逐拍剪切或音乐因果结论。"},
+  "subtitle_model": {
+    "base_style": "联系表可见底部居中浅色中文字幕配深色描边，覆盖普通话、方言、朝鲜语和现场交流。",
+    "emphasis_patterns": ["地点与章节使用稀疏标题层", "食物、历史和器物解释与普通对白分层", "笑点只短暂突出反应词，随后回到底部字幕"],
+    "rule": "多语言和文化名词密集时保持稳定对白层，资料或地点层独立出现；未执行 OCR，文字准确性仍需人工听校。"
+  },
+  "humor_model": {
+    "event_chain": ["先建立试吃、服饰拍摄、家庭拜访或冰河任务", "保留同行人的贪吃、怕冷、摔倒、误解和互相调侃", "让本地朋友或环境反应确认笑点", "回到文化解释、照顾或继续行动"],
+    "observed_ranges": [[175.0, 582.0], [582.0, 781.0], [1480.0, 1656.0], [1769.0, 2330.0]],
+    "rule": "关系笑点服务人物亲密感和真实旅程；寒冷、语言差异、家庭选择与当地居民不能被剪成单向嘲弄。"
+  },
+  "technique_observations": [
+    {"observation_id": "obs-yanji-opening-three-line-promise", "technique_key": "opening-place-thesis-to-concrete-mission", "start_sec": 0.0, "end_sec": 111.0, "category": "opening_montage", "trigger": "观众可能只把延吉理解为单一雪景或美食目的地。", "treatment": "用雪景、服饰、人物动作和口播并列承诺美食、文化与自然三条路线，再由同行人物进入正文。", "confidence": 0.97, "parameters": {"promise_count": 3}, "evidence": {"event_id": "event-001", "manual_opening_sheet": true}, "guardrails": ["开场承诺必须在正文兑现。", "文化身份不能被压缩成单一异域标签。"]},
+    {"observation_id": "obs-yanji-food-participation-reaction", "technique_key": "narrative-food-process-tasting-reaction", "start_sec": 265.0, "end_sec": 582.0, "category": "narrative", "trigger": "连续美食展示容易退化为菜单罗列。", "treatment": "在市场介绍后保留摊主互动、试吃、打糕制作、体力失败和同伴反应，形成食物过程与人物结果。", "confidence": 0.96, "parameters": {"process_before_evaluation": true}, "evidence": {"events": ["event-004", "event-005", "event-006", "event-007"], "manual_food_sheet": true}, "guardrails": ["食材、价格和传统来源需独立核验。", "摊主与顾客不作为背景道具。"]},
+    {"observation_id": "obs-yanji-creator-memory-to-place", "technique_key": "narrative-creator-memory-to-present-location", "start_sec": 671.0, "end_sec": 960.0, "category": "narrative", "trigger": "电影布景若只作为拍照点，会失去人物与地方关系。", "treatment": "由参与电影制作的同行者讲述拍摄记忆，再进入搭建村落、房间和道具，让作品经历成为空间导览线。", "confidence": 0.96, "parameters": {"creator_as_guide": true}, "evidence": {"events": ["event-009", "event-010", "event-011"], "manual_set_sheet": true}, "guardrails": ["作品片段、剧照和布景授权需独立确认。", "布景不冒充未经说明的真实历史建筑。"]},
+    {"observation_id": "obs-yanji-migration-context-before-home", "technique_key": "narrative-archive-context-before-present-use", "start_sec": 960.0, "end_sec": 1170.0, "category": "narrative", "trigger": "当代村落与家庭拜访需要迁徙历史语境。", "treatment": "先用口述、资料与电影布景说明迁徙和落地，再进入真实村落、器物与居民生活。", "confidence": 0.93, "parameters": {"context_before_home_visit": true}, "evidence": {"events": ["event-012", "event-013", "event-014"], "full_transcript": true}, "guardrails": ["迁徙年份、族群历史和档案来源需独立核验。", "电影叙事不能替代史料。"]},
+    {"observation_id": "obs-yanji-host-meal-language-memory", "technique_key": "narrative-small-local-encounter-validates-place", "start_sec": 1104.0, "end_sec": 1590.0, "category": "narrative", "trigger": "传统民居和食物需要由生活者解释其当代意义。", "treatment": "保留主人介绍器物、家庭饭桌、多语言交流、伴侣故事与留守选择，让空间由当地人的行动和记忆成立。", "confidence": 0.97, "parameters": {"host_agency": true, "shared_meal": true}, "evidence": {"events": ["event-014", "event-015", "event-016", "event-017", "event-018"], "manual_home_sheet": true}, "guardrails": ["个人家庭选择不能概括整个群体。", "语言与身份表述需保留说话者语境。"]},
+    {"observation_id": "obs-yanji-weather-forces-local-route", "technique_key": "narrative-failure-adaptation-payoff", "start_sec": 1656.0, "end_sec": 2119.0, "category": "narrative", "trigger": "长白山和热门雪景因天气与客流无法执行。", "treatment": "明确说明原计划失败，由本地户外朋友提出私藏冰河路线，保留徒步、植物观察、摔倒和到达冰瀑的过程。", "confidence": 0.98, "parameters": {"failure_visible": true, "local_alternative": true}, "evidence": {"events": ["event-020", "event-021", "event-022", "event-023", "event-024"], "manual_winter_sheet": true}, "guardrails": ["不能为了结局删掉天气、装备和寒冷风险。", "户外路线与植物知识需独立核验。"]},
+    {"observation_id": "obs-yanji-winter-awkward-process", "technique_key": "humor-preserve-real-awkward-process", "start_sec": 1769.0, "end_sec": 2330.0, "category": "humor", "trigger": "非专业参与者在严寒徒步中不断摔倒、后悔和互相怂恿。", "treatment": "保留失败动作、同行吐槽、重新尝试、冻痛处理和继续前进的完整链条，而非只截取摔倒瞬间。", "confidence": 0.97, "parameters": {"setup_reaction_recovery": true}, "evidence": {"events": ["event-021", "event-023", "event-024", "event-025", "event-026"], "manual_winter_sheet": true}, "guardrails": ["冻伤或受伤处置优先于笑点。", "危险动作必须保留不要模仿的警示。"]},
+    {"observation_id": "obs-yanji-wide-detail-reaction-winter", "technique_key": "scenic-human-reaction-to-landmark-geography", "start_sec": 1656.0, "end_sec": 2233.0, "category": "scenic", "trigger": "林地、冰河和冰瀑需要人物尺度与行动方向。", "treatment": "用航拍或宽景建立冬季地貌，以脚步、藤蔓、冰面和冰柱细节回答路线，再保留人物寒冷与到达反应。", "confidence": 0.94, "parameters": {"wide_detail_reaction": true}, "evidence": {"events": ["event-020", "event-022", "event-024", "event-025"], "manual_winter_sheet": true}, "guardrails": ["景观镜头不能掩盖安全与真实行程。"]},
+    {"observation_id": "obs-yanji-dialogue-context-layer", "technique_key": "subtitle-base-dialogue-with-sparse-context-layer", "start_sec": 0.0, "end_sec": 2377.28, "category": "subtitle", "trigger": "全片包含普通话、方言、朝鲜语、食物名、历史资料和户外知识。", "treatment": "保持稳定底部对白字幕，只在地点、章节、食物、历史和安全警示使用稀疏独立层。", "confidence": 0.92, "parameters": {"base_position": "bottom_center", "ocr_verified": false}, "evidence": {"manual_contact_sheet_count": 6}, "guardrails": ["多语言文字仍需人工听校。", "标题不得遮挡人物动作、食物和冰面落脚点。"]}
+  ],
+  "context_packet": {"packet_kind": "bounded_reference_context", "serialized_characters": 88303, "serialized_utf8_bytes": 103755, "maximum_characters": 180000, "character_comparison": "strictly_less_than", "final_responses_request": {"serialized_characters": 73361, "serialized_utf8_bytes": 88813, "maximum_utf8_bytes": 200000, "byte_comparison": "strictly_less_than", "body_sha256": "272046548fa1a6e620cdaca2bc6194b2fb930714b87ef2909afacd277db4783e", "contains_model": true, "contains_instructions": true, "contains_input": true, "contains_tools": true, "contains_text_json_schema": true, "validation_scope": "exact UTF-8 byte gate and minimum Responses structure; no external model call was made"}},
+  "limitations": ["参考成片只提供正向保留模式，不能推断作者真实删片偏好。", "人工画面未确认 speed ramp、精确倍率、复杂转场或独立音效。", "未执行 OCR，字幕、图卡和资料文字仍需人工复核。", "音乐仅有机器分类，不声明曲名、BPM、ducking 或逐拍因果。", "族群、迁徙、电影、食物、植物、景区和产品信息需独立核验。", "严寒徒步和冰面活动具有现实风险，本 Study 不构成旅行或安全建议。"]
+}

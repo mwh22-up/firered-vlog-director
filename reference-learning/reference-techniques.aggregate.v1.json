@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-0d3d4f775782",
-  "generated_at": "2026-08-14T13:52:34.002175+00:00",
-  "source_count": 17,
+  "profile_id": "aggregated-reference-techniques-v1-43fe116e3d34",
+  "generated_at": "2026-08-15T05:30:07.585337+00:00",
+  "source_count": 18,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
     "bilibili-BV146BFBzEfE",
@@ -20,6 +20,7 @@
     "bilibili-BV1TYVA6sEhm",
     "bilibili-BV1a7Tj6nEe9",
     "bilibili-BV1aDHQejEAP",
+    "bilibili-BV1cuFezLEE2",
     "bilibili-BV1xTdwBQEna"
   ],
   "minimum_source_support": 2,
@@ -1090,7 +1091,7 @@
     {
       "technique_key": "humor-preserve-real-awkward-process",
       "category": "humor",
-      "source_support": 16,
+      "source_support": 17,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV146BFBzEfE",
@@ -1107,9 +1108,10 @@
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1aDHQejEAP",
+        "bilibili-BV1cuFezLEE2",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9637,
+      "average_confidence": 0.9641,
       "trigger_examples": [
         "普通成年人跟不上专业泰拳训练，真实落差比预制笑话更有可信度。",
         "知识密集地方片需要真实关系反应释放节奏，但不能伤害地方人物和文物语境。",
@@ -1126,6 +1128,7 @@
         "旅行结婚的相处建议如果只给结论，会缺少冲突为何发生和如何修复的可信度。",
         "主持人要复刻机车短视频动作，但对手势、腿部和转身顺序不熟。",
         "长时间问路同时存在语言障碍、地图理解和追加问题，快速跳到答案会失去真实关系变化。",
+        "非专业参与者在严寒徒步中不断摔倒、后悔和互相怂恿。",
         "地方文化知识密度高，需要真实关系反应释放节奏而不贬低当地人。"
       ],
       "treatment_examples": [
@@ -1144,6 +1147,7 @@
         "保留攻略分工、出门前如厕、睡眠与水肿、拍照角度、夸奖敷衍和发音纠正的完整来回，让尴尬过程自然落到状态管理、允许变数和包容错误。",
         "保留嘉宾逐步示范、人物夹腿转身、手势像鸡爪的纠正、互相扶持和重新尝试，再展示夜间移动结果。",
         "保留首次开口、双方理解失败、展示地图、尝试回答、追加问题、等待和暂时分开的全过程，让尴尬由真实停顿累积。",
+        "保留失败动作、同行吐槽、重新尝试、冻痛处理和继续前进的完整链条，而非只截取摔倒瞬间。",
         "保留米线与米粉、菌子与蘑菇纠正、孩子专业回答、拍卖误解、夫妻花市分歧、校园问答和书店松弛作息的完整来回。"
       ],
       "parameter_variants": [
@@ -1241,6 +1245,10 @@
           "resolution_deferred": true,
           "playback_rate": null,
           "source_id": "bilibili-BV1aDHQejEAP"
+        },
+        {
+          "setup_reaction_recovery": true,
+          "source_id": "bilibili-BV1cuFezLEE2"
         },
         {
           "setup_reaction_resolution": true,
@@ -1370,6 +1378,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "observation_id": "obs-yanji-winter-awkward-process",
+          "guardrails": [
+            "冻伤或受伤处置优先于笑点。",
+            "危险动作必须保留不要模仿的警示。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1xTdwBQEna",
           "observation_id": "obs-kunming-real-awkward-local-humor",
           "guardrails": [
@@ -1468,6 +1484,12 @@
           "start_sec": 7140,
           "end_sec": 7583.633,
           "observation_id": "obs-schoolboy-directions-awkward-process"
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "start_sec": 1769.0,
+          "end_sec": 2330.0,
+          "observation_id": "obs-yanji-winter-awkward-process"
         },
         {
           "source_id": "bilibili-BV1xTdwBQEna",
@@ -2216,6 +2238,68 @@
       ]
     },
     {
+      "technique_key": "narrative-archive-context-before-present-use",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1MgywB8E9m",
+        "bilibili-BV1cuFezLEE2"
+      ],
+      "average_confidence": 0.945,
+      "trigger_examples": [
+        "新相机若直接进入开箱或参数，会削弱 Leica 与 100 年摄影史的关系。",
+        "当代村落与家庭拜访需要迁徙历史语境。"
+      ],
+      "treatment_examples": [
+        "在具体上手前，先保留博物馆建筑、创作者偶遇、互动展陈、档案库、Oscar Barnack 和 35mm 胶片来历，让产品体验拥有历史纵深。",
+        "先用口述、资料与电影布景说明迁徙和落地，再进入真实村落、器物与居民生活。"
+      ],
+      "parameter_variants": [
+        {
+          "archive_before_operation": true,
+          "human_encounter_retained": true,
+          "history_to_product_bridge": true,
+          "source_id": "bilibili-BV1MgywB8E9m"
+        },
+        {
+          "context_before_home_visit": true,
+          "source_id": "bilibili-BV1cuFezLEE2"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1MgywB8E9m",
+          "observation_id": "obs-leica-archive-before-product-use",
+          "guardrails": [
+            "历史人物、年份和技术细节必须另行查证。",
+            "外部创作者出镜不能推断授权状态或真实合作关系。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "observation_id": "obs-yanji-migration-context-before-home",
+          "guardrails": [
+            "迁徙年份、族群历史和档案来源需独立核验。",
+            "电影叙事不能替代史料。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1MgywB8E9m",
+          "start_sec": 98.165,
+          "end_sec": 294.928,
+          "observation_id": "obs-leica-archive-before-product-use"
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "start_sec": 960.0,
+          "end_sec": 1170.0,
+          "observation_id": "obs-yanji-migration-context-before-home"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-end-of-journey-montage-verbal-closure",
       "category": "narrative",
       "source_support": 9,
@@ -2825,7 +2909,7 @@
     {
       "technique_key": "narrative-failure-adaptation-payoff",
       "category": "narrative",
-      "source_support": 11,
+      "source_support": 12,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV15XMC6KETm",
@@ -2837,9 +2921,10 @@
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
-        "bilibili-BV1a7Tj6nEe9"
+        "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1cuFezLEE2"
       ],
-      "average_confidence": 0.9618,
+      "average_confidence": 0.9633,
       "trigger_examples": [
         "对打碰撞导致出血，原计划的娱乐体验出现真实风险。",
         "纽约暴雨打断原定户外计划，但人物已经准备替代选项。",
@@ -2851,7 +2936,8 @@
         "蓝洞开放依赖天气，商业任务与旅行高潮都可能无法完成。",
         "从德国到巴黎的移动连续出现晚点、站台不明、行李负担、巴士问路和同名地点误选。",
         "标题询问是否后悔，需要证明旅行中的错误与冲突怎样改变两人的关系。",
-        "走红照片依赖阳光与蒸汽，但现场云层遮住光线。"
+        "走红照片依赖阳光与蒸汽，但现场云层遮住光线。",
+        "长白山和热门雪景因天气与客流无法执行。"
       ],
       "treatment_examples": [
         "先保留意外、检查和教练解释，再把两小时训练上升为对职业拳手危险与辛苦的理解，最后完成第一项任务。",
@@ -2864,7 +2950,8 @@
         "明确记录连续关闭和剩余机会，在失败日转向城市、餐饮与找蓝支线；第三天直奔港口、等待、换船、买票和压低身体入洞，最终用蓝光景观与人物反应兑现。",
         "保留问题被发现、向人求助、重新确认、赶路、坐对巴士以及地图错误被纠正的过程，再以巴黎街景和继续前往酒店作为阶段回报。",
         "从攻略犯错、出门延误、照片不满意和旅行争吵讲到允许变数、包容错误、与父母协商，再总结两人如何在多次旅行中逐渐形成默契。",
-        "保留判断光线、等待、被路人认出、发现阳光再次被遮和决定不能把鸡蛋放一个篮子的过程，随后转去下一个历史街区。"
+        "保留判断光线、等待、被路人认出、发现阳光再次被遮和决定不能把鸡蛋放一个篮子的过程，随后转去下一个历史街区。",
+        "明确说明原计划失败，由本地户外朋友提出私藏冰河路线，保留徒步、植物观察、摔倒和到达冰瀑的过程。"
       ],
       "parameter_variants": [
         {
@@ -2969,6 +3056,11 @@
           "desired_condition": "sunlight on steam",
           "adaptation": "move to next location",
           "source_id": "bilibili-BV1a7Tj6nEe9"
+        },
+        {
+          "failure_visible": true,
+          "local_alternative": true,
+          "source_id": "bilibili-BV1cuFezLEE2"
         }
       ],
       "guardrail_variants": [
@@ -3058,6 +3150,14 @@
             "天气失败不应伪造成功镜头。",
             "等待段需要保留判断和调整，不必保留全部空耗。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "observation_id": "obs-yanji-weather-forces-local-route",
+          "guardrails": [
+            "不能为了结局删掉天气、装备和寒冷风险。",
+            "户外路线与植物知识需独立核验。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -3126,6 +3226,12 @@
           "start_sec": 820,
           "end_sec": 963.4,
           "observation_id": "obs-chongqing-wait-for-light-authenticity"
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "start_sec": 1656.0,
+          "end_sec": 2119.0,
+          "observation_id": "obs-yanji-weather-forces-local-route"
         }
       ]
     },
@@ -4395,24 +4501,27 @@
     {
       "technique_key": "narrative-small-local-encounter-validates-place",
       "category": "narrative",
-      "source_support": 4,
+      "source_support": 5,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1cuFezLEE2",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.955,
+      "average_confidence": 0.958,
       "trigger_examples": [
         "民宿如果只展示装修，会缺少为什么值得停留的答案。",
         "富豪岛和昂贵短暂景点的主题需要当地人的日常视角，避免只剩游客消费想象。",
         "步道段需要一个具体事件回报‘本地生活关系’而非只拍空景。",
+        "传统民居和食物需要由生活者解释其当代意义。",
         "‘昆明松弛又有生命力’需要由不同普通人物反复验证。"
       ],
       "treatment_examples": [
         "保留房东、清晨布施、自种咖啡、家族照片和私人收藏，让当地人的行动与记忆回答空间价值。",
         "先保留船长聊天、换船、等待和入洞互动，再用当地船夫童年把蓝洞当免费泳池的记忆，重新解释游客眼中的奢华与本地生活的关系。",
         "保留人物担心大鹅会咬、询问名字和来历、得知生日，以及路过婆婆认识它的细节，再由主持人总结先当游客、再当本地人的玩法。",
+        "保留主人介绍器物、家庭饭桌、多语言交流、伴侣故事与留守选择，让空间由当地人的行动和记忆成立。",
         "保留送包子的粉丝、菌类父子、鲜花从业者、本地朋友、校园访客、书店员工和返乡创作者的短交流，让城市判断来自多点人物。"
       ],
       "parameter_variants": [
@@ -4440,6 +4549,11 @@
           "neighbor_recognition": true,
           "route_summary_follows": true,
           "source_id": "bilibili-BV1a7Tj6nEe9"
+        },
+        {
+          "host_agency": true,
+          "shared_meal": true,
+          "source_id": "bilibili-BV1cuFezLEE2"
         },
         {
           "encounter_types": [
@@ -4479,6 +4593,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "observation_id": "obs-yanji-host-meal-language-memory",
+          "guardrails": [
+            "个人家庭选择不能概括整个群体。",
+            "语言与身份表述需保留说话者语境。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1xTdwBQEna",
           "observation_id": "obs-kunming-local-encounters-validate-place",
           "guardrails": [
@@ -4505,6 +4627,12 @@
           "start_sec": 1502.5,
           "end_sec": 1609.3,
           "observation_id": "obs-chongqing-animal-community-microstory"
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "start_sec": 1104.0,
+          "end_sec": 1590.0,
+          "observation_id": "obs-yanji-host-meal-language-memory"
         },
         {
           "source_id": "bilibili-BV1xTdwBQEna",
@@ -5082,23 +5210,25 @@
     {
       "technique_key": "opening-place-thesis-to-concrete-mission",
       "category": "opening_montage",
-      "source_support": 6,
+      "source_support": 7,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV146BFBzEfE",
         "bilibili-BV15XMC6KETm",
         "bilibili-BV1JfxYzGE8t",
         "bilibili-BV1MgywB8E9m",
-        "bilibili-BV1Mi536EELv"
+        "bilibili-BV1Mi536EELv",
+        "bilibili-BV1cuFezLEE2"
       ],
-      "average_confidence": 0.9767,
+      "average_confidence": 0.9757,
       "trigger_examples": [
         "地点本身较宽泛，需要把曼谷港口与本期体验快速收敛为可验证路线。",
         "目的地片需要让观众知道本期不是单纯打卡，而是在回答一个清晰问题。",
         "需要同时兑现纽约视觉承诺并解释为什么此刻来到这里。",
         "动漫巡礼题材需要快速让观众知道作品入口、现实地点和本片情绪主题。",
         "影片标题和开场都围绕 100 年前的德国与 Leica，相机技术史需要迅速从抽象时间概念落到现实地点和任务。",
-        "两个地点距离很近但社会想象相反，且赞助颜色任务需要自然进入旅行主线。"
+        "两个地点距离很近但社会想象相反，且赞助颜色任务需要自然进入旅行主线。",
+        "观众可能只把延吉理解为单一雪景或美食目的地。"
       ],
       "treatment_examples": [
         "先给泰拳女王和高刺激反应，再交代曼谷港口，把旅程定义为特种兵旅行并公布三项任务与按摩奖励。",
@@ -5106,7 +5236,8 @@
         "用自由女神、街道、地铁、摩天楼、夜景、中央公园和球迷人群承载城市旁白，再以低价世界杯门票和决赛目标结束抽象命题。",
         "以角色装扮、废弃扇形机车库、九州标题、夏天风景和铃芽之旅白色门串联，先兑现巡礼，再提出成年后告别假期的命题。",
         "先讲差点发售的 Leica 相机、第一张 Leica 照片和 1914 年便携摄影，再进入总部档案管理、Wetzlar 小镇和博物馆外观，把技术史悬念转换成实地参观任务。",
-        "先用卡布里酒店、街景和产品结果预告吸引注意，再明确那不勒斯与卡布里的吃住行人对照，最后把寻找卡布里蓝和蓝洞天气风险设为可验证任务。"
+        "先用卡布里酒店、街景和产品结果预告吸引注意，再明确那不勒斯与卡布里的吃住行人对照，最后把寻找卡布里蓝和蓝洞天气风险设为可验证任务。",
+        "用雪景、服饰、人物动作和口播并列承诺美食、文化与自然三条路线，再由同行人物进入正文。"
       ],
       "parameter_variants": [
         {
@@ -5157,6 +5288,10 @@
           "opening_event_count": 1,
           "uniform_fast_cut": false,
           "source_id": "bilibili-BV1Mi536EELv"
+        },
+        {
+          "promise_count": 3,
+          "source_id": "bilibili-BV1cuFezLEE2"
         }
       ],
       "guardrail_variants": [
@@ -5207,6 +5342,14 @@
             "开场承诺的比较维度和颜色任务必须在正文兑现。",
             "赞助关系要保持明确，不能把商业命题伪装成纯自然发现。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "observation_id": "obs-yanji-opening-three-line-promise",
+          "guardrails": [
+            "开场承诺必须在正文兑现。",
+            "文化身份不能被压缩成单一异域标签。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -5245,6 +5388,12 @@
           "start_sec": 0.0,
           "end_sec": 95.062,
           "observation_id": "obs-naples-capri-opening-contrast-mission"
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "start_sec": 0.0,
+          "end_sec": 111.0,
+          "observation_id": "obs-yanji-opening-three-line-promise"
         }
       ]
     },
@@ -5345,7 +5494,7 @@
     {
       "technique_key": "scenic-human-reaction-to-landmark-geography",
       "category": "scenic",
-      "source_support": 10,
+      "source_support": 11,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV146BFBzEfE",
@@ -5356,9 +5505,10 @@
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1cuFezLEE2",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.959,
+      "average_confidence": 0.9573,
       "trigger_examples": [
         "连续高强度训练后需要恢复节奏，同时交代下一段本地生活。",
         "悬空寺、云冈石窟、华严寺、善华寺和应县木塔的景观尺度需要人物反应建立观众尺度。",
@@ -5369,6 +5519,7 @@
         "塞纳河游船是巴黎一日行的主要视觉回报，需要兼顾地标、城市尺度和人物在场感。",
         "目的地讨论需要同时说明空间规模和两个人在其中的真实体验。",
         "本地路线需要展示热门景点之外的山城空间和日常使用方式。",
+        "林地、冰河和冰瀑需要人物尺度与行动方向。",
         "花市、校园和书店只有放入人物尺度，才能从地标转成生活空间。"
       ],
       "treatment_examples": [
@@ -5381,6 +5532,7 @@
         "从登船和人物仰望进入埃菲尔铁塔，交替人物反应、河面宽景、桥梁、两岸建筑、蓝调天空与夜间亮灯，再回到岸上人物。",
         "在雪山、海岸、湖泊和公路宽景中保留人物、车辆、自驾或拍摄动作，再回到主持人的季节与路线评价。",
         "跟随人物穿过楼梯、树荫、居民楼、儿童活动区、棋牌桌和坡道，交替广角环境与居民互动，解释步道如何承担无车生活空间。",
+        "用航拍或宽景建立冬季地貌，以脚步、藤蔓、冰面和冰柱细节回答路线，再保留人物寒冷与到达反应。",
         "先给鲜花大厅、校园建筑、旧教室和书店宽景，再保留伴侣选花、当地朋友讲解、学生与读者活动和主持人阅读反应。"
       ],
       "parameter_variants": [
@@ -5479,6 +5631,10 @@
           "source_id": "bilibili-BV1a7Tj6nEe9"
         },
         {
+          "wide_detail_reaction": true,
+          "source_id": "bilibili-BV1cuFezLEE2"
+        },
+        {
           "human_scale_visible": true,
           "wide_detail_reaction": true,
           "place_types": [
@@ -5563,6 +5719,13 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "observation_id": "obs-yanji-wide-detail-reaction-winter",
+          "guardrails": [
+            "景观镜头不能掩盖安全与真实行程。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1xTdwBQEna",
           "observation_id": "obs-kunming-scenic-human-place-reaction",
           "guardrails": [
@@ -5625,6 +5788,12 @@
           "start_sec": 1247,
           "end_sec": 1502.5,
           "observation_id": "obs-chongqing-community-walk-human-scale"
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "start_sec": 1656.0,
+          "end_sec": 2233.0,
+          "observation_id": "obs-yanji-wide-detail-reaction-winter"
         },
         {
           "source_id": "bilibili-BV1xTdwBQEna",
@@ -5825,6 +5994,68 @@
           "start_sec": 200.1,
           "end_sec": 398.3,
           "observation_id": "obs-chongqing-vertical-city-public-transport"
+        }
+      ]
+    },
+    {
+      "technique_key": "subtitle-base-dialogue-with-sparse-context-layer",
+      "category": "subtitle",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1AYwQzzEbV",
+        "bilibili-BV1cuFezLEE2"
+      ],
+      "average_confidence": 0.92,
+      "trigger_examples": [
+        "全片同时有中文口播、英文现场交流、地点名和资料性解释。",
+        "全片包含普通话、方言、朝鲜语、食物名、历史资料和户外知识。"
+      ],
+      "treatment_examples": [
+        "保持稳定底部对白字幕，只在议题、地点、历史资料和器材说明使用稀疏独立层。",
+        "保持稳定底部对白字幕，只在地点、章节、食物、历史和安全警示使用稀疏独立层。"
+      ],
+      "parameter_variants": [
+        {
+          "base_position": "bottom_center",
+          "ocr_verified": false,
+          "source_id": "bilibili-BV1AYwQzzEbV"
+        },
+        {
+          "base_position": "bottom_center",
+          "ocr_verified": false,
+          "source_id": "bilibili-BV1cuFezLEE2"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "observation_id": "obs-texas-dialogue-base-sparse-context-layer",
+          "guardrails": [
+            "字幕逐字准确性仍需人工听校。",
+            "标题不得遮挡人脸、动物或关键现场行动。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "observation_id": "obs-yanji-dialogue-context-layer",
+          "guardrails": [
+            "多语言文字仍需人工听校。",
+            "标题不得遮挡人物动作、食物和冰面落脚点。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "start_sec": 0.0,
+          "end_sec": 2177.34,
+          "observation_id": "obs-texas-dialogue-base-sparse-context-layer"
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "start_sec": 0.0,
+          "end_sec": 2377.28,
+          "observation_id": "obs-yanji-dialogue-context-layer"
         }
       ]
     },
@@ -7334,47 +7565,6 @@
       ]
     },
     {
-      "technique_key": "narrative-archive-context-before-present-use",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1MgywB8E9m"
-      ],
-      "average_confidence": 0.96,
-      "trigger_examples": [
-        "新相机若直接进入开箱或参数，会削弱 Leica 与 100 年摄影史的关系。"
-      ],
-      "treatment_examples": [
-        "在具体上手前，先保留博物馆建筑、创作者偶遇、互动展陈、档案库、Oscar Barnack 和 35mm 胶片来历，让产品体验拥有历史纵深。"
-      ],
-      "parameter_variants": [
-        {
-          "archive_before_operation": true,
-          "human_encounter_retained": true,
-          "history_to_product_bridge": true,
-          "source_id": "bilibili-BV1MgywB8E9m"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1MgywB8E9m",
-          "observation_id": "obs-leica-archive-before-product-use",
-          "guardrails": [
-            "历史人物、年份和技术细节必须另行查证。",
-            "外部创作者出镜不能推断授权状态或真实合作关系。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1MgywB8E9m",
-          "start_sec": 98.165,
-          "end_sec": 294.928,
-          "observation_id": "obs-leica-archive-before-product-use"
-        }
-      ]
-    },
-    {
       "technique_key": "narrative-comparison-midpoint-role-switch",
       "category": "narrative",
       "source_support": 1,
@@ -7547,6 +7737,45 @@
           "start_sec": 111.044,
           "end_sec": 462.963,
           "observation_id": "obs-lumi-coworker-use-validates-design"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-creator-memory-to-present-location",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1cuFezLEE2"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "电影布景若只作为拍照点，会失去人物与地方关系。"
+      ],
+      "treatment_examples": [
+        "由参与电影制作的同行者讲述拍摄记忆，再进入搭建村落、房间和道具，让作品经历成为空间导览线。"
+      ],
+      "parameter_variants": [
+        {
+          "creator_as_guide": true,
+          "source_id": "bilibili-BV1cuFezLEE2"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "observation_id": "obs-yanji-creator-memory-to-place",
+          "guardrails": [
+            "作品片段、剧照和布景授权需独立确认。",
+            "布景不冒充未经说明的真实历史建筑。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "start_sec": 671.0,
+          "end_sec": 960.0,
+          "observation_id": "obs-yanji-creator-memory-to-place"
         }
       ]
     },
@@ -7933,6 +8162,45 @@
           "start_sec": 34.0,
           "end_sec": 1008.474,
           "observation_id": "obs-lumi-floor-by-floor-functional-tour"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-food-process-tasting-reaction",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1cuFezLEE2"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "连续美食展示容易退化为菜单罗列。"
+      ],
+      "treatment_examples": [
+        "在市场介绍后保留摊主互动、试吃、打糕制作、体力失败和同伴反应，形成食物过程与人物结果。"
+      ],
+      "parameter_variants": [
+        {
+          "process_before_evaluation": true,
+          "source_id": "bilibili-BV1cuFezLEE2"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "observation_id": "obs-yanji-food-participation-reaction",
+          "guardrails": [
+            "食材、价格和传统来源需独立核验。",
+            "摊主与顾客不作为背景道具。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "start_sec": 265.0,
+          "end_sec": 582.0,
+          "observation_id": "obs-yanji-food-participation-reaction"
         }
       ]
     },
@@ -9474,46 +9742,6 @@
           "observation_id": "obs-rainbow-arc-city-release"
         }
       ]
-    },
-    {
-      "technique_key": "subtitle-base-dialogue-with-sparse-context-layer",
-      "category": "subtitle",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1AYwQzzEbV"
-      ],
-      "average_confidence": 0.92,
-      "trigger_examples": [
-        "全片同时有中文口播、英文现场交流、地点名和资料性解释。"
-      ],
-      "treatment_examples": [
-        "保持稳定底部对白字幕，只在议题、地点、历史资料和器材说明使用稀疏独立层。"
-      ],
-      "parameter_variants": [
-        {
-          "base_position": "bottom_center",
-          "ocr_verified": false,
-          "source_id": "bilibili-BV1AYwQzzEbV"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1AYwQzzEbV",
-          "observation_id": "obs-texas-dialogue-base-sparse-context-layer",
-          "guardrails": [
-            "字幕逐字准确性仍需人工听校。",
-            "标题不得遮挡人脸、动物或关键现场行动。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1AYwQzzEbV",
-          "start_sec": 0.0,
-          "end_sec": 2177.34,
-          "observation_id": "obs-texas-dialogue-base-sparse-context-layer"
-        }
-      ]
     }
   ],
   "opening_recipes": [
@@ -10055,6 +10283,33 @@
       },
       "rule": "长篇开场按地点承诺、物流提速、真实反应减速、交通推进和抵达重启分相位；最高密度只服务明确移动，不把整段误做成统一快剪。",
       "source_id": "bilibili-BV1aDHQejEAP"
+    },
+    {
+      "total_reviewed_sec": 111.0,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 31.0,
+          "function": "以雪景、传统服饰和人物动作快速承诺边境城市的文化与冬季体验。"
+        },
+        {
+          "start_sec": 31.0,
+          "end_sec": 76.0,
+          "function": "明确延吉的美食、朝鲜族文化和自然路线三条主线。"
+        },
+        {
+          "start_sec": 76.0,
+          "end_sec": 111.0,
+          "function": "用寒冷反应、同行人物和出发口播进入正文。"
+        }
+      ],
+      "metrics": {
+        "opening_15_sec_shot_count": 6,
+        "opening_15_sec_average_shot_sec": 2.58,
+        "opening_event_count": 1
+      },
+      "rule": "地方文化旅行片可先用人物动作和环境反差建立感官承诺，再给有限主线；开场快剪后必须回到人物关系与可执行路线。",
+      "source_id": "bilibili-BV1cuFezLEE2"
     },
     {
       "total_reviewed_sec": 120.0,
