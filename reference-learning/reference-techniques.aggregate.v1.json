@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-35d55e24dce1",
-  "generated_at": "2026-08-15T06:17:31.407160+00:00",
-  "source_count": 21,
+  "profile_id": "aggregated-reference-techniques-v1-eb9dd78477de",
+  "generated_at": "2026-08-15T06:30:43.208486+00:00",
+  "source_count": 22,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
     "bilibili-BV13p421y7iv",
@@ -24,6 +24,7 @@
     "bilibili-BV1a7Tj6nEe9",
     "bilibili-BV1aDHQejEAP",
     "bilibili-BV1cuFezLEE2",
+    "bilibili-BV1uC411E7jU",
     "bilibili-BV1xTdwBQEna"
   ],
   "minimum_source_support": 2,
@@ -568,6 +569,68 @@
           "start_sec": 1140.0,
           "end_sec": 1507.339,
           "observation_id": "obs-kunming-archive-card-over-campus"
+        }
+      ]
+    },
+    {
+      "technique_key": "graphic-mission-checklist-progress-reward",
+      "category": "graphic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV1uC411E7jU"
+      ],
+      "average_confidence": 0.975,
+      "trigger_examples": [
+        "三类体验跨度很大，观众需要记住顺序和完成条件。",
+        "连续倒霉事件容易散成重复抱怨。"
+      ],
+      "treatment_examples": [
+        "用 Mission 1、2、3 卡片分别绑定泰拳、战术训练和改装船，并在开场同步显示按摩派对奖励。",
+        "用五次‘崩溃时刻’编号串起物价、住宿、项目取消、动物行程和天气失败，并在后文回收。"
+      ],
+      "parameter_variants": [
+        {
+          "mission_count": 3,
+          "card_role": "roadmap_and_progress",
+          "reward_card": true,
+          "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "numbered_failures": 5,
+          "source_id": "bilibili-BV1uC411E7jU"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "observation_id": "obs-bangkok-mission-checklist-reward",
+          "guardrails": [
+            "卡片顺序必须与正文一致。",
+            "任务卡不应遮挡关键动作或安全说明。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "observation_id": "obs-norway-five-failures-spine",
+          "guardrails": [
+            "编号只组织事件，不伪造因果。",
+            "同类抱怨需去重但保留升级差异。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV11Ao7BYEyv",
+          "start_sec": 28.0,
+          "end_sec": 60.294,
+          "observation_id": "obs-bangkok-mission-checklist-reward"
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "start_sec": 109.2,
+          "end_sec": 889.3,
+          "observation_id": "obs-norway-five-failures-spine"
         }
       ]
     },
@@ -1241,7 +1304,7 @@
     {
       "technique_key": "humor-preserve-real-awkward-process",
       "category": "humor",
-      "source_support": 17,
+      "source_support": 18,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV146BFBzEfE",
@@ -1259,9 +1322,10 @@
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1aDHQejEAP",
         "bilibili-BV1cuFezLEE2",
+        "bilibili-BV1uC411E7jU",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9641,
+      "average_confidence": 0.965,
       "trigger_examples": [
         "普通成年人跟不上专业泰拳训练，真实落差比预制笑话更有可信度。",
         "知识密集地方片需要真实关系反应释放节奏，但不能伤害地方人物和文物语境。",
@@ -1279,6 +1343,7 @@
         "主持人要复刻机车短视频动作，但对手势、腿部和转身顺序不熟。",
         "长时间问路同时存在语言障碍、地图理解和追加问题，快速跳到答案会失去真实关系变化。",
         "非专业参与者在严寒徒步中不断摔倒、后悔和互相怂恿。",
+        "高价、脏雪、驯鹿、快艇、骑马与天气持续制造非预期反应。",
         "地方文化知识密度高，需要真实关系反应释放节奏而不贬低当地人。"
       ],
       "treatment_examples": [
@@ -1298,6 +1363,7 @@
         "保留嘉宾逐步示范、人物夹腿转身、手势像鸡爪的纠正、互相扶持和重新尝试，再展示夜间移动结果。",
         "保留首次开口、双方理解失败、展示地图、尝试回答、追加问题、等待和暂时分开的全过程，让尴尬由真实停顿累积。",
         "保留失败动作、同行吐槽、重新尝试、冻痛处理和继续前进的完整链条，而非只截取摔倒瞬间。",
+        "保留期待、失败动作、伴侣吐槽、恢复和继续尝试的完整链条，而非只截取崩溃表情。",
         "保留米线与米粉、菌子与蘑菇纠正、孩子专业回答、拍卖误解、夫妻花市分歧、校园问答和书店松弛作息的完整来回。"
       ],
       "parameter_variants": [
@@ -1399,6 +1465,10 @@
         {
           "setup_reaction_recovery": true,
           "source_id": "bilibili-BV1cuFezLEE2"
+        },
+        {
+          "setup_reaction_recovery": true,
+          "source_id": "bilibili-BV1uC411E7jU"
         },
         {
           "setup_reaction_resolution": true,
@@ -1536,6 +1606,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "observation_id": "obs-norway-awkward-process-chain",
+          "guardrails": [
+            "冻伤、动物和海上活动安全优先。",
+            "工作人员和当地生活不作为笑料。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1xTdwBQEna",
           "observation_id": "obs-kunming-real-awkward-local-humor",
           "guardrails": [
@@ -1640,6 +1718,12 @@
           "start_sec": 1769.0,
           "end_sec": 2330.0,
           "observation_id": "obs-yanji-winter-awkward-process"
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "start_sec": 109.2,
+          "end_sec": 889.3,
+          "observation_id": "obs-norway-awkward-process-chain"
         },
         {
           "source_id": "bilibili-BV1xTdwBQEna",
@@ -3080,7 +3164,7 @@
     {
       "technique_key": "narrative-failure-adaptation-payoff",
       "category": "narrative",
-      "source_support": 13,
+      "source_support": 14,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV13p421y7iv",
@@ -3094,9 +3178,10 @@
         "bilibili-BV1TNZUB4EF6",
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1a7Tj6nEe9",
-        "bilibili-BV1cuFezLEE2"
+        "bilibili-BV1cuFezLEE2",
+        "bilibili-BV1uC411E7jU"
       ],
-      "average_confidence": 0.9654,
+      "average_confidence": 0.9671,
       "trigger_examples": [
         "对打碰撞导致出血，原计划的娱乐体验出现真实风险。",
         "寺院闭馆、梨花未开、旧树和旧花消失，使原定复刻无法完成。",
@@ -3110,7 +3195,8 @@
         "从德国到巴黎的移动连续出现晚点、站台不明、行李负担、巴士问路和同名地点误选。",
         "标题询问是否后悔，需要证明旅行中的错误与冲突怎样改变两人的关系。",
         "走红照片依赖阳光与蒸汽，但现场云层遮住光线。",
-        "长白山和热门雪景因天气与客流无法执行。"
+        "长白山和热门雪景因天气与客流无法执行。",
+        "项目取消、无雪和持续坏天气不断推翻摄影计划。"
       ],
       "treatment_examples": [
         "先保留意外、检查和教练解释，再把两小时训练上升为对职业拳手危险与辛苦的理解，最后完成第一项任务。",
@@ -3125,7 +3211,8 @@
         "保留问题被发现、向人求助、重新确认、赶路、坐对巴士以及地图错误被纠正的过程，再以巴黎街景和继续前往酒店作为阶段回报。",
         "从攻略犯错、出门延误、照片不满意和旅行争吵讲到允许变数、包容错误、与父母协商，再总结两人如何在多次旅行中逐渐形成默契。",
         "保留判断光线、等待、被路人认出、发现阳光再次被遮和决定不能把鸡蛋放一个篮子的过程，随后转去下一个历史街区。",
-        "明确说明原计划失败，由本地户外朋友提出私藏冰河路线，保留徒步、植物观察、摔倒和到达冰瀑的过程。"
+        "明确说明原计划失败，由本地户外朋友提出私藏冰河路线，保留徒步、植物观察、摔倒和到达冰瀑的过程。",
+        "保留取消原因、改做活动、长时间等待和多次失望，直到短暂晴雪窗口兑现景观，再说明窗口迅速消失。"
       ],
       "parameter_variants": [
         {
@@ -3240,6 +3327,11 @@
           "failure_visible": true,
           "local_alternative": true,
           "source_id": "bilibili-BV1cuFezLEE2"
+        },
+        {
+          "failure_visible": true,
+          "wait_before_payoff": true,
+          "source_id": "bilibili-BV1uC411E7jU"
         }
       ],
       "guardrail_variants": [
@@ -3345,6 +3437,14 @@
             "不能为了结局删掉天气、装备和寒冷风险。",
             "户外路线与植物知识需独立核验。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "observation_id": "obs-norway-failure-adaptation-sun-window",
+          "guardrails": [
+            "天气和项目取消信息需独立核验。",
+            "不能删掉装备、严寒与安全代价。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -3425,6 +3525,12 @@
           "start_sec": 1656.0,
           "end_sec": 2119.0,
           "observation_id": "obs-yanji-weather-forces-local-route"
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "start_sec": 239.2,
+          "end_sec": 1074.5,
+          "observation_id": "obs-norway-failure-adaptation-sun-window"
         }
       ]
     },
@@ -4862,6 +4968,66 @@
       ]
     },
     {
+      "technique_key": "narrative-return-to-opening-value-question",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1AYwQzzEbV",
+        "bilibili-BV1uC411E7jU"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "多条枪支、牛仔和野牛线索需要可追溯的收束。",
+        "十五天只换来数小时理想画面，单以出片衡量会让旅程显得失败。"
+      ],
+      "treatment_examples": [
+        "先用野牛保护与地方历史完成最后事实层，再回到力量、文明和尺度的开放式结论。",
+        "在晴雪 payoff 后让夫妻分别回答最深记忆，把答案转向做饭、逛超市、救车和互相照顾。"
+      ],
+      "parameter_variants": [
+        {
+          "returns_to_opening_question": true,
+          "source_id": "bilibili-BV1AYwQzzEbV"
+        },
+        {
+          "spectacle_reframed_by_private_memory": true,
+          "source_id": "bilibili-BV1uC411E7jU"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "observation_id": "obs-texas-return-to-scale-reflection",
+          "guardrails": [
+            "价值判断必须与已呈现证据区分。",
+            "结尾口播不能替代历史或政治事实核验。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "observation_id": "obs-norway-spectacle-to-relationship-reframe",
+          "guardrails": [
+            "关系结论必须保留双方原声。",
+            "不能用情绪收束否认真实费用与困难。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "start_sec": 1995.093,
+          "end_sec": 2177.34,
+          "observation_id": "obs-texas-return-to-scale-reflection"
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "start_sec": 986.5,
+          "end_sec": 1144.0,
+          "observation_id": "obs-norway-spectacle-to-relationship-reframe"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-small-local-encounter-validates-place",
       "category": "narrative",
       "source_support": 5,
@@ -5324,19 +5490,22 @@
     {
       "technique_key": "opening-contrast-thesis-with-concrete-question",
       "category": "opening_montage",
-      "source_support": 2,
+      "source_support": 3,
       "source_ids": [
         "bilibili-BV1UtsEzVEwF",
-        "bilibili-BV1a7Tj6nEe9"
+        "bilibili-BV1a7Tj6nEe9",
+        "bilibili-BV1uC411E7jU"
       ],
       "average_confidence": 0.98,
       "trigger_examples": [
         "观众可能只从烤翅、游戏或爵士标签认识新奥尔良。",
-        "海外短视频中的重庆已有强烈固定印象，需要避免只是重复热门景点。"
+        "海外短视频中的重庆已有强烈固定印象，需要避免只是重复热门景点。",
+        "北欧美景预期过强，观众需要知道本片为何反向叙述。"
       ],
       "treatment_examples": [
         "先用烤翅误解制造反差，再并列港口、历史、族群、食物和爵士证据，最后给出五感路线和城市问题。",
-        "从李子坝轻轨现场笑点进入海外竖屏素材和山城 montage，随后明确提出外国人视角与本地人视角为何错位、两者背后是否是同一座重庆。"
+        "从李子坝轻轨现场笑点进入海外竖屏素材和山城 montage，随后明确提出外国人视角与本地人视角为何错位、两者背后是否是同一座重庆。",
+        "先并列高价、狭小住宿、严寒和人物崩溃，再交代蜜月与摄影期待，以脏雪抵达完成首次反差。"
       ],
       "parameter_variants": [
         {
@@ -5351,6 +5520,10 @@
           "explicit_question": true,
           "opening_event_count": 1,
           "source_id": "bilibili-BV1a7Tj6nEe9"
+        },
+        {
+          "failure_examples_before_route": true,
+          "source_id": "bilibili-BV1uC411E7jU"
         }
       ],
       "guardrail_variants": [
@@ -5369,6 +5542,14 @@
             "开场问题必须在全片获得两条路线的回答。",
             "不能把短视频样本推广为所有外国人的观点。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "observation_id": "obs-norway-opening-cost-failure-promise",
+          "guardrails": [
+            "费用和行程需保留币种与时间语境。",
+            "不能把偶发问题概括为整个地区。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -5383,6 +5564,12 @@
           "start_sec": 0,
           "end_sec": 88,
           "observation_id": "obs-chongqing-opening-viral-local-question"
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "start_sec": 0.0,
+          "end_sec": 109.2,
+          "observation_id": "obs-norway-opening-cost-failure-promise"
         }
       ]
     },
@@ -6086,6 +6273,68 @@
       ]
     },
     {
+      "technique_key": "scenic-hardship-earned-lake-payoff",
+      "category": "scenic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV19sm2BBEDd",
+        "bilibili-BV1uC411E7jU"
+      ],
+      "average_confidence": 0.975,
+      "trigger_examples": [
+        "长时间错误路线、陡坡和体力负担需要一个可信的风景回报。",
+        "罗弗敦经典视角在无雪、暴雪和低能见度下无法拍摄。"
+      ],
+      "treatment_examples": [
+        "从抓绳、脚下和陡坡 POV 转向湖谷宽景，短插一张带黑色侧栏的竖版风景照片，再回到继续下降与人物状态。",
+        "先展示空景、暴雪、等待和低能见度，再在短暂蓝天窗口给宽景、航拍、合影和人物急迫反应。"
+      ],
+      "parameter_variants": [
+        {
+          "includes_first_person_struggle": true,
+          "vertical_still_insert_sec": 12289,
+          "still_insert_duration_estimate_sec": 0.5,
+          "source_id": "bilibili-BV19sm2BBEDd"
+        },
+        {
+          "weather_wait_visible": true,
+          "source_id": "bilibili-BV1uC411E7jU"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "observation_id": "obs-earned-lake-ridge-payoff",
+          "guardrails": [
+            "竖图插入要明确是视觉奖励，不能冒充连续运动镜头。",
+            "不把危险路段美化为通用徒步建议。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "observation_id": "obs-norway-hardship-earned-scenic-payoff",
+          "guardrails": [
+            "美景镜头不能掩盖天气风险。",
+            "航拍规则与地点需独立核验。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV19sm2BBEDd",
+          "start_sec": 12285,
+          "end_sec": 12420,
+          "observation_id": "obs-earned-lake-ridge-payoff"
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "start_sec": 660.0,
+          "end_sec": 1074.5,
+          "observation_id": "obs-norway-hardship-earned-scenic-payoff"
+        }
+      ]
+    },
+    {
       "technique_key": "scenic-human-reaction-to-landmark-geography",
       "category": "scenic",
       "source_support": 11,
@@ -6594,28 +6843,31 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-context-layer",
       "category": "subtitle",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
         "bilibili-BV13p421y7iv",
         "bilibili-BV1AYwQzzEbV",
         "bilibili-BV1PbebzdEWm",
         "bilibili-BV1UtsEzVEwF",
-        "bilibili-BV1cuFezLEE2"
+        "bilibili-BV1cuFezLEE2",
+        "bilibili-BV1uC411E7jU"
       ],
-      "average_confidence": 0.922,
+      "average_confidence": 0.9217,
       "trigger_examples": [
         "母子口述、旧照片、地点、花名、日期、产品状态和健康信息并存。",
         "全片同时有中文口播、英文现场交流、地点名和资料性解释。",
         "主持对谈、电影对白、作品名、年代和引用来源同时出现。",
         "中英文地点、人名、历史、菜名、动物、感官章节和照片编号密集。",
-        "全片包含普通话、方言、朝鲜语、食物名、历史资料和户外知识。"
+        "全片包含普通话、方言、朝鲜语、食物名、历史资料和户外知识。",
+        "价格、币种、Day、天气、项目、地点和动物名密集。"
       ],
       "treatment_examples": [
         "维持稳定底部对白字幕，仅在照片、地点、日期、花名、行程和产品状态需要时增加独立信息层。",
         "保持稳定底部对白字幕，只在议题、地点、历史资料和器材说明使用稀疏独立层。",
         "保持稳定底部对白字幕，将作品、年份、引用来源和章节导航放入独立且稀疏的信息层。",
         "保持稳定底部对白字幕，将地点、章节、历史来源、人物、菜名、物种和照片编号放入独立稀疏层。",
-        "保持稳定底部对白字幕，只在地点、章节、食物、历史和安全警示使用稀疏独立层。"
+        "保持稳定底部对白字幕，只在地点、章节、食物、历史和安全警示使用稀疏独立层。",
+        "维持底部对白层，将价格换算、Day、天气、地点、项目编号和动物知识放入独立稀疏层。"
       ],
       "parameter_variants": [
         {
@@ -6642,6 +6894,11 @@
           "base_position": "bottom_center",
           "ocr_verified": false,
           "source_id": "bilibili-BV1cuFezLEE2"
+        },
+        {
+          "base_position": "bottom_center",
+          "ocr_verified": false,
+          "source_id": "bilibili-BV1uC411E7jU"
         }
       ],
       "guardrail_variants": [
@@ -6684,6 +6941,14 @@
             "多语言文字仍需人工听校。",
             "标题不得遮挡人物动作、食物和冰面落脚点。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "observation_id": "obs-norway-dialogue-price-weather-layers",
+          "guardrails": [
+            "价格、天气、外语名和物种仍需人工听校与事实核验。",
+            "图层不得遮挡动物动作、道路和人物表情。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -6716,6 +6981,12 @@
           "start_sec": 0.0,
           "end_sec": 2377.28,
           "observation_id": "obs-yanji-dialogue-context-layer"
+        },
+        {
+          "source_id": "bilibili-BV1uC411E7jU",
+          "start_sec": 0.0,
+          "end_sec": 1176.788833,
+          "observation_id": "obs-norway-dialogue-price-weather-layers"
         }
       ]
     },
@@ -7604,47 +7875,6 @@
           "start_sec": 3690,
           "end_sec": 3703,
           "observation_id": "obs-labeled-ai-dragon-escalation"
-        }
-      ]
-    },
-    {
-      "technique_key": "graphic-mission-checklist-progress-reward",
-      "category": "graphic",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV11Ao7BYEyv"
-      ],
-      "average_confidence": 0.99,
-      "trigger_examples": [
-        "三类体验跨度很大，观众需要记住顺序和完成条件。"
-      ],
-      "treatment_examples": [
-        "用 Mission 1、2、3 卡片分别绑定泰拳、战术训练和改装船，并在开场同步显示按摩派对奖励。"
-      ],
-      "parameter_variants": [
-        {
-          "mission_count": 3,
-          "card_role": "roadmap_and_progress",
-          "reward_card": true,
-          "source_id": "bilibili-BV11Ao7BYEyv"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV11Ao7BYEyv",
-          "observation_id": "obs-bangkok-mission-checklist-reward",
-          "guardrails": [
-            "卡片顺序必须与正文一致。",
-            "任务卡不应遮挡关键动作或安全说明。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV11Ao7BYEyv",
-          "start_sec": 28.0,
-          "end_sec": 60.294,
-          "observation_id": "obs-bangkok-mission-checklist-reward"
         }
       ]
     },
@@ -9601,45 +9831,6 @@
       ]
     },
     {
-      "technique_key": "narrative-return-to-opening-value-question",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1AYwQzzEbV"
-      ],
-      "average_confidence": 0.93,
-      "trigger_examples": [
-        "多条枪支、牛仔和野牛线索需要可追溯的收束。"
-      ],
-      "treatment_examples": [
-        "先用野牛保护与地方历史完成最后事实层，再回到力量、文明和尺度的开放式结论。"
-      ],
-      "parameter_variants": [
-        {
-          "returns_to_opening_question": true,
-          "source_id": "bilibili-BV1AYwQzzEbV"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1AYwQzzEbV",
-          "observation_id": "obs-texas-return-to-scale-reflection",
-          "guardrails": [
-            "价值判断必须与已呈现证据区分。",
-            "结尾口播不能替代历史或政治事实核验。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1AYwQzzEbV",
-          "start_sec": 1995.093,
-          "end_sec": 2177.34,
-          "observation_id": "obs-texas-return-to-scale-reflection"
-        }
-      ]
-    },
-    {
       "technique_key": "narrative-risk-explanation-before-tasting",
       "category": "narrative",
       "source_support": 1,
@@ -10239,47 +10430,6 @@
           "start_sec": 34.0,
           "end_sec": 851.017,
           "observation_id": "obs-lumi-functional-space-wide-detail-use"
-        }
-      ]
-    },
-    {
-      "technique_key": "scenic-hardship-earned-lake-payoff",
-      "category": "scenic",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV19sm2BBEDd"
-      ],
-      "average_confidence": 0.97,
-      "trigger_examples": [
-        "长时间错误路线、陡坡和体力负担需要一个可信的风景回报。"
-      ],
-      "treatment_examples": [
-        "从抓绳、脚下和陡坡 POV 转向湖谷宽景，短插一张带黑色侧栏的竖版风景照片，再回到继续下降与人物状态。"
-      ],
-      "parameter_variants": [
-        {
-          "includes_first_person_struggle": true,
-          "vertical_still_insert_sec": 12289,
-          "still_insert_duration_estimate_sec": 0.5,
-          "source_id": "bilibili-BV19sm2BBEDd"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV19sm2BBEDd",
-          "observation_id": "obs-earned-lake-ridge-payoff",
-          "guardrails": [
-            "竖图插入要明确是视觉奖励，不能冒充连续运动镜头。",
-            "不把危险路段美化为通用徒步建议。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV19sm2BBEDd",
-          "start_sec": 12285,
-          "end_sec": 12420,
-          "observation_id": "obs-earned-lake-ridge-payoff"
         }
       ]
     },
@@ -11153,6 +11303,33 @@
       },
       "rule": "地方文化旅行片可先用人物动作和环境反差建立感官承诺，再给有限主线；开场快剪后必须回到人物关系与可执行路线。",
       "source_id": "bilibili-BV1cuFezLEE2"
+    },
+    {
+      "total_reviewed_sec": 109.2,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 28.0,
+          "function": "先给高价、狭小住宿、严寒和崩溃反应，直接承诺‘滤镜破碎’。"
+        },
+        {
+          "start_sec": 28.0,
+          "end_sec": 72.0,
+          "function": "交代新婚旅行、观众推荐和挪威十五天路线。"
+        },
+        {
+          "start_sec": 72.0,
+          "end_sec": 109.2,
+          "function": "用摄影期待与抵达后的脏雪、雨天形成第一次现实落差。"
+        }
+      ],
+      "metrics": {
+        "opening_15_sec_shot_count": 7,
+        "opening_15_sec_average_shot_sec": 2.474,
+        "opening_event_count": 1
+      },
+      "rule": "反滤镜旅行片应先给具体代价与反应，再说明原期待；正文必须完整兑现失败过程和少量真正回报。",
+      "source_id": "bilibili-BV1uC411E7jU"
     },
     {
       "total_reviewed_sec": 120.0,

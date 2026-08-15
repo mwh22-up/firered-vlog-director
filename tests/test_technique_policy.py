@@ -17,10 +17,10 @@ class TechniquePolicyTests(unittest.TestCase):
 
         policy = build_technique_policy(aggregate)
 
-        self.assertEqual(policy["source_count"], 21)
+        self.assertEqual(policy["source_count"], 22)
         self.assertEqual(policy["minimum_source_support"], 2)
-        self.assertEqual(policy["stable_pattern_count"], 53)
-        self.assertEqual(policy["source_specific_pattern_count"], 75)
+        self.assertEqual(policy["stable_pattern_count"], 56)
+        self.assertEqual(policy["source_specific_pattern_count"], 72)
         self.assertEqual(
             {
                 row["technique_key"]
@@ -42,7 +42,7 @@ class TechniquePolicyTests(unittest.TestCase):
                 row["pattern_scope"] == "source_specific"
                 for row in policy["guidance_patterns"]
             ),
-            75,
+            72,
         )
         self.assertLessEqual(
             policy["rules"]["humor_awkward_process"]["weight_multiplier"],
