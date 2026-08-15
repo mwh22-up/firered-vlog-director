@@ -6,10 +6,10 @@
 ## 总体进度
 
 - 计划视频：26 支
-- 已完成正式学习：25 支
+- 已完成正式学习：26 支
 - 已开始但未完成：0 支
-- 未开始正式学习：1 支
-- 完成率：25/26（96.15%）
+- 未开始正式学习：0 支
+- 完成率：26/26（100%）
 
 前六支 Study 的完成状态按各条目完成时的证据与门禁成立。2026-08-01 以前的条目只保留了“实际请求字符数”，不能追溯声明已经验证 UTF-8 body 字节数；自完整请求字节门禁落地后，任何新增或重新生成的 Study 必须同时具备完整视频分析、可用 ASR/语义证据、人工重点区间复核、context packet 严格 `<180,000` 字符、包含实际 instructions/input/tools 等字段的最终请求 body 严格 `<200,000` UTF-8 字节及 body SHA-256，以及已提交的正式 `technique-study.<BV>.v1.json`。等于任一上限也必须阻断；仅下载代理视频、提取开场或生成预分析素材不算完成。
 
@@ -325,30 +325,38 @@
 - 模型上下文：51,872 字符、62,814 UTF-8 字节，严格 `<180,000`；最终 Responses body 为 70,957 UTF-8 字节，严格 `<200,000`，body SHA-256 为 `7586d432f164bef2789ec11a484b738f812ed931e4abc412920e7f6de2e5524b`。
 - 证据限制：参考成片只支持正向保留模式；关系、婚姻、旅行、财务、家务和共同成长内容均为片中人物个人经验，不能泛化为普遍或专业建议。
 
-### 26. BV1Gt1FBPEum — 未开始
+### 26. BV1Gt1FBPEum — 已完成
 
-- 标题：待通过公开视频元数据确认。
+- 标题：《那些劝你来新疆的人，根本没告诉你……》
 - 地址：[BV1Gt1FBPEum](https://www.bilibili.com/video/BV1Gt1FBPEum/)
+- 时长：1,471.616 秒（约 24 分 32 秒）。
+- 已完成：匿名代理下载、HEVC/AAC 双流完整解码、`small/zh` 全片 ASR、完整镜头/事件/音频分析、16 张事件联系表人工复核、受限 context、完整 Responses body 门禁和正式 technique study。
+- 正式产物：`reference-learning/technique-study.BV1Gt1FBPEum.v1.json`
+- 证据规模：530 个镜头、16 个事件、337 个音频段、793 个转写片段、4,565 个词、9 条 technique observations。
+- ASR 覆盖：最后可信结束语到 1,465.46 秒“我们下期再见”，距媒体末尾约 6.156 秒，可信对白覆盖率 99.5816%；尾部人工联系表显示旅行总结、片尾标题与 credits，未发现新增对白空间。
+- 人工复核：确认帕米尔地理和粉色光任务开场、牛羊大巴扎的交易过程、喀什古城人物互动、喀拉昆仑公路与白沙湖、天气风险和摄影等待、粉色雪山/车身同框兑现、旧素材回看与“先出发”收束，以及底部字幕、价格、调色板和年份图层；未确认 speed ramp、精确倍率、复杂转场、独立音效、曲名、BPM、ducking 或逐拍剪切。
+- 模型上下文：80,386 字符、91,082 UTF-8 字节，严格 `<180,000`；最终 Responses body 为 102,869 UTF-8 字节，严格 `<200,000`，body SHA-256 为 `5b7ebfb386a52f7dce1e6ba5817c69c0262c5b9fcdc72be8b8e05ac529bdff33`。
+- 证据限制：参考成片只支持正向保留模式；新疆地理、民族文化、市场交易、天气、光学、品牌产品和道路安全信息需独立核验，现场人物和旧素材需确认授权。
 
 ## 已沉淀的跨视频结果
 
-当前二十五支已完成视频可聚合出：
+当前二十六支已完成视频可聚合出：
 
-- 完整来源数：25
-- 稳定模式：57 条（显式 `minimum_source_support=2`）
+- 完整来源数：26
+- 稳定模式：58 条（显式 `minimum_source_support=2`）
 - 单来源模式：87 条
 - 正式聚合产物：`reference-learning/reference-techniques.aggregate.v1.json`
 - 聚合命令：`vlog-director aggregate-techniques`
 - 当前限制：`BV19sm2BBEDd` 的重叠首日不生成新增 observation。单来源模式不能计为稳定跨来源模式，开场预分析或未完成视频也不得进入正式聚合；参考成片只能提供正向保留模式，不能推断作者真实删片偏好。
 
-正式聚合已经接入 `direct-timeline --technique-profile`。当前只有 `humor-preserve-real-awkward-process` 具备白名单执行器：它需要目标镜头、事件或 optional moment 的显式 `fun_score >= 0.55`，并且只有当该证据让边缘镜头跨过选片阈值且最终通过预算拟合时才写入 `applied_patterns`。它不能重排本来已入选的镜头，用户反馈优先级为 `remove/avoid > lock > protect/dependency > cut_first/score`。`narrative-failure-adaptation-payoff` 在真实目标语义标注入口完成前降级为 guidance；正式档案共 1 条 executable pattern、108 条 guidance patterns，其中 65 条为单来源 guidance。没有目标证据时不得改变 EDL。
+正式聚合已经接入 `direct-timeline --technique-profile`。当前策略编译出 3 条 eligible patterns：`humor-preserve-real-awkward-process` 具备白名单 EDL 执行器，`opening-phased-hook-not-uniform-fast-cut` 只生成自动候选，`playback-rate-fast-forward-travel-compression-visual-estimate` 只允许带人工选倍率的 preview candidate。趣味执行器需要目标镜头、事件或 optional moment 的显式 `fun_score >= 0.55`，并且只有当该证据让边缘镜头跨过选片阈值且最终通过预算拟合时才写入 `applied_patterns`；它不能重排本来已入选的镜头。用户反馈优先级为 `remove/avoid > lock > protect/dependency > cut_first/score`。`narrative-failure-adaptation-payoff` 在真实目标语义标注入口完成前降级为 guidance；正式档案另有 142 条 guidance patterns，其中 87 条为单来源 guidance。没有目标证据、白名单执行器和门禁时不得改变 EDL。
 
 ## 完成状态
 
-1. 二十五支参考视频已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、上下文字符门禁和完整请求 UTF-8 字节门禁。
-2. 二十五来源聚合已复核独立来源支持数；后续新增或重生成参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
-3. 二十五来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
-4. 当前二十五来源 Aggregate 门禁：24 项参考学习、Policy 与 Schema 专项 unittest、二十五 Study 与 Aggregate Schema/运行时校验、CLI 聚合 smoke、UTF-8 无 BOM、敏感信息/changed-media 扫描及 `git diff --check` 均通过。
+1. 二十六支参考视频已完成正式 technique study，并通过各自的完整分析、ASR、人工复核、上下文字符门禁和完整请求 UTF-8 字节门禁。
+2. 二十六来源聚合已复核独立来源支持数；后续新增或重生成参考视频时继续显式设置 `minimum_source_support=2`，并重新执行 Schema、测试、聚合与媒体边界门禁。
+3. 二十六来源正式 Aggregate 已版本化保存，并以 `eligible_patterns`、`applied_patterns`、`guidance_patterns` 三类可追踪结果接入导演候选报告；仅加载档案不算已应用。
+4. 当前二十六来源 Aggregate 门禁：24 项参考学习、Policy 与 Schema 专项 unittest、二十六 Study 与 Aggregate Schema/运行时校验、CLI 聚合 smoke、UTF-8 无 BOM、敏感信息/changed-media 扫描及 `git diff --check` 均通过。
 5. CI 在干净 Python 环境显式安装 `test` extra；自动化 Schema 测试覆盖所有正式 reference JSON、moments fixture 与 protection policy，当前本地全量基线为 318 项 unittest。
 6. 模型请求门禁已改为校验完整 Responses JSON body 的 UTF-8 字节数：程序内 transport 只消费已经校验的紧凑 body bytes，CLI 则校验待发送文件的原始字节并返回 SHA-256；中文多字节边界、完整 envelope、Responses 最小结构、重复字段与递归凭据字段拒绝、transport 零调用、不可压缩 packet、UTF-8 BOM 和本地 HTTP 413 网关均有回归覆盖。该门禁不替代不同 tool type 的上游 API Schema 校验；仅检查 context 字符数也不能作为已通过外层请求门禁的依据，历史字符记录不追溯标记为字节验证。
 7. CI 的 `test` extra 固定便携 FFmpeg 版本，并以 `lavfi` 临时生成 FFV1/PCM 音视频，实际通过基础增强 renderer 的 `loudnorm`、H.264/AAC 编码，再完整解码验证视频流和音频流；测试不依赖真实素材、系统预装 FFmpeg 或已提交媒体，CI job 设有 10 分钟硬超时。

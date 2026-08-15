@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-34c2945d9e0a",
-  "generated_at": "2026-08-15T07:18:54.845038+00:00",
-  "source_count": 25,
+  "profile_id": "aggregated-reference-techniques-v1-d0bd1026b71f",
+  "generated_at": "2026-08-15T07:37:04.322990+00:00",
+  "source_count": 26,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
     "bilibili-BV13p421y7iv",
@@ -14,6 +14,7 @@
     "bilibili-BV1CrHwzUEJa",
     "bilibili-BV1ETNMzEEWQ",
     "bilibili-BV1Gc411z7mu",
+    "bilibili-BV1Gt1FBPEum",
     "bilibili-BV1JfxYzGE8t",
     "bilibili-BV1LS3r6gE7k",
     "bilibili-BV1MgywB8E9m",
@@ -1307,7 +1308,7 @@
     {
       "technique_key": "humor-preserve-real-awkward-process",
       "category": "humor",
-      "source_support": 19,
+      "source_support": 20,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV146BFBzEfE",
@@ -1316,6 +1317,7 @@
         "bilibili-BV1C3546DEC6",
         "bilibili-BV1CrHwzUEJa",
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1Gt1FBPEum",
         "bilibili-BV1JfxYzGE8t",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1MgywB8E9m",
@@ -1329,7 +1331,7 @@
         "bilibili-BV1uC411E7jU",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9653,
+      "average_confidence": 0.965,
       "trigger_examples": [
         "普通成年人跟不上专业泰拳训练，真实落差比预制笑话更有可信度。",
         "知识密集地方片需要真实关系反应释放节奏，但不能伤害地方人物和文物语境。",
@@ -1338,6 +1340,7 @@
         "支付和加热沟通连续失败，人物只能重复尝试。",
         "列车员检查时票务页面打不开，主角无法独立解释，必须向同车旅客求助。",
         "人物到收费窗口后误解功能和工作人员指向，需要在陌生语言环境中找到正确位置。",
+        "人文和摄影任务信息密度高，需要人物过程提供呼吸。",
         "太宰府天满宫段知识密度高，需要用真实仪式和伴侣反应释放节奏。",
         "空间导览连续解释容易单调，真实同事和伴侣互动提供人物节奏。",
         "技术史和老城文化内容偏知识密集，需要真实关系反应释放节奏。",
@@ -1359,6 +1362,7 @@
         "保留足够长的真实失败过程和停顿，用少量双语字幕、失败短句与反差配乐放大尴尬，不提前跳到结果。",
         "保留查票、网络失败、双语沟通、旅客代为解释、分别问名字和事后复盘的完整过程，只用翻译字幕和轻量强调帮助观众跟上。",
         "保留走到窗口、提出买票、看不懂回应、发现正确位置在后面、再次办理及继续上楼的完整过程，而不是只截取一句口音笑点。",
+        "保留羊屁股玩笑、交易区躲牛、实际砍价、学舞蹈、昵称互逗、牦牛议价、忘开延时后的倒计时奔跑和披毯等待。",
         "保留风铃、文学之神、学生带课本、摸铜牛变聪明、梅枝饼和“不读书有用吗”等问答，让笑点从现场规则和人物关系产生。",
         "保留员工羞于承认爱好、猫等待流水、烧烤拍摄吐槽、垃圾桶猜价、秘密基地饮料被喝和直男房间争论的完整问答与反应。",
         "保留遇见 YouTuber、金色相机惊讶、关门后被当地人追上提醒、铜猴摸财运、爬山腿够不到地、戒指丢了等完整来回，让笑点从现场过程产生。",
@@ -1418,6 +1422,10 @@
             "complete_action"
           ],
           "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "humor_source": "real_task_friction",
+          "source_id": "bilibili-BV1Gt1FBPEum"
         },
         {
           "setup_reaction_resolution": true,
@@ -1542,6 +1550,14 @@
           "guardrails": [
             "笑点落在主角误读，不嘲弄工作人员、口音或国籍。",
             "外语字幕应由人工核对，不能直接采用 ASR 的不确定词。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "observation_id": "obs-xinjiang-real-task-humor",
+          "guardrails": [
+            "不得用族群、口音或偷拍作为笑点。",
+            "危险和高海拔不适不应被弱化。"
           ]
         },
         {
@@ -1683,6 +1699,12 @@
           "start_sec": 2105.04,
           "end_sec": 2144.72,
           "observation_id": "obs-information-desk-awkward-process"
+        },
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "start_sec": 107.4,
+          "end_sec": 1216.3,
+          "observation_id": "obs-xinjiang-real-task-humor"
         },
         {
           "source_id": "bilibili-BV1JfxYzGE8t",
@@ -2580,13 +2602,82 @@
       ]
     },
     {
+      "technique_key": "narrative-economic-system-through-market-process",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1Gt1FBPEum",
+        "bilibili-BV1xTdwBQEna"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "只拍市场奇观、食物和人群无法解释它如何运转。",
+        "鲜花自由若只展示低价花束，会忽略昆明花业的生产与定价系统。"
+      ],
+      "treatment_examples": [
+        "从商品尺度和价格进入牛羊交易区，保留看牙口、议价手势、现场风险和主持人实际砍价，再回到人与人交往的地方意义。",
+        "从拍卖误解进入交易席、倒计时、价格字段、质检、物流和高峰规模，再到普通花市选购与实际花束价格。"
+      ],
+      "parameter_variants": [
+        {
+          "market_process_visible": true,
+          "host_transaction": true,
+          "source_id": "bilibili-BV1Gt1FBPEum"
+        },
+        {
+          "process_steps": [
+            "auction",
+            "price_decision",
+            "quality_check",
+            "logistics",
+            "retail_purchase"
+          ],
+          "consumer_payoff": true,
+          "source_id": "bilibili-BV1xTdwBQEna"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "observation_id": "obs-xinjiang-market-economic-process",
+          "guardrails": [
+            "交易规则、价格和经济学解释需独立核验。",
+            "不得以异域化镜头替代参与者尊严和语境。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "observation_id": "obs-kunming-flower-market-economic-system",
+          "guardrails": [
+            "交易量、价格、市场排名和行业影响需要独立核验。",
+            "单日价格不能代表长期市场水平。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "start_sec": 107.4,
+          "end_sec": 496.1,
+          "observation_id": "obs-xinjiang-market-economic-process"
+        },
+        {
+          "source_id": "bilibili-BV1xTdwBQEna",
+          "start_sec": 720.0,
+          "end_sec": 1070.203,
+          "observation_id": "obs-kunming-flower-market-economic-system"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-end-of-journey-montage-verbal-closure",
       "category": "narrative",
-      "source_support": 9,
+      "source_support": 10,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV146BFBzEfE",
         "bilibili-BV1ETNMzEEWQ",
+        "bilibili-BV1Gt1FBPEum",
         "bilibili-BV1JfxYzGE8t",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1MgywB8E9m",
@@ -2594,11 +2685,12 @@
         "bilibili-BV1TYVA6sEhm",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9633,
+      "average_confidence": 0.964,
       "trigger_examples": [
         "第三项任务结束后需要同时关闭旅行、联动和奖励承诺。",
         "全片从热度问题进入历史、煤炭和文化转型，需要片尾把章节证据收回同一价值判断。",
         "多国旅行结尾既要完成真实返程，也要明确告诉观众这一系列已经结束。",
+        "品牌任务完成后若立刻结束，会把首次新疆旅程缩成一次交付。",
         "主对白结束后仍需要给观众读取主题和 credits 的余韵。",
         "五年创作旅程需要在片尾同时完成视觉回顾和明确告别。",
         "短旅结尾需要从 Heidelberg 风景收束到片中人物关系，否则会停在景观展示。",
@@ -2610,6 +2702,7 @@
         "主持人把曼谷港口、游戏地图和三项任务合并为顺利撤离结论，再用按摩灯光画面兑现开场奖励。",
         "用城市航拍、文创、矿井人物、古建、车、云冈石窟、字幕和 credits，配合‘给岁月以文明’与‘改变就是未来’旁白完成城市未来收束。",
         "保留清晨出发、机场、机上座位小摩擦、窗外地理、睡不着和回家进度，最后用一句旅行结束、感谢、‘下个旅程再见’和黑底结束卡闭合。",
+        "在粉色任务兑现后保留五分钟短暂性、三天预留和首次成功，再回看过去想去新疆的旧素材，以‘先出发’、72 小时坐标原点和未来重返完成口头收束。",
         "在可信对白结束后保留白色手写字、人物迎风、夕阳海景和 credits，不再加入新的高密度信息，让前一段关于路程和尽力的旁白自然沉淀。",
         "用照片墙、历年人物画面、键盘与当前工作室交叉回顾，保留主持人完整总结、观众提问、下期再见和拜拜。",
         "用“我们在拍风景，我们也是风景”、来不来判断、戒指/有夫之妇玩笑和黑底尾字收束，把观看城市的主题落回夫妻关系和观众互动。",
@@ -2646,6 +2739,11 @@
           ],
           "final_card": "谢谢观看",
           "source_id": "bilibili-BV1ETNMzEEWQ"
+        },
+        {
+          "mission_to_personal_value": true,
+          "archive_callback": true,
+          "source_id": "bilibili-BV1Gt1FBPEum"
         },
         {
           "last_trusted_dialogue_sec": 1391.9,
@@ -2719,6 +2817,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "observation_id": "obs-xinjiang-end-journey-closure",
+          "guardrails": [
+            "旧素材、人物和品牌内容需确认授权。",
+            "个人旅行价值不能替代目的地事实与安全信息。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1JfxYzGE8t",
           "observation_id": "obs-anime-tail-visual-credits-without-new-dialogue",
           "guardrails": [
@@ -2785,6 +2891,12 @@
           "start_sec": 2854.2,
           "end_sec": 3038.453,
           "observation_id": "obs-homecoming-montage-closure"
+        },
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "start_sec": 1249.1,
+          "end_sec": 1471.616,
+          "observation_id": "obs-xinjiang-end-journey-closure"
         },
         {
           "source_id": "bilibili-BV1JfxYzGE8t",
@@ -5055,17 +5167,19 @@
     {
       "technique_key": "narrative-small-local-encounter-validates-place",
       "category": "narrative",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
+        "bilibili-BV1Gt1FBPEum",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1a7Tj6nEe9",
         "bilibili-BV1cuFezLEE2",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.958,
+      "average_confidence": 0.9567,
       "trigger_examples": [
         "民宿如果只展示装修，会缺少为什么值得停留的答案。",
+        "旁白对古城文化的概括缺少当下生活证据。",
         "富豪岛和昂贵短暂景点的主题需要当地人的日常视角，避免只剩游客消费想象。",
         "步道段需要一个具体事件回报‘本地生活关系’而非只拍空景。",
         "传统民居和食物需要由生活者解释其当代意义。",
@@ -5073,6 +5187,7 @@
       ],
       "treatment_examples": [
         "保留房东、清晨布施、自种咖啡、家族照片和私人收藏，让当地人的行动与记忆回答空间价值。",
+        "保留商贩砍价、当地姑娘教舞蹈与问候、巷道居民生活、猫和门砖细节，让具体互动承担地方感。",
         "先保留船长聊天、换船、等待和入洞互动，再用当地船夫童年把蓝洞当免费泳池的记忆，重新解释游客眼中的奢华与本地生活的关系。",
         "保留人物担心大鹅会咬、询问名字和来历、得知生日，以及路过婆婆认识它的细节，再由主持人总结先当游客、再当本地人的玩法。",
         "保留主人介绍器物、家庭饭桌、多语言交流、伴侣故事与留守选择，让空间由当地人的行动和记忆成立。",
@@ -5088,6 +5203,14 @@
             "collection"
           ],
           "source_id": "bilibili-BV11Ao7BYEyv"
+        },
+        {
+          "encounter_types": [
+            "market",
+            "dance",
+            "street_life"
+          ],
+          "source_id": "bilibili-BV1Gt1FBPEum"
         },
         {
           "encounter_role": "boatman",
@@ -5131,6 +5254,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "observation_id": "obs-xinjiang-local-encounters",
+          "guardrails": [
+            "人物拍摄与公开需获得合适授权。",
+            "门、砖、语言和习俗解释需由可靠来源核验。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "observation_id": "obs-capri-local-boatman-reframes-luxury",
           "guardrails": [
@@ -5171,6 +5302,12 @@
           "observation_id": "obs-bangkok-local-host-validates-place"
         },
         {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "start_sec": 407.5,
+          "end_sec": 671.5,
+          "observation_id": "obs-xinjiang-local-encounters"
+        },
+        {
           "source_id": "bilibili-BV1Mi536EELv",
           "start_sec": 1327.993,
           "end_sec": 1771.303,
@@ -5199,9 +5336,10 @@
     {
       "technique_key": "narrative-sponsor-demonstration-with-host-friction",
       "category": "narrative",
-      "source_support": 7,
+      "source_support": 8,
       "source_ids": [
         "bilibili-BV146BFBzEfE",
+        "bilibili-BV1Gt1FBPEum",
         "bilibili-BV1JfxYzGE8t",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1MgywB8E9m",
@@ -5209,9 +5347,10 @@
         "bilibili-BV1UtsEzVEwF",
         "bilibili-BV1zYSvBHE3U"
       ],
-      "average_confidence": 0.9171,
+      "average_confidence": 0.92,
       "trigger_examples": [
         "汽车品牌露出需要与旅行路线和城市转型主题绑定，避免变成孤立硬广。",
+        "产品若只在结果美景中出现，会与旅行叙事割裂。",
         "拍摄设备和品牌画面若独立展示，会破坏巡礼主线。",
         "键盘赞助若脱离 Room Tour 会中断空间导览。",
         "相机和品牌露出贯穿全片，若脱离路线会显得像硬广。",
@@ -5221,6 +5360,7 @@
       ],
       "treatment_examples": [
         "车辆先作为山西自驾和充电续航的旅行工具出现，片尾再与传统能源、智能电动转型和大同城市革新形成类比。",
+        "把车辆颜色任务、后备箱语音、车内磁吸位、长途驾驶、天气风险、机位设置、忘开延时和最终同框分散嵌入真实行动。",
         "把手机/相机色彩、长焦、夜拍和动漫色卡放在由布院、高达细节和屋台夜景中验证，让产品只作为捕捉巡礼细节和夏日颜色的工具。",
         "从真实员工工位和五年未变的键鼠组合进入新键盘，让员工现场打字、评价手感、演示快捷键，并保留主持人对员工爱好和回答的即兴反应。",
         "让 Leica 和被测试相机始终作为进入 Wetzlar、黑白雨景、宽银幕老城和观看者哲学的工具；主持人保留真实偏好、困惑和评价，使赞助/产品信息与旅行体验互相解释。",
@@ -5240,6 +5380,11 @@
           ],
           "brand_claims_need_verification": true,
           "source_id": "bilibili-BV146BFBzEfE"
+        },
+        {
+          "demonstration_with_real_task": true,
+          "friction_retained": true,
+          "source_id": "bilibili-BV1Gt1FBPEum"
         },
         {
           "product_role": [
@@ -5288,6 +5433,14 @@
           "guardrails": [
             "产品功能、续航、车型和品牌转型表述需独立核验。",
             "品牌类比不能替代城市转型事实。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "observation_id": "obs-xinjiang-product-mission-friction",
+          "guardrails": [
+            "不由成片推断未展示的产品能力。",
+            "品牌信息、道路安全和驾驶画面需独立审查。"
           ]
         },
         {
@@ -5345,6 +5498,12 @@
           "start_sec": 0.0,
           "end_sec": 1907.47,
           "observation_id": "obs-datong-sponsor-friction-city-transition"
+        },
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "start_sec": 671.5,
+          "end_sec": 1362.5,
+          "observation_id": "obs-xinjiang-product-mission-friction"
         },
         {
           "source_id": "bilibili-BV1JfxYzGE8t",
@@ -5892,11 +6051,12 @@
     {
       "technique_key": "opening-place-thesis-to-concrete-mission",
       "category": "opening_montage",
-      "source_support": 9,
+      "source_support": 10,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV146BFBzEfE",
         "bilibili-BV15XMC6KETm",
+        "bilibili-BV1Gt1FBPEum",
         "bilibili-BV1JfxYzGE8t",
         "bilibili-BV1MgywB8E9m",
         "bilibili-BV1Mi536EELv",
@@ -5904,11 +6064,12 @@
         "bilibili-BV1cuFezLEE2",
         "bilibili-BV1zYSvBHE3U"
       ],
-      "average_confidence": 0.9756,
+      "average_confidence": 0.976,
       "trigger_examples": [
         "地点本身较宽泛，需要把曼谷港口与本期体验快速收敛为可验证路线。",
         "目的地片需要让观众知道本期不是单纯打卡，而是在回答一个清晰问题。",
         "需要同时兑现纽约视觉承诺并解释为什么此刻来到这里。",
+        "广阔目的地容易只形成泛化风景宣传，品牌露出也可能脱离旅程。",
         "动漫巡礼题材需要快速让观众知道作品入口、现实地点和本片情绪主题。",
         "影片标题和开场都围绕 100 年前的德国与 Leica，相机技术史需要迅速从抽象时间概念落到现实地点和任务。",
         "两个地点距离很近但社会想象相反，且赞助颜色任务需要自然进入旅行主线。",
@@ -5920,6 +6081,7 @@
         "先给泰拳女王和高刺激反应，再交代曼谷港口，把旅程定义为特种兵旅行并公布三项任务与按摩奖励。",
         "先确认大同地点，再把中华文明、黑神话热度、煤矿旧印象和本次精神疗愈之旅并置，形成‘真实大同是什么样’的任务。",
         "用自由女神、街道、地铁、摩天楼、夜景、中央公园和球迷人群承载城市旁白，再以低价世界杯门票和决赛目标结束抽象命题。",
+        "先以天山、帕米尔和喀什绿洲建立南疆尺度，再提出为粉色车寻找雪山粉色时刻同框的天气依赖任务。",
         "以角色装扮、废弃扇形机车库、九州标题、夏天风景和铃芽之旅白色门串联，先兑现巡礼，再提出成年后告别假期的命题。",
         "先讲差点发售的 Leica 相机、第一张 Leica 照片和 1914 年便携摄影，再进入总部档案管理、Wetzlar 小镇和博物馆外观，把技术史悬念转换成实地参观任务。",
         "先用卡布里酒店、街景和产品结果预告吸引注意，再明确那不勒斯与卡布里的吃住行人对照，最后把寻找卡布里蓝和蓝洞天气风险设为可验证任务。",
@@ -5951,6 +6113,11 @@
           "mission": "World Cup final",
           "has_person_scale": true,
           "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "place_thesis": "south_xinjiang_humanity_and_geography",
+          "mission": "weather_dependent_pink_light_frame",
+          "source_id": "bilibili-BV1Gt1FBPEum"
         },
         {
           "costume_anchor_visible": true,
@@ -6014,6 +6181,14 @@
           "guardrails": [
             "宏观旁白必须由可见城市信息支撑。",
             "地标镜头应改变尺度、地点或人物状态。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "observation_id": "obs-xinjiang-opening-place-mission",
+          "guardrails": [
+            "品牌委托和产品关系需明确披露。",
+            "地理、天气与光学解释需独立核验。"
           ]
         },
         {
@@ -6083,6 +6258,12 @@
           "start_sec": 22.06,
           "end_sec": 84.62,
           "observation_id": "obs-newyork-city-thesis-mission-montage"
+        },
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "start_sec": 0.0,
+          "end_sec": 107.4,
+          "observation_id": "obs-xinjiang-opening-place-mission"
         },
         {
           "source_id": "bilibili-BV1JfxYzGE8t",
@@ -6472,11 +6653,12 @@
     {
       "technique_key": "scenic-human-reaction-to-landmark-geography",
       "category": "scenic",
-      "source_support": 11,
+      "source_support": 12,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV146BFBzEfE",
         "bilibili-BV15XMC6KETm",
+        "bilibili-BV1Gt1FBPEum",
         "bilibili-BV1JfxYzGE8t",
         "bilibili-BV1MgywB8E9m",
         "bilibili-BV1Mi536EELv",
@@ -6486,11 +6668,12 @@
         "bilibili-BV1cuFezLEE2",
         "bilibili-BV1xTdwBQEna"
       ],
-      "average_confidence": 0.9573,
+      "average_confidence": 0.9583,
       "trigger_examples": [
         "连续高强度训练后需要恢复节奏，同时交代下一段本地生活。",
         "悬空寺、云冈石窟、华严寺、善华寺和应县木塔的景观尺度需要人物反应建立观众尺度。",
         "中央公园既承担城市房价说明，也需要提供旅行中的空间与情绪释放。",
+        "连续公路、湖泊和雪山远景容易缺少尺度与抵达感。",
         "大型高达实物容易只变成景观奇观，需要人物尺度和作品兑现感。",
         "Heidelberg 老城、桥、铜猴和山顶美景容易变成通用空镜，需要人物行为提供尺度和关系。",
         "蓝洞是抽象颜色任务的视觉高潮，需要同时证明进入难度、空间与人物体验。",
@@ -6504,6 +6687,7 @@
         "从难找的小巷和狗进入百年木屋，以自然光、庭院、房间和主持人发现反应建立空间，再承诺清晨体验。",
         "在古建宽景、佛像近景和塔体仰拍之间保留主持人与伴侣的害怕、惊叹、吐槽和讲解聆听，让景观与体验互相解释。",
         "先以俯瞰和地图逻辑说明公园位置，再用入口马车、人物步行、草坪活动、城市楼群与阿根廷旗帜交替建立尺度，最后回到两人的现场体验。",
+        "以车内路线说明连接窗外荒山、绿洲和雪峰，在白沙湖保留停车、风、牦牛、天气担忧与两人反应，再继续追踪雪山目标。",
         "用主持人与高达同框、身体部位细节、整点小动作、长焦细节、动画画面和吐槽反应，把现实体量、作品记忆和拍摄工具结合。",
         "在街景、桥、铜猴、落叶山路和山顶全景之间保留主持人与伴侣自拍、摸铜猴、爬山喘息、腿够不到地、看到光落在桥上的反应。",
         "从海上等待和换小船开始，保留船夫压低身体、洞口黑暗、蓝光水面、洞内船只和人物出洞后的惊讶反应，使地理奇观与身体体验连在一起。",
@@ -6542,6 +6726,11 @@
           ],
           "includes_people": true,
           "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "route_bridge": true,
+          "human_scale": true,
+          "source_id": "bilibili-BV1Gt1FBPEum"
         },
         {
           "wide_detail_reaction_sequence": true,
@@ -6649,6 +6838,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "observation_id": "obs-xinjiang-road-geography-reaction",
+          "guardrails": [
+            "不得把不同地点错序为同一连续路段。",
+            "道路、海拔、动物和天气安全需独立确认。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1JfxYzGE8t",
           "observation_id": "obs-anime-landmark-scale-with-host-reaction",
           "guardrails": [
@@ -6730,6 +6927,12 @@
           "start_sec": 1025.5,
           "end_sec": 1180,
           "observation_id": "obs-central-park-human-scale-geography"
+        },
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "start_sec": 777.2,
+          "end_sec": 1038.3,
+          "observation_id": "obs-xinjiang-road-geography-reaction"
         },
         {
           "source_id": "bilibili-BV1JfxYzGE8t",
@@ -6978,10 +7181,11 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-context-layer",
       "category": "subtitle",
-      "source_support": 8,
+      "source_support": 9,
       "source_ids": [
         "bilibili-BV13p421y7iv",
         "bilibili-BV1AYwQzzEbV",
+        "bilibili-BV1Gt1FBPEum",
         "bilibili-BV1PbebzdEWm",
         "bilibili-BV1Sv421k7pS",
         "bilibili-BV1UtsEzVEwF",
@@ -6989,10 +7193,11 @@
         "bilibili-BV1uC411E7jU",
         "bilibili-BV1zYSvBHE3U"
       ],
-      "average_confidence": 0.9238,
+      "average_confidence": 0.9256,
       "trigger_examples": [
         "母子口述、旧照片、地点、花名、日期、产品状态和健康信息并存。",
         "全片同时有中文口播、英文现场交流、地点名和资料性解释。",
+        "路线、人文、交易、光学条件和品牌任务同时存在，纯对白字幕难以定位信息层级。",
         "主持对谈、电影对白、作品名、年代和引用来源同时出现。",
         "固定机位长对谈需要持续可读对白，同时让观众知道当前问题和游戏状态。",
         "中英文地点、人名、历史、菜名、动物、感官章节和照片编号密集。",
@@ -7003,6 +7208,7 @@
       "treatment_examples": [
         "维持稳定底部对白字幕，仅在照片、地点、日期、花名、行程和产品状态需要时增加独立信息层。",
         "保持稳定底部对白字幕，只在议题、地点、历史资料和器材说明使用稀疏独立层。",
+        "保持底部对白字幕稳定，只在地点、价格、任务条件、调色板、录制年份和结尾标题处增加稀疏上下文层。",
         "保持稳定底部对白字幕，将作品、年份、引用来源和章节导航放入独立且稀疏的信息层。",
         "保持底部对白字幕稳定，仅在问题切换、游戏题目和答案揭晓时增加稀疏标题或标签。",
         "保持稳定底部对白字幕，将地点、章节、历史来源、人物、菜名、物种和照片编号放入独立稀疏层。",
@@ -7020,6 +7226,16 @@
           "base_position": "bottom_center",
           "ocr_verified": false,
           "source_id": "bilibili-BV1AYwQzzEbV"
+        },
+        {
+          "base_layer": "bottom_dialogue",
+          "context_layers": [
+            "place",
+            "price",
+            "science",
+            "archive_year"
+          ],
+          "source_id": "bilibili-BV1Gt1FBPEum"
         },
         {
           "base_position": "bottom_center",
@@ -7067,6 +7283,14 @@
           "guardrails": [
             "字幕逐字准确性仍需人工听校。",
             "标题不得遮挡人脸、动物或关键现场行动。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "observation_id": "obs-xinjiang-subtitle-context-layer",
+          "guardrails": [
+            "未执行 OCR，字幕与图卡文字仍需人工听校。",
+            "品牌、价格和科学文字必须绑定可核验证据。"
           ]
         },
         {
@@ -7130,6 +7354,12 @@
           "start_sec": 0.0,
           "end_sec": 2177.34,
           "observation_id": "obs-texas-dialogue-base-sparse-context-layer"
+        },
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "start_sec": 0.0,
+          "end_sec": 1471.616,
+          "observation_id": "obs-xinjiang-subtitle-context-layer"
         },
         {
           "source_id": "bilibili-BV1PbebzdEWm",
@@ -9150,52 +9380,6 @@
           "start_sec": 60.0,
           "end_sec": 851.017,
           "observation_id": "obs-lumi-design-constraint-function-payoff"
-        }
-      ]
-    },
-    {
-      "technique_key": "narrative-economic-system-through-market-process",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1xTdwBQEna"
-      ],
-      "average_confidence": 0.96,
-      "trigger_examples": [
-        "鲜花自由若只展示低价花束，会忽略昆明花业的生产与定价系统。"
-      ],
-      "treatment_examples": [
-        "从拍卖误解进入交易席、倒计时、价格字段、质检、物流和高峰规模，再到普通花市选购与实际花束价格。"
-      ],
-      "parameter_variants": [
-        {
-          "process_steps": [
-            "auction",
-            "price_decision",
-            "quality_check",
-            "logistics",
-            "retail_purchase"
-          ],
-          "consumer_payoff": true,
-          "source_id": "bilibili-BV1xTdwBQEna"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1xTdwBQEna",
-          "observation_id": "obs-kunming-flower-market-economic-system",
-          "guardrails": [
-            "交易量、价格、市场排名和行业影响需要独立核验。",
-            "单日价格不能代表长期市场水平。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1xTdwBQEna",
-          "start_sec": 720.0,
-          "end_sec": 1070.203,
-          "observation_id": "obs-kunming-flower-market-economic-system"
         }
       ]
     },
@@ -11395,6 +11579,47 @@
       ]
     },
     {
+      "technique_key": "scenic-weather-dependent-wait-to-brief-payoff",
+      "category": "scenic",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1Gt1FBPEum"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "粉色光只有短暂出现，若直接给结果会让任务显得无成本且可复制。"
+      ],
+      "treatment_examples": [
+        "先解释光线和雪山条件，保留云层风险、选点、架机、忘开延时、寒冷与持续等待，再按水面变粉、雪山变粉、人物反应和车身同框兑现约五分钟结果。"
+      ],
+      "parameter_variants": [
+        {
+          "uncertain_weather": true,
+          "waiting_visible": true,
+          "brief_payoff": true,
+          "source_id": "bilibili-BV1Gt1FBPEum"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "observation_id": "obs-xinjiang-wait-weather-payoff",
+          "guardrails": [
+            "粉色持续时间和形成条件需独立核验。",
+            "不得通过错序或调色伪造天气事件。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1Gt1FBPEum",
+          "start_sec": 935.3,
+          "end_sec": 1362.5,
+          "observation_id": "obs-xinjiang-wait-weather-payoff"
+        }
+      ]
+    },
+    {
       "technique_key": "scenic-weather-reveal-to-city-geography",
       "category": "scenic",
       "source_support": 1,
@@ -11768,6 +11993,33 @@
       },
       "rule": "已知结果的私人事件片可用极短结果冷开场消除‘是否成功’悬念，把主要悬念转为‘如何完成’和关系细节。",
       "source_id": "bilibili-BV1Gc411z7mu"
+    },
+    {
+      "total_reviewed_sec": 107.4,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 24.0,
+          "function": "以天山、帕米尔和喀什绿洲的航拍/远景建立南疆地理尺度。"
+        },
+        {
+          "start_sec": 24.0,
+          "end_sec": 64.0,
+          "function": "主持人在喀什出场，提出人文拍摄之外为粉色车寻找‘粉调/粉色时刻’同框的品牌任务。"
+        },
+        {
+          "start_sec": 64.0,
+          "end_sec": 107.4,
+          "function": "解释粉色光出现的多重天气条件和两位主持人的坏天气历史，把目的地魅力转为不确定任务。"
+        }
+      ],
+      "metrics": {
+        "opening_15_sec_shot_count": 8,
+        "opening_15_sec_average_shot_sec": 2.037,
+        "opening_event_count": 1
+      },
+      "rule": "地点片开场先用地理尺度建立目的地，再提出可验证、受天气约束的具体拍摄任务；品牌目标必须同时服务真实旅程问题。",
+      "source_id": "bilibili-BV1Gt1FBPEum"
     },
     {
       "total_reviewed_sec": 74.1,
