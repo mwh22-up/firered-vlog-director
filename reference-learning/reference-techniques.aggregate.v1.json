@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-08db551ff8b4",
-  "generated_at": "2026-08-15T06:03:23.469418+00:00",
-  "source_count": 20,
+  "profile_id": "aggregated-reference-techniques-v1-35d55e24dce1",
+  "generated_at": "2026-08-15T06:17:31.407160+00:00",
+  "source_count": 21,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
     "bilibili-BV13p421y7iv",
@@ -20,6 +20,7 @@
     "bilibili-BV1PbebzdEWm",
     "bilibili-BV1TNZUB4EF6",
     "bilibili-BV1TYVA6sEhm",
+    "bilibili-BV1UtsEzVEwF",
     "bilibili-BV1a7Tj6nEe9",
     "bilibili-BV1aDHQejEAP",
     "bilibili-BV1cuFezLEE2",
@@ -848,21 +849,24 @@
     {
       "technique_key": "graphic-reference-frame-to-live-location-match",
       "category": "graphic",
-      "source_support": 3,
+      "source_support": 4,
       "source_ids": [
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1PbebzdEWm",
+        "bilibili-BV1UtsEzVEwF",
         "bilibili-BV1aDHQejEAP"
       ],
-      "average_confidence": 0.9633,
+      "average_confidence": 0.96,
       "trigger_examples": [
         "三层错落结构仅靠现场手持画面不易理解。",
         "观众需要理解电影画面与当代北京地点的关系。",
+        "游戏玩家熟悉虚构圣丹尼斯，但未必知道现实原型。",
         "动画记忆是前往现实地点的动机，观众需要先知道参照对象，再理解现场对应关系。"
       ],
       "treatment_examples": [
         "把旧状态、设计模型和完工现场按相近空间关系排列，再由主持人进入同一区域说明楼层与功能。",
         "在实景主持、电影片段、幕后影像和资料卡之间往返，使宫墙、北海白塔、船和庭院成为可验证的视觉锚点。",
+        "以游戏地点为识别入口，切到杰克逊广场、街车和法语区实景，再说明现实城市的历史与日常。",
         "先以全屏动画参照建立车站和楼梯记忆，再切入人物到达的现实楼梯、出口和周边环境；不把参照画面伪装成实时镜头。"
       ],
       "parameter_variants": [
@@ -878,6 +882,10 @@
         {
           "reference_and_live_scene_alternation": true,
           "source_id": "bilibili-BV1PbebzdEWm"
+        },
+        {
+          "fiction_reference_before_live_place": true,
+          "source_id": "bilibili-BV1UtsEzVEwF"
         },
         {
           "reference_presentation": "full_frame",
@@ -908,6 +916,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "observation_id": "obs-nola-game-reference-to-city",
+          "guardrails": [
+            "游戏素材授权和取景对应关系需独立核验。",
+            "虚构作品不能替代现实历史。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1aDHQejEAP",
           "observation_id": "obs-animation-reference-to-live-location",
           "guardrails": [
@@ -928,6 +944,12 @@
           "start_sec": 0.0,
           "end_sec": 1001.834,
           "observation_id": "obs-beijing-reference-to-location-match"
+        },
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "start_sec": 86.7,
+          "end_sec": 169.8,
+          "observation_id": "obs-nola-game-reference-to-city"
         },
         {
           "source_id": "bilibili-BV1aDHQejEAP",
@@ -3407,6 +3429,66 @@
       ]
     },
     {
+      "technique_key": "narrative-food-process-tasting-reaction",
+      "category": "narrative",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1UtsEzVEwF",
+        "bilibili-BV1cuFezLEE2"
+      ],
+      "average_confidence": 0.965,
+      "trigger_examples": [
+        "混合菜系若只列菜名，无法体现港口文化和真实口感。",
+        "连续美食展示容易退化为菜单罗列。"
+      ],
+      "treatment_examples": [
+        "先解释多文化来源，再保留餐厅制作、上菜、同行试吃、好恶分歧、小龙虾来源和鳄鱼肉失败反应。",
+        "在市场介绍后保留摊主互动、试吃、打糕制作、体力失败和同伴反应，形成食物过程与人物结果。"
+      ],
+      "parameter_variants": [
+        {
+          "context_process_reaction": true,
+          "source_id": "bilibili-BV1UtsEzVEwF"
+        },
+        {
+          "process_before_evaluation": true,
+          "source_id": "bilibili-BV1cuFezLEE2"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "observation_id": "obs-nola-food-process-reaction",
+          "guardrails": [
+            "菜系来源、物种和迁移史需独立核验。",
+            "不把个人口味概括为地方食物结论。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "observation_id": "obs-yanji-food-participation-reaction",
+          "guardrails": [
+            "食材、价格和传统来源需独立核验。",
+            "摊主与顾客不作为背景道具。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "start_sec": 239.0,
+          "end_sec": 564.9,
+          "observation_id": "obs-nola-food-process-reaction"
+        },
+        {
+          "source_id": "bilibili-BV1cuFezLEE2",
+          "start_sec": 265.0,
+          "end_sec": 582.0,
+          "observation_id": "obs-yanji-food-participation-reaction"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-guide-expertise-before-action",
       "category": "narrative",
       "source_support": 3,
@@ -4926,28 +5008,31 @@
     {
       "technique_key": "narrative-sponsor-demonstration-with-host-friction",
       "category": "narrative",
-      "source_support": 5,
+      "source_support": 6,
       "source_ids": [
         "bilibili-BV146BFBzEfE",
         "bilibili-BV1JfxYzGE8t",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1MgywB8E9m",
-        "bilibili-BV1TYVA6sEhm"
+        "bilibili-BV1TYVA6sEhm",
+        "bilibili-BV1UtsEzVEwF"
       ],
-      "average_confidence": 0.91,
+      "average_confidence": 0.915,
       "trigger_examples": [
         "汽车品牌露出需要与旅行路线和城市转型主题绑定，避免变成孤立硬广。",
         "拍摄设备和品牌画面若独立展示，会破坏巡礼主线。",
         "键盘赞助若脱离 Room Tour 会中断空间导览。",
         "相机和品牌露出贯穿全片，若脱离路线会显得像硬广。",
-        "护肤赞助位于实用物品章节，需要保持与旅行场景和人物关系的连续性。"
+        "护肤赞助位于实用物品章节，需要保持与旅行场景和人物关系的连续性。",
+        "旅拍手机植入可能中断城市叙事。"
       ],
       "treatment_examples": [
         "车辆先作为山西自驾和充电续航的旅行工具出现，片尾再与传统能源、智能电动转型和大同城市革新形成类比。",
         "把手机/相机色彩、长焦、夜拍和动漫色卡放在由布院、高达细节和屋台夜景中验证，让产品只作为捕捉巡礼细节和夏日颜色的工具。",
         "从真实员工工位和五年未变的键鼠组合进入新键盘，让员工现场打字、评价手感、演示快捷键，并保留主持人对员工爱好和回答的即兴反应。",
         "让 Leica 和被测试相机始终作为进入 Wetzlar、黑白雨景、宽银幕老城和观看者哲学的工具；主持人保留真实偏好、困惑和评价，使赞助/产品信息与旅行体验互相解释。",
-        "先用不同气候下的皮肤状态和意大利忘带产品的经历说明使用情境，再以双人护肤习惯的互相吐槽恢复节目语气，随后转入旅行冲突章节。"
+        "先用不同气候下的皮肤状态和意大利忘带产品的经历说明使用情境，再以双人护肤习惯的互相吐槽恢复节目语气，随后转入旅行冲突章节。",
+        "将街拍编号、沼泽长焦、船上防抖、夜景和现场照片选择嵌入五感任务，并保留主持对使用条件的说明。"
       ],
       "parameter_variants": [
         {
@@ -4992,6 +5077,10 @@
           "problem_demo": true,
           "host_banter": true,
           "source_id": "bilibili-BV1TYVA6sEhm"
+        },
+        {
+          "story_missions_demonstrate_product": true,
+          "source_id": "bilibili-BV1UtsEzVEwF"
         }
       ],
       "guardrail_variants": [
@@ -5034,6 +5123,14 @@
             "功效和适用肤质属于商业与个人体验陈述，需要独立核验。",
             "赞助内容必须保持明确披露，不伪装成无商业关系建议。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "observation_id": "obs-nola-sponsor-demonstration-across-missions",
+          "guardrails": [
+            "品牌关系、设备参数和样张需明确披露并独立验证。",
+            "产品层不得遮挡历史、动物安全或乐手主体。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -5066,6 +5163,12 @@
           "start_sec": 892.792,
           "end_sec": 1003.035,
           "observation_id": "obs-travel-marriage-sponsor-demo-host-friction"
+        },
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "start_sec": 0.0,
+          "end_sec": 976.8,
+          "observation_id": "obs-nola-sponsor-demonstration-across-missions"
         }
       ]
     },
@@ -5215,6 +5318,71 @@
           "start_sec": 1709.341,
           "end_sec": 1901.0,
           "observation_id": "obs-capri-sponsor-mission-to-time-thesis"
+        }
+      ]
+    },
+    {
+      "technique_key": "opening-contrast-thesis-with-concrete-question",
+      "category": "opening_montage",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1UtsEzVEwF",
+        "bilibili-BV1a7Tj6nEe9"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "观众可能只从烤翅、游戏或爵士标签认识新奥尔良。",
+        "海外短视频中的重庆已有强烈固定印象，需要避免只是重复热门景点。"
+      ],
+      "treatment_examples": [
+        "先用烤翅误解制造反差，再并列港口、历史、族群、食物和爵士证据，最后给出五感路线和城市问题。",
+        "从李子坝轻轨现场笑点进入海外竖屏素材和山城 montage，随后明确提出外国人视角与本地人视角为何错位、两者背后是否是同一座重庆。"
+      ],
+      "parameter_variants": [
+        {
+          "sense_count": 5,
+          "source_id": "bilibili-BV1UtsEzVEwF"
+        },
+        {
+          "contrast": [
+            "viral_foreigner_view",
+            "local_view"
+          ],
+          "explicit_question": true,
+          "opening_event_count": 1,
+          "source_id": "bilibili-BV1a7Tj6nEe9"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "observation_id": "obs-nola-opening-misconception-senses",
+          "guardrails": [
+            "奴隶贸易与族群历史不能作为轻松猎奇素材。",
+            "开场列出的五感必须在正文兑现。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "observation_id": "obs-chongqing-opening-viral-local-question",
+          "guardrails": [
+            "开场问题必须在全片获得两条路线的回答。",
+            "不能把短视频样本推广为所有外国人的观点。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "start_sec": 0.0,
+          "end_sec": 86.7,
+          "observation_id": "obs-nola-opening-misconception-senses"
+        },
+        {
+          "source_id": "bilibili-BV1a7Tj6nEe9",
+          "start_sec": 0,
+          "end_sec": 88,
+          "observation_id": "obs-chongqing-opening-viral-local-question"
         }
       ]
     },
@@ -5857,6 +6025,67 @@
       ]
     },
     {
+      "technique_key": "scenic-guide-search-reaction-before-explanation",
+      "category": "scenic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV1AYwQzzEbV",
+        "bilibili-BV1UtsEzVEwF"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "保护区风景与动物难以只靠空镜建立意义。",
+        "沼泽和鳄鱼容易被剪成单纯危险奇观。"
+      ],
+      "treatment_examples": [
+        "保留志愿者向导、寻找过程、动物细节与车内反应，再进入保护与历史说明。",
+        "保留向导搜寻、投喂、个体识别、主持反应和失败尝试，再用宽景、逆光和水面细节揭示沼泽之美。"
+      ],
+      "parameter_variants": [
+        {
+          "guide_agency": true,
+          "search_before_explanation": true,
+          "source_id": "bilibili-BV1AYwQzzEbV"
+        },
+        {
+          "guide_action_before_reveal": true,
+          "source_id": "bilibili-BV1UtsEzVEwF"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "observation_id": "obs-texas-guide-search-reaction",
+          "guardrails": [
+            "动物与保护区行为需遵循向导和现场规范。",
+            "不把寻找失败或动物打扰剪成笑料。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "observation_id": "obs-nola-swamp-guide-action-payoff",
+          "guardrails": [
+            "野生动物安全和投喂规范需独立核验。",
+            "不能为画面要求危险接触。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1AYwQzzEbV",
+          "start_sec": 1510.943,
+          "end_sec": 1803.235,
+          "observation_id": "obs-texas-guide-search-reaction"
+        },
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "start_sec": 564.9,
+          "end_sec": 791.2,
+          "observation_id": "obs-nola-swamp-guide-action-payoff"
+        }
+      ]
+    },
+    {
       "technique_key": "scenic-human-reaction-to-landmark-geography",
       "category": "scenic",
       "source_support": 11,
@@ -6365,24 +6594,27 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-context-layer",
       "category": "subtitle",
-      "source_support": 4,
+      "source_support": 5,
       "source_ids": [
         "bilibili-BV13p421y7iv",
         "bilibili-BV1AYwQzzEbV",
         "bilibili-BV1PbebzdEWm",
+        "bilibili-BV1UtsEzVEwF",
         "bilibili-BV1cuFezLEE2"
       ],
-      "average_confidence": 0.9225,
+      "average_confidence": 0.922,
       "trigger_examples": [
         "母子口述、旧照片、地点、花名、日期、产品状态和健康信息并存。",
         "全片同时有中文口播、英文现场交流、地点名和资料性解释。",
         "主持对谈、电影对白、作品名、年代和引用来源同时出现。",
+        "中英文地点、人名、历史、菜名、动物、感官章节和照片编号密集。",
         "全片包含普通话、方言、朝鲜语、食物名、历史资料和户外知识。"
       ],
       "treatment_examples": [
         "维持稳定底部对白字幕，仅在照片、地点、日期、花名、行程和产品状态需要时增加独立信息层。",
         "保持稳定底部对白字幕，只在议题、地点、历史资料和器材说明使用稀疏独立层。",
         "保持稳定底部对白字幕，将作品、年份、引用来源和章节导航放入独立且稀疏的信息层。",
+        "保持稳定底部对白字幕，将地点、章节、历史来源、人物、菜名、物种和照片编号放入独立稀疏层。",
         "保持稳定底部对白字幕，只在地点、章节、食物、历史和安全警示使用稀疏独立层。"
       ],
       "parameter_variants": [
@@ -6400,6 +6632,11 @@
           "base_position": "bottom_center",
           "ocr_verified": false,
           "source_id": "bilibili-BV1PbebzdEWm"
+        },
+        {
+          "base_position": "bottom_center",
+          "ocr_verified": false,
+          "source_id": "bilibili-BV1UtsEzVEwF"
         },
         {
           "base_position": "bottom_center",
@@ -6433,6 +6670,14 @@
           ]
         },
         {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "observation_id": "obs-nola-dialogue-fact-chapter-layers",
+          "guardrails": [
+            "外语名、历史、物种和菜单仍需人工听校与事实核验。",
+            "信息层不得遮挡现场乐手、动物动作和食物细节。"
+          ]
+        },
+        {
           "source_id": "bilibili-BV1cuFezLEE2",
           "observation_id": "obs-yanji-dialogue-context-layer",
           "guardrails": [
@@ -6459,6 +6704,12 @@
           "start_sec": 0.0,
           "end_sec": 1739.882333,
           "observation_id": "obs-beijing-dialogue-reference-layers"
+        },
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "start_sec": 0.0,
+          "end_sec": 1155.391667,
+          "observation_id": "obs-nola-dialogue-fact-chapter-layers"
         },
         {
           "source_id": "bilibili-BV1cuFezLEE2",
@@ -7854,6 +8105,45 @@
       ]
     },
     {
+      "technique_key": "humor-small-local-encounter-validates-place",
+      "category": "humor",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1UtsEzVEwF"
+      ],
+      "average_confidence": 0.96,
+      "trigger_examples": [
+        "NOLA 和 N.O.P.D. 等城市符号需要现场语境。"
+      ],
+      "treatment_examples": [
+        "让主持人在街头发现双关、进店询问并与工作人员交流，以真实互动验证本地幽默而非旁白硬讲。"
+      ],
+      "parameter_variants": [
+        {
+          "local_response_required": true,
+          "source_id": "bilibili-BV1UtsEzVEwF"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "observation_id": "obs-nola-local-joke-interaction",
+          "guardrails": [
+            "警务和治安笑话不能替代现实安全信息。",
+            "当地人互动需保留同意和完整语境。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "start_sec": 169.8,
+          "end_sec": 239.0,
+          "observation_id": "obs-nola-local-joke-interaction"
+        }
+      ]
+    },
+    {
       "technique_key": "humor-social-auto-response-afterthought-reset",
       "category": "humor",
       "source_support": 1,
@@ -8574,45 +8864,6 @@
       ]
     },
     {
-      "technique_key": "narrative-food-process-tasting-reaction",
-      "category": "narrative",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1cuFezLEE2"
-      ],
-      "average_confidence": 0.96,
-      "trigger_examples": [
-        "连续美食展示容易退化为菜单罗列。"
-      ],
-      "treatment_examples": [
-        "在市场介绍后保留摊主互动、试吃、打糕制作、体力失败和同伴反应，形成食物过程与人物结果。"
-      ],
-      "parameter_variants": [
-        {
-          "process_before_evaluation": true,
-          "source_id": "bilibili-BV1cuFezLEE2"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1cuFezLEE2",
-          "observation_id": "obs-yanji-food-participation-reaction",
-          "guardrails": [
-            "食材、价格和传统来源需独立核验。",
-            "摊主与顾客不作为背景道具。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1cuFezLEE2",
-          "start_sec": 265.0,
-          "end_sec": 582.0,
-          "observation_id": "obs-yanji-food-participation-reaction"
-        }
-      ]
-    },
-    {
       "technique_key": "narrative-guide-expertise-before-itinerary",
       "category": "narrative",
       "source_support": 1,
@@ -8895,6 +9146,45 @@
           "start_sec": 1145.0,
           "end_sec": 1854.5,
           "observation_id": "obs-datong-coal-memory-to-renewal"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-live-performance-validates-place-identity",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1UtsEzVEwF"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "‘爵士发源地’若只靠旁白会变成标签。"
+      ],
+      "treatment_examples": [
+        "从日落邮轮的现场演出进入 Frenchmen Street 和随机酒吧，以乐手、观众、空间和主持停留反应证明音乐仍是城市日常。"
+      ],
+      "parameter_variants": [
+        {
+          "multiple_live_venues": true,
+          "source_id": "bilibili-BV1UtsEzVEwF"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "observation_id": "obs-nola-live-music-place-proof",
+          "guardrails": [
+            "演出、乐手身份和音乐授权需独立核验。",
+            "不由画面推断具体曲名或完整录音来源。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "start_sec": 791.2,
+          "end_sec": 1062.0,
+          "observation_id": "obs-nola-live-music-place-proof"
         }
       ]
     },
@@ -9533,6 +9823,45 @@
       ]
     },
     {
+      "technique_key": "narrative-sensory-chapters-build-place-thesis",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1UtsEzVEwF"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "城市历史、美食、湿地和音乐材料跨度大。"
+      ],
+      "treatment_examples": [
+        "用视觉、味觉、触觉和听觉等感官章节组织街区、餐厅、沼泽和爵士现场，每章回收一个城市特征。"
+      ],
+      "parameter_variants": [
+        {
+          "chapter_spine": "senses",
+          "source_id": "bilibili-BV1UtsEzVEwF"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "observation_id": "obs-nola-five-sense-chapter-spine",
+          "guardrails": [
+            "感官分类不能抹平历史因果和族群差异。",
+            "章节名不得替代事实来源。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1UtsEzVEwF",
+          "start_sec": 0.0,
+          "end_sec": 1155.391667,
+          "observation_id": "obs-nola-five-sense-chapter-spine"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-series-promise-after-thesis-closure",
       "category": "narrative",
       "source_support": 1,
@@ -9646,50 +9975,6 @@
           "start_sec": 0.0,
           "end_sec": 76.143,
           "observation_id": "obs-texas-opening-place-question"
-        }
-      ]
-    },
-    {
-      "technique_key": "opening-contrast-thesis-with-concrete-question",
-      "category": "opening_montage",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1a7Tj6nEe9"
-      ],
-      "average_confidence": 0.98,
-      "trigger_examples": [
-        "海外短视频中的重庆已有强烈固定印象，需要避免只是重复热门景点。"
-      ],
-      "treatment_examples": [
-        "从李子坝轻轨现场笑点进入海外竖屏素材和山城 montage，随后明确提出外国人视角与本地人视角为何错位、两者背后是否是同一座重庆。"
-      ],
-      "parameter_variants": [
-        {
-          "contrast": [
-            "viral_foreigner_view",
-            "local_view"
-          ],
-          "explicit_question": true,
-          "opening_event_count": 1,
-          "source_id": "bilibili-BV1a7Tj6nEe9"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "observation_id": "obs-chongqing-opening-viral-local-question",
-          "guardrails": [
-            "开场问题必须在全片获得两条路线的回答。",
-            "不能把短视频样本推广为所有外国人的观点。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1a7Tj6nEe9",
-          "start_sec": 0,
-          "end_sec": 88,
-          "observation_id": "obs-chongqing-opening-viral-local-question"
         }
       ]
     },
@@ -9954,46 +10239,6 @@
           "start_sec": 34.0,
           "end_sec": 851.017,
           "observation_id": "obs-lumi-functional-space-wide-detail-use"
-        }
-      ]
-    },
-    {
-      "technique_key": "scenic-guide-search-reaction-before-explanation",
-      "category": "scenic",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV1AYwQzzEbV"
-      ],
-      "average_confidence": 0.95,
-      "trigger_examples": [
-        "保护区风景与动物难以只靠空镜建立意义。"
-      ],
-      "treatment_examples": [
-        "保留志愿者向导、寻找过程、动物细节与车内反应，再进入保护与历史说明。"
-      ],
-      "parameter_variants": [
-        {
-          "guide_agency": true,
-          "search_before_explanation": true,
-          "source_id": "bilibili-BV1AYwQzzEbV"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV1AYwQzzEbV",
-          "observation_id": "obs-texas-guide-search-reaction",
-          "guardrails": [
-            "动物与保护区行为需遵循向导和现场规范。",
-            "不把寻找失败或动物打扰剪成笑料。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV1AYwQzzEbV",
-          "start_sec": 1510.943,
-          "end_sec": 1803.235,
-          "observation_id": "obs-texas-guide-search-reaction"
         }
       ]
     },
@@ -10775,6 +11020,33 @@
       },
       "rule": "经验复盘型视频先用一个可讨论的资源选择题建立冲突，再以真实旅行片段证明发言资格，最后公开章节结构；开场的快慢变化服务于问题、证据和路线三步，不追求全程高速剪切。",
       "source_id": "bilibili-BV1TYVA6sEhm"
+    },
+    {
+      "total_reviewed_sec": 86.7,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 18.0,
+          "function": "用‘新奥尔良烤翅’误解和快速城市证据制造熟悉名称与真实地点的反差。"
+        },
+        {
+          "start_sec": 18.0,
+          "end_sec": 58.0,
+          "function": "以爵士、小龙虾、港口、奴隶贸易和多族群历史说明城市复杂性。"
+        },
+        {
+          "start_sec": 58.0,
+          "end_sec": 86.7,
+          "function": "给出五感路线、明信片互动和‘最不美国的美国城市’主问题。"
+        }
+      ],
+      "metrics": {
+        "opening_15_sec_shot_count": 7,
+        "opening_15_sec_average_shot_sec": 2.264,
+        "opening_event_count": 1
+      },
+      "rule": "陌生城市开场可先拆掉一个流行误解，再用有限感官路线和历史矛盾建立探索任务；轻笑点不能冲淡严肃历史。",
+      "source_id": "bilibili-BV1UtsEzVEwF"
     },
     {
       "total_reviewed_sec": 200.1,
