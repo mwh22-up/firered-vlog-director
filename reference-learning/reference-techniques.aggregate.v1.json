@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "aggregated-reference-techniques-v1-eb9dd78477de",
-  "generated_at": "2026-08-15T06:30:43.208486+00:00",
-  "source_count": 22,
+  "profile_id": "aggregated-reference-techniques-v1-87cf6931d045",
+  "generated_at": "2026-08-15T06:49:22.914736+00:00",
+  "source_count": 23,
   "source_ids": [
     "bilibili-BV11Ao7BYEyv",
     "bilibili-BV13p421y7iv",
@@ -25,7 +25,8 @@
     "bilibili-BV1aDHQejEAP",
     "bilibili-BV1cuFezLEE2",
     "bilibili-BV1uC411E7jU",
-    "bilibili-BV1xTdwBQEna"
+    "bilibili-BV1xTdwBQEna",
+    "bilibili-BV1zYSvBHE3U"
   ],
   "minimum_source_support": 2,
   "stable_patterns": [
@@ -5174,23 +5175,25 @@
     {
       "technique_key": "narrative-sponsor-demonstration-with-host-friction",
       "category": "narrative",
-      "source_support": 6,
+      "source_support": 7,
       "source_ids": [
         "bilibili-BV146BFBzEfE",
         "bilibili-BV1JfxYzGE8t",
         "bilibili-BV1LS3r6gE7k",
         "bilibili-BV1MgywB8E9m",
         "bilibili-BV1TYVA6sEhm",
-        "bilibili-BV1UtsEzVEwF"
+        "bilibili-BV1UtsEzVEwF",
+        "bilibili-BV1zYSvBHE3U"
       ],
-      "average_confidence": 0.915,
+      "average_confidence": 0.9171,
       "trigger_examples": [
         "汽车品牌露出需要与旅行路线和城市转型主题绑定，避免变成孤立硬广。",
         "拍摄设备和品牌画面若独立展示，会破坏巡礼主线。",
         "键盘赞助若脱离 Room Tour 会中断空间导览。",
         "相机和品牌露出贯穿全片，若脱离路线会显得像硬广。",
         "护肤赞助位于实用物品章节，需要保持与旅行场景和人物关系的连续性。",
-        "旅拍手机植入可能中断城市叙事。"
+        "旅拍手机植入可能中断城市叙事。",
+        "运动相机植入若只讲参数，会中断帆船人物线。"
       ],
       "treatment_examples": [
         "车辆先作为山西自驾和充电续航的旅行工具出现，片尾再与传统能源、智能电动转型和大同城市革新形成类比。",
@@ -5198,7 +5201,8 @@
         "从真实员工工位和五年未变的键鼠组合进入新键盘，让员工现场打字、评价手感、演示快捷键，并保留主持人对员工爱好和回答的即兴反应。",
         "让 Leica 和被测试相机始终作为进入 Wetzlar、黑白雨景、宽银幕老城和观看者哲学的工具；主持人保留真实偏好、困惑和评价，使赞助/产品信息与旅行体验互相解释。",
         "先用不同气候下的皮肤状态和意大利忘带产品的经历说明使用情境，再以双人护肤习惯的互相吐槽恢复节目语气，随后转入旅行冲突章节。",
-        "将街拍编号、沼泽长焦、船上防抖、夜景和现场照片选择嵌入五感任务，并保留主持对使用条件的说明。"
+        "将街拍编号、沼泽长焦、船上防抖、夜景和现场照片选择嵌入五感任务，并保留主持对使用条件的说明。",
+        "把固定机位、防水、夜景和潜水测试嵌入真实船上任务，并保留风险、设备限制与专业成员操作。"
       ],
       "parameter_variants": [
         {
@@ -5247,6 +5251,10 @@
         {
           "story_missions_demonstrate_product": true,
           "source_id": "bilibili-BV1UtsEzVEwF"
+        },
+        {
+          "product_test_inside_story_task": true,
+          "source_id": "bilibili-BV1zYSvBHE3U"
         }
       ],
       "guardrail_variants": [
@@ -5297,6 +5305,14 @@
             "品牌关系、设备参数和样张需明确披露并独立验证。",
             "产品层不得遮挡历史、动物安全或乐手主体。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "observation_id": "obs-sailing-action-camera-risk-task",
+          "guardrails": [
+            "品牌关系、深度与设备性能需独立验证。",
+            "不得为了测试突破厂商或潜水安全范围。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -5335,6 +5351,12 @@
           "start_sec": 0.0,
           "end_sec": 976.8,
           "observation_id": "obs-nola-sponsor-demonstration-across-missions"
+        },
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "start_sec": 309.1,
+          "end_sec": 1671.7,
+          "observation_id": "obs-sailing-action-camera-risk-task"
         }
       ]
     },
@@ -5846,7 +5868,7 @@
     {
       "technique_key": "opening-place-thesis-to-concrete-mission",
       "category": "opening_montage",
-      "source_support": 8,
+      "source_support": 9,
       "source_ids": [
         "bilibili-BV11Ao7BYEyv",
         "bilibili-BV146BFBzEfE",
@@ -5855,9 +5877,10 @@
         "bilibili-BV1MgywB8E9m",
         "bilibili-BV1Mi536EELv",
         "bilibili-BV1PbebzdEWm",
-        "bilibili-BV1cuFezLEE2"
+        "bilibili-BV1cuFezLEE2",
+        "bilibili-BV1zYSvBHE3U"
       ],
-      "average_confidence": 0.975,
+      "average_confidence": 0.9756,
       "trigger_examples": [
         "地点本身较宽泛，需要把曼谷港口与本期体验快速收敛为可验证路线。",
         "目的地片需要让观众知道本期不是单纯打卡，而是在回答一个清晰问题。",
@@ -5866,7 +5889,8 @@
         "影片标题和开场都围绕 100 年前的德国与 Leica，相机技术史需要迅速从抽象时间概念落到现实地点和任务。",
         "两个地点距离很近但社会想象相反，且赞助颜色任务需要自然进入旅行主线。",
         "三百年北京影像史题目抽象且信息密度高。",
-        "观众可能只把延吉理解为单一雪景或美食目的地。"
+        "观众可能只把延吉理解为单一雪景或美食目的地。",
+        "环球帆船尺度太大，单集难以建立可验证目标。"
       ],
       "treatment_examples": [
         "先给泰拳女王和高刺激反应，再交代曼谷港口，把旅程定义为特种兵旅行并公布三项任务与按摩奖励。",
@@ -5876,7 +5900,8 @@
         "先讲差点发售的 Leica 相机、第一张 Leica 照片和 1914 年便携摄影，再进入总部档案管理、Wetzlar 小镇和博物馆外观，把技术史悬念转换成实地参观任务。",
         "先用卡布里酒店、街景和产品结果预告吸引注意，再明确那不勒斯与卡布里的吃住行人对照，最后把寻找卡布里蓝和蓝洞天气风险设为可验证任务。",
         "先以清装扮演和现代吐槽建立人物入口，再从景山真实地点说明现实限制，最后明确从 1759 年开始的影像巡礼任务。",
-        "用雪景、服饰、人物动作和口播并列承诺美食、文化与自然三条路线，再由同行人物进入正文。"
+        "用雪景、服饰、人物动作和口播并列承诺美食、文化与自然三条路线，再由同行人物进入正文。",
+        "先展示全球航线与中国船队，再限定两天从零学习并亲自驶向海沙交界。"
       ],
       "parameter_variants": [
         {
@@ -5936,6 +5961,10 @@
         {
           "promise_count": 3,
           "source_id": "bilibili-BV1cuFezLEE2"
+        },
+        {
+          "global_to_local_task": true,
+          "source_id": "bilibili-BV1zYSvBHE3U"
         }
       ],
       "guardrail_variants": [
@@ -6002,6 +6031,14 @@
             "开场承诺必须在正文兑现。",
             "文化身份不能被压缩成单一异域标签。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "observation_id": "obs-sailing-opening-global-to-two-day-mission",
+          "guardrails": [
+            "赛事、船队与航线信息需独立核验。",
+            "不能暗示主持人已具备跨洋能力。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -6052,6 +6089,12 @@
           "start_sec": 0.0,
           "end_sec": 111.0,
           "observation_id": "obs-yanji-opening-three-line-promise"
+        },
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "start_sec": 0.0,
+          "end_sec": 137.3,
+          "observation_id": "obs-sailing-opening-global-to-two-day-mission"
         }
       ]
     },
@@ -6208,6 +6251,74 @@
           "start_sec": 1411.52,
           "end_sec": 1442.8,
           "observation_id": "obs-last-shuttle-speed-candidate"
+        }
+      ]
+    },
+    {
+      "technique_key": "scenic-arrival-wide-detail-human-reaction",
+      "category": "scenic",
+      "source_support": 2,
+      "source_ids": [
+        "bilibili-BV15XMC6KETm",
+        "bilibili-BV1zYSvBHE3U"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "球赛是全片主任务，需要先让观众理解场外、入口、商店、看台和座位关系。",
+        "开场承诺大海与沙漠交界。"
+      ],
+      "treatment_examples": [
+        "从道路骑警、各队球迷和看台宽景进入纪念品店、人物互动和座位视角，最后以比分预测和开球口播进入比赛。",
+        "从清晨航行、远望沙丘、换登陆艇、靠岸到登沙丘完整推进，以航拍、脚印和人物反应完成实际到达。"
+      ],
+      "parameter_variants": [
+        {
+          "sequence": [
+            "approach",
+            "crowd",
+            "retail",
+            "concourse",
+            "seat",
+            "field"
+          ],
+          "crowd_context_retained": true,
+          "source_id": "bilibili-BV15XMC6KETm"
+        },
+        {
+          "arrival_process_visible": true,
+          "source_id": "bilibili-BV1zYSvBHE3U"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "observation_id": "obs-stadium-arrival-geography-crowd",
+          "guardrails": [
+            "人群镜头不得脱离空间方向。",
+            "不把单个球迷行为推广为群体属性。"
+          ]
+        },
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "observation_id": "obs-sailing-sea-desert-arrival-payoff",
+          "guardrails": [
+            "沙源、地点和自然解释需独立核验。",
+            "登陆、艇与沙丘活动遵守当地规则。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV15XMC6KETm",
+          "start_sec": 1517.28,
+          "end_sec": 1596.36,
+          "observation_id": "obs-stadium-arrival-geography-crowd"
+        },
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "start_sec": 1671.7,
+          "end_sec": 1878.4,
+          "observation_id": "obs-sailing-sea-desert-arrival-payoff"
         }
       ]
     },
@@ -6843,23 +6954,25 @@
     {
       "technique_key": "subtitle-base-dialogue-with-sparse-context-layer",
       "category": "subtitle",
-      "source_support": 6,
+      "source_support": 7,
       "source_ids": [
         "bilibili-BV13p421y7iv",
         "bilibili-BV1AYwQzzEbV",
         "bilibili-BV1PbebzdEWm",
         "bilibili-BV1UtsEzVEwF",
         "bilibili-BV1cuFezLEE2",
-        "bilibili-BV1uC411E7jU"
+        "bilibili-BV1uC411E7jU",
+        "bilibili-BV1zYSvBHE3U"
       ],
-      "average_confidence": 0.9217,
+      "average_confidence": 0.9214,
       "trigger_examples": [
         "母子口述、旧照片、地点、花名、日期、产品状态和健康信息并存。",
         "全片同时有中文口播、英文现场交流、地点名和资料性解释。",
         "主持对谈、电影对白、作品名、年代和引用来源同时出现。",
         "中英文地点、人名、历史、菜名、动物、感官章节和照片编号密集。",
         "全片包含普通话、方言、朝鲜语、食物名、历史资料和户外知识。",
-        "价格、币种、Day、天气、项目、地点和动物名密集。"
+        "价格、币种、Day、天气、项目、地点和动物名密集。",
+        "航线、赛事、成员、外语、技能、设备、距离与引用密集。"
       ],
       "treatment_examples": [
         "维持稳定底部对白字幕，仅在照片、地点、日期、花名、行程和产品状态需要时增加独立信息层。",
@@ -6867,7 +6980,8 @@
         "保持稳定底部对白字幕，将作品、年份、引用来源和章节导航放入独立且稀疏的信息层。",
         "保持稳定底部对白字幕，将地点、章节、历史来源、人物、菜名、物种和照片编号放入独立稀疏层。",
         "保持稳定底部对白字幕，只在地点、章节、食物、历史和安全警示使用稀疏独立层。",
-        "维持底部对白层，将价格换算、Day、天气、地点、项目编号和动物知识放入独立稀疏层。"
+        "维持底部对白层，将价格换算、Day、天气、地点、项目编号和动物知识放入独立稀疏层。",
+        "保持底部对白层，将地图、成员身份、技能、安全设备、数字和引用放入独立稀疏层。"
       ],
       "parameter_variants": [
         {
@@ -6899,6 +7013,11 @@
           "base_position": "bottom_center",
           "ocr_verified": false,
           "source_id": "bilibili-BV1uC411E7jU"
+        },
+        {
+          "base_position": "bottom_center",
+          "ocr_verified": false,
+          "source_id": "bilibili-BV1zYSvBHE3U"
         }
       ],
       "guardrail_variants": [
@@ -6949,6 +7068,14 @@
             "价格、天气、外语名和物种仍需人工听校与事实核验。",
             "图层不得遮挡动物动作、道路和人物表情。"
           ]
+        },
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "observation_id": "obs-sailing-dialogue-skill-map-layers",
+          "guardrails": [
+            "技术、外语、数字和引用仍需人工听校与事实核验。",
+            "图层不得遮挡绳索、控制台、潜水信号和登陆动作。"
+          ]
         }
       ],
       "evidence_ranges": [
@@ -6987,6 +7114,12 @@
           "start_sec": 0.0,
           "end_sec": 1176.788833,
           "observation_id": "obs-norway-dialogue-price-weather-layers"
+        },
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "start_sec": 0.0,
+          "end_sec": 2045.802333,
+          "observation_id": "obs-sailing-dialogue-skill-map-layers"
         }
       ]
     },
@@ -8922,6 +9055,45 @@
       ]
     },
     {
+      "technique_key": "narrative-expert-demo-attempt-feedback",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1zYSvBHE3U"
+      ],
+      "average_confidence": 0.99,
+      "trigger_examples": [
+        "升帆、绞盘、绳结和掌舵知识仅靠讲解难以理解。"
+      ],
+      "treatment_examples": [
+        "由船长示范，主持人实际尝试、失败和提问，再由专家即时纠正，最终独立保持航向。"
+      ],
+      "parameter_variants": [
+        {
+          "demo_attempt_feedback": true,
+          "source_id": "bilibili-BV1zYSvBHE3U"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "observation_id": "obs-sailing-expert-demo-attempt-feedback",
+          "guardrails": [
+            "教学片段不替代正式培训。",
+            "保留手套、体力和风况等限制。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "start_sec": 419.9,
+          "end_sec": 989.1,
+          "observation_id": "obs-sailing-expert-demo-attempt-feedback"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-expert-demonstration-practice-reflection-loop",
       "category": "narrative",
       "source_support": 1,
@@ -9934,6 +10106,45 @@
       ]
     },
     {
+      "technique_key": "narrative-safety-brief-before-risk-action",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1zYSvBHE3U"
+      ],
+      "average_confidence": 0.97,
+      "trigger_examples": [
+        "海上拍摄和训练涉及落水、风浪与设备风险。"
+      ],
+      "treatment_examples": [
+        "在升帆和驾驶前展示国旗礼仪、航线、安全绳、救生衣、定位与固定机位，再进入实际操作。"
+      ],
+      "parameter_variants": [
+        {
+          "safety_before_action": true,
+          "source_id": "bilibili-BV1zYSvBHE3U"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "observation_id": "obs-sailing-safety-before-action",
+          "guardrails": [
+            "安全设备能力和操作规范需专业核验。",
+            "不得为镜头越过船员指令。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "start_sec": 236.7,
+          "end_sec": 419.9,
+          "observation_id": "obs-sailing-safety-before-action"
+        }
+      ]
+    },
+    {
       "technique_key": "narrative-safety-practice-before-sensitive-contrast",
       "category": "narrative",
       "source_support": 1,
@@ -10088,6 +10299,84 @@
           "start_sec": 1582.314,
           "end_sec": 1739.882333,
           "observation_id": "obs-beijing-meta-series-ending"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-shared-work-meal-validates-community",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1zYSvBHE3U"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "环球梦想需要证明团队如何共同生活。"
+      ],
+      "treatment_examples": [
+        "保留做饭、潜水准备、钓鱼、清理、晚餐、庆祝和次日早起，把互补劳动与关系呈现为远航基础。"
+      ],
+      "parameter_variants": [
+        {
+          "shared_labor_before_celebration": true,
+          "source_id": "bilibili-BV1zYSvBHE3U"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "observation_id": "obs-sailing-community-work-meal",
+          "guardrails": [
+            "不把成员劳动浪漫化为无风险生活。",
+            "食物、酒精和海钓安全需保留。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "start_sec": 989.1,
+          "end_sec": 1771.7,
+          "observation_id": "obs-sailing-community-work-meal"
+        }
+      ]
+    },
+    {
+      "technique_key": "narrative-skill-demonstration-opens-person-story",
+      "category": "narrative",
+      "source_support": 1,
+      "source_ids": [
+        "bilibili-BV1zYSvBHE3U"
+      ],
+      "average_confidence": 0.98,
+      "trigger_examples": [
+        "多人船队容易只剩身份名单。"
+      ],
+      "treatment_examples": [
+        "从绳结、航线规划、做饭、潜水和海钓分别进入成员的职业、性格、上船原因和生活哲学。"
+      ],
+      "parameter_variants": [
+        {
+          "skill_as_character_entry": true,
+          "source_id": "bilibili-BV1zYSvBHE3U"
+        }
+      ],
+      "guardrail_variants": [
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "observation_id": "obs-sailing-skill-opens-crew-story",
+          "guardrails": [
+            "成员故事不由主持旁白替代本人原声。",
+            "专业资质与经历需独立核验。"
+          ]
+        }
+      ],
+      "evidence_ranges": [
+        {
+          "source_id": "bilibili-BV1zYSvBHE3U",
+          "start_sec": 672.7,
+          "end_sec": 1471.1,
+          "observation_id": "obs-sailing-skill-opens-crew-story"
         }
       ]
     },
@@ -10293,53 +10582,6 @@
           "start_sec": 1313,
           "end_sec": 1364,
           "observation_id": "obs-ice-cream-no-confirmed-speedup"
-        }
-      ]
-    },
-    {
-      "technique_key": "scenic-arrival-wide-detail-human-reaction",
-      "category": "scenic",
-      "source_support": 1,
-      "source_ids": [
-        "bilibili-BV15XMC6KETm"
-      ],
-      "average_confidence": 0.95,
-      "trigger_examples": [
-        "球赛是全片主任务，需要先让观众理解场外、入口、商店、看台和座位关系。"
-      ],
-      "treatment_examples": [
-        "从道路骑警、各队球迷和看台宽景进入纪念品店、人物互动和座位视角，最后以比分预测和开球口播进入比赛。"
-      ],
-      "parameter_variants": [
-        {
-          "sequence": [
-            "approach",
-            "crowd",
-            "retail",
-            "concourse",
-            "seat",
-            "field"
-          ],
-          "crowd_context_retained": true,
-          "source_id": "bilibili-BV15XMC6KETm"
-        }
-      ],
-      "guardrail_variants": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "observation_id": "obs-stadium-arrival-geography-crowd",
-          "guardrails": [
-            "人群镜头不得脱离空间方向。",
-            "不把单个球迷行为推广为群体属性。"
-          ]
-        }
-      ],
-      "evidence_ranges": [
-        {
-          "source_id": "bilibili-BV15XMC6KETm",
-          "start_sec": 1517.28,
-          "end_sec": 1596.36,
-          "observation_id": "obs-stadium-arrival-geography-crowd"
         }
       ]
     },
@@ -11361,6 +11603,33 @@
       },
       "rule": "城市观察片先用人物关系和一个可记忆的地方性概念建立入口，再以多个具体例证说明命题，最后引入当地人物与既有记忆作为验证路线；快切集中在概念预告，人物见面和任务说明必须减速。",
       "source_id": "bilibili-BV1xTdwBQEna"
+    },
+    {
+      "total_reviewed_sec": 137.3,
+      "phases": [
+        {
+          "start_sec": 0.0,
+          "end_sec": 31.0,
+          "function": "用‘帆船环游世界’问题、跨洋航线和船队画面建立巨大任务。"
+        },
+        {
+          "start_sec": 31.0,
+          "end_sec": 81.0,
+          "function": "把加那利、三毛地点、ARC 起点和首次全中国船队连接起来。"
+        },
+        {
+          "start_sec": 81.0,
+          "end_sec": 137.3,
+          "function": "限定两天从零学习帆船并亲自驶向海与沙漠交界的可执行目标。"
+        }
+      ],
+      "metrics": {
+        "opening_15_sec_shot_count": 10,
+        "opening_15_sec_average_shot_sec": 1.859,
+        "opening_event_count": 1
+      },
+      "rule": "技能探险片先展示终极尺度，再把任务缩小为本集可验证的学习与到达目标；宏大梦想必须由具体船员、装备和行动承载。",
+      "source_id": "bilibili-BV1zYSvBHE3U"
     }
   ],
   "model_context_policy": {
