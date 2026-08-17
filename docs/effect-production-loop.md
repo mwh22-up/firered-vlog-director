@@ -21,6 +21,18 @@
 | `place_reveal` | 地点或章节切换 | 全屏色块、对向斜杠、海报式大标题 |
 | `reaction_burst` | reaction/payoff | 放射爆发、徽章弹跳、圆环冲击 |
 
+叙事型扩展 recipe：
+
+| Recipe | 用途 | 强制证据 |
+|---|---|---|
+| `time_jump_card` | 明确表示等待或时间省略 | 已核验时间文本和目标事件 |
+| `location_card` | 地点切换 | 已核验地点来源 |
+| `route_map` | 旅行路线 | 已核验起终点/路线来源 |
+| `step_card` | 编号步骤 | 已核验步骤文本 |
+| `source_card` | 资料或历史引用 | 已核验引用来源 |
+
+这五类只从显式 `effect_hint` 编译，要求 `fact_check_status=verified`、非空 `source_reference` 和 `rights_status=owned|licensed|public_domain`。证据不完整时 planner 不生成动效，不能用看似可信的图形包装未经核验的信息。
+
 ## 固定运行时
 
 - package：`hyperframes`

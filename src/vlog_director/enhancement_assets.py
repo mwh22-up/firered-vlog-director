@@ -12,6 +12,10 @@ from .subtitle_readability import (
     canonical_subtitle_style_digest,
     canonical_verified_cue_set_digest,
 )
+from .visual_treatment_approval import (
+    canonical_enhancement_treatments_sha256,
+    validate_visual_treatment_approval,
+)
 
 REQUIRED_MUSIC_RIGHTS_SCOPES = frozenset(
     {
@@ -1095,6 +1099,98 @@ def validate_enhancement_assets(
     issues: list[dict[str, Any]] = []
     hash_cache: dict[Path, str] = {}
     _validate_overlays(project, enhancement_plan, issues)
+
+    visual_evidence = enhancement_plan.get("visual_treatment_evidence")
+    if isinstance(visual_evidence, dict):
+        bindings: dict[str, Path] = {}
+        for name in (
+            "plan",
+            "preview_manifest",
+            "visual_qa",
+            "human_review",
+            "approval",
+        ):
+            binding = visual_evidence.get(name)
+            if not isinstance(binding, dict):
+                issues.append(
+                    _issue(
+                        "visual_treatment_evidence_invalid",
+                        f"visual_treatment_evidence.{name}",
+                        "Visual treatment evidence binding is missing.",
+                    )
+                )
+                continue
+            path = _resolve_confined_file(
+                project,
+                binding.get("path"),
+                project / "work",
+                f"visual_treatment_evidence.{name}",
+                issues,
+            )
+            if path is None:
+                continue
+            if _sha256_file(path, hash_cache) != binding.get("sha256"):
+                issues.append(
+                    _issue(
+                        "visual_treatment_evidence_sha_mismatch",
+                        f"visual_treatment_evidence.{name}",
+                        "Visual treatment evidence file SHA-256 changed.",
+                    )
+                )
+                continue
+            bindings[name] = path
+        if len(bindings) == 5:
+            validation = validate_visual_treatment_approval(
+                project,
+                bindings["plan"],
+                bindings["preview_manifest"],
+                bindings["visual_qa"],
+                bindings["human_review"],
+                bindings["approval"],
+            )
+            if validation["status"] != "passed":
+                issues.append(
+                    _issue(
+                        "visual_treatment_approval_invalid",
+                        "visual_treatment_evidence",
+                        json.dumps(validation.get("issues", []), ensure_ascii=False),
+                    )
+                )
+            approval = _load_json_document(
+                bindings["approval"],
+                "visual_treatment_evidence.approval",
+                issues,
+            )
+            if isinstance(approval, dict):
+                if approval.get("approval_sha256") != visual_evidence.get("approval_sha256"):
+                    issues.append(
+                        _issue(
+                            "visual_treatment_approval_sha_mismatch",
+                            "visual_treatment_evidence.approval_sha256",
+                            "Visual treatment approval identity changed.",
+                        )
+                    )
+                if approval.get("accepted_proposal_ids") != visual_evidence.get(
+                    "accepted_proposal_ids"
+                ):
+                    issues.append(
+                        _issue(
+                            "visual_treatment_accepted_set_mismatch",
+                            "visual_treatment_evidence.accepted_proposal_ids",
+                            "Accepted visual treatment proposal set changed.",
+                        )
+                    )
+        current_treatment_sha = canonical_enhancement_treatments_sha256(
+            enhancement_plan.get("video_treatments", [])
+        )
+        if visual_evidence.get("treatment_payload_sha256") != current_treatment_sha:
+            issues.append(
+                _issue(
+                    "visual_treatment_payload_sha_mismatch",
+                    "visual_treatment_evidence.treatment_payload_sha256",
+                    "Applied per-segment visual treatment values changed after approval.",
+                )
+            )
 
     music = enhancement_plan.get("music", {})
     if isinstance(music, dict) and music.get("status") in {"audition", "ready"}:

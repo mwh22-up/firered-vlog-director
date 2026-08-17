@@ -30,6 +30,15 @@
         "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
       },
       "additionalProperties": false
+    },
+    "visualTreatmentEvidenceBinding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^work/(?:treatments|proxy/treatments|qa/treatments)/[A-Za-z0-9][A-Za-z0-9._/-]*$" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
     }
   },
   "required": [
@@ -151,6 +160,23 @@
         },
         "additionalProperties": false
       }
+    },
+    "visual_treatment_evidence": {
+      "type": "object",
+      "required": ["contract_version", "base_media_sha256", "treatment_payload_sha256", "plan", "preview_manifest", "visual_qa", "human_review", "approval", "approval_sha256", "accepted_proposal_ids"],
+      "properties": {
+        "contract_version": { "const": "visual-treatment-ready-evidence-v1" },
+        "base_media_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "treatment_payload_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "plan": { "$ref": "#/$defs/visualTreatmentEvidenceBinding" },
+        "preview_manifest": { "$ref": "#/$defs/visualTreatmentEvidenceBinding" },
+        "visual_qa": { "$ref": "#/$defs/visualTreatmentEvidenceBinding" },
+        "human_review": { "$ref": "#/$defs/visualTreatmentEvidenceBinding" },
+        "approval": { "$ref": "#/$defs/visualTreatmentEvidenceBinding" },
+        "approval_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "accepted_proposal_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+      },
+      "additionalProperties": false
     },
     "music": {
       "type": "object",
@@ -384,7 +410,7 @@
               "source": { "type": "string" },
               "media_kind": { "const": "transparent_video" },
               "source_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
-              "effect_intent": { "enum": ["impact_hit", "kinetic_explain", "place_reveal", "reaction_burst"] },
+              "effect_intent": { "enum": ["impact_hit", "kinetic_explain", "place_reveal", "reaction_burst", "time_jump_card", "location_card", "route_map", "step_card", "source_card"] },
               "approval_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
               "start_sec": { "type": "number", "minimum": 0 },
               "end_sec": { "type": "number", "exclusiveMinimum": 0 },

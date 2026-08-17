@@ -211,11 +211,21 @@ def _load_collision_regions(
     if protected_regions_path is not None:
         protected_path = _confined_file(project, _project_relative(project, protected_regions_path), project / "work" / "qa", "protected regions")
         document = _load_json(protected_path, "protected regions")
-        schema = _load_json(Path(__file__).with_name("schemas") / "effect-protected-regions.schema.json", "protected regions schema")
+        schema_name = (
+            "visual-protected-regions.schema.json"
+            if document.get("contract_version") == "visual-protected-regions-v1"
+            else "effect-protected-regions.schema.json"
+        )
+        schema = _load_json(
+            Path(__file__).with_name("schemas") / schema_name,
+            "protected regions schema",
+        )
         if list(Draft202012Validator(schema).iter_errors(document)):
             raise ValueError("protected regions schema invalid")
         if document.get("base_media_sha256") != base_media_sha256 or document.get("provider", {}).get("input_media_sha256") != base_media_sha256:
             raise ValueError("protected regions base media SHA-256 changed")
+        if document.get("contract_version") == "visual-protected-regions-v1" and document.get("canvas") != {"width": width, "height": height}:
+            raise ValueError("protected regions canvas differs from effect media")
         regions.extend(dict(region) for region in document.get("regions", []))
         bindings.append({"path": _project_relative(project, protected_path), "sha256": _sha256_file(protected_path)})
     for region in regions:

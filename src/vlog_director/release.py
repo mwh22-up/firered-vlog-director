@@ -6,6 +6,7 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
+from .enhancement import visual_treatments_active
 from .enhancement_assets import subtitle_ready_evidence_contract_issues
 from .ffmpeg import find_ffmpeg
 
@@ -76,6 +77,45 @@ def release_readiness_issues(enhancement_plan: dict[str, Any]) -> list[dict[str,
                         + "; ".join(contract_issues),
                     }
                 )
+    if visual_treatments_active(enhancement_plan) and not isinstance(
+        enhancement_plan.get("visual_treatment_evidence"),
+        dict,
+    ):
+        issues.append(
+            {
+                "severity": "error",
+                "code": "release_visual_treatment_evidence_required",
+                "subject_id": "visual_treatment_evidence",
+                "message": "Release pixel treatments require SHA-bound preview, visual QA, human review, and approval evidence.",
+            }
+        )
+    illustration = enhancement_plan.get("illustration_motion", {})
+    if isinstance(illustration, dict) and illustration.get("status") == "ready":
+        items = illustration.get("items", [])
+        if any(
+            isinstance(item, dict) and item.get("type") != "hyperframes"
+            for item in items
+        ):
+            issues.append(
+                {
+                    "severity": "error",
+                    "code": "release_static_overlay_preview_only",
+                    "subject_id": "illustration_motion.items",
+                    "message": "Legacy static overlays are preview-only; release narrative overlays must use the SHA-approved effect pipeline.",
+                }
+            )
+        if any(
+            isinstance(item, dict) and item.get("type") == "hyperframes"
+            for item in items
+        ) and not isinstance(illustration.get("effect_evidence"), dict):
+            issues.append(
+                {
+                    "severity": "error",
+                    "code": "release_effect_evidence_required",
+                    "subject_id": "illustration_motion.effect_evidence",
+                    "message": "HyperFrames release overlays require the complete effect approval evidence contract.",
+                }
+            )
     return issues
 
 

@@ -116,9 +116,9 @@ def build_enhancement_plan(edit_plan: dict[str, Any]) -> dict[str, Any]:
         "render_stages": RENDER_STAGES,
         "video_treatments": treatments,
         "music": {
-            "status": "planned",
+            "status": "disabled",
             "tracks": [],
-            "ducking": dict(DEFAULT_MUSIC_DUCKING),
+            "ducking": {**DEFAULT_MUSIC_DUCKING, "enabled": False},
         },
         "subtitles": {
             "status": "planned",
@@ -471,6 +471,35 @@ def treatments_require_realized_timeline(
                 return True
             if visual.get("reframe", {}).get("mode", "off") != "off":
                 return True
+    return False
+
+
+def visual_treatments_active(enhancement_plan: dict[str, Any]) -> bool:
+    """Return whether any pixel-changing per-segment treatment is active."""
+    for treatment in enhancement_plan.get("video_treatments", []):
+        visual = treatment.get("visual", {})
+        if any(
+            float(visual.get(field, neutral)) != neutral
+            for field, neutral in (
+                ("exposure_ev", 0.0),
+                ("brightness", 0.0),
+                ("contrast", 1.0),
+                ("saturation", 1.0),
+                ("gamma", 1.0),
+                ("speed", 1.0),
+            )
+        ):
+            return True
+        if any(
+            float(value) != 0.0
+            for value in visual.get("white_balance", {}).values()
+        ):
+            return True
+        if any(
+            visual.get(name, {}).get("mode", "off") != "off"
+            for name in ("denoise", "sharpen", "reframe")
+        ):
+            return True
     return False
 
 

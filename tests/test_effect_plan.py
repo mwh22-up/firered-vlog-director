@@ -122,6 +122,52 @@ class EffectPlanTests(unittest.TestCase):
             {issue["code"] for issue in result["issues"]},
         )
 
+    def test_editorial_cards_require_verified_source_and_rights_evidence(self) -> None:
+        edit_plan = _edit_plan()
+        edit_plan["chapters"][0]["segments"][1]["effect_hint"] = {
+            "intent": "route_map",
+            "text": "苏黎世 → 因特拉肯",
+            "source_reference": "brief:verified-route-1",
+            "fact_check_status": "verified",
+            "rights_status": "owned",
+        }
+        plan = build_effect_plan(edit_plan, edit_plan_sha256=_digest(edit_plan))
+        route = next(row for row in plan["effects"] if row["intent"] == "route_map")
+        self.assertEqual(route["recipe"]["parameters"]["layout"], "editorial_card")
+        self.assertEqual(route["editorial_evidence"]["fact_check_status"], "verified")
+        self.assertIn("critical_text_logo", route["constraints"]["protected_zones"])
+        self.assertEqual(
+            validate_effect_plan(
+                edit_plan,
+                plan,
+                edit_plan_sha256=_digest(edit_plan),
+            )["status"],
+            "passed",
+        )
+
+        plan["effects"][0]["editorial_evidence"] = {
+            **route["editorial_evidence"],
+            "fact_check_status": "review_required",
+        }
+        validation = validate_effect_plan(
+            edit_plan,
+            plan,
+            edit_plan_sha256=_digest(edit_plan),
+        )
+        self.assertEqual(validation["status"], "blocked")
+
+    def test_unverified_editorial_hint_is_not_compiled(self) -> None:
+        edit_plan = _edit_plan()
+        edit_plan["chapters"][0]["segments"][2]["effect_hint"] = {
+            "intent": "source_card",
+            "text": "未经核验的历史资料",
+            "source_reference": "unknown",
+            "fact_check_status": "review_required",
+            "rights_status": "review_required",
+        }
+        plan = build_effect_plan(edit_plan, edit_plan_sha256=_digest(edit_plan))
+        self.assertNotIn("source_card", {row["intent"] for row in plan["effects"]})
+
     def test_effect_cannot_change_duration_or_escape_target_segment(self) -> None:
         edit_plan = _edit_plan()
         plan = build_effect_plan(edit_plan, edit_plan_sha256=_digest(edit_plan))

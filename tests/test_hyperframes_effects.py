@@ -102,9 +102,21 @@ class HyperFramesEffectTests(unittest.TestCase):
                 self.assertIn('data-start="0"', html)
                 self.assertIn("element.animate", html)
                 self.assertIn("animation.pause()", html)
+                self.assertIn('easing: "linear"', html)
+                self.assertNotIn('easing: "cubic-bezier(.16,1,.3,1)"', html)
                 self.assertIn("@font-face", html)
                 self.assertIn('local("Microsoft YaHei")', html)
                 self.assertIn("data-layout-allow-overflow", html)
+                self.assertIn(".cyan-chip {", html)
+                self.assertIn("compact-callout", html)
+                self.assertIn(".compact-callout {", html)
+                self.assertIn("width:44%;", html)
+                self.assertIn(".compact-chip {", html)
+                self.assertIn("z-index:2;", html)
+                self.assertIn("z-index:1;", html)
+                self.assertIn("transform-origin:center;", html)
+                self.assertNotIn('translate3d(500px,-500px,0) rotate(', html)
+                self.assertNotIn('class="ray"', html)
                 self.assertNotIn("https://", html)
                 self.assertNotIn("Math.random", html)
                 self.assertNotIn("setTimeout", html)
@@ -114,6 +126,43 @@ class HyperFramesEffectTests(unittest.TestCase):
                     row["composition_sha256"],
                     hashlib.sha256((project / row["composition"]).read_bytes()).hexdigest(),
                 )
+
+    def test_editorial_route_card_compiles_to_offline_hyperframes_html(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            project = Path(temporary) / "project"
+            (project / "work" / "plans").mkdir(parents=True)
+            (project / "work" / "effects").mkdir(parents=True)
+            edit_plan = _edit_plan()
+            edit_plan["chapters"][0]["segments"][0]["effect_hint"] = {
+                "intent": "route_map",
+                "text": "苏黎世 → 因特拉肯",
+                "source_reference": "brief:route-1",
+                "fact_check_status": "verified",
+                "rights_status": "owned",
+            }
+            (project / "work" / "plans" / "edit_plan.v1.json").write_text(
+                json.dumps(edit_plan, ensure_ascii=False),
+                encoding="utf-8",
+            )
+            effect_plan = build_effect_plan(
+                edit_plan,
+                edit_plan_sha256=_canonical_digest(edit_plan),
+            )
+            effect_path = project / "work" / "effects" / "effect_plan.v1.json"
+            effect_path.write_text(
+                json.dumps(effect_plan, ensure_ascii=False),
+                encoding="utf-8",
+            )
+            result = build_hyperframes_compositions(
+                project,
+                effect_path,
+                project / "work" / "effects" / "route-job",
+            )
+            html = (project / result["effects"][0]["composition"]).read_text(
+                encoding="utf-8"
+            )
+            self.assertIn("ROUTE", html)
+            self.assertIn("苏黎世 → 因特拉肯", html)
 
     def test_composition_job_must_be_new_strict_child_of_work_effects(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

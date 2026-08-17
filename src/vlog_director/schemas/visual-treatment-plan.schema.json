@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/visual-treatment-plan.schema.json",
+  "type": "object",
+  "required": ["schema_version", "contract_version", "project_id", "edit_plan_version", "edit_plan_sha256", "realized_timeline_sha256", "base_media_sha256", "analysis", "policy", "proposals", "treatment_payload_sha256"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "contract_version": { "const": "visual-treatment-plan-v1" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "edit_plan_version": { "type": "integer", "minimum": 1 },
+    "edit_plan_sha256": { "$ref": "#/$defs/sha" },
+    "realized_timeline_sha256": { "$ref": "#/$defs/sha" },
+    "base_media_sha256": { "$ref": "#/$defs/sha" },
+    "analysis": { "$ref": "#/$defs/binding" },
+    "policy": {
+      "type": "object",
+      "required": ["policy_version", "luma_target", "luma_dark_threshold", "luma_bright_threshold", "contrast_low_threshold", "saturation_low_threshold", "saturation_high_threshold", "max_brightness_adjustment", "allow_auto_denoise", "allow_auto_sharpen", "allow_auto_reframe"],
+      "properties": {
+        "policy_version": { "const": "visual-treatment-policy-v1" },
+        "luma_target": { "$ref": "#/$defs/unit" },
+        "luma_dark_threshold": { "$ref": "#/$defs/unit" },
+        "luma_bright_threshold": { "$ref": "#/$defs/unit" },
+        "contrast_low_threshold": { "$ref": "#/$defs/unit" },
+        "saturation_low_threshold": { "$ref": "#/$defs/unit" },
+        "saturation_high_threshold": { "$ref": "#/$defs/unit" },
+        "max_brightness_adjustment": { "type": "number", "minimum": 0, "maximum": 0.25 },
+        "allow_auto_denoise": { "type": "boolean" },
+        "allow_auto_sharpen": { "type": "boolean" },
+        "allow_auto_reframe": { "const": false }
+      },
+      "additionalProperties": false
+    },
+    "proposals": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["proposal_id", "segment_id", "evidence_ids", "confidence", "risk", "reason_codes", "changes", "status", "review_required"],
+        "properties": {
+          "proposal_id": { "type": "string", "pattern": "^vt-[0-9a-f]{16}$" },
+          "segment_id": { "type": "string", "minLength": 1 },
+          "evidence_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+          "confidence": { "$ref": "#/$defs/unit" },
+          "risk": { "enum": ["low", "medium", "high"] },
+          "reason_codes": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+          "changes": { "$ref": "#/$defs/changes" },
+          "status": { "const": "review_required" },
+          "review_required": { "const": true }
+        },
+        "additionalProperties": false
+      }
+    },
+    "treatment_payload_sha256": { "$ref": "#/$defs/sha" }
+  },
+  "$defs": {
+    "sha": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "unit": { "type": "number", "minimum": 0, "maximum": 1 },
+    "binding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": { "path": { "type": "string", "pattern": "^work/analysis/visual/[A-Za-z0-9][A-Za-z0-9._/-]*$" }, "sha256": { "$ref": "#/$defs/sha" } },
+      "additionalProperties": false
+    },
+    "changes": {
+      "type": "object",
+      "properties": {
+        "exposure_ev": { "type": "number", "minimum": -2, "maximum": 2 },
+        "brightness": { "type": "number", "minimum": -0.25, "maximum": 0.25 },
+        "contrast": { "type": "number", "minimum": 0.5, "maximum": 1.5 },
+        "saturation": { "type": "number", "minimum": 0, "maximum": 2 },
+        "gamma": { "type": "number", "minimum": 0.5, "maximum": 2 },
+        "white_balance": {
+          "type": "object",
+          "required": ["red_shift", "green_shift", "blue_shift"],
+          "properties": { "red_shift": { "type": "number", "minimum": -0.25, "maximum": 0.25 }, "green_shift": { "type": "number", "minimum": -0.25, "maximum": 0.25 }, "blue_shift": { "type": "number", "minimum": -0.25, "maximum": 0.25 } },
+          "additionalProperties": false
+        },
+        "denoise": {
+          "type": "object",
+          "required": ["mode"],
+          "properties": { "mode": { "enum": ["off", "hqdn3d"] }, "luma_spatial": { "type": "number", "minimum": 0, "maximum": 10 }, "chroma_spatial": { "type": "number", "minimum": 0, "maximum": 10 }, "luma_temporal": { "type": "number", "minimum": 0, "maximum": 15 }, "chroma_temporal": { "type": "number", "minimum": 0, "maximum": 15 } },
+          "additionalProperties": false
+        },
+        "sharpen": {
+          "type": "object",
+          "required": ["mode"],
+          "properties": { "mode": { "enum": ["off", "unsharp"] }, "amount": { "type": "number", "minimum": 0, "maximum": 1.5 } },
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

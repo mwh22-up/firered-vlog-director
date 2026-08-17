@@ -557,6 +557,12 @@ def render_enhanced_video(
             "enhancement asset validation failed: "
             + json.dumps(asset_errors, ensure_ascii=False)
         )
+    visual_evidence = enhancement_plan.get("visual_treatment_evidence")
+    if isinstance(visual_evidence, dict):
+        if _sha256_file(base_video) != visual_evidence.get("base_media_sha256"):
+            raise ValueError(
+                "visual treatments were approved against a different base media SHA-256"
+            )
     effect_section = enhancement_plan.get("illustration_motion", {})
     hyperframes_items = [
         item

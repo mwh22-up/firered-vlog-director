@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/visual-treatment-preview-manifest.schema.json",
+  "type": "object",
+  "required": ["schema_version", "contract_version", "status", "project_id", "plan_sha256", "treatment_payload_sha256", "analysis_sha256", "realized_timeline_sha256", "base_media", "ffmpeg_identity", "previews"],
+  "properties": {
+    "schema_version": { "const": "1.0" }, "contract_version": { "const": "visual-treatment-preview-v1" }, "status": { "const": "rendered" },
+    "project_id": { "type": "string", "minLength": 1 }, "plan_sha256": { "$ref": "#/$defs/sha" }, "treatment_payload_sha256": { "$ref": "#/$defs/sha" }, "analysis_sha256": { "$ref": "#/$defs/sha" }, "realized_timeline_sha256": { "$ref": "#/$defs/sha" },
+    "base_media": { "$ref": "#/$defs/media" }, "ffmpeg_identity": { "type": "string", "minLength": 1 },
+    "previews": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["proposal_id", "segment_id", "start_sec", "end_sec", "path", "sha256", "size_bytes", "layout"], "properties": { "proposal_id": { "type": "string", "minLength": 1 }, "segment_id": { "type": "string", "minLength": 1 }, "start_sec": { "type": "number", "minimum": 0 }, "end_sec": { "type": "number", "exclusiveMinimum": 0 }, "path": { "type": "string", "pattern": "^work/proxy/treatments/[A-Za-z0-9][A-Za-z0-9._/-]*$" }, "sha256": { "$ref": "#/$defs/sha" }, "size_bytes": { "type": "integer", "minimum": 1 }, "layout": { "const": "before_after_side_by_side" } }, "additionalProperties": false } }
+  },
+  "$defs": { "sha": { "type": "string", "pattern": "^[0-9a-f]{64}$" }, "media": { "type": "object", "required": ["path", "sha256", "size_bytes"], "properties": { "path": { "type": "string", "pattern": "^(?:output|work/proxy)/[A-Za-z0-9][A-Za-z0-9._/-]*$" }, "sha256": { "$ref": "#/$defs/sha" }, "size_bytes": { "type": "integer", "minimum": 1 } }, "additionalProperties": false } },
+  "additionalProperties": false
+}

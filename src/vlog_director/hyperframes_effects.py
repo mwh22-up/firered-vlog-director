@@ -102,6 +102,61 @@ def _project_relative(project: Path, path: Path) -> str:
 def _effect_markup(effect: Mapping[str, Any]) -> tuple[str, str]:
     intent = str(effect["intent"])
     parameters = effect["recipe"].get("parameters", {})
+    if intent in {
+        "time_jump_card",
+        "location_card",
+        "route_map",
+        "step_card",
+        "source_card",
+    }:
+        text = html.escape(str(parameters.get("text", "信息")))
+        labels = {
+            "time_jump_card": "TIME SHIFT",
+            "location_card": "LOCATION",
+            "route_map": "ROUTE",
+            "step_card": "STEP",
+            "source_card": "REFERENCE",
+        }
+        symbols = {
+            "time_jump_card": "→",
+            "location_card": "◆",
+            "route_map": "↗",
+            "step_card": "#",
+            "source_card": "※",
+        }
+        label = labels[intent]
+        symbol = symbols[intent]
+        markup = f"""
+        <div id="explain-card" data-layout-allow-overflow class="visual explain-card">
+          <div class="explain-index">{label}</div>
+          <div id="explain-text" class="explain-text">{text}</div>
+          <div id="underline" class="underline"></div>
+        </div>
+        <div id="reaction-badge" data-layout-allow-overflow class="visual reaction-badge">{symbol}</div>
+        <div id="cyan-chip" data-layout-allow-overflow class="visual cyan-chip"></div>
+        """
+        animation = """
+        animateElement(document.getElementById("explain-card"),
+          [{ transform: "translate3d(-110%,0,0) rotate(-4deg) scale(.92)", opacity: 0 },
+           { transform: "translate3d(3%,0,0) rotate(1deg) scale(1.03)", opacity: 1, offset: .28 },
+           { transform: "translate3d(0,0,0) rotate(0deg) scale(1)", opacity: 1, offset: .48 },
+           { transform: "translate3d(105%,0,0) rotate(4deg) scale(.94)", opacity: 0 }], totalMs);
+        animateElement(document.getElementById("reaction-badge"),
+          [{ transform: "scale(.08) rotate(-30deg)", opacity: 0 },
+           { transform: "scale(1.28) rotate(8deg)", opacity: 1, offset: .25 },
+           { transform: "scale(1) rotate(0deg)", opacity: 1, offset: .46 },
+           { transform: "scale(1.5) rotate(18deg)", opacity: 0 }], totalMs);
+        animateElement(document.getElementById("underline"),
+          [{ transform: "scaleX(0)", opacity: 1 },
+           { transform: "scaleX(1)", opacity: 1, offset: .40 },
+           { transform: "scaleX(1)", opacity: 1, offset: .82 },
+           { transform: "scaleX(0)", opacity: 0 }], totalMs);
+        animateElement(document.getElementById("cyan-chip"),
+          [{ transform: "translate3d(500px,-500px,0)", opacity: 0 },
+           { transform: "translate3d(0,0,0)", opacity: 1, offset: .38 },
+           { transform: "translate3d(-500px,500px,0)", opacity: 0 }], totalMs);
+        """
+        return markup, animation
     if intent == "place_reveal":
         text = html.escape(str(parameters.get("text", "新章节")))
         markup = f"""
@@ -137,12 +192,12 @@ def _effect_markup(effect: Mapping[str, Any]) -> tuple[str, str]:
     if intent == "kinetic_explain":
         text = html.escape(str(parameters.get("text", "重点")))
         markup = f"""
-        <div id="explain-card" data-layout-allow-overflow class="visual explain-card">
+        <div id="explain-card" data-layout-allow-overflow class="visual explain-card compact-callout">
           <div class="explain-index">EXPLAIN / 01</div>
           <div id="explain-text" class="explain-text">{text}</div>
           <div id="underline" class="underline"></div>
         </div>
-        <div id="cyan-chip" data-layout-allow-overflow class="visual cyan-chip"></div>
+        <div id="cyan-chip" data-layout-allow-overflow class="visual cyan-chip compact-chip"></div>
         """
         animation = """
         animateElement(document.getElementById("explain-card"),
@@ -161,20 +216,18 @@ def _effect_markup(effect: Mapping[str, Any]) -> tuple[str, str]:
            { transform: "scaleX(1)", opacity: 1, offset: .84 },
            { transform: "scaleX(0)", opacity: 0 }], totalMs);
         animateElement(document.getElementById("cyan-chip"),
-          [{ transform: "translate3d(500px,-500px,0) rotate(25deg)", opacity: 0 },
-           { transform: "translate3d(0,0,0) rotate(-12deg)", opacity: 1, offset: .38 },
-           { transform: "translate3d(-500px,500px,0) rotate(-35deg)", opacity: 0 }], totalMs);
+          [{ transform: "translate3d(500px,-500px,0)", opacity: 0 },
+           { transform: "translate3d(0,0,0)", opacity: 1, offset: .38 },
+           { transform: "translate3d(-500px,500px,0)", opacity: 0 }], totalMs);
         """
         return markup, animation
     if intent == "reaction_burst":
         glyph = html.escape(str(parameters.get("glyph", "!")))
         count = max(6, min(24, int(parameters.get("burst_count", 14))))
-        rays = "\n".join(
-            f'<div class="ray" style="transform:rotate({round(index * 360 / count, 3)}deg)"></div>'
-            for index in range(count)
-        )
+        ray_step = round(360 / count, 3)
+        ray_width = round(min(9.0, ray_step * 0.34), 3)
         markup = f"""
-        <div id="burst" data-layout-allow-overflow class="visual burst">{rays}</div>
+        <div id="burst" data-layout-allow-overflow class="visual burst" style="--ray-step:{ray_step}deg;--ray-width:{ray_width}deg"></div>
         <div id="reaction-badge" data-layout-allow-overflow class="visual reaction-badge">{glyph}</div>
         <div id="reaction-ring" data-layout-allow-overflow class="visual reaction-ring"></div>
         """
@@ -261,13 +314,17 @@ def _composition_html(
     .title-wrap {{ inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:8%; text-align:center; }}
     .eyebrow {{ font-family:Arial,sans-serif; font-weight:900; font-size:30px; letter-spacing:12px; color:{palette['ink']}; margin-bottom:24px; }}
     .title {{ max-width:88%; font-size:clamp(96px,10vw,190px); line-height:.92; font-weight:900; letter-spacing:-5px; text-shadow:10px 10px 0 {palette['ink']}; }}
-    .explain-card {{ left:8%; right:8%; top:20%; bottom:20%; padding:7%; background:{palette['paper']}; color:{palette['ink']}; border:18px solid {palette['ink']}; box-shadow:28px 28px 0 {palette['primary']}; display:flex; flex-direction:column; justify-content:center; }}
+    .explain-card {{ left:8%; right:8%; top:20%; bottom:20%; padding:7%; background:{palette['paper']}; color:{palette['ink']}; border:18px solid {palette['ink']}; box-shadow:28px 28px 0 {palette['primary']}; display:flex; flex-direction:column; justify-content:center; z-index:2; }}
     .explain-index {{ font:900 28px Arial,sans-serif; letter-spacing:8px; color:{palette['primary']}; margin-bottom:32px; }}
     .explain-text {{ font-size:clamp(80px,8vw,152px); line-height:.98; font-weight:900; max-width:94%; }}
     .underline {{ display:block; width:100%; height:22px; margin-top:40px; background:{palette['primary']}; transform-origin:left center; }}
-    .cyan-chip {{ width:260px; height:260px; right:3%; top:7%; background:{palette['contrast']}; border:14px solid {palette['ink']}; }}
-    .burst {{ width:980px; height:980px; left:50%; top:50%; margin:-490px 0 0 -490px; }}
-    .ray {{ position:absolute; display:block; left:480px; top:0; width:22px; height:440px; background:{palette['secondary']}; transform-origin:11px 490px; clip-path:polygon(50% 0,100% 100%,0 100%); }}
+    .cyan-chip {{ width:260px; height:260px; right:3%; top:7%; background:{palette['contrast']}; border:14px solid {palette['ink']}; transform-origin:center; z-index:1; }}
+    .compact-callout {{ left:4%; right:auto; top:auto; bottom:8%; width:44%; min-height:220px; padding:42px 48px; border-width:8px; box-shadow:14px 14px 0 {palette['primary']}; }}
+    .compact-callout .explain-index {{ font-size:18px; letter-spacing:5px; margin-bottom:16px; }}
+    .compact-callout .explain-text {{ font-size:clamp(48px,4.5vw,84px); line-height:1.06; letter-spacing:-1px; max-width:100%; }}
+    .compact-callout .underline {{ height:10px; margin-top:20px; }}
+    .compact-chip {{ width:100px; height:100px; left:44%; right:auto; top:auto; bottom:25%; border-width:6px; }}
+    .burst {{ width:980px; height:980px; left:50%; top:50%; margin:-490px 0 0 -490px; color:{palette['secondary']}; background:repeating-conic-gradient(from 0deg,currentColor 0deg var(--ray-width),transparent var(--ray-width) var(--ray-step)); clip-path:circle(50%); transform-origin:center; }}
     .reaction-badge {{ width:360px; height:360px; left:50%; top:50%; margin:-180px 0 0 -180px; border-radius:50%; display:grid; place-items:center; background:{palette['primary']}; color:{palette['paper']}; border:18px solid {palette['ink']}; box-shadow:20px 20px 0 {palette['contrast']}; font:900 260px/1 Arial Black,Arial,sans-serif; }}
     .reaction-ring {{ width:520px; height:520px; left:50%; top:50%; margin:-260px 0 0 -260px; border:30px solid {palette['paper']}; border-radius:50%; }}
     .impact-flash {{ width:900px; height:900px; left:50%; top:50%; margin:-450px 0 0 -450px; background:{palette['primary']}; clip-path:polygon(50% 0,61% 34%,86% 14%,70% 42%,100% 50%,70% 58%,86% 86%,61% 66%,50% 100%,39% 66%,14% 86%,30% 58%,0 50%,30% 42%,14% 14%,39% 34%); }}
@@ -286,7 +343,7 @@ def _composition_html(
     const totalMs = {total_ms};
     const animations = [];
     function animateElement(element, keyframes, duration) {{
-      const animation = element.animate(keyframes, {{ duration, fill: "both", iterations: 1, easing: "cubic-bezier(.16,1,.3,1)" }});
+      const animation = element.animate(keyframes, {{ duration, fill: "both", iterations: 1, easing: "linear" }});
       animation.pause();
       animations.push(animation);
       return animation;

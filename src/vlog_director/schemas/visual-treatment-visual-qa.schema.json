@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://firered.local/schemas/visual-treatment-visual-qa.schema.json",
+  "type": "object",
+  "required": ["schema_version", "contract_version", "status", "project_id", "plan_sha256", "treatment_payload_sha256", "preview_manifest_sha256", "base_media_sha256", "ffmpeg_identity", "proposal_count", "blocker_count", "warning_count", "proposals", "human_review"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "contract_version": { "const": "visual-treatment-visual-qa-v1" },
+    "status": { "enum": ["passed", "blocked"] },
+    "project_id": { "type": "string", "minLength": 1 },
+    "plan_sha256": { "$ref": "#/$defs/sha" },
+    "treatment_payload_sha256": { "$ref": "#/$defs/sha" },
+    "preview_manifest_sha256": { "$ref": "#/$defs/sha" },
+    "base_media_sha256": { "$ref": "#/$defs/sha" },
+    "ffmpeg_identity": { "type": "string", "minLength": 1 },
+    "proposal_count": { "type": "integer", "minimum": 1 },
+    "blocker_count": { "type": "integer", "minimum": 0 },
+    "warning_count": { "type": "integer", "minimum": 0 },
+    "proposals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["proposal_id", "segment_id", "preview_sha256", "duration_delta_sec", "black_frame_detected", "freeze_detected", "blocker_codes", "warning_codes", "frames"],
+        "properties": {
+          "proposal_id": { "type": "string", "minLength": 1 },
+          "segment_id": { "type": "string", "minLength": 1 },
+          "preview_sha256": { "$ref": "#/$defs/sha" },
+          "duration_delta_sec": { "type": "number", "minimum": 0 },
+          "black_frame_detected": { "type": "boolean" },
+          "freeze_detected": { "type": "boolean" },
+          "blocker_codes": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+          "warning_codes": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+          "frames": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "required": ["role", "path", "sha256"],
+              "properties": {
+                "role": { "enum": ["entry", "middle", "exit"] },
+                "path": { "type": "string", "pattern": "^work/qa/treatments/[A-Za-z0-9][A-Za-z0-9._/-]*$" },
+                "sha256": { "$ref": "#/$defs/sha" }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "human_review": {
+      "type": "object",
+      "required": ["status", "statement"],
+      "properties": {
+        "status": { "const": "pending" },
+        "statement": { "const": "已生成视觉帧和技术证据，画面审美适配性仍需人工检查。" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": { "sha": { "type": "string", "pattern": "^[0-9a-f]{64}$" } },
+  "additionalProperties": false
+}

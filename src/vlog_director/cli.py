@@ -268,6 +268,75 @@ def _build_parser() -> argparse.ArgumentParser:
         default="preview",
     )
 
+    analyze_visual = subparsers.add_parser(
+        "analyze-visual-segments",
+        description="Measure real target-media luminance, color, detail, noise, and motion evidence per realized segment.",
+    )
+    analyze_visual.add_argument("--project", type=Path, required=True)
+    analyze_visual.add_argument("--base-video", type=Path, required=True)
+    analyze_visual.add_argument("--edit-plan", type=Path, required=True)
+    analyze_visual.add_argument("--realized-timeline", type=Path, required=True)
+    analyze_visual.add_argument("--output", type=Path, required=True)
+    analyze_visual.add_argument("--ffmpeg-executable", default="ffmpeg")
+    analyze_visual.add_argument("--protected-regions", type=Path)
+    analyze_visual.add_argument("--detached", action="store_true")
+
+    plan_visual = subparsers.add_parser(
+        "plan-visual-treatments",
+        description="Create conservative evidence-bound per-segment visual treatment proposals.",
+    )
+    plan_visual.add_argument("--project", type=Path, required=True)
+    plan_visual.add_argument("--edit-plan", type=Path, required=True)
+    plan_visual.add_argument("--analysis", type=Path, required=True)
+    plan_visual.add_argument("--output", type=Path, required=True)
+
+    preview_visual = subparsers.add_parser(
+        "render-treatment-preview",
+        description="Render before/after visual-only proxies without subtitles, music, ducking, or overlays.",
+    )
+    preview_visual.add_argument("--project", type=Path, required=True)
+    preview_visual.add_argument("--base-video", type=Path, required=True)
+    preview_visual.add_argument("--plan", type=Path, required=True)
+    preview_visual.add_argument("--realized-timeline", type=Path, required=True)
+    preview_visual.add_argument("--output-directory", type=Path, required=True)
+    preview_visual.add_argument("--ffmpeg-executable", default="ffmpeg")
+    preview_visual.add_argument("--detached", action="store_true")
+
+    qa_visual = subparsers.add_parser(
+        "qa-visual-treatments",
+        description="Fully decode treatment proxies and generate entry/middle/exit visual evidence.",
+    )
+    qa_visual.add_argument("--project", type=Path, required=True)
+    qa_visual.add_argument("--plan", type=Path, required=True)
+    qa_visual.add_argument("--preview-manifest", type=Path, required=True)
+    qa_visual.add_argument("--output-directory", type=Path, required=True)
+    qa_visual.add_argument("--ffmpeg-executable", default="ffmpeg")
+    qa_visual.add_argument("--detached", action="store_true")
+
+    approve_visual = subparsers.add_parser(
+        "approve-visual-treatments",
+        description="Create SHA-bound approval from real visual QA and independent human review.",
+    )
+    approve_visual.add_argument("--project", type=Path, required=True)
+    approve_visual.add_argument("--plan", type=Path, required=True)
+    approve_visual.add_argument("--preview-manifest", type=Path, required=True)
+    approve_visual.add_argument("--visual-qa", type=Path, required=True)
+    approve_visual.add_argument("--human-review", type=Path, required=True)
+    approve_visual.add_argument("--output", type=Path, required=True)
+
+    apply_visual = subparsers.add_parser(
+        "apply-visual-treatments",
+        description="Apply only approved proposals to a new enhancement-plan version.",
+    )
+    apply_visual.add_argument("--project", type=Path, required=True)
+    apply_visual.add_argument("--enhancement-plan", type=Path, required=True)
+    apply_visual.add_argument("--plan", type=Path, required=True)
+    apply_visual.add_argument("--preview-manifest", type=Path, required=True)
+    apply_visual.add_argument("--visual-qa", type=Path, required=True)
+    apply_visual.add_argument("--human-review", type=Path, required=True)
+    apply_visual.add_argument("--approval", type=Path, required=True)
+    apply_visual.add_argument("--output", type=Path, required=True)
+
     plan_effects = subparsers.add_parser("plan-effects")
     plan_effects.add_argument("--project", type=Path, required=True)
     plan_effects.add_argument("--version", type=int, required=True)
@@ -1205,6 +1274,270 @@ def main() -> int:
         )
         _write_result(result, None)
         return 0 if result["status"] in {"preview_ready", "ready"} else 2
+    if args.command == "analyze-visual-segments":
+        if args.detached:
+            from .durable_jobs import submit_durable_job
+
+            result = submit_durable_job(
+                project=args.project.resolve(),
+                operation="analyze-visual-segments",
+                arguments={
+                    "project": str(args.project.resolve()),
+                    "base_video": str(args.base_video.resolve()),
+                    "edit_plan": str(args.edit_plan.resolve()),
+                    "realized_timeline": str(args.realized_timeline.resolve()),
+                    "output": str(args.output.resolve()),
+                    "ffmpeg_executable": args.ffmpeg_executable,
+                    "protected_regions": (
+                        str(args.protected_regions.resolve())
+                        if args.protected_regions
+                        else None
+                    ),
+                },
+            )
+            _write_result(result, None)
+            return 0
+        try:
+            from .visual_treatment_analysis import analyze_visual_segments
+
+            result = analyze_visual_segments(
+                args.project.resolve(),
+                args.base_video.resolve(),
+                args.edit_plan.resolve(),
+                args.realized_timeline.resolve(),
+                args.output.resolve(),
+                executable=args.ffmpeg_executable,
+                protected_regions_path=(
+                    args.protected_regions.resolve() if args.protected_regions else None
+                ),
+            )
+            _write_result(
+                {
+                    "status": "analyzed",
+                    "output": str(args.output.resolve()),
+                    "segment_count": len(result["segments"]),
+                    "base_media_sha256": result["base_media"]["sha256"],
+                },
+                None,
+            )
+            return 0
+        except Exception as error:
+            _write_result(
+                {
+                    "status": "blocked",
+                    "issues": [
+                        {"code": "visual_analysis_failed", "message": str(error)}
+                    ],
+                },
+                None,
+            )
+            return 2
+    if args.command == "plan-visual-treatments":
+        try:
+            from .visual_treatments import (
+                build_visual_treatment_plan,
+                validate_visual_treatment_plan,
+            )
+
+            project = args.project.resolve()
+            edit_path = args.edit_plan.resolve()
+            analysis_path = args.analysis.resolve()
+            output_path = args.output.resolve()
+            edit_path.relative_to((project / "work" / "plans").resolve())
+            analysis_path.relative_to(
+                (project / "work" / "analysis" / "visual").resolve()
+            )
+            output_path.relative_to((project / "work" / "treatments").resolve())
+            if output_path.exists():
+                raise FileExistsError(output_path)
+            edit_plan = _read_json(edit_path)
+            analysis = _read_json(analysis_path)
+            result = build_visual_treatment_plan(
+                edit_plan,
+                analysis,
+                analysis_path=analysis_path.relative_to(project).as_posix(),
+                analysis_sha256=_sha256_file(analysis_path),
+            )
+            validation = validate_visual_treatment_plan(edit_plan, analysis, result)
+            if validation["status"] != "passed":
+                raise ValueError(json.dumps(validation["issues"], ensure_ascii=False))
+            _write_result(result, output_path)
+            _write_result(
+                {
+                    "status": "planned",
+                    "output": str(output_path),
+                    "proposal_count": len(result["proposals"]),
+                    "treatment_payload_sha256": result[
+                        "treatment_payload_sha256"
+                    ],
+                },
+                None,
+            )
+            return 0
+        except Exception as error:
+            _write_result(
+                {
+                    "status": "blocked",
+                    "issues": [
+                        {"code": "visual_treatment_planning_failed", "message": str(error)}
+                    ],
+                },
+                None,
+            )
+            return 2
+    if args.command == "render-treatment-preview":
+        if args.detached:
+            from .durable_jobs import submit_durable_job
+
+            result = submit_durable_job(
+                project=args.project.resolve(),
+                operation="render-treatment-preview",
+                arguments={
+                    "project": str(args.project.resolve()),
+                    "base_video": str(args.base_video.resolve()),
+                    "plan": str(args.plan.resolve()),
+                    "realized_timeline": str(args.realized_timeline.resolve()),
+                    "output_directory": str(args.output_directory.resolve()),
+                    "ffmpeg_executable": args.ffmpeg_executable,
+                },
+            )
+            _write_result(result, None)
+            return 0
+        try:
+            from .visual_treatment_preview import render_treatment_previews
+
+            result = render_treatment_previews(
+                args.project.resolve(),
+                args.base_video.resolve(),
+                args.plan.resolve(),
+                args.realized_timeline.resolve(),
+                args.output_directory.resolve(),
+                executable=args.ffmpeg_executable,
+            )
+            _write_result(
+                {
+                    "status": "rendered",
+                    "manifest": str(
+                        args.output_directory.resolve() / "preview-manifest.json"
+                    ),
+                    "preview_count": len(result["previews"]),
+                },
+                None,
+            )
+            return 0
+        except Exception as error:
+            _write_result(
+                {
+                    "status": "blocked",
+                    "issues": [
+                        {"code": "visual_treatment_preview_failed", "message": str(error)}
+                    ],
+                },
+                None,
+            )
+            return 2
+    if args.command == "qa-visual-treatments":
+        if args.detached:
+            from .durable_jobs import submit_durable_job
+
+            result = submit_durable_job(
+                project=args.project.resolve(),
+                operation="qa-visual-treatments",
+                arguments={
+                    "project": str(args.project.resolve()),
+                    "plan": str(args.plan.resolve()),
+                    "preview_manifest": str(args.preview_manifest.resolve()),
+                    "output_directory": str(args.output_directory.resolve()),
+                    "ffmpeg_executable": args.ffmpeg_executable,
+                },
+            )
+            _write_result(result, None)
+            return 0
+        try:
+            from .visual_treatment_preview import qa_visual_treatments
+
+            result = qa_visual_treatments(
+                args.project.resolve(),
+                args.plan.resolve(),
+                args.preview_manifest.resolve(),
+                args.output_directory.resolve(),
+                executable=args.ffmpeg_executable,
+            )
+            _write_result(result, None)
+            return 0 if result["status"] == "passed" else 2
+        except Exception as error:
+            _write_result(
+                {
+                    "status": "blocked",
+                    "issues": [
+                        {"code": "visual_treatment_qa_failed", "message": str(error)}
+                    ],
+                },
+                None,
+            )
+            return 2
+    if args.command == "approve-visual-treatments":
+        try:
+            from .visual_treatment_approval import build_visual_treatment_approval
+
+            result = build_visual_treatment_approval(
+                args.project.resolve(),
+                args.plan.resolve(),
+                args.preview_manifest.resolve(),
+                args.visual_qa.resolve(),
+                args.human_review.resolve(),
+                args.output.resolve(),
+            )
+            _write_result(result, None)
+            return 0
+        except Exception as error:
+            _write_result(
+                {
+                    "status": "blocked",
+                    "issues": [
+                        {"code": "visual_treatment_approval_failed", "message": str(error)}
+                    ],
+                },
+                None,
+            )
+            return 2
+    if args.command == "apply-visual-treatments":
+        try:
+            from .visual_treatment_approval import apply_approved_visual_treatments
+
+            result = apply_approved_visual_treatments(
+                args.project.resolve(),
+                args.enhancement_plan.resolve(),
+                args.plan.resolve(),
+                args.preview_manifest.resolve(),
+                args.visual_qa.resolve(),
+                args.human_review.resolve(),
+                args.approval.resolve(),
+                args.output.resolve(),
+            )
+            _write_result(
+                {
+                    "status": "ready",
+                    "output": str(args.output.resolve()),
+                    "enhancement_version": result["version"],
+                    "accepted_proposal_ids": result[
+                        "visual_treatment_evidence"
+                    ]["accepted_proposal_ids"],
+                },
+                None,
+            )
+            return 0
+        except Exception as error:
+            _write_result(
+                {
+                    "status": "blocked",
+                    "issues": [
+                        {"code": "visual_treatment_apply_failed", "message": str(error)}
+                    ],
+                },
+                None,
+            )
+            return 2
     if args.command == "plan-effects":
         try:
             from .effect_plan import build_effect_plan, validate_effect_plan

@@ -9,6 +9,42 @@ from vlog_director.release import release_readiness_issues, verify_rendered_medi
 
 
 class ReleaseTests(unittest.TestCase):
+    def test_release_pixel_treatments_require_current_approval_evidence(self) -> None:
+        plan = {
+            "video_treatments": [
+                {"segment_id": "s1", "visual": {"brightness": 0.05}}
+            ],
+            "music": {"status": "disabled", "tracks": []},
+            "subtitles": {"status": "disabled", "cues": []},
+            "illustration_motion": {"status": "disabled", "items": []},
+        }
+        codes = {row["code"] for row in release_readiness_issues(plan)}
+        self.assertIn("release_visual_treatment_evidence_required", codes)
+
+    def test_release_keeps_legacy_static_overlays_preview_only(self) -> None:
+        plan = {
+            "music": {"status": "disabled", "tracks": []},
+            "subtitles": {"status": "disabled", "cues": []},
+            "illustration_motion": {
+                "status": "ready",
+                "items": [{"id": "legacy", "type": "title_card"}],
+            },
+        }
+        codes = {row["code"] for row in release_readiness_issues(plan)}
+        self.assertIn("release_static_overlay_preview_only", codes)
+
+    def test_release_hyperframes_requires_effect_approval_evidence(self) -> None:
+        plan = {
+            "music": {"status": "disabled", "tracks": []},
+            "subtitles": {"status": "disabled", "cues": []},
+            "illustration_motion": {
+                "status": "ready",
+                "items": [{"id": "motion", "type": "hyperframes"}],
+            },
+        }
+        codes = {row["code"] for row in release_readiness_issues(plan)}
+        self.assertIn("release_effect_evidence_required", codes)
+
     def test_release_rejects_planned_and_empty_ready_sections(self) -> None:
         plan = {
             "music": {"status": "planned", "tracks": []},

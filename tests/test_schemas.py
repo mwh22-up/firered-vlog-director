@@ -63,6 +63,13 @@ class SchemaValidationTests(unittest.TestCase):
                 "subtitle-visual-qa.schema.json",
                 "vlm-analysis-evidence.schema.json",
                 "vlm-analysis-request.schema.json",
+                "visual-treatment-analysis.schema.json",
+                "visual-treatment-plan.schema.json",
+                "visual-treatment-preview-manifest.schema.json",
+                "visual-treatment-visual-qa.schema.json",
+                "visual-treatment-human-review.schema.json",
+                "visual-treatment-approval.schema.json",
+                "visual-protected-regions.schema.json",
             },
         )
         for name, schema in self.schemas.items():
@@ -95,6 +102,8 @@ class SchemaValidationTests(unittest.TestCase):
                 }
                 or name.startswith("effect-")
                 or name.startswith("subtitle-")
+                or name.startswith("visual-treatment-")
+                or name == "visual-protected-regions.schema.json"
             },
         )
         for path in packaged_paths:
@@ -309,7 +318,7 @@ class SchemaValidationTests(unittest.TestCase):
             )
             for path in directory.glob("*.json")
         )
-        self.assertEqual(len(json_paths), 103)
+        self.assertEqual(len(json_paths), 110)
         for path in json_paths:
             with self.subTest(path=path.relative_to(REPOSITORY_ROOT)):
                 load_json(path)

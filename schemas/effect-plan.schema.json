@@ -92,7 +92,12 @@
             { "const": "impact_hit" },
             { "const": "kinetic_explain" },
             { "const": "place_reveal" },
-            { "const": "reaction_burst" }
+            { "const": "reaction_burst" },
+            { "const": "time_jump_card" },
+            { "const": "location_card" },
+            { "const": "route_map" },
+            { "const": "step_card" },
+            { "const": "source_card" }
           ],
           "items": false
         }
@@ -115,7 +120,7 @@
         "event_id": { "type": "string", "minLength": 1 },
         "chapter_id": { "type": "string", "minLength": 1 },
         "target_segment_id": { "type": "string", "minLength": 1 },
-        "intent": { "enum": ["impact_hit", "kinetic_explain", "place_reveal", "reaction_burst"] },
+        "intent": { "enum": ["impact_hit", "kinetic_explain", "place_reveal", "reaction_burst", "time_jump_card", "location_card", "route_map", "step_card", "source_card"] },
         "evidence_ids": {
           "type": "array",
           "minItems": 1,
@@ -136,13 +141,13 @@
           "required": ["executor", "type", "composition_format", "parameters"],
           "properties": {
             "executor": { "const": "hyperframes" },
-            "type": { "enum": ["impact_hit", "kinetic_explain", "place_reveal", "reaction_burst"] },
+            "type": { "enum": ["impact_hit", "kinetic_explain", "place_reveal", "reaction_burst", "time_jump_card", "location_card", "route_map", "step_card", "source_card"] },
             "composition_format": { "const": "transparent_mov" },
             "parameters": {
               "type": "object",
               "properties": {
                 "text": { "type": "string", "minLength": 1, "maxLength": 120 },
-                "layout": { "enum": ["bold_poster", "oversized_split"] },
+                "layout": { "enum": ["bold_poster", "oversized_split", "editorial_card"] },
                 "glyph": { "type": "string", "minLength": 1, "maxLength": 4 },
                 "burst_count": { "type": "integer", "minimum": 6, "maximum": 24 },
                 "pulse_count": { "type": "integer", "minimum": 1, "maximum": 4 },
@@ -150,6 +155,18 @@
               },
               "additionalProperties": false
             }
+          },
+          "additionalProperties": false
+        },
+        "editorial_evidence": {
+          "type": "object",
+          "required": ["text_source", "source_reference", "fact_check_status", "rights_status", "target_evidence_id"],
+          "properties": {
+            "text_source": { "const": "explicit_effect_hint" },
+            "source_reference": { "type": "string", "minLength": 1, "maxLength": 500 },
+            "fact_check_status": { "const": "verified" },
+            "rights_status": { "enum": ["owned", "licensed", "public_domain"] },
+            "target_evidence_id": { "type": "string", "minLength": 1 }
           },
           "additionalProperties": false
         },
@@ -172,7 +189,7 @@
             "protected_zones": {
               "type": "array",
               "uniqueItems": true,
-              "items": { "enum": ["faces", "main_subject", "subtitles"] }
+              "items": { "enum": ["faces", "main_subject", "subtitles", "critical_text_logo"] }
             }
           },
           "additionalProperties": false

@@ -18,11 +18,14 @@ SUPPORTED_OPERATIONS = frozenset(
     {
         "analyze-reference",
         "analyze-target",
+        "analyze-visual-segments",
         "audition-music",
         "qa-effects",
         "qa-release-visual",
+        "qa-visual-treatments",
         "render-enhancement",
         "render-effects",
+        "render-treatment-preview",
     }
 )
 TERMINAL_STATUSES = frozenset({"completed", "failed", "cancelled"})
@@ -259,6 +262,52 @@ def _default_handlers() -> dict[str, JobHandler]:
             executable=str(arguments.get("ffmpeg_executable", "ffmpeg")),
         )
 
+    def analyze_visual_job(arguments: Mapping[str, Any], cancelled: Callable[[], bool]) -> Mapping[str, Any]:
+        if cancelled():
+            return {"status": "cancelled"}
+        from .visual_treatment_analysis import analyze_visual_segments
+
+        return analyze_visual_segments(
+            Path(str(arguments["project"])),
+            Path(str(arguments["base_video"])),
+            Path(str(arguments["edit_plan"])),
+            Path(str(arguments["realized_timeline"])),
+            Path(str(arguments["output"])),
+            executable=str(arguments.get("ffmpeg_executable", "ffmpeg")),
+            protected_regions_path=(
+                Path(str(arguments["protected_regions"]))
+                if arguments.get("protected_regions")
+                else None
+            ),
+        )
+
+    def render_treatment_preview_job(arguments: Mapping[str, Any], cancelled: Callable[[], bool]) -> Mapping[str, Any]:
+        if cancelled():
+            return {"status": "cancelled"}
+        from .visual_treatment_preview import render_treatment_previews
+
+        return render_treatment_previews(
+            Path(str(arguments["project"])),
+            Path(str(arguments["base_video"])),
+            Path(str(arguments["plan"])),
+            Path(str(arguments["realized_timeline"])),
+            Path(str(arguments["output_directory"])),
+            executable=str(arguments.get("ffmpeg_executable", "ffmpeg")),
+        )
+
+    def qa_visual_treatment_job(arguments: Mapping[str, Any], cancelled: Callable[[], bool]) -> Mapping[str, Any]:
+        if cancelled():
+            return {"status": "cancelled"}
+        from .visual_treatment_preview import qa_visual_treatments
+
+        return qa_visual_treatments(
+            Path(str(arguments["project"])),
+            Path(str(arguments["plan"])),
+            Path(str(arguments["preview_manifest"])),
+            Path(str(arguments["output_directory"])),
+            executable=str(arguments.get("ffmpeg_executable", "ffmpeg")),
+        )
+
     return {
         "render-effects": render_effects,
         "qa-effects": qa_effects,
@@ -267,6 +316,9 @@ def _default_handlers() -> dict[str, JobHandler]:
         "analyze-reference": analyze,
         "analyze-target": analyze,
         "audition-music": audition_music_job,
+        "analyze-visual-segments": analyze_visual_job,
+        "render-treatment-preview": render_treatment_preview_job,
+        "qa-visual-treatments": qa_visual_treatment_job,
     }
 
 

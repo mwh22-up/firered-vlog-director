@@ -28,6 +28,11 @@ HYPERFRAMES_CAPABILITY = {
         "kinetic_explain",
         "place_reveal",
         "reaction_burst",
+        "time_jump_card",
+        "location_card",
+        "route_map",
+        "step_card",
+        "source_card",
     ],
 }
 
@@ -97,8 +102,9 @@ def _effect(
     end_sec: float,
     evidence_ids: list[str],
     parameters: dict[str, Any],
+    editorial_evidence: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    return {
+    result = {
         "effect_id": f"effect-{segment_id}-{intent}",
         "event_id": f"event-{segment_id}",
         "chapter_id": chapter_id,
@@ -120,9 +126,53 @@ def _effect(
             "preserve_duration": True,
             "avoid_subtitle_safe_zone": True,
             "avoid_face_occlusion": True,
-            "protected_zones": ["faces", "main_subject", "subtitles"],
+            "protected_zones": [
+                "faces",
+                "main_subject",
+                "subtitles",
+                "critical_text_logo",
+            ],
         },
         "status": "review_required",
+    }
+    if editorial_evidence is not None:
+        result["editorial_evidence"] = editorial_evidence
+    return result
+
+
+EDITORIAL_INTENTS = {
+    "time_jump_card",
+    "location_card",
+    "route_map",
+    "step_card",
+    "source_card",
+}
+
+
+def _verified_editorial_hint(
+    hint: Any,
+    *,
+    segment_id: str,
+) -> tuple[str, dict[str, Any]] | None:
+    if not isinstance(hint, dict) or hint.get("intent") not in EDITORIAL_INTENTS:
+        return None
+    text = str(hint.get("text", "")).strip()
+    source_reference = str(hint.get("source_reference", "")).strip()
+    fact_status = str(hint.get("fact_check_status", ""))
+    rights_status = str(hint.get("rights_status", ""))
+    if (
+        not text
+        or not source_reference
+        or fact_status != "verified"
+        or rights_status not in {"owned", "licensed", "public_domain"}
+    ):
+        return None
+    return text, {
+        "text_source": "explicit_effect_hint",
+        "source_reference": source_reference,
+        "fact_check_status": fact_status,
+        "rights_status": rights_status,
+        "target_evidence_id": f"segment:{segment_id}:effect_hint",
     }
 
 
@@ -193,6 +243,25 @@ def build_effect_plan(
             duration = segment_end - segment_start
             role = str(segment.get("story_role", "story"))
             hint = segment.get("effect_hint")
+
+            editorial = _verified_editorial_hint(hint, segment_id=segment_id)
+            if editorial is not None:
+                text, editorial_evidence = editorial
+                intent = str(hint["intent"])
+                effect_duration = min(duration, 2.2)
+                effects.append(
+                    _effect(
+                        segment_id=segment_id,
+                        chapter_id=chapter_id,
+                        intent=intent,
+                        start_sec=segment_start,
+                        end_sec=segment_start + effect_duration,
+                        evidence_ids=[f"segment:{segment_id}:effect_hint"],
+                        parameters={"text": text, "layout": "editorial_card"},
+                        editorial_evidence=editorial_evidence,
+                    )
+                )
+                continue
 
             if isinstance(hint, dict) and hint.get("intent") == "kinetic_explain":
                 text = str(hint.get("text", "")).strip()
@@ -413,6 +482,23 @@ def validate_effect_plan(
                     "Effect intent and HyperFrames recipe type must match.",
                 )
             )
+        if effect.get("intent") in EDITORIAL_INTENTS:
+            editorial = effect.get("editorial_evidence")
+            if (
+                not isinstance(editorial, dict)
+                or editorial.get("fact_check_status") != "verified"
+                or editorial.get("rights_status")
+                not in {"owned", "licensed", "public_domain"}
+                or not str(editorial.get("source_reference", "")).strip()
+                or not str(editorial.get("target_evidence_id", "")).strip()
+            ):
+                issues.append(
+                    _issue(
+                        "effect_editorial_evidence_unverified",
+                        effect_id,
+                        "Editorial cards require verified facts, traceable text, and cleared asset rights.",
+                    )
+                )
         if effect.get("budget", {}).get("role") == "primary":
             event_id = str(effect.get("event_id", ""))
             primary_counts[event_id] = primary_counts.get(event_id, 0) + 1

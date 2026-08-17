@@ -17,8 +17,8 @@
 
 ### 参考学习
 
-- 16/16 个参考视频学习完成。
-- 聚合结果包含 16 sources、44 stable patterns、65 source-specific patterns。
+- 当前正式进度已扩展为 26/26 个参考视频学习完成；本交接文件中的旧功能提交仍作为历史基线。
+- 当前聚合结果包含 26 个独立来源；具体稳定模式数量以 `reference-learning/reference-techniques.aggregate.v1.json` 为准。
 - 学习数据、证据范围、guardrail 和聚合一致性已有 Schema 与测试覆盖。
 
 ### Director
